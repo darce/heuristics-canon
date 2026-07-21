@@ -1,8 +1,8 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "date": "2026-07-21",
-  "rules": 866,
+  "rules": 874,
   "principles": 15,
   "lexicons": {
     "lexicons/accessibility.md": {
@@ -18,8 +18,8 @@
       "rules": 56
     },
     "lexicons/engineering.md": {
-      "sha256": "c09b72d3f3352125031ecd0198cd86db36e2050b707989ab9ffae9586a11ac9d",
-      "rules": 241
+      "sha256": "514e9ed0d47630fa7e75c5a69ce9086257f2fb740c68b84f7aeb4d709fcae707",
+      "rules": 249
     },
     "lexicons/epistemics.md": {
       "sha256": "e2f120c15ae29f272d6c151c37670065fd52430ba7d14a0c2dad3dc9f5dee09a",
@@ -87,6 +87,14 @@
     "AGT-11",
     "AGT-12",
     "AGT-13",
+    "AGT-14",
+    "AGT-15",
+    "AGT-16",
+    "AGT-17",
+    "AGT-18",
+    "AGT-19",
+    "AGT-20",
+    "AGT-21",
     "AIPX-01",
     "AIPX-02",
     "AIPX-03",
