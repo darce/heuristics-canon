@@ -1,0 +1,6 @@
+# Editor and OS cruft; this repo is documents only, no tooling.
+.DS_Store
+.vscode/
+.claude/
+.cursor/
+.mcp.json
