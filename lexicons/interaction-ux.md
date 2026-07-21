@@ -67,6 +67,23 @@ for the `HAI-12` to `HAI-14` and `INT-11` human-AI rules, the last a partial
 (ch-4/ch-5 only) source pending re-distillation and corroboration. New rows
 enter at the lowest defensible tier and are promoted on independent convergence.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. PERC: Perception, Gestalt grouping, attention](#1-perc-perception-gestalt-grouping-attention)
+- [2. COG: Memory, cognitive load, decision cost](#2-cog-memory-cognitive-load-decision-cost)
+- [3. NAV: Information architecture, wayfinding, information scent](#3-nav-information-architecture-wayfinding-information-scent)
+- [4. INT: Feedback, direct manipulation, undo, state transitions](#4-int-feedback-direct-manipulation-undo-state-transitions)
+- [5. FORM: Data entry, validation, recovery, destructive actions](#5-form-data-entry-validation-recovery-destructive-actions)
+- [6. HAI: Human-AI interaction, calibrated reliance, correction](#6-hai-human-ai-interaction-calibrated-reliance-correction)
+- [7. VIZ: Data-to-channel encoding, glyph design, colour-for-data, comparison](#7-viz-data-to-channel-encoding-glyph-design-colour-for-data-comparison)
+- [8. UXR: Usability research, metrics, and validation](#8-uxr-usability-research-metrics-and-validation)
+- [9. Cross-lexicon links](#9-cross-lexicon-links)
+- [10. Consumption](#10-consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. PERC: Perception, Gestalt grouping, attention
 
 | ID | Trigger | Rule | Answers | T·P | Src |

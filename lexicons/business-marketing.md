@@ -24,6 +24,23 @@ missing). Phase: **s**trategy, **p**roduct, **g**tm, **o**ps.
 
 A new rule from a lived outcome enters at tier J with the outcome as its provenance.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. Strategy & Bets](#1-strategy--bets)
+- [2. Product & Validation](#2-product--validation)
+- [3. AI-Product Craft](#3-ai-product-craft)
+- [4. Go-to-Market & Distribution](#4-go-to-market--distribution)
+- [5. Negotiation & Sales Conversations](#5-negotiation--sales-conversations)
+- [6. Operations & Incentives](#6-operations--incentives)
+- [7. Bootstrap Brand Economics](#7-bootstrap-brand-economics)
+- [8. Claims & Regulatory Surface](#8-claims--regulatory-surface)
+- [9. Cross-source tensions worth keeping](#9-cross-source-tensions-worth-keeping)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. Strategy & Bets
 
 | ID | Trigger | Rule | Answers | T·P | Src |

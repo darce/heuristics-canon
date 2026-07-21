@@ -56,6 +56,20 @@ verified by three independent adversarial passes (duplication, grounding,
 falsifiability). Those rows are audited to the anchor; the book-sourced rows are
 not. Do not read uniform rigour across the table.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. Dependency & Reasoning Structure](#1-dependency--reasoning-structure)
+- [2. Assignment, Cost & Importance](#2-assignment-cost--importance)
+- [3. Knowledge Modelling as Graphs](#3-knowledge-modelling-as-graphs)
+- [4. Clustering & Entity Grouping (embeddings → graphs)](#4-clustering--entity-grouping-embeddings--graphs)
+- [5. Control Flow & Agent Loops as Graphs](#5-control-flow--agent-loops-as-graphs)
+- [6. Cross-lexicon links](#6-cross-lexicon-links)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. Dependency & Reasoning Structure
 
 | ID | Trigger | Rule | Answers | T·P | Src |

@@ -33,6 +33,23 @@ Tier: **B**locker (reads as AI slop, or is factually hollow or unverifiable),
 (avoid while composing), **e**dit (fix on revision), **v**erify (detect AI
 authorship or check sourcing).
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. Diction & Word Choice](#1-diction--word-choice)
+- [2. Sentence Structure](#2-sentence-structure)
+- [3. Paragraph & Rhythm](#3-paragraph--rhythm)
+- [4. Tone & Stance](#4-tone--stance)
+- [5. Formatting & Markup](#5-formatting--markup)
+- [6. Composition & Structure](#6-composition--structure)
+- [7. Sourcing & Citation](#7-sourcing--citation)
+- [8. Detection Posture (meta)](#8-detection-posture-meta)
+- [Cross-lexicon links](#cross-lexicon-links)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. Diction & Word Choice
 
 | ID | Trigger | Rule | Answers | T·P | Src |

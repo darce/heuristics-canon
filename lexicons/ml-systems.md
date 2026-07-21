@@ -11,18 +11,6 @@ rules end: `[GRPH-17..23]` build and cut a similarity graph; this lexicon
 governs the embeddings that feed it, the thresholds that accept its edges, the
 cohorts it is measured on, and the provenance that lets a claim be reproduced.
 
-What it covers, fourteen populated families:
-
-- **MLDATA**: dataset construction, splits, leakage, representativeness
-- **EMB**: embedding spaces, normalization, similarity, versioning
-- **EVAL**: offline, pipeline, and user-level evaluation
-- **CAL**: confidence, thresholds, calibration, abstention
-- **DRIFT**: data, concept, model, and threshold drift
-- **SERVE**: inference, action safety, serving-path architecture
-- **FAIR**: cohort and capture-condition performance
-- **PROV**: model, dataset, evidence, and derived-output provenance
-- **HITL**: human review, correction, active learning, adjudication
-- **TRACK**: temporal association and identity continuity across video frames
   (feature and object tracking, drift, occlusion, data association)
 - **VSEG**: temporal structure of a media timeline (shot-boundary detection,
   gradual transitions, shot-to-scene grouping, keyframe selection); where TRACK
@@ -73,7 +61,30 @@ Building Applications with Foundation Models* (O'Reilly 2025); Lakshmanan,
 Robinson & Munn, *Machine Learning Design Patterns* (O'Reilly 2020). New rows
 enter at the lowest defensible tier and are promoted on independent convergence.
 
-## 1. MLDATA: Dataset construction, splits, representativeness
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. MLDATA: Dataset construction, splits, leakage, representativeness](#1-mldata-dataset-construction-splits-leakage-representativeness)
+- [2. EMB: Embedding spaces, normalization, similarity, versioning](#2-emb-embedding-spaces-normalization-similarity-versioning)
+- [3. EVAL: Offline, pipeline, and user-level evaluation](#3-eval-offline-pipeline-and-user-level-evaluation)
+- [4. CAL: Confidence, thresholds, calibration, abstention](#4-cal-confidence-thresholds-calibration-abstention)
+- [5. DRIFT: Data, concept, model, and threshold drift](#5-drift-data-concept-model-and-threshold-drift)
+- [6. SERVE: Inference, action safety, serving-path architecture](#6-serve-inference-action-safety-serving-path-architecture)
+- [7. FAIR: Cohort and capture-condition performance](#7-fair-cohort-and-capture-condition-performance)
+- [8. PROV: Model, dataset, evidence, and derived-output provenance](#8-prov-model-dataset-evidence-and-derived-output-provenance)
+- [9. HITL: Human in the loop](#9-hitl-human-in-the-loop)
+- [10. TRACK: Temporal association and identity continuity across video frames](#10-track-temporal-association-and-identity-continuity-across-video-frames)
+- [11. VSEG: Temporal structure of a media timeline](#11-vseg-temporal-structure-of-a-media-timeline)
+- [12. COST: Compute budgets and cost per accepted output](#12-cost-compute-budgets-and-cost-per-accepted-output)
+- [13. FM: Foundation-model composition and adaptation](#13-fm-foundation-model-composition-and-adaptation)
+- [14. RAG: Retrieval-augmented generation pipelines](#14-rag-retrieval-augmented-generation-pipelines)
+- [15. Cross-lexicon links](#15-cross-lexicon-links)
+- [16. Consumption](#16-consumption)
+
+<!-- END GENERATED CONTENTS -->
+
+## 1. MLDATA: Dataset construction, splits, leakage, representativeness
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -95,7 +106,7 @@ enter at the lowest defensible tier and are promoted on independent convergence.
 | MLDATA-16<a name="mldata-16"></a> | A gallery or watchlist has no written membership rule — nothing states who is added, by what event, or what removes them | **A gallery needs an enrollment predicate** — when a store of identity templates can be searched, state the membership rule and enforce its bound in configuration (capture-source allowlist, enrollment-event source, membership expiry), because otherwise the gallery's population is whoever the cameras happened to see, no reviewer can enumerate who is searchable, and no subject ever leaves | Who is in this gallery, by what event did they enter, and what removes them? | S·p | face-recognition-compulsory-visibility |
 | MLDATA-17<a name="mldata-17"></a> | A dataset card, release, or down-classification calls face images anonymous or non-personal because names, identifiers, or metadata were stripped | **Removing names does not de-identify a face** — when face-bearing data is released or moved to a lower data class on a de-identification claim, back the claim with a measured re-identification attempt (match the transformed data against a gallery of the same subjects and report the rate) or apply a transform that fails that match, because the identifier is carried by the images themselves and survives every field stripped from around them, so a name-stripped release is a searchable biometric set shipped under a claim its own contents falsify (↔ biz [[CLM-04]](business-marketing.md#clm-04) the adjective is not the evidence) | What match rate did the transformed set score against a gallery of the same people? | S·r | face-recognition-compulsory-visibility |
 
-## 2. EMB: Embedding spaces, normalization, versioning
+## 2. EMB: Embedding spaces, normalization, similarity, versioning
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -205,7 +216,9 @@ enter at the lowest defensible tier and are promoted on independent convergence.
 | PROV-11<a name="prov-11"></a> | Personal data is copied into a training warehouse, feature store, or vocabulary whose read access is broader than the source system's | **A derived copy inherits the source's access controls** — grant a training or feature artifact no broader read access than the system the personal data came from, and re-check that parity whenever a new sensitive source is onboarded, because a pipeline copy silently downgrades the protection level of the original and the gap surfaces as a disclosure rather than as a permission error (who may write the control plane is sec [[SEC-16]](security.md#sec-16); extraction through the model is sec [[SEC-06]](security.md#sec-06)) | Can more people read this training data than can read the source it was copied from? | B·p | ml-test-score |
 | PROV-12<a name="prov-12"></a> | An identity-derived key (template, match result, identity score) reaches a consumer, store, or cross-domain join not listed against the purpose its source was collected for; a design cites the existing gallery as the reason a new use is cheap | **Consumers are scoped to the collection purpose, not merely registered** — when identity-derived data leaves the matcher, bind the store to one declared purpose and gate every consumer and every cross-domain join on that purpose, so a new consumer, join, or attribute domain is a new authorization with its own record rather than an addition to the consumer list, because a registry answers who reads the score but not what it may be read for, and a store built for one purpose is otherwise reachable by any consumer who can get an owner's signature (extends [[PROV-05]](ml-systems.md#prov-05), which names consumers, owners, and access; this adds the purpose their name is checked against) | For each consumer of this identity output, which collection purpose authorizes it, and what is the authorization record for the most recently added one? | S·p | face-recognition-compulsory-visibility |
 
-## 9. HITL: Human review, correction, active learning, adjudication
+## 9. HITL: Human in the loop
+
+Human review of model output: correction, active learning, adjudication.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -221,7 +234,9 @@ enter at the lowest defensible tier and are promoted on independent convergence.
 | HITL-10<a name="hitl-10"></a> | Reviewer competence is asserted from tenure, job title, decision volume, a completed training course, or self-rating, with no per-reviewer score on gold | **Practice is not proficiency** — when staffing or certifying an adjudication queue, gate assignment on each reviewer's measured gold accuracy, scored separately on items that should be accepted and items that should be rejected because the two dissociate across reviewers, and treat years in role, a completed course, and self-rated skill as non-evidence, because exposure without per-item ground-truth feedback does not build accuracy, so an unmeasured queue runs on expertise nobody has demonstrated (↔ [[HITL-03]](ml-systems.md#hitl-03) the scoring instrument; ↔ [[HITL-07]](ml-systems.md#hitl-07) experts are promoted by gold accuracy, not by title; ↔ [[NDM-01]](epistemics.md#ndm-01) recognition is trustworthy only where cues are valid and feedback is fast, which this task denies) | Which measured score put this reviewer on this queue? | S·r | forensic-face-matching |
 | HITL-11<a name="hitl-11"></a> | The review queue auto-advances or sets its per-item budget from a throughput target, and reviewer performance is reported as items per hour | **Review-time floor before throughput** — when humans adjudicate model output under a throughput target, set the minimum per-item review time from a measured accuracy-versus-time curve for this task and report gold accuracy per latency bin rather than throughput alone, because time pressure does not cost both decisions equally: it is rejection of a non-match that collapses first while acceptance rates stay flat, so the queue's numbers look healthy exactly while impostors pass (↔ biz [[OPS-01]](business-marketing.md#ops-01) the metric pays for the behaviour it rewards at 2am; ↔ [[EVAL-02]](ml-systems.md#eval-02) the critical class needs its own number; ↔ ux [[UXR-06]](interaction-ux.md#uxr-06) a time figure is honest only with a give-up and outlier rule) | At production latency, what is gold accuracy on the items that should be rejected? | S·r | forensic-face-matching |
 
-## 10. TRACK: Temporal association and identity continuity
+## 10. TRACK: Temporal association and identity continuity across video frames
+
+Feature and object tracking, drift, occlusion, data association.
 
 Keeps the same feature/object/identity attached to the same track across video frames. Builds on `EMB` (the appearance comparison) and `CAL` (the match threshold); owns the temporal-association and identity-continuity decision on top of them. Threshold values are engineering choices, not source constants. Distilled from Szeliski, *Computer Vision*, 2nd ed. (§7 feature/contour tracking, §9 motion estimation).
 
@@ -242,6 +257,8 @@ Keeps the same feature/object/identity attached to the same track across video f
 
 ## 11. VSEG: Temporal structure of a media timeline
 
+Shot-boundary detection, gradual transitions, shot-to-scene grouping, keyframe selection. Where TRACK follows one entity across frames, VSEG cuts the timeline into units.
+
 Where `TRACK-*` follows one entity *across* frames, `VSEG-*` cuts the timeline *into* units: shot, scene, keyframe. Different problem, different failure modes: a tracker loses an identity, a segmenter puts a boundary in the wrong place or invents one. Rules here fire on a shot-boundary detector, a scene-grouping step, a keyframe/thumbnail selector, or a schema that names a `shot`, `scene`, or `chapter`. Boundary quality is measured with imbalance-aware per-class precision/recall `[EVAL-02]` sliced by transition class `[EVAL-04]`, counting a **false split** (one shot reported as two) separately from a **false merge** (two shots reported as one).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -254,6 +271,8 @@ Where `TRACK-*` follows one entity *across* frames, `VSEG-*` cuts the timeline *
 | VSEG-06<a name="vseg-06"></a> | Keyframes produced by clustering are stored or displayed in cluster order | **Restore chronological order after clustering** — when keyframes come from a clustering step, re-sort by timestamp before storage or display, because cluster order drops the chronology a storyboard needs to be readable (Gao §4.3) | Is the keyframe list monotone in timestamp? | J·r | video-cataloguing-gao |
 
 ## 12. COST: Compute budgets and cost per accepted output
+
+SLOs, serving cost, capacity, retraining economics.
 
 Governs how an ML/serving system is measured, budgeted, and tuned to meet a latency/throughput/cost target without waste or blind tuning. Sits beside `SERVE` (which owns the serving path and action safety) and cross-links engineering `PERF-*`/`OBS-*` for generic performance; it keeps only the ML-serving budget and cost-per-accepted-output angle. Distilled from Gregg, *Systems Performance*, 2nd ed. (Ch2 Methodologies) and Chen et al., *Reliable Machine Learning* (SLOs, serving, continuous ML). No numeric SLO/interval is asserted; source example numbers are cited as examples.
 
@@ -275,7 +294,9 @@ Governs how an ML/serving system is measured, budgeted, and tuned to meet a late
 | COST-14<a name="cost-14"></a> | A model trains on its own served recommendations with no exploration policy and no model-version feature | **Feedback-loop economics** — when serving shapes future labels, budget exploration traffic and log the model version into the training features so world-driven and self-driven shifts can be separated, because unpriced feedback burns traffic and contaminates A/B so spend shows no lift (Chen et al. Ch10; ↔ [[MLDATA-05]](ml-systems.md#mldata-05)) | Does this model choose its own training diet, and how much traffic is priced as exploration? | S·p | reliable-machine-learning |
 | COST-15<a name="cost-15"></a> | LLM serving efficiency is reported as tokens per second or GPU-busy percentage | **Goodput, not raw throughput** — measure LLM serving efficiency as goodput (requests meeting time-to-first-token / time-per-output-token or time-to-publish SLOs) and model-FLOPs utilization, not tokens per second or accelerator busy percentage, because raw throughput and driver utilization hide SLO misses and wasted work | Does the efficiency metric count SLO-meeting requests, or just raw throughput? | S·r | ai-engineering |
 
-## 13. FM: Foundation-model application composition and adaptation
+## 13. FM: Foundation-model composition and adaptation
+
+Instruction channels, prompt and context construction, structured-output contracts, the adaptation ladder, agent-loop topology. How a pretrained generative model is configured and composed, not every rule that mentions an LLM.
 
 Governs how a *pretrained generative model* is configured, contextualized, adapted, and composed into a task or reasoning loop. FM owns the composition decisions; generic evaluation stays in EVAL, lineage in PROV, serving in SERVE, cost in COST, tool authority in security `SEC`, and user-facing correction in interaction-ux `HAI`/HITL. It is not a bucket for every rule that involves an LLM.
 
@@ -291,6 +312,8 @@ Governs how a *pretrained generative model* is configured, contextualized, adapt
 | FM-08<a name="fm-08"></a> | A model-driven loop runs "until done" with no explicit bound | **Agent loops must be bounded** — declare the loop as a state machine with explicit limits (max steps, wall-time, model tokens, tool calls, spend, and repeated-state count), stop conditions, and a terminal failure result, because "continue until done" is not a control policy and loops or false-completes; token and per-caller usage caps are [[SEC-08]](security.md#sec-08), irreversible/financial/destructive tool actions require the approval gate at [[SEC-05]](security.md#sec-05), action-volume caps are [[SERVE-02]](ml-systems.md#serve-02), per-run spend is a budget the loop must declare, and [[RES-14]](engineering.md#res-14) applies only when the loop drives a bounded producer/consumer queue | What bounds this loop's steps, tokens, spend, and repeated states, and what is its failure result? | S·w | ai-engineering |
 
 ## 14. RAG: Retrieval-augmented generation pipelines
+
+Chunking, retrieval and generation separation, reranking, context selection, abstention, citation, index freshness, deletion propagation.
 
 Governs the retrieval pipeline that grounds generation: corpus, parsing, chunking, indexing, query transformation, retrieval, reranking, context selection, generation, citation, and deletion propagation. RAG cross-links `EMB` (vector-space contract), `MLDATA`/`PROV` (corpus and index lineage), `CAL` (abstention), and `EVAL` (retrieval metrics) rather than duplicating them.
 

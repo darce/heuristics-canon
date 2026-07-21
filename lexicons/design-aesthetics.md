@@ -28,6 +28,20 @@ cite `↔ eng UI-xx` instead of restating.
 Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 **c**olour, **l**ayout, **im**age, **b**rand.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. Identity & Marks](#1-identity--marks)
+- [2. Typography](#2-typography)
+- [3. Colour & Image](#3-colour--image)
+- [4. Layout & Composition](#4-layout--composition)
+- [5. Brand & Cultural Positioning](#5-brand--cultural-positioning)
+- [6. Cross-source tensions](#6-cross-source-tensions)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. Identity & Marks
 
 | ID | Trigger | Rule | Answers | T·P | Src |

@@ -34,6 +34,20 @@ Tier: **B**locker (excludes a user class or creates legal exposure if violated),
 
 WCAG success-criterion numbers are kept in rules as shared retrieval keys.
 Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. The Working Set (96% of shipped failures)](#1-the-working-set-96-of-shipped-failures)
+- [2. Perceivable (beyond the working set)](#2-perceivable-beyond-the-working-set)
+- [3. Operable](#3-operable)
+- [4. Understandable & Robust](#4-understandable--robust)
+- [5. Process & Claims](#5-process--claims)
+- [6. Cross-lexicon amplifications](#6-cross-lexicon-amplifications)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. The Working Set (96% of shipped failures)
 
 | ID | Trigger | Rule | Answers | T·P | Src |

@@ -52,6 +52,15 @@ provenance and are promoted by independent convergence. This file is the
 canonical source: consuming repos inline cues by phase tag and cite rules by ID,
 never copying row bodies.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. FORE: Forecasting / human·agent probabilistic judgment](#1-fore-forecasting--humanagent-probabilistic-judgment)
+- [2. NDM: Naturalistic decision making](#2-ndm-naturalistic-decision-making)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. FORE: Forecasting / human·agent probabilistic judgment
 
 | ID | Trigger | Rule | Answers | T·P | Src |

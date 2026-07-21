@@ -55,6 +55,21 @@ Engineering* (`anderson-security-engineering`). Treat any `bootstrap` row as a
 strong default under review. Cross-lexicon borders cite `↔ eng/biz` rules
 instead of restating them.
 
+<!-- BEGIN GENERATED CONTENTS -->
+
+**Contents**
+
+- [1. AI/ML & Agent Security](#1-aiml--agent-security)
+- [2. Web Application Security](#2-web-application-security)
+- [3. PHP Security](#3-php-security)
+- [4. WordPress Security](#4-wordpress-security)
+- [5. PostgreSQL Security](#5-postgresql-security)
+- [6. Secure Design Principles](#6-secure-design-principles)
+- [7. Cross-lexicon links](#7-cross-lexicon-links)
+- [Consumption](#consumption)
+
+<!-- END GENERATED CONTENTS -->
+
 ## 1. AI/ML & Agent Security
 
 > `SEC-01..10` (LLM/agent) are sourced to Wilson, *The Developer's Playbook for Large Language Model Security* (`llm-security-playbook`; moved here from engineering; existing `[SEC-02]` citations still resolve). `SEC-11..16` extend the family to **adversarial ML** (training-data poisoning, backdoors/trojans, evasion, and the ML supply chain) from Sotiropoulos, *Adversarial AI* (`sotiropoulos-adversarial-ai`).
