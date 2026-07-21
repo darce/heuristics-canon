@@ -111,7 +111,7 @@ Retrieval, in a person or a model, defaults to the domain of the question being 
 
 ## Versioning
 
-Releases are annotated tags `vMAJOR.MINOR.PATCH`. Each tagged commit carries [`meta/release-manifest.json`](meta/release-manifest.json): a sha256 and rule count per lexicon file, plus the full rule-ID list, so a consumer can verify fetched bytes against the pin offline. Rule IDs are the API. A published ID disappearing is MAJOR, because every citation of it breaks; new IDs are MINOR; same-ID text changes are PATCH; a change to the consumption contract itself, such as a file moving, is also MAJOR. The level is computed from the ID diff at cut time, not chosen. Pin a tag and treat `main` as unreleased.
+Releases are annotated tags `vMAJOR.MINOR.PATCH`. Each tagged commit carries [`meta/release-manifest.json`](meta/release-manifest.json): a sha256 and rule count per lexicon file, plus the full rule-ID list, so a consumer can verify fetched bytes against the pin offline. Rule IDs are the API. A published ID disappearing is MAJOR, because every citation of it breaks; new IDs are MINOR; same-ID text changes are PATCH; a change to the consumption contract itself, such as a file moving, is also MAJOR. While the version is still 0.x, a breaking change lands in the minor slot (semver's pre-1.0 rule); 1.0.0 will be a deliberate declaration that the ID contract is stable. The level is computed from the ID diff at cut time, not chosen. Pin a tag and treat `main` as unreleased.
 
 ## Boundaries
 

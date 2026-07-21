@@ -1,8 +1,8 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "date": "2026-07-21",
-  "rules": 875,
+  "rules": 872,
   "principles": 15,
   "lexicons": {
     "lexicons/accessibility.md": {
@@ -14,12 +14,12 @@
       "rules": 93
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "bde29f79acb2c43edc7e45783a8b8d9cd9d2ac656f0761ff67b02ffe04c2e01b",
+      "sha256": "1ac730492d855c28176787c854e32de5443256ea6dd4d502c0a73e287c32a603",
       "rules": 57
     },
     "lexicons/engineering.md": {
-      "sha256": "76c38c3f85b47a7668e6a05cf888add8873beac499118cc714cbf17b03a55c7f",
-      "rules": 249
+      "sha256": "86ff1e4d606002205d7fb1851947bfff2afa38b23fdb672ddd4b00069f64d7ac",
+      "rules": 246
     },
     "lexicons/epistemics.md": {
       "sha256": "616f3dc5b77894a2ee934ad91abc37f1e373fbddf33f471927a1aafff66c75ee",
@@ -76,13 +76,10 @@
     "A11Y-27",
     "AGT-01",
     "AGT-02",
-    "AGT-03",
     "AGT-04",
-    "AGT-05",
     "AGT-06",
     "AGT-07",
     "AGT-08",
-    "AGT-09",
     "AGT-10",
     "AGT-11",
     "AGT-12",
