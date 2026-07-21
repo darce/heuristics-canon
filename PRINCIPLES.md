@@ -16,7 +16,7 @@ Distribution almost never runs straight to the audience. It passes through a rea
 - Jason Fields, in *Product Deploy Agents*, ships iOS apps past a review team paid to read every claim literally, and counts the store guidelines, the regulator, and a future plaintiff's attorney among three hostile readers [[CLM-05]](lexicons/business-marketing.md).
 - The W3C's WCAG makes "accessible" a falsifiable sentence a compliance officer tests page by page; one failing step falsifies the claim [[A11Y-22]](lexicons/accessibility.md).
 - Fields again, on the expert sign-off: give the clinician or lawyer exact quoted strings and specific yes/no questions, a five-minute read, not jargon that shifts liability without informing [[RLSE-09]](lexicons/engineering.md).
-- The same author's release gates make proximity a defect: CONDITIONAL is red, not yellow, because the shipping team is the worst judge of shipping [[RLSE-02]](lexicons/engineering.md); the agentic-coding twin treats a guard rejection as the named contract to satisfy, not a cosmetic obstacle to bypass [[AGT-08]](lexicons/engineering.md).
+- The same author's release gates make proximity a defect: CONDITIONAL is red, not yellow, because the shipping team is the worst judge of shipping [[RLSE-02]](lexicons/engineering.md); and his gate discipline reads a rejection as the named contract to satisfy, never a cosmetic obstacle to argue past [[AGT-08]](lexicons/engineering.md).
 - Ross Anderson makes the security form exact: write in one paragraph what must not happen and who may do what before choosing mechanisms, because a protection claim without a falsifiable policy is theatre [[SECD-01]](lexicons/security.md).
 
 Pop charts, app stores, government procurement, release gates, and security policies run on one mechanism: author the contract the gatekeeper reads, and let no claim ship that the gatekeeper can falsify. A session citing [[PROD-09]](lexicons/business-marketing.md) should surface [[CLM-05]](lexicons/business-marketing.md), [[A11Y-22]](lexicons/accessibility.md), [[RLSE-09]](lexicons/engineering.md), [[RLSE-02]](lexicons/engineering.md), [[AGT-08]](lexicons/engineering.md), and [[SECD-01]](lexicons/security.md) as corroboration from economies its prompt never mentioned.
@@ -99,7 +99,7 @@ Design and release engineering audit the same signal from two sides: the differe
 
 Knowledge held only in a head, a session, or a founder dies at the next compaction or succession. The cheap insurance is to record it where the next reader will find it, before the person who knows it is gone.
 
-- This canon's own agentic-coding rules externalize a fact at the moment of discovery; notes survive compaction, working memory does not [[AGT-07]](lexicons/engineering.md).
+- Felienne Hermans persists the plan, the path verdicts, and the model into notes at the moment of discovery, because externalized working memory survives the context loss that wipes the in-head version [[AGT-07]](lexicons/engineering.md).
 - Ford and Richards keep context, decision, and consequences in an architecture decision record, past the author who made them [[ARCH-07]](lexicons/engineering.md).
 - Michael Nygard puts a correlation ID on every log line, turning the post-mortem into a grep instead of an excavation [[OBS-03]](lexicons/engineering.md).
 - Susan Gunelius systemizes the founder's taste into rules and review so the brand outlives the founder [[BRND-12]](lexicons/design-aesthetics.md), and Tim Ferriss writes down the authority so the business runs without you for thirty days [[OPS-08]](lexicons/business-marketing.md).
@@ -128,7 +128,7 @@ Every artifact is derived from inputs, and the derivation is the part that decay
 - Ossama Ben Larbi's tropes corpus and Wikipedia's editors make it a blocker in prose: name the source or cut the claim [[WRIT-26]](lexicons/writing.md), and a citation that cannot be followed is worse than none [[WRIT-41]](lexicons/writing.md).
 - Two vendor summaries of Ontario's AODA contradict each other on which WCAG version binds, so the accessibility lexicon reads the regulation itself; a claim's authority is its primary ancestor, not a derived copy [[A11Y-27]](lexicons/accessibility.md).
 - Tetlock's fermi-izing is the same audit for a number: a point probability with no decomposition has no walkable ancestors; break it into sub-estimates and stated assumptions, or the figure is untraceable [[FORE-06]](lexicons/epistemics.md).
-- The agentic-coding twin makes the same check on every path and symbol citation: grep or read before asserting the anchor; a missing referent is a finding, not a license to improvise [[AGT-02]](lexicons/engineering.md).
+- Agans sends the debugger to the manual instead of the memory of it: look it up, don't guess. Applied to citations, every path and symbol is read before it is asserted, and a missing referent is a finding [[AGT-02]](lexicons/engineering.md).
 - Wilson's hallucinated-dependency gate is the package form: a model-invented package name is not a package until owner and history resolve; attackers register malware under names models invent [[SEC-09]](lexicons/security.md).
 
 A knowledge graph, a model registry, an editor, a regulator, a coding session, and a dependency manifest run the same audit: walk backward from the claim, and if the walk breaks, the claim breaks with it.
@@ -187,6 +187,7 @@ A model label, an architecture decision, a UX claim, a purchase, and an agent's 
 - The same reflex runs in older economies: Munger's disconfirmers before the forward plan [[STRAT-02]](lexicons/business-marketing.md) and Fields' hostile reader who must be able to check the claim before it ships [[CLM-05]](lexicons/business-marketing.md).
 - Tetlock's outside view is the cheap prior before narrative lock-in: start from the base rate for this *class* of things, then adjust with the inside view; evidence before the story commits the estimate [[FORE-05]](lexicons/epistemics.md).
 - Feathers makes the legacy-code form exact: pin actual current behaviour with a characterization test before the edit commits a new contract [[TEST-03]](lexicons/engineering.md).
+- Fields applies it to the smallest commitment there is, the word "done": a completion claim carries the command and the decisive output line, or it is not a claim [[AGT-04]](lexicons/engineering.md).
 - Ferriss makes the commercial form exact: "users said they'd buy" is not demand; only a costly action (purchase, preorder, deposit) is evidence before the inventory or capability commitment [[GTM-01]](lexicons/business-marketing.md).
 - Ameisen refuses the model commitment without a deterministic baseline first: the heuristic is the evidence that the ML path has anything to beat [[AIPX-01]](lexicons/business-marketing.md), [[EVAL-01]](lexicons/ml-systems.md).
 - Gothelf and Seiden's Truth Curve scales fidelity to market evidence: a high-fidelity plan without the evidence to support it is a commitment the validation level cannot yet justify [[PROD-05]](lexicons/business-marketing.md).
@@ -217,6 +218,17 @@ Every number in this corpus is produced by an apparatus, and the apparatus is us
 - The tension worth keeping: the fix is not "never let the team build the instrument", which no organization can afford. It is that the *sampling frame and the divisor* must be fixed outside the system, while the measurement itself may stay in-house.
 
 Performance engineering, dataset construction, biometric evaluation, usability research, testing, and operations each arrived alone, from instruments that share no vocabulary: ask what the system under test could do to make this number better without doing anything better.
+
+## 16. Fail loudly, succeed quietly
+
+An outcome channel earns trust in both directions at once: failure must be impossible to miss, and success must be impossible to confuse with noise. Systems break this symmetry two ways, and both corrupt the channel: chatter on the success path buries the one line that matters, and a swallowed failure converts an error into a silent lie. The discipline is one mechanism seen from both sides: keep the success path clean enough that any output means something, and make every failure surface where its consumer actually looks.
+
+- Kernighan and Pike built the split into the operating system: stderr exists because error messages "did start disappearing into pipelines", and the composable program stays silent on success [[AGT-15]](lexicons/engineering.md); its outcome is an exit status a caller can branch on without parsing prose [[AGT-21]](lexicons/engineering.md).
+- Raymond states the repair rule two decades later, and Fields arrives from shipping products: when you must fail, fail noisily and as soon as possible, because a crash is honest and a silent wrong answer is not [[AGT-10]](lexicons/engineering.md), [[RLSE-05]](lexicons/engineering.md).
+- The observability authors run the same audit on telemetry: silence is not success, and dead instrumentation must break loudly, because a quiet dashboard and a healthy system are indistinguishable until you enforce the difference [[OBS-08]](lexicons/engineering.md).
+- The converse guard keeps the loud side honest: an ERROR that does not require operator action trains operators to ignore ERROR, which is how the loud channel goes quiet in the reader instead of the emitter [[OBS-04]](lexicons/engineering.md).
+
+Unix stream design, product release engineering, and production observability arrived separately: a channel where success chatters or failure whispers is not reporting the system, and the fix is symmetrical silence discipline, not more logging.
 
 ---
 

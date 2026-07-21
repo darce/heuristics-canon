@@ -42,6 +42,12 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | IDNT-08 | name has modular structure or metaphor | **Name-gift lockup** — build the wordmark from what the name gives free (count, letterform, meaning) | What free structure does the name give us? | S·b | paula-scher-design ch-8 |
 | IDNT-09 | product is culture but the work is only craft polish | **Cultural interpreter** — place the object in a world (instrument, gallery, street, archive); the world does half the signaling | What cultural world does this belong to? | B·i | design-indaba-dialogues ch-2 |
 | IDNT-10 | one typographic voice on the cover, another inside | **Form–content harmony** — one axial/typographic system end-to-end (↔ eng [[NAME-04]](engineering.md) consistent-and-mediocre beats good-and-inconsistent) | Does every part share one system? | S·i | asymmetric-typography ch-4 |
+| IDNT-11 | product family forced into one cosmetic set look though the functions differ | **Function-discrete form** — unity is the best fulfilment of each role, not matching silhouettes; each object earns its form from use | Does each object earn its form from use, or only from the set? | J·i | bauhaus-droste p040 |
+| IDNT-12 | every variant is a unique one-off tooling or bespoke build | **Modular parts kit** — a limited set of simple distinct parts combines into the product variants; variants share a part inventory | Can variants share a part inventory? | J·i | bauhaus-droste p035 |
+| IDNT-13 | industrial product hides how it works behind cosmetic skin | **Reveal function** — make working parts legible and state industrial materials honestly, so a user can see how it works without a legend (↔ [[INT-01]](interaction-ux.md) an affordance shown is a function revealed; both refuse surfaces that disguise what a thing does) | Can a user see how it works without a legend? | J·i | bauhaus-droste p040 |
+| IDNT-14 | mark brief starts from an illustration or mascot only | **Primitive geometric mark** — build the institutional mark from the elementary primitives the system language already uses, so the mark reuses the kit instead of inventing a one-off pictogram | Does the mark reuse the system kit, or invent a one-off pictogram? | J·i | bauhaus-droste p050 |
+| IDNT-15 | prototype optimized for hand-craft ornament, not reproduction | **Machine-form economy** — a mass-production model maximizes simplicity and economy of time and material via elementary volumes; the form must hold when made by machine thousands of times | Would this form still hold if made by machine thousands of times? | J·i | bauhaus-droste p039 |
+| IDNT-16 | catalogue sprawls into vanity variants, or the brand hero is a bespoke showpiece no SKU carries | **Standard-range discipline** — replace an excessive range with a small number of standardized models, and let the quiet repeatable product carry the identity rather than the exhibition piece (↔ [[BRND-12]](design-aesthetics.md) both make the repeatable system, not the one-off, the thing that outlives its author) | Which models are necessary, and what is our standard product rather than our showpiece? | J·i | bauhaus-droste p088 |
 
 ## 2. Typography
 
@@ -58,6 +64,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | TYPE-09 | webfont blocks first paint | **FOUT-friendly body** — font-display fallback + metric-compatible fallbacks; readable before the font arrives (↔ ml [[COST-10]](ml-systems.md) when the primary path is slow, the fallback must already be usable) | Is text readable pre-webfont? | B·t | web-typography ch-15 |
 | TYPE-10 | tracking used to force a width | **Intact word shape** — never letter-space lowercase to fill; fix the structure instead | Is tracking solving a layout problem? | S·t | asymmetric-typography ch-9 |
 | TYPE-11 | brand promise is plurality/community | **Width-as-metaphor** — mixed widths/weights can encode "many voices" deliberately | Does the lettering read as one voice or a crowd? | J·t | paula-scher-design ch-2 |
+| TYPE-12 | advertising or landing lettering sells by persuasion tone or slogan density | **Facts-first advertising type** — convince through clear presentation of facts and data, not propaganda; if the hype words are stripped, the type must still deliver the claim (↔ [[WRIT-28]](writing.md) both replace prestige noise with a named, checkable effect) | If we strip the hype words, does the type still deliver the claim? | J·t | bauhaus-droste p110 |
 
 ## 3. Colour & Image
 
@@ -75,6 +82,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | COL-10 | imagery pipeline untested across skin tones | **Inclusive grade test** — preserve detail and dignity across skin; doubly binding for an accessibility product (↔ ml [[MLDATA-06]](ml-systems.md) representative skin-tone labels for appearance tasks) | Whose skin was the pipeline built for? | B·im | colour-theory-cianci ch-15 |
 | COL-11 | screen palette reused for print/merch | **Dual-medium spec** — plan the CMYK/gamut loss before it surprises | Where does this colour die in print? | S·c | colour-theory-cianci ch-12 |
 | COL-12 | multi-color palette approved only as equal-area swatches (style tile, token strip, brand board) | **Area-proportion proof** — equal-area swatches are for comparison, not application; Wada's method page says equal-quantity use should normally be avoided and that colours at large area read much paler than chips, so re-proof the set at its real area roles (large field vs button vs hairline) (↔ [[COL-02]](design-aesthetics.md) both refuse swatch-isolation approval; that rule varies the ground, this one varies the quantity) | Did we approve this set only as equal chips, or at the areas it will actually occupy? | J·c | dictionary-of-color-combinations p024 |
+| COL-13 | structure or furniture coloured to decorate rather than to clarify joints and planes | **Constructive colour** — use clear colour to emphasize constructive character, never as applied ornament; the colour should explain the structure (↔ [[COL-01]](design-aesthetics.md) both put the palette's job before its taste) | Does the colour explain the structure? | J·c | bauhaus-droste p042 |
 
 ## 4. Layout & Composition
 
@@ -90,6 +98,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | LAY-08 | first sketch is a style before the content exists | **Content-out** — start from the real material; a moodboard is not a structure | What is the content demanding? | S·l | design-indaba-dialogues ch-9 |
 | LAY-09 | composition apes modernist looks | **Method, not motifs** — asymmetry serves reading order; "looking Bauhaus" is ornament by other means | Is this order serving reading? | S·l | asymmetric-typography ch-13 |
 | LAY-10 | surface shipped on framework defaults — stock accent, linear easing, whitespace-only empty state | **Assembled vs designed** — users can't articulate unchosen details but stop trusting because of them; every default that survives must be a choice (generalizes [[COL-05]](design-aesthetics.md)'s unchosen grey to the whole surface; ↔ eng [[RLSE-04]](engineering.md) audits the states, this rule audits the ownership) | Which of these values did a human actually choose? | S·l | product-deploy-agents-fields ch-3 |
+| LAY-11 | a large field or background pattern is loud, figurative, or high-contrast by default | **Quiet field enlarges** — barely noticeable texture makes the field recede and the space read larger; a loud field competes with the content sitting on it | Does the field recede, or compete with what sits on it? | J·l | bauhaus-droste p090 |
 
 ## 5. Brand & Cultural Positioning
 
@@ -131,6 +140,7 @@ Every `Src` cell above names one of these. The citation is the work itself; the 
 | Src | Source | Rules here |
 |---|---|---|
 | `asymmetric-typography` | Jan Tschichold, *Asymmetric Typography* (Faber & Faber / Cooper & Beatty, 1967 English ed.; integral translation of *Typographische Gestaltung*, Basle 1935; tr. Ruari McLean, author-approved) | 11 |
+| `bauhaus-droste` | bauhaus-droste | 9 |
 | `colour-theory-cianci` | Dr Lisa Cianci, *Colour Theory: Understanding and Working with Colour* (RMIT Open Press, 2023; CC BY-NC 4.0) | 10 |
 | `design-indaba-dialogues` | *Design Indaba Dialogues* (Times Media Books / Design Indaba, 2014 e-book of interviews originally 2001–2011) | 9 |
 | `dictionary-of-color-combinations` | dictionary-of-color-combinations | 1 |

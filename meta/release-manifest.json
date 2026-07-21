@@ -1,9 +1,9 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "date": "2026-07-21",
-  "rules": 872,
-  "principles": 15,
+  "rules": 881,
+  "principles": 16,
   "lexicons": {
     "lexicons/accessibility.md": {
       "sha256": "18418a93a9aef7a7efb9ef804a6546d3c228db47ef9ac2a533359ca1855c9cd6",
@@ -14,11 +14,11 @@
       "rules": 93
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "1ac730492d855c28176787c854e32de5443256ea6dd4d502c0a73e287c32a603",
-      "rules": 57
+      "sha256": "43ae3e7b9f677f4b30e809b0b530dda75793509cd7c09b5266a695338e953fe0",
+      "rules": 66
     },
     "lexicons/engineering.md": {
-      "sha256": "86ff1e4d606002205d7fb1851947bfff2afa38b23fdb672ddd4b00069f64d7ac",
+      "sha256": "528b41c741ec753603cc7e2a825e57a874dd570e6673932d205998eed558f4e3",
       "rules": 246
     },
     "lexicons/epistemics.md": {
@@ -34,11 +34,11 @@
       "rules": 88
     },
     "lexicons/ml-systems.md": {
-      "sha256": "2fe1bd2bef5fa7b53c315ba598ac765ec58e9d71855067739e49fec0d72c4493",
+      "sha256": "ee8b6af1f3c24949182b28630f768b7b7d8f57ef6720debe2ea1fb450f6bc445",
       "rules": 154
     },
     "lexicons/security.md": {
-      "sha256": "283e60f9e4d7d6f20bd30c60003354e077c0a3abfe734b13c7887c051f8d85d0",
+      "sha256": "85a15e2f73de9a4ceab1056781cdd15fa279712106ceb75311ebf276dd660b85",
       "rules": 109
     },
     "lexicons/writing.md": {
@@ -192,6 +192,7 @@
     "COL-10",
     "COL-11",
     "COL-12",
+    "COL-13",
     "CON-01",
     "CON-02",
     "CON-03",
@@ -440,6 +441,12 @@
     "IDNT-08",
     "IDNT-09",
     "IDNT-10",
+    "IDNT-11",
+    "IDNT-12",
+    "IDNT-13",
+    "IDNT-14",
+    "IDNT-15",
+    "IDNT-16",
     "INT-01",
     "INT-02",
     "INT-03",
@@ -461,6 +468,7 @@
     "LAY-08",
     "LAY-09",
     "LAY-10",
+    "LAY-11",
     "MLDATA-01",
     "MLDATA-02",
     "MLDATA-03",
@@ -781,6 +789,7 @@
     "TYPE-09",
     "TYPE-10",
     "TYPE-11",
+    "TYPE-12",
     "UI-01",
     "UI-02",
     "UI-03",
