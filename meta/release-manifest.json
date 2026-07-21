@@ -1,48 +1,48 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "date": "2026-07-21",
-  "rules": 874,
+  "rules": 875,
   "principles": 15,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "36524b315578c4207c45b532d7216a3c6882db7624067b8efa6e392ddc09ae05",
+      "sha256": "18418a93a9aef7a7efb9ef804a6546d3c228db47ef9ac2a533359ca1855c9cd6",
       "rules": 27
     },
     "lexicons/business-marketing.md": {
-      "sha256": "7a9fa54c0081c60de71ac56ba1c1f1563067a0f8e89da649ffffb905a97c2f0e",
+      "sha256": "20abba429760c64f264c20fadb5a4aacb4cf08827110cf1ccf333a5f4ac5c7ff",
       "rules": 93
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "6128035b4335ff024d19514534f9fdd1bf45a1a194d8f36d377c024208c2aebd",
-      "rules": 56
+      "sha256": "3988bc51035a381b94dee590d032bdf62291ba2fd81c9b340133e731fe96ca6d",
+      "rules": 57
     },
     "lexicons/engineering.md": {
-      "sha256": "514e9ed0d47630fa7e75c5a69ce9086257f2fb740c68b84f7aeb4d709fcae707",
+      "sha256": "76c38c3f85b47a7668e6a05cf888add8873beac499118cc714cbf17b03a55c7f",
       "rules": 249
     },
     "lexicons/epistemics.md": {
-      "sha256": "e2f120c15ae29f272d6c151c37670065fd52430ba7d14a0c2dad3dc9f5dee09a",
+      "sha256": "616f3dc5b77894a2ee934ad91abc37f1e373fbddf33f471927a1aafff66c75ee",
       "rules": 24
     },
     "lexicons/graph-theory.md": {
-      "sha256": "84730c0b6c41af62f328987ef83108d2582edc94a5b8c71bc08087e17b9d4922",
+      "sha256": "6d6e79d097d9acf181ba6bd2e69ed66c4029033ecba79008af038649ec069f3d",
       "rules": 30
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "855c357872fa4eb54be638f0d42f257ad0a5b7efd12dc39bccaffc9cc7770a6a",
+      "sha256": "99ac98a064ed91647ad573023ee3488c3b26c604262549018be308e96e70da17",
       "rules": 88
     },
     "lexicons/ml-systems.md": {
-      "sha256": "f624ffac7f48e3a0abe50fa2fcad5b208c8607c75bc67a1d1cdbd8f1dbea28e3",
+      "sha256": "2fe1bd2bef5fa7b53c315ba598ac765ec58e9d71855067739e49fec0d72c4493",
       "rules": 154
     },
     "lexicons/security.md": {
-      "sha256": "ab9d0df508eaf5794afd13a2df930d9adf6bc3b969cb861912cedb13fadfb805",
+      "sha256": "283e60f9e4d7d6f20bd30c60003354e077c0a3abfe734b13c7887c051f8d85d0",
       "rules": 109
     },
     "lexicons/writing.md": {
-      "sha256": "8d6436b4fcaf35c23acefa6329d08c1bb6a4430a3dd147636f540f8bc2a84c14",
+      "sha256": "2cc5f1d66ac588d21445ac4536898f7960e7c46a261e9f836e4b0891cc29b41b",
       "rules": 44
     }
   },
@@ -194,6 +194,7 @@
     "COL-09",
     "COL-10",
     "COL-11",
+    "COL-12",
     "CON-01",
     "CON-02",
     "CON-03",
