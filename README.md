@@ -98,6 +98,7 @@ A rule fires on an artifact: a schema, a migration, a query plan, a stream-windo
 | strategy or product bet | STRAT · PROD · AIPX · BOOT · NEG · FORE · NDM · RSCH |
 | estimate or forecast in a plan | FORE · STRAT · EVAL · CAL · NDM · MEAS |
 | choosing a problem or research direction | RSCH · STRAT · FORE · NDM |
+| data analysis or experiment | EXP · MEAS · EVAL · FORE · MLDATA |
 | pricing positioning or launch | GTM · CLM · PROD · BRND |
 | brand or visual identity change | IDNT · BRND · TYPE · COL · LAY |
 | php or wordpress change | PHP · WP · SEC · WEB |
