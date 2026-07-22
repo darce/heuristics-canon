@@ -1,16 +1,16 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "date": "2026-07-22",
   "rules": 1022,
   "principles": 16,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "3c8e7d5287ae70fdc5d7891a8be3f90a141b7648c00e87f80b9137d6865cdf56",
+      "sha256": "d878b2d60c7fd0cefa70616e004021c11b9f6f8bf4beb2973f216e5d8d4539b6",
       "rules": 38
     },
     "lexicons/business-marketing.md": {
-      "sha256": "d6f865400a333f07e2db3a727e106db33e408d781b2fa48ad09a3de01b053364",
+      "sha256": "c3795ba9118bbd401419ebee2fe27b558695543c0c4a00aeaa8e002d3de8bb45",
       "rules": 96
     },
     "lexicons/design-aesthetics.md": {
@@ -18,7 +18,7 @@
       "rules": 70
     },
     "lexicons/engineering.md": {
-      "sha256": "97a19e7b0d8de00087ba6fa09529cf956ef1e4ffb3dd1a44b0d9a894d05657fd",
+      "sha256": "662fb65a0ca5c015819c47a805617b7ce17af031850f917e15064ae388d5d2b7",
       "rules": 274
     },
     "lexicons/epistemics.md": {
@@ -30,7 +30,7 @@
       "rules": 31
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "ef02980709fa3a5b16ee2e5cd459a46a05f3e2667c454ea7a89adc07a313b741",
+      "sha256": "b6ac87536048c5ca96141128c56c190b693a29d7d7791054c3ae990bfe5d673f",
       "rules": 88
     },
     "lexicons/ml-systems.md": {
@@ -42,7 +42,7 @@
       "rules": 109
     },
     "lexicons/writing.md": {
-      "sha256": "76c00b63ed8b878714776d4823af44aa61fe5035412d7c808aeb2d26c307bb68",
+      "sha256": "24d1a260784ec6cd6afd7d38dabc9d1aa307fa60bd436c1d38b1dbe585389f78",
       "rules": 44
     }
   },

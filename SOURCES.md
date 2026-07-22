@@ -22,7 +22,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-asymmetric-typography"></a>`asymmetric-typography` | Tschichold, Jan. *Asymmetric Typography*. Translated by Ruari McLean, Faber & Faber / Cooper & Beatty, 1967 | design-aesthetics | 11 |
 | <a name="src-atag20"></a>`atag20` | W3C. *Authoring Tool Accessibility Guidelines (ATAG) 2.0*. W3C Recommendation, 24 Sept. 2015, www.w3.org/TR/ATAG20/ | accessibility | 6 |
 | <a name="src-bauhaus-droste"></a>`bauhaus-droste` | Droste, Magdalena. *Bauhaus 1919-1933: Reform and Avant-Garde*. Taschen, 2019 | design-aesthetics | 9 |
-| <a name="src-bootstrap"></a>`bootstrap` | bootstrap (no distillation on record) | security | 4 |
+| <a name="src-bootstrap"></a>`bootstrap` | bootstrap (no distillation on record) | engineering, interaction-ux, security | 8 |
 | <a name="src-bruch-vector-retrieval"></a>`bruch-vector-retrieval` | Bruch, Sebastian. *Foundations of Vector Retrieval*. Springer Nature, Cham, 2024. Primary source. [ISBN 978-3-031-55181-9 | ml-systems | 3 |
 | <a name="src-bruch-vector-retrieval-zezula-similarity-search"></a>`bruch-vector-retrieval-zezula-similarity-search` | Bruch, Sebastian. *Foundations of Vector Retrieval*. Springer Nature, Cham, 2024. Primary source. [ISBN 978-3-031-55181-9 | ml-systems | 2 |
 | <a name="src-building-knowledge-graphs"></a>`building-knowledge-graphs` | Barrasa, Jesús, and Jim Webber. *Building Knowledge Graphs: A Practitioner's Guide*. O'Reilly Media, 2023 | graph-theory | 4 |
@@ -33,7 +33,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-debugging-9-rules"></a>`debugging-9-rules` | Agans, David J. *Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems*. AMACOM, 2002 | engineering | 9 |
 | <a name="src-design-indaba-dialogues"></a>`design-indaba-dialogues` | *Design Indaba Dialogues*. Times Media Books / Design Indaba, 2014 | design-aesthetics | 9 |
 | <a name="src-designing-ai-interfaces"></a>`designing-ai-interfaces` | Macfadyen, Louise. *Designing AI Interfaces: Design Principles for Creative and Autonomous AI*. O’Reilly, 2026 | business-marketing, interaction-ux | 9 |
-| <a name="src-designing-data-intensive-applications"></a>`designing-data-intensive-applications` | Kleppmann, Martin. *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*. 1st ed., O'Reilly, 2017 | engineering, graph-theory | 42 |
+| <a name="src-designing-data-intensive-applications"></a>`designing-data-intensive-applications` | Kleppmann, Martin. *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*. 1st ed., O'Reilly, 2017 | engineering, graph-theory | 43 |
 | <a name="src-designing-interfaces-int-form"></a>`designing-interfaces-int-form` | Tidwell, Brewer, and Valencia. *Designing Interfaces*. 3rd ed., O’Reilly, 2019 | interaction-ux | 14 |
 | <a name="src-designing-interfaces-nav"></a>`designing-interfaces-nav` | Tidwell, Brewer, and Valencia. *Designing Interfaces*. 3rd ed., O’Reilly, 2019 | interaction-ux | 8 |
 | <a name="src-designing-ml-systems"></a>`designing-ml-systems` | Huyen, Chip. *Designing Machine Learning Systems*. O'Reilly, 2022 | ml-systems | 16 |
@@ -58,7 +58,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-handbook-face-recognition"></a>`handbook-face-recognition` | Li, Stan Z., Anil K. Jain, and Jiankang Deng, editors. *Handbook of Face Recognition: The Deep Neural Network Approach*. 3rd ed., Springer, 2024 | ml-systems, security | 7 |
 | <a name="src-hidden-technical-debt-ml"></a>`hidden-technical-debt-ml` | Sculley, D., et al. "Hidden Technical Debt in Machine Learning Systems." *NeurIPS*, 2015 | ml-systems | 14 |
 | <a name="src-hubbard-measure-anything-cybersecurity"></a>`hubbard-measure-anything-cybersecurity` | Douglas W. Hubbard and Richard Seiersen, *How to Measure Anything in Cybersecurity Risk*, 2nd ed., 2023 | epistemics | 12 |
-| <a name="src-human-centered-ai"></a>`human-centered-ai` | Shneiderman, Ben. *Human-Centered AI*. Oxford University Press, 2022 | interaction-ux | 9 |
+| <a name="src-human-centered-ai"></a>`human-centered-ai` | Shneiderman, Ben. *Human-Centered AI*. Oxford University Press, 2022 | interaction-ux | 7 |
 | <a name="src-human-in-the-loop-ml"></a>`human-in-the-loop-ml` | Monarch, Robert (Munro). *Human-in-the-Loop Machine Learning*. Manning, 2021 | interaction-ux, ml-systems | 13 |
 | <a name="src-information-visualization-ware"></a>`information-visualization-ware` | Ware, Colin. *Information Visualization: Perception for Design*. 4th ed., Morgan Kaufmann, 2020 | interaction-ux | 10 |
 | <a name="src-interaction-of-color"></a>`interaction-of-color` | Albers, Josef. *Interaction of Color*. Text of the original edition with selected plates. Yale University Press, New Haven and London, 1963; paperbound edition 1971 (fourth printing 1972) | design-aesthetics | 4 |
@@ -69,7 +69,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-klf-the-manual"></a>`klf-the-manual` | Drummond, Bill, and Jimmy Cauty. *The Manual (How to Have a Number One the Easy Way)*. KLF Publications, 1988 | business-marketing | 14 |
 | <a name="src-latency-enberg"></a>`latency-enberg` | Enberg, Pekka. *Latency: Reduce Delay in Software Systems*. Manning, 2026 | engineering | 4 |
 | <a name="src-latency-reduce-delay-in-software-systems"></a>`latency-reduce-delay-in-software-systems` | Enberg, Pekka. *Latency: Reduce delay in software systems*. Manning, 2026 | engineering | 7 |
-| <a name="src-lean-ux"></a>`lean-ux` | Gothelf, Jeff, and Josh Seiden. *Lean UX: Designing Great Products with Agile Teams*. 3rd ed., O’Reilly, n.d | business-marketing | 9 |
+| <a name="src-lean-ux"></a>`lean-ux` | Gothelf, Jeff, and Josh Seiden. *Lean UX: Designing Great Products with Agile Teams*. 3rd ed., O’Reilly, n.d | business-marketing | 8 |
 | <a name="src-learning-domain-driven-design"></a>`learning-domain-driven-design` | Khononov, Vlad. *Learning Domain-Driven Design: Aligning Software Architecture and Business Strategy*. O'Reilly, 2021 | engineering | 8 |
 | <a name="src-linkedin-messaging-guide"></a>`linkedin-messaging-guide` | Disney, Daniel. *The Ultimate LinkedIn Messaging Guide: How to Use Written, Audio, Video and InMail Messages to Start More Conversations and Increase Sales*. Wiley, 2023 | business-marketing | 4 |
 | <a name="src-llm-security-playbook"></a>`llm-security-playbook` | Wilson, Steve. *The Developer's Playbook for Large Language Model Security: Building Secure AI Applications*. 1st ed., O'Reilly, 2024 | engineering, security | 11 |
@@ -80,7 +80,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-ml-test-score"></a>`ml-test-score` | Breck, et al. "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction." *IEEE Big Data*, 2017 | engineering, ml-systems | 8 |
 | <a name="src-model-cards"></a>`model-cards` | Mitchell, et al. "Model Cards for Model Reporting." *ACM FAT*, 2019 | ml-systems | 5 |
 | <a name="src-modern-php-security"></a>`modern-php-security` | Chauchefoin, Thomas, and Lena David. "Modern PHP Security." *sec4dev 2020*, Vienna, 27 Feb. 2020. Synacktiv. Conference slides (extraction is short; many mechanisms appear as bullet recommendations rather than full prose) | security | 9 |
-| <a name="src-modern-software-engineering"></a>`modern-software-engineering` | Farley, David. *Modern Software Engineering: Doing What Works to Build Better Software Faster*. Pearson, 2022 | engineering | 13 |
+| <a name="src-modern-software-engineering"></a>`modern-software-engineering` | Farley, David. *Modern Software Engineering: Doing What Works to Build Better Software Faster*. Pearson, 2022 | engineering | 14 |
 | <a name="src-never-split-the-difference"></a>`never-split-the-difference` | Voss, Chris, and Tahl Raz. *Never Split the Difference: Negotiating As If Your Life Depended On It*. HarperBusiness, 2016 | business-marketing | 9 |
 | <a name="src-nist-frvt-demographics"></a>`nist-frvt-demographics` | Grother, Ngan, and Hanaoka. *Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects*. NISTIR 8280, 2019 | ml-systems | 8 |
 | <a name="src-observability-engineering"></a>`observability-engineering` | Majors, Charity, Liz Fong-Jones, and George Miranda. *Observability Engineering*. O'Reilly, 2022 | engineering | 6 |
@@ -103,7 +103,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-refactoring-typescript"></a>`refactoring-typescript` | Hickey, James. *Refactoring TypeScript: Keeping your code healthy*. Packt, 2019 | engineering | 6 |
 | <a name="src-refactoring-ui"></a>`refactoring-ui` | Wathan, Adam, and Steve Schoger. *Refactoring UI*. 2018 | engineering | 8 |
 | <a name="src-reinhart-statistics-done-wrong"></a>`reinhart-statistics-done-wrong` | Alex Reinhart, *Statistics Done Wrong: The Woefully Complete Guide*, No Starch Press, 2015 | epistemics | 6 |
-| <a name="src-release-it"></a>`release-it` | Nygard, Michael T. *Release It! Design and Deploy Production-Ready Software*. 1st ed., Pragmatic Bookshelf, 2007 | engineering | 23 |
+| <a name="src-release-it"></a>`release-it` | Nygard, Michael T. *Release It! Design and Deploy Production-Ready Software*. 1st ed., Pragmatic Bookshelf, 2007 | engineering | 20 |
 | <a name="src-reliable-machine-learning"></a>`reliable-machine-learning` | Chen, Cathy, et al. *Reliable Machine Learning: Applying SRE Principles to ML in Production*. O'Reilly, 2022 | ml-systems | 10 |
 | <a name="src-restful-web-api-patterns"></a>`restful-web-api-patterns` | Amundsen, Mike. *RESTful Web API Patterns and Practices Cookbook*. O'Reilly, 2022 | engineering | 11 |
 | <a name="src-screen-parsing"></a>`screen-parsing` | Wu, Jason; Zhang, Xiaoyi; Nichols, Jeffrey; Bigham, Jeffrey P. *Screen Parsing: Towards Reverse Engineering of UI Models from Screenshots*. UIST '21. Apple / CMU | accessibility | 2 |
@@ -122,7 +122,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-surveillance-fiqa"></a>`surveillance-fiqa` | Jiang, Yanwei, Wei Sun, Yingjie Zhou, Xiangyang Zhu, Yuqin Cao, Jun Jia, Yunhao Li, Sijing Wu, Dandan Zhu, Xiongkuo Min, and Guangtao Zhai. "Surveillance Facial Image Quality Assessment: A Multi-dimensional Dataset and Lightweight Model." *IEEE Transactions on Circuits and Systems for Video Technology* (extraction: preprint-style pages; no arXiv id in text) | ml-systems | 2 |
 | <a name="src-systems-performance-gregg"></a>`systems-performance-gregg` | Gregg, Brendan. *Systems Performance: Enterprise and the Cloud*. 2nd ed., Addison-Wesley, 2020 | ml-systems | 4 |
 | <a name="src-team-topologies"></a>`team-topologies` | Skelton, Matthew, and Manuel Pais. *Team Topologies: Organizing Business and Technology Teams for Fast Flow*. 2nd ed., IT Revolution, 2025 | engineering | 11 |
-| <a name="src-technological-republic"></a>`technological-republic` | Karp, Alexander C., and Nicholas W. Zamiska. *The Technological Republic: Hard Power, Soft Belief, and the Future of the West*. Crown Currency, 2025 | business-marketing | 5 |
+| <a name="src-technological-republic"></a>`technological-republic` | Karp, Alexander C., and Nicholas W. Zamiska. *The Technological Republic: Hard Power, Soft Belief, and the Future of the West*. Crown Currency, 2025 | business-marketing | 6 |
 | <a name="src-thinking-in-systems"></a>`thinking-in-systems` | Meadows, Donella H. *Thinking in Systems: A Primer*. Edited by Diana Wright. Chelsea Green, 2008 | engineering | 4 |
 | <a name="src-trustworthy-controlled-experiments"></a>`trustworthy-controlled-experiments` | Kohavi, Ron, Diane Tang, and Ya Xu. *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing*. Cambridge University Press, 2020 | epistemics | 17 |
 | <a name="src-unix-programming-environment"></a>`unix-programming-environment` | Kernighan, Brian W., and Rob Pike. *The UNIX Programming Environment*. Prentice-Hall, 1984 | engineering | 1 |
@@ -135,7 +135,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-wcag22-accessibility"></a>`wcag22-accessibility` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 23 |
 | <a name="src-wcag22-accessibility-ch-1-product-deploy-agents-fields"></a>`wcag22-accessibility-ch-1-product-deploy-agents-fields` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 1 |
 | <a name="src-web-typography"></a>`web-typography` | Rutter, Richard. *Web Typography: A handbook for designing beautiful and effective responsive typography*. Ampersand Type, 2017 | design-aesthetics | 9 |
-| <a name="src-why-programs-fail"></a>`why-programs-fail` | Zeller, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. 2nd ed., Morgan Kaufmann, 2009 | engineering | 7 |
+| <a name="src-why-programs-fail"></a>`why-programs-fail` | Zeller, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. 2nd ed., Morgan Kaufmann, 2009 | engineering | 6 |
 | <a name="src-wordpress-plugin-development"></a>`wordpress-plugin-development` | Williams, Brad, Justin Tadlock, and John James Jacoby. *Professional WordPress Plugin Development*. 2nd ed., John Wiley & Sons, 2020 | security | 3 |
 | <a name="src-wordpress-security"></a>`wordpress-security` | WordPress Developer Resources. "Plugin/Theme Security Handbooks and Code Reference." *developer.wordpress.org*, n.d., https://developer.wordpress.org | security | 6 |
 | <a name="src-wordpress-security-whitepaper"></a>`wordpress-security-whitepaper` | WordPress Security Team. *WordPress Security White Paper*. WordPress.org, last updated Sept. 2025. Official process-and-platform white paper (CC0 1.0 for document text) | security | 1 |
