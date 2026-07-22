@@ -1,25 +1,25 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "date": "2026-07-21",
-  "rules": 881,
+  "rules": 902,
   "principles": 16,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "971656dec1b92b3656bfc08864c28ada3d8a731597bf3a399acde5a7200f3917",
-      "rules": 27
+      "sha256": "a172df4bf8b24fa5dc131e04dfd9f729a971d5529a1e6e8d8ea445299eab366a",
+      "rules": 32
     },
     "lexicons/business-marketing.md": {
       "sha256": "60f5a9a83b8456752fcda8ced4974ba2cc828299adaddf7df943d924d7882e3e",
       "rules": 93
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "923666cd23c9d1dd8810d2d594edb28c85522b21dc39f9c5ba62218166df24f7",
-      "rules": 66
+      "sha256": "e61c51147100296af34cab33af2c366921ef0a11d53f655d8a137ef631aea6fa",
+      "rules": 70
     },
     "lexicons/engineering.md": {
-      "sha256": "94ab0360b3bc3a23085de8a205043c34af55ac4f8a1ceba7886a62543a55cdf6",
-      "rules": 246
+      "sha256": "db8abc91dae9f65cb363631c020fdb1769db7df280d2dbbdf19175d0579f702f",
+      "rules": 250
     },
     "lexicons/epistemics.md": {
       "sha256": "57b92ee6d3b886588d404d93fd19501e2b4c138de23260e45f92bd75c2d0d9c2",
@@ -34,11 +34,11 @@
       "rules": 88
     },
     "lexicons/ml-systems.md": {
-      "sha256": "4a7760726d8928044a2aa6a11adaeb28a66664ccf6d72c29b38f0cd0b067108e",
-      "rules": 154
+      "sha256": "8c68bd9e4a7cf95b4c81368c81441fb01a719b0a5c7fdb345c97246ca2e81272",
+      "rules": 162
     },
     "lexicons/security.md": {
-      "sha256": "62a7f8f139e6815623c7a22e504cabf30a39ec4c30f02411f22543e140fddb65",
+      "sha256": "02711d5ae32ef551e5a6e737a0a5a3809a324604dc8da110ab4179a735555b34",
       "rules": 109
     },
     "lexicons/writing.md": {
@@ -74,6 +74,11 @@
     "A11Y-25",
     "A11Y-26",
     "A11Y-27",
+    "A11Y-28",
+    "A11Y-29",
+    "A11Y-30",
+    "A11Y-31",
+    "A11Y-32",
     "AGT-01",
     "AGT-02",
     "AGT-04",
@@ -171,6 +176,8 @@
     "CAL-05",
     "CAL-06",
     "CAL-07",
+    "CAL-08",
+    "CAL-09",
     "CLM-01",
     "CLM-02",
     "CLM-03",
@@ -193,6 +200,10 @@
     "COL-11",
     "COL-12",
     "COL-13",
+    "COL-14",
+    "COL-15",
+    "COL-16",
+    "COL-17",
     "CON-01",
     "CON-02",
     "CON-03",
@@ -486,6 +497,9 @@
     "MLDATA-15",
     "MLDATA-16",
     "MLDATA-17",
+    "MLDATA-18",
+    "MLDATA-19",
+    "MLDATA-20",
     "MODEL-01",
     "MODEL-02",
     "MODEL-03",
@@ -533,6 +547,10 @@
     "OBS-06",
     "OBS-07",
     "OBS-08",
+    "OBS-09",
+    "OBS-10",
+    "OBS-11",
+    "OBS-12",
     "OPS-01",
     "OPS-02",
     "OPS-03",
@@ -629,6 +647,9 @@
     "RAG-08",
     "RAG-09",
     "RAG-10",
+    "RAG-11",
+    "RAG-12",
+    "RAG-13",
     "REF-01",
     "REF-02",
     "REF-03",
