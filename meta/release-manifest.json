@@ -1,49 +1,49 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "date": "2026-07-22",
-  "rules": 1022,
-  "principles": 16,
+  "rules": 1075,
+  "principles": 19,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "a2a182abb1686427882420d1e9b2a3af5451ef6834987dc6621823fba20aa62d",
-      "rules": 38
+      "sha256": "94ab42533d8496c13bc8ff896ae7d80215b05c4a7ec6b3ce11b9db610d38bf25",
+      "rules": 44
     },
     "lexicons/business-marketing.md": {
-      "sha256": "af3fa4e9af48f4610fdc60c04d63e9ad8ed30243f9400b709d41cc631b3abf5e",
-      "rules": 96
+      "sha256": "460ee3ae6ae100aa53c7d5a69d2733d7d56fe39f6dcfcb8f89b257991ca7db7f",
+      "rules": 103
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "8876f5fdc18832485756472ee554081baf72a9e8c92df6a3728eadf0abc483a9",
-      "rules": 70
+      "sha256": "6fb3b924f3cc3ab656f6b74bf70481667a9847f86fd08b7631d0da5cb37d6e4b",
+      "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "673631c5e44f2ec81cd4d239f45b2e6564335fb26442fd4a63adc4259a81365b",
-      "rules": 274
+      "sha256": "f8f044c03952d460594659eab7dec48736aa7afdd31773b77f9b5b06380cae05",
+      "rules": 277
     },
     "lexicons/epistemics.md": {
-      "sha256": "505d1dcba5977a644310d93c1c67e5d85f5ffe3d1e8b67067d9be03ffa7f7f6c",
-      "rules": 82
+      "sha256": "9d3bc8496e14de4171fa6743471b43739613b6509fcc5ad00b54f9bcbec946a5",
+      "rules": 83
     },
     "lexicons/graph-theory.md": {
-      "sha256": "42a41a297794fcf301fc85848e5930f0ddd464cc0a371b027f218656dd7bd6ef",
-      "rules": 31
+      "sha256": "9dccd81c579453084e135ab79ce2b9578881bbdb28dc7c58d9dd52507f64ecec",
+      "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "b6ac87536048c5ca96141128c56c190b693a29d7d7791054c3ae990bfe5d673f",
-      "rules": 88
+      "sha256": "c3e3659dc1619cbf01ff6e9f0df88a0f528b92a7c3540b18abb62f27e0ebc0f0",
+      "rules": 91
     },
     "lexicons/ml-systems.md": {
-      "sha256": "4d4db697be586db84ce6258fc23cc11d68bb7fa8b919c0194f7061c8e6381952",
-      "rules": 190
+      "sha256": "b785a2468b7578265f7f19e8c802c5978cbce99c7989068a35ac1ac64a4d7801",
+      "rules": 196
     },
     "lexicons/security.md": {
-      "sha256": "ba2723439ce902a9519c477923e75385882d9dce5cee92e58e20f44bde937d85",
-      "rules": 109
+      "sha256": "04105e69548dad14ba519052c0d47447aa2432c817c1b09d395192a12d97d5c8",
+      "rules": 122
     },
     "lexicons/writing.md": {
-      "sha256": "940c5c638c8b1d5c0a5c0b078886a9ea5f43720e002f6382c2de8df1c94a5182",
-      "rules": 44
+      "sha256": "35261e080542a50fc9ceae02183d750e64d231316076ed801baf4084ead23d1a",
+      "rules": 46
     }
   },
   "rule_ids": [
@@ -85,6 +85,12 @@
     "A11Y-36",
     "A11Y-37",
     "A11Y-38",
+    "A11Y-39",
+    "A11Y-40",
+    "A11Y-41",
+    "A11Y-42",
+    "A11Y-43",
+    "A11Y-44",
     "AGT-01",
     "AGT-02",
     "AGT-04",
@@ -116,6 +122,8 @@
     "AIPX-11",
     "AIPX-13",
     "AIPX-14",
+    "AIPX-15",
+    "AIPX-16",
     "ALG-01",
     "ALG-02",
     "ALG-03",
@@ -199,6 +207,7 @@
     "BRND-12",
     "BRND-13",
     "BRND-14",
+    "BRND-15",
     "CAL-01",
     "CAL-02",
     "CAL-03",
@@ -208,6 +217,8 @@
     "CAL-07",
     "CAL-08",
     "CAL-09",
+    "CAL-10",
+    "CAL-11",
     "CLM-01",
     "CLM-02",
     "CLM-03",
@@ -234,6 +245,7 @@
     "COL-15",
     "COL-16",
     "COL-17",
+    "COL-18",
     "CON-01",
     "CON-02",
     "CON-03",
@@ -363,6 +375,7 @@
     "EVAL-23",
     "EVAL-24",
     "EVAL-25",
+    "EVAL-26",
     "EXP-01",
     "EXP-02",
     "EXP-03",
@@ -426,12 +439,14 @@
     "FORE-11",
     "FORE-12",
     "FORE-13",
+    "FORE-14",
     "FORM-01",
     "FORM-02",
     "FORM-03",
     "FORM-04",
     "FORM-05",
     "FORM-06",
+    "FORM-07",
     "GRPH-01",
     "GRPH-02",
     "GRPH-03",
@@ -463,6 +478,14 @@
     "GRPH-29",
     "GRPH-30",
     "GRPH-31",
+    "GRPH-32",
+    "GRPH-33",
+    "GRPH-34",
+    "GRPH-35",
+    "GRPH-36",
+    "GRPH-37",
+    "GRPH-38",
+    "GRPH-39",
     "GTM-01",
     "GTM-02",
     "GTM-03",
@@ -505,6 +528,9 @@
     "HITL-09",
     "HITL-10",
     "HITL-11",
+    "HITL-12",
+    "HITL-13",
+    "HITL-14",
     "IDNT-01",
     "IDNT-02",
     "IDNT-03",
@@ -555,6 +581,7 @@
     "LAY-09",
     "LAY-10",
     "LAY-11",
+    "LAY-12",
     "MEAS-01",
     "MEAS-02",
     "MEAS-03",
@@ -628,6 +655,8 @@
     "NEG-06",
     "NEG-07",
     "NEG-08",
+    "NEG-09",
+    "NEG-10",
     "OBS-01",
     "OBS-02",
     "OBS-03",
@@ -653,6 +682,8 @@
     "OPS-11",
     "OPS-12",
     "OPS-13",
+    "OPS-14",
+    "OPS-15",
     "PERC-01",
     "PERC-02",
     "PERC-03",
@@ -720,6 +751,7 @@
     "PROD-12",
     "PROD-13",
     "PROD-14",
+    "PROD-15",
     "PROV-01",
     "PROV-02",
     "PROV-03",
@@ -774,6 +806,7 @@
     "REF-26",
     "REF-27",
     "REF-28",
+    "REF-29",
     "RES-01",
     "RES-02",
     "RES-03",
@@ -805,6 +838,7 @@
     "RLSE-09",
     "RLSE-10",
     "RLSE-11",
+    "RLSE-12",
     "RSCH-01",
     "RSCH-02",
     "RSCH-03",
@@ -847,6 +881,10 @@
     "SECD-08",
     "SECD-09",
     "SECD-10",
+    "SECD-11",
+    "SECD-12",
+    "SECD-13",
+    "SECD-14",
     "SERVE-01",
     "SERVE-02",
     "SERVE-03",
@@ -907,6 +945,7 @@
     "TEST-13",
     "TEST-14",
     "TEST-15",
+    "TEST-16",
     "TRACK-01",
     "TRACK-02",
     "TRACK-03",
@@ -931,6 +970,7 @@
     "TYPE-10",
     "TYPE-11",
     "TYPE-12",
+    "TYPE-13",
     "UI-01",
     "UI-02",
     "UI-03",
@@ -954,6 +994,8 @@
     "UXR-13",
     "UXR-14",
     "UXR-15",
+    "UXR-16",
+    "UXR-17",
     "VIZ-01",
     "VIZ-02",
     "VIZ-03",
@@ -1011,6 +1053,15 @@
     "WEB-33",
     "WEB-34",
     "WEB-35",
+    "WEB-36",
+    "WEB-37",
+    "WEB-38",
+    "WEB-39",
+    "WEB-40",
+    "WEB-41",
+    "WEB-42",
+    "WEB-43",
+    "WEB-44",
     "WP-01",
     "WP-02",
     "WP-03",
@@ -1068,6 +1119,8 @@
     "WRIT-41",
     "WRIT-42",
     "WRIT-43",
-    "WRIT-44"
+    "WRIT-44",
+    "WRIT-45",
+    "WRIT-46"
   ]
 }

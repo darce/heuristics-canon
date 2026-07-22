@@ -35,6 +35,7 @@ A claim nobody has tried to break is a guess wearing a conclusion's clothes. The
 - Zeller's diagnosis posture names it for engineering fixes: a proposed approach is a **falsifiable hypothesis**; define how you will evaluate before you run it [[DIAG-03]](lexicons/engineering.md#diag-03).
 - Tim Ferriss's fear-setting converts vague dread into named worst cases and repair paths before a reversible decision freezes [[STRAT-14]](lexicons/business-marketing.md#strat-14).
 - Anderson's threat model is the security twin: list the ways the policy dies (including insiders and supply chain) before buying controls, because malice forces the least-convenient failure [[SECD-07]](lexicons/security.md#secd-07).
+- Annie Duke runs the reflex backward through the post-mortem: the outcome is one draw, not the verdict, so a review that reverses the process grade on the result alone has replaced the disconfirmer test with resulting [[NDM-12]](lexicons/epistemics.md#ndm-12).
 
 The same reflex runs under all of them: replace "this looks right" with a stated way to find out it is not.
 
@@ -47,6 +48,7 @@ When one option is reversible and the other is not, the reversible one is almost
 - The same author's rollback plan is written before ship, because at 2am you execute a plan, you do not design one [[RLSE-08]](lexicons/engineering.md#rlse-08).
 - Steve Wilson's least privilege and human-in-the-loop gate cost a scope narrowing now; a jailbroken agent holding broad scope costs everything it can reach [[SEC-04]](lexicons/security.md#sec-04), [[SEC-05]](lexicons/security.md#sec-05).
 - Kleppmann makes the concurrency version exact: a weaker isolation level looks free at write time, but the write skew or lost update it admits commits with no error and surfaces as a data-integrity incident later, so choosing it is the underpriced-irreversible side. Record the engine's real anomaly behaviour and test each invariant against it before defaulting to weak isolation [[DATA-17]](lexicons/engineering.md#data-17), [[DATA-18]](lexicons/engineering.md#data-18).
+- Kleppmann prices the retry the same way: a client-generated request ID hitting a UNIQUE constraint costs a column now; a retried non-idempotent write double-applies and costs a data-integrity incident later [[DATA-13]](lexicons/engineering.md#data-13), [[API-02]](lexicons/engineering.md#api-02).
 - Macfadyen makes the product form of the same gate: when a model output can drive irreversible harm, a human or external check layer is the cheap side; unsupervised accept is the expensive one [[AIPX-09]](lexicons/business-marketing.md#aipx-09).
 
 The accessibility and claims lexicons already cross-link on this, and it generalizes: pay the small certain cost of the reversible side, and treat "we can fix it after launch" as the expensive answer it usually is.
@@ -69,6 +71,9 @@ Any proxy drifts from its target under pressure, and once the proxy becomes a ta
 - Munger again on the quote: a market price or hype spike used as proof of quality is Mr. Market's mood standing in for intrinsic value; the number moved, not the asset [[STRAT-12]](lexicons/business-marketing.md#strat-12).
 - Ameisen's ship review makes the cohort form exact: aggregate accuracy that clears while a user or content slice fails is the headline proxy, not the product [[AIPX-04]](lexicons/business-marketing.md#aipx-04).
 - Adversarial ML makes the same cut on model promotion: clean test accuracy is the number you paid for; a **backdoor** that flips class under a fixed trigger was never in that number [[SEC-12]](lexicons/security.md#sec-12).
+- Hamming ran the audit on research metrics half a century earlier: simulate how the measured party will optimise the number before adopting it, because they will optimise the number, not the goal [[RSCH-07]](lexicons/epistemics.md#rsch-07).
+- LLM serving repeats it: tokens per second and GPU-busy are the numbers you paid for; goodput at the latency target is the outcome the user feels [[COST-15]](lexicons/ml-systems.md#cost-15).
+- The accessibility floor concedes it about itself: a passing scan detects a minority of criteria while fewer than 4.1% of pages actually conform, so scanner-green is the proxy, not access [[A11Y-23]](lexicons/accessibility.md#a11y-23).
 
 The measured proxy and the real goal come apart exactly when the stakes rise, which is precisely when someone starts optimizing the proxy.
 
@@ -94,6 +99,8 @@ Every value that ships should be one a human chose on purpose. A default that su
 - Fields again: loading, empty, error, offline, and first-time each get designed, or the screen ships a state that merely renders [[RLSE-04]](lexicons/engineering.md#rlse-04).
 - The W3C's ATAG makes it normative for the tools that make content: accessible-content support features must be active by default and at least as prominent as the spelling checker, because a support feature shipped off is a default nobody chose on the author's behalf [[A11Y-38]](lexicons/accessibility.md#a11y-38).
 - Felienne Hermans matches the codebase's existing convention over your own taste, because consistent-and-mediocre outperforms good-and-inconsistent [[NAME-04]](lexicons/engineering.md#name-04).
+- Anderson makes it the security default: fail-safe defaults, because the shipped default is the configuration most deployments keep [[SECD-05]](lexicons/security.md#secd-05).
+- Tidwell's form twin: prefill what the system knows, and never pre-check the marketing or consent box nobody chose [[FORM-04]](lexicons/interaction-ux.md#form-04).
 
 Design and release engineering audit the same signal from two sides: the difference between a surface that was assembled and one that was chosen.
 
@@ -106,6 +113,7 @@ Knowledge held only in a head, a session, or a founder dies at the next compacti
 - Michael Nygard puts a correlation ID on every log line, turning the post-mortem into a grep instead of an excavation [[OBS-03]](lexicons/engineering.md#obs-03).
 - Susan Gunelius systemizes the founder's taste into rules and review so the brand outlives the founder [[BRND-12]](lexicons/design-aesthetics.md#brnd-12), and Tim Ferriss writes down the authority so the business runs without you for thirty days [[OPS-08]](lexicons/business-marketing.md#ops-08).
 - Munger restates Braun: an order or plan that omits who/what/when/where/why must be rewritten, because a smart skeptic cannot comply without the rationale [[OPS-13]](lexicons/business-marketing.md#ops-13).
+- Klein puts the same requirement on a live order: intent, priorities, constraints, and forbidden moves travel with the handoff, so the executor can improvise without the author in the room [[NDM-07]](lexicons/epistemics.md#ndm-07).
 
 A session, an author, and a founder all leave; only what they wrote down stays.
 
@@ -118,6 +126,7 @@ Any single point of external control eventually turns against you, whether it is
 - The KLF rents the distribution muscle under its own label instead of waiting on one platform's blessing [[GTM-04]](lexicons/business-marketing.md#gtm-04).
 - Steve Wilson notes that trust changes at every boundary, so grant the minimum scope: a compromised component exercises everything it holds [[SEC-01]](lexicons/security.md#sec-01), [[SEC-04]](lexicons/security.md#sec-04).
 - Dave Farley wraps the third party behind an adapter; every hard-coded library call is a forfeited exit [[REF-15]](lexicons/engineering.md#ref-15).
+- Bondy and Murty supply the detection: name the cut vertices and bridges, because "if this node dies, how many components remain?" is the blast radius written as graph theory [[GRPH-05]](lexicons/graph-theory.md#grph-05).
 
 No external party (platform, dependency, or jailbroken model) should get a hold on you that you cannot survive losing.
 
@@ -148,6 +157,9 @@ A grouping the surface implies but the system does not enforce is a lie the user
 - Skelton and Pais give it an organizational form: an architectural boundary the org does not actually communicate across is a boundary only on the diagram (the communication structure wins) so a software split must be a team split first [[TEAM-01]](lexicons/engineering.md#team-01); Fairbanks adds the structural form: a property left to "everyone will be careful" is perceived, not enforced, until the architecture itself guarantees it [[ARCH-13]](lexicons/engineering.md#arch-13).
 - Hermans's linguistic antipatterns are the naming form of the same lie: an `is*` that is not Boolean, or a getter with side effects, promises a type and behaviour the code does not hold [[NAME-03]](lexicons/engineering.md#name-03).
 - Web authorization and multi-tenant storage arrive at the same structural cut: a route check that does not authorize the object leaves IDOR open [[WEB-08]](lexicons/security.md#web-08); app `WHERE` clauses without RLS leave tenant isolation to every developer's vigilance [[PG-02]](lexicons/security.md#pg-02); and a framed UI that steals the victim's clicks delivers ambient authority to a target the eye never chose [[WEB-21]](lexicons/security.md#web-21).
+- Anderson's complete mediation is the access-path form: authorize at the reference monitor on *each* use, or the boundary holds only for the first request [[SECD-03]](lexicons/security.md#secd-03).
+- Johnson's affordance match runs the audit at the pixel: what looks clickable must be clickable, and what is not must not look it [[INT-01]](lexicons/interaction-ux.md#int-01).
+- The state-machine form: a dispatcher keyed on event type alone lets a well-formed but illegal event move the state; the enforced boundary is the (state, event) table, not the event schema [[GRPH-27]](lexicons/graph-theory.md#grph-27).
 
 Pixels, DOM nodes, nav labels, similarity edges, trust boundaries, autonomy claims, identifier names, policy sentences, synthetic authorship, object IDs, tenant rows, and click targets run one audit: draw the boundary the user perceives, then prove the system enforces exactly that one.
 
@@ -163,6 +175,7 @@ Forced certainty manufactures a false identity, a false merge, a misleading prog
 - Stream processing and HTTP design reach the same designed third state: a window that looks complete without a late-event policy fabricates certainty about stragglers [[FLOW-08]](lexicons/engineering.md#flow-08); an empty search match is a successful answer (`200`), not a missing resource (`404`) [[API-06]](lexicons/engineering.md#api-06).
 - Ameisen's guidance product prefers silence to wrong advice: coverage that forces a confident answer is the failure, and precision-first guidance designs the abstention [[AIPX-07]](lexicons/business-marketing.md#aipx-07); imperfect-model UX adds confidence gates so low evidence is a state, not a polished guess [[AIPX-14]](lexicons/business-marketing.md#aipx-14).
 - Munger's circle of competence puts the same third state on strategy: yes / no / **too-tough** baskets, so unknown edge is a designed refusal rather than fake fluency [[STRAT-03]](lexicons/business-marketing.md#strat-03).
+- Hubbard refuses the inverse failure, waiting for exact data: a measurement is any observation that quantitatively narrows the range, so partial knowledge is also a designed state, not an excuse for fake certainty or fake ignorance [[MEAS-02]](lexicons/epistemics.md#meas-02).
 
 Calibration, annotation, automation control, release engineering, information architecture, prose detection, stream windows, query results, product guidance, and competence boundaries each refuse the same shortcut: when the evidence runs out, ship the designed unknown, not a confident wrong answer.
 
@@ -177,6 +190,7 @@ Changing a label without changing the cluster, the model input, the rule, or the
 - The writing lexicon states the same discipline for edit passes: swapping the flagged phrase while leaving the inflation, vagueness, or template intact only launders the tell; the next draft restores the defect unless the underlying problem is fixed [[WRIT-44]](lexicons/writing.md#writ-44).
 - Fowler/Beck and Kleppmann name the code and storage twins: a field that mirrors other state drifts until it lies [[REF-09]](lexicons/engineering.md#ref-09); a precomputed cube is an optimization with a freshness SLO, not a source you can drop the raw facts for [[STOR-07]](lexicons/engineering.md#stor-07).
 - Ameisen's product flywheel is the training form: accept/edit instrumentation makes production use the label source, so the next training run can consume the correction rather than re-serve the same error [[AIPX-03]](lexicons/business-marketing.md#aipx-03), [[HITL-01]](lexicons/ml-systems.md#hitl-01).
+- Khononov's outbox is the messaging form: publish from the same transaction as the state change, or the event stream and the store diverge into two sources of truth [[DOM-06]](lexicons/engineering.md#dom-06).
 
 A review UI, an annotation loop, an undo stack, a model pipeline, a provenance graph, a prose edit pass, a derived field, a materialized view, and a production-label flywheel agree: edit the source, or you have edited nothing.
 
@@ -193,6 +207,9 @@ A model label, an architecture decision, a UX claim, a purchase, and an agent's 
 - Ferriss makes the commercial form exact: "users said they'd buy" is not demand; only a costly action (purchase, preorder, deposit) is evidence before the inventory or capability commitment [[GTM-01]](lexicons/business-marketing.md#gtm-01).
 - Ameisen refuses the model commitment without a deterministic baseline first: the heuristic is the evidence that the ML path has anything to beat [[AIPX-01]](lexicons/business-marketing.md#aipx-01), [[EVAL-01]](lexicons/ml-systems.md#eval-01).
 - Gothelf and Seiden's Truth Curve scales fidelity to market evidence: a high-fidelity plan without the evidence to support it is a commitment the validation level cannot yet justify [[PROD-05]](lexicons/business-marketing.md#prod-05).
+- Kohavi supplies the base rate for the ship decision itself: most tested ideas are flat or negative, so a launch without a controlled comparison commits against the prior [[EXP-01]](lexicons/epistemics.md#exp-01).
+- Ferriss's micro-test moves the same gate to the earliest possible moment: measured conversion at target price before any capability is built [[GTM-02]](lexicons/business-marketing.md#gtm-02).
+- Kahneman names the upstream check on the estimate itself: confidence tracks story coherence, not evidence amount, so inventory the missing evidence before the number locks [[BIAS-01]](lexicons/epistemics.md#bias-01).
 
 Deploy, merge, buy, label, complete, refactor, staff a model, and scale fidelity are all commitments; each is cheap to gate with evidence beforehand and expensive to reverse once it is durable state.
 
@@ -218,6 +235,7 @@ Every number in this corpus is produced by an apparatus, and the apparatus is us
 - Biometric evaluation supplies the denominator version. Where a false-positive rate is normalized by a count the system itself emits, loosening the upstream stage mints extra searches and the reported rate falls while every operator's workload rises [[EVAL-19]](lexicons/ml-systems.md#eval-19). Usability research had already required the denominator be predefined [[UXR-07]](lexicons/interaction-ux.md#uxr-07); the biometric case adds *by whom*.
 - Business operations states the incentive plainly (you get the number you pay for [[OPS-01]](lexicons/business-marketing.md#ops-01)) and testing states the artifact: coverage is a number a team can raise without improving anything, so measure stability instead [[TEST-11]](lexicons/engineering.md#test-11). Both are this principle read as a management problem rather than an instrument problem.
 - Meadows supplies the structural fix the others imply: the watcher must sit outside the optimizer's reach, because a loop that can edit its own success metric, sample frame, or threshold is measuring its arrangement, not the world [[OBS-09]](lexicons/engineering.md#obs-09).
+- Model evaluation arrives from resampling: metrics read off a SMOTE-rebalanced set report a distribution the world never ships; the apparatus changed the mix, so evaluate on the real one [[EVAL-03]](lexicons/ml-systems.md#eval-03).
 - The tension worth keeping: the fix is not "never let the team build the instrument", which no organization can afford. It is that the *sampling frame and the divisor* must be fixed outside the system, while the measurement itself may stay in-house.
 
 Performance engineering, dataset construction, biometric evaluation, usability research, testing, and operations each arrived alone, from instruments that share no vocabulary: ask what the system under test could do to make this number better without doing anything better.
@@ -233,6 +251,38 @@ An outcome channel earns trust in both directions at once: failure must be impos
 
 Unix stream design, product release engineering, and production observability arrived separately: a channel where success chatters or failure whispers is not reporting the system, and the fix is symmetrical silence discipline, not more logging.
 
+## 17. High-impact actions take two independent keys
+
+Reversibility pricing (Principle 3) and small grants (Principle 14) still leave one gap: a single principal, honestly convinced or quietly compromised, can complete an action nobody else saw. The fix is structural, not motivational: split the completion of any value-creating, value-destroying, or evidence-erasing action across two independent authorizers, so no single key turns the lock.
+
+- Ross Anderson makes it a banking invariant: dual control for high impact, two independent authorizers or mechanism classes, because a single insider defeats any one control [[SECD-04]](lexicons/security.md#secd-04).
+- Steve Wilson arrives from LLM agents: a human approves before the side effect executes, because a jailbroken agent is a single principal with conviction [[SEC-05]](lexicons/security.md#sec-05).
+- Macfadyen arrives from AI product surfaces: a high-stakes model output needs a human or external check layer before it is accepted [[AIPX-09]](lexicons/business-marketing.md#aipx-09).
+- Monarch's annotation pipeline runs the same split on labels: expert adjudication, promoted by gold accuracy, stands between a low-agreement label and the training set [[HITL-07]](lexicons/ml-systems.md#hitl-07).
+
+Banking, agent security, AI product design, and annotation quality each concluded that some actions are too consequential for one key, however trusted its holder.
+
+## 18. A machine consumes contracts, not prose
+
+Whatever a program, a pipeline, or a reviewer must branch on has to arrive as a checkable structure: a status, a schema, a named artifact. Prose in that position is unparseable to the machine and unfalsifiable to the reader, and both failures are silent.
+
+- Kernighan and Pike built it into Unix: the outcome of a program is an exit status a caller branches on without parsing words [[AGT-21]](lexicons/engineering.md#agt-21), and stdout carries data for the next program, not banners for a human [[AGT-15]](lexicons/engineering.md#agt-15).
+- Chip Huyen arrives from LLM engineering: machine-consumed generation is schema-constrained and validated before use, because free prose parsed by regex is a contract nobody signed [[FM-04]](lexicons/ml-systems.md#fm-04).
+- Fields applies it to the claim a reviewer consumes: "done" names its evidence, the file and line, the test, the decisive output, or it is not a claim [[AGT-04]](lexicons/engineering.md#agt-04).
+
+Unix composition, foundation-model serving, and release review agree: the moment a consumer must act on an outcome, the outcome stops being prose.
+
+## 19. Step size is bounded by the feedback that can catch it
+
+Principle 13 gates a single commitment on prior evidence. This one governs the increments after the gate: each step's size and exposure stay inside what a real feedback signal can catch before the next step commits. A step bigger than its feedback loop is a bet nobody is watching.
+
+- Hunt and Thomas refuse plans whose forecasts outrun any near feedback channel; small replaceable steps keep the correction cheaper than the mistake [[REF-28]](lexicons/engineering.md#ref-28).
+- Gothelf and Seiden order the work by learning cost: the cheapest artifact that can falsify the riskiest assumption goes first [[PROD-03]](lexicons/business-marketing.md#prod-03).
+- Ameisen cuts model traffic the same way: shadow, then canary, then cutover, each expansion gated on parity observed at the previous size [[AIPX-06]](lexicons/business-marketing.md#aipx-06).
+- Fields makes the rollout the instrument itself: the first 10% is production with a smaller blast radius, and the stop criteria are named before launch [[RLSE-07]](lexicons/engineering.md#rlse-07).
+
+Pragmatic engineering, lean product discovery, ML deployment, and release engineering bound the same variable: never let the increment outgrow the loop that would catch it failing.
+
 ---
 
 ## When two rules point the other way
@@ -243,6 +293,9 @@ Not every cross-source pair agrees. Some rules pull in opposite directions, and 
 - An **object** partition gives each rule its own asset. Gunelius's mark persists as a contract [[BRND-08]](lexicons/design-aesthetics.md#brnd-08) while Scher rotates the campaign language around it [[BRND-05]](lexicons/design-aesthetics.md#brnd-05); Karp runs values on conviction [[STRAT-07]](lexicons/business-marketing.md#strat-07) while Lean UX runs funnels on falsification [[PROD-04]](lexicons/business-marketing.md#prod-04).
 - A **sequence** partition orders them in time. The KLF's first exposure can lead with novelty [[GTM-08]](lexicons/business-marketing.md#gtm-08) while Fields keeps the claim inside the package on the safe side of the regulatory line at every moment [[CLM-02]](lexicons/business-marketing.md#clm-02).
 - A **surface** partition also settles the corpus's sharpest epistemics tension. Klein's recognition-primed decisions under time pressure [[NDM-03]](lexicons/epistemics.md#ndm-03) and Tetlock's scored, decomposed probabilities [[FORE-01]](lexicons/epistemics.md#fore-01), [[FORE-05]](lexicons/epistemics.md#fore-05), [[FORE-09]](lexicons/epistemics.md#fore-09) look like a war between gut and Brier. They are not. Intuitive expertise is trustworthy only when the environment is **high-validity** (regular, learnable cues) *and* the person had prolonged practice with **rapid, unambiguous feedback**, the Kahneman–Klein conditions, operationalized as the validity–feedback gate [[NDM-01]](lexicons/epistemics.md#ndm-01). Fireground, NICU, chess, and many C2 calls can pass that gate; novel product bets, geopolitics, and slow-feedback strategy often fail it. When the gate passes, forced multi-attribute analysis can make experts worse ([[NDM-11]](lexicons/epistemics.md#ndm-11), and the tension with [[COG-04]](lexicons/interaction-ux.md#cog-04) is the same cut: deliberate comparison when time and framing demand it; singular evaluation when time is short and the cue library is real). When the gate fails, recognition is confidence, not expertise: number the claim, take the outside view, and score it. Do not average the two into mush [[STRAT-11]](lexicons/business-marketing.md#strat-11).
+- The same **surface** cut separates debut from advice: novelty may lead the launch package [[GTM-08]](lexicons/business-marketing.md#gtm-08) while the product's guidance stays precision-first [[AIPX-07]](lexicons/business-marketing.md#aipx-07); the stunt sells the first look, never the answer.
+- An **object** partition settles YAGNI against bought structure: Fowler rejects extension points with a single consumer [[REF-12]](lexicons/engineering.md#ref-12) while Ousterhout pays for structure that reduces the cost of thinking about real modules [[REF-17]](lexicons/engineering.md#ref-17); the test is whether a present caller or reader exists, not whether the abstraction is elegant.
+- The same **object** cut holds ego apart from evidence: an empirical forecast's *p* moves with the data or the freeze is a defect [[FORE-12]](lexicons/epistemics.md#fore-12), while a mission's values are not Brier-scored and do not move on backlash [[STRAT-07]](lexicons/business-marketing.md#strat-07); misfiling one as the other yields either a weathervane mission or a frozen forecast.
 
 A pair no partition can split is a genuine judgment call: it stays at tier J and gets decided in context, with the reasoning recorded in Ford and Richards' ADR [[ARCH-07]](lexicons/engineering.md#arch-07).
 
