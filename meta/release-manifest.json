@@ -1,13 +1,13 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "date": "2026-07-21",
-  "rules": 902,
+  "rules": 908,
   "principles": 16,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "a172df4bf8b24fa5dc131e04dfd9f729a971d5529a1e6e8d8ea445299eab366a",
-      "rules": 32
+      "sha256": "be4431e0deff4aa355d2374a53678ad926d24f4703ddeb8235479de32f87efcb",
+      "rules": 38
     },
     "lexicons/business-marketing.md": {
       "sha256": "60f5a9a83b8456752fcda8ced4974ba2cc828299adaddf7df943d924d7882e3e",
@@ -18,7 +18,7 @@
       "rules": 70
     },
     "lexicons/engineering.md": {
-      "sha256": "db8abc91dae9f65cb363631c020fdb1769db7df280d2dbbdf19175d0579f702f",
+      "sha256": "d3267a786925edfc151ea9e4eb4373166c7352f008cd5a60677d4f688b6ed927",
       "rules": 250
     },
     "lexicons/epistemics.md": {
@@ -79,6 +79,12 @@
     "A11Y-30",
     "A11Y-31",
     "A11Y-32",
+    "A11Y-33",
+    "A11Y-34",
+    "A11Y-35",
+    "A11Y-36",
+    "A11Y-37",
+    "A11Y-38",
     "AGT-01",
     "AGT-02",
     "AGT-04",

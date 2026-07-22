@@ -92,6 +92,7 @@ Every value that ships should be one a human chose on purpose. A default that su
 - Fields flags a surface assembled from framework defaults (stock accent, linear easing, an empty state that is only whitespace) as one that loses trust before the user can articulate why [[LAY-10]](lexicons/design-aesthetics.md#lay-10).
 - Cianci calls pure grey an unchosen choice; temperature the neutrals toward the identity [[COL-05]](lexicons/design-aesthetics.md#col-05).
 - Fields again: loading, empty, error, offline, and first-time each get designed, or the screen ships a state that merely renders [[RLSE-04]](lexicons/engineering.md#rlse-04).
+- The W3C's ATAG makes it normative for the tools that make content: accessible-content support features must be active by default and at least as prominent as the spelling checker, because a support feature shipped off is a default nobody chose on the author's behalf [[A11Y-38]](lexicons/accessibility.md#a11y-38).
 - Felienne Hermans matches the codebase's existing convention over your own taste, because consistent-and-mediocre outperforms good-and-inconsistent [[NAME-04]](lexicons/engineering.md#name-04).
 
 Design and release engineering audit the same signal from two sides: the difference between a surface that was assembled and one that was chosen.
