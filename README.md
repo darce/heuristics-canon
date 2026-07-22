@@ -95,8 +95,9 @@ A rule fires on an artifact: a schema, a migration, a query plan, a stream-windo
 | public naming or api surface | NAME · API · DOM · BRND |
 | algorithm or data structure choice | ALG · PERF · GRPH · DATA |
 | prose or documentation change | WRIT · CLM |
-| strategy or product bet | STRAT · PROD · AIPX · BOOT · NEG · FORE · NDM |
-| estimate or forecast in a plan | FORE · STRAT · EVAL · CAL · NDM |
+| strategy or product bet | STRAT · PROD · AIPX · BOOT · NEG · FORE · NDM · RSCH |
+| estimate or forecast in a plan | FORE · STRAT · EVAL · CAL · NDM · MEAS |
+| choosing a problem or research direction | RSCH · STRAT · FORE · NDM |
 | pricing positioning or launch | GTM · CLM · PROD · BRND |
 | brand or visual identity change | IDNT · BRND · TYPE · COL · LAY |
 | php or wordpress change | PHP · WP · SEC · WEB |
