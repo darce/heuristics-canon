@@ -75,30 +75,31 @@ A rule fires on an artifact: a schema, a migration, a query plan, a stream-windo
 | database schema or migration | MODEL · DATA · STOR · PG |
 | index or query change | STOR · DATA · PERF |
 | batch or stream worker | FLOW · RES · OBS · COST |
-| architecture proposal or adr | ARCH · DOM · TEAM · PERF · FORE · NDM |
+| architecture proposal or adr | ARCH · DOM · TEAM · PERF · FORE · NDM · BIAS |
 | codeowners or service catalog or org change | TEAM · ARCH · DOM |
 | concurrency or async code | CON · DATA · RES |
 | security sensitive change | SEC · WEB · SECD · PG |
 | ui or frontend change | PERC · COG · NAV · INT · FORM · VIZ · A11Y · UI |
-| embedding or face recognition change | EMB · CAL · FAIR · PROV · TRACK · GRPH · COST · SEC |
+| embedding or face recognition change | EMB · CAL · FAIR · PROV · TRACK · GRPH · COST · SEC · IDX |
 | video timeline segmentation change | VSEG · TRACK · EVAL · COST · PERF |
 | model weights or training change | MLDATA · EVAL · CAL · FAIR · PROV · SERVE · DRIFT · SEC |
 | prompt or generation contract change | FM · EVAL · PROV · SEC |
-| rag corpus or index change | RAG · EMB · DRIFT · PROV · SEC · COST · OBS |
-| rag retrieval or reranking change | RAG · EVAL · EMB · COST · OBS |
+| rag corpus or index change | RAG · EMB · DRIFT · PROV · SEC · COST · OBS · IDX |
+| rag retrieval or reranking change | RAG · EVAL · EMB · COST · OBS · IDX |
 | agent loop change | FM · RES · COST · OBS · PROV · SEC |
 | agent tool side effect change | FM · SEC · DATA · API · SERVE · HAI · PROV |
 | ai review or curation ui | HAI · HITL · CAL · PROV · VIZ · PERC · A11Y |
 | agent session or skill change | AGT · FM · PROV · SEC |
-| failing test or incident investigation | DBG · DIAG · OBS · TEST · RES · NDM |
-| release or deploy change | RLSE · OPS · OBS · TEST · NDM |
+| failing test or incident investigation | DBG · DIAG · OBS · TEST · RES · NDM · BIAS |
+| release or deploy change | RLSE · OPS · OBS · TEST · NDM · BIAS |
 | public naming or api surface | NAME · API · DOM · BRND |
 | algorithm or data structure choice | ALG · PERF · GRPH · DATA |
 | prose or documentation change | WRIT · CLM |
-| strategy or product bet | STRAT · PROD · AIPX · BOOT · NEG · FORE · NDM · RSCH |
-| estimate or forecast in a plan | FORE · STRAT · EVAL · CAL · NDM · MEAS |
-| choosing a problem or research direction | RSCH · STRAT · FORE · NDM |
-| data analysis or experiment | EXP · MEAS · EVAL · FORE · MLDATA |
+| strategy or product bet | STRAT · PROD · AIPX · BOOT · NEG · FORE · NDM · BIAS · RSCH |
+| estimate or forecast in a plan | FORE · STRAT · EVAL · CAL · NDM · BIAS · MEAS |
+| choosing a problem or research direction | RSCH · STRAT · FORE · NDM · BIAS |
+| data analysis or experiment | EXP · MEAS · EVAL · FORE · BIAS · MLDATA · AUDIT |
+| corpus audit or population rate claim | AUDIT · EVAL · CAL · MLDATA · FAIR · MEAS |
 | pricing positioning or launch | GTM · CLM · PROD · BRND |
 | brand or visual identity change | IDNT · BRND · TYPE · COL · LAY |
 | php or wordpress change | PHP · WP · SEC · WEB |
