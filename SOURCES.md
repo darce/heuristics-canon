@@ -23,7 +23,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-atag20"></a>`atag20` | W3C. *Authoring Tool Accessibility Guidelines (ATAG) 2.0*. W3C Recommendation, 24 Sept. 2015, www.w3.org/TR/ATAG20/ | accessibility | 6 |
 | <a name="src-bauhaus-droste"></a>`bauhaus-droste` | Droste, Magdalena. *Bauhaus 1919-1933: Reform and Avant-Garde*. Taschen, 2019 | design-aesthetics | 9 |
 | <a name="src-bootstrap"></a>`bootstrap` | bootstrap (no distillation on record) | engineering, interaction-ux, security | 8 |
-| <a name="src-bruch-vector-retrieval"></a>`bruch-vector-retrieval` | Bruch, Sebastian. *Foundations of Vector Retrieval*. Springer Nature, Cham, 2024. Primary source. [ISBN 978-3-031-55181-9 | ml-systems | 3 |
+| <a name="src-bruch-vector-retrieval"></a>`bruch-vector-retrieval` | Bruch, Sebastian. *Foundations of Vector Retrieval*. Springer Nature, Cham, 2024. Primary source. [ISBN 978-3-031-55181-9 | ml-systems | 4 |
 | <a name="src-bruch-vector-retrieval-zezula-similarity-search"></a>`bruch-vector-retrieval-zezula-similarity-search` | Bruch, Sebastian. *Foundations of Vector Retrieval*. Springer Nature, Cham, 2024. Primary source. [ISBN 978-3-031-55181-9 | ml-systems | 2 |
 | <a name="src-building-knowledge-graphs"></a>`building-knowledge-graphs` | Barrasa, Jesús, and Jim Webber. *Building Knowledge Graphs: A Practitioner's Guide*. O'Reilly Media, 2023 | graph-theory | 4 |
 | <a name="src-building-microservices"></a>`building-microservices` | Newman, Sam. *Building Microservices*. 2nd ed., O'Reilly, 2021 | engineering | 1 |
@@ -36,7 +36,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-designing-data-intensive-applications"></a>`designing-data-intensive-applications` | Kleppmann, Martin. *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*. 1st ed., O'Reilly, 2017 | engineering, graph-theory | 43 |
 | <a name="src-designing-interfaces-int-form"></a>`designing-interfaces-int-form` | Tidwell, Brewer, and Valencia. *Designing Interfaces*. 3rd ed., O’Reilly, 2019 | interaction-ux | 14 |
 | <a name="src-designing-interfaces-nav"></a>`designing-interfaces-nav` | Tidwell, Brewer, and Valencia. *Designing Interfaces*. 3rd ed., O’Reilly, 2019 | interaction-ux | 8 |
-| <a name="src-designing-ml-systems"></a>`designing-ml-systems` | Huyen, Chip. *Designing Machine Learning Systems*. O'Reilly, 2022 | ml-systems | 16 |
+| <a name="src-designing-ml-systems"></a>`designing-ml-systems` | Huyen, Chip. *Designing Machine Learning Systems*. O'Reilly, 2022 | ml-systems | 15 |
 | <a name="src-designing-with-the-mind-in-mind"></a>`designing-with-the-mind-in-mind` | Johnson, Jeff. *Designing with the Mind in Mind*. 3rd ed., Morgan Kaufmann, 2020 | interaction-ux | 14 |
 | <a name="src-dictionary-of-color-combinations-p024-interaction-of-color"></a>`dictionary-of-color-combinations-p024-interaction-of-color` | Wada, Sanzo. *A Dictionary of Color Combinations*. Seigensha Art Publishing, 2011 | design-aesthetics | 1 |
 | <a name="src-duke-thinking-in-bets"></a>`duke-thinking-in-bets` | Duke, Annie. *Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts*. Portfolio / Penguin, 2018 | epistemics | 2 |
@@ -64,14 +64,16 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-interaction-of-color"></a>`interaction-of-color` | Albers, Josef. *Interaction of Color*. Text of the original edition with selected plates. Yale University Press, New Haven and London, 1963; paperbound edition 1971 (fourth printing 1972) | design-aesthetics | 4 |
 | <a name="src-janus-benchmark-c"></a>`janus-benchmark-c` | Maze, et al. "IARPA Janus Benchmark–C: Face Dataset and Protocol." *ICB*, 2018 | ml-systems | 6 |
 | <a name="src-just-enough-software-architecture"></a>`just-enough-software-architecture` | Fairbanks, George. *Just Enough Software Architecture: A Risk-Driven Approach*. Marshall & Brainerd, 2010 | engineering | 6 |
-| <a name="src-kahneman-thinking-fast-slow"></a>`kahneman-thinking-fast-slow` | Kahneman, Daniel. *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 2011 | epistemics | 3 |
-| <a name="src-kahneman-thinking-fast-slow-reinhart-statistics-done-wrong"></a>`kahneman-thinking-fast-slow-reinhart-statistics-done-wrong` | Kahneman, Daniel. *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 2011 | epistemics | 1 |
+| <a name="src-kahneman-thinking-fast-slow"></a>`kahneman-thinking-fast-slow` | Kahneman, Daniel. *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 2011 | epistemics | 2 |
+| <a name="src-kahneman-thinking-fast-slow-ch-17-reinhart-statistics-done-wrong"></a>`kahneman-thinking-fast-slow-ch-17-reinhart-statistics-done-wrong` | Kahneman, Daniel. *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 2011 | epistemics | 1 |
+| <a name="src-kahneman-thinking-fast-slow-ch-7-kahneman-thinking-fast-slow"></a>`kahneman-thinking-fast-slow-ch-7-kahneman-thinking-fast-slow` | Kahneman, Daniel. *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 2011 | epistemics | 1 |
 | <a name="src-klf-the-manual"></a>`klf-the-manual` | Drummond, Bill, and Jimmy Cauty. *The Manual (How to Have a Number One the Easy Way)*. KLF Publications, 1988 | business-marketing | 14 |
 | <a name="src-latency-enberg"></a>`latency-enberg` | Enberg, Pekka. *Latency: Reduce Delay in Software Systems*. Manning, 2026 | engineering | 4 |
 | <a name="src-latency-reduce-delay-in-software-systems"></a>`latency-reduce-delay-in-software-systems` | Enberg, Pekka. *Latency: Reduce delay in software systems*. Manning, 2026 | engineering | 7 |
 | <a name="src-lean-ux"></a>`lean-ux` | Gothelf, Jeff, and Josh Seiden. *Lean UX: Designing Great Products with Agile Teams*. 3rd ed., O’Reilly, n.d | business-marketing | 8 |
 | <a name="src-learning-domain-driven-design"></a>`learning-domain-driven-design` | Khononov, Vlad. *Learning Domain-Driven Design: Aligning Software Architecture and Business Strategy*. O'Reilly, 2021 | engineering | 8 |
-| <a name="src-linkedin-messaging-guide"></a>`linkedin-messaging-guide` | Disney, Daniel. *The Ultimate LinkedIn Messaging Guide: How to Use Written, Audio, Video and InMail Messages to Start More Conversations and Increase Sales*. Wiley, 2023 | business-marketing | 4 |
+| <a name="src-linkedin-messaging-guide"></a>`linkedin-messaging-guide` | Disney, Daniel. *The Ultimate LinkedIn Messaging Guide: How to Use Written, Audio, Video and InMail Messages to Start More Conversations and Increase Sales*. Wiley, 2023 | business-marketing | 3 |
+| <a name="src-linkedin-messaging-guide-ch-7-linkedin-messaging-guide"></a>`linkedin-messaging-guide-ch-7-linkedin-messaging-guide` | Disney, Daniel. *The Ultimate LinkedIn Messaging Guide: How to Use Written, Audio, Video and InMail Messages to Start More Conversations and Increase Sales*. Wiley, 2023 | business-marketing | 1 |
 | <a name="src-llm-security-playbook"></a>`llm-security-playbook` | Wilson, Steve. *The Developer's Playbook for Large Language Model Security: Building Secure AI Applications*. 1st ed., O'Reilly, 2024 | engineering, security | 11 |
 | <a name="src-lohr-sampling-design-analysis"></a>`lohr-sampling-design-analysis` | Lohr, Sharon L. *Sampling: Design and Analysis*. 3rd ed., Chapman & Hall/CRC Texts in Statistical Science, CRC Press, 2021. Primary source. [ISBN 9780367279509 | ml-systems | 7 |
 | <a name="src-manning-information-retrieval"></a>`manning-information-retrieval` | Manning, Christopher D., Prabhakar Raghavan, and Hinrich Schütze. *Introduction to Information Retrieval*. Cambridge University Press, 2008 | ml-systems | 8 |
@@ -79,7 +81,7 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-ml-design-patterns"></a>`ml-design-patterns` | Lakshmanan, Valliappa, Sara Robinson, and Michael Munn. *Machine Learning Design Patterns*. O'Reilly, 2020 | ml-systems | 2 |
 | <a name="src-ml-test-score"></a>`ml-test-score` | Breck, et al. "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction." *IEEE Big Data*, 2017 | engineering, ml-systems | 8 |
 | <a name="src-model-cards"></a>`model-cards` | Mitchell, et al. "Model Cards for Model Reporting." *ACM FAT*, 2019 | ml-systems | 5 |
-| <a name="src-modern-php-security"></a>`modern-php-security` | Chauchefoin, Thomas, and Lena David. "Modern PHP Security." *sec4dev 2020*, Vienna, 27 Feb. 2020. Synacktiv. Conference slides (extraction is short; many mechanisms appear as bullet recommendations rather than full prose) | security | 9 |
+| <a name="src-modern-php-security"></a>`modern-php-security` | Chauchefoin, Thomas, and Lena David. "Modern PHP Security." *sec4dev 2020*, Vienna, 27 Feb. 2020. Synacktiv. Conference slides (extraction is short; many mechanisms appear as bullet recommendations rather than full prose) | security | 8 |
 | <a name="src-modern-software-engineering"></a>`modern-software-engineering` | Farley, David. *Modern Software Engineering: Doing What Works to Build Better Software Faster*. Pearson, 2022 | engineering | 14 |
 | <a name="src-never-split-the-difference"></a>`never-split-the-difference` | Voss, Chris, and Tahl Raz. *Never Split the Difference: Negotiating As If Your Life Depended On It*. HarperBusiness, 2016 | business-marketing | 9 |
 | <a name="src-nist-frvt-demographics"></a>`nist-frvt-demographics` | Grother, Ngan, and Hanaoka. *Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects*. NISTIR 8280, 2019 | ml-systems | 8 |
@@ -90,16 +92,18 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-paula-scher-design"></a>`paula-scher-design` | Scher, Paula. *Make It Bigger*. Princeton Architectural Press, 2005 | design-aesthetics | 9 |
 | <a name="src-pepe-medical-test-evaluation"></a>`pepe-medical-test-evaluation` | Margaret Sullivan Pepe, *The Statistical Evaluation of Medical Tests for Classification and Prediction*, Oxford Statistical Science Series 31, Oxford UP, 2003. Primary source. [ | ml-systems | 3 |
 | <a name="src-philosophy-of-software-design"></a>`philosophy-of-software-design` | Ousterhout, John. *A Philosophy of Software Design*. 2nd ed., 2021 | engineering | 9 |
-| <a name="src-php-security"></a>`php-security` | PHP Documentation Group. "PHP Manual." *php.net*, n.d., https://www.php.net/manual/ | security | 7 |
+| <a name="src-php-security"></a>`php-security` | PHP Documentation Group. "PHP Manual." *php.net*, n.d., https://www.php.net/manual/ | security | 8 |
 | <a name="src-pinedo-scheduling-ch-3-pinedo-scheduling"></a>`pinedo-scheduling-ch-3-pinedo-scheduling` | Pinedo, Michael L. *Scheduling: Theory, Algorithms, and Systems*. 6th ed., Springer, 2022 | engineering | 2 |
 | <a name="src-playboy-brand-value"></a>`playboy-brand-value` | Gunelius, Susan. *Building Brand Value the Playboy Way*. Palgrave Macmillan, 2009 | design-aesthetics | 7 |
-| <a name="src-poor-charlies-almanack"></a>`poor-charlies-almanack` | Munger, Charles T. *Poor Charlie's Almanack: The Wit and Wisdom of Charles T. Munger*. Edited by Peter D. Kaufman, expanded 3rd ed., n.d | business-marketing | 12 |
+| <a name="src-poor-charlies-almanack"></a>`poor-charlies-almanack` | Munger, Charles T. *Poor Charlie's Almanack: The Wit and Wisdom of Charles T. Munger*. Edited by Peter D. Kaufman, expanded 3rd ed., n.d | business-marketing | 11 |
+| <a name="src-poor-charlies-almanack-ch-8-poor-charlies-almanack"></a>`poor-charlies-almanack-ch-8-poor-charlies-almanack` | Munger, Charles T. *Poor Charlie's Almanack: The Wit and Wisdom of Charles T. Munger*. Edited by Peter D. Kaufman, expanded 3rd ed., n.d | business-marketing | 1 |
 | <a name="src-porn-work"></a>`porn-work` | Berg, Heather. *Porn Work: Sex, Labor, and Late Capitalism*. University of North Carolina Press, 2021 | business-marketing | 12 |
 | <a name="src-postgresql-security"></a>`postgresql-security` | PostgreSQL Global Development Group. *PostgreSQL 18 Documentation*. n.d | security | 14 |
 | <a name="src-pragmatic-programmer"></a>`pragmatic-programmer` | Hunt, Andrew, and David Thomas. *The Pragmatic Programmer: Your Journey to Mastery*. 2nd ed. (20th anniversary edition), Addison-Wesley, 2019 | engineering | 8 |
 | <a name="src-product-deploy-agents-fields"></a>`product-deploy-agents-fields` | Fields, Jason. "Product Deploy Agents." *GitHub*, version 2.0, 2026, github.com/fasonista71/product-deploy-agents | accessibility, business-marketing, design-aesthetics, engineering | 19 |
 | <a name="src-programmers-brain"></a>`programmers-brain` | Hermans, Felienne. *The Programmer's Brain: What every programmer needs to know about cognition*. Manning, 2021 | engineering | 7 |
-| <a name="src-refactoring-fowler-beck"></a>`refactoring-fowler-beck` | Fowler, Martin, and Kent Beck. *Refactoring: Improving the Design of Existing Code*. 2nd ed., 2018 | engineering, graph-theory | 11 |
+| <a name="src-refactoring-fowler-beck"></a>`refactoring-fowler-beck` | Fowler, Martin, and Kent Beck. *Refactoring: Improving the Design of Existing Code*. 2nd ed., 2018 | engineering, graph-theory | 10 |
+| <a name="src-refactoring-fowler-beck-ch-3-modern-software-engineering"></a>`refactoring-fowler-beck-ch-3-modern-software-engineering` | Fowler, Martin, and Kent Beck. *Refactoring: Improving the Design of Existing Code*. 2nd ed., 2018 | engineering | 1 |
 | <a name="src-refactoring-typescript"></a>`refactoring-typescript` | Hickey, James. *Refactoring TypeScript: Keeping your code healthy*. Packt, 2019 | engineering | 6 |
 | <a name="src-refactoring-ui"></a>`refactoring-ui` | Wathan, Adam, and Steve Schoger. *Refactoring UI*. 2018 | engineering | 8 |
 | <a name="src-reinhart-statistics-done-wrong"></a>`reinhart-statistics-done-wrong` | Alex Reinhart, *Statistics Done Wrong: The Woefully Complete Guide*, No Starch Press, 2015 | epistemics | 6 |
@@ -132,8 +136,9 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-video-to-video-face-surveillance"></a>`video-to-video-face-surveillance` | Herrmann, Christian. *Video-to-Video Face Recognition for Low-Quality Surveillance Data*. KIT Scientific Publishing, n.d | ml-systems | 4 |
 | <a name="src-video-to-video-face-surveillance-manning-information-retrieval"></a>`video-to-video-face-surveillance-manning-information-retrieval` | Herrmann, Christian. *Video-to-Video Face Recognition for Low-Quality Surveillance Data*. KIT Scientific Publishing, n.d | ml-systems | 1 |
 | <a name="src-visualization-analysis-design-munzner"></a>`visualization-analysis-design-munzner` | Munzner, Tamara. *Visualization Analysis and Design*. CRC Press / AK Peters, 2014 | interaction-ux | 8 |
-| <a name="src-wcag22-accessibility"></a>`wcag22-accessibility` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 23 |
+| <a name="src-wcag22-accessibility"></a>`wcag22-accessibility` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 21 |
 | <a name="src-wcag22-accessibility-ch-1-product-deploy-agents-fields"></a>`wcag22-accessibility-ch-1-product-deploy-agents-fields` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 1 |
+| <a name="src-wcag22-accessibility-ch-2-wcag22-accessibility"></a>`wcag22-accessibility-ch-2-wcag22-accessibility` | W3C Web Accessibility Initiative. *Web Content Accessibility Guidelines 2.2*. n.d. WebAIM. *The WebAIM Million*. 2026 | accessibility | 2 |
 | <a name="src-web-typography"></a>`web-typography` | Rutter, Richard. *Web Typography: A handbook for designing beautiful and effective responsive typography*. Ampersand Type, 2017 | design-aesthetics | 9 |
 | <a name="src-why-programs-fail"></a>`why-programs-fail` | Zeller, Andreas. *Why Programs Fail: A Guide to Systematic Debugging*. 2nd ed., Morgan Kaufmann, 2009 | engineering | 6 |
 | <a name="src-wordpress-plugin-development"></a>`wordpress-plugin-development` | Williams, Brad, Justin Tadlock, and John James Jacoby. *Professional WordPress Plugin Development*. 2nd ed., John Wiley & Sons, 2020 | security | 3 |
@@ -143,4 +148,4 @@ research corpus. Rights posture for every source is in [`NOTICE.md`](NOTICE.md).
 | <a name="src-zalewski-tangled-web"></a>`zalewski-tangled-web` | Zalewski, Michal. *The Tangled Web: A Guide to Securing Modern Web Applications*. No Starch Press, 2011 | security | 12 |
 | <a name="src-zezula-similarity-search"></a>`zezula-similarity-search` | Zezula, Pavel; Amato, Giuseppe; Dohnal, Vlastislav; Batko, Michal. *Similarity Search: The Metric Space Approach*. Advances in Database Systems, Springer, 2006. Primary source | ml-systems | 2 |
 
-_136 sources. Generated by the research corpus; do not edit._
+_141 sources. Generated by the research corpus; do not edit._
