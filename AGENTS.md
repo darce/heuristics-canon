@@ -14,8 +14,9 @@ change. Cite the ID instead of restating the advice.
   if violated. `S`hould: strong default with named exemptions. `J`udgment: weigh in
   context. Judgment escalates rather than simplifies, so a lane without the context
   routes a J rule up instead of treating it as optional.
-- Do not consume `main`. Pin a release tag and verify digests (below). `main` is
-  unreleased.
+- Cite against a tag, not `main`. Rule text can change under the same ID in a PATCH
+  release, so a citation pinned to a tag stays reproducible while `main` advances. Verify
+  digests (below).
 - Nothing here is editable. Rules are authored in a private research corpus and
   projected in; there is no tooling in this repo and pull requests are not taken. If a
   rule looks wrong, open an issue.
@@ -63,9 +64,7 @@ thing to inline in a review comment next to the ID.
 
 Every rule row carries an anchor, so a citation can point at the exact rule, not the top
 of a file: `lexicons/business-marketing.md#clm-05` opens the rendered table scrolled to
-CLM-05. Use this in review comments and docs so a reader lands on the rule itself. A rule
-whose Sources row reads "(no distillation on record)" is still a citable rule (the baked
-condition -> action is our own expression); it just has no second-source convergence yet.
+CLM-05. Use this in review comments and docs so a reader lands on the rule itself.
 
 ## Corroboration
 
