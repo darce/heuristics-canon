@@ -1,8 +1,8 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.7.1",
-  "date": "2026-07-21",
-  "rules": 908,
+  "version": "0.8.0",
+  "date": "2026-07-22",
+  "rules": 925,
   "principles": 16,
   "lexicons": {
     "lexicons/accessibility.md": {
@@ -18,16 +18,16 @@
       "rules": 70
     },
     "lexicons/engineering.md": {
-      "sha256": "97497793ed376daba768fb7eb23f16c923a95441a7e0820f07e74def6f115d63",
-      "rules": 250
+      "sha256": "ed1bb855e552b5548f70a17c57b85f74d1e96acdb2e2581f3ec3ca4ce99e4014",
+      "rules": 266
     },
     "lexicons/epistemics.md": {
       "sha256": "191fc39c077fc6837ca24832ac1f904b015752be52305b27c9ecb02c516e417d",
       "rules": 24
     },
     "lexicons/graph-theory.md": {
-      "sha256": "06f3fd34489d2d1e81e84144fca365603df707f7497ef29668fb19d7ac58fd5a",
-      "rules": 30
+      "sha256": "8b995c9415c26d5e41976d94f867c6574b98d1f5e7c5c2ba1317295f1715c7bd",
+      "rules": 31
     },
     "lexicons/interaction-ux.md": {
       "sha256": "bf511df24016fe3cd4c8538b6d23b859e96da6b26854c859f15519fed2e7caf7",
@@ -149,6 +149,8 @@
     "ARCH-14",
     "ARCH-15",
     "ARCH-16",
+    "ARCH-17",
+    "ARCH-18",
     "BOOT-01",
     "BOOT-02",
     "BOOT-03",
@@ -227,6 +229,11 @@
     "CON-15",
     "CON-16",
     "CON-17",
+    "CON-18",
+    "CON-19",
+    "CON-20",
+    "CON-21",
+    "CON-22",
     "COST-01",
     "COST-02",
     "COST-03",
@@ -406,6 +413,7 @@
     "GRPH-28",
     "GRPH-29",
     "GRPH-30",
+    "GRPH-31",
     "GTM-01",
     "GTM-02",
     "GTM-03",
@@ -587,6 +595,12 @@
     "PERF-08",
     "PERF-09",
     "PERF-10",
+    "PERF-11",
+    "PERF-12",
+    "PERF-13",
+    "PERF-14",
+    "PERF-15",
+    "PERF-16",
     "PG-01",
     "PG-02",
     "PG-03",
@@ -696,6 +710,9 @@
     "RES-14",
     "RES-15",
     "RES-16",
+    "RES-17",
+    "RES-18",
+    "RES-19",
     "RLSE-01",
     "RLSE-02",
     "RLSE-03",
