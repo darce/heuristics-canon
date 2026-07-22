@@ -45,7 +45,7 @@ Every row has the same shape. Here is one, from the engineering lexicon:
 - **Rule** is the falsifiable claim: condition, action, consequence.
 - **Answers** is the one question to ask at the decision point.
 - **T·P** is tier and phase. Tier **B**locker means correctness, data loss, or security if violated; **S**hould is a strong default with named exemptions; **J**udgment must be weighed in context, and escalates rather than simplifies, so a lane without that context routes it up. Phase codes are per-lexicon; filter by the bucket in the legend below (plan / write / review / ship) unless you mean one lexicon's code.
-- **Src** is the source slug. [`SOURCES.md`](SOURCES.md) resolves it to what it feeds and its rights; the full distillation behind it is private.
+- **Src** is the source slug, linked to its row in [`SOURCES.md`](SOURCES.md): the full citation and what it feeds. The distillation behind it is private; rights are in [`NOTICE.md`](NOTICE.md).
 
 <!-- BEGIN GENERATED PHASES -->
 
@@ -127,7 +127,7 @@ Everything published here is CC BY 4.0 ([`LICENSE`](LICENSE)). Cited sources bel
 ```
 lexicons/                    the rules, one file per lexicon
 PRINCIPLES.md                cross-domain convergences, stated as first principles
-SOURCES.md                   every source slug resolved: what it feeds, its rights
+SOURCES.md                   every source slug resolved: its citation and what it feeds
 meta/release-manifest.json   per-release digests and the full rule-ID list
 AGENTS.md                    the agent contract (CLAUDE.md points here)
 NOTICE.md                    licensing and rights, one page

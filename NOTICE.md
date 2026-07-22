@@ -17,15 +17,11 @@ Every rule cites a third-party source, and a citation is not a license: CC BY 4.
 no rights in any cited work. The books, papers, and standards named in
 [`SOURCES.md`](SOURCES.md) belong to their authors and publishers.
 
-Sources reused under their own explicit terms:
-
-- Product Deploy Agents © Jason Fields, CC BY 4.0 (@fasonista); feeds `CLM`, `RLSE`, and related rows.
-- WCAG 2.2 © W3C, a W3C Recommendation (= ISO/IEC 40500) under the W3C Document License; referenced, not reproduced. Related WAI and WebAIM material is cited under its own terms.
-- AODA / Ontario Regulation 191/11, Government of Ontario, open-government terms.
-
-Everything else is held `research-copy-only` (the Rights column in
-[`SOURCES.md`](SOURCES.md)) and is not reproduced here. If you are a rights-holder and
-believe a rule or citation overreaches, open an issue.
+Every cited work is used `research-copy-only` — cited, never reproduced. Some sources
+carry their own permissive terms (for example W3C standards and CC BY 4.0 material), but
+this repository reproduces none of their text either way, so the single conservative
+posture covers all of them. If you are a rights-holder and believe a rule or citation
+overreaches, open an issue.
 
 ## Why some material is not published
 
