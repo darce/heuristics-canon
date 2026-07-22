@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "date": "2026-07-22",
   "rules": 925,
   "principles": 16,
@@ -10,7 +10,7 @@
       "rules": 38
     },
     "lexicons/business-marketing.md": {
-      "sha256": "a8c13e5793d472e32e8992674c5fe3a9b8c7d84765ef1d0b516b9487c5272e49",
+      "sha256": "ac26c6ad84bd71eaceb8b231b559189d556e765579fb6e8db503e1f73e213dc3",
       "rules": 93
     },
     "lexicons/design-aesthetics.md": {

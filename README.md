@@ -1,6 +1,6 @@
 # Heuristics canon
 
-A working corpus of more than 800 decision rules for building, running, securing, marketing, designing, writing, and shipping software. Each rule is a falsifiable condition -> action claim with a stable citation ID, a source you can check, and a tier that says how hard it binds. A review comment, plan, or skill cites the ID at the moment a decision is made: `[RES-02]` on a blocking call with no timeout, `[A11Y-01]` on a color change. One token replaces a paragraph of restated advice.
+A working corpus of more than 900 decision rules for building, running, securing, marketing, designing, writing, and shipping software. Each rule is a falsifiable condition -> action claim with a stable citation ID, a source you can check, and a tier that says how hard it binds. A review comment, plan, or skill cites the ID at the moment a decision is made: `[RES-02]` on a blocking call with no timeout, `[A11Y-01]` on a color change. One token replaces a paragraph of restated advice.
 
 The shelf is deliberately mismatched: a distributed-systems text, a 1988 manual on gaming the UK pop charts, a WCAG standard, a labor study of the adult-content economy, a 1935 typography treatise. When two sources arrive at one mechanism from economies that share nothing, the corpus records the convergence as a first principle in [PRINCIPLES.md](PRINCIPLES.md), and a session that cites one rule retrieves the others as corroboration it would not have found alone.
 
