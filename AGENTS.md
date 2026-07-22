@@ -59,6 +59,14 @@ Trigger (observable in a diff, plan, or metric) · Rule (the falsifiable claim) 
 (the one question to ask) · tier·phase · source. The Answers column is the cheapest
 thing to inline in a review comment next to the ID.
 
+## Deep-link a rule
+
+Every rule row carries an anchor, so a citation can point at the exact rule, not the top
+of a file: `lexicons/business-marketing.md#clm-05` opens the rendered table scrolled to
+CLM-05. Use this in review comments and docs so a reader lands on the rule itself. A rule
+whose Sources row reads "(no distillation on record)" is still a citable rule (the baked
+condition -> action is our own expression); it just has no second-source convergence yet.
+
 ## Corroboration
 
 When you cite a rule, [`PRINCIPLES.md`](PRINCIPLES.md) may hold its cross-domain
