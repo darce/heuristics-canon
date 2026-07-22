@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "date": "2026-07-22",
   "rules": 925,
   "principles": 16,
@@ -26,7 +26,7 @@
       "rules": 24
     },
     "lexicons/graph-theory.md": {
-      "sha256": "409cfb80e16ece8906d73c33b0cdaeb080a0c88114b985f2e4c736f3c249ea7d",
+      "sha256": "8eaeebcf3805933d9f7ce1ff81219ecf8d071c4bb93daaffb4607221028d3dfe",
       "rules": 31
     },
     "lexicons/interaction-ux.md": {
