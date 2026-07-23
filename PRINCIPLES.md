@@ -248,8 +248,9 @@ An outcome channel earns trust in both directions at once: failure must be impos
 - Raymond states the repair rule two decades later, and Fields arrives from shipping products: when you must fail, fail noisily and as soon as possible, because a crash is honest and a silent wrong answer is not [[AGT-10]](lexicons/engineering.md#agt-10), [[RLSE-05]](lexicons/engineering.md#rlse-05).
 - The observability authors run the same audit on telemetry: silence is not success, and dead instrumentation must break loudly, because a quiet dashboard and a healthy system are indistinguishable until you enforce the difference [[OBS-08]](lexicons/engineering.md#obs-08).
 - The converse guard keeps the loud side honest: an ERROR that does not require operator action trains operators to ignore ERROR, which is how the loud channel goes quiet in the reader instead of the emitter [[OBS-04]](lexicons/engineering.md#obs-04).
+- The same guard governs the human-facing channel, where the perception and AI-interface literatures arrive at it independently: a "verify important details" cue fired on every fluent AI output is the loud signal that habituates, so the user's attention — the last error detector when the system cannot flag its own wrong answer — goes quiet exactly when a rare confident hallucination needs catching. Localize the verify cue to the output at risk rather than raising a standing banner [[HAI-13]](lexicons/interaction-ux.md#hai-13), [[PERC-07]](lexicons/interaction-ux.md#perc-07).
 
-Unix stream design, product release engineering, and production observability arrived separately: a channel where success chatters or failure whispers is not reporting the system, and the fix is symmetrical silence discipline, not more logging.
+Unix stream design, product release engineering, production observability, and AI-interface design arrived separately: a channel where success chatters or failure whispers — in a pipeline, on a dashboard, or in a user's attention — is not reporting the system, and the fix is symmetrical silence discipline, not more logging.
 
 ## 17. High-impact actions take two independent keys
 

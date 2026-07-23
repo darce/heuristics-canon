@@ -1,7 +1,7 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.12.2",
-  "date": "2026-07-22",
+  "version": "0.12.3",
+  "date": "2026-07-23",
   "rules": 1075,
   "principles": 19,
   "lexicons": {
@@ -18,7 +18,7 @@
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "6fd4befc75b75d512f4d585c23b15994b8a94e3236a8b34d6fc820a22bbecba8",
+      "sha256": "b384f852a0fa8bec784680652d794b72e2e4ebc736d68488aebefed73b90fde9",
       "rules": 277
     },
     "lexicons/epistemics.md": {
@@ -30,7 +30,7 @@
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "5e797dedebecd00c62adac80b8d1b0c2d1d516586ec6b9bebdcffe7be0357350",
+      "sha256": "b726df864c84b0d0ff86ce66e035011034deca970f4e4ee3475294763723b471",
       "rules": 91
     },
     "lexicons/ml-systems.md": {
