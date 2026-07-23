@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "date": "2026-07-22",
   "rules": 1075,
   "principles": 19,
@@ -14,11 +14,11 @@
       "rules": 103
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "6fb3b924f3cc3ab656f6b74bf70481667a9847f86fd08b7631d0da5cb37d6e4b",
+      "sha256": "456f297815c3eb76fb2c451bfd5d51922de0d4c8f7d0c106b643177b80081ef4",
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "f8f044c03952d460594659eab7dec48736aa7afdd31773b77f9b5b06380cae05",
+      "sha256": "c8c81dc34042b474a9431eb3956ca11e12e8eda86adbacd3a2df74840005a593",
       "rules": 277
     },
     "lexicons/epistemics.md": {
@@ -26,7 +26,7 @@
       "rules": 83
     },
     "lexicons/graph-theory.md": {
-      "sha256": "9dccd81c579453084e135ab79ce2b9578881bbdb28dc7c58d9dd52507f64ecec",
+      "sha256": "dd96afbdde335496e2a16658ac920b28f8c70c371a7832d1f492596a9d08f78c",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
