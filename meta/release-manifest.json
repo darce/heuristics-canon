@@ -1,13 +1,13 @@
 {
   "schema": "heuristics-canon/release@1",
-  "version": "0.12.3",
+  "version": "0.13.0",
   "date": "2026-07-23",
-  "rules": 1075,
+  "rules": 1081,
   "principles": 19,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "88e5b754a40af135d414932ee3c3e357f98577d61a3b48ce4741d89916752fd1",
-      "rules": 44
+      "sha256": "5e48a0e96c32ba21d21ba106ef7a3ef558d68b0d08a635012ec87a58bc42a420",
+      "rules": 50
     },
     "lexicons/business-marketing.md": {
       "sha256": "525abbbc661fdf70046058010a6028eef13e82eb0f0d4388e4dbc83e07513140",
@@ -91,6 +91,12 @@
     "A11Y-42",
     "A11Y-43",
     "A11Y-44",
+    "A11Y-45",
+    "A11Y-46",
+    "A11Y-47",
+    "A11Y-48",
+    "A11Y-49",
+    "A11Y-50",
     "AGT-01",
     "AGT-02",
     "AGT-04",
