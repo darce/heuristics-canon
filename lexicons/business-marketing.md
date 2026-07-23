@@ -11,14 +11,14 @@ the claim behind it.
 
 **Contents**
 
-- [1. Strategy & Bets](#1-strategy--bets)
-- [2. Product & Validation](#2-product--validation)
-- [3. AI-Product Craft](#3-ai-product-craft)
-- [4. Go-to-Market & Distribution](#4-go-to-market--distribution)
-- [5. Negotiation & Sales Conversations](#5-negotiation--sales-conversations)
-- [6. Operations & Incentives](#6-operations--incentives)
-- [7. Bootstrap Brand Economics](#7-bootstrap-brand-economics)
-- [8. Claims & Regulatory Surface](#8-claims--regulatory-surface)
+- [1. Strategy & Bets<a name="fam-strat"></a>](#1-strategy--betsa-namefam-strata)
+- [2. Product & Validation<a name="fam-prod"></a>](#2-product--validationa-namefam-proda)
+- [3. AI-Product Craft<a name="fam-aipx"></a>](#3-ai-product-crafta-namefam-aipxa)
+- [4. Go-to-Market & Distribution<a name="fam-gtm"></a>](#4-go-to-market--distributiona-namefam-gtma)
+- [5. Negotiation & Sales Conversations<a name="fam-neg"></a>](#5-negotiation--sales-conversationsa-namefam-nega)
+- [6. Operations & Incentives<a name="fam-ops"></a>](#6-operations--incentivesa-namefam-opsa)
+- [7. Bootstrap Brand Economics<a name="fam-boot"></a>](#7-bootstrap-brand-economicsa-namefam-boota)
+- [8. Claims & Regulatory Surface<a name="fam-clm"></a>](#8-claims--regulatory-surfacea-namefam-clma)
 - [9. Cross-source tensions worth keeping](#9-cross-source-tensions-worth-keeping)
 - [Consumption](#consumption)
 
@@ -41,7 +41,7 @@ missing). Phase: **s**trategy, **p**roduct, **g**tm, **o**ps.
 
 A new rule from a lived outcome enters at tier J with the outcome as its provenance.
 
-## 1. Strategy & Bets
+## 1. Strategy & Bets<a name="fam-strat"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | STRAT-17<a name="strat-17"></a> | research plan or persona work treats stated "I want X" as autonomous preference with no probe for who models X as desirable | **Borrowed-desire filter**: treat a stated "I want X" as possibly *désir selon l'Autre* until non-mediated evidence (willingness to pay under model-absent framing, revealed behaviour, plain functional need) separates object-intrinsic demand from prestige-mediated demand (↔ [[STRAT-05]](business-marketing.md#strat-05) hide the mediator and re-test the want) | Would they still want this if the prestige model's desire were hidden? | S·p | [girard-mensonge-romantique ch-1](../SOURCES.md#src-girard-mensonge-romantique) |
 | STRAT-18<a name="strat-18"></a> | brand or positioning claims radical originality while the feature or narrative checklist is peer-parity, or the team shows unusually sharp scorn for "copycats" | **Denied imitation**: under *médiation interne* the most exact imitation is the most vigorously denied; originality rhetoric plus a peer-parity feature checklist, or scorn for "copycats", is a cue to audit the hidden *médiateur*, not proof of autonomy (↔ [[STRAT-05]](business-marketing.md#strat-05) mediated desire is not independent evidence; ↔ [[STRAT-16]](business-marketing.md#strat-16) internal mediation is the denial regime) | Who is the model we refuse to name, and what of theirs are we shipping? | J·g | [girard-mensonge-romantique ch-1](../SOURCES.md#src-girard-mensonge-romantique) |
 
-## 2. Product & Validation
+## 2. Product & Validation<a name="fam-prod"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -84,7 +84,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | PROD-14<a name="prod-14"></a> | UI quality never revisited after v1 | **UX debt is debt**: track and pay down like tech debt | Where does the current journey diverge from the ideal? | J·p | [lean-ux ch-17](../SOURCES.md#src-lean-ux) |
 | PROD-15<a name="prod-15"></a> | backlog of untested ideas | **HPC triage**: test Q1 (high value, high risk), build Q2 (high value, low risk), trash Q4 (high risk, low value) (↔ [[PROD-03]](business-marketing.md#prod-03) cheapest learning for the Q1 path; ↔ [[PROD-04]](business-marketing.md#prod-04) kill when triage or evidence says so) | High value *and* high risk, or just loud? | S·p | [lean-ux ch-10](../SOURCES.md#src-lean-ux) |
 
-## 3. AI-Product Craft
+## 3. AI-Product Craft<a name="fam-aipx"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -104,7 +104,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | AIPX-15<a name="aipx-15"></a> | next sprint is "try another architecture" | **Error-analysis drives work**: top-k and slices assign the next tasks; no blind architecture thrash (↔ [[AIPX-04]](business-marketing.md#aipx-04) slices name the failure modes that now get tasks) | What concrete failure mode are we fixing? | S·p | [building-ml-powered-applications ch-5](../SOURCES.md#src-building-ml-powered-applications) |
 | AIPX-16<a name="aipx-16"></a> | multi-step autonomous workflow | **Early draft plan + step control**: show the scaffold early and allow stop, edit, or redirect mid-flight (↔ ux [[HAI-04]](interaction-ux.md#hai-04) activate-operate-override; ↔ [[AIPX-11]](business-marketing.md#aipx-11) user must detect and steer when the system cannot) | Can the user stop, edit, or redirect mid-flight? | S·p | [designing-ai-interfaces ch-4](../SOURCES.md#src-designing-ai-interfaces) |
 
-## 4. Go-to-Market & Distribution
+## 4. Go-to-Market & Distribution<a name="fam-gtm"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -122,7 +122,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | GTM-12<a name="gtm-12"></a> | pipeline counted as quota-matching opportunities | **Inverse close-rate pipeline**: 2–4× closes as live opps; always prospecting | Do we have the multiple? | B·o | [linkedin-messaging-guide ch-27](../SOURCES.md#src-linkedin-messaging-guide) |
 | GTM-13<a name="gtm-13"></a> | packaging/stunts multiply after the product converts | **Brown-bag test**: if it works bare, stop funding lore | Would this still win without the stunt budget? | J·g | [klf-the-manual ch-13](../SOURCES.md#src-klf-the-manual) |
 
-## 5. Negotiation & Sales Conversations
+## 5. Negotiation & Sales Conversations<a name="fam-neg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -137,7 +137,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | NEG-09<a name="neg-09"></a> | deadlock on story or principles | **That's-right summary**: restate their world (paraphrase + labeling) until they freely say "That's right," not "You're right" (↔ [[NEG-04]](business-marketing.md#neg-04) three-yes hunts ownership, not counterfeit yes) | Can I restate their world until they say "That's right"? | S·g | [never-split-the-difference ch-5](../SOURCES.md#src-never-split-the-difference) |
 | NEG-10<a name="neg-10"></a> | need safe disagreement or a cold open | **No-oriented open**: prefer autonomy-safe questions that invite "No" over yes-traps that train counterfeit agreement (↔ [[NEG-07]](business-marketing.md#neg-07) loss-framed reopen when silence is the problem) | "Is now a bad time to talk?" | S·g | [never-split-the-difference ch-4](../SOURCES.md#src-never-split-the-difference) |
 
-## 6. Operations & Incentives
+## 6. Operations & Incentives<a name="fam-ops"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -157,7 +157,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | OPS-14<a name="ops-14"></a> | multi-year custom program vs market product | **Commercial-first gate**: buy before greenfield when a suitable commercial item exists; require a written reject of the market option | What commercial item did we formally reject, and why? | S·o | [technological-republic ch-13](../SOURCES.md#src-technological-republic) |
 | OPS-15<a name="ops-15"></a> | work expands to fill the week | **Parkinson deadline**: short clear deadlines force essentials; tasks swell with the time allotted (↔ [[OPS-06]](business-marketing.md#ops-06) pair with 80/20 elimination of the non-essentials) | If this were due in 2 hours, what would I still do? | S·o | [four-hour-workweek ch-5](../SOURCES.md#src-four-hour-workweek) |
 
-## 7. Bootstrap Brand Economics
+## 7. Bootstrap Brand Economics<a name="fam-boot"></a>
 
 > Source: Berg, *Porn Work* (scholarly labor study of the adult-content economy), distilled for its transferable zero-capital creator mechanics: how workers build income under stigma, platform hostility, and no funding. The rules generalize to any bootstrap product; the distillation stays in the private research corpus.
 
@@ -176,7 +176,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | BOOT-11<a name="boot-11"></a> | scope changes mid-delivery | **Renegotiate on change**: new deliverable, new deal; silence re-prices you at zero | Did terms change without a new price? | B·o | [porn-work ch-11](../SOURCES.md#src-porn-work) |
 | BOOT-12<a name="boot-12"></a> | "just refuse bad clients" advice | **Stratified refusal power**: build the alternate stream before moralizing about walking away | Who in this market can actually walk? | J·s | [porn-work ch-5](../SOURCES.md#src-porn-work) |
 
-## 8. Claims & Regulatory Surface
+## 8. Claims & Regulatory Surface<a name="fam-clm"></a>
 
 > Added 2026-07-11. Source: Fields, *Product Deploy Agents* compliance lens (CC BY 4.0, Jason Fields, jasonpfields.com, @fasonista); provenance in `distilled/engineering/product-deploy-agents-fields.md` ch-7. The premise is that in any regulated or platform-gated space, the language describing a product receives the same scrutiny as the product: a claim, not a sensor, decides which regulatory regime applies.
 

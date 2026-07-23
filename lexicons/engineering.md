@@ -13,28 +13,28 @@ anchors.
 
 **Contents**
 
-- [1. AGT: Agent Craft](#1-agt-agent-craft)
-- [2. RES: Resilience & Failure Modes](#2-res-resilience--failure-modes)
-- [3. CON: Concurrency & Async](#3-con-concurrency--async)
-- [4. DATA: Data & Consistency](#4-data-data--consistency)
-- [5. MODEL: Data Modeling](#5-model-data-modeling)
-- [6. STOR: Storage & Retrieval](#6-stor-storage--retrieval)
-- [7. FLOW: Batch & Stream Dataflow](#7-flow-batch--stream-dataflow)
-- [8. PERF: Performance & Tail-Latency](#8-perf-performance--tail-latency)
-- [9. REF: Refactoring & Design](#9-ref-refactoring--design)
-- [10. TEST: Testing Strategy](#10-test-testing-strategy)
-- [11. DBG: Debugging Procedure](#11-dbg-debugging-procedure)
-- [12. DIAG: Diagnosis Posture](#12-diag-diagnosis-posture)
-- [13. OBS: Observability](#13-obs-observability)
+- [1. AGT: Agent Craft<a name="fam-agt"></a>](#1-agt-agent-crafta-namefam-agta)
+- [2. RES: Resilience & Failure Modes<a name="fam-res"></a>](#2-res-resilience--failure-modesa-namefam-resa)
+- [3. CON: Concurrency & Async<a name="fam-con"></a>](#3-con-concurrency--asynca-namefam-cona)
+- [4. DATA: Data & Consistency<a name="fam-data"></a>](#4-data-data--consistencya-namefam-dataa)
+- [5. MODEL: Data Modeling<a name="fam-model"></a>](#5-model-data-modelinga-namefam-modela)
+- [6. STOR: Storage & Retrieval<a name="fam-stor"></a>](#6-stor-storage--retrievala-namefam-stora)
+- [7. FLOW: Batch & Stream Dataflow<a name="fam-flow"></a>](#7-flow-batch--stream-dataflowa-namefam-flowa)
+- [8. PERF: Performance & Tail-Latency<a name="fam-perf"></a>](#8-perf-performance--tail-latencya-namefam-perfa)
+- [9. REF: Refactoring & Design<a name="fam-ref"></a>](#9-ref-refactoring--designa-namefam-refa)
+- [10. TEST: Testing Strategy<a name="fam-test"></a>](#10-test-testing-strategya-namefam-testa)
+- [11. DBG: Debugging Procedure<a name="fam-dbg"></a>](#11-dbg-debugging-procedurea-namefam-dbga)
+- [12. DIAG: Diagnosis Posture<a name="fam-diag"></a>](#12-diag-diagnosis-posturea-namefam-diaga)
+- [13. OBS: Observability<a name="fam-obs"></a>](#13-obs-observabilitya-namefam-obsa)
 - [Security](#security)
-- [14. API: API Design](#14-api-api-design)
-- [15. DOM: Domain Modeling](#15-dom-domain-modeling)
-- [16. ARCH: Architecture & Trade-offs](#16-arch-architecture--trade-offs)
-- [17. TEAM: Team & Organization Design](#17-team-team--organization-design)
-- [18. ALG: Algorithms & Data Structures](#18-alg-algorithms--data-structures)
-- [19. NAME: Naming & Comprehension](#19-name-naming--comprehension)
-- [20. UI: UI & Visual Design](#20-ui-ui--visual-design)
-- [21. RLSE: Release Readiness](#21-rlse-release-readiness)
+- [14. API: API Design<a name="fam-api"></a>](#14-api-api-designa-namefam-apia)
+- [15. DOM: Domain Modeling<a name="fam-dom"></a>](#15-dom-domain-modelinga-namefam-doma)
+- [16. ARCH: Architecture & Trade-offs<a name="fam-arch"></a>](#16-arch-architecture--trade-offsa-namefam-archa)
+- [17. TEAM: Team & Organization Design<a name="fam-team"></a>](#17-team-team--organization-designa-namefam-teama)
+- [18. ALG: Algorithms & Data Structures<a name="fam-alg"></a>](#18-alg-algorithms--data-structuresa-namefam-alga)
+- [19. NAME: Naming & Comprehension<a name="fam-name"></a>](#19-name-naming--comprehensiona-namefam-namea)
+- [20. UI: UI & Visual Design<a name="fam-ui"></a>](#20-ui-ui--visual-designa-namefam-uia)
+- [21. RLSE: Release Readiness<a name="fam-rlse"></a>](#21-rlse-release-readinessa-namefam-rlsea)
 
 <!-- END GENERATED CONTENTS -->
 
@@ -58,7 +58,7 @@ by the Short-Rules vote mechanism (`helpful=`/`harmful=`). This file is the
 canonical source: consuming repos inline cues by phase tag and cite rules by ID,
 never copying row bodies.
 
-## 1. AGT: Agent Craft
+## 1. AGT: Agent Craft<a name="fam-agt"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ never copying row bodies.
 | AGT-20<a name="agt-20"></a> | tool reads configuration from a single hardwired source, or resolves sources so a global setting beats a local one | **Config precedence follows preference lifetime**: read system file, then user dotfile, then environment, then command line, so later and more local settings override earlier and more global ones, and give each preference lifetime its home: per-invocation in a switch, per-user in a dotfile, sitewide in the system file | Does the most local, shortest-lived setting win, and does each lifetime have a home? | J·w | [art-of-unix-programming ch-10](../SOURCES.md#src-art-of-unix-programming) |
 | AGT-21<a name="agt-21"></a> | outcome of a step signaled only by prose ("done", "failed") or by an accidental last-command status | **Exit status is the outcome contract**: return 0 for success and distinct nonzero codes for the failure reasons, because without an explicit exit the status is unpredictable and every caller must parse prose to branch | Can a caller branch on this outcome without parsing message text? | J·w | [unix-programming-environment ch-5](../SOURCES.md#src-unix-programming-environment) |
 
-## 2. RES: Resilience & Failure Modes
+## 2. RES: Resilience & Failure Modes<a name="fam-res"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -106,7 +106,7 @@ never copying row bodies.
 | RES-19<a name="res-19"></a> | crash-recovery, journal replay, or checkpoint apply path that is not safe to run twice, or that assumes checkpoint completed exactly once | **Recovery redo must be idempotent**: a crash mid-checkpoint is expected; recovery re-applies committed transactions, and "some of these updates are simply performed again" (L31516-31521); design every recovery write so re-application is a no-op or converges (redo logging, L31511-31512). Sibling of [[RES-01]](engineering.md#res-01) / [[FLOW-05]](engineering.md#flow-05) (live retry / at-least-once); this row's trigger is the *recovery path* after durable commit, not the live request path | If recovery runs twice on the same committed intent, is the store still correct? | B·p | [operating-systems-three-easy-pieces ch-42](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 | RES-20<a name="res-20"></a> | resource (file, connection, lock, temp) opened in one function and closed in another via shared field/handle, especially with early-return paths between | **Finish what you start**: the scope that allocates a resource releases it; prefer block-scoped lifetime so every open has a visible matching close on every path, including early returns (distinct from [[RES-04]](engineering.md#res-04) pool-exhaustion/finally leaks: this row is the allocator-releaser *identity* and split-open/close anti-pattern) | Can I point to one scope that both acquires and releases this resource on every path? | S·w | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 
-## 3. CON: Concurrency & Async
+## 3. CON: Concurrency & Async<a name="fam-con"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -133,7 +133,7 @@ never copying row bodies.
 | CON-21<a name="con-21"></a> | design or review of code that can acquire two or more resources (locks, permits, connections) with no written answer to "which Coffman condition do we break?" | **Name which of four deadlock conditions you design out**: deadlock requires mutual exclusion, hold-and-wait, no preemption, *and* circular wait (L23402-23417); break any one and deadlock cannot occur (L23414); prefer circular-wait prevention via a documented lock order ([[CON-13]](engineering.md#con-13)), else shrink hold-and-wait (never hold a mutex across a blocking wait; see [[CON-18]](engineering.md#con-18) in this table), trylock-and-back-off (watch livelock, L23535-23543), or a lock-free structure you can prove. S because the checklist is the plan tool; the B-tier tactics live on [[CON-13]](engineering.md#con-13) and the lock-scope rule | Which of the four conditions does this design break, and where is that break enforced? | S·p | [operating-systems-three-easy-pieces ch-32](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 | CON-22<a name="con-22"></a> | concurrent code path (shared mutable state, multi-lock, wait/notify) whose only correctness argument is "unit tests pass" or low-concurrency CI green | **Concurrent correctness is not a test artifact**: races make programs *indeterminate* (output varies with schedule, L17185-17188); "just a few lines of code can become nearly impossible to understand" under concurrent execution (L24555-24556); certify with structure (locks, while-wait, known patterns) and review, not green tests alone (L24566-24568). Distinct from [[CON-17]](engineering.md#con-17) (post-failure: flaky under load *is* a race): this row fires pre-merge when tests are green and the structural argument is missing | What structural argument (lock order, while-predicate, happens-before edge) makes this correct under every interleaving? | S·r | [operating-systems-three-easy-pieces ch-26](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 
-## 4. DATA: Data & Consistency
+## 4. DATA: Data & Consistency<a name="fam-data"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -158,7 +158,7 @@ never copying row bodies.
 | DATA-19<a name="data-19"></a> | Backup, ETL, or integrity scan reads many related rows under read-committed while writers run | **Consistent snapshot for multi-row reads**: a unit of work that must observe one point in time across many rows runs at snapshot isolation, because read-committed can splice pre- and post-write committed versions into a state that never existed and freeze it into a backup or report | Does this scan read one consistent snapshot end to end? | S·p | [designing-data-intensive-applications ch-7](../SOURCES.md#src-designing-data-intensive-applications) |
 | DATA-20<a name="data-20"></a> | Choosing or tuning a serializable engine; rising deadlocks / serialization-failures / lock-waits | **Serializability is a contention bet**: pick among actual-serial-execution, two-phase locking, and SSI by contention and spare capacity, keep transactions short, retry aborts idempotently, and index predicates so 2PL takes range not table locks; all three are "serializable" with opposite latency profiles (see [[PERF-01]](engineering.md#perf-01), [[RES-01]](engineering.md#res-01); not [[DATA-05]](engineering.md#data-05), which is 2PC) | Which serializable implementation fits this contention and capacity, and are aborts retried? | J·p | [designing-data-intensive-applications ch-7](../SOURCES.md#src-designing-data-intensive-applications) |
 
-## 5. MODEL: Data Modeling
+## 5. MODEL: Data Modeling<a name="fam-model"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -166,7 +166,7 @@ never copying row bodies.
 | MODEL-02<a name="model-02"></a> | Large or unbounded nested documents, or frequent partial-field updates on big documents | **Document locality cuts both ways**: keep documents small and extract high-churn or unbounded collections, because the engine typically loads and rewrites the whole document even for a one-field update | What is the max document size, and which arrays can grow without bound? | S·r | [designing-data-intensive-applications ch-2](../SOURCES.md#src-designing-data-intensive-applications) |
 | MODEL-03<a name="model-03"></a> | A JSON/document field or collection called "schemaless" with more than one writer | **Schema-on-read is a deferred schema, not the absence of one**: choose schema-on-write when records should be uniform, and when interpreting on read document the implicit reader schema; the compat and versioning mechanics are [[DATA-03]](engineering.md#data-03), but the modeling decision (which discipline, and where the reader's assumptions live) is the rule here, because "schemaless" otherwise lets producers drift until readers silently mis-parse | On-read or on-write, and where does the reader's assumed schema live? | S·w | [designing-data-intensive-applications ch-2](../SOURCES.md#src-designing-data-intensive-applications) |
 
-## 6. STOR: Storage & Retrieval
+## 6. STOR: Storage & Retrieval<a name="fam-stor"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -178,7 +178,7 @@ never copying row bodies.
 | STOR-06<a name="stor-06"></a> | Multi-TB or wide (50+ column) fact table queried on a few columns, stored row-oriented | **Column-oriented storage for analytic scans**: store wide analytic fact tables column-oriented with compression and sort keys on the common filter columns, because a row store reads every column off disk and thrashes I/O | Is the physical layout columnar, and do its sort keys match the top filters? | J·p | [designing-data-intensive-applications ch-3](../SOURCES.md#src-designing-data-intensive-applications) |
 | STOR-07<a name="stor-07"></a> | Dashboard latency fixed with a materialized view / cube, or raw facts dropped once a cube exists | **Precompute is an optimization, not the source**: place precomputed aggregates on async/analytic paths with an explicit freshness SLO and keep the raw facts, because on-write cubes tax OLTP latency and a cube cannot answer a question it did not anticipate (↔ ml [[SERVE-04]](ml-systems.md#serve-04) do not treat a derived corrector as the source; ↔ [[DATA-14]](engineering.md#data-14) the second store is not the system of record) | What is the refresh/staleness, and can novel questions still hit raw facts? | S·w | [designing-data-intensive-applications ch-3](../SOURCES.md#src-designing-data-intensive-applications) |
 
-## 7. FLOW: Batch & Stream Dataflow
+## 7. FLOW: Batch & Stream Dataflow<a name="fam-flow"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -193,7 +193,7 @@ never copying row bodies.
 | FLOW-09<a name="flow-09"></a> | A stream aggregate spec says "last 5 minutes" or "per session" without a named window | **Name the window type**: specify tumbling, hopping, sliding, or session windows with their parameters, because the window type changes which events co-aggregate and teams otherwise compute different numbers for the same metric | Which window type and parameters match the product definition? | S·p | [designing-data-intensive-applications ch-11](../SOURCES.md#src-designing-data-intensive-applications) |
 | FLOW-10<a name="flow-10"></a> | A stream-stream funnel join without bounded state, or a stream-table enrichment hitting a live DB / "current" dimension | **Bound and time-align stream joins**: join inside an explicit time window with bounded per-key state, and enrich from a local changelog-fed table at the dimension version effective at event time, because unbounded state OOMs and "latest" joins rewrite history on replay (see [[DATA-09]](engineering.md#data-09)) | What is the join window, the max state per key, and which dimension version does enrichment use? | S·w | [designing-data-intensive-applications ch-11](../SOURCES.md#src-designing-data-intensive-applications) |
 
-## 8. PERF: Performance & Tail-Latency
+## 8. PERF: Performance & Tail-Latency<a name="fam-perf"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -214,7 +214,7 @@ never copying row bodies.
 | PERF-15<a name="perf-15"></a> | hot-path mutex/lock under multi-thread load, or strong consistency / cross-partition coordination added on a latency-critical path without a coordination budget | **Coordination costs latency**: budget and measure lock, quorum, and cross-partition coordination, because uncontended locks are nanoseconds but contended locks jump to microseconds and convoy waiters (L7161-L7170, L7224-L7227), and stricter consistency needs more coordination overhead (L2913-L2914, L2941-L2943) (↔ [[PERF-04]](engineering.md#perf-04) Amdahl caps *compute* parallel speedup; this is *waiting on shared consent*; ↔ [[DATA-20]](engineering.md#data-20) serializability is a contention bet; ↔ [[CON-14]](engineering.md#con-14) big lock first for correctness) | What is the coordination cost at production concurrency, and is it inside the latency budget? | S·p | [latency-enberg ch-8](../SOURCES.md#src-latency-enberg) |
 | PERF-16<a name="perf-16"></a> | latency optimization or incident fix starts without naming which delay component dominates | **Classify delay before optimizing**: name whether the path is dominated by propagation, transmission, processing, or queuing before changing code, because the four components have different levers and speeding the wrong one cannot beat geography or a saturated queue (L1693-L1735) (↔ [[PERF-06]](engineering.md#perf-06) measure first; ↔ [[PERF-09]](engineering.md#perf-09) constants bound propagation/transmission) | Which of propagation, transmission, processing, or queuing dominates this path's delay? | S·p | [latency-enberg ch-2](../SOURCES.md#src-latency-enberg) |
 
-## 9. REF: Refactoring & Design
+## 9. REF: Refactoring & Design<a name="fam-ref"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -248,7 +248,7 @@ never copying row bodies.
 | REF-28<a name="ref-28"></a> | plan or design step requires forecasting months-out dates, speculative extension points for unknown futures, or bets on unavailable tech, without a near feedback check | **Don't outrun your headlights**: step size is bounded by feedback rate; prefer replaceable code over fortune-telling about unknown futures. Complementary to [[REF-12]](engineering.md#ref-12) YAGNI: YAGNI rejects the speculative *feature* until ≥2 consumers exist; this row constrains how far ahead you may plan before an independent check, not whether to build that feature | What independent feedback confirms this step before the next, and what would we throw away if wrong? | J·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 | REF-29<a name="ref-29"></a> | new enum state added | **Enum completeness**: grep all sibling-state references and verify handling everywhere; the unhandled case ships in someone else's switch (↔ [[REF-02]](engineering.md#ref-02) strategy-map concentrates case handling so new states have one place to land) | Which sibling-state references still omit the new case? | S·r | [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
 
-## 10. TEST: Testing Strategy
+## 10. TEST: Testing Strategy<a name="fam-test"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -269,7 +269,7 @@ never copying row bodies.
 | TEST-15<a name="test-15"></a> | Reviewing a passing test that guards an invariant, single-source count, or state property | **Prove the green can go red**: a passing test that cannot fail certifies nothing; before trusting it, mutate the production path (break the invariant, inject a second/zero case, corrupt an input) and confirm the assertion catches it; for invariant/count tests, ship the mutation as a permanent discrimination guard (e.g. mis-wire → asserts 2, drop → asserts 0). Watch for assertions on the code's own output rather than observed behavior, and DOM/count checks that never query the real surface (see [[TEST-11]](engineering.md#test-11), [[DBG-01]](engineering.md#dbg-01)) | If production regressed here, would this exact assertion turn red; have I seen it? | S·r | [modern-software-engineering ch-8](../SOURCES.md#src-modern-software-engineering) |
 | TEST-16<a name="test-16"></a> | A behavior's effect can't be asserted without exposing privates | **Add a measurement point**: inject the dependency and assert via a fake; never break encapsulation for tests (↔ [[TEST-04]](engineering.md#test-04) find the seam that makes substitution possible; ↔ [[TEST-12]](engineering.md#test-12) private-method urge is an SRP signal, not a license to open the class) | Where can a fake observe this effect through the public contract? | S·w | [modern-software-engineering ch-14](../SOURCES.md#src-modern-software-engineering) |
 
-## 11. DBG: Debugging Procedure
+## 11. DBG: Debugging Procedure<a name="fam-dbg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -287,7 +287,7 @@ never copying row bodies.
 | DBG-12<a name="dbg-12"></a> | Escalation/handoff opens with a theory instead of symptoms and conditions | **Report Symptoms, Not Theories**: transmitted theories drag the helper into your rut (↔ ux [[HAI-01]](interaction-ux.md#hai-01) evidence before the interpretation) | Deleted my hypothesis: does the report still describe what was observed? | S·r | [debugging-9-rules ch-10](../SOURCES.md#src-debugging-9-rules) |
 | DBG-13<a name="dbg-13"></a> | Failure vanishes when logging/debugger/timing changes | **Heisenbug means undefined behavior or a race**: suspect uninitialized state or races; confirm observations by two independent means | What unchecked nondeterminism could make observation mask this failure? | J·p | [why-programs-fail ch-4](../SOURCES.md#src-why-programs-fail) |
 
-## 12. DIAG: Diagnosis Posture
+## 12. DIAG: Diagnosis Posture<a name="fam-diag"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -301,7 +301,7 @@ never copying row bodies.
 | DIAG-08<a name="diag-08"></a> | Judging production-readiness from local results | **QA ≠ production**: prod runs N:1 ratios, multi-node topology, prod-scale data (↔ ml [[EVAL-03]](ml-systems.md#eval-03) never evaluate on a resampled distribution that is not production) | Does this only look safe at dev/QA scale? | S·r | [release-it ch-4](../SOURCES.md#src-release-it) |
 | DIAG-09<a name="diag-09"></a> | Choosing an abstraction / evaluating against a ritual | **All models are wrong, some useful**: target abstractions to the problem; judge by results | Is this abstraction right-shaped; am I following process for its own sake? | J·r | [modern-software-engineering ch-2](../SOURCES.md#src-modern-software-engineering) |
 
-## 13. OBS: Observability
+## 13. OBS: Observability<a name="fam-obs"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -322,7 +322,7 @@ never copying row bodies.
 
 > **Moved to its own lexicon.** The LLM and agent-security rules `SEC-01..10` now live in [`security.md`](security.md), beside the web, PHP, WordPress, and PostgreSQL security rules. Cite them by ID exactly as before (`[SEC-04]`); the IDs are unchanged, and inline cross-references (`see [SEC-02]`) still resolve. Security became a spanning concern once this canon grew a database and web surface, the same reason accessibility has its own lexicon.
 
-## 14. API: API Design
+## 14. API: API Design<a name="fam-api"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -338,7 +338,7 @@ never copying row bodies.
 | API-10<a name="api-10"></a> | API resource shapes mirror DB tables, ORM entities, or internal names | **Interface is its own artifact**: translate internal models at the boundary so storage refactors never break callers (see [[REF-16]](engineering.md#ref-16)) | If the storage schema changed tomorrow, would this API change too? | S·p | [restful-web-api-patterns ch-5](../SOURCES.md#src-restful-web-api-patterns) |
 | API-11<a name="api-11"></a> | Service persists or forwards a record after dropping unrecognized fields | **Must Ignore, round-trip whole**: ignore unknown fields on read but preserve them on write; stripping destroys other services' data through you | Does this write path preserve fields this service doesn't understand? | B·r | [restful-web-api-patterns ch-6](../SOURCES.md#src-restful-web-api-patterns) |
 
-## 15. DOM: Domain Modeling
+## 15. DOM: Domain Modeling<a name="fam-dom"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -352,7 +352,7 @@ never copying row bodies.
 | DOM-08<a name="dom-08"></a> | Consumers subscribing to another service's internal event stream | **Publish a consumer contract, not your internals**: translate to a published language of public events | Would an internal schema change break this consumer? | S·p | [learning-domain-driven-design ch-15](../SOURCES.md#src-learning-domain-driven-design) |
 | DOM-09<a name="dom-09"></a> | initial stakeholder statement treated as frozen implementation order without consequence-feedback, or "requirements gathering" phase expected to finish before learning | **Requirements are learned, not gathered**: nobody knows exactly what they want; the loop that feeds consequences back (stories, mockups, short iterations) is the mechanism, not a gathering phase that finishes before learning | What feedback loop updates this requirement when consequences appear? | S·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 
-## 16. ARCH: Architecture & Trade-offs
+## 16. ARCH: Architecture & Trade-offs<a name="fam-arch"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -376,7 +376,7 @@ never copying row bodies.
 | ARCH-18<a name="arch-18"></a> | Architecture evaluation or design review of a consequential system walks only structure diagrams or chosen "approaches," with no prioritized concrete quality-attribute scenarios and no recorded risks, sensitivity points, or tradeoff points | **Evaluate against scenarios, not vibes**: run ATAM (external or high-stakes) or LAE (peer, routine, limited scope) so the exit artifacts include prioritized QA scenarios, risks/non-risks, risk themes, sensitivity points (decisions that markedly move a QA response), and tradeoff points (one decision helps one QA and hurts another) (L16182-16189, L16273-16316, L16834-16847) (distinct from [[ARCH-07]](engineering.md#arch-07) ADR, which records why a choice was made; this row requires a scenario-based fitness check before or beside that record) | Which prioritized scenarios were walked, and where are the risks, sensitivity points, and tradeoffs written down? | S·r | [software-architecture-in-practice ch-21](../SOURCES.md#src-software-architecture-in-practice) |
 | ARCH-19<a name="arch-19"></a> | plan or spike labeled "prototype" that is kept, wired into production paths, and extended; or "tracer"/"vertical slice we keep" that omits production error handling and is intended to be thrown away | **Tracer vs prototype**: tracer code is lean, end-to-end, production-structured and *kept*; a prototype is disposable learning. Both mislabelings are defects: a "prototype" that gets kept and extended freezes disposable code under a production quality bar; a "tracer" that omits production error handling because someone intends to throw it away freezes the wrong quality bar the other way | Is this spike disposable reconnaissance, or a kept skeletal path through real layers? | S·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 
-## 17. TEAM: Team & Organization Design
+## 17. TEAM: Team & Organization Design<a name="fam-team"></a>
 
 > Team Topologies (Skelton & Pais): the org is part of the architecture. Triggers here are observable in an org chart, an ownership/CODEOWNERS map, a service catalog, on-call rotations, interaction agreements, or a proposed team/service split, not usually a code diff.
 
@@ -394,7 +394,7 @@ never copying row bodies.
 | TEAM-10<a name="team-10"></a> | Collaboration continues past its stated goal with no exit, or a supposed X-as-a-service needs constant meetings to use | **Collaboration is temporary and taxed**: give collaboration a learning objective, timebox, and exit criterion, then exit into X-as-a-service, facilitation, clear single-team ownership, or no continuing interaction; persistent undefined collaboration is the defect, because unbounded collaboration blurs boundaries and taxes every change | Does this collaboration have a timebox and a named exit state? | S·r | [team-topologies ch7-8](../SOURCES.md#src-team-topologies) |
 | TEAM-11<a name="team-11"></a> | Consumers cannot discover who owns a team's work, its on-call path, or how and when to interact without tribal knowledge | **Publish a team API**: a team maintains a discoverable interaction surface (what it owns, on-call path, preferred interaction mode, how to request change); for the service contract itself defer to [[DOM-08]](engineering.md#dom-08), because an invisible team forces high-bandwidth pinging and accidental coupling | Can a cold-start consumer find how to work with this team? | S·r | [team-topologies ch3/ch7](../SOURCES.md#src-team-topologies) |
 
-## 18. ALG: Algorithms & Data Structures
+## 18. ALG: Algorithms & Data Structures<a name="fam-alg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -405,7 +405,7 @@ never copying row bodies.
 | ALG-05<a name="alg-05"></a> | Optimization problem resembling longest path, TSP, coloring, cover, or partition | **Hardness recognition**: one word separates easy from NP-hard twins; check the catalog before promising exact-and-fast; then choose an escape deliberately (pruned exact / approximation / heuristic) | Is this a known NP-hard entry, and is my instance a polynomial special case? | S·p | [algorithm-design-manual ch-11](../SOURCES.md#src-algorithm-design-manual) |
 | ALG-06<a name="alg-06"></a> | Hand-rolled sort, RNG, date math, crypto, or geometry predicates in a diff | **Catalog before code**: these are solved problems with tuned, correct libraries; hand-rolling trades correctness for nothing | Which library implements this catalog problem? | S·r | [algorithm-design-manual ch-14](../SOURCES.md#src-algorithm-design-manual) |
 
-## 19. NAME: Naming & Comprehension
+## 19. NAME: Naming & Comprehension<a name="fam-name"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -416,7 +416,7 @@ never copying row bodies.
 | NAME-05<a name="name-05"></a> | Diff adds a near-duplicate of an existing function with a similar name | **Clones get mischunked**: readers chunk the copy as the original and discard exactly the small difference; unify or make the difference loud (↔ ux [[PERC-03]](interaction-ux.md#perc-03) Gestalt similarity merges what the system treats as distinct; ↔ ux [[PERC-02]](interaction-ux.md#perc-02) a shared look promises shared meaning) | Will a reader who knows the original notice what differs? | S·r | [programmers-brain ch-9](../SOURCES.md#src-programmers-brain) |
 | NAME-06<a name="name-06"></a> | Cluster of vague/broken names in one region of a diff | **Bad names mark bug hotspots**: naming-violation sites statistically co-locate with defects; review those regions deeper | Where names are worst, has the logic had extra scrutiny? | J·r | [programmers-brain ch-8](../SOURCES.md#src-programmers-brain) |
 
-## 20. UI: UI & Visual Design
+## 20. UI: UI & Visual Design<a name="fam-ui"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -429,7 +429,7 @@ never copying row bodies.
 | UI-07<a name="ui-07"></a> | Shade generated at use-site via lighten()/darken() or a new near-duplicate hex | **Define shades up front**: a fixed scale per color; on-the-fly derivation breeds near-identical variants | Does this shade exist in the palette, or is it invented inline? | S·w | [refactoring-ui ch-5](../SOURCES.md#src-refactoring-ui) |
 | UI-08<a name="ui-08"></a> | Box-shadow values invented per component | **Elevation system**: a fixed shadow scale mapped to z-meaning, chosen by layer, not taste | Which elevation level is this, and is the shadow from the shared scale? | S·w | [refactoring-ui ch-6](../SOURCES.md#src-refactoring-ui) |
 
-## 21. RLSE: Release Readiness
+## 21. RLSE: Release Readiness<a name="fam-rlse"></a>
 
 > Added 2026-07-11. Source: Fields, *Product Deploy Agents* (CC BY 4.0, Jason Fields, jasonpfields.com, @fasonista), a 7-lens pre-release audit pipeline; distilled at `distilled/engineering/product-deploy-agents-fields.md`. These rules govern the phase between "code reviewed" and "in production" that no other source in this lexicon covers.
 

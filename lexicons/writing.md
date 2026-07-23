@@ -21,7 +21,7 @@ arrows); the rules name those exemptions inline.
 
 **Contents**
 
-- [1. Diction & Word Choice](#1-diction--word-choice)
+- [1. Diction & Word Choice<a name="fam-writ"></a>](#1-diction--word-choicea-namefam-writa)
 - [2. Sentence Structure](#2-sentence-structure)
 - [3. Paragraph & Rhythm](#3-paragraph--rhythm)
 - [4. Tone & Stance](#4-tone--stance)
@@ -50,7 +50,7 @@ Tier: **B**locker (reads as AI slop, or is factually hollow or unverifiable),
 (avoid while composing), **e**dit (fix on revision), **v**erify (detect AI
 authorship or check sourcing).
 
-## 1. Diction & Word Choice
+## 1. Diction & Word Choice<a name="fam-writ"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |

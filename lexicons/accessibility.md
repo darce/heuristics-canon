@@ -21,7 +21,7 @@ complete the AA surface by POUR principle; §5 governs process and claims.
 
 **Contents**
 
-- [1. The Working Set (96% of shipped failures)](#1-the-working-set-96-of-shipped-failures)
+- [1. The Working Set (96% of shipped failures)<a name="fam-a11y"></a>](#1-the-working-set-96-of-shipped-failuresa-namefam-a11ya)
 - [2. Perceivable (beyond the working set)](#2-perceivable-beyond-the-working-set)
 - [3. Operable](#3-operable)
 - [4. Understandable & Robust](#4-understandable--robust)
@@ -48,7 +48,7 @@ Tier: **B**locker (excludes a user class or creates legal exposure if violated),
 
 WCAG success-criterion numbers are kept in rules as shared retrieval keys.
 Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
-## 1. The Working Set (96% of shipped failures)
+## 1. The Working Set (96% of shipped failures)<a name="fam-a11y"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |

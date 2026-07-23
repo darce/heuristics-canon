@@ -20,12 +20,12 @@ protocols in depth; those await both the sources and the pass.
 
 **Contents**
 
-- [1. AI/ML & Agent Security](#1-aiml--agent-security)
-- [2. Web Application Security](#2-web-application-security)
-- [3. PHP Security](#3-php-security)
-- [4. WordPress Security](#4-wordpress-security)
-- [5. PostgreSQL Security](#5-postgresql-security)
-- [6. Secure Design Principles](#6-secure-design-principles)
+- [1. AI/ML & Agent Security<a name="fam-sec"></a>](#1-aiml--agent-securitya-namefam-seca)
+- [2. Web Application Security<a name="fam-web"></a>](#2-web-application-securitya-namefam-weba)
+- [3. PHP Security<a name="fam-php"></a>](#3-php-securitya-namefam-phpa)
+- [4. WordPress Security<a name="fam-wp"></a>](#4-wordpress-securitya-namefam-wpa)
+- [5. PostgreSQL Security<a name="fam-pg"></a>](#5-postgresql-securitya-namefam-pga)
+- [6. Secure Design Principles<a name="fam-secd"></a>](#6-secure-design-principlesa-namefam-secda)
 - [7. Cross-lexicon links](#7-cross-lexicon-links)
 - [Consumption](#consumption)
 
@@ -47,7 +47,7 @@ Tier: **B**locker (exploitable, data-loss, or auth-bypass if violated),
 threat model), **w**rite (code), **r**eview (config and audit).
 
 
-## 1. AI/ML & Agent Security
+## 1. AI/ML & Agent Security<a name="fam-sec"></a>
 
 > `SEC-01..10` (LLM/agent) are sourced to Wilson, *The Developer's Playbook for Large Language Model Security* (`llm-security-playbook`; moved here from engineering; existing `[SEC-02]` citations still resolve). `SEC-11..16` extend the family to **adversarial ML** (training-data poisoning, backdoors/trojans, evasion, and the ML supply chain) from Sotiropoulos, *Adversarial AI* (`sotiropoulos-adversarial-ai`).
 
@@ -74,7 +74,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | SEC-19<a name="sec-19"></a> | Liveness is an interactive motion challenge (blink, smile, turn head) and the attack evaluation set holds only flat printed photographs | **A motion challenge is not an attack set**: when liveness rests on interactive motion, extend the evaluation set to replayed video and to partial or three-dimensional artefacts (cut-out regions, worn masks, attack eyewear) before the ship gate passes, because a recording of the enrolled person performing the requested action satisfies a motion challenge, and a region-specific check is defeated by an artefact covering only that region | Does the attack set include replayed video and partial or three-dimensional artefacts, or only static print? | S·p | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 | SEC-20<a name="sec-20"></a> | Presentation-attack detection is certified on the same camera, lighting, and capture protocol it was trained on, while the product ships to varied client devices | **Certify liveness on held-out capture hardware**: when client sensors, resolution, or lighting differ from the training capture, report detection error under a leave-one-device or leave-one-capture-source protocol, because cross-source error degrades sharply under illumination, resolution, and sensor-noise shift, so a matched-domain number certifies the lab and the first unseen camera is a field bypass rather than a regression (↔ ml [[FAIR-05]](ml-systems.md#fair-05) capture conditions are evaluation factors: this is the held-out form of that factor) | Is there a leave-one-device table, or only same-camera lab numbers? | S·r | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 
-## 2. Web Application Security
+## 2. Web Application Security<a name="fam-web"></a>
 
 > Re-grounded against Zalewski, *The Tangled Web* (`zalewski-tangled-web`, browser security model) and Stuttard & Pinto, *The Web Application Hacker's Handbook* (`stuttard-wahh`, server-side attacks). The four rows those texts do not establish ([[WEB-12]](security.md#web-12), [[WEB-16]](security.md#web-16), [[WEB-19]](security.md#web-19), [[WEB-20]](security.md#web-20)) remain `bootstrap`.
 
@@ -125,7 +125,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | WEB-43<a name="web-43"></a> | Production script assigns `document.domain` | **document.domain dilutes origin isolation**: when cross-subdomain DOM is needed, prefer `postMessage`; if setting `document.domain`, treat every host under that suffix as equally trusted, because any XSS on the weakest sibling owns all (↔ [[WEB-24]](security.md#web-24) postMessage with exact origin is the safe cross-origin channel) | Does any production script set `document.domain`? | S·p | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 | WEB-44<a name="web-44"></a> | Secrets or capability tokens appear in the query string on pages that load third-party subresources or link off-site | **Keep secrets out of URLs**: when embedding off-site resources or linking out, put tokens only in headers or body, because `Referer` discloses the parent URL (minus fragment) to third parties (↔ [[WEB-09]](security.md#web-09) SIDs in URLs leak the same way; ↔ [[WEB-16]](security.md#web-16) a token in a URL is a secret in every third-party log) | Could a third-party request log this URL's token? | S·r | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 
-## 3. PHP Security
+## 3. PHP Security<a name="fam-php"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -146,7 +146,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | PHP-15<a name="php-15"></a> | SQL built with string concat of `$_GET`/`$_POST` (even via PDO `query`/`exec`) | **Bind parameters with PDO/ORM**: quote breakout becomes SQLi regardless of driver (↔ [[WEB-01]](security.md#web-01), eng [[DATA-12]](engineering.md#data-12) the same binding failure seen at the framework, web, and data layers) | Is every query using prepared statements/bound values? | B·w | [modern-php-security §sql-injection](../SOURCES.md#src-modern-php-security) |
 | PHP-16<a name="php-16"></a> | Outbound HTTP/file URL from user input (`file_get_contents($url)`, curl) without a destination policy | **Constrain server-side fetches**: SSRF hits cloud metadata and internal FastCGI/admin (↔ [[WEB-07]](security.md#web-07) attacker-chosen fetch destinations reach link-local and admin nets) | Is the destination allowlisted or blocked from private/link-local ranges? | B·w | [modern-php-security §ssrf](../SOURCES.md#src-modern-php-security) |
 
-## 4. WordPress Security
+## 4. WordPress Security<a name="fam-wp"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -165,7 +165,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | WP-13<a name="wp-13"></a> | Plugin/theme PHP files load application code without a `defined('ABSPATH') \|\| exit;` guard | **Guard direct file access**: direct hits bypass WP bootstrap and leak or execute partial includes | Do plugin/theme PHP entry files refuse direct access via an ABSPATH check? | S·w | [bootstrap](../SOURCES.md#src-bootstrap) |
 | WP-14<a name="wp-14"></a> | Options update or privileged write persists unanticipated request fields, or skips a capability check | **Persist only expected fields; gate privileged writes**: collect only expected form fields into an allowlist array, and check `current_user_can` before sensitive actions, or unanticipated keys and missing caps escalate privilege (↔ [[WEB-19]](security.md#web-19) mass-assignment of privilege fields is an authz bypass) | Are only expected fields persisted, and is `current_user_can` checked on privileged writes? | B·w | [wordpress-plugin-development ch-4](../SOURCES.md#src-wordpress-plugin-development) |
 
-## 5. PostgreSQL Security
+## 5. PostgreSQL Security<a name="fam-pg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -184,7 +184,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | PG-13<a name="pg-13"></a> | Views/functions expose rows that RLS on base tables would hide (`security_barrier`/owner ignored) | **Align views with RLS**: a non-barrier view can leak filtered rows | Do views and DEFINER paths preserve the intended row filters? | S·w | [postgresql-security §security-barrier](../SOURCES.md#src-postgresql-security) |
 | PG-14<a name="pg-14"></a> | Replication or backup role holds broad write privileges beyond need | **Separate backup/repl roles**: an over-privileged ops role expands blast radius if stolen | Do backup/replication roles have only the minimal REPLICATION/read grants? | S·r | [postgresql-security §replication-roles](../SOURCES.md#src-postgresql-security) |
 
-## 6. Secure Design Principles
+## 6. Secure Design Principles<a name="fam-secd"></a>
 
 > The cross-cutting engineering principles beneath every section above, from Ross Anderson, *Security Engineering*, 3rd ed. (`anderson-security-engineering`). Where a principle is the general form of a specific rule (least privilege → [[SEC-04]](security.md#sec-04)/[[PG-01]](security.md#pg-01)/[[SEC-16]](security.md#sec-16); complete mediation → [[WEB-31]](security.md#web-31)/[[WEB-33]](security.md#web-33)), the specific rule cross-links here rather than restating it. See [Principle 14].
 

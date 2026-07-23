@@ -30,7 +30,7 @@ texts.
 
 **Contents**
 
-- [1. Dependency & Reasoning Structure](#1-dependency--reasoning-structure)
+- [1. Dependency & Reasoning Structure<a name="fam-grph"></a>](#1-dependency--reasoning-structurea-namefam-grpha)
 - [2. Assignment, Cost & Importance](#2-assignment-cost--importance)
 - [3. Knowledge Modelling as Graphs](#3-knowledge-modelling-as-graphs)
 - [4. Clustering & Entity Grouping (embeddings → graphs)](#4-clustering--entity-grouping-embeddings--graphs)
@@ -57,7 +57,7 @@ and design), **w**rite (implementation), **r**eview. Cross-lexicon borders cite
 `↔ eng/sec` rules rather than restating them.
 
 
-## 1. Dependency & Reasoning Structure
+## 1. Dependency & Reasoning Structure<a name="fam-grph"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |

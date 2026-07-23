@@ -18,11 +18,11 @@ cite `↔ eng UI-xx` instead of restating.
 
 **Contents**
 
-- [1. Identity & Marks](#1-identity--marks)
-- [2. Typography](#2-typography)
-- [3. Colour & Image](#3-colour--image)
-- [4. Layout & Composition](#4-layout--composition)
-- [5. Brand & Cultural Positioning](#5-brand--cultural-positioning)
+- [1. Identity & Marks<a name="fam-idnt"></a>](#1-identity--marksa-namefam-idnta)
+- [2. Typography<a name="fam-type"></a>](#2-typographya-namefam-typea)
+- [3. Colour & Image<a name="fam-col"></a>](#3-colour--imagea-namefam-cola)
+- [4. Layout & Composition<a name="fam-lay"></a>](#4-layout--compositiona-namefam-laya)
+- [5. Brand & Cultural Positioning<a name="fam-brnd"></a>](#5-brand--cultural-positioninga-namefam-brnda)
 - [6. Cross-source tensions](#6-cross-source-tensions)
 - [Consumption](#consumption)
 
@@ -42,7 +42,7 @@ cite `↔ eng UI-xx` instead of restating.
 Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 **c**olour, **l**ayout, **im**age, **b**rand.
 
-## 1. Identity & Marks
+## 1. Identity & Marks<a name="fam-idnt"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | IDNT-15<a name="idnt-15"></a> | prototype optimized for hand-craft ornament, not reproduction | **Machine-form economy**: a mass-production model maximizes simplicity and economy of time and material via elementary volumes; the form must hold when made by machine thousands of times | Would this form still hold if made by machine thousands of times? | J·i | [bauhaus-droste p039](../SOURCES.md#src-bauhaus-droste) |
 | IDNT-16<a name="idnt-16"></a> | catalogue sprawls into vanity variants, or the brand hero is a bespoke showpiece no SKU carries | **Standard-range discipline**: replace an excessive range with a small number of standardized models, and let the quiet repeatable product carry the identity rather than the exhibition piece (↔ [[BRND-12]](design-aesthetics.md#brnd-12) both make the repeatable system, not the one-off, the thing that outlives its author) | Which models are necessary, and what is our standard product rather than our showpiece? | J·i | [bauhaus-droste p088](../SOURCES.md#src-bauhaus-droste) |
 
-## 2. Typography
+## 2. Typography<a name="fam-type"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | TYPE-12<a name="type-12"></a> | advertising or landing lettering sells by persuasion tone or slogan density | **Facts-first advertising type**: convince through clear presentation of facts and data, not propaganda; if the hype words are stripped, the type must still deliver the claim (↔ [[WRIT-28]](writing.md#writ-28) both replace prestige noise with a named, checkable effect) | If we strip the hype words, does the type still deliver the claim? | J·t | [bauhaus-droste p110](../SOURCES.md#src-bauhaus-droste) |
 | TYPE-13<a name="type-13"></a> | type locked to device-named breakpoints only | **Em-based type response**: breakpoints track root size and reading distance, not device names, so layout still reflows when the user enlarges default text (↔ [[TYPE-01]](design-aesthetics.md#type-01) both measure layout in type units so reader-chosen size still fits) | Does layout still work if user enlarges default text? | S·t | [web-typography ch-7](../SOURCES.md#src-web-typography) |
 
-## 3. Colour & Image
+## 3. Colour & Image<a name="fam-col"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -104,7 +104,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | COL-17<a name="col-17"></a> | overlapping or stacked colour regions meant to read as transparent layering (modals, washes, brand overlays) without a lawful mid mixture | **Illusionary-transparence stack**: place a middle mixture in the overlap with light between the parents; enlarge mixture area for a stronger transparent read; wrong mid breaks layer parse (↔ ux [[VIZ-12]](interaction-ux.md#viz-12) data-layer order; this row is brand/UI colour illusion) | Does the overlap read as one lawful mixture between the parents? | J·c | [interaction-of-color ch-10](../SOURCES.md#src-interaction-of-color) |
 | COL-18<a name="col-18"></a> | physical or brand matching colours proofed under one illuminant only | **Metamerism ritual**: brand match is illuminant-qualified; multi-illuminant swatch test before lock (↔ [[COL-02]](design-aesthetics.md#col-02) both refuse single-condition match approval; that rule varies the ground, this one varies the light) | Did we check daylight and store light? | S·c | [colour-theory-cianci ch-13](../SOURCES.md#src-colour-theory-cianci) |
 
-## 4. Layout & Composition
+## 4. Layout & Composition<a name="fam-lay"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -121,7 +121,7 @@ Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 | LAY-11<a name="lay-11"></a> | a large field or background pattern is loud, figurative, or high-contrast by default | **Quiet field enlarges**: barely noticeable texture makes the field recede and the space read larger; a loud field competes with the content sitting on it | Does the field recede, or compete with what sits on it? | J·l | [bauhaus-droste p090](../SOURCES.md#src-bauhaus-droste) |
 | LAY-12<a name="lay-12"></a> | equal-importance lines right-aligned in LTR | **Reading-direction align**: left-align lines of equal importance (lists, contents, verse); the eye returns to the start, and right-aligning equal LTR lines compounds the disturbance | Does the eye know where each line begins? | B·l | [asymmetric-typography ch-7](../SOURCES.md#src-asymmetric-typography) |
 
-## 5. Brand & Cultural Positioning
+## 5. Brand & Cultural Positioning<a name="fam-brnd"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |

@@ -41,12 +41,12 @@ The tension between FORE and NDM is documented, not averaged.
 
 **Contents**
 
-- [1. FORE: Forecasting / human·agent probabilistic judgment](#1-fore-forecasting--humanagent-probabilistic-judgment)
-- [2. NDM: Naturalistic decision making](#2-ndm-naturalistic-decision-making)
-- [3. BIAS: Self-deception checks / invariance tests](#3-bias-self-deception-checks--invariance-tests)
-- [4. RSCH: Research judgment / choosing and attacking the right problem](#4-rsch-research-judgment--choosing-and-attacking-the-right-problem)
-- [5. MEAS: Calibrated measurement and estimation under uncertainty](#5-meas-calibrated-measurement-and-estimation-under-uncertainty)
-- [6. EXP: Controlled experimentation / trustworthy A/B and change evaluation](#6-exp-controlled-experimentation--trustworthy-ab-and-change-evaluation)
+- [1. FORE: Forecasting / human·agent probabilistic judgment<a name="fam-fore"></a>](#1-fore-forecasting--humanagent-probabilistic-judgmenta-namefam-forea)
+- [2. NDM: Naturalistic decision making<a name="fam-ndm"></a>](#2-ndm-naturalistic-decision-makinga-namefam-ndma)
+- [3. BIAS: Self-deception checks / invariance tests<a name="fam-bias"></a>](#3-bias-self-deception-checks--invariance-testsa-namefam-biasa)
+- [4. RSCH: Research judgment / choosing and attacking the right problem<a name="fam-rsch"></a>](#4-rsch-research-judgment--choosing-and-attacking-the-right-problema-namefam-rscha)
+- [5. MEAS: Calibrated measurement and estimation under uncertainty<a name="fam-meas"></a>](#5-meas-calibrated-measurement-and-estimation-under-uncertaintya-namefam-measa)
+- [6. EXP: Controlled experimentation / trustworthy A/B and change evaluation<a name="fam-exp"></a>](#6-exp-controlled-experimentation--trustworthy-ab-and-change-evaluationa-namefam-expa)
 
 <!-- END GENERATED CONTENTS -->
 
@@ -67,7 +67,7 @@ or breaks security), **S**hould (strong default), **J**udgment. Phase: **p**lan
 or gate). Cross-lexicon borders cite `↔ [ID]` rather than restating them.
 
 
-## 1. FORE: Forecasting / human·agent probabilistic judgment
+## 1. FORE: Forecasting / human·agent probabilistic judgment<a name="fam-fore"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ or gate). Cross-lexicon borders cite `↔ [ID]` rather than restating them.
 | FORE-13<a name="fore-13"></a> | every forecast is generated from one Big Idea / single framework with no competing model's probability | **Fox, not hedgehog**: force at least two causal models before locking *p*; hedgehogs lose calibration and resolution (↔ [[STRAT-01]](business-marketing.md#strat-01) latticework over one Big Idea; ↔ [[STRAT-02]](business-marketing.md#strat-02) rival models supply disconfirmers; ↔ [[PROD-04]](business-marketing.md#prod-04) kill criteria from more than one story) | What would a smart rival model forecast, and how did we blend? | S·p | [superforecasting ch-3](../SOURCES.md#src-superforecasting) |
 | FORE-14<a name="fore-14"></a> | a plan or review states a high-confidence empirical claim with no number, no stake, and no evidence inventory | **"Wanna bet?" elicitation**: challenge the claim as a bet and force the evidence inventory (source, freshness, alternatives, what the other side knows); convert to a numeric *p* when the decision is sensitive to odds (↔ [[FORE-01]](epistemics.md#fore-01) force a number; ↔ [[MEAS-06]](epistemics.md#meas-06) equivalent-bet calibration; this row is the social elicitation move and inventory checklist that feeds them, not a second "use a number" rule) | What odds would you take, and what evidence are you actually betting? | S·e | [duke-thinking-in-bets ch-2](../SOURCES.md#src-duke-thinking-in-bets) |
 
-## 2. NDM: Naturalistic decision making
+## 2. NDM: Naturalistic decision making<a name="fam-ndm"></a>
 
 Recognition-primed and field decision discipline for time pressure, expertise, and plans about to commit. Complements FORE: when the domain is high-validity with rapid feedback, skilled recognition plus mental simulation is the right source of power; otherwise number and score. Do not average the two ([[STRAT-11]](business-marketing.md#strat-11)).
 
@@ -106,7 +106,7 @@ Recognition-primed and field decision discipline for time pressure, expertise, a
 | NDM-12<a name="ndm-12"></a> | post-outcome review, postmortem, or "lessons learned" grades a decision good/bad solely from whether the result was good/bad (or rewrites strategy from a short streak of wins/losses) | **Resulting ban**: grade the decision on the information, alternatives, probabilities, and process available *at decision time*; treat the realized outcome as one draw, not a verdict on the call — conflating decision quality with outcome quality (**resulting**) abandons good process after bad luck and freezes bad process after good luck; partition against [[FORE-04]](epistemics.md#fore-04): that row bans calling a single probabilistic *forecast* wrong because the outcome landed the other side of maybe; this row bans the same move against a *decision* (a forecast is a probability statement; a decision is a choice of action, and an excellent decision can lose) | If the opposite outcome had drawn, would we reverse the process grade without new evidence? | B·r | [duke-thinking-in-bets ch-1](../SOURCES.md#src-duke-thinking-in-bets) |
 | NDM-13<a name="ndm-13"></a> | process review starts only after the outcome is known, or advice narratives lead with the win/loss, or no pre-outcome record of alternatives/odds/tree exists | **Outcome-blind process review**: evaluate decision quality with the outcome hidden (or before it lands); when seeking advice after the fact, present the setup before the result; memorialize the decision tree / stated odds pre-outcome so hindsight cannot rewrite the prior — scores *decisions*, not only forecasts (↔ [[FORE-11]](epistemics.md#fore-11) reconstructs why a *probability* was set; this row grades the *decision* process under outcome-blind conditions) | Can we grade this call without knowing how it turned out? | S·r | [duke-thinking-in-bets ch-5](../SOURCES.md#src-duke-thinking-in-bets) |
 
-## 3. BIAS: Self-deception checks / invariance tests
+## 3. BIAS: Self-deception checks / invariance tests<a name="fam-bias"></a>
 
 The confidence a piece of reasoning generates about itself is not evidence for it. Each row pairs a named mechanism with a concrete invariance test — swap the role, the source, or the default, and see whether the judgment survives. FORE scores forecasts against outcomes; BIAS catches the reasoning before it becomes a forecast.
 
@@ -121,7 +121,7 @@ The confidence a piece of reasoning generates about itself is not evidence for i
 | BIAS-07<a name="bias-07"></a> | methodology or "they lack context" objections fire only against evidence that threatens the thesis, while supporting sources with the same flaws are cited clean | **Selective skeptic test**: re-evaluate the evidence as if it supported the rival thesis and apply the same bar to supporting cites; drop claims that survive only under asymmetric scrutiny | If this study favored the other side, would I still trust it? | S·r | [galef-scout-mindset ch-5](../SOURCES.md#src-galef-scout-mindset) |
 | BIAS-08<a name="bias-08"></a> | the current system/vendor/architecture/process wins by default with no affirmative re-selection, or change is rejected only as "disruption" | **Status quo bias test**: imagine the alternative is already live; ask whether you would actively choose to switch *to* the current state; if not, require merits-based comparison or quantified switching costs | If we were already on the alternative, would we switch back? | S·p | [galef-scout-mindset ch-5](../SOURCES.md#src-galef-scout-mindset) |
 
-## 4. RSCH: Research judgment / choosing and attacking the right problem
+## 4. RSCH: Research judgment / choosing and attacking the right problem<a name="fam-rsch"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -138,7 +138,7 @@ The confidence a piece of reasoning generates about itself is not evidence for i
 | RSCH-11<a name="rsch-11"></a> | an estimate or model ingests advertised measurements, vendor tolerances, or "clean" operational data with no consistency or outlier pretest | **Distrust the given data**: pretest data for consistency and treat claimed confidence limits as optimistic, because published and operational numbers are routinely less accurate than advertised (↔ [[MEAS-02]](epistemics.md#meas-02) measurement reduces uncertainty, it does not confer exactness) | Where did we independently challenge this data's accuracy? | S·e | [hamming-art-of-doing-science ch-27](../SOURCES.md#src-hamming-art-of-doing-science) |
 | RSCH-12<a name="rsch-12"></a> | the team ships a correct answer to the stated ticket while the deeper system goal is unimproved and no new insight is recorded | **Solve the right problem**: reopen the formulation toward causes and system goals, preferring an insight-bearing partial result over an elegant solution to the wrong problem | Did we solve the cathedral problem, or only chip the stone? | J·r | [hamming-art-of-doing-science ch-28](../SOURCES.md#src-hamming-art-of-doing-science) |
 
-## 5. MEAS: Calibrated measurement and estimation under uncertainty
+## 5. MEAS: Calibrated measurement and estimation under uncertainty<a name="fam-meas"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -155,7 +155,7 @@ The confidence a piece of reasoning generates about itself is not evidence for i
 | MEAS-11<a name="meas-11"></a> | an estimation target is labelled intangible or unmeasurable ("reputation", "security") with no operational definition | **Clarification chain**: force the detectable consequence and the decision purpose before measuring (what do you mean, and why do you care), because an intangible is usually an undefined observable | What observable would differ if this intangible increased? | S·p | [hubbard-measure-anything-cybersecurity ch-2](../SOURCES.md#src-hubbard-measure-anything-cybersecurity) |
 | MEAS-12<a name="meas-12"></a> | a quantitative model is rejected solely because it is incomplete or erred once, while the ordinal or gut method it would replace is kept | **Compare error to the real alternative**: judge a model against the method actually in use, not against omniscience, and keep the lower-error one | Does the preferred alternative have *less* proven error on the same task? | S·r | [hubbard-measure-anything-cybersecurity ch-5](../SOURCES.md#src-hubbard-measure-anything-cybersecurity) |
 
-## 6. EXP: Controlled experimentation / trustworthy A/B and change evaluation
+## 6. EXP: Controlled experimentation / trustworthy A/B and change evaluation<a name="fam-exp"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
