@@ -33,7 +33,7 @@ the claim behind it.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the decision is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md); the distillation behind it stays in the private research corpus |
+| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md) |
 
 Tier: **B**locker (existential or irreversible if violated), **S**hould (strong default
 with named exemptions), **J**udgment (weigh in context, and escalate when the context is
@@ -55,7 +55,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | STRAT-08<a name="strat-08"></a> | planning a debut mass-market win as if it funds five years | **Spike is not a business model**: extract rights and cash from a spike; don't staff for automatic repeat | What survives if the spike never happens again? | B·s | [klf-the-manual ch-1](../SOURCES.md#src-klf-the-manual) |
 | STRAT-09<a name="strat-09"></a> | post-hit plan is to rerun the exact exploit | **One-time hole**: systems close visible hacks; change formula or accept nostalgia | What breaks if the platform adapts tomorrow? | S·s | [klf-the-manual ch-14](../SOURCES.md#src-klf-the-manual) |
 | STRAT-10<a name="strat-10"></a> | vendor offers free work for equity/rights or "I'll intro the majors" | **Keep the rights; hire the services**: flattery trades are how spikes lose their only real money | Who owns the IP if this works? | B·s | [klf-the-manual ch-9](../SOURCES.md#src-klf-the-manual) |
-| STRAT-11<a name="strat-11"></a> | pressure to split the difference on price/terms | **Never split the difference**: the middle is often the worst design; repackage instead | Is there a package that beats 50/50? | S·s | [never-split-the-difference ch-6](../SOURCES.md#src-never-split-the-difference) |
+| STRAT-11<a name="strat-11"></a> | pressure to average two strong opposed options | **Do not average opposed goods**: the middle can be worse than either pole; name the dimension each option optimizes and repackage or choose | What dimension makes each pole right, and is there a package better than 50/50? | S·s | [never-split-the-difference ch-6](../SOURCES.md#src-never-split-the-difference) |
 | STRAT-12<a name="strat-12"></a> | market price/hype spike used as validation of quality | **Price ≠ value**: intrinsic math over Mr. Market mood | What is the value if the quote were unavailable for a year? | S·s | [poor-charlies-almanack ch-2](../SOURCES.md#src-poor-charlies-almanack) |
 | STRAT-13<a name="strat-13"></a> | comparing options by revenue alone | **Relative income**: dollars without time/mobility are a false wealth score | What is the per-founder-hour value, and which levers do we control? | S·s | [four-hour-workweek ch-1](../SOURCES.md#src-four-hour-workweek) |
 | STRAT-14<a name="strat-14"></a> | big reversible decision frozen by dread | **Fear-setting**: named worst cases become repair plans; vague fear freezes (↔ epi [[NDM-02]](epistemics.md#ndm-02) pre-mortem names the failure modes before commit; ↔ eng [[RLSE-08]](engineering.md#rlse-08) write the recovery before ship) | Worst case, repair path, and the 10-year cost of inaction? | S·s | [four-hour-workweek ch-3](../SOURCES.md#src-four-hour-workweek) |
@@ -126,16 +126,16 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| NEG-01<a name="neg-01"></a> | unreasonable demand / hard no on terms | **Calibrated How**: force them to solve your constraint under the illusion of control | "How am I supposed to do that?" | S·g | [never-split-the-difference ch-7](../SOURCES.md#src-never-split-the-difference) |
+| NEG-01<a name="neg-01"></a> | unreasonable demand / hard no on terms | **Return the constraint as a how-problem**: invite the demander to propose a workable path that respects the limit | Which open how-question makes them solve the constraint? | S·g | [never-split-the-difference ch-7](../SOURCES.md#src-never-split-the-difference) |
 | NEG-02<a name="neg-02"></a> | pre-meeting dread / bad-news call | **Accusation audit**: name the worst charges first | What's the nastiest true thing they could say about us? | S·g | [never-split-the-difference ch-3](../SOURCES.md#src-never-split-the-difference) |
-| NEG-03<a name="neg-03"></a> | counterpart emotion spikes | **Label, then pause**: daylight on fear beats argument | "It seems like you're worried about ___?" | S·g | [never-split-the-difference ch-3](../SOURCES.md#src-never-split-the-difference) |
+| NEG-03<a name="neg-03"></a> | counterpart emotion spikes | **Name the emotion, then pause**: an accurate neutral label makes the concern discussable without arguing against it | Can I describe the concern neutrally and leave room for correction? | S·g | [never-split-the-difference ch-3](../SOURCES.md#src-never-split-the-difference) |
 | NEG-04<a name="neg-04"></a> | early smooth yes | **Three-yes test**: counterfeit commitment detector; hunt "that's right", not "yes" | Can they affirm it three different ways, including a How? | B·g | [never-split-the-difference ch-8](../SOURCES.md#src-never-split-the-difference) |
-| NEG-05<a name="neg-05"></a> | haggle phase opens | **Ackerman ladder**: 65/85/95/100 with an odd final + nonmonetary chip | Target, 65% open, and the last chip? | S·g | [never-split-the-difference ch-9](../SOURCES.md#src-never-split-the-difference) |
+| NEG-05<a name="neg-05"></a> | haggle phase opens | **Plan concessions before bargaining**: use diminishing moves toward a precise target, make each concession reciprocal, and keep a nonmonetary option for the end | What is the target, concession sequence, and last nonmonetary trade? | S·g | [never-split-the-difference ch-9](../SOURCES.md#src-never-split-the-difference) |
 | NEG-06<a name="neg-06"></a> | only the champion is engaged | **Behind-the-table map**: deal-killers outrank deal-makers | How on board is everyone *not* on this call? | B·g | [never-split-the-difference ch-8](../SOURCES.md#src-never-split-the-difference) |
-| NEG-07<a name="neg-07"></a> | radio silence | **"Have you given up on this?"**: loss framing + autonomy reopens | Sent the no-oriented reopen? | S·g | [never-split-the-difference ch-4](../SOURCES.md#src-never-split-the-difference) |
+| NEG-07<a name="neg-07"></a> | radio silence | **Reopen with an easy refusal**: a brief loss-framed question that permits no can restore autonomy and elicit status without another needy follow-up | Does the reopen make refusal easy while asking whether the matter is closed? | S·g | [never-split-the-difference ch-4](../SOURCES.md#src-never-split-the-difference) |
 | NEG-08<a name="neg-08"></a> | "they're irrational" | **Black Swan hunt**: hidden constraints/info/interests make their move rational | What would have to be true for their move to be rational? | J·s | [never-split-the-difference ch-10](../SOURCES.md#src-never-split-the-difference) |
-| NEG-09<a name="neg-09"></a> | deadlock on story or principles | **That's-right summary**: restate their world (paraphrase + labeling) until they freely say "That's right," not "You're right" (↔ [[NEG-04]](business-marketing.md#neg-04) three-yes hunts ownership, not counterfeit yes) | Can I restate their world until they say "That's right"? | S·g | [never-split-the-difference ch-5](../SOURCES.md#src-never-split-the-difference) |
-| NEG-10<a name="neg-10"></a> | need safe disagreement or a cold open | **No-oriented open**: prefer autonomy-safe questions that invite "No" over yes-traps that train counterfeit agreement (↔ [[NEG-07]](business-marketing.md#neg-07) loss-framed reopen when silence is the problem) | "Is now a bad time to talk?" | S·g | [never-split-the-difference ch-4](../SOURCES.md#src-never-split-the-difference) |
+| NEG-09<a name="neg-09"></a> | deadlock on story or principles | **Seek ownership, not courtesy agreement**: restate the counterpart's facts, stakes, and emotions until they confirm the account as their own rather than merely ending the discussion (↔ [[NEG-04]](business-marketing.md#neg-04) repeated confirmation tests ownership) | Can I summarize their world well enough that they claim the summary? | S·g | [never-split-the-difference ch-5](../SOURCES.md#src-never-split-the-difference) |
+| NEG-10<a name="neg-10"></a> | need safe disagreement or a cold open | **Make refusal safe at the opening**: use an autonomy-preserving question that allows no instead of a yes-trap that invites counterfeit agreement (↔ [[NEG-07]](business-marketing.md#neg-07) loss-framed reopen when silence is the problem) | Does the opening let them decline without social cost? | S·g | [never-split-the-difference ch-4](../SOURCES.md#src-never-split-the-difference) |
 
 ## 6. Operations & Incentives<a name="fam-ops"></a>
 
@@ -159,7 +159,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 
 ## 7. Bootstrap Brand Economics<a name="fam-boot"></a>
 
-> Source: Berg, *Porn Work* (scholarly labor study of the adult-content economy), distilled for its transferable zero-capital creator mechanics: how workers build income under stigma, platform hostility, and no funding. The rules generalize to any bootstrap product; the distillation stays in the private research corpus.
+> Source: Berg, *Porn Work* (scholarly labor study of the adult-content economy), selected for its transferable zero-capital creator mechanics: how workers build income under stigma, platform hostility, and no funding. The rules generalize to any bootstrap product.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -178,7 +178,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 
 ## 8. Claims & Regulatory Surface<a name="fam-clm"></a>
 
-> Added 2026-07-11. Source: Fields, *Product Deploy Agents* compliance lens (CC BY 4.0, Jason Fields, jasonpfields.com, @fasonista); provenance in `distilled/engineering/product-deploy-agents-fields.md` ch-7. The premise is that in any regulated or platform-gated space, the language describing a product receives the same scrutiny as the product: a claim, not a sensor, decides which regulatory regime applies.
+> Added 2026-07-11. Source: Fields, *Product Deploy Agents* compliance lens (CC BY 4.0, Jason Fields, jasonpfields.com, @fasonista), ch-7. The premise is that in any regulated or platform-gated space, the language describing a product receives the same scrutiny as the product: a claim, not a sensor, decides which regulatory regime applies.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |

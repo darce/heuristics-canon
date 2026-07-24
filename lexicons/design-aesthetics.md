@@ -37,7 +37,7 @@ cite `↔ eng UI-xx` instead of restating.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the direction is committed |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md); the distillation behind it stays in the private research corpus |
+| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md) |
 
 Tier: **B**locker, **S**hould, **J**udgment. Phase: **i**dentity, **t**ype,
 **c**olour, **l**ayout, **im**age, **b**rand.

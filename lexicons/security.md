@@ -40,7 +40,7 @@ protocols in depth; those await both the sources and the pass.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the decision is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in the public repo's `SOURCES.md`, or `bootstrap` for a not-yet-sourced row; the distillation behind a slug stays in the private research corpus |
+| Src | source slug, resolved in the public repo's `SOURCES.md`, or `bootstrap` for a not-yet-sourced row |
 
 Tier: **B**locker (exploitable, data-loss, or auth-bypass if violated),
 **S**hould (strong default), **J**udgment. Phase: **p**lan (architecture and

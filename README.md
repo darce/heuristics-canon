@@ -1,22 +1,59 @@
 # Heuristics canon
 
-A working corpus of more than 900 decision rules for building, running, securing, marketing, designing, writing, and shipping software. Each rule is a falsifiable condition -> action claim with a stable citation ID, a source you can check, and a tier that says how hard it binds. A review comment, plan, or skill cites the ID at the moment a decision is made: `[RES-02]` on a blocking call with no timeout, `[A11Y-01]` on a color change. One token replaces a paragraph of restated advice.
+A versioned corpus of 1,000+ decision rules for software, product, design,
+security, research, and operations. Each rule is a stable ID attached to an
+observable trigger, a falsifiable action, a question, a tier, and a citable
+source.
 
-The shelf is deliberately mismatched: a distributed-systems text, a 1988 manual on gaming the UK pop charts, a WCAG standard, a labor study of the adult-content economy, a 1935 typography treatise. When two sources arrive at one mechanism from economies that share nothing, the corpus records the convergence as a first principle in [PRINCIPLES.md](PRINCIPLES.md), and a session that cites one rule retrieves the others as corroboration it would not have found alone.
+The distinctive output is cross-domain reasoning. When unrelated sources reach
+the same causal mechanism, [PRINCIPLES.md](PRINCIPLES.md) joins their rules so
+an agent working in one domain retrieves evidence its native vocabulary would
+not surface.
 
-## How to use it
+## Apply the canon
 
-Cheapest first.
+Do not load every lexicon.
 
-1. Cite by ID. In a plan, a review comment, or a skill body: `see [DBG-01]`. Readers resolve it here, and each rule's section heading is a deep-link anchor.
-2. Copy the tables. A consuming repo vendors `lexicons/*.md` into its own surface and pins a release tag; [`meta/release-manifest.json`](meta/release-manifest.json) carries a sha256 per lexicon so the copy verifies offline. See [Versioning](#versioning).
-3. Wire an agent. [`AGENTS.md`](AGENTS.md) is the contract for automated consumers: pin, verify, retrieve, cite.
+1. Match the changed artifact to the [routing table](#routing-by-artifact).
+2. Open only the listed family anchors; narrow by plan/write/review/ship phase
+   when useful.
+3. Keep a rule only when its trigger is observed. Read its exemptions and tier;
+   report an unwalkable or non-authoritative source rather than borrowing its
+   authority.
+4. If the rule appears in `PRINCIPLES.md`, load its cross-domain siblings as
+   independent mechanism checks, not votes.
+5. Partition opposed rules by surface, object, or sequence. Keep upstream and
+   downstream rules wired when they watch the same failure.
+6. Decide, cite `[ID]`, and stop when no applicable blocker or strong default
+   remains unresolved.
 
-This repo is upstream. Rules flow from a private research corpus to here to consumers, never the reverse.
+For the complete automated-consumer contract, see [AGENTS.md](AGENTS.md).
+
+## Progressive retrieval ladder
+
+Rule rows are the default depth. Open more only when the decision is still
+under-specified:
+
+```text
+rule row  ->  reasoning card  ->  source note  ->  original source
+ (lexicon)     (reasoning/)       (sources/)        (publisher copy)
+```
+
+1. **Rule row** (default). Match the artifact, keep rows whose triggers fire,
+   read tier and exemptions. Cite `[FAM-NN]`.
+2. **Reasoning card.** Open a card only when several retained rules share one
+   mechanism, or a principle joins cross-domain siblings. Cards rebuild the
+   decision (triggers, action, failure, tensions, verification), not a book.
+   See [reasoning/README.md](reasoning/README.md).
+3. **Source note.** Open a note only for citation audit: how hard a `SOURCES.md`
+   slug works for the rules that cite it. See [sources/CONTRACT.md](sources/CONTRACT.md).
+4. **Original source.** Last. Obtain the work through ordinary legal channels.
+   This repo never ships research copies or chapter condensations.
+
+Cards and notes are pilots for hot mechanisms; they are not coverage of the
+whole canon. A card without a firing trigger is inert.
 
 ## What's inside
-
-Ten lexicons, each a table of rules keyed by stable ID:
 
 <!-- BEGIN GENERATED LEXICONS -->
 
@@ -37,19 +74,19 @@ Ten lexicons, each a table of rules keyed by stable ID:
 
 ## Reading a rule
 
-Every row has the same shape. Here is one, from the engineering lexicon:
-
-```
-| ID | Trigger | Rule | Answers | T·P | Src |
-| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | **Timeout on every blocking call** — every socket/pool/RPC/`wait()` needs a bounded timeout; defaults block forever. Exempt: in-process/in-memory calls | What bounds this wait? | B·w | release-it ch-5 |
+```text
+| RES-02 | blocking call with no timeout | Timeout every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
 ```
 
-- **ID** is the permanent citation key, immutable once assigned.
-- **Trigger** is observable in a diff, plan, error, or metric, so a reviewer or a tool can tell when the rule fires.
-- **Rule** is the falsifiable claim: condition, action, consequence.
-- **Answers** is the one question to ask at the decision point.
-- **T·P** is tier and phase. Tier **B**locker means correctness, data loss, or security if violated; **S**hould is a strong default with named exemptions; **J**udgment must be weighed in context, and escalates rather than simplifies, so a lane without that context routes it up. Phase codes are per-lexicon; filter by the bucket in the legend below (plan / write / review / ship) unless you mean one lexicon's code.
-- **Src** is the source slug, linked to its row in [`SOURCES.md`](SOURCES.md): the full citation and what it feeds. The distillation behind it is private; rights are in [`NOTICE.md`](NOTICE.md).
+- **ID** is the permanent citation key.
+- **Trigger** is observable in an artifact, plan, error, or metric.
+- **Rule** is the condition, action, and consequence.
+- **Answers** is the decision-point question.
+- **T·P** is tier and phase. `B` blocks; `S` is a strong default with
+  exemptions; `J` requires contextual judgment and escalation when context is
+  absent. Phase codes map to the buckets below.
+- **Src** resolves through [SOURCES.md](SOURCES.md). The underlying
+  distillations remain private.
 
 <!-- BEGIN GENERATED PHASES -->
 
@@ -70,7 +107,7 @@ Every row has the same shape. Here is one, from the engineering lexicon:
 
 ## Routing by artifact
 
-A rule fires on an artifact: a schema, a migration, a query plan, a stream-window config, an org chart, a launch plan. Map work to families by the artifact that changed, not only by file type.
+A rule fires on the artifact that changed, not merely its file type.
 
 <!-- BEGIN GENERATED ROUTES -->
 
@@ -112,31 +149,78 @@ A rule fires on an artifact: a schema, a migration, a query plan, a stream-windo
 
 <!-- END GENERATED ROUTES -->
 
-## Cross-domain by design
+## Why principles matter
 
-Retrieval, in a person or a model, defaults to the domain of the question being asked. The connections across domains are exactly the ones an inference pass will not make on its own, so the corpus hard-codes them. A rule earns its tier when a second source reaches the same mechanism from an economy the first author never saw: pop charts, app stores, and government procurement all run on one gatekeeper contract, so citing the KLF's channel rule [[PROD-09]](lexicons/business-marketing.md#prod-09) also surfaces Fields' hostile-reader rule [[CLM-05]](lexicons/business-marketing.md#clm-05) and WCAG's scoped-claim rule [[A11Y-22]](lexicons/accessibility.md#a11y-22). [PRINCIPLES.md](PRINCIPLES.md) states each convergence as a first principle, lists the rules that back it, and records the tensions the lexicons keep on purpose.
+Ordinary retrieval stays inside the question's domain. The principles encode
+independent arrivals that expose hidden gatekeepers, denominators, blast radii,
+feedback delays, and source-of-truth errors across domains.
 
-## Versioning
+The 19 mechanisms remain separate because overlap in theme is not identity of
+trigger, cause, and action. Wrong proxy differs from a shaped sample; least
+privilege differs from dual control; falsification differs from evidence timing;
+a commit gate differs from step size. `PRINCIPLES.md` also records how opposed
+rules partition and how complementary rules amplify one another.
 
-Releases are annotated tags `vMAJOR.MINOR.PATCH`. Each tagged commit carries [`meta/release-manifest.json`](meta/release-manifest.json): a sha256 and rule count per lexicon file, plus the full rule-ID list, so a consumer can verify fetched bytes against the pin offline. Rule IDs are the API. A published ID disappearing is MAJOR, because every citation of it breaks; new IDs are MINOR; same-ID text changes are PATCH; a change to the consumption contract itself, such as a file moving, is also MAJOR. While the version is still 0.x, a breaking change lands in the minor slot (semver's pre-1.0 rule); 1.0.0 will be a deliberate declaration that the ID contract is stable. The level is computed from the ID diff at cut time, not chosen. Pin a tag and treat `main` as unreleased.
+## Versioning and integrity
 
-## Boundaries
+Pin an annotated `vMAJOR.MINOR.PATCH` tag. Its
+[`meta/release-manifest.json`](meta/release-manifest.json) uses schema
+`heuristics-canon/release@2` and records:
 
-- Project-neutral. Product opinions, roadmap judgments, and timing notes stay in consuming projects. If a change here is driven by one project's needs, it has stopped being canonical.
-- Public rules, private arguments. Copyright protects a source's expression, not its ideas. The one-line rules are our own expression and ship; the chapter-level condensations behind them could substitute for their sources, so they stay in the private corpus. No distillation files are published here at all.
+- every published rule ID;
+- SHA-256 for each lexicon file;
+- SHA-256 for every file under `reasoning/` and `sources/` (when present).
 
-## Licensing
+Semver for the published surface (rule IDs, reasoning cards, and source notes):
 
-Everything published here is CC BY 4.0 ([`LICENSE`](LICENSE)). Cited sources belong to their authors and publishers; a citation is not a license. Attribution string, per-source rights, and the reasoning: [`NOTICE.md`](NOTICE.md).
+| Change | Level |
+|---|---|
+| Removal of a published rule ID, lexicon file, reasoning card, or source note | **breaking** (MAJOR; on 0.x lands in the minor slot per pre-1.0 practice) |
+| Addition of a rule ID, lexicon, card, or note | **minor** |
+| Same-ID / same-path content change only | **patch** |
+
+Treat `main` as unreleased. Verify offline:
+
+```sh
+git fetch --tags
+git checkout <version-tag>
+shasum -a 256 lexicons/*.md
+# when present:
+find reasoning sources -type f 2>/dev/null | sort | xargs shasum -a 256
+```
+
+Compare digests with `meta/release-manifest.json`. The manifest also carries
+the full rule-ID set, so contract drift is checkable without network access.
+
+## Boundaries and licensing
+
+This repository is a read-only projection of a private research corpus. Rules,
+principles, reasoning cards, and source notes are authored upstream; open an
+issue here rather than a pull request. The projection publishes operational
+rules and intermediate decision aids, not source excerpts; quoted or
+source-adjacent expression is a defect to report. Chapter-level distillations
+and research-copy source text are never published.
+
+Original rule, principle, card, and note prose is offered under CC BY 4.0 as
+stated in [NOTICE.md](NOTICE.md). That grant does not cover third-party works
+identified in `SOURCES.md` or in source notes; citation is not a license. See
+NOTICE for the precise scope and exclusions. This README states no legal
+conclusion about fair use or downstream rights.
 
 ## Layout
 
-```
-lexicons/                    the rules, one file per lexicon
-PRINCIPLES.md                cross-domain convergences, stated as first principles
-SOURCES.md                   every source slug resolved: its citation and what it feeds
-meta/release-manifest.json   per-release digests and the full rule-ID list
-AGENTS.md                    the agent contract (CLAUDE.md points here)
-NOTICE.md                    licensing and rights, one page
-LICENSE                      CC BY 4.0
+```text
+lexicons/                    rules, grouped by domain and family
+PRINCIPLES.md                cross-domain convergences and tensions
+SOURCES.md                   source identities and what each feeds
+reasoning/                   progressive mechanism cards (pilot depth)
+  CONTRACT.md                card schema and anti-reconstruction rules
+  README.md                  retrieval ladder and how to open a card
+  *.md                       mechanism cards (slug-named)
+sources/                     critical source notes (citation audit)
+  CONTRACT.md                note schema; no legal conclusions
+  <slug>.md                  notes keyed by SOURCES.md slug
+meta/release-manifest.json   release@2 digests and stable rule-ID set
+AGENTS.md                    automated-consumer contract
+NOTICE.md                    rights boundary and CC BY scope
 ```

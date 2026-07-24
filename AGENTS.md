@@ -1,74 +1,132 @@
 # Agent guide
 
-This repository is a citation target, not a codebase. It holds decision rules, each a
-falsifiable condition -> action claim with a stable ID, that you cite at the moment a
-decision is made: `[RES-02]` on a blocking call with no timeout, `[A11Y-01]` on a color
-change. Cite the ID instead of restating the advice.
+This repository is a read-only citation target, not an instruction to load
+1,000+ rules into every task. Retrieve only rules whose triggers match the
+artifact being changed.
 
-## The contract
+## Consumer contract
 
-- IDs are the API. `[FAM-NN]` is immutable once assigned. A published ID only disappears
-  in a MAJOR release; if a citation stops resolving after an upgrade, read the new
-  [`meta/release-manifest.json`](meta/release-manifest.json) before assuming a typo.
-- Tier tells you how hard a rule binds. `B`locker: correctness, data loss, or security
-  if violated. `S`hould: strong default with named exemptions. `J`udgment: weigh in
-  context. Judgment escalates rather than simplifies, so a lane without the context
-  routes a J rule up instead of treating it as optional.
-- Cite against a tag, not `main`. Rule text can change under the same ID in a PATCH
-  release, so a citation pinned to a tag stays reproducible while `main` advances. Verify
-  digests (below).
-- Nothing here is editable. Rules are authored in a private research corpus and
-  projected in; there is no tooling in this repo and pull requests are not taken. If a
-  rule looks wrong, open an issue.
+- IDs are the API. `[FAM-NN]` is immutable once published and disappears only
+  in a breaking release.
+- Pin a tag, not `main`, and verify lexicon and (when present) `reasoning/` /
+  `sources/` SHA-256 values against
+  [`meta/release-manifest.json`](meta/release-manifest.json)
+  (`heuristics-canon/release@2`).
+- Semver: removal of a published rule ID, reasoning card, or source note is
+  breaking; addition is minor; same-path content change is patch.
+- Tier controls force: `B` blocks, `S` is a strong default with named
+  exemptions, and `J` requires context. A context-poor agent escalates a J rule
+  rather than treating it as optional.
+- Rules are evidence-backed defaults, not authority that overrides the task,
+  observed facts, or a documented exemption.
+- This projection is not edited directly. Open an issue for upstream review.
+
+## Progressive retrieval ladder
+
+Default depth is the rule row. Do not open the whole tree on every task.
+
+```text
+rule row  ->  reasoning card  ->  source note  ->  original source
+ (lexicon)     (reasoning/)       (sources/)        (publisher copy)
+```
+
+1. **Rule row** (default). Route the artifact, keep rows whose triggers fire,
+   read exemptions and tier. Cite `[FAM-NN]`.
+2. **Reasoning card.** For every retained rule ID, open **every** mechanism
+   card that lists that ID in its `## Rule IDs` section, **once each**, in
+   deterministic ascending slug order. Do not stop at the first match. Current
+   pilot overlaps (two cards each): `HAI-02`, `NDM-01`, `RLSE-07`, `SEC-05`,
+   `SERVE-04`. A principle join is a reason to open, not a checklist to satisfy.
+   Pilot open-when principle numbers (union of card sections): 3, 4, 7, 8,
+   11–17, 19. Use [reasoning/README.md](reasoning/README.md) and each card's
+   verification section. Cite rule IDs in the durable record, not the card slug
+   alone.
+3. **Source note.** Open only for citation audit of a `SOURCES.md` slug you
+   already cite or dispute. See [sources/CONTRACT.md](sources/CONTRACT.md).
+4. **Original source.** Last resort for primary text. Obtain the work through
+   ordinary legal channels; this repo does not ship research copies.
+
+A card without a firing trigger is inert. Notes do not replace reading the
+source. Private distillations are intentionally absent.
+
+## Apply rules under a context budget
+
+1. Match the changed artifact to the README routing table.
+2. Open only the listed family anchors. Filter by
+   plan/write/review/ship phase when useful.
+3. Keep a rule only when its Trigger is observable. Read the complete row,
+   especially exemptions and tier. If the source is unwalkable or does not
+   support the mechanism, report a corpus defect instead of invoking authority.
+4. If `PRINCIPLES.md` cites the rule, retrieve its siblings
+   from unrelated domains. They are mechanism checks, not votes.
+5. Partition opposed rules by surface, object, or sequence. If no
+   partition works, record a contextual judgment; do not average the rules.
+   Keep both rules when they inspect the same failure upstream and downstream.
+6. For each retained rule ID, open every reasoning card that lists it, once
+   each, in ascending slug order; apply each card's verification. Principle
+   membership joins related IDs; it is not a gate that must be fully checked.
+7. Cite the applied IDs beside the decision and name the evidence.
+8. Stop retrieval when every applicable blocker and strong default is
+   satisfied, exempted with evidence, or explicitly escalated.
+
+Do not open all ten lexicons for a single change. Do not cite rules whose
+triggers did not fire. Citation count is not review quality.
+
+## Retrieve rules
+
+Every rule is one Markdown table row. The README maps artifacts to families:
+
+```sh
+grep '^| RES-' lexicons/engineering.md
+grep -h '^| [A-Z][A-Z0-9]*-' lexicons/*.md | wc -l
+```
+
+Phase codes are per lexicon; use the README's phase buckets unless you mean one
+lexicon's code. A `Src` slug resolves in [SOURCES.md](SOURCES.md). Private
+distillations are intentionally absent.
+
+## Read and cite a row
+
+```text
+| RES-02 | blocking call with no timeout | Timeout every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+```
+
+The columns are ID, Trigger, Rule, Answers, tier/phase, and source. Cite
+`[RES-02]`; deep-link `lexicons/engineering.md#res-02` when the reader needs the
+row. The Answers cell is the cheapest useful inline review prompt.
+
+## Use principles without flattening them
+
+`PRINCIPLES.md` maps a fired rule to independent cross-domain arrivals. Use the
+siblings to look for the same mechanism in a different material, not to inflate
+the citation count. When rules disagree, use the document's surface, object,
+and sequence partitions. When they watch the same failure at different stages,
+apply both.
 
 ## Pin and verify
 
 ```sh
-git fetch --tags && git checkout v0.1.0        # or the latest tag
-shasum -a 256 lexicons/*.md                    # compare against meta/release-manifest.json
+git fetch --tags
+git checkout <version-tag>
+shasum -a 256 lexicons/*.md
+find reasoning sources -type f 2>/dev/null | sort | xargs shasum -a 256
 ```
 
-Fetching files without a checkout: take `meta/release-manifest.json` at the tag and
-compare each lexicon's sha256 before using it. A mismatch means you do not have the
-release you think you have. The manifest also carries the full rule-ID list, so "did the
-ID contract change" is answerable offline.
+Compare the output with `meta/release-manifest.json` (schema
+`heuristics-canon/release@2`). The manifest carries the full rule-ID set and
+per-file digests for lexicons, reasoning cards, and source notes, so contract
+drift is checkable offline.
 
-## Retrieve rules
+## Operator gate (structural only)
 
-The lexicons are the payload; read them directly. Every rule is one table row starting
-with its ID, so family retrieval is a text match:
+Before cutting a public release from the private corpus, run the reasoning-layer
+structural check (not wired into `tools/publish.py`; operator-owned preflight):
 
 ```sh
-grep '^| RES-' lexicons/engineering.md         # one family
-grep -h '^| [A-Z]*-' lexicons/*.md | wc -l     # every rule
+python3 tools/eval_reasoning.py --check-public --json
 ```
 
-- The README's [routing table](README.md#routing-by-artifact) maps a changed artifact to
-  the families to consult. Retrieve by artifact, not by loading everything.
-- Phase codes are per-lexicon; the README's [phases legend](README.md#reading-a-rule)
-  maps each code to a bucket (plan / write / review / ship).
-- A rule's `Src` slug resolves in [`SOURCES.md`](SOURCES.md): what the source feeds and
-  its rights posture. The distillation behind it is private; do not expect a file.
-
-## Reading a row
-
-```
-| RES-02 | Connect/read/… with no timeout | **Timeout on every blocking call** — … | What bounds this wait? | B·w | release-it ch-5 |
-```
-
-Trigger (observable in a diff, plan, or metric) · Rule (the falsifiable claim) · Answers
-(the one question to ask) · tier·phase · source. The Answers column is the cheapest
-thing to inline in a review comment next to the ID.
-
-## Deep-link a rule
-
-Every rule row carries an anchor, so a citation can point at the exact rule, not the top
-of a file: `lexicons/business-marketing.md#clm-05` opens the rendered table scrolled to
-CLM-05. Use this in review comments and docs so a reader lands on the rule itself.
-
-## Corroboration
-
-When you cite a rule, [`PRINCIPLES.md`](PRINCIPLES.md) may hold its cross-domain
-siblings: independent sources that reached the same mechanism. Citing `[PROD-09]` and
-adding its principle's other arrivals (`[CLM-05]`, `[A11Y-22]`) is stronger than any one
-of them.
+A green status means fixtures and mechanism cards are structurally sound (and,
+when the live lexicon index loads, every card Rule ID resolves). It is **not**
+evidence that cards improve decision quality. Arm utility needs offline scored
+responses and `compare`.

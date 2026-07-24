@@ -6,6 +6,38 @@ A claim earns a place in a lexicon when it is useful in its own domain. It earns
 
 Read this file to understand how the corpus thinks. Cite a principle when a single-domain rule fires and you want its cross-domain corroboration: a session that reaches for [[PROD-09]](lexicons/business-marketing.md#prod-09) should also get [[CLM-05]](lexicons/business-marketing.md#clm-05) and [[A11Y-22]](lexicons/accessibility.md#a11y-22), because they are one rule wearing three uniforms.
 
+## Use principles during a decision
+
+The numbered principles are not another checklist. They are a second retrieval
+pass after a rule fires.
+
+1. Route the artifact and keep only rules whose triggers are observed.
+2. For each retained rule, find the numbered principles that cite it and load
+   the sibling rules from unrelated domains.
+3. Ask whether a sibling exposes the same mechanism in a form the artifact's
+   native vocabulary concealed. Count independent economies, not repeated rows
+   from one author.
+4. If two applicable rules oppose, partition by surface, object, or sequence.
+   Do not average them. If they watch one failure at different stages, keep both
+   as an amplification.
+5. State the action, evidence, disconfirmer, and next feedback boundary; cite the
+   rule IDs. Stop when the decision is supported or explicitly deferred.
+
+The 19 mechanisms cluster into four forces without collapsing into four vague
+rules:
+
+| Force | Principles | Question |
+|---|---|---|
+| Contracts and boundaries | 1, 5, 6, 10, 18 | What structure, interface, or default must be true before the surface can be trusted? |
+| Evidence and measurement | 2, 4, 9, 13, 15 | What produced the claim, what would falsify it, and can the measured party shape the meter? |
+| Reversibility and exposure | 3, 8, 14, 17 | What is expensive to undo, who controls it, and how much can one failure reach? |
+| Feedback and correction | 7, 11, 12, 16, 19 | Where does error surface, where is it corrected, and can feedback arrive before the next commitment? |
+
+These are navigation groups, not merge proposals. The numbered principles stay
+separate because their trigger, causal mechanism, or prescribed action differs:
+wrong proxy is not a shaped sample; least privilege is not dual control;
+falsification is not evidence timing; a commit gate is not step size.
+
 ---
 
 ## 1. Author the contract before the components
@@ -244,7 +276,7 @@ Performance engineering, dataset construction, biometric evaluation, usability r
 
 An outcome channel earns trust in both directions at once: failure must be impossible to miss, and success must be impossible to confuse with noise. Systems break this symmetry two ways, and both corrupt the channel: chatter on the success path buries the one line that matters, and a swallowed failure converts an error into a silent lie. The discipline is one mechanism seen from both sides: keep the success path clean enough that any output means something, and make every failure surface where its consumer actually looks.
 
-- Kernighan and Pike built the split into the operating system: stderr exists because error messages "did start disappearing into pipelines", and the composable program stays silent on success [[AGT-15]](lexicons/engineering.md#agt-15); its outcome is an exit status a caller can branch on without parsing prose [[AGT-21]](lexicons/engineering.md#agt-21).
+- Kernighan and Pike built the split into the operating system: diagnostics go to stderr so piped stdout remains data, and the composable program stays silent on success [[AGT-15]](lexicons/engineering.md#agt-15); its outcome is an exit status a caller can branch on without parsing prose [[AGT-21]](lexicons/engineering.md#agt-21).
 - Raymond states the repair rule two decades later, and Fields arrives from shipping products: when you must fail, fail noisily and as soon as possible, because a crash is honest and a silent wrong answer is not [[AGT-10]](lexicons/engineering.md#agt-10), [[RLSE-05]](lexicons/engineering.md#rlse-05).
 - The observability authors run the same audit on telemetry: silence is not success, and dead instrumentation must break loudly, because a quiet dashboard and a healthy system are indistinguishable until you enforce the difference [[OBS-08]](lexicons/engineering.md#obs-08).
 - The converse guard keeps the loud side honest: an ERROR that does not require operator action trains operators to ignore ERROR, which is how the loud channel goes quiet in the reader instead of the emitter [[OBS-04]](lexicons/engineering.md#obs-04).

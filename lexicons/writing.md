@@ -17,6 +17,13 @@ replies. It does not override a format that legitimately calls for a flagged
 pattern (an API reference bolds code identifiers; a pipeline diagram uses
 arrows); the rules name those exemptions inline.
 
+Source-status warning: the current `ai-writing-tropes` source is a blog and
+Wikipedia synthesis, so it does not meet the corpus authority policy. Treat
+WRIT rows as provisional editorial hypotheses, not grounded evidence or proof
+of AI authorship, until each mechanism is re-grounded in citable research or a
+standard. The trigger still supports inspection; the source does not justify
+borrowing the row's tier as authority.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**
@@ -43,7 +50,7 @@ arrows); the rules name those exemptions inline.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the edit is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md); the distillation behind it stays in the private research corpus |
+| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md) |
 
 Tier: **B**locker (reads as AI slop, or is factually hollow or unverifiable),
 **S**hould (strong default), **J**udgment (weigh in context). Phase: **d**raft
@@ -87,7 +94,7 @@ authorship or check sourcing).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| WRIT-19<a name="writ-19"></a> | false-suspense transition (here's the kicker/thing/deal, here's where it gets interesting, here's what most people miss) | **Deliver the point**: the payoff never justifies the buildup | Does what follows need the drumroll? | S·e | [ai-writing-tropes §tone](../SOURCES.md#src-ai-writing-tropes) |
+| WRIT-19<a name="writ-19"></a> | formulaic suspense cue promises a revelation before an ordinary point | **Deliver the point**: the payoff rarely justifies the buildup | Does what follows need the drumroll? | S·e | [ai-writing-tropes §tone](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-20<a name="writ-20"></a> | patronizing analogy (think of it as…, it's like a…) aimed at a capable reader | **State the concept directly**: the analogy is often less clear than the thing | Does the reader need a metaphor here, or the fact? | S·e | [ai-writing-tropes §tone](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-21<a name="writ-21"></a> | "imagine a world where…" futurism selling a premise | **Argue from evidence, not invitation**: don't sell with a fantasy the reader must accept | Am I inviting agreement instead of earning it? | S·e | [ai-writing-tropes §tone](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-22<a name="writ-22"></a> | performative vulnerability ("and yes, I'll admit…", "this isn't a rant, it's a diagnosis") | **Cut the risk-free confession**: real candor is specific and costly; model candor is polished and risk-free | Does this admission actually risk anything? | J·e | [ai-writing-tropes §tone](../SOURCES.md#src-ai-writing-tropes) |

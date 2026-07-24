@@ -49,7 +49,7 @@ texts.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the decision is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md); the distillation behind it stays in the private research corpus |
+| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md) |
 
 Tier: **B**locker (a wrong answer corrupts correctness or names the wrong
 entity), **S**hould (strong default), **J**udgment. Phase: **p**lan (modelling

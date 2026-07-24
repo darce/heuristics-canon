@@ -63,7 +63,7 @@ source.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the decision is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md); the distillation behind it stays in the private research corpus |
+| Src | source slug, resolved in [`SOURCES.md`](../SOURCES.md) |
 
 Tier: **B**locker (a user is systematically misled, misses a critical state,
 commits an unintended action, or loses data), **S**hould (strong default),
@@ -222,4 +222,4 @@ Interaction & UX borders the visual, implementation, accessibility, and model la
 
 ## 10. Consumption
 
-Referenced by ID at the decision point, never read front-to-back. `PERC-*` fire in a **review** pass over a screenshot: greyscale, blur, and unlabeled-grouping inspection catch most violations; `COG-*` and `NAV-*` fire at **plan** time on flows, IA, and forms; `INT-*`/`FORM-*` at **write** time on actions and inputs; `HAI-*` on any surface where a human acts on a model output; `VIZ-*` fire on a **chart or encoding**: greyscale, data-to-channel mapping, and a "which query does this serve" check catch most violations; `UXR-*` fire at **plan** time on a study design and metric choice and at **review** time on a results table or report. A CSS or component diff routes to `PERC + UI + A11Y`; a form to `FORM + A11Y`; a chart or timeline to `VIZ + PERC + A11Y`; a cluster-review screen to `VIZ + PERC + HAI + GRPH + ml-systems`; a usability study or metrics deck to `UXR + HAI + ml-systems [EVAL]`. A consuming harness inlines the trigger plus the question by phase tag and cites the ID; the mechanism stays in `distilled/interaction/`.
+Referenced by ID at the decision point, never read front-to-back. `PERC-*` fire in a **review** pass over a screenshot: greyscale, blur, and unlabeled-grouping inspection catch most violations; `COG-*` and `NAV-*` fire at **plan** time on flows, IA, and forms; `INT-*`/`FORM-*` at **write** time on actions and inputs; `HAI-*` on any surface where a human acts on a model output; `VIZ-*` fire on a **chart or encoding**: greyscale, data-to-channel mapping, and a "which query does this serve" check catch most violations; `UXR-*` fire at **plan** time on a study design and metric choice and at **review** time on a results table or report. A CSS or component diff routes to `PERC + UI + A11Y`; a form to `FORM + A11Y`; a chart or timeline to `VIZ + PERC + A11Y`; a cluster-review screen to `VIZ + PERC + HAI + GRPH + ml-systems`; a usability study or metrics deck to `UXR + HAI + ml-systems [EVAL]`. A consuming harness inlines the trigger plus the question by phase tag and cites the ID; the mechanism is not inlined into the harness.
