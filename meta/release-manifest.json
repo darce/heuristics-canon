@@ -1,48 +1,48 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "date": "2026-07-24",
   "rules": 1081,
-  "principles": 19,
+  "principles": 0,
   "lexicons": {
     "lexicons/accessibility.md": {
       "sha256": "f4e91c7831a40d4acdf5d694988e94e263d4a2250960ee395da4b15307cecd47",
       "rules": 50
     },
     "lexicons/business-marketing.md": {
-      "sha256": "47894763553d5c26dbdaa7edc100343f2d75ed0080b4dba1563f905f28d6b36b",
+      "sha256": "cc40957b222759014deff17eb4697987eefc8f45b8a83be819ab906a63c1c8aa",
       "rules": 103
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "3ee8a21789acfb1621aa9cfe0796b8224736aae8de0e012a3aaf8f7feb532858",
+      "sha256": "91fcaa764dd66c98aa78de970bbac0767fe312b660783b69e20c59da28b2e530",
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "91dc76f980ea7917d4001159c626371d67496f493ee8b5e591dcf8ef9a9a13ed",
+      "sha256": "6523e40b3034b69d28974c04dca4b9c593e7879ae4f0f6d2f40d4de23daf080c",
       "rules": 277
     },
     "lexicons/epistemics.md": {
-      "sha256": "3a85c640e24e42bcaf2466f114687d4cd11ad757a89d00c36fccc0140155dd07",
+      "sha256": "941edf427729b81b27753773cb4b9727100c1d005c4296d714e204f83170e86f",
       "rules": 83
     },
     "lexicons/graph-theory.md": {
-      "sha256": "9ceefba2512fe63be11b1c3090c98a6e78e1e34b8eeee75ce6c14667f28ab606",
+      "sha256": "8a2478ed06e7fdc65d179162fa52197871b5805d943525786eaba6afb857e20a",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "d6ad3e587e861bfb210faee20b82017498c548f74fb29bd4bcd5849cb995b358",
+      "sha256": "39c9190a4cef4fd3480243362f01f02ab05b1c4cbea8b5e34d0fcc12112a5deb",
       "rules": 91
     },
     "lexicons/ml-systems.md": {
-      "sha256": "72b946b17e5af76cec6dab1d5c40dea8089c2e920b7f23dbfd19c7395f749bb9",
+      "sha256": "a4d35831c976d2ca588dbc029ae3153f931190502e1f752ea9cf0cded472aab0",
       "rules": 196
     },
     "lexicons/security.md": {
-      "sha256": "8c4fe060171f6584857ea1aebfb2e57cc27a6058f1ff7895b6e128c4ec3eeddc",
+      "sha256": "5eb840a09602a41e3451486ba865727f329d3dc917db3fcd6d4c92067255c8be",
       "rules": 122
     },
     "lexicons/writing.md": {
-      "sha256": "04886944995106cd5597c779b26c3099a29a17592c1890ef6ea5d63491c60b73",
+      "sha256": "de1af671a79e183eb67d78e98c4a31a6a1b1d1c57c21362e72b14f9cb9f72fd2",
       "rules": 46
     }
   },
@@ -1131,41 +1131,79 @@
   ],
   "docs": {
     "PRINCIPLES.md": {
-      "sha256": "73dd0adc1a46f02128118101cfe4d6a607ff6d10922f7577a8cdf9e0ad07beb3"
+      "sha256": "2b1422800a145f86edf7ad403cfa0aea6262b53002c51de1f2b240eee63ca81d"
     },
     "NOTICE.md": {
-      "sha256": "2598d50ee3ec59e51f171989d121a753503f3089026c2a0f6a1c7bf2304ca8b1"
+      "sha256": "52d0a2c0665519c177249578c164c8724d447820ec6a88c52b4247a38a60e664"
+    },
+    "README.md": {
+      "sha256": "be989fb49c610c9378f9e8b1c5fa9dfd0c5356430ce9e4ee76704bbe5812befb"
+    },
+    "AGENTS.md": {
+      "sha256": "d6ab99a239c16b9c9edbee2b259329c94f2e267fcccad344df03efd8f7d53aea"
+    },
+    "CLAUDE.md": {
+      "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
     },
     "SOURCES.md": {
-      "sha256": "59a9cba130ea371eb40992e34c0c316eb552057092ca1a3763c1aa367b996a8a"
+      "sha256": "68174f7d9d288dcee6c5349a4d1056bce2e231e77266e460585d2607b8c7bdb1"
     }
   },
   "reasoning": {
     "reasoning/CONTRACT.md": {
-      "sha256": "05457878867d70f0ef90bea88677fb398bdc2b0120cfc5d180306fe09b3d1da3"
+      "sha256": "12080f51360b31ad2d6fc1c34e44e00fbfcc70c1afd00e5c0c94f6216d6abde2"
     },
     "reasoning/README.md": {
-      "sha256": "7e6531dc0039de5eca465dac720dfceec17397584d8868fb897c1a8c2e1c1ade"
+      "sha256": "fcba238a964a4a70b1bb35aa91d2d44bcd5bbd3d3aa6c4ddabaa420c7f80d195"
+    },
+    "reasoning/contract-before-components.md": {
+      "sha256": "63c234542bb9a5c07058f0288a6f0ec4ca16b8fd5de3d313a7c7efe9363f7df6"
+    },
+    "reasoning/correction-at-source.md": {
+      "sha256": "708130352bb11a37960ac2ff40d5badc2cc5adc28dbb86a3e471e02c3935b947"
+    },
+    "reasoning/designed-unknown.md": {
+      "sha256": "988353daf77cdb32c75bf36d421f1da4f6f812767c6a5dc2e92bdc3c611c3ef7"
+    },
+    "reasoning/dual-control-two-keys.md": {
+      "sha256": "307d14fef208446ca2220b22145b344b89fab7bb94dfff6bf8b126cb80897bb8"
+    },
+    "reasoning/durable-decision-memory.md": {
+      "sha256": "d290ad1b7373e48a08bda91d3a39d2bc50f75af60fcc1ff2c293b442d85e9dd8"
+    },
+    "reasoning/evidence-before-commitment.md": {
+      "sha256": "c2ba7145aee3ff89feee1eb81a1c3d45a11c183b314de3102b0a9dabcc864e83"
+    },
+    "reasoning/fail-loudly-succeed-quietly.md": {
+      "sha256": "97dc92453aaa3551ca91c96650b861ad2f9f1d865d19a00af9b3041eac6dc47d"
+    },
+    "reasoning/falsification-disconfirmers.md": {
+      "sha256": "7414dc4f72edf60b14470d607df5cc525de29cd30eff7efefd29cf3f8aaa3206"
     },
     "reasoning/feedback-bounded-waiting.md": {
-      "sha256": "74faedbe0b7e2d945deeddfcd362adbbf1fa201aa5f05c2392b46f21aacd54d4"
+      "sha256": "e988676fc6c308b833664563abd7673974368ad16f6f8545fd809d71b50580e7"
+    },
+    "reasoning/least-privilege-blast-radius.md": {
+      "sha256": "675f4c5af9c33d73005002fd2bd3697c22c7b40b30e1bc8e133b6bc421f42948"
     },
     "reasoning/measurement-integrity.md": {
-      "sha256": "8c001b1487d110432adbfbd6729532f3ac34baa93d133cf930e99f5eea36f14f"
+      "sha256": "f214c6823826d884b01e508f1dc074e5212a35d3f0a5ab8800fae3bd306a6b73"
     },
-    "reasoning/reversibility-blast-radius.md": {
-      "sha256": "8b406edbb3834df3c530efe5a3de611e3d568a504383273abfb7898a584020eb"
+    "reasoning/perceived-enforced-boundaries.md": {
+      "sha256": "5c59d7553208e0fae39396c720bc4dff2f587109bd84cc633de8d10a921ef019"
+    },
+    "reasoning/proxy-outcome-integrity.md": {
+      "sha256": "2bf61036bd91573555d04e2f5533ac01d2a14ecd3d118461c54068acf01465cd"
+    },
+    "reasoning/reversible-commitments.md": {
+      "sha256": "b72e9f8ff0def66556efee643e59e8ff98a721040c9ebcd7709b40fbf4697d84"
+    },
+    "reasoning/second-exit-hostile-landlord.md": {
+      "sha256": "d18347e2229dbbe1d005f85b47160f9e3dc8ee94f2f531a4361211aff7770e3f"
+    },
+    "reasoning/step-size-by-feedback.md": {
+      "sha256": "7ee184f791034d23dba45a802fcd1d8bf8fc37857778274a05ce6fc86a569edf"
     }
   },
-  "sources": {
-    "sources/CONTRACT.md": {
-      "sha256": "b2d35ceaf42b4ca96ca85c8c16a892ae4ba0c4094679e06f178c3c6ea00406bb"
-    },
-    "sources/designing-data-intensive-applications.md": {
-      "sha256": "35e31220f8fcc18e60be57f6731726198091a0251a6f72787b411014b4dce2fd"
-    },
-    "sources/hubbard-measure-anything-cybersecurity.md": {
-      "sha256": "aaa0d7ee863d7f8ac26cc7c9ad68c72e39d5cf4ebe2b53cef4feeb904e9b6b65"
-    }
-  }
+  "sources": {}
 }

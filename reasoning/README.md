@@ -1,92 +1,66 @@
-# Public reasoning layer
+# Reasoning cards
 
-Progressive retrieval for agents and humans. Start narrow; open more only when
-the decision is still under-specified. The same ladder is linked from the
-repository [README](../README.md#progressive-retrieval-ladder) and
-[AGENTS.md](../AGENTS.md#progressive-retrieval-ladder).
+Optional depth above a lexicon rule row. When several rules describe one causal
+mechanism, a card rebuilds the *decision*: what to notice, why it fails, what
+to do, and how to check.
 
-## Retrieval ladder
+## Audiences
+
+| Reader | Use these sections |
+|---|---|
+| Human | Title, Scope, Observable triggers, Causal mechanism, Predicted failure, Exemptions, Non-claims |
+| Agent / integrator | Required action, Tensions, Disconfirmers, Verification, Rule IDs, Principles, Evidence |
+
+Schema and anti-reconstruction rules: [CONTRACT.md](CONTRACT.md). Apply cards
+with the progressive-retrieval steps in [AGENTS.md](../AGENTS.md).
+
+## Reading order
 
 ```text
-rule row  ->  reasoning card  ->  source note  ->  original source
- (lexicon)     (this tree)       (../sources)       (publisher copy)
+rule row  ->  reasoning card  ->  original source
+ (lexicon)     (this tree)         (publisher copy)
 ```
 
-1. **Rule row.** Match the changed artifact, keep rows whose triggers fire, read
-   tier and exemptions. Cite `[FAM-NN]`. This is the default depth.
-2. **Reasoning card.** For each retained rule ID, open **every** card whose
-   `## Rule IDs` section lists that ID, **once each**, in deterministic
-   ascending slug order. Do not keep only the first match. Cards rebuild the
-   *decision*: triggers, action, failure, tensions, verification. Current pilot
-   overlaps (two cards each): `HAI-02`, `NDM-01`, `RLSE-07`, `SEC-05`,
-   `SERVE-04`.
-3. **Source note.** Open only for citation audit: how hard a `SOURCES.md` slug
-   works for the rules that cite it. Notes give support / partial / not-found
-   verdicts, not book reports.
-4. **Original source.** Last. Only when the note or dispute requires primary
-   text. Obtain the work through ordinary legal channels. The public repo never
-   ships research copies or chapter condensations.
+1. Start with the rule row that matches what changed.
+2. Open a card when several retained rules share one mechanism, or when a
+   principle join makes the multi-domain picture clearer.
+3. Go to the original work only when you need primary text. Obtain it through
+   ordinary legal channels. [SOURCES.md](../SOURCES.md) names the works; it is
+   not a substitute for them.
 
-Private `distilled/` is the authoring argument behind many rows. It does not
-publish. If a card ever reads like a chapter tour, it is a defect: rewrite as
-mechanism or delete.
+Cards do not replace rows. A card without a relevant trigger is inert. Cards
+are selective pilots, not full coverage of every principle or force.
 
-## What ships here
+## Cards in this tree
 
-| Path | Role |
+| Card | Mechanism |
 |---|---|
-| [CONTRACT.md](CONTRACT.md) | Card schema, anti-reconstruction rules, template |
-| [measurement-integrity.md](measurement-integrity.md) | Pilot card: honest meters and unshaped frames |
-| [reversibility-blast-radius.md](reversibility-blast-radius.md) | Pilot card: cheap safe side; small compromise radius |
-| [feedback-bounded-waiting.md](feedback-bounded-waiting.md) | Pilot card: timeouts, step size, correction loops |
-| [../sources/CONTRACT.md](../sources/CONTRACT.md) | Critical note schema |
-| [../sources/](../sources/) | Pilot notes keyed by source slug |
+| [contract-before-components](contract-before-components.md) | Author the gatekeeper contract before building the surface |
+| [correction-at-source](correction-at-source.md) | Corrections that reach the thing that was wrong |
+| [designed-unknown](designed-unknown.md) | Unknown and abstention as first-class states |
+| [dual-control-two-keys](dual-control-two-keys.md) | High-impact acts need two independent keys |
+| [durable-decision-memory](durable-decision-memory.md) | Decisions that outlive the person who made them |
+| [evidence-before-commitment](evidence-before-commitment.md) | Inspectable evidence before durable state |
+| [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) | Failure impossible to miss; success not noise |
+| [falsification-disconfirmers](falsification-disconfirmers.md) | Name what would prove you wrong, then look for it |
+| [feedback-bounded-waiting](feedback-bounded-waiting.md) | Timeouts, queues, and automation loop bounds |
+| [least-privilege-blast-radius](least-privilege-blast-radius.md) | Shrink what one compromise can reach |
+| [measurement-integrity](measurement-integrity.md) | Unshaped sampling frames and denominators |
+| [perceived-enforced-boundaries](perceived-enforced-boundaries.md) | Perceived boundary equals enforced boundary |
+| [proxy-outcome-integrity](proxy-outcome-integrity.md) | Proxies that must still track the real outcome |
+| [reversible-commitments](reversible-commitments.md) | Cheap reversible choice; underpriced irreversibility |
+| [second-exit-hostile-landlord](second-exit-hostile-landlord.md) | Second exit before a landlord turns |
+| [step-size-by-feedback](step-size-by-feedback.md) | Plan and rollout step size inside the feedback loop |
 
-## How to use a card in a session
+## How principles relate
 
-1. Route and select rules as in the root agent contract.
-2. Open every card that lists any retained rule ID (once each, ascending slug
-   order). A principle is a *join* across domains, not a checklist: when a
-   retained ID sits under the pilot open-when set (Principles **3, 4, 7, 8,
-   11–17, 19**, the union of the three pilot cards' Principles sections), that
-   is one reason to open; matching a pilot theme is another. Never require the
-   whole principle set before opening.
-3. Apply each card's required action and verification; cite rule IDs, not the
-   card slug alone, in the durable decision record.
-4. Partition tensions; do not average opposed rules.
-5. Stop when blockers and strong defaults are satisfied, exempted with
-   evidence, or escalated.
+[PRINCIPLES.md](../PRINCIPLES.md) groups cross-domain arrivals into four forces
+(contracts, evidence, reversibility, feedback) for navigation only. Principles
+stay separate; cards operationalize one multi-rule decision each. Open siblings
+as independent checks, not as a citation quota. Do not treat a force as a
+single mega-card.
 
-Cards do not replace rows. A card without a firing trigger is inert.
+## Rights
 
-## Operator gate (structural only)
-
-Upstream release preflight (private corpus; not part of `tools/publish.py`):
-
-```sh
-python3 tools/eval_reasoning.py --check-public --json
-```
-
-Structural fitness of fixtures and cards only. Not proof that cards improve
-reasoning.
-
-## How to use a source note
-
-1. Open a note only for slugs you already cite or dispute.
-2. Read the narrow question and the verdict table for your rule IDs.
-3. Treat `partial` and `not-found` as corpus risk: re-ground upstream, do not
-   paper over with prestige.
-4. Never paste private distillation text into public notes.
-
-## Authoring constraints (summary)
-
-- Existing rule IDs, principle numbers, and source slugs only.
-- No quotations, no chapter-order walkthroughs, no "complete guide" claims.
-- Criticism over summary in `public/sources/`.
-- `WRIT` discipline on prose (sparse markup, few em dashes, plain diction).
-
-## Pilots only
-
-Three cards and two notes are pilots for the progressive layer. They are not
-coverage of the whole canon. Prefer depth on hot mechanisms over a thin card
-per principle.
+Card prose follows the same rights boundary as the rest of the repository; see
+[NOTICE.md](../NOTICE.md).

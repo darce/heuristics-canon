@@ -40,7 +40,7 @@ protocols in depth; those await both the sources and the pass.
 | Rule | the falsifiable claim: condition, action, consequence |
 | Answers | the one question to ask before the decision is made |
 | T·P | tier and phase, below |
-| Src | source slug, resolved in the public repo's `SOURCES.md`, or `bootstrap` for a not-yet-sourced row |
+| Src | source slug, resolved in the public repo's `SOURCES.md`; unsourced practice rows use a transparent non-authority label there |
 
 Tier: **B**locker (exploitable, data-loss, or auth-bypass if violated),
 **S**hould (strong default), **J**udgment. Phase: **p**lan (architecture and
@@ -49,7 +49,7 @@ threat model), **w**rite (code), **r**eview (config and audit).
 
 ## 1. AI/ML & Agent Security<a name="fam-sec"></a>
 
-> `SEC-01..10` (LLM/agent) are sourced to Wilson, *The Developer's Playbook for Large Language Model Security* (`llm-security-playbook`; moved here from engineering; existing `[SEC-02]` citations still resolve). `SEC-11..16` extend the family to **adversarial ML** (training-data poisoning, backdoors/trojans, evasion, and the ML supply chain) from Sotiropoulos, *Adversarial AI* (`sotiropoulos-adversarial-ai`).
+> Bibliography: [Wilson, *The Developer's Playbook for Large Language Model Security*](../SOURCES.md#src-llm-security-playbook); [Sotiropoulos, *Adversarial AI*](../SOURCES.md#src-sotiropoulos-adversarial-ai).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -76,13 +76,13 @@ threat model), **w**rite (code), **r**eview (config and audit).
 
 ## 2. Web Application Security<a name="fam-web"></a>
 
-> Re-grounded against Zalewski, *The Tangled Web* (`zalewski-tangled-web`, browser security model) and Stuttard & Pinto, *The Web Application Hacker's Handbook* (`stuttard-wahh`, server-side attacks). The four rows those texts do not establish ([[WEB-12]](security.md#web-12), [[WEB-16]](security.md#web-16), [[WEB-19]](security.md#web-19), [[WEB-20]](security.md#web-20)) remain `bootstrap`.
+> Bibliography: [Zalewski, *The Tangled Web*](../SOURCES.md#src-zalewski-tangled-web); [Stuttard & Pinto, *The Web Application Hacker's Handbook*](../SOURCES.md#src-stuttard-wahh). Rows without a distillation use the unsourced practice label until grounded.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
 | WEB-01<a name="web-01"></a> | User-controlled data concatenated into an SQL string (or interpolated into a query without a binder) | **Parameterize every query**: string-built SQL lets any quote/terminator break out into code; use prepared statements + bound params, including for values re-read from the database (second-order injection); binders bind values, so dynamic identifiers need [[WEB-35]](security.md#web-35) (↔ eng [[DATA-12]](engineering.md#data-12) both fail when a value is interpolated into a query instead of bound) | Is every SQL value bound, including stored values re-used in a later query? | B·w | [stuttard-wahh](../SOURCES.md#src-stuttard-wahh) |
 | WEB-02<a name="web-02"></a> | User input passed to `exec`/`system`/`shell_exec`/`Runtime.exec`/`ProcessBuilder` without an argv array | **Never shell-interpolate untrusted input**: metacharacters become a second command; use argv APIs or refuse shell (↔ eng [[DATA-12]](engineering.md#data-12) never interpolate untrusted bytes into an interpreter) | Is the OS command built as discrete args with no shell? | B·w | [stuttard-wahh](../SOURCES.md#src-stuttard-wahh) |
-| WEB-03<a name="web-03"></a> | LDAP filter built with string concat of request fields | **Allowlist LDAP filter input**: `)(uid=*` style input widens the filter and bypasses authz; permit only simple allowlisted characters and reject the filter metacharacters (parentheses, `*`, `&`, `=`, pipe) and null bytes, or use a typed directory API (WAHH's stance is reject, not sanitize-in-place) (↔ eng [[DATA-12]](engineering.md#data-12) metacharacter breakout from data into control plane) | Is every LDAP filter value allowlisted and metacharacter-rejected? | B·w | [stuttard-wahh](../SOURCES.md#src-stuttard-wahh) |
+| WEB-03<a name="web-03"></a> | LDAP filter built with string concat of request fields | **Allowlist LDAP filter input**: `)(uid=*` style input widens the filter and bypasses authz; permit only simple allowlisted characters and reject the filter metacharacters (parentheses, `*`, `&`, `=`, pipe) and null bytes, or use a typed directory API; reject metacharacters rather than trying to sanitize them in place (↔ eng [[DATA-12]](engineering.md#data-12) metacharacter breakout from data into control plane) | Is every LDAP filter value allowlisted and metacharacter-rejected? | B·w | [stuttard-wahh](../SOURCES.md#src-stuttard-wahh) |
 | WEB-04<a name="web-04"></a> | Response body echoes request data (or stored user content) into HTML without context-aware encoding | **Encode for the sink context**: unescaped HTML lets scripts run as the victim (reflected/stored XSS) | Is every untrusted string escaped for HTML/attr/JS/URL before emit? | B·w | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 | WEB-05<a name="web-05"></a> | Client-side code writes `location`/`document.write`/`innerHTML` from `location.hash`/`postMessage`/URL params | **Treat DOM sinks as XSS sinks**: client-only flows still execute attacker script in the origin | Is untrusted data never assigned to HTML/JS sinks without sanitization? | B·w | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 | WEB-06<a name="web-06"></a> | State-changing POST/PUT/DELETE lacks a per-session CSRF token verified server-side (`SameSite` cookies are defense-in-depth, not a substitute) | **Require anti-CSRF on mutations**: a third-party site can forge the browser's cookies into a state change | Does every state change verify a CSRF token or equivalent origin binding? | B·w | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
@@ -217,4 +217,4 @@ Security is a spanning concern, so many rows restate a rule another lexicon owns
 
 ## Consumption
 
-Canonical source. Consuming repos sync this file and cite rules by ID (`[WEB-01]`, `[SEC-04]`). The `§1` LLM rules moved here from engineering keep their `SEC-*` IDs. Because §§2–5 are a bootstrap pass, a consumer wiring `bootstrap` rows into a gate should treat them as strong review defaults, not cited Blockers, until the grounding pass lands. Product-specific security targets (which controls, which environments, by when) live in the consuming project, not here.
+Canonical source. Consuming repos sync this file and cite rules by ID (`[WEB-01]`, `[SEC-04]`). The `§1` LLM rules moved here from engineering keep their `SEC-*` IDs. Rows whose provenance is an unsourced practice label should be treated as strong review defaults, not cited Blockers, until a citable work is registered. Product-specific security targets (which controls, which environments, by when) live in the consuming project, not here.
