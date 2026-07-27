@@ -1,52 +1,52 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "date": "2026-07-27",
   "rules": 1143,
   "principles": 0,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "2192761ae18d2fbbdcc385a39f5f1f2e30b979674a2b330cfffb3a2bf4bbd25e",
+      "sha256": "0e3eea5b4379bb9091b39162a4a6ea5892b482f16f478ae824985f9323a37f57",
       "rules": 53
     },
     "lexicons/business-marketing.md": {
-      "sha256": "7f793c04ffc746b84e707f12624f182f9d087dd1f1f1f109e38de758a633ec8c",
+      "sha256": "aeb72824c8c94220041d022eb62a41fe55f5052dc405f58fa2ecb78d55fe5645",
       "rules": 111
     },
     "lexicons/depiction.md": {
-      "sha256": "0f1c759b27c9c004b3e23d37267ecdddc2affcccd8d8fcb740bb749bc3d5df29",
+      "sha256": "d7100859d1d0975199db0e40a1a780e15da58ba3ac1120fe1f2c26a6bd65143c",
       "rules": 15
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "e4bd926f7c579513c275344a897288dfc93d4d943873cb11eaf515f267df37d7",
+      "sha256": "0b70be26b01b064921ace547073371abbd9d3e6d1a800e6e75fde325efd0eada",
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "9a323de3695bd36fa65fb94373c49d6fa5ff1259b1e28ebdd087cf33666c0837",
+      "sha256": "f3a6077b99af0d6b40b4c4c6c635cf7d4377f6376b0093239b13712a2305f208",
       "rules": 301
     },
     "lexicons/epistemics.md": {
-      "sha256": "0c5cb81d290fce662467db6e0c10372e30f88e39e4b7a87706e033356105eb99",
+      "sha256": "a55c821af354cb5cea78d34d659925a44261ebfa07bc9792115e3e46f6bfc4aa",
       "rules": 83
     },
     "lexicons/graph-theory.md": {
-      "sha256": "2c815eed690dda1fe1b920fbda8a0f3ec8416e2fe8d2a975f57835bc4d4483eb",
+      "sha256": "ffe6e64c84849f3efdf0b715a4ec9a8cbfc81e79cb81fa3bc1f80d010991c548",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "58e52bdf341c4cc5e9816bd68e04bd936d7189e82b5c4f7ac66d47dfa8e2aca3",
+      "sha256": "0e32a10608986f4ab39762fc6bafa55ed84e5a2939be7a08627b123c5b9a5174",
       "rules": 91
     },
     "lexicons/ml-systems.md": {
-      "sha256": "9e55b144207585aab35f103c05d7810075d105c37df3ced0f4fe579d61948221",
+      "sha256": "15417597074173fd12a0b36133fb4e6f617b27e1a7ece86008f88f3c253d8616",
       "rules": 208
     },
     "lexicons/security.md": {
-      "sha256": "aa7cfa04fae25f8a5cde3d850a04cdbce5833ac06da778a6531035b8acb27734",
+      "sha256": "9b6785cdc6b360f5f8fbd7267bbf78396e818cd0b8465929f3b16b3c3cacfe66",
       "rules": 122
     },
     "lexicons/writing.md": {
-      "sha256": "8f572ba7c73b69d5af112360a594eb8f2590510996593f9e3ea27b1a99c22d4b",
+      "sha256": "c377c8488d309168fc9569c1e210a76fe0a9810d21c770c08981ab2616de4153",
       "rules": 46
     }
   },
@@ -1200,10 +1200,10 @@
       "sha256": "fd540c9ee741029737f840e81eb79e392865d4c939eb2e3ec20f701d7a71dcc7"
     },
     "NOTICE.md": {
-      "sha256": "52d0a2c0665519c177249578c164c8724d447820ec6a88c52b4247a38a60e664"
+      "sha256": "104fde3eea6b5da7127dd86a481c62c2a548a4b2e3de21cc114ea65c81eb966c"
     },
     "README.md": {
-      "sha256": "9c75722ef930c69464ff46a891ae8b14f35e4d64526f9e075c6b4123745778fb"
+      "sha256": "24b98a29d6695510240c8b827cfebb0b3cd2d8c5883ff82b696e990b05832077"
     },
     "AGENTS.md": {
       "sha256": "877b7fb8b5cceafbf3170d7ddb0ec663742e9ed7af7baf7e1cdc12f870297e1c"
@@ -1217,10 +1217,10 @@
   },
   "reasoning": {
     "reasoning/CONTRACT.md": {
-      "sha256": "12080f51360b31ad2d6fc1c34e44e00fbfcc70c1afd00e5c0c94f6216d6abde2"
+      "sha256": "603e5b2b855beb3d711d793f9c35d14c7bae99e41a22e289cbd577ce01d0bb8f"
     },
     "reasoning/MAP.md": {
-      "sha256": "a2df4d6de320aca9460ef62d3661e7e875e4ab5799f8343f1753d7d73a88315c"
+      "sha256": "545a89d128201825a3cee1a7ab479724cb9c6c73a4b42a9c7c8da0911d6a25ed"
     },
     "reasoning/README.md": {
       "sha256": "058b084122422c04b3ce7ad49fb0553b38a22d4eea565f1827f4b4b76e436d1f"

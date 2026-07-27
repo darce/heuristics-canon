@@ -22,9 +22,11 @@ decision. The rule row is the default depth; the card is optional.
 
 1. **Name what changed** (schema, plan, UI, model, incident, launch).
 2. **Open only the relevant families.** A **family** is a short prefix group
-   inside a lexicon (for example `RES` resilience, `SEC` security, `FORE`
-   forecasting). Use the sketch below, the routing table in
-   [AGENTS.md](AGENTS.md), or a lexicon table of contents.
+   inside a lexicon (for example [`RES`](lexicons/engineering.md#fam-res)
+   resilience, [`SEC`](lexicons/security.md#fam-sec) security,
+   [`FORE`](lexicons/epistemics.md#fam-fore) forecasting). Use the sketch
+   below, the routing table in [AGENTS.md](AGENTS.md), or a lexicon table of
+   contents.
 3. **Keep rules whose trigger you can observe.** Read exemptions and tier.
 4. **Cite by ID and stop** when applicable blockers and strong defaults are
    handled.

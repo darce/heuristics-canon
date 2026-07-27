@@ -17,22 +17,23 @@ and assistant replies. They do not override a format that legitimately calls for
 a flagged pattern (an API reference bolds code identifiers; a pipeline diagram
 uses arrows); the rules name those exemptions inline.
 
-Description of images is not here. `ATTRIB` (on whose authority a text names
-what is depicted) and `BOUND` (how far a description may reach past the frame)
-sat in this file until 2026-07-26 and now live in
-[`depiction.md`](depiction.md). They fire on prose whose subject is an *external
-referent*, where what the text asserts is exactly what is at stake and surface
-hygiene is necessary but not sufficient — a different question from the one
-every row below asks. `WRIT` still applies to a description like any other
+Description of images is not here. [`ATTRIB`](depiction.md#fam-attrib) (on whose authority a text names
+what is depicted) and [`BOUND`](depiction.md#fam-bound) (how far a description may reach past the frame)
+live in [`depiction.md`](depiction.md). They fire on prose whose subject is an
+*external referent*, where what the text asserts is exactly what is at stake
+and surface hygiene is necessary but not sufficient — a different question from the one
+every row below asks. [`WRIT`](writing.md#fam-writ) still applies to a description like any other
 prose, and the `image_description_or_alt_text_change` route loads both files.
 
-Source-status warning: the current `ai-writing-tropes` source is a blog and
-Wikipedia synthesis, so it does not meet the corpus authority policy. Treat
-WRIT rows as provisional editorial failure checks, not grounded evidence or
-proof of AI authorship, until each mechanism is re-grounded in citable research
-or a standard. Rows keep the source slug for provenance only; they do not
-reproduce that source's section outline. The trigger still supports inspection;
-the source does not justify borrowing the row's tier as authority.
+Source-status warning: the sole registered source,
+[`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes), bundles Ben Larbi's
+"AI Writing Tropes" (tropes.fyi) with the Wikipedia "Signs of AI writing"
+entry. A blog and a Wikipedia synthesis do not meet the corpus authority policy. Treat [`WRIT`](writing.md#fam-writ) rows as
+provisional editorial failure checks, not grounded evidence or proof of AI
+authorship, until each mechanism is re-grounded in citable research or a
+standard. Rows keep the source slug for provenance only; they do not reproduce
+that source's section outline. The trigger still supports inspection; the source
+does not justify borrowing the row's tier as authority.
 
 <!-- BEGIN GENERATED CONTENTS -->
 

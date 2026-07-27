@@ -12,30 +12,38 @@ subjective *p* a person or agent puts on a claim before any model is involved.
 
 What it covers:
 
-- **FORE**: forecasting, human and agent probabilistic judgment (resolvable
+- [**FORE**](epistemics.md#fam-fore): forecasting, human and agent probabilistic judgment (resolvable
   questions, numeric probability, outside view, fermi decomposition, incremental
   belief updates, proper scoring, post-mortems)
-- **NDM**: naturalistic decision making (recognition-primed decisions, mental
+- [**NDM**](epistemics.md#fam-ndm): naturalistic decision making (recognition-primed decisions, mental
   simulation, pre-mortem, intent and common ground, de-minimis errors, and the
   validity–feedback gate that partitions expert recognition from scored
   estimation)
-- **BIAS**: named self-deception mechanisms and their invariance tests (the
+- [**BIAS**](epistemics.md#fam-bias): named self-deception mechanisms and their invariance tests (the
   confidence a piece of reasoning generates about itself is not evidence for it;
   swap the role, the source, or the default and see whether the judgment
-  survives). FORE scores forecasts against outcomes; BIAS catches the reasoning
+  survives). [`FORE`](epistemics.md#fam-fore) scores forecasts against outcomes; [`BIAS`](epistemics.md#fam-bias) catches the reasoning
   before it becomes a forecast
-- **RSCH**: research judgment — choosing and attacking the right problem
-- **MEAS**: calibrated measurement and estimation under uncertainty
-- **EXP**: controlled experimentation and trustworthy change evaluation
+- [**RSCH**](epistemics.md#fam-rsch): research judgment — choosing and attacking the right problem
+- [**MEAS**](epistemics.md#fam-meas): calibrated measurement and estimation under uncertainty
+- [**EXP**](epistemics.md#fam-exp): controlled experimentation and trustworthy change evaluation
 
 Scope boundary: decision heuristics for scorable judgment and for recognitional
-judgment under time pressure, not a cognitive-science textbook. FORE
+judgment under time pressure, not a cognitive-science textbook. [`FORE`](epistemics.md#fam-fore)
 applicability is bounded where Tetlock's evidence comes from (resolvable ~1–12
 month questions; long horizons, one-shots, self-fulfilling forecasts, fat tails
-are exemptions). NDM applicability is bounded where Klein's evidence comes from
+are exemptions). [`NDM`](epistemics.md#fam-ndm) applicability is bounded where Klein's evidence comes from
 (high-validity domains with rapid feedback: fireground, NICU, C2, chess);
-low-validity or slow-feedback domains route to FORE, not to "trust the expert."
-The tension between FORE and NDM is documented, not averaged.
+low-validity or slow-feedback domains route to [`FORE`](epistemics.md#fam-fore), not to "trust the expert."
+The tension between [`FORE`](epistemics.md#fam-fore) and [`NDM`](epistemics.md#fam-ndm) is documented, not averaged.
+
+Forecasting and scoring rest on Tetlock and Gardner's
+[*Superforecasting*](../SOURCES.md#src-superforecasting) and Kohavi, Tang, and
+Xu's [*Trustworthy Online Controlled Experiments*](../SOURCES.md#src-trustworthy-controlled-experiments);
+recognitional judgment on Klein's [*Sources of Power*](../SOURCES.md#src-sources-of-power);
+measurement on Hubbard and Seiersen's
+[*How to Measure Anything in Cybersecurity Risk*](../SOURCES.md#src-hubbard-measure-anything-cybersecurity)
+and Hamming's [*The Art of Doing Science and Engineering*](../SOURCES.md#src-hamming-art-of-doing-science).
 
 <!-- BEGIN GENERATED CONTENTS -->
 

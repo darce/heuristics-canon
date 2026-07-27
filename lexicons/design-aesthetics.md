@@ -5,7 +5,7 @@
 Decision rules for aesthetic direction and design mechanics: identity,
 typography, colour systems and meaning, layout composition, image direction, and
 brand-cultural positioning. These are the decisions above the engineering
-lexicon's UI implementation rules (its `UI-*` section). Referenced, not read end
+lexicon's [`UI`](engineering.md#fam-ui) implementation rules (its `UI-*` section). Referenced, not read end
 to end: a brief, comp, or design review cites a rule by ID where the direction
 decision happens, and this file holds the claim behind it.
 
@@ -13,6 +13,15 @@ Scope boundary: engineering `UI-*` owns implementation mechanics (token scales,
 spacing-signals-grouping, shade generation, elevation, WCAG floors). This
 document owns *why those values*, the direction the tokens encode. Border rules
 cite `↔ eng UI-xx` instead of restating.
+
+Direction and mechanics sit on Tschichold's
+[*Asymmetric Typography*](../SOURCES.md#src-asymmetric-typography), Cianci's
+[*Colour Theory: Understanding and Working with Colour*](../SOURCES.md#src-colour-theory-cianci),
+Scher's [*Make It Bigger*](../SOURCES.md#src-paula-scher-design), and Rutter's
+[*Web Typography*](../SOURCES.md#src-web-typography), with Droste's
+[*Bauhaus 1919-1933: Reform and Avant-Garde*](../SOURCES.md#src-bauhaus-droste) and
+the [*Design Indaba Dialogues*](../SOURCES.md#src-design-indaba-dialogues) for
+institutional and cultural identity.
 
 <!-- BEGIN GENERATED CONTENTS -->
 

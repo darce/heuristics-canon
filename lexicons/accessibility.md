@@ -17,6 +17,18 @@ failure classes that constitute 96% of detected errors on the web. A product
 that only ever enforces §1 in CI is already ahead of ~96% of home pages. §§2–4
 complete the AA surface by POUR principle; §5 governs process and claims.
 
+Conformance and evaluation rest on the W3C's
+[*Web Content Accessibility Guidelines 2.2*](../SOURCES.md#src-wcag22-accessibility),
+[*Authoring Tool Accessibility Guidelines (ATAG) 2.0*](../SOURCES.md#src-atag20),
+and [*WCAG Evaluation Methodology (WCAG-EM) 2.0*](../SOURCES.md#src-wcag-em-2).
+Field prioritisation cites [WebAIM's *The WebAIM Million*](../SOURCES.md#src-webaim-million);
+media description cites Pavel, Reyes, and Bigham's
+[*Rescribe*](../SOURCES.md#src-rescribe-audio-descriptions) and the DCMP
+[*Description Key*](../SOURCES.md#src-dcmp-description-key). Ontario's
+[*O. Reg. 191/11, Integrated Accessibility Standards*](../SOURCES.md#src-aoda-iasr)
+covers a smaller statutory share. A few rows are unsourced practice, not a
+citable standard.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**

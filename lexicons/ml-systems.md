@@ -11,30 +11,51 @@ rules end: `[GRPH-17..23]` build and cut a similarity graph; this lexicon
 governs the embeddings that feed it, the thresholds that accept its edges, the
 cohorts it is measured on, and the provenance that lets a claim be reproduced.
 
+What it covers, sixteen populated families:
+
+- [**MLDATA**](ml-systems.md#fam-mldata): dataset construction, splits, leakage, representativeness
+- [**EMB**](ml-systems.md#fam-emb): embedding spaces, normalization, similarity, versioning
+- [**EVAL**](ml-systems.md#fam-eval): offline, pipeline, and user-level evaluation
+- [**CAL**](ml-systems.md#fam-cal): confidence, thresholds, calibration, abstention
+- [**DRIFT**](ml-systems.md#fam-drift): data, concept, model, and threshold drift
+- [**SERVE**](ml-systems.md#fam-serve): inference, action safety, serving-path architecture
+- [**FAIR**](ml-systems.md#fam-fair): cohort and capture-condition performance
+- [**PROV**](ml-systems.md#fam-prov): model, dataset, evidence, and derived-output provenance
+- [**HITL**](ml-systems.md#fam-hitl): human review, correction, active learning, adjudication
+- [**TRACK**](ml-systems.md#fam-track): temporal association and identity continuity across video frames
   (feature and object tracking, drift, occlusion, data association)
-- **VSEG**: temporal structure of a media timeline (shot-boundary detection,
-  gradual transitions, shot-to-scene grouping, keyframe selection); where TRACK
-  follows one entity across frames, VSEG cuts the timeline into units
-- **COST**: compute budgets and cost per accepted output (SLOs, serving cost,
+- [**VSEG**](ml-systems.md#fam-vseg): temporal structure of a media timeline (shot-boundary detection,
+  gradual transitions, shot-to-scene grouping, keyframe selection); where [`TRACK`](ml-systems.md#fam-track)
+  follows one entity across frames, [`VSEG`](ml-systems.md#fam-vseg) cuts the timeline into units
+- [**COST**](ml-systems.md#fam-cost): compute budgets and cost per accepted output (SLOs, serving cost,
   capacity, retraining economics)
-- **FM**: foundation-model application composition and adaptation (instruction
+- [**FM**](ml-systems.md#fam-fm): foundation-model application composition and adaptation (instruction
   channels, prompt and context construction, structured-output contracts, the
   adaptation ladder, agent-loop topology); how a pretrained generative model is
   configured and composed, not every rule that mentions an LLM
-- **RAG**: retrieval-augmented generation pipelines (chunking, retrieval and
+- [**RAG**](ml-systems.md#fam-rag): retrieval-augmented generation pipelines (chunking, retrieval and
   generation separation, reranking, context selection, abstention, citation,
   index freshness, deletion propagation)
-- **IDX**: the approximate retrieval index as a versioned, lossy artifact
+- [**IDX**](ml-systems.md#fam-idx): the approximate retrieval index as a versioned, lossy artifact
   (index recall, embedding-contract rebuild, parameter frontier, maintenance)
-- **AUDIT**: population rates from imperfect classifier output (label
+- [**AUDIT**](ml-systems.md#fam-audit): population rates from imperfect classifier output (label
   misclassification and sampling design on one estimand)
 
-TRACK is the temporal layer above EMB (appearance) and CAL (match threshold).
-COST is the budget layer beside SERVE, and it cross-links engineering
+[`TRACK`](ml-systems.md#fam-track) is the temporal layer above [`EMB`](ml-systems.md#fam-emb) (appearance) and [`CAL`](ml-systems.md#fam-cal) (match threshold).
+[`COST`](ml-systems.md#fam-cost) is the budget layer beside [`SERVE`](ml-systems.md#fam-serve), and it cross-links engineering
 `PERF-*`/`OBS-*` for generic performance rather than restating them. Scope
 boundary: decision heuristics for model evidence and operations, not an ML
 textbook. What a model result must carry and be measured against, not how to
 train a network; deep algorithm mechanics stay in the sources.
+
+Application and production systems rest on Huyen's
+[*AI Engineering*](../SOURCES.md#src-ai-engineering) and
+[*Designing Machine Learning Systems*](../SOURCES.md#src-designing-ml-systems),
+Sculley et al.'s
+["Hidden Technical Debt in Machine Learning Systems"](../SOURCES.md#src-hidden-technical-debt-ml),
+and Monarch's [*Human-in-the-Loop Machine Learning*](../SOURCES.md#src-human-in-the-loop-ml).
+Computer-vision and face rows also draw on Szeliski's
+[*Computer Vision: Algorithms and Applications*](../SOURCES.md#src-computer-vision-szeliski).
 
 <!-- BEGIN GENERATED CONTENTS -->
 
@@ -425,7 +446,7 @@ Human review of model output: correction, active learning, adjudication.
 
 Feature and object tracking, drift, occlusion, data association.
 
-Keeps the same feature, object, or identity attached to the same track across video frames. Builds on `EMB` (the appearance comparison) and `CAL` (the match threshold); owns the temporal-association and identity-continuity decision on top of them. Threshold values are engineering choices, not bibliographic constants. Mechanism grounding: [computer-vision-szeliski](../SOURCES.md#src-computer-vision-szeliski).
+Keeps the same feature, object, or identity attached to the same track across video frames. Builds on [`EMB`](ml-systems.md#fam-emb) (the appearance comparison) and [`CAL`](ml-systems.md#fam-cal) (the match threshold); owns the temporal-association and identity-continuity decision on top of them. Threshold values are engineering choices, not bibliographic constants. Mechanism grounding: [computer-vision-szeliski](../SOURCES.md#src-computer-vision-szeliski).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -477,7 +498,7 @@ Where `TRACK-*` follows one entity *across* frames, `VSEG-*` cuts the timeline *
 
 SLOs, serving cost, capacity, retraining economics.
 
-Governs how an ML/serving system is measured, budgeted, and tuned to meet a latency, throughput, or cost target without waste or blind tuning. Sits beside `SERVE` (which owns the serving path and action safety) and cross-links engineering `PERF-*`/`OBS-*` for generic performance; it keeps only the ML-serving budget and cost-per-accepted-output angle. Mechanism grounding: [systems-performance-gregg](../SOURCES.md#src-systems-performance-gregg), [reliable-machine-learning](../SOURCES.md#src-reliable-machine-learning). No numeric SLO or interval is asserted as a corpus constant.
+Governs how an ML/serving system is measured, budgeted, and tuned to meet a latency, throughput, or cost target without waste or blind tuning. Sits beside [`SERVE`](ml-systems.md#fam-serve) (which owns the serving path and action safety) and cross-links engineering `PERF-*`/`OBS-*` for generic performance; it keeps only the ML-serving budget and cost-per-accepted-output angle. Mechanism grounding: [systems-performance-gregg](../SOURCES.md#src-systems-performance-gregg), [reliable-machine-learning](../SOURCES.md#src-reliable-machine-learning). No numeric SLO or interval is asserted as a corpus constant.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -511,7 +532,7 @@ Governs how an ML/serving system is measured, budgeted, and tuned to meet a late
 
 Instruction channels, prompt and context construction, structured-output contracts, the adaptation ladder, agent-loop topology. How a pretrained generative model is configured and composed, not every rule that mentions an LLM.
 
-Governs how a *pretrained generative model* is configured, contextualized, adapted, and composed into a task or reasoning loop. FM owns the composition decisions; generic evaluation stays in EVAL, lineage in PROV, serving in SERVE, cost in COST, tool authority in security `SEC`, and user-facing correction in interaction-ux `HAI`/HITL. It is not a bucket for every rule that involves an LLM.
+Governs how a *pretrained generative model* is configured, contextualized, adapted, and composed into a task or reasoning loop. FM owns the composition decisions; generic evaluation stays in EVAL, lineage in PROV, serving in SERVE, cost in COST, tool authority in security [`SEC`](security.md#fam-sec), and user-facing correction in interaction-ux [`HAI`](interaction-ux.md#fam-hai)/HITL. It is not a bucket for every rule that involves an LLM.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -547,7 +568,7 @@ Governs how a *pretrained generative model* is configured, contextualized, adapt
 
 Chunking, retrieval and generation separation, reranking, context selection, abstention, citation, index freshness, deletion propagation.
 
-Governs the retrieval pipeline that grounds generation: corpus, parsing, chunking, indexing, query transformation, retrieval, reranking, context selection, generation, citation, and deletion propagation. RAG cross-links `EMB` (vector-space contract), `MLDATA`/`PROV` (corpus and index lineage), `CAL` (abstention), and `EVAL` (retrieval metrics) rather than duplicating them.
+Governs the retrieval pipeline that grounds generation: corpus, parsing, chunking, indexing, query transformation, retrieval, reranking, context selection, generation, citation, and deletion propagation. RAG cross-links [`EMB`](ml-systems.md#fam-emb) (vector-space contract), [`MLDATA`](ml-systems.md#fam-mldata)/[`PROV`](ml-systems.md#fam-prov) (corpus and index lineage), [`CAL`](ml-systems.md#fam-cal) (abstention), and [`EVAL`](ml-systems.md#fam-eval) (retrieval metrics) rather than duplicating them.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -582,12 +603,12 @@ Machine-learning systems sit downstream of the graph lexicon and upstream of the
 
 - **Graph substrate.** This lexicon feeds and gates `[GRPH-17..23]`. `CAL-01` (calibrate per quality stratum) is the embedding-and-threshold form of `[GRPH-23]` (per-quality-stratum edge policy); `EVAL-04` (slice gate, Simpson's paradox) is `[GRPH-22]` (partition-plus-verification) in metric form; and a mis-calibrated `FAIR-03`/`CAL-04` accept is exactly the wrongly-merged identity `[GRPH-18]` warns about: the chaining failure, one embedding threshold upstream.
 - **Provenance & authority.** `PROV-01/05/07` meet `[GRPH-14]` (provenance as a directed citation graph) and engineering `[DATA-14]` (one authority owns the lineage). All four run the same audit: walk backward from the claim; if the walk breaks, the claim breaks. This is [Principle 9] wearing an ML uniform.
-- **Security.** Biometric `FAIR`/`CAL` rules border `[SEC-05]` (a human gate on irreversible automated action) and `[SEC-10]` (pin the exact model/dataset revision). `CAL-06` (no demographic-conditioned threshold) is a security rule stated as fairness; `PROV-05` (declare prediction consumers) is `[SEC-04]` (least privilege) on the prediction surface.
-- **Release & claims.** `EVAL`/`FAIR` ship-gates are `[RLSE-04]` (no undesigned state ships) and `[PROD-09]` (author the contract the gatekeeper reads) for models; `PROV-02` and every disaggregated-eval rule are `[CLM-05]` (a claim needs inspectable evidence): "accurate," "fair," "safe for X" require the card's quantitative analyses.
+- **Security.** Biometric [`FAIR`](ml-systems.md#fam-fair)/[`CAL`](ml-systems.md#fam-cal) rules border `[SEC-05]` (a human gate on irreversible automated action) and `[SEC-10]` (pin the exact model/dataset revision). `CAL-06` (no demographic-conditioned threshold) is a security rule stated as fairness; `PROV-05` (declare prediction consumers) is `[SEC-04]` (least privilege) on the prediction surface.
+- **Release & claims.** [`EVAL`](ml-systems.md#fam-eval)/[`FAIR`](ml-systems.md#fam-fair) ship-gates are `[RLSE-04]` (no undesigned state ships) and `[PROD-09]` (author the contract the gatekeeper reads) for models; `PROV-02` and every disaggregated-eval rule are `[CLM-05]` (a claim needs inspectable evidence): "accurate," "fair," "safe for X" require the card's quantitative analyses.
 - **Debugging.** `DRIFT-04` (live prediction-bias monitor) is the first diagnostic layer `[DBG-*]` reaches for before deep model debugging; `EVAL-08` (CACE slices) is where a "local" fix is caught changing something global.
-- **Tracking builds on embedding and calibration.** `TRACK-*` is the temporal layer above `EMB` and `CAL`: `TRACK-07` (predict then associate) and `TRACK-05` (gated template update) are the video form of `EMB-06` (recognition is a differential comparison) and `[GRPH-18]` (the chaining failure) run across frames: a bad frame-to-frame link is a wrongly-merged identity in time. `TRACK-06`/`TRACK-07` leave an ambiguous association `unknown` exactly as `CAL-02` prescribes, and `TRACK-05` (gated template update) is `EMB-02` (robust template) plus `DRIFT-01` under drift and occlusion. Drawing the tracks is interaction `[VIZ-13]`.
+- **Tracking builds on embedding and calibration.** `TRACK-*` is the temporal layer above [`EMB`](ml-systems.md#fam-emb) and [`CAL`](ml-systems.md#fam-cal): `TRACK-07` (predict then associate) and `TRACK-05` (gated template update) are the video form of `EMB-06` (recognition is a differential comparison) and `[GRPH-18]` (the chaining failure) run across frames: a bad frame-to-frame link is a wrongly-merged identity in time. `TRACK-06`/`TRACK-07` leave an ambiguous association `unknown` exactly as `CAL-02` prescribes, and `TRACK-05` (gated template update) is `EMB-02` (robust template) plus `DRIFT-01` under drift and occlusion. Drawing the tracks is interaction `[VIZ-13]`.
 - **Cost is the budget beside serving and evaluation.** `COST-*` cross-links but does not restate engineering `[PERF-01]`/`[PERF-02]` (percentiles, tail-latency), `[PERF-06]` (measure, don't guess), or `[OBS-*]` (SLO/alert machinery); it owns the ML framing: `COST-04` (cost per accepted output) and `COST-01` (ML-layered SLOs) are `[Principle 4]` (you get the number you pay for) on the serving budget, `COST-12` (staleness is a budget item) prices the retrain that `DRIFT-01` forces, and `COST-10` (graceful degradation) is `SERVE-02` + `CAL-02` as an availability control.
 
 ## 18. Consumption
 
-Referenced by ID at the decision point, never read front-to-back. `MLDATA-*` fire at dataset construction; `EMB`/`CAL`/`FAIR` fire in embedding, recognition, and evaluation code; `EVAL-*` at the offline ship gate; `PROV-*` at model release and at any store that persists a derived output; `DRIFT`/`SERVE` in production monitoring and the serving path; `HITL-*` wherever humans label, correct, or adjudicate model output; `TRACK-*` on a video tracking config, a track-log, or an ID-switch/fragmentation metric; `COST-*` on an SLO doc, a latency/cost dashboard, a capacity plan, or a retraining config, at plan and review time; `FM-*` on a prompt/template, a system-instruction or few-shot change, an adaptation/fine-tuning plan, or an agent-loop definition; `RAG-*` on a corpus/chunker/index, a retriever/reranker, or a context-construction change; `IDX-*` on an approximate gallery or search index (parameters, rebuild, recall, sharding); `AUDIT-*` on a corpus rate or population claim computed from detector labels and a sample. The single rule to cite on any pipeline that accepts an identity or **names an entity** from a similarity score is `FAIR-03` + `CAL-02` + `[GRPH-18]`: the three standing between a similarity score and a wrongly-named person. Retrieval routing (per the expansion brief): embedding or recognition code → `EMB + CAL + FAIR + PROV + GRPH`; a model replacement or weight change → `EVAL + CAL + PROV + SEC`; a video tracker → `TRACK + EMB + CAL`; a serving-cost or SLO review → `COST + SERVE + eng [PERF/OBS]`; a prompt or generation-contract change → `FM + EVAL + PROV + SEC`; a RAG corpus/index change → `RAG + EMB + DRIFT + PROV + SEC + COST + OBS`; an agent loop → `FM + RES + COST + OBS + PROV + SEC`. A consuming harness inlines the trigger plus the question by phase tag and cites the ID; the argument is not inlined into the harness.
+Referenced by ID at the decision point, never read front-to-back. `MLDATA-*` fire at dataset construction; [`EMB`](ml-systems.md#fam-emb)/[`CAL`](ml-systems.md#fam-cal)/[`FAIR`](ml-systems.md#fam-fair) fire in embedding, recognition, and evaluation code; `EVAL-*` at the offline ship gate; `PROV-*` at model release and at any store that persists a derived output; [`DRIFT`](ml-systems.md#fam-drift)/[`SERVE`](ml-systems.md#fam-serve) in production monitoring and the serving path; `HITL-*` wherever humans label, correct, or adjudicate model output; `TRACK-*` on a video tracking config, a track-log, or an ID-switch/fragmentation metric; `COST-*` on an SLO doc, a latency/cost dashboard, a capacity plan, or a retraining config, at plan and review time; `FM-*` on a prompt/template, a system-instruction or few-shot change, an adaptation/fine-tuning plan, or an agent-loop definition; `RAG-*` on a corpus/chunker/index, a retriever/reranker, or a context-construction change; `IDX-*` on an approximate gallery or search index (parameters, rebuild, recall, sharding); `AUDIT-*` on a corpus rate or population claim computed from detector labels and a sample. The single rule to cite on any pipeline that accepts an identity or **names an entity** from a similarity score is `FAIR-03` + `CAL-02` + `[GRPH-18]`: the three standing between a similarity score and a wrongly-named person. Retrieval routing (per the expansion brief): embedding or recognition code → `EMB + CAL + FAIR + PROV + GRPH`; a model replacement or weight change → `EVAL + CAL + PROV + SEC`; a video tracker → `TRACK + EMB + CAL`; a serving-cost or SLO review → `COST + SERVE + eng [PERF/OBS]`; a prompt or generation-contract change → `FM + EVAL + PROV + SEC`; a RAG corpus/index change → `RAG + EMB + DRIFT + PROV + SEC + COST + OBS`; an agent loop → `FM + RES + COST + OBS + PROV + SEC`. A consuming harness inlines the trigger plus the question by phase tag and cites the ID; the argument is not inlined into the harness.

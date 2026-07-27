@@ -18,24 +18,36 @@ every layer; ml-systems governs model evidence, uncertainty, and operations.
 
 What it covers, eight populated families:
 
-- **PERC**: Gestalt grouping, perception, attention, figure/ground
-- **COG**: memory, cognitive load, recognition vs recall, decision cost
-- **NAV**: information architecture, wayfinding, information scent
-- **INT**: feedback, direct manipulation, undo, modes, state transitions
-- **FORM**: data entry, validation, recovery, destructive actions
-- **HAI**: human-AI interaction, calibrated reliance, correction
-- **VIZ**: data-to-channel encoding (quantity and magnitude channels, glyph
+- [**PERC**](interaction-ux.md#fam-perc): Gestalt grouping, perception, attention, figure/ground
+- [**COG**](interaction-ux.md#fam-cog): memory, cognitive load, recognition vs recall, decision cost
+- [**NAV**](interaction-ux.md#fam-nav): information architecture, wayfinding, information scent
+- [**INT**](interaction-ux.md#fam-int): feedback, direct manipulation, undo, modes, state transitions
+- [**FORM**](interaction-ux.md#fam-form): data entry, validation, recovery, destructive actions
+- [**HAI**](interaction-ux.md#fam-hai): human-AI interaction, calibrated reliance, correction
+- [**VIZ**](interaction-ux.md#fam-viz): data-to-channel encoding (quantity and magnitude channels, glyph
   design, colour for data and colormaps, layering, comparison and coordinated
   views, node-link grammar)
-- **UXR**: usability research and measurement (task success, time-on-task,
+- [**UXR**](interaction-ux.md#fam-uxr): usability research and measurement (task success, time-on-task,
   errors, self-report, issue severity, participant count, validation level)
 
-VIZ owns how evidence is drawn; it does not own uncertainty display, which stays
+[`VIZ`](interaction-ux.md#fam-viz) owns how evidence is drawn; it does not own uncertainty display, which stays
 with `HAI-08` (uncertainty at the decision granularity). Scope boundary:
 decision heuristics for the human surface, not an HCI textbook. What the
 interface must do so a person groups, notices, remembers, acts, and corrects
 correctly, not the psychology proof beneath it; the mechanism stays in the
 source.
+
+Interface patterns rest on Tidwell, Brewer, and Valencia's
+[*Designing Interfaces*](../SOURCES.md#src-designing-interfaces) and Johnson's
+[*Designing with the Mind in Mind*](../SOURCES.md#src-designing-with-the-mind-in-mind);
+measurement on Albert and Tullis's
+[*Measuring the User Experience*](../SOURCES.md#src-measuring-the-ux-albert-tullis);
+visualization on Ware's
+[*Information Visualization: Perception for Design*](../SOURCES.md#src-information-visualization-ware)
+and Munzner's [*Visualization Analysis and Design*](../SOURCES.md#src-visualization-analysis-design-munzner).
+Human-AI surface rules also draw on Shneiderman's
+[*Human-Centered AI*](../SOURCES.md#src-human-centered-ai) and Monarch's
+[*Human-in-the-Loop Machine Learning*](../SOURCES.md#src-human-in-the-loop-ml).
 
 <!-- BEGIN GENERATED CONTENTS -->
 
@@ -220,7 +232,7 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 
 ## 7. VIZ: Data-to-channel encoding, glyph design, colour-for-data, comparison<a name="fam-viz"></a>
 
-Governs how evidence is *drawn*: which visual channel carries which data type, how accurately a quantity is read, when a glyph should fuse or separate its variables, how to highlight and layer, and how to lay out comparison. Builds on `PERC` (can the eye see it) rather than restating it; borders `GRPH` (layout/partition algorithms) and `A11Y` (never colour alone). It does **not** own uncertainty display: that is `HAI-08`.
+Governs how evidence is *drawn*: which visual channel carries which data type, how accurately a quantity is read, when a glyph should fuse or separate its variables, how to highlight and layer, and how to lay out comparison. Builds on [`PERC`](interaction-ux.md#fam-perc) (can the eye see it) rather than restating it; borders [`GRPH`](graph-theory.md#fam-grph) (layout/partition algorithms) and [`A11Y`](accessibility.md#fam-a11y) (never colour alone). It does **not** own uncertainty display: that is `HAI-08`.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -252,7 +264,7 @@ Governs how evidence is *drawn*: which visual channel carries which data type, h
 
 ## 8. UXR: Usability research, metrics, and validation<a name="fam-uxr"></a>
 
-Governs *what to measure, how to collect it without biasing it, how many participants, and how to report it honestly*: the human-measurement analogue of ml-systems `EVAL`. Fires at **plan** time (pick the metric, design the study) and **review** time (analyse and report). Borders `HAI` (evidence and uncertainty on a decision surface) and ml-systems `EVAL` (match the measure to the claim).
+Governs *what to measure, how to collect it without biasing it, how many participants, and how to report it honestly*: the human-measurement analogue of ml-systems [`EVAL`](ml-systems.md#fam-eval). Fires at **plan** time (pick the metric, design the study) and **review** time (analyse and report). Borders [`HAI`](interaction-ux.md#fam-hai) (evidence and uncertainty on a decision surface) and ml-systems [`EVAL`](ml-systems.md#fam-eval) (match the measure to the claim).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -289,13 +301,13 @@ Governs *what to measure, how to collect it without biasing it, how many partici
 Interaction & UX borders the visual, implementation, accessibility, and model layers it sits between:
 
 - **Visual tokens (engineering `UI-*`, design `LAY/COL`).** `UI-*` owns the metric: spacing scale, contrast ratio, type ramp; PERC owns the **meaning** those metrics carry. `PERC-01` (proximity) and `INT-03` (button grouping) are the perceptual reason behind spacing and grouping tokens; a value-first palette `[COL-04]` is what lets figure-ground and pop survive greyscale.
-- **Accessibility is a hard constraint on every row.** Visual hierarchy must also be programmatic (`PERC-01`/`PERC-03`), pop and status must not be colour-only (`PERC-05`/`PERC-06`), item tools and forms must be operable without a mouse and with real labels (`INT-04`, `FORM-03`, `FORM-06`). Where a UX rule and an `A11Y` rule fire together, the accessibility one is the floor, not a trade.
-- **Grouping is one audit in two lanes (↔ `GRPH`).** `PERC-03` (Gestalt audit) and `NAV-05` (MECE) are `[GRPH-22]` (partition-plus-verification) in perceptual and IA form: propose a grouping, then verify it invents no false relation. A dual-home nav label fails the same audit as a dual-cluster membership.
+- **Accessibility is a hard constraint on every row.** Visual hierarchy must also be programmatic (`PERC-01`/`PERC-03`), pop and status must not be colour-only (`PERC-05`/`PERC-06`), item tools and forms must be operable without a mouse and with real labels (`INT-04`, `FORM-03`, `FORM-06`). Where a UX rule and an [`A11Y`](accessibility.md#fam-a11y) rule fire together, the accessibility one is the floor, not a trade.
+- **Grouping is one audit in two lanes (↔ [`GRPH`](graph-theory.md#fam-grph)).** `PERC-03` (Gestalt audit) and `NAV-05` (MECE) are `[GRPH-22]` (partition-plus-verification) in perceptual and IA form: propose a grouping, then verify it invents no false relation. A dual-home nav label fails the same audit as a dual-cluster membership.
 - **Correction, preview, and undo meet ml-systems.** `HAI-02` (correction reaches the source), `INT-09` (reversible command stack), and `INT-07` (preview before commit) are the human-surface form of the model-side obligations in `[PROV-01]` and `[CAL-02]`; the families meet on the review surface where a person acts on a model claim. `HAI-01`/`HAI-06` are `[PROV-01]` and `[Principle 9]` seen from the UI.
-- **Memory and consent are security surfaces (↔ `SEC`).** `COG-02` (recognition over recall) is why unusable authentication fails as a control: an overloaded recall burden becomes written-down or weak credentials; `FORM-04` (no dark defaults) keeps a consent boundary from being crossed by an unchosen default.
+- **Memory and consent are security surfaces (↔ [`SEC`](security.md#fam-sec)).** `COG-02` (recognition over recall) is why unusable authentication fails as a control: an overloaded recall burden becomes written-down or weak credentials; `FORM-04` (no dark defaults) keeps a consent boundary from being crossed by an unchosen default.
 - **Claims discipline.** `HAI-05` (imperceptible AI) and `HAI-09` (trustworthy ≠ trusted) are `[CLM-05]` (a claim needs inspectable evidence) applied to automation.
-- **Encoding builds on perception and borders graph and accessibility (↔ `PERC`, `GRPH`, `A11Y`).** `VIZ-*` is the layer above `PERC`: PERC asks *can the eye see it*, VIZ asks *does the encoding match the data and the query*. `VIZ-05` extends `PERC-06` (single-target pop) to multi-class search; `VIZ-16` extends `PERC-05` (fovea) to query layout; `VIZ-07` (survive greyscale) is the `A11Y` non-colour floor from the data side; `VIZ-13` (node-link grammar) draws what `GRPH-*` lays out. `VIZ` does not own uncertainty display: `HAI-08` does.
-- **Measurement is the human twin of model evaluation (↔ ml-systems `EVAL`, `HAI`).** `UXR-01`/`UXR-03` (validate at the level of the claim; measure the goal, not a proxy) are `[EVAL-01]` and `[Principle 4]` for human studies; `UXR-05`/`UXR-15` (report the interval; show the composite's components) are `[HAI-08]` (uncertainty at the decision granularity) seen from the research side. Where a UX number will drive a decision, `UXR` governs whether it was valid to report; the writing lexicon governs how it is phrased.
+- **Encoding builds on perception and borders graph and accessibility (↔ [`PERC`](interaction-ux.md#fam-perc), [`GRPH`](graph-theory.md#fam-grph), [`A11Y`](accessibility.md#fam-a11y)).** `VIZ-*` is the layer above [`PERC`](interaction-ux.md#fam-perc): PERC asks *can the eye see it*, VIZ asks *does the encoding match the data and the query*. `VIZ-05` extends `PERC-06` (single-target pop) to multi-class search; `VIZ-16` extends `PERC-05` (fovea) to query layout; `VIZ-07` (survive greyscale) is the [`A11Y`](accessibility.md#fam-a11y) non-colour floor from the data side; `VIZ-13` (node-link grammar) draws what `GRPH-*` lays out. [`VIZ`](interaction-ux.md#fam-viz) does not own uncertainty display: `HAI-08` does.
+- **Measurement is the human twin of model evaluation (↔ ml-systems [`EVAL`](ml-systems.md#fam-eval), [`HAI`](interaction-ux.md#fam-hai)).** `UXR-01`/`UXR-03` (validate at the level of the claim; measure the goal, not a proxy) are `[EVAL-01]` and `[Principle 4]` for human studies; `UXR-05`/`UXR-15` (report the interval; show the composite's components) are `[HAI-08]` (uncertainty at the decision granularity) seen from the research side. Where a UX number will drive a decision, [`UXR`](interaction-ux.md#fam-uxr) governs whether it was valid to report; the writing lexicon governs how it is phrased.
 
 ## 10. Consumption
 

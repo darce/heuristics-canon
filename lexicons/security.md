@@ -16,6 +16,16 @@ secure-design principles, and the PHP / WordPress / PostgreSQL stack. It does
 not yet cover cryptography, network security, OS hardening, or identity
 protocols in depth; those await both the sources and the pass.
 
+Web application rules rest on Stuttard and Pinto's
+[*The Web Application Hacker's Handbook*](../SOURCES.md#src-stuttard-wahh) and
+Zalewski's [*The Tangled Web*](../SOURCES.md#src-zalewski-tangled-web). Platform
+rows cite the [*PostgreSQL 18 Documentation*](../SOURCES.md#src-postgresql-security),
+the [PHP Manual](../SOURCES.md#src-php-security), and Anderson's
+[*Security Engineering*](../SOURCES.md#src-anderson-security-engineering); LLM
+application security cites Wilson's
+[*The Developer's Playbook for Large Language Model Security*](../SOURCES.md#src-llm-security-playbook).
+A share of rows is unsourced practice.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**

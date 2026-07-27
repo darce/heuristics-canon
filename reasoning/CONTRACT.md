@@ -164,6 +164,6 @@ substitute for the original work.
 
 ## Style
 
-Apply the `WRIT` family to card prose: plain diction, sparse markup, few em
-dashes, no bold-first bullet theater, no fractal section previews. Prefer
-checkable nouns over intensifiers.
+Apply the [`WRIT`](../lexicons/writing.md#fam-writ) family to card prose: plain
+diction, sparse markup, few em dashes, no bold-first bullet theater, no fractal
+section previews. Prefer checkable nouns over intensifiers.

@@ -44,8 +44,8 @@ legal channels.
 
 ## Tooling
 
-Where tooling is shipped with this repository, `tools/` is MIT (see
-`tools/LICENSE` when present).
+Any tooling distributed with this repository is MIT-licensed. This repository
+publishes the rule corpus only and ships none.
 
 ## Integrity
 
@@ -53,4 +53,4 @@ Published releases may include `meta/release-manifest.json` with SHA-256 digests
 for lexicons and reasoning files and the published rule-ID set. Pin a release
 tag and verify digests when integrity matters. See [AGENTS.md](AGENTS.md).
 
-_Last reviewed: 2026-07-24._
+_Last reviewed: 2026-07-27._

@@ -9,6 +9,15 @@ the cue (trigger plus question) and cites the rule by ID where the decision
 happens; this file holds the rationale, and section headings are the deep-link
 anchors.
 
+The load-bearing works are Kleppmann's
+[*Designing Data-Intensive Applications*](../SOURCES.md#src-designing-data-intensive-applications),
+Nygard's [*Release It!*](../SOURCES.md#src-release-it), Farley's
+[*Modern Software Engineering*](../SOURCES.md#src-modern-software-engineering),
+Fowler and Beck's [*Refactoring*](../SOURCES.md#src-refactoring-fowler-beck), and
+the Arpaci-Dusseaus' [*Operating Systems: Three Easy Pieces*](../SOURCES.md#src-operating-systems-three-easy-pieces).
+A share of agent-operations and practice rows is unsourced rather than tied to
+those texts.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**
@@ -471,7 +480,7 @@ never copying row bodies.
 
 ## Security
 
-> **Moved to its own lexicon.** The LLM and agent-security rules `SEC-01..10` now live in [`security.md`](security.md), beside the web, PHP, WordPress, and PostgreSQL security rules. Cite them by ID exactly as before (`[SEC-04]`); the IDs are unchanged, and inline cross-references (`see [SEC-02]`) still resolve. Security became a spanning concern once this canon grew a database and web surface, the same reason accessibility has its own lexicon.
+> **In its own lexicon.** The LLM and agent-security rules `SEC-01..10` live in [`security.md`](security.md), beside the web, PHP, WordPress, and PostgreSQL security rules. Security is a spanning concern across this canon's database and web surface, the same reason accessibility has its own lexicon.
 
 ## 14. API: API Design<a name="fam-api"></a>
 
@@ -484,7 +493,7 @@ never copying row bodies.
 | API-05<a name="api-05"></a> | API error returned as ad-hoc JSON, bare status, or stack trace | **Problem-details envelope (RFC 7807)**: machine-actionable errors; debug internals never in the envelope | Would a machine client act on this error without parsing prose? | S·w | [restful-web-api-patterns ch-5](../SOURCES.md#src-restful-web-api-patterns) |
 | API-06<a name="api-06"></a> | Filter/search endpoint returns 404 for an empty result set | **Empty is 200**: an empty match is a successful query; 404 is for a missing directly-addressed resource (↔ ml [[CAL-02]](ml-systems.md#cal-02) empty/unknown is a valid designed result; ↔ ml [[EMB-04]](ml-systems.md#emb-04) de-emphasise the identity-void rather than force a face) | Is "no matches" an error here, or an answer? | S·r | [restful-web-api-patterns ch-6](../SOURCES.md#src-restful-web-api-patterns) |
 | API-07<a name="api-07"></a> | Request handler performs work that can exceed a few seconds synchronously | **202 + status resource**: acknowledge immediately, expose poll/cancel links; explicit delay beats timeout roulette | Under worst-case volume, how long does this handler hold the connection? | S·p | [restful-web-api-patterns ch-7](../SOURCES.md#src-restful-web-api-patterns) |
-| API-08<a name="api-08"></a> | Retry helper with fixed interval, unbounded attempts, or retry-on-4xx | **Backoff, bounded, 5xx-only**: exponential backoff, ~3 attempts, never retry an unmodified 4xx (see [[RES-06]](engineering.md#res-06), [[API-08]](engineering.md#api-08)) | Which failure classes does this retry, and what stops it? | S·r | [restful-web-api-patterns ch-7](../SOURCES.md#src-restful-web-api-patterns) |
+| API-08<a name="api-08"></a> | Retry helper with fixed interval, unbounded attempts, or retry-on-4xx | **Backoff, bounded, 5xx-only**: exponential backoff, ~3 attempts, never retry an unmodified 4xx (see [[RES-06]](engineering.md#res-06)) | Which failure classes does this retry, and what stops it? | S·r | [restful-web-api-patterns ch-7](../SOURCES.md#src-restful-web-api-patterns) |
 | API-09<a name="api-09"></a> | Diff removes, renames, retypes, or makes-required an element of a published API | **Don't change it, add it**: take nothing away, redefine nothing, additions optional; changed defaults count as breaking (Hyrum's Law) | Could any existing caller observe this change? | B·r | [restful-web-api-patterns ch-2](../SOURCES.md#src-restful-web-api-patterns) |
 | API-10<a name="api-10"></a> | API resource shapes mirror DB tables, ORM entities, or internal names | **Interface is its own artifact**: translate internal models at the boundary so storage refactors never break callers (see [[REF-16]](engineering.md#ref-16)) | If the storage schema changed tomorrow, would this API change too? | S·p | [restful-web-api-patterns ch-5](../SOURCES.md#src-restful-web-api-patterns) |
 | API-11<a name="api-11"></a> | Service persists or forwards a record after dropping unrecognized fields | **Must Ignore, round-trip whole**: ignore unknown fields on read but preserve them on write; stripping destroys other services' data through you | Does this write path preserve fields this service doesn't understand? | B·r | [restful-web-api-patterns ch-6](../SOURCES.md#src-restful-web-api-patterns) |

@@ -7,6 +7,14 @@ economics, and claims. Referenced, not read end to end: a roadmap, scope, pricin
 or outbound sequence cites a rule by ID where the decision happens, and this file holds
 the claim behind it.
 
+Weight falls on Drummond and Cauty's
+[*The Manual (How to Have a Number One the Easy Way)*](../SOURCES.md#src-klf-the-manual),
+Munger's [*Poor Charlie's Almanack*](../SOURCES.md#src-poor-charlies-almanack),
+Berg's [*Porn Work*](../SOURCES.md#src-porn-work), and Voss and Raz's
+[*Never Split the Difference*](../SOURCES.md#src-never-split-the-difference), with
+Ferriss's [*The 4-Hour Workweek*](../SOURCES.md#src-four-hour-workweek) on bootstrap
+economics. A non-trivial share of rows is unsourced practice rather than a named work.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**

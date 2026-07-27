@@ -14,21 +14,22 @@ surface — diction, rhythm, markup, the tells of machine authorship — whateve
 the subject. This lexicon owns what prose *asserts about something outside
 itself*, so surface hygiene is necessary and not sufficient: a sentence can be
 plain, unpadded, and correctly cited and still hand a viewer's inference to the
-depicted person as fact. `ATTRIB` owns the warrant for an identity claim,
-`BOUND` how far a description may reach past the frame; the borders with
-`A11Y`, `CLM`, `PROV`, and `WRIT` are named at each family below. Human-written
+depicted person as fact. [`ATTRIB`](depiction.md#fam-attrib) owns the warrant for an identity claim,
+[`BOUND`](depiction.md#fam-bound) how far a description may reach past the frame; the borders with
+[`A11Y`](accessibility.md#fam-a11y), [`CLM`](business-marketing.md#fam-clm), [`PROV`](ml-systems.md#fam-prov), and [`WRIT`](writing.md#fam-writ) are named at each family below. Human-written
 and model-generated description are held to the same rows.
 
-These two families sat in `lexicons/writing.md` until 2026-07-26, on the
-argument that a describer already reading `WRIT` would not think to open a
-second file. The route table had already answered that:
-`image_description_or_alt_text_change` names `ATTRIB`, `BOUND`, `A11Y`, `WRIT`,
-`CLM`, and `PROV`, so a describing pass was crossing four lexicons in any case.
-Routes open files; proximity inside one file does not. What proximity did cost
-was 46 rows of prose hygiene loaded to reach sixteen rows of description
-discipline. The IDs did not move with the file — a rule's identity is its
-family-qualified key, not the file that holds it — and the relocation is
-recorded in `rule-ledger.json`.
+A describing pass does not read this file alone: the
+`image_description_or_alt_text_change` route opens it together with [`A11Y`](accessibility.md#fam-a11y),
+[`WRIT`](writing.md#fam-writ), [`CLM`](business-marketing.md#fam-clm), and [`PROV`](ml-systems.md#fam-prov).
+
+The rows are held to Sontag's [*On Photography*](../SOURCES.md#src-sontag-on-photography)
+and [*Regarding the Pain of Others*](../SOURCES.md#src-sontag-regarding-the-pain-of-others),
+Berger's [*Ways of Seeing*](../SOURCES.md#src-berger-ways-of-seeing), and
+Azoulay's [*The Civil Contract of Photography*](../SOURCES.md#src-azoulay-civil-contract-of-photography).
+Catalogue and anti-racist description also draw on A4BLiP's
+[*Anti-Racist Description Resources*](../SOURCES.md#src-anti-racist-description-resources)
+and Barthes's [*Image Music Text*](../SOURCES.md#src-barthes-image-music-text).
 
 <!-- BEGIN GENERATED CONTENTS -->
 
@@ -63,8 +64,8 @@ or speaks an oppressive record in the describing institution's own voice),
 What a description may assert about *who or what is depicted*, and on whose
 authority. Fires when prose names a person, place, event, or intent that the image
 alone does not establish. ATTRIB owns the warrant for the claim; BOUND owns how far
-a description may reach; accessibility `A11Y` owns whether the description serves
-the reader's purpose; business-marketing `CLM` owns the unearned adjective wherever
+a description may reach; accessibility [`A11Y`](accessibility.md#fam-a11y) owns whether the description serves
+the reader's purpose; business-marketing [`CLM`](business-marketing.md#fam-clm) owns the unearned adjective wherever
 it appears.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -133,4 +134,4 @@ boundary; ATTRIB owns the identity claim inside it.
 
 ## Consumption
 
-Canonical source. Consuming repos sync this file and cite rules by ID (`[BOUND-01]`) in description guidelines, alt-text review checklists, and the output instructions of any system that generates image descriptions. The rules bound what a description may assert; they do not decide whether an image should be described at all, or at what length. That is `A11Y`'s question and it runs first — a description that overclaims about an image nobody needed described has two problems, and this file only sees one of them.
+Canonical source. Consuming repos sync this file and cite rules by ID (`[BOUND-01]`) in description guidelines, alt-text review checklists, and the output instructions of any system that generates image descriptions. The rules bound what a description may assert; they do not decide whether an image should be described at all, or at what length. That is [`A11Y`](accessibility.md#fam-a11y)'s question and it runs first — a description that overclaims about an image nobody needed described has two problems, and this file only sees one of them.

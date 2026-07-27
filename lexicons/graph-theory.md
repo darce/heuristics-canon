@@ -26,6 +26,13 @@ you which structure a situation is and what that decides, not how to implement
 Dijkstra or prove the four-colour theorem. Deep algorithm mechanics stay in the
 texts.
 
+Classical structure comes from Skiena's
+[*The Algorithm Design Manual*](../SOURCES.md#src-algorithm-design-manual) and
+Bondy and Murty's [*Graph Theory with Applications*](../SOURCES.md#src-graph-theory-with-applications);
+knowledge-graph modelling from Barrasa and Webber's
+[*Building Knowledge Graphs*](../SOURCES.md#src-building-knowledge-graphs). A
+smaller set of pipeline rows is unsourced practice.
+
 <!-- BEGIN GENERATED CONTENTS -->
 
 **Contents**
