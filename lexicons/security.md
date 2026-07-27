@@ -20,12 +20,12 @@ protocols in depth; those await both the sources and the pass.
 
 **Contents**
 
-- [1. AI/ML & Agent Security<a name="fam-sec"></a>](#1-aiml--agent-securitya-namefam-seca)
-- [2. Web Application Security<a name="fam-web"></a>](#2-web-application-securitya-namefam-weba)
-- [3. PHP Security<a name="fam-php"></a>](#3-php-securitya-namefam-phpa)
-- [4. WordPress Security<a name="fam-wp"></a>](#4-wordpress-securitya-namefam-wpa)
-- [5. PostgreSQL Security<a name="fam-pg"></a>](#5-postgresql-securitya-namefam-pga)
-- [6. Secure Design Principles<a name="fam-secd"></a>](#6-secure-design-principlesa-namefam-secda)
+- [1. AI/ML & Agent Security](#fam-sec)
+- [2. Web Application Security](#fam-web)
+- [3. PHP Security](#fam-php)
+- [4. WordPress Security](#fam-wp)
+- [5. PostgreSQL Security](#fam-pg)
+- [6. Secure Design Principles](#fam-secd)
 - [7. Cross-lexicon links](#7-cross-lexicon-links)
 - [Consumption](#consumption)
 
@@ -73,6 +73,16 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | SEC-18<a name="sec-18"></a> | An accept fires on similarity score while the liveness check runs after the accept, is logged only, or is fused with no written policy | **The liveness verdict must gate the accept**: when a live capture can be a print, replay, or worn mask, the presentation-attack stage must reject before the gallery comparison commits an accept; if the two scores are fused instead, the fusion policy and both thresholds must be written down and testable, because an attacker holding an enrolled person's photograph scores as that person, and a liveness signal nothing blocks on is telemetry, not a control | Can a presented photograph or replayed video of an enrolled person reach a final accept on similarity alone? | B·w | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 | SEC-19<a name="sec-19"></a> | Liveness is an interactive motion challenge (blink, smile, turn head) and the attack evaluation set holds only flat printed photographs | **A motion challenge is not an attack set**: when liveness rests on interactive motion, extend the evaluation set to replayed video and to partial or three-dimensional artefacts (cut-out regions, worn masks, attack eyewear) before the ship gate passes, because a recording of the enrolled person performing the requested action satisfies a motion challenge, and a region-specific check is defeated by an artefact covering only that region | Does the attack set include replayed video and partial or three-dimensional artefacts, or only static print? | S·p | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 | SEC-20<a name="sec-20"></a> | Presentation-attack detection is certified on the same camera, lighting, and capture protocol it was trained on, while the product ships to varied client devices | **Certify liveness on held-out capture hardware**: when client sensors, resolution, or lighting differ from the training capture, report detection error under a leave-one-device or leave-one-capture-source protocol, because cross-source error degrades sharply under illumination, resolution, and sensor-noise shift, so a matched-domain number certifies the lab and the first unseen camera is a field bypass rather than a regression (↔ ml [[FAIR-05]](ml-systems.md#fair-05) capture conditions are evaluation factors: this is the held-out form of that factor) | Is there a leave-one-device table, or only same-camera lab numbers? | S·r | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-sec -->
+
+**Sources for this section**
+
+- [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition)
+- [llm-security-playbook](../SOURCES.md#src-llm-security-playbook)
+- [sotiropoulos-adversarial-ai](../SOURCES.md#src-sotiropoulos-adversarial-ai)
+
+<!-- END GENERATED SECTION SOURCES fam-sec -->
 
 ## 2. Web Application Security<a name="fam-web"></a>
 
@@ -125,6 +135,16 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | WEB-43<a name="web-43"></a> | Production script assigns `document.domain` | **document.domain dilutes origin isolation**: when cross-subdomain DOM is needed, prefer `postMessage`; if setting `document.domain`, treat every host under that suffix as equally trusted, because any XSS on the weakest sibling owns all (↔ [[WEB-24]](security.md#web-24) postMessage with exact origin is the safe cross-origin channel) | Does any production script set `document.domain`? | S·p | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 | WEB-44<a name="web-44"></a> | Secrets or capability tokens appear in the query string on pages that load third-party subresources or link off-site | **Keep secrets out of URLs**: when embedding off-site resources or linking out, put tokens only in headers or body, because `Referer` discloses the parent URL (minus fragment) to third parties (↔ [[WEB-09]](security.md#web-09) SIDs in URLs leak the same way; ↔ [[WEB-16]](security.md#web-16) a token in a URL is a secret in every third-party log) | Could a third-party request log this URL's token? | S·r | [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-web -->
+
+**Sources for this section**
+
+- [owasp-web-hardening](../SOURCES.md#src-owasp-web-hardening)
+- [stuttard-wahh](../SOURCES.md#src-stuttard-wahh)
+- [zalewski-tangled-web](../SOURCES.md#src-zalewski-tangled-web)
+
+<!-- END GENERATED SECTION SOURCES fam-web -->
+
 ## 3. PHP Security<a name="fam-php"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -146,6 +166,15 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | PHP-15<a name="php-15"></a> | SQL built with string concat of `$_GET`/`$_POST` (even via PDO `query`/`exec`) | **Bind parameters with PDO/ORM**: quote breakout becomes SQLi regardless of driver (↔ [[WEB-01]](security.md#web-01), eng [[DATA-12]](engineering.md#data-12) the same binding failure seen at the framework, web, and data layers) | Is every query using prepared statements/bound values? | B·w | [modern-php-security §sql-injection](../SOURCES.md#src-modern-php-security) |
 | PHP-16<a name="php-16"></a> | Outbound HTTP/file URL from user input (`file_get_contents($url)`, curl) without a destination policy | **Constrain server-side fetches**: SSRF hits cloud metadata and internal FastCGI/admin (↔ [[WEB-07]](security.md#web-07) attacker-chosen fetch destinations reach link-local and admin nets) | Is the destination allowlisted or blocked from private/link-local ranges? | B·w | [modern-php-security §ssrf](../SOURCES.md#src-modern-php-security) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-php -->
+
+**Sources for this section**
+
+- [modern-php-security](../SOURCES.md#src-modern-php-security)
+- [php-security](../SOURCES.md#src-php-security)
+
+<!-- END GENERATED SECTION SOURCES fam-php -->
+
 ## 4. WordPress Security<a name="fam-wp"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -165,6 +194,17 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | WP-13<a name="wp-13"></a> | Plugin/theme PHP files load application code without a `defined('ABSPATH') \|\| exit;` guard | **Guard direct file access**: direct hits bypass WP bootstrap and leak or execute partial includes | Do plugin/theme PHP entry files refuse direct access via an ABSPATH check? | S·w | [bootstrap](../SOURCES.md#src-bootstrap) |
 | WP-14<a name="wp-14"></a> | Options update or privileged write persists unanticipated request fields, or skips a capability check | **Persist only expected fields; gate privileged writes**: collect only expected form fields into an allowlist array, and check `current_user_can` before sensitive actions, or unanticipated keys and missing caps escalate privilege (↔ [[WEB-19]](security.md#web-19) mass-assignment of privilege fields is an authz bypass) | Are only expected fields persisted, and is `current_user_can` checked on privileged writes? | B·w | [wordpress-plugin-development ch-4](../SOURCES.md#src-wordpress-plugin-development) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-wp -->
+
+**Sources for this section**
+
+- [bootstrap](../SOURCES.md#src-bootstrap)
+- [wordpress-plugin-development](../SOURCES.md#src-wordpress-plugin-development)
+- [wordpress-security](../SOURCES.md#src-wordpress-security)
+- [wordpress-security-whitepaper](../SOURCES.md#src-wordpress-security-whitepaper)
+
+<!-- END GENERATED SECTION SOURCES fam-wp -->
+
 ## 5. PostgreSQL Security<a name="fam-pg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -183,6 +223,14 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | PG-12<a name="pg-12"></a> | `max_connections` high with no per-role `CONNECTION LIMIT`; app opens unbounded pools | **Cap connections**: set `max_connections` and per-role `CONNECTION LIMIT` below collapse thresholds; connection storms exhaust the postmaster (an external pooler is operational, not a PostgreSQL-doc requirement) (↔ eng [[RES-14]](engineering.md#res-14) both fail when an unbounded producer exhausts a fixed resource pool) | Are server and per-role connection limits set below collapse thresholds? | S·r | [postgresql-security §connections](../SOURCES.md#src-postgresql-security) |
 | PG-13<a name="pg-13"></a> | Views/functions expose rows that RLS on base tables would hide (`security_barrier`/owner ignored) | **Align views with RLS**: a non-barrier view can leak filtered rows | Do views and DEFINER paths preserve the intended row filters? | S·w | [postgresql-security §security-barrier](../SOURCES.md#src-postgresql-security) |
 | PG-14<a name="pg-14"></a> | Replication or backup role holds broad write privileges beyond need | **Separate backup/repl roles**: an over-privileged ops role expands blast radius if stolen | Do backup/replication roles have only the minimal REPLICATION/read grants? | S·r | [postgresql-security §replication-roles](../SOURCES.md#src-postgresql-security) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-pg -->
+
+**Sources for this section**
+
+- [postgresql-security](../SOURCES.md#src-postgresql-security)
+
+<!-- END GENERATED SECTION SOURCES fam-pg -->
 
 ## 6. Secure Design Principles<a name="fam-secd"></a>
 
@@ -204,6 +252,15 @@ threat model), **w**rite (code), **r**eview (config and audit).
 | SECD-12<a name="secd-12"></a> | Face match, auto-tag, or gallery enroll is on by default | **Biometric opt-in default**: when choice is product-real, ship identity features off until affirmative opt-in; avoid post-hoc opt-out only, because defaults should favour opting in (↔ [[SECD-05]](security.md#secd-05) the default most deployments keep must be fail-safe; ↔ [[SECD-08]](security.md#secd-08) disablement must be as easy as enablement) | Is face identity processing off on cold start? | S·r | [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility) |
 | SECD-13<a name="secd-13"></a> | An FRT deploy plan justifies identification by capability or vendor accuracy alone | **Necessity-proportionality gate**: when enabling identification or verification, require a written need, alternatives considered, scope bound, effectiveness metric, and review date; reject unbounded population ID, because intrusive surveillance needs necessity and proportionality (↔ [[SECD-01]](security.md#secd-01) write the policy before the mechanism; ↔ [[SECD-07]](security.md#secd-07) the threat model names residual privacy harm the gate accepts) | Is there a scoped need statement with a sunset or review? | S·p | [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility) |
 | SECD-14<a name="secd-14"></a> | Automated adverse action or unlock proceeds from a face score without harm-typed error rates | **FP/FN harm polarity for face decisions**: when face scores trigger access or adverse outcomes, publish FMR/FNMR (or FAR/FRR) at the operating threshold with stated false-match vs false-non-match costs, and require human review when false-match harm is high, because a threshold without harm polarity silently chooses who is wrongly accepted or excluded (↔ [[SEC-05]](security.md#sec-05) high-harm automated acts need a human gate; ↔ [[SECD-10]](security.md#secd-10) false-non-match on a sole path is exclusion, not a retry) | What does a false match do to a person in this product? | B·r | [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-secd -->
+
+**Sources for this section**
+
+- [anderson-security-engineering](../SOURCES.md#src-anderson-security-engineering)
+- [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility)
+
+<!-- END GENERATED SECTION SOURCES fam-secd -->
 
 ## 7. Cross-lexicon links
 

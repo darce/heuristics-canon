@@ -40,22 +40,22 @@ train a network; deep algorithm mechanics stay in the sources.
 
 **Contents**
 
-- [1. MLDATA: Dataset construction, splits, leakage, representativeness<a name="fam-mldata"></a>](#1-mldata-dataset-construction-splits-leakage-representativenessa-namefam-mldataa)
-- [2. EMB: Embedding spaces, normalization, similarity, versioning<a name="fam-emb"></a>](#2-emb-embedding-spaces-normalization-similarity-versioninga-namefam-emba)
-- [3. IDX: The retrieval index as a versioned, lossy artifact<a name="fam-idx"></a>](#3-idx-the-retrieval-index-as-a-versioned-lossy-artifacta-namefam-idxa)
-- [4. EVAL: Offline, pipeline, and user-level evaluation<a name="fam-eval"></a>](#4-eval-offline-pipeline-and-user-level-evaluationa-namefam-evala)
-- [5. AUDIT: Population estimates from imperfect classifier output<a name="fam-audit"></a>](#5-audit-population-estimates-from-imperfect-classifier-outputa-namefam-audita)
-- [6. CAL: Confidence, thresholds, calibration, abstention<a name="fam-cal"></a>](#6-cal-confidence-thresholds-calibration-abstentiona-namefam-cala)
-- [7. DRIFT: Data, concept, model, and threshold drift<a name="fam-drift"></a>](#7-drift-data-concept-model-and-threshold-drifta-namefam-drifta)
-- [8. SERVE: Inference, action safety, serving-path architecture<a name="fam-serve"></a>](#8-serve-inference-action-safety-serving-path-architecturea-namefam-servea)
-- [9. FAIR: Cohort and capture-condition performance<a name="fam-fair"></a>](#9-fair-cohort-and-capture-condition-performancea-namefam-faira)
-- [10. PROV: Model, dataset, evidence, and derived-output provenance<a name="fam-prov"></a>](#10-prov-model-dataset-evidence-and-derived-output-provenancea-namefam-prova)
-- [11. HITL: Human in the loop<a name="fam-hitl"></a>](#11-hitl-human-in-the-loopa-namefam-hitla)
-- [12. TRACK: Temporal association and identity continuity across video frames<a name="fam-track"></a>](#12-track-temporal-association-and-identity-continuity-across-video-framesa-namefam-tracka)
-- [13. VSEG: Temporal structure of a media timeline<a name="fam-vseg"></a>](#13-vseg-temporal-structure-of-a-media-timelinea-namefam-vsega)
-- [14. COST: Compute budgets and cost per accepted output<a name="fam-cost"></a>](#14-cost-compute-budgets-and-cost-per-accepted-outputa-namefam-costa)
-- [15. FM: Foundation-model composition and adaptation<a name="fam-fm"></a>](#15-fm-foundation-model-composition-and-adaptationa-namefam-fma)
-- [16. RAG: Retrieval-augmented generation pipelines<a name="fam-rag"></a>](#16-rag-retrieval-augmented-generation-pipelinesa-namefam-raga)
+- [1. MLDATA: Dataset construction, splits, leakage, representativeness](#fam-mldata)
+- [2. EMB: Embedding spaces, normalization, similarity, versioning](#fam-emb)
+- [3. IDX: The retrieval index as a versioned, lossy artifact](#fam-idx)
+- [4. EVAL: Offline, pipeline, and user-level evaluation](#fam-eval)
+- [5. AUDIT: Population estimates from imperfect classifier output](#fam-audit)
+- [6. CAL: Confidence, thresholds, calibration, abstention](#fam-cal)
+- [7. DRIFT: Data, concept, model, and threshold drift](#fam-drift)
+- [8. SERVE: Inference, action safety, serving-path architecture](#fam-serve)
+- [9. FAIR: Cohort and capture-condition performance](#fam-fair)
+- [10. PROV: Model, dataset, evidence, and derived-output provenance](#fam-prov)
+- [11. HITL: Human in the loop](#fam-hitl)
+- [12. TRACK: Temporal association and identity continuity across video frames](#fam-track)
+- [13. VSEG: Temporal structure of a media timeline](#fam-vseg)
+- [14. COST: Compute budgets and cost per accepted output](#fam-cost)
+- [15. FM: Foundation-model composition and adaptation](#fam-fm)
+- [16. RAG: Retrieval-augmented generation pipelines](#fam-rag)
 - [17. Cross-lexicon links](#17-cross-lexicon-links)
 - [18. Consumption](#18-consumption)
 
@@ -109,6 +109,27 @@ Cross-lexicon borders cite `↔ grph/sec/eng [X]` rather than restating them.
 | MLDATA-25<a name="mldata-25"></a> | Synthetic identity generation config or dataset manifest has no machine-readable split of identity-bearing factors, free intra-ID axes, and unmodeled real axes | **Identity-factor declaration**: generator-defined person IDs -> persist which factors define identity, which axes may vary within ID, and which real axes the pipeline never models -> else fixed hair or accessory cues are treated as free noise and real gaps on unmodeled axes such as aging are misdiagnosed | Is the identity vs free vs unmodeled axis split declared as structured dataset metadata for the corpus version? | S·w | [digiface-1m](../SOURCES.md#src-digiface-1m) |
 | MLDATA-26<a name="mldata-26"></a> | Dataset card or train plan calls a synthetic FR corpus privacy-friendly or consent-free without stating whether identity-labeled real data trained the face generator | **Generator labeled-ID dependence**: privacy-friendly or consent-free synthetic FR claim -> declare whether the generator was trained with identity-labeled real data and which source sets -> else labeled web identities are presented as consent-free synthetic while generator dependence stays invisible | When privacy-friendly wording appears, does the card state yes or no for generator training on identity-labeled real data, with source sets named? | S·p | [sdfr-synthetic-competition](../SOURCES.md#src-sdfr-synthetic-competition) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-mldata -->
+
+**Sources for this section**
+
+- [dcface-dual-condition](../SOURCES.md#src-dcface-dual-condition)
+- [designing-ml-systems](../SOURCES.md#src-designing-ml-systems)
+- [digiface-1m](../SOURCES.md#src-digiface-1m)
+- [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility)
+- [gender-shades](../SOURCES.md#src-gender-shades)
+- [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition)
+- [janus-benchmark-c](../SOURCES.md#src-janus-benchmark-c)
+- [ml-test-score](../SOURCES.md#src-ml-test-score)
+- [porter-duff-compositing](../SOURCES.md#src-porter-duff-compositing)
+- [sdfr-synthetic-competition](../SOURCES.md#src-sdfr-synthetic-competition)
+- [segment-anything](../SOURCES.md#src-segment-anything)
+- [sface-synthetic-data](../SOURCES.md#src-sface-synthetic-data)
+- [simple-copy-paste](../SOURCES.md#src-simple-copy-paste)
+- [video-to-video-face-surveillance](../SOURCES.md#src-video-to-video-face-surveillance)
+
+<!-- END GENERATED SECTION SOURCES fam-mldata -->
+
 ## 2. EMB: Embedding spaces, normalization, similarity, versioning<a name="fam-emb"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -124,6 +145,19 @@ Cross-lexicon borders cite `↔ grph/sec/eng [X]` rather than restating them.
 | EMB-09<a name="emb-09"></a> | Inputs of varying quality are compared by a raw distance or cosine against one threshold; how ambiguous each input is never enters the score | **Uncertainty-penalized similarity**: when compared inputs vary in quality, use a similarity that penalizes the ambiguity of *either* side so two ambiguous observations cannot produce a high score, because under degradation the two error directions move at once: different subjects observed badly converge toward each other while one subject observed well and badly diverges, so a deterministic distance reports geometry rather than evidence and the false accepts land exactly at the low-false-match end of the curve where the operating point lives (↔ [[CAL-01]](ml-systems.md#cal-01) the per-stratum threshold is the other road to the same failure; [[EMB-03]](ml-systems.md#emb-03) supplies the signal when no uncertainty output exists) | Can two low-quality observations of two different subjects produce a high similarity score? | S·w | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 | EMB-10<a name="emb-10"></a> | A subject template pools media whose per-source sample counts differ by orders of magnitude (one continuous recording's frames alongside individual captures) with no declared weighting | **Weight by independent capture, not by sample count**: when a template pools observations from sources with different capture rates, weight so one continuous capture contributes what one independent capture contributes, because equal per-sample weighting lets acquisition rate stand in for evidence: the longest recording decides the identity and the template describes that session's conditions rather than the subject (↔ [[MLDATA-07]](ml-systems.md#mldata-07) count unique subjects, not rows: this is the same count-is-not-coverage failure inside one template; [[EMB-02]](ml-systems.md#emb-02) quality weighting does not fix it, since many sharp frames of one session still outvote every other source) | If one source contributed ten times more samples, would it decide the template? | S·w | [janus-benchmark-c](../SOURCES.md#src-janus-benchmark-c) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-emb -->
+
+**Sources for this section**
+
+- [adaface](../SOURCES.md#src-adaface)
+- [bruch-vector-retrieval](../SOURCES.md#src-bruch-vector-retrieval)
+- [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition)
+- [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml)
+- [janus-benchmark-c](../SOURCES.md#src-janus-benchmark-c)
+- [nist-frvt-demographics](../SOURCES.md#src-nist-frvt-demographics)
+- [video-to-video-face-surveillance](../SOURCES.md#src-video-to-video-face-surveillance)
+
+<!-- END GENERATED SECTION SOURCES fam-emb -->
 
 ## 3. IDX: The retrieval index as a versioned, lossy artifact<a name="fam-idx"></a>
 
@@ -143,6 +177,16 @@ The canon already governs the embedding (EMB) and the evaluation (EVAL), but not
 | IDX-10<a name="idx-10"></a> | Dynamic multi-segment index maintenance (stats, merges, invalidation) dominates incidents, and product can tolerate a declared rebuild lag | **Prefer atomic rebuild when incremental complexity dominates**: build a full new index from the system-of-record snapshot (or log offset), dual-serve, cut over, drop the old, because large engines often choose reconstruction-from-scratch over dynamic indexing complexity (heal derived stores from the log: eng [[FLOW-06]](engineering.md#flow-06); embedding-contract rebuild is the separate blocker [[IDX-02]](ml-systems.md#idx-02)) | Can we rebuild from the log/snapshot alone and cut over within the freshness lag? | J·p | [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval) |
 | IDX-11<a name="idx-11"></a> | Every query fully scores the entire gallery, or one stage is tuned for both candidate recall and final order under a tight latency budget | **Contender set then rescore (inexact top-K)**: generate a contender set A cheaper than full N (champion lists, tiered index, or ANN shortlist), fully score only A, and fall back to a broader tier when \|A\| < K, because exact top-K over N is unnecessary when A recovers near-best results and full scoring does not scale with gallery growth ([[RAG-04]](ml-systems.md#rag-04) is the RAG special case; [[COST-07]](ml-systems.md#cost-07) cheap tier first; [[EMB-08]](ml-systems.md#emb-08) budgeted re-rank) | What builds contender set A, what is \|A\| vs K, and what is the fallthrough when A is short? | S·p | [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval) |
 | IDX-12<a name="idx-12"></a> | A multi-node search index partitions by term for query serving of multi-term (or multi-key) ranked queries | **Document-partition the serving index**: prefer document-sharded indexes with query broadcast and merge of per-shard top-k for ranked multi-key search; refresh global scoring statistics in the background, because term partitioning ships long postings across nodes, load-balances poorly under query bursts, and complicates dynamic updates (eng [[DATA-07]](engineering.md#data-07) hot partitions; [[DATA-08]](engineering.md#data-08) local vs global secondary index) | Is the query-time partition by document with top-k merge, or by term with postings merge? | J·p | [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-idx -->
+
+**Sources for this section**
+
+- [bruch-vector-retrieval](../SOURCES.md#src-bruch-vector-retrieval)
+- [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval)
+- [zezula-similarity-search](../SOURCES.md#src-zezula-similarity-search)
+
+<!-- END GENERATED SECTION SOURCES fam-idx -->
 
 ## 4. EVAL: Offline, pipeline, and user-level evaluation<a name="fam-eval"></a>
 
@@ -175,6 +219,21 @@ The canon already governs the embedding (EMB) and the evaluation (EVAL), but not
 | EVAL-25<a name="eval-25"></a> | Large-corpus relevance labels are either claimed exhaustive, taken from one system's top-k only, or treat every unlabelled document as judged nonrelevant without a pool protocol | **Pool judgments; disclose incompleteness**: build multi-strategy top-k pools per information need before judging; disclose pool depth and contributors; do not treat unpooled documents as known nonrelevant when comparing systems that retrieve outside the pool, because pooling is incomplete by design and a self-pool biases scores against systems that surface different documents (relative ranking on a shared pool remains the standard comparative use) | How was the judgment pool built, and what happens to unjudged documents in the metric? | S·p | [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval) |
 | EVAL-26<a name="eval-26"></a> | A product that matches video subjects is gated only on still-to-still, best-frame, or single-frame metrics | **Track-to-track evaluation protocol**: when the product matches video subjects, evaluate track-to-track (video-to-video) with the deployed fusion path on target-domain video, not only still-to-still or best-frame protocols, because still and high-quality numbers do not establish video-to-video usability under operational capture (↔ [[EVAL-17]](ml-systems.md#eval-17) evaluate at the unit operations aggregates; ↔ [[EMB-07]](ml-systems.md#emb-07) production fuses the track, so the gate must score that path) | Is the ship-gate metric track-to-track on operational-quality video? | B·r | [video-to-video-face-surveillance](../SOURCES.md#src-video-to-video-face-surveillance) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-eval -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [designing-ml-systems](../SOURCES.md#src-designing-ml-systems)
+- [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition)
+- [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml)
+- [human-in-the-loop-ml](../SOURCES.md#src-human-in-the-loop-ml)
+- [janus-benchmark-c](../SOURCES.md#src-janus-benchmark-c)
+- [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval)
+- [ml-test-score](../SOURCES.md#src-ml-test-score)
+- [video-to-video-face-surveillance](../SOURCES.md#src-video-to-video-face-surveillance)
+
+<!-- END GENERATED SECTION SOURCES fam-eval -->
 
 ## 5. AUDIT: Population estimates from imperfect classifier output<a name="fam-audit"></a>
 
@@ -196,6 +255,15 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | AUDIT-12<a name="audit-12"></a> | A report publishes rates for subgroups that were not stratification variables, using overall-*n* confidence intervals or omitting empty cells | **Domain rates need domain *n***: when a rate is reported for a domain that is not a design stratum, treat domain sample size as random, use domain (ratio) variance, and power or oversample so critical domains meet a declared *n_d* floor — overall *n* does not guarantee domain precision | For each published slice, was *n_d* planned and is the CI a domain interval? | S·r | [lohr-sampling-design-analysis](../SOURCES.md#src-lohr-sampling-design-analysis) |
 | AUDIT-13<a name="audit-13"></a> | Selected audit units are dropped for label failure, corrupt media, or annotator skip, and the plan answers low completion by drawing more easy replacements | **Nonresponse is bias, not a larger *n***: when selected units fail to yield the measurement, report completion, compare dropouts on frame covariates, and prefer follow-up or a nonrespondent subsample over silent completers-only analysis or replacement draws from the easy pool — larger *n* without targeting missingness can worsen bias | What is the completion rate, and does the estimand include nonrespondents? | S·r | [lohr-sampling-design-analysis](../SOURCES.md#src-lohr-sampling-design-analysis) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-audit -->
+
+**Sources for this section**
+
+- [gustafson-misclassification](../SOURCES.md#src-gustafson-misclassification)
+- [lohr-sampling-design-analysis](../SOURCES.md#src-lohr-sampling-design-analysis)
+- [pepe-medical-test-evaluation](../SOURCES.md#src-pepe-medical-test-evaluation)
+
+<!-- END GENERATED SECTION SOURCES fam-audit -->
 
 ## 6. CAL: Confidence, thresholds, calibration, abstention<a name="fam-cal"></a>
 
@@ -213,6 +281,19 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | CAL-10<a name="cal-10"></a> | Human adjudication of identity is forced to a binary match/non-match with no inconclusive option when evidence quality is weak | **Inconclusive is a valid human output**: when evidence quality is low, allow mid-scale or inconclusive adjudication rather than forced match/non-match, because examiners tie conclusion strength to image quality and a forced binary invents certainty the media cannot support (↔ [[CAL-02]](ml-systems.md#cal-02) the machine-side twin: unknown is a designed state; ↔ [[HITL-09]](ml-systems.md#hitl-09) residual human error is measured, not erased by forcing a call) | Can the reviewer record inconclusive without inventing certainty? | B·w | [forensic-face-matching](../SOURCES.md#src-forensic-face-matching) |
 | CAL-11<a name="cal-11"></a> | Quality or uncertainty is computed and logged (or shown in the UI) but never gates enroll or match; the identity path always forces a decision | **Quality gate, not decoration**: when quality or uncertainty is computed, bind a quality threshold to abstain, reacquire, or route to human review before any identity accept, and prefer a matcher-coupled confidence signal over a generic external image-quality score for the filter policy, because a logged score that never blocks a decision is decoration and external IQA filters images the matcher does not care about (↔ [[CAL-02]](ml-systems.md#cal-02) designs the below-threshold action this gate fires; ↔ [[EMB-03]](ml-systems.md#emb-03) the quality proxy must be validated for this matcher) | What happens when quality or uncertainty is below threshold: force match, or abstain, reacquire, or HITL? | B·w | [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-cal -->
+
+**Sources for this section**
+
+- [designing-ml-systems](../SOURCES.md#src-designing-ml-systems)
+- [forensic-face-matching](../SOURCES.md#src-forensic-face-matching)
+- [handbook-face-recognition](../SOURCES.md#src-handbook-face-recognition)
+- [nist-frvt-demographics](../SOURCES.md#src-nist-frvt-demographics)
+- [surveillance-fiqa](../SOURCES.md#src-surveillance-fiqa)
+- [video-to-video-face-surveillance](../SOURCES.md#src-video-to-video-face-surveillance)
+
+<!-- END GENERATED SECTION SOURCES fam-cal -->
+
 ## 7. DRIFT: Data, concept, model, and threshold drift<a name="fam-drift"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -223,6 +304,16 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | DRIFT-04<a name="drift-04"></a> | A model update ships with no live predicted-vs-observed monitoring, sliced | **Monitor prediction bias live**: alert on global and per-slice shifts between predicted and observed label rates; unit and E2E tests miss a changing world (↔ eng [[DIAG-08]](engineering.md#diag-08) QA is not production under non-stationary load) | Do predicted label rates still match observed rates by slice? | S·r | [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml) |
 | DRIFT-05<a name="drift-05"></a> | A training job has no alert on non-finite values, weight magnitude, or saturated units, and fails only on a raised exception | **Monitor the numerics of training**: emit and alert on the first not-a-number or infinite value, on weights leaving a declared magnitude bound, and on the fraction of units in the activation in use that return zero, because numeric corruption degrades learning without raising an error and reappears later as an unexplained quality cliff | Would a not-a-number value or a saturated layer page us during training, or only surface at the next evaluation? | S·r | [ml-test-score](../SOURCES.md#src-ml-test-score) |
 | DRIFT-06<a name="drift-06"></a> | Training and serving compute features through separate code paths, and no metric compares the values the two produce | **Measure feature skew on live traffic**: log a sample of serving requests carrying the example identifier that later joins them to training rows, report the share of examples and of features whose serving value disagrees with the training value, and alert on that share, because a design-time parity guarantee that is never measured in production degrades silently while offline metrics stay green (the design-time parity contract is [[SERVE-08]](ml-systems.md#serve-08); the identifier that survives reordering is [[SERVE-09]](ml-systems.md#serve-09)) | What share of live examples has a feature value that disagrees with its training value? | S·r | [ml-test-score](../SOURCES.md#src-ml-test-score) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-drift -->
+
+**Sources for this section**
+
+- [designing-ml-systems](../SOURCES.md#src-designing-ml-systems)
+- [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml)
+- [ml-test-score](../SOURCES.md#src-ml-test-score)
+
+<!-- END GENERATED SECTION SOURCES fam-drift -->
 
 ## 8. SERVE: Inference, action safety, serving-path architecture<a name="fam-serve"></a>
 
@@ -238,6 +329,16 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | SERVE-08<a name="serve-08"></a> | A serving path re-implements train-time featurization, or train and serve featurize differently | **Train/serve transform parity**: guarantee identical featurization on train and serve by either packaging the transform with the model and taking raw input at the boundary, or pinning an independently-versioned transform contract (feature store, precomputed embeddings) tested against training fixtures, because divergent featurization yields silently wrong production scores while offline metrics look fine (see [[PROV-08]](ml-systems.md#prov-08)) | Is the transform identical on train and serve (packaged-with-model or a version-pinned contract) and proven by golden fixtures? | B·w | [ml-design-patterns](../SOURCES.md#src-ml-design-patterns) |
 | SERVE-09<a name="serve-09"></a> | A batched, sharded, or async prediction path rejoins results by array order | **Keyed predictions**: require client-supplied pass-through keys in the serving signature and return key-and-prediction pairs, because reordered or sharded batches otherwise attach the wrong score to the wrong entity (↔ eng [[DATA-13]](engineering.md#data-13) client-supplied identity survives reordering and retry; position is not identity) | Does the serving signature echo a client key so a shuffled batch rejoins correctly? | B·w | [ml-design-patterns](../SOURCES.md#src-ml-design-patterns) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-serve -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml)
+- [ml-design-patterns](../SOURCES.md#src-ml-design-patterns)
+
+<!-- END GENERATED SECTION SOURCES fam-serve -->
+
 ## 9. FAIR: Cohort and capture-condition performance<a name="fam-fair"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -250,6 +351,16 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | FAIR-06<a name="fair-06"></a> | Per-group error rates are reported without each group's share of total errors | **Error mass, not only rate**: report each cohort's fraction of total errors and prioritize high-mass groups even at moderate n | Which group produces most of the mistakes, not just the highest rate? | S·r | [gender-shades](../SOURCES.md#src-gender-shades) |
 | FAIR-07<a name="fair-07"></a> | A group is rare in training but subject to high downstream query rate, enforcement, or decision stakes | **Prevalence ≠ incidence**: mandate subgroup monitoring when deployment incidence or stakes are high, regardless of training-set rarity | Is the underrepresented group still heavily used or high-stakes downstream? | B·p | [gender-shades](../SOURCES.md#src-gender-shades) |
 | FAIR-08<a name="fair-08"></a> | Production fairness is cited from a cross-vendor mean or a public benchmark only | **Know your algorithm**: evaluate the deployed model version on operational imagery and cohorts; averaging algorithms or citing annex means is not certification (↔ a11y [[A11Y-23]](accessibility.md#a11y-23) a scanner pass is not certification of the product under real use) | Was the deployed version measured on local operational data? | B·p | [nist-frvt-demographics](../SOURCES.md#src-nist-frvt-demographics) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-fair -->
+
+**Sources for this section**
+
+- [gender-shades](../SOURCES.md#src-gender-shades)
+- [model-cards](../SOURCES.md#src-model-cards)
+- [nist-frvt-demographics](../SOURCES.md#src-nist-frvt-demographics)
+
+<!-- END GENERATED SECTION SOURCES fam-fair -->
 
 ## 10. PROV: Model, dataset, evidence, and derived-output provenance<a name="fam-prov"></a>
 
@@ -267,6 +378,18 @@ This family governs a claim of the form "X% of the corpus contains Y", where Y i
 | PROV-10<a name="prov-10"></a> | A deletion request closes the application record while training tables, derived vocabularies, and trained weights built from it are untouched | **Deletion must reach artifacts that can only be rebuilt**: when a person's data is deleted, propagate the deletion into training tables, derived vocabularies, and the learned models themselves, retraining or re-deriving wherever an artifact holds no row to delete, and prove it with an end-to-end deletion test against the legal deletion deadline, because personal data survives inside artifacts that cannot be edited and a closed deletion ticket then certifies a deletion that did not happen (retrievable index surfaces are [[RAG-10]](ml-systems.md#rag-10); the policy sentence that promised it is biz [[CLM-03]](business-marketing.md#clm-03)) | After a deletion, is the person absent from training tables, vocabularies, and the served weights? | B·w | [ml-test-score](../SOURCES.md#src-ml-test-score) |
 | PROV-11<a name="prov-11"></a> | Personal data is copied into a training warehouse, feature store, or vocabulary whose read access is broader than the source system's | **A derived copy inherits the source's access controls**: grant a training or feature artifact no broader read access than the system the personal data came from, and re-check that parity whenever a new sensitive source is onboarded, because a pipeline copy silently downgrades the protection level of the original and the gap surfaces as a disclosure rather than as a permission error (who may write the control plane is sec [[SEC-16]](security.md#sec-16); extraction through the model is sec [[SEC-06]](security.md#sec-06)) | Can more people read this training data than can read the source it was copied from? | B·p | [ml-test-score](../SOURCES.md#src-ml-test-score) |
 | PROV-12<a name="prov-12"></a> | An identity-derived key (template, match result, identity score) reaches a consumer, store, or cross-domain join not listed against the purpose its source was collected for; a design cites the existing gallery as the reason a new use is cheap | **Consumers are scoped to the collection purpose, not merely registered**: when identity-derived data leaves the matcher, bind the store to one declared purpose and gate every consumer and every cross-domain join on that purpose, so a new consumer, join, or attribute domain is a new authorization with its own record rather than an addition to the consumer list, because a registry answers who reads the score but not what it may be read for, and a store built for one purpose is otherwise reachable by any consumer who can get an owner's signature (extends [[PROV-05]](ml-systems.md#prov-05), which names consumers, owners, and access; this adds the purpose their name is checked against) | For each consumer of this identity output, which collection purpose authorizes it, and what is the authorization record for the most recently added one? | S·p | [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-prov -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [face-recognition-compulsory-visibility](../SOURCES.md#src-face-recognition-compulsory-visibility)
+- [hidden-technical-debt-ml](../SOURCES.md#src-hidden-technical-debt-ml)
+- [ml-test-score](../SOURCES.md#src-ml-test-score)
+- [model-cards](../SOURCES.md#src-model-cards)
+
+<!-- END GENERATED SECTION SOURCES fam-prov -->
 
 ## 11. HITL: Human in the loop<a name="fam-hitl"></a>
 
@@ -289,6 +412,15 @@ Human review of model output: correction, active learning, adjudication.
 | HITL-13<a name="hitl-13"></a> | The ship gate for a human-in-the-loop search reports only model Recall@k, Rank-1, or retrieval metrics while a human must select or reject from the candidate list | **Measure human pick, not only model@k**: when a human must select or reject from a candidate list, gate on human selection accuracy and correct target-absent rejects, because humans are often the weak link (error near half even when the mate is listed), so a green model@k ships a joint system nobody measured (↔ [[EVAL-21]](ml-systems.md#eval-21) owns the rank depth the operator reads; this row owns the human pick error at that depth; ↔ ux [[HAI-16]](interaction-ux.md#hai-16) bounds the forced-choice set the pick is taken from) | Is human shortlist-pick accuracy a ship metric? | B·r | [forensic-face-matching](../SOURCES.md#src-forensic-face-matching) |
 | HITL-14<a name="hitl-14"></a> | Human override of model identity is justified by "humans are good at faces" or by familiar-face recognition tests alone, while production pairs are strangers to the reviewer | **Familiar is not unfamiliar**: when justifying human override of model identity on subjects the reviewer does not know, require measured unfamiliar-matching evidence rather than familiar recognition skill or everyday face intuition, because familiar recognition and unfamiliar matching are dissociable tasks and intuition systematically overstates the latter (↔ [[HITL-09]](ml-systems.md#hitl-09) residual unfamiliar-adjudication error is measured, not assumed; ↔ [[HITL-10]](ml-systems.md#hitl-10) competence is scored on the task that ships, not on related face skill) | Was reviewer skill shown on unfamiliar matching, or only on knowing faces? | B·p | [forensic-face-matching](../SOURCES.md#src-forensic-face-matching) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-hitl -->
+
+**Sources for this section**
+
+- [forensic-face-matching](../SOURCES.md#src-forensic-face-matching)
+- [human-in-the-loop-ml](../SOURCES.md#src-human-in-the-loop-ml)
+
+<!-- END GENERATED SECTION SOURCES fam-hitl -->
+
 ## 12. TRACK: Temporal association and identity continuity across video frames<a name="fam-track"></a>
 
 Feature and object tracking, drift, occlusion, data association.
@@ -310,6 +442,14 @@ Keeps the same feature, object, or identity attached to the same track across vi
 | TRACK-11<a name="track-11"></a> | Failed tracks are never terminated (zombies with no supporting evidence), or tracks are killed on a single-frame residual spike with no hysteresis | **Track termination hysteresis**: terminate a track only on sustained failure (affine residual, lost visibility, low confidence) with hysteresis, and reap zombies, or the pipeline carries stale wrong identities or thrashes IDs on one-frame spikes | Do we kill a track on sustained evidence, not one frame, and reap the dead? | S·w | [computer-vision-szeliski](../SOURCES.md#src-computer-vision-szeliski) |
 | TRACK-12<a name="track-12"></a> | More than two frames are available but association uses only consecutive pairs, and links appear that satisfy pairwise flow yet violate a 3+ frame constraint | **Multi-frame consistency**: when more than two frames are available, enforce multi-frame brightness or flow consistency (not only consecutive pairs) so a link that satisfies pairwise but fails the multi-frame constraint is rejected, or slow drift and delayed errors slip past pairwise checks (↔ grph [[GRPH-18]](graph-theory.md#grph-18) pairwise local passes do not compose into a true identity) | Is a frame-to-frame link validated beyond the consecutive pair? | S·r | [computer-vision-szeliski](../SOURCES.md#src-computer-vision-szeliski) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-track -->
+
+**Sources for this section**
+
+- [computer-vision-szeliski](../SOURCES.md#src-computer-vision-szeliski)
+
+<!-- END GENERATED SECTION SOURCES fam-track -->
+
 ## 13. VSEG: Temporal structure of a media timeline<a name="fam-vseg"></a>
 
 Shot-boundary detection, gradual transitions, shot-to-scene grouping, keyframe selection. Where TRACK follows one entity across frames, VSEG cuts the timeline into units.
@@ -324,6 +464,14 @@ Where `TRACK-*` follows one entity *across* frames, `VSEG-*` cuts the timeline *
 | VSEG-04<a name="vseg-04"></a> | Shots are grouped into scenes by visual similarity alone | **Scene grouping needs non-visual evidence**: when merging shots into scenes, combine visual affinity with temporal adjacency and at least one non-visual signal where the media carries one (audio continuity, speaker turn, transcript topic), because visual affinity alone over-splits one location shot from several angles and under-merges across a lighting change (↔ [[GRPH-18]](graph-theory.md#grph-18) local similarity does not compose into a true group) | What non-visual or temporal evidence supports each scene boundary? | J·w | [video-cataloguing-gao](../SOURCES.md#src-video-cataloguing-gao) |
 | VSEG-05<a name="vseg-05"></a> | Keyframes are selected by fixed interval, by random sample, or as one frame per shot | **Keyframes summarize, they do not sample**: when building keyframes for browse or index, select for coverage of intra-shot content change and minimal redundancy, and give a shot with large camera or subject motion more than one frame, because a fixed-interval or single-middle-frame inventory samples a distribution nobody asked about and misses the content it was meant to represent | Is keyframe count a function of content change, or of frame index? | S·p | [video-cataloguing-gao](../SOURCES.md#src-video-cataloguing-gao) |
 | VSEG-06<a name="vseg-06"></a> | Keyframes produced by clustering are stored or displayed in cluster order | **Restore chronological order after clustering**: when keyframes come from a clustering step, re-sort by timestamp before storage or display, because cluster order drops the chronology a storyboard needs to be readable | Is the keyframe list monotone in timestamp? | J·r | [video-cataloguing-gao](../SOURCES.md#src-video-cataloguing-gao) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-vseg -->
+
+**Sources for this section**
+
+- [video-cataloguing-gao](../SOURCES.md#src-video-cataloguing-gao)
+
+<!-- END GENERATED SECTION SOURCES fam-vseg -->
 
 ## 14. COST: Compute budgets and cost per accepted output<a name="fam-cost"></a>
 
@@ -349,6 +497,16 @@ Governs how an ML/serving system is measured, budgeted, and tuned to meet a late
 | COST-14<a name="cost-14"></a> | A model trains on its own served recommendations with no exploration policy and no model-version feature | **Feedback-loop economics**: when serving shapes future labels, budget exploration traffic and log the model version into the training features so world-driven and self-driven shifts can be separated, because unpriced feedback burns traffic and contaminates A/B so spend shows no lift (Chen et al. Ch10; ↔ [[MLDATA-05]](ml-systems.md#mldata-05)) | Does this model choose its own training diet, and how much traffic is priced as exploration? | S·p | [reliable-machine-learning](../SOURCES.md#src-reliable-machine-learning) |
 | COST-15<a name="cost-15"></a> | LLM serving efficiency is reported as tokens per second or GPU-busy percentage | **Goodput, not raw throughput**: measure LLM serving efficiency as goodput (requests meeting time-to-first-token / time-per-output-token or time-to-publish SLOs) and model-FLOPs utilization, not tokens per second or accelerator busy percentage, because raw throughput and driver utilization hide SLO misses and wasted work | Does the efficiency metric count SLO-meeting requests, or just raw throughput? | S·r | [ai-engineering](../SOURCES.md#src-ai-engineering) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-cost -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [reliable-machine-learning](../SOURCES.md#src-reliable-machine-learning)
+- [systems-performance-gregg](../SOURCES.md#src-systems-performance-gregg)
+
+<!-- END GENERATED SECTION SOURCES fam-cost -->
+
 ## 15. FM: Foundation-model composition and adaptation<a name="fam-fm"></a>
 
 Instruction channels, prompt and context construction, structured-output contracts, the adaptation ladder, agent-loop topology. How a pretrained generative model is configured and composed, not every rule that mentions an LLM.
@@ -372,6 +530,19 @@ Governs how a *pretrained generative model* is configured, contextualized, adapt
 | FM-14<a name="fm-14"></a> | A term enters a shared vocabulary from model invention, one unvetted page, a crowd-sourced summary, or a spelling match | **Literary warrant before admit**: require at least three published authoritative sources that use the form with the *same meaning* as the entry's definition before admitting a descriptor, cite them on the record, and reject a source whose spelling matches but whose sense does not, because usage is what a controlled term claims and an uncited term is a claim no consumer can audit ([[PROV-01]](ml-systems.md#prov-01) walks an output back to evidence; this gates the vocabulary before any output uses it) | Which ≥3 published sources establish this descriptor's form *and* its sense, and are they on the record? | S·w | [getty-vocabularies](../SOURCES.md#src-getty-vocabularies) |
 | FM-15<a name="fm-15"></a> | Vocabulary cleanup deletes offensive, antiquated, or superseded terms, or a derogatory form is still the preferred one | **Demote terms, never delete them**: move the preferred flag to the current appropriate form and keep the historical or offensive string as a non-preferred variant carrying a note on why it is not preferred, because the old string is how legacy material is still indexed and deleting it silently breaks every reference that used it while changing nothing about what was named (↔ depiction [[BOUND-04]](depiction.md#bound-04) refuses erasure in an image; this refuses it in an index) | Is the preferred form the current one, and do the superseded forms still resolve to the same ID? | S·w | [getty-vocabularies](../SOURCES.md#src-getty-vocabularies) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-fm -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [getty-vocabularies](../SOURCES.md#src-getty-vocabularies)
+- [lora-low-rank-adaptation](../SOURCES.md#src-lora-low-rank-adaptation)
+- [peft-adapters-nlp](../SOURCES.md#src-peft-adapters-nlp)
+- [residual-adapters-multi-domain](../SOURCES.md#src-residual-adapters-multi-domain)
+- [side-tuning-additive](../SOURCES.md#src-side-tuning-additive)
+
+<!-- END GENERATED SECTION SOURCES fam-fm -->
+
 ## 16. RAG: Retrieval-augmented generation pipelines<a name="fam-rag"></a>
 
 Chunking, retrieval and generation separation, reranking, context selection, abstention, citation, index freshness, deletion propagation.
@@ -394,6 +565,16 @@ Governs the retrieval pipeline that grounds generation: corpus, parsing, chunkin
 | RAG-12<a name="rag-12"></a> | Global RAG re-reads raw chunks on every corpus-level query; no index-time thematic intermediate, or an entity graph exists without queryable community reports | **Pre-compute community summaries; map-reduce at query**: at index time, build hierarchical community summaries over the entity graph; at query time, map partial answers over those summaries (helpfulness-filter) then reduce to one global answer, because community summaries are the scalable intermediate for QFS and map-reduce over them beats vector RAG on comprehensiveness/diversity while cutting tokens vs full-source map-reduce (Edge et al.) (↔ grph [[GRPH-21]](graph-theory.md#grph-21) community partition is the cut tool, not the RAG contract; ↔ [[RAG-05]](ml-systems.md#rag-05) context packing still applies inside map/reduce windows) | Are community summaries materialised at index time, and does a global query map-reduce over them? | J·w | [graphrag-local-to-global §s3](../SOURCES.md#src-graphrag-local-to-global) |
 | RAG-13<a name="rag-13"></a> | Every global query always uses the finest community level or full-source map-reduce; no measured tokens/query ladder across hierarchy levels | **Pick community level for the cost/quality trade**: when many global queries hit one corpus, measure tokens and answer quality per hierarchy level and prefer a coarser level that still beats vector RAG when budget-bound (root summaries: large token reduction with retained global win rates), because root-level summaries give competitive global quality at a fraction of max token cost (Edge et al. Table 2) (↔ [[COST-07]](ml-systems.md#cost-07) cheap tier for easy work; here the "tier" is hierarchy level on *global* questions) | Which hierarchy level's tokens/query and quality score justified this default? | J·r | [graphrag-local-to-global §s5](../SOURCES.md#src-graphrag-local-to-global) |
 | RAG-14<a name="rag-14"></a> | "More like this", pseudo-relevance feedback, or centroid/query expansion updates from a few marked or top-retrieved items without a residual eval | **Relevance feedback needs a mono-modal feedback set**: when updating a query or profile from judged (or pseudo-judged) examples, require enough positives and check they form one cluster in the representation (or use multiple prototypes); evaluate on documents not already shown to the judge, because Rocchio-style feedback assumes a single relevant prototype and residual-eval cheating inflates gains when seen relevants are re-ranked | Do the feedback positives share one prototype, and is the metric computed on the residual set? | J·r | [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-rag -->
+
+**Sources for this section**
+
+- [ai-engineering](../SOURCES.md#src-ai-engineering)
+- [graphrag-local-to-global](../SOURCES.md#src-graphrag-local-to-global)
+- [manning-information-retrieval](../SOURCES.md#src-manning-information-retrieval)
+
+<!-- END GENERATED SECTION SOURCES fam-rag -->
 
 ## 17. Cross-lexicon links
 

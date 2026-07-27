@@ -13,28 +13,28 @@ anchors.
 
 **Contents**
 
-- [1. AGT: Agent Craft<a name="fam-agt"></a>](#1-agt-agent-crafta-namefam-agta)
-- [2. RES: Resilience & Failure Modes<a name="fam-res"></a>](#2-res-resilience--failure-modesa-namefam-resa)
-- [3. CON: Concurrency & Async<a name="fam-con"></a>](#3-con-concurrency--asynca-namefam-cona)
-- [4. DATA: Data & Consistency<a name="fam-data"></a>](#4-data-data--consistencya-namefam-dataa)
-- [5. MODEL: Data Modeling<a name="fam-model"></a>](#5-model-data-modelinga-namefam-modela)
-- [6. STOR: Storage & Retrieval<a name="fam-stor"></a>](#6-stor-storage--retrievala-namefam-stora)
-- [7. FLOW: Batch & Stream Dataflow<a name="fam-flow"></a>](#7-flow-batch--stream-dataflowa-namefam-flowa)
-- [8. PERF: Performance & Tail-Latency<a name="fam-perf"></a>](#8-perf-performance--tail-latencya-namefam-perfa)
-- [9. REF: Refactoring & Design<a name="fam-ref"></a>](#9-ref-refactoring--designa-namefam-refa)
-- [10. TEST: Testing Strategy<a name="fam-test"></a>](#10-test-testing-strategya-namefam-testa)
-- [11. DBG: Debugging Procedure<a name="fam-dbg"></a>](#11-dbg-debugging-procedurea-namefam-dbga)
-- [12. DIAG: Diagnosis Posture<a name="fam-diag"></a>](#12-diag-diagnosis-posturea-namefam-diaga)
-- [13. OBS: Observability<a name="fam-obs"></a>](#13-obs-observabilitya-namefam-obsa)
+- [1. AGT: Agent Craft](#fam-agt)
+- [2. RES: Resilience & Failure Modes](#fam-res)
+- [3. CON: Concurrency & Async](#fam-con)
+- [4. DATA: Data & Consistency](#fam-data)
+- [5. MODEL: Data Modeling](#fam-model)
+- [6. STOR: Storage & Retrieval](#fam-stor)
+- [7. FLOW: Batch & Stream Dataflow](#fam-flow)
+- [8. PERF: Performance & Tail-Latency](#fam-perf)
+- [9. REF: Refactoring & Design](#fam-ref)
+- [10. TEST: Testing Strategy](#fam-test)
+- [11. DBG: Debugging Procedure](#fam-dbg)
+- [12. DIAG: Diagnosis Posture](#fam-diag)
+- [13. OBS: Observability](#fam-obs)
 - [Security](#security)
-- [14. API: API Design<a name="fam-api"></a>](#14-api-api-designa-namefam-apia)
-- [15. DOM: Domain Modeling<a name="fam-dom"></a>](#15-dom-domain-modelinga-namefam-doma)
-- [16. ARCH: Architecture & Trade-offs<a name="fam-arch"></a>](#16-arch-architecture--trade-offsa-namefam-archa)
-- [17. TEAM: Team & Organization Design<a name="fam-team"></a>](#17-team-team--organization-designa-namefam-teama)
-- [18. ALG: Algorithms & Data Structures<a name="fam-alg"></a>](#18-alg-algorithms--data-structuresa-namefam-alga)
-- [19. NAME: Naming & Comprehension<a name="fam-name"></a>](#19-name-naming--comprehensiona-namefam-namea)
-- [20. UI: UI & Visual Design<a name="fam-ui"></a>](#20-ui-ui--visual-designa-namefam-uia)
-- [21. RLSE: Release Readiness<a name="fam-rlse"></a>](#21-rlse-release-readinessa-namefam-rlsea)
+- [14. API: API Design](#fam-api)
+- [15. DOM: Domain Modeling](#fam-dom)
+- [16. ARCH: Architecture & Trade-offs](#fam-arch)
+- [17. TEAM: Team & Organization Design](#fam-team)
+- [18. ALG: Algorithms & Data Structures](#fam-alg)
+- [19. NAME: Naming & Comprehension](#fam-name)
+- [20. UI: UI & Visual Design](#fam-ui)
+- [21. RLSE: Release Readiness](#fam-rlse)
 
 <!-- END GENERATED CONTENTS -->
 
@@ -64,11 +64,11 @@ never copying row bodies.
 | --- | --- | --- | --- | --- | --- |
 | AGT-01<a name="agt-01"></a> | session's first write lands within two turns on a task with prior state | **Orient before acting**: context, plan checklist, recent decisions, branch state: four reads prevent redo and collision (↔ ux [[COG-01]](interaction-ux.md#cog-01) act from externalized state, not incomplete working memory) | Did I check what's done and in flight before editing? | J·w | [bootstrap](../SOURCES.md#src-bootstrap) |
 | AGT-02<a name="agt-02"></a> | plan/finding/code relies on a path, symbol, API default, or config fact not looked up this session | **No unresolved anchors**: look it up, don't guess; grep/read the manual, spec, or source before citing; a missing anchor is a finding, not a license to improvise (↔ writing [[WRIT-41]](writing.md#writ-41) a citation that cannot be followed is worse than none; ↔ ml [[PROV-01]](ml-systems.md#prov-01) every output walks back to its evidence; ↔ [[FORE-06]](epistemics.md#fore-06) a point figure with no decomposition has no walkable ancestors; ↔ sec [[SEC-10]](security.md#sec-10) unpinned weights are an unauditable dependency; ↔ a11y [[A11Y-27]](accessibility.md#a11y-27) authority is the primary regulation, not a derived summary) | Did I verify this claim against the source, not memory? | B·w | [debugging-9-rules](../SOURCES.md#src-debugging-9-rules) |
-| AGT-04<a name="agt-04"></a> | completion claim without command + decisive output line | **Evidence verbatim**: every done-claim names the evidence that proves it — the file:line, the named test, or the command's decisive output; also satisfies closure guards for free | What evidence proves this claim? | J·r | [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
-| AGT-06<a name="agt-06"></a> | checklist item skipped as "probably fine" without a named reason | **Name the skip**: the checklist is institutional memory; skipping an item as "probably fine" hides a gap that a declared skip would keep recoverable (↔ ux [[HAI-05]](interaction-ux.md#hai-05) do not overclaim autonomy beyond the tested envelope) | Which items did I not do, and did I say so? | J·r | [product-deploy-agents-fields ch-8](../SOURCES.md#src-product-deploy-agents-fields) |
+| AGT-04<a name="agt-04"></a> | completion claim without command + decisive output line | **Evidence verbatim**: every done-claim names the evidence that proves it — the file:line, the named test, or the command's decisive output; also satisfies closure guards for free | What evidence proves this claim? | J·r | [bootstrap](../SOURCES.md#src-bootstrap) |
+| AGT-06<a name="agt-06"></a> | checklist item skipped as "probably fine" without a named reason | **Name the skip**: the checklist is institutional memory; skipping an item as "probably fine" hides a gap that a declared skip would keep recoverable (↔ ux [[HAI-05]](interaction-ux.md#hai-05) do not overclaim autonomy beyond the tested envelope) | Which items did I not do, and did I say so? | J·r | [bootstrap](../SOURCES.md#src-bootstrap) |
 | AGT-07<a name="agt-07"></a> | same fact re-derived twice in one session | **Externalize at discovery**: notes/decisions written when learned survive compaction; working memory doesn't | Should this be in the log instead of my head? | S·w | [programmers-brain ch-11](../SOURCES.md#src-programmers-brain) |
-| AGT-08<a name="agt-08"></a> | gate or checklist rejection re-attempted without satisfying the named condition | **Rejection is specification**: satisfy the named requirement or escalate with evidence; never vary cosmetically, never bypass (↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader checks the named contract literally; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim) | What exactly is this rejection asking for? | S·w | [product-deploy-agents-fields ch-1](../SOURCES.md#src-product-deploy-agents-fields) |
-| AGT-10<a name="agt-10"></a> | except-and-continue with no durable record | **Degrade loudly**: a swallowed error that keeps the session alive must still land in a log (see [[OBS-01]](engineering.md#obs-01)) (↔ [[RLSE-05]](engineering.md#rlse-05) a crash is honest and a silent wrong answer is not; ↔ [[OBS-08]](engineering.md#obs-08) silence is not success, dead instrumentation breaks loudly; ↔ [[AGT-15]](engineering.md#agt-15) the stream split is where failure surfaces without corrupting data; ↔ [[AGT-21]](engineering.md#agt-21) exit status keeps the failure machine-legible) | If this failure matters next week, where is it written? | S·r | [art-of-unix-programming ch-1](../SOURCES.md#src-art-of-unix-programming) + [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
+| AGT-08<a name="agt-08"></a> | gate or checklist rejection re-attempted without satisfying the named condition | **Rejection is specification**: satisfy the named requirement or escalate with evidence; never vary cosmetically, never bypass (↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader checks the named contract literally; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim) | What exactly is this rejection asking for? | S·w | [pragmatic-programmer ch-4](../SOURCES.md#src-pragmatic-programmer) |
+| AGT-10<a name="agt-10"></a> | except-and-continue with no durable record | **Degrade loudly**: a swallowed error that keeps the session alive must still land in a log (see [[OBS-01]](engineering.md#obs-01)) (↔ [[RLSE-05]](engineering.md#rlse-05) a crash is honest and a silent wrong answer is not; ↔ [[OBS-08]](engineering.md#obs-08) silence is not success, dead instrumentation breaks loudly; ↔ [[AGT-15]](engineering.md#agt-15) the stream split is where failure surfaces without corrupting data; ↔ [[AGT-21]](engineering.md#agt-21) exit status keeps the failure machine-legible) | If this failure matters next week, where is it written? | S·r | [art-of-unix-programming ch-1](../SOURCES.md#src-art-of-unix-programming) |
 | AGT-11<a name="agt-11"></a> | operator asked a question the repo answers | **Grep before asking — facts, not forks**: config, patterns, and commands are self-serve, so spend a tool call on them rather than a human round-trip (↔ [[AGT-02]](engineering.md#agt-02) look it up, don't guess — a missing anchor is a finding, not a license to improvise); but a tool call cannot return intent, preference, or which side of an irreversible fork the operator wants, and there the round-trip is the cheap side, not the cost to dodge (↔ [[MEAS-11]](epistemics.md#meas-11) force the decision purpose before acting; ↔ [[AGT-16]](engineering.md#agt-16) undo beats asking only when the act is reversible). The round-trip is waste only when the answer was already retrievable | Can a tool call answer this — a fact, or a fork? | J·w | [agent-operations](../SOURCES.md#src-agent-operations) |
 | AGT-12<a name="agt-12"></a> | third unproductive attempt at the same obstacle | **Timebox and hand off legibly**: tried/learned/next-imperative makes the handoff nearly free (↔ [[NDM-07]](epistemics.md#ndm-07) intent on the wire so the next executor can act without re-deriving) | Am I generating new information or variations? | J·w | [bootstrap](../SOURCES.md#src-bootstrap) |
 | AGT-13<a name="agt-13"></a> | diff or plan contradicts a recorded ADR without amending it | **No silent ADR override**: if the choice changes, update the ADR (context/decision/consequences) or escalate; silent unilateral reversal breaks coordination (↔ biz [[OPS-08]](business-marketing.md#ops-08) written authority beats live heroics) | Does a recorded decision already answer this, and was it amended if not? | S·w | [architecture-hard-parts ch-1](../SOURCES.md#src-architecture-hard-parts) |
@@ -80,6 +80,21 @@ never copying row bodies.
 | AGT-19<a name="agt-19"></a> | diff adds a config flag for a condition detectable at runtime, an optimization knob for users, or an option a wrapper script could supply | **Don't configure what you can detect**: autodetect or try alternatives until one succeeds; users should not see optimization switches; prefer a wrapper over an internal switch, because each on/off option should double the test matrix and never does, so ten options quietly cut real per-configuration coverage a thousandfold (↔ [[REF-21]](engineering.md#ref-21) pull complexity downward, the implementer decides so users don't) | Could the program decide this itself or a wrapper supply it, and who tests both settings? | S·r | [art-of-unix-programming ch-10](../SOURCES.md#src-art-of-unix-programming) |
 | AGT-20<a name="agt-20"></a> | tool reads configuration from a single hardwired source, or resolves sources so a global setting beats a local one | **Config precedence follows preference lifetime**: read system file, then user dotfile, then environment, then command line, so later and more local settings override earlier and more global ones, and give each preference lifetime its home: per-invocation in a switch, per-user in a dotfile, sitewide in the system file | Does the most local, shortest-lived setting win, and does each lifetime have a home? | J·w | [art-of-unix-programming ch-10](../SOURCES.md#src-art-of-unix-programming) |
 | AGT-21<a name="agt-21"></a> | outcome of a step signaled only by prose ("done", "failed") or by an accidental last-command status | **Exit status is the outcome contract**: return 0 for success and distinct nonzero codes for the failure reasons, because without an explicit exit the status is unpredictable and every caller must parse prose to branch | Can a caller branch on this outcome without parsing message text? | J·w | [unix-programming-environment ch-5](../SOURCES.md#src-unix-programming-environment) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-agt -->
+
+**Sources for this section**
+
+- [agent-operations](../SOURCES.md#src-agent-operations)
+- [architecture-hard-parts](../SOURCES.md#src-architecture-hard-parts)
+- [art-of-unix-programming](../SOURCES.md#src-art-of-unix-programming)
+- [bootstrap](../SOURCES.md#src-bootstrap)
+- [debugging-9-rules](../SOURCES.md#src-debugging-9-rules)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+- [programmers-brain](../SOURCES.md#src-programmers-brain)
+- [unix-programming-environment](../SOURCES.md#src-unix-programming-environment)
+
+<!-- END GENERATED SECTION SOURCES fam-agt -->
 
 ## 2. RES: Resilience & Failure Modes<a name="fam-res"></a>
 
@@ -105,6 +120,17 @@ never copying row bodies.
 | RES-18<a name="res-18"></a> | durable protocol that issues a commit/sentinel/pointer write in the same unordered batch as the payload it validates, or writes a reference before the referenced object is on disk | **Order durable writes: payload then commit; pointed-to then pointer**: wait for transaction payload to complete before the commit marker (TxE after journal body); persist each target before making its reference durable so recovery never sees a valid reference to garbage; devices reorder within a batch unless barriers/fsyncs enforce the dashed edges (↔ [[DATA-16]](engineering.md#data-16) for the fsync primitive; this row is the multi-write *order* contract) | After a crash mid-update, can a commit or pointer be durable while its payload or target is not? | B·w | [operating-systems-three-easy-pieces ch-42](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 | RES-19<a name="res-19"></a> | crash-recovery, journal replay, or checkpoint apply path that is not safe to run twice, or that assumes checkpoint completed exactly once | **Recovery redo must be idempotent**: a crash can interrupt a checkpoint after durable intent but before completion, so recovery may reapply committed writes; make each redo a no-op on repetition or converge to the same state. Sibling of [[RES-01]](engineering.md#res-01) / [[FLOW-05]](engineering.md#flow-05) (live retry / at-least-once); this row owns the recovery path after durable commit | If recovery runs twice on the same committed intent, is the store still correct? | B·p | [operating-systems-three-easy-pieces ch-42](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 | RES-20<a name="res-20"></a> | resource (file, connection, lock, temp) opened in one function and closed in another via shared field/handle, especially with early-return paths between | **Finish what you start**: the scope that allocates a resource releases it; prefer block-scoped lifetime so every open has a visible matching close on every path, including early returns (distinct from [[RES-04]](engineering.md#res-04) pool-exhaustion/finally leaks: this row is the allocator-releaser *identity* and split-open/close anti-pattern) | Can I point to one scope that both acquires and releases this resource on every path? | S·w | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-res -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [operating-systems-three-easy-pieces](../SOURCES.md#src-operating-systems-three-easy-pieces)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+- [release-it](../SOURCES.md#src-release-it)
+
+<!-- END GENERATED SECTION SOURCES fam-res -->
 
 ## 3. CON: Concurrency & Async<a name="fam-con"></a>
 
@@ -133,6 +159,18 @@ never copying row bodies.
 | CON-21<a name="con-21"></a> | design or review of code that can acquire two or more resources (locks, permits, connections) with no written answer to "which Coffman condition do we break?" | **Name which of four deadlock conditions you design out**: deadlock requires mutual exclusion, hold-and-wait, no preemption, *and* circular wait; break any one and deadlock cannot occur; prefer circular-wait prevention via a documented lock order ([[CON-13]](engineering.md#con-13)), else shrink hold-and-wait (never hold a mutex across a blocking wait; see [[CON-18]](engineering.md#con-18) in this table), trylock-and-back-off (watch livelock), or a lock-free structure you can prove. S because the checklist is the plan tool; the B-tier tactics live on [[CON-13]](engineering.md#con-13) and the lock-scope rule | Which of the four conditions does this design break, and where is that break enforced? | S·p | [operating-systems-three-easy-pieces ch-32](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 | CON-22<a name="con-22"></a> | concurrent code path (shared mutable state, multi-lock, wait/notify) whose only correctness argument is "unit tests pass" or low-concurrency CI green | **Concurrent correctness is not a test artifact**: scheduling makes behavior indeterminate, and small concurrent paths can resist exhaustive reasoning; require a structural argument (locks, wait predicates, happens-before edges, known patterns) plus review rather than green tests alone. Distinct from [[CON-17]](engineering.md#con-17) (post-failure: flaky under load *is* a race); this row fires pre-merge when tests are green and the structural argument is missing | What structural argument makes this correct under every interleaving? | S·r | [operating-systems-three-easy-pieces ch-26](../SOURCES.md#src-operating-systems-three-easy-pieces) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-con -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [effective-python](../SOURCES.md#src-effective-python)
+- [effective-typescript](../SOURCES.md#src-effective-typescript)
+- [operating-systems-three-easy-pieces](../SOURCES.md#src-operating-systems-three-easy-pieces)
+- [using-asyncio-in-python](../SOURCES.md#src-using-asyncio-in-python)
+
+<!-- END GENERATED SECTION SOURCES fam-con -->
+
 ## 4. DATA: Data & Consistency<a name="fam-data"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -158,6 +196,17 @@ never copying row bodies.
 | DATA-19<a name="data-19"></a> | Backup, ETL, or integrity scan reads many related rows under read-committed while writers run | **Consistent snapshot for multi-row reads**: a unit of work that must observe one point in time across many rows runs at snapshot isolation, because read-committed can splice pre- and post-write committed versions into a state that never existed and freeze it into a backup or report | Does this scan read one consistent snapshot end to end? | S·p | [designing-data-intensive-applications ch-7](../SOURCES.md#src-designing-data-intensive-applications) |
 | DATA-20<a name="data-20"></a> | Choosing or tuning a serializable engine; rising deadlocks / serialization-failures / lock-waits | **Serializability is a contention bet**: pick among actual-serial-execution, two-phase locking, and SSI by contention and spare capacity, keep transactions short, retry aborts idempotently, and index predicates so 2PL takes range not table locks; all three are "serializable" with opposite latency profiles (see [[PERF-01]](engineering.md#perf-01), [[RES-01]](engineering.md#res-01); not [[DATA-05]](engineering.md#data-05), which is 2PC) | Which serializable implementation fits this contention and capacity, and are aborts retried? | J·p | [designing-data-intensive-applications ch-7](../SOURCES.md#src-designing-data-intensive-applications) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-data -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [llm-security-playbook](../SOURCES.md#src-llm-security-playbook)
+- [operating-systems-three-easy-pieces](../SOURCES.md#src-operating-systems-three-easy-pieces)
+- [release-it](../SOURCES.md#src-release-it)
+
+<!-- END GENERATED SECTION SOURCES fam-data -->
+
 ## 5. MODEL: Data Modeling<a name="fam-model"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -165,6 +214,14 @@ never copying row bodies.
 | MODEL-01<a name="model-01"></a> | A new domain store, or an additional datastore, is chosen without stated access patterns or a polyglot-cost check | **Data-model fit before technology**: derive document / relational / graph from the primary access patterns, and before adding another datastore test whether the existing system's JSON, recursive query, materialized view, or extension support already meets the need (counting synchronization, backup, migration, and operational ownership), because emulating the wrong model forces app-side joins while a needless second store adds permanent operational cost (see [[ARCH-08]](engineering.md#arch-08), [[DATA-14]](engineering.md#data-14), [[ARCH-10]](engineering.md#arch-10)) | What access patterns justify this model, and can the existing store meet the need without a new datastore? | S·p | [designing-data-intensive-applications ch-2](../SOURCES.md#src-designing-data-intensive-applications) |
 | MODEL-02<a name="model-02"></a> | Large or unbounded nested documents, or frequent partial-field updates on big documents | **Document locality cuts both ways**: keep documents small and extract high-churn or unbounded collections, because the engine typically loads and rewrites the whole document even for a one-field update | What is the max document size, and which arrays can grow without bound? | S·r | [designing-data-intensive-applications ch-2](../SOURCES.md#src-designing-data-intensive-applications) |
 | MODEL-03<a name="model-03"></a> | A JSON/document field or collection called "schemaless" with more than one writer | **Schema-on-read is a deferred schema, not the absence of one**: choose schema-on-write when records should be uniform, and when interpreting on read document the implicit reader schema; the compat and versioning mechanics are [[DATA-03]](engineering.md#data-03), but the modeling decision (which discipline, and where the reader's assumptions live) is the rule here, because "schemaless" otherwise lets producers drift until readers silently mis-parse | On-read or on-write, and where does the reader's assumed schema live? | S·w | [designing-data-intensive-applications ch-2](../SOURCES.md#src-designing-data-intensive-applications) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-model -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+
+<!-- END GENERATED SECTION SOURCES fam-model -->
 
 ## 6. STOR: Storage & Retrieval<a name="fam-stor"></a>
 
@@ -177,6 +234,14 @@ never copying row bodies.
 | STOR-05<a name="stor-05"></a> | A heavy aggregate or report query aimed at the interactive OLTP primary, or at a failover/read replica merely because it is not the writer | **Keep OLAP off the OLTP primary**: run heavy scans and aggregates on a warehouse, column store, or a replica explicitly isolated and capacity-planned for analytics, not the interactive writer and not a failover replica by default, because ad-hoc scans wreck concurrent transaction latency and compete with replication replay and recovery readiness | Where does this scan run, and is that target isolated and capacity-planned for analytics? | S·r | [designing-data-intensive-applications ch-3](../SOURCES.md#src-designing-data-intensive-applications) |
 | STOR-06<a name="stor-06"></a> | Multi-TB or wide (50+ column) fact table queried on a few columns, stored row-oriented | **Column-oriented storage for analytic scans**: store wide analytic fact tables column-oriented with compression and sort keys on the common filter columns, because a row store reads every column off disk and thrashes I/O | Is the physical layout columnar, and do its sort keys match the top filters? | J·p | [designing-data-intensive-applications ch-3](../SOURCES.md#src-designing-data-intensive-applications) |
 | STOR-07<a name="stor-07"></a> | Dashboard latency fixed with a materialized view / cube, or raw facts dropped once a cube exists | **Precompute is an optimization, not the source**: place precomputed aggregates on async/analytic paths with an explicit freshness SLO and keep the raw facts, because on-write cubes tax OLTP latency and a cube cannot answer a question it did not anticipate (↔ ml [[SERVE-04]](ml-systems.md#serve-04) do not treat a derived corrector as the source; ↔ [[DATA-14]](engineering.md#data-14) the second store is not the system of record) | What is the refresh/staleness, and can novel questions still hit raw facts? | S·w | [designing-data-intensive-applications ch-3](../SOURCES.md#src-designing-data-intensive-applications) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-stor -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+
+<!-- END GENERATED SECTION SOURCES fam-stor -->
 
 ## 7. FLOW: Batch & Stream Dataflow<a name="fam-flow"></a>
 
@@ -192,6 +257,14 @@ never copying row bodies.
 | FLOW-08<a name="flow-08"></a> | An event-time window closes on a timeout with no late-data policy | **Declare a late-event policy**: set a watermark / allowed-lateness and either drop-with-a-metric or emit a correction, because stragglers always arrive after a window looks complete (mobile/offline producers especially) (↔ ml [[CAL-02]](ml-systems.md#cal-02) incomplete is a designed state, not a forced complete answer; ↔ [[RLSE-04]](engineering.md#rlse-04) empty/error/offline are designed screens, not voids; ↔ [[API-06]](engineering.md#api-06) empty match is a successful answer, not a missing resource) | What happens to an event that arrives ten minutes late: dropped or revised? | S·w | [designing-data-intensive-applications ch-11](../SOURCES.md#src-designing-data-intensive-applications) |
 | FLOW-09<a name="flow-09"></a> | A stream aggregate spec says "last 5 minutes" or "per session" without a named window | **Name the window type**: specify tumbling, hopping, sliding, or session windows with their parameters, because the window type changes which events co-aggregate and teams otherwise compute different numbers for the same metric | Which window type and parameters match the product definition? | S·p | [designing-data-intensive-applications ch-11](../SOURCES.md#src-designing-data-intensive-applications) |
 | FLOW-10<a name="flow-10"></a> | A stream-stream funnel join without bounded state, or a stream-table enrichment hitting a live DB / "current" dimension | **Bound and time-align stream joins**: join inside an explicit time window with bounded per-key state, and enrich from a local changelog-fed table at the dimension version effective at event time, because unbounded state OOMs and "latest" joins rewrite history on replay (see [[DATA-09]](engineering.md#data-09)) | What is the join window, the max state per key, and which dimension version does enrichment use? | S·w | [designing-data-intensive-applications ch-11](../SOURCES.md#src-designing-data-intensive-applications) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-flow -->
+
+**Sources for this section**
+
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+
+<!-- END GENERATED SECTION SOURCES fam-flow -->
 
 ## 8. PERF: Performance & Tail-Latency<a name="fam-perf"></a>
 
@@ -213,6 +286,18 @@ never copying row bodies.
 | PERF-14<a name="perf-14"></a> | Nagle left default on small request/response sockets; or request/response batching holds a user-visible reply until a full batch completes | **Batching trades latency for throughput**: on latency-sensitive paths prefer `TCP_NODELAY` and stream or bound batches, because Nagle and response batching inject queuing delay so short work waits behind a full batch; use batching when responses are async or the path is not latency-critical (↔ ml [[SERVE-06]](ml-systems.md#serve-06) continuous batching is the inference-scheduler form of HOL; not [[RES-12]](engineering.md#res-12), which batches to cut chatty *round trips*) | Does this batch or Nagle delay hold a user-critical response behind other work? | S·w | [latency-reduce-delay-in-software-systems ch-3](../SOURCES.md#src-latency-reduce-delay-in-software-systems) |
 | PERF-15<a name="perf-15"></a> | hot-path mutex/lock under multi-thread load, or strong consistency / cross-partition coordination added on a latency-critical path without a coordination budget | **Coordination costs latency**: budget and measure lock, quorum, and cross-partition coordination, because uncontended locks are nanoseconds but contended locks jump to microseconds and convoy waiters, and stricter consistency needs more coordination overhead (↔ [[PERF-04]](engineering.md#perf-04) Amdahl caps *compute* parallel speedup; this is *waiting on shared consent*; ↔ [[DATA-20]](engineering.md#data-20) serializability is a contention bet; ↔ [[CON-14]](engineering.md#con-14) big lock first for correctness) | What is the coordination cost at production concurrency, and is it inside the latency budget? | S·p | [latency-reduce-delay-in-software-systems ch-8](../SOURCES.md#src-latency-reduce-delay-in-software-systems) |
 | PERF-16<a name="perf-16"></a> | latency optimization or incident fix starts without naming which delay component dominates | **Classify delay before optimizing**: name whether the path is dominated by propagation, transmission, processing, or queuing before changing code, because the four components have different levers and speeding the wrong one cannot beat geography or a saturated queue (↔ [[PERF-06]](engineering.md#perf-06) measure first; ↔ [[PERF-09]](engineering.md#perf-09) constants bound propagation/transmission) | Which of propagation, transmission, processing, or queuing dominates this path's delay? | S·p | [latency-reduce-delay-in-software-systems ch-2](../SOURCES.md#src-latency-reduce-delay-in-software-systems) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-perf -->
+
+**Sources for this section**
+
+- [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual)
+- [latency-reduce-delay-in-software-systems](../SOURCES.md#src-latency-reduce-delay-in-software-systems)
+- [philosophy-of-software-design](../SOURCES.md#src-philosophy-of-software-design)
+- [pinedo-scheduling](../SOURCES.md#src-pinedo-scheduling)
+- [release-it](../SOURCES.md#src-release-it)
+
+<!-- END GENERATED SECTION SOURCES fam-perf -->
 
 ## 9. REF: Refactoring & Design<a name="fam-ref"></a>
 
@@ -246,7 +331,7 @@ never copying row bodies.
 | REF-26<a name="ref-26"></a> | a single facet of intent must change in multiple places *and formats* (code + docs, schema + struct, UI rules + server validation, duplicated config keys) | **DRY is knowledge, not text**: duplication of *intent* across representations is the defect; the acid test is one fact needing a multi-place, multi-format edit. Partition vs [[REF-10]](engineering.md#ref-10): two functions that look alike but encode different facts are not a DRY violation and must not be merged; one fact spread across code and docs and schema and validation *is* one, even when no two lines match | When this fact changes, how many places and formats must move together? | S·r | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 | REF-27<a name="ref-27"></a> | change works in dev/CI but depends on unstated environment (timing, core count, locale, default config, evaluation order, US-only formats) or author cannot explain why it works | **Don't program by coincidence**: accidental context (timing, core count, locale, default config, evaluation order) is not a dependency; state assumptions, prove them, assert the impossible, proceed from a plan | Can I explain why this works to a junior, and which assumptions are tested? | S·r | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 | REF-28<a name="ref-28"></a> | plan or design step requires forecasting months-out dates, speculative extension points for unknown futures, or bets on unavailable tech, without a near feedback check | **Bound plan step size by feedback rate**: prefer replaceable code over fortune-telling about unknown futures. Complementary to [[REF-12]](engineering.md#ref-12) YAGNI: YAGNI rejects the speculative *feature* until ≥2 consumers exist; this row constrains how far ahead you may plan before an independent check, not whether to build that feature | What independent feedback confirms this step before the next, and what would we throw away if wrong? | J·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
-| REF-29<a name="ref-29"></a> | new enum state added | **Enum completeness**: grep all sibling-state references and verify handling everywhere; the unhandled case ships in someone else's switch (↔ [[REF-02]](engineering.md#ref-02) strategy-map concentrates case handling so new states have one place to land) | Which sibling-state references still omit the new case? | S·r | [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
+| REF-29<a name="ref-29"></a> | new enum state added | **Enum completeness**: grep all sibling-state references and verify handling everywhere; the unhandled case ships in someone else's switch (↔ [[REF-02]](engineering.md#ref-02) strategy-map concentrates case handling so new states have one place to land) | Which sibling-state references still omit the new case? | S·r | [refactoring-fowler-beck ch-3](../SOURCES.md#src-refactoring-fowler-beck) |
 | REF-30<a name="ref-30"></a> | Domain type is public fields or only get/set with rules living in external services | **Anemic → rich**: private state and domain protocol so rules have one home; external services that only move its data are a smell, not a layer | Is behavior on the object or only in services that manipulate its fields? | S·r | [clean-code-cookbook ch-3](../SOURCES.md#src-clean-code-cookbook) |
 | REF-31<a name="ref-31"></a> | Essential identity fields change after construction (natural keys, date-of-birth parts, immutable real-world attributes) | **Essence immutability**: set essentials only at creation; accidental change via explicit domain protocol or a new instance so dependents do not silently rebind meaning | Would this mutation make it a *different* real-world entity? | S·w | [clean-code-cookbook ch-3](../SOURCES.md#src-clean-code-cookbook) |
 | REF-32<a name="ref-32"></a> | Public `setX` / auto-properties finish construction or freely mutate domain objects | **No setters as design**: complete constructors; mutate only through intention-revealing domain methods (Tell, don't ask) | Does this setter exist in the domain language, or only for framework convenience? | S·r | [clean-code-cookbook ch-3](../SOURCES.md#src-clean-code-cookbook) |
@@ -255,6 +340,19 @@ never copying row bodies.
 | REF-35<a name="ref-35"></a> | One class owns unrelated domain verbs plus serialize/persist/display/admin | **Break God object**: split accidental adapters from essential protocol; constant bags split by meaning | How many reasons to change does this type have? | S·r | [clean-code-cookbook ch-17](../SOURCES.md#src-clean-code-cookbook) |
 | REF-36<a name="ref-36"></a> | Method body mostly queries another object's data and decides | **Feature envy**: move the behavior to the object that owns the data (exempt Strategy/Visitor when rate-of-change grouping is deliberate) | Who should speak this sentence in the domain language? | S·r | [clean-code-cookbook ch-17](../SOURCES.md#src-clean-code-cookbook) + [refactoring-fowler-beck ch-3](../SOURCES.md#src-refactoring-fowler-beck) |
 | REF-37<a name="ref-37"></a> | Empty catch/except or catch-and-ignore without documented policy | **No empty exception blocks**: handle, translate, or rethrow; silent catch violates fail-fast and hides defects (↔ [[RLSE-05]](engineering.md#rlse-05) silent failure is the worst failure) | What is the explicit policy when this fails? | B·r | [clean-code-cookbook ch-22](../SOURCES.md#src-clean-code-cookbook) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-ref -->
+
+**Sources for this section**
+
+- [clean-code-cookbook](../SOURCES.md#src-clean-code-cookbook)
+- [modern-software-engineering](../SOURCES.md#src-modern-software-engineering)
+- [philosophy-of-software-design](../SOURCES.md#src-philosophy-of-software-design)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+- [refactoring-fowler-beck](../SOURCES.md#src-refactoring-fowler-beck)
+- [refactoring-typescript](../SOURCES.md#src-refactoring-typescript)
+
+<!-- END GENERATED SECTION SOURCES fam-ref -->
 
 ## 10. TEST: Testing Strategy<a name="fam-test"></a>
 
@@ -280,6 +378,18 @@ never copying row bodies.
 | TEST-18<a name="test-18"></a> | Fixtures use `foo`/`test`/`asdf` where domain rules care about shape | **Realistic test data**: real-shaped examples catch subset/validation defects fictional strings miss | Would a domain expert recognize this fixture as plausible? | J·w | [clean-code-cookbook ch-20](../SOURCES.md#src-clean-code-cookbook) |
 | TEST-19<a name="test-19"></a> | Unit test mocks a business/domain type instead of an external boundary | **Mock only non-domain seams**: use real domain objects; mock IO/API/payment gateways (complements [[TEST-13]](engineering.md#test-13) spec-your-mocks) | Is the mock standing in for *our* domain or *their* system? | S·w | [clean-code-cookbook ch-20](../SOURCES.md#src-clean-code-cookbook) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-test -->
+
+**Sources for this section**
+
+- [clean-code-cookbook](../SOURCES.md#src-clean-code-cookbook)
+- [effective-python](../SOURCES.md#src-effective-python)
+- [modern-software-engineering](../SOURCES.md#src-modern-software-engineering)
+- [refactoring-fowler-beck](../SOURCES.md#src-refactoring-fowler-beck)
+- [working-effectively-with-legacy-code](../SOURCES.md#src-working-effectively-with-legacy-code)
+
+<!-- END GENERATED SECTION SOURCES fam-test -->
+
 ## 11. DBG: Debugging Procedure<a name="fam-dbg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -297,6 +407,16 @@ never copying row bodies.
 | DBG-11<a name="dbg-11"></a> | Diagnosis blames the last warning/change/anomaly seen before the failure | **Prove causation by absence**: a cause is established only when its removal makes the failure vanish; temporal precedence is not causation (↔ [[DIAG-03]](engineering.md#diag-03) state the disconfirmer before acting on the hypothesis; ↔ [[FORE-03]](epistemics.md#fore-03) score the claim after the outcome rather than reframe the hits; ↔ biz [[PROD-04]](business-marketing.md#prod-04) taste is not evidence: name the result that would kill the darling) | Does removing the suspected cause eliminate the failure? | B·r | [why-programs-fail](../SOURCES.md#src-why-programs-fail) |
 | DBG-12<a name="dbg-12"></a> | Escalation/handoff opens with a theory instead of symptoms and conditions | **Hand off symptoms and conditions, not theories**: transmitted theories drag the next person into the same rut (↔ ux [[HAI-01]](interaction-ux.md#hai-01) evidence before the interpretation) | Does the handoff list observable symptoms and conditions first? | S·r | [debugging-9-rules](../SOURCES.md#src-debugging-9-rules) |
 | DBG-13<a name="dbg-13"></a> | Failure vanishes when logging/debugger/timing changes | **Probe-sensitive failures need independent confirmation**: suspect races or undefined state when observation changes the outcome; confirm with two independent means | Do two independent observations agree on the failure? | J·p | [why-programs-fail](../SOURCES.md#src-why-programs-fail) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-dbg -->
+
+**Sources for this section**
+
+- [debugging-9-rules](../SOURCES.md#src-debugging-9-rules)
+- [why-programs-fail](../SOURCES.md#src-why-programs-fail)
+
+<!-- END GENERATED SECTION SOURCES fam-dbg -->
+
 ## 12. DIAG: Diagnosis Posture<a name="fam-diag"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -310,6 +430,17 @@ never copying row bodies.
 | DIAG-07<a name="diag-07"></a> | Reasoning about blast radius | **Fault ≠ failure**: one component deviating becomes system failure when coupling spreads it (see [[RES-13]](engineering.md#res-13)) | Where does this fault stop? | S·r | [release-it ch-3](../SOURCES.md#src-release-it) |
 | DIAG-08<a name="diag-08"></a> | Judging production-readiness from local results | **QA ≠ production**: prod runs N:1 ratios, multi-node topology, prod-scale data (↔ ml [[EVAL-03]](ml-systems.md#eval-03) never evaluate on a resampled distribution that is not production) | Does this only look safe at dev/QA scale? | S·r | [release-it ch-4](../SOURCES.md#src-release-it) |
 | DIAG-09<a name="diag-09"></a> | Choosing an abstraction / evaluating against a ritual | **All models are wrong, some useful**: target abstractions to the problem; judge by results | Is this abstraction right-shaped; am I following process for its own sake? | J·r | [modern-software-engineering ch-2](../SOURCES.md#src-modern-software-engineering) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-diag -->
+
+**Sources for this section**
+
+- [modern-software-engineering](../SOURCES.md#src-modern-software-engineering)
+- [refactoring-fowler-beck](../SOURCES.md#src-refactoring-fowler-beck)
+- [release-it](../SOURCES.md#src-release-it)
+- [why-programs-fail](../SOURCES.md#src-why-programs-fail)
+
+<!-- END GENERATED SECTION SOURCES fam-diag -->
 
 ## 13. OBS: Observability<a name="fam-obs"></a>
 
@@ -327,6 +458,16 @@ never copying row bodies.
 | OBS-10<a name="obs-10"></a> | a fast control loop (autoscaler, adaptive timeout, bandit, retrain schedule, rate limiter, prompt optimizer) sets or can rewrite its own target, reward, SLA, or threshold without a slower review path | **Slower loop owns the reference**: a fast subsystem may tune local behavior only inside a whole-system welfare goal owned by a slower, separately reviewed loop; otherwise it can edit away the standard that constrains it. Prefer meta-feedback that can revise the loop over a static policy the plant outruns. Distinct from [[DRIFT-03]](ml-systems.md#drift-03) (recalibrate thresholds on model bump): here the welfare reference itself is owned above the fast loop | Which slower owner sets this loop's goal, and can the fast loop edit that owner out? | J·p | [thinking-in-systems ch-3](../SOURCES.md#src-thinking-in-systems) |
 | OBS-11<a name="obs-11"></a> | SLO, quality bar, error budget, or alert threshold is defined as a trailing function of recent performance ("match last quarter", "not worse than the rolling mean", auto-baseline that follows the stock down) | **Absolute standards against eroding goals**: a standard that follows degraded recent performance creates a reinforcing decline; keep the bar absolute, externally owned, or upward-ratcheting from the best demonstrated result. Not [Principle 4] (wrong proxy) and not [Principle 15] (gamed meter): the meter may be honest while the bar slides (↔ [[TEST-11]](engineering.md#test-11) a trailing baseline is coverage-gaming run by the system itself) | Is this bar fixed or upward-ratcheting in absolute welfare units, or is it tracking recent degradation? | J·r | [thinking-in-systems ch-5](../SOURCES.md#src-thinking-in-systems) |
 | OBS-12<a name="obs-12"></a> | a control, scale, train, or page decision adjusts stock X using a signal that does not measure X (or no signal from X exists), so feedback is missing, proxy-only, or delayed beyond X's rate of change | **Sensors must touch the controlled stock**: an actuator cannot regulate a stock it never observes; add a feedback path from the actual stock on a timescale that can steer the decision, rather than substituting a convenient or perverse proxy. Extends [[OBS-01]](engineering.md#obs-01)/[[OBS-07]](engineering.md#obs-07)/[[OBS-08]](engineering.md#obs-08): the requirement is topological coupling from the claimed stock to the actuator | Name the stock this loop claims to regulate: does any sensor measure that stock on a timescale that can steer it? | J·w | [thinking-in-systems ch-6](../SOURCES.md#src-thinking-in-systems) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-obs -->
+
+**Sources for this section**
+
+- [observability-engineering](../SOURCES.md#src-observability-engineering)
+- [release-it](../SOURCES.md#src-release-it)
+- [thinking-in-systems](../SOURCES.md#src-thinking-in-systems)
+
+<!-- END GENERATED SECTION SOURCES fam-obs -->
 
 ## Security
 
@@ -348,6 +489,14 @@ never copying row bodies.
 | API-10<a name="api-10"></a> | API resource shapes mirror DB tables, ORM entities, or internal names | **Interface is its own artifact**: translate internal models at the boundary so storage refactors never break callers (see [[REF-16]](engineering.md#ref-16)) | If the storage schema changed tomorrow, would this API change too? | S·p | [restful-web-api-patterns ch-5](../SOURCES.md#src-restful-web-api-patterns) |
 | API-11<a name="api-11"></a> | Service persists or forwards a record after dropping unrecognized fields | **Must Ignore, round-trip whole**: ignore unknown fields on read but preserve them on write; stripping destroys other services' data through you | Does this write path preserve fields this service doesn't understand? | B·r | [restful-web-api-patterns ch-6](../SOURCES.md#src-restful-web-api-patterns) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-api -->
+
+**Sources for this section**
+
+- [restful-web-api-patterns](../SOURCES.md#src-restful-web-api-patterns)
+
+<!-- END GENERATED SECTION SOURCES fam-api -->
+
 ## 15. DOM: Domain Modeling<a name="fam-dom"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -362,6 +511,15 @@ never copying row bodies.
 | DOM-08<a name="dom-08"></a> | Consumers subscribing to another service's internal event stream | **Publish a consumer contract, not your internals**: translate to a published language of public events | Would an internal schema change break this consumer? | S·p | [learning-domain-driven-design ch-15](../SOURCES.md#src-learning-domain-driven-design) |
 | DOM-09<a name="dom-09"></a> | initial stakeholder statement treated as frozen implementation order without consequence-feedback, or "requirements gathering" phase expected to finish before learning | **Requirements are learned, not gathered**: nobody knows exactly what they want; the loop that feeds consequences back (stories, mockups, short iterations) is the mechanism, not a gathering phase that finishes before learning | What feedback loop updates this requirement when consequences appear? | S·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-dom -->
+
+**Sources for this section**
+
+- [learning-domain-driven-design](../SOURCES.md#src-learning-domain-driven-design)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+
+<!-- END GENERATED SECTION SOURCES fam-dom -->
+
 ## 16. ARCH: Architecture & Trade-offs<a name="fam-arch"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -375,16 +533,30 @@ never copying row bodies.
 | ARCH-07<a name="arch-07"></a> | Consequential architecture decision lands without recorded rationale | **Why beats how (write the ADR)**: context, decision, consequences must outlive the author | Where is the record with alternatives considered and trade-offs accepted? | S·r | [architecture-hard-parts ch-1](../SOURCES.md#src-architecture-hard-parts) |
 | ARCH-08<a name="arch-08"></a> | New shard/microservice/datastore while a boring stack still fits | **Choose boring technology / single machine first**: well-understood edge cases beat novel infrastructure; if data fits one machine it usually outperforms the cluster | What problem does this addition solve that the boring option cannot? | J·p | [observability-engineering ch-3](../SOURCES.md#src-observability-engineering) |
 | ARCH-09<a name="arch-09"></a> | Scaling / sharding / "we need Kubernetes" proposal with no quantitative load stated | **Quantify load before scaling**: extends [[ARCH-08]](engineering.md#arch-08) and [[PERF-06]](engineering.md#perf-06): a scale-out proposal must state concrete load parameters (peak RPS, read:write ratio, fan-out distribution, working-set size) and a bottleneck hypothesis, because without numbers the rare path gets optimized and hot-key/fan-out load collapses the design (see [[PERF-02]](engineering.md#perf-02)) | What are the load parameters, and which one breaks first as it doubles? | S·p | [designing-data-intensive-applications ch-1](../SOURCES.md#src-designing-data-intensive-applications) |
-| ARCH-10<a name="arch-10"></a> | Architecture work with no prioritized failure-risk list, or effort justified only by a doc template or % budget | **Risk-driven architecture**: spend architecture effort in proportion to the project's prioritized failure risks: list the risks, apply only techniques that reduce them, and stop when residual risk is explicitly acceptable, because ritual (full docs, fixed budget) over-architects low-risk work and under-architects the risks that sink the project | Is there a prioritized risk list, and does the effort trace to it? | J·p | [just-enough-software-architecture ch3](../SOURCES.md#src-just-enough-software-architecture) |
-| ARCH-11<a name="arch-11"></a> | An architectural risk is stated as a bare quality-attribute word ("reliability", "security") | **State risk as a testable failure scenario**: rewrite each priority risk as a concrete scenario with a stimulus and an observable failure ("at peak load, p99 latency exceeds 5s"), because a bare "-ility" cannot be checked and yields false confidence it was addressed | Can this risk's mitigation be evaluated pass/fail? | S·p | [just-enough-software-architecture ch3](../SOURCES.md#src-just-enough-software-architecture) |
-| ARCH-12<a name="arch-12"></a> | Structure justified by feature decomposition even though hard quality-attribute risks are already named | **Quality attributes drive the skeleton**: justify and review structure against its quality-attribute risks (latency, security, modifiability), not feature decomposition, because functionality runs on almost any architecture but the quality attributes are what a structure enables or forecloses (↔ biz [[PROD-02]](business-marketing.md#prod-02) problem before solution; ↔ ux [[VIZ-02]](interaction-ux.md#viz-02) rank the critical channel before decoration; ↔ design [[COL-04]](design-aesthetics.md#col-04) rank palette by value before hue exists; ↔ design [[LAY-08]](design-aesthetics.md#lay-08) start layout from real content, not a moodboard) | Is the structure justified by its quality attributes or just its features? | S·p | [just-enough-software-architecture ch2](../SOURCES.md#src-just-enough-software-architecture) |
-| ARCH-13<a name="arch-13"></a> | A must-hold property is left to "everyone will be careful" with no structural support | **Architecture hoisting**: when a property must always hold, make the structure enforce it so a violation is unrepresentable or fails closed, rather than relying on every developer's vigilance, because a property enforced only by discipline is eventually violated (↔ [[TEAM-01]](engineering.md#team-01) a software split the org does not communicate across is a boundary only on the diagram; ↔ [[NAME-03]](engineering.md#name-03) a name that promises a type the body does not hold is the same lie; ↔ biz [[CLM-03]](business-marketing.md#clm-03) a policy sentence that diverges from the implementation is a perceived boundary the system does not enforce; ↔ ux [[HAI-05]](interaction-ux.md#hai-05) naming full autonomy beyond the tested envelope is a boundary the system does not hold; ↔ sec [[SEC-01]](security.md#sec-01) trust changes at every crossing: an unenforced boundary exists only in the mind; ↔ ux [[PERC-03]](interaction-ux.md#perc-03) Gestalt grouping the eye reads must match the relations the code wires) | Does the structure enforce this property, or only good intentions? | J·p | [just-enough-software-architecture ch2](../SOURCES.md#src-just-enough-software-architecture) |
-| ARCH-14<a name="arch-14"></a> | A risk is argued from the wrong diagram (latency from a static module diagram, single-point-of-failure from a class diagram) | **Match the view to the risk**: use the module, runtime, or allocation view that actually reveals the risk (modifiability to module, performance to runtime, single-point-of-failure to allocation) and don't overload one diagram with all three, because the wrong viewtype hides the very detail the risk lives in (↔ ux [[UXR-01]](interaction-ux.md#uxr-01) the method must be able to reveal the claim it purports to check) | Which view reveals this risk, and is that the one being used? | S·r | [just-enough-software-architecture ch15](../SOURCES.md#src-just-enough-software-architecture) |
-| ARCH-15<a name="arch-15"></a> | An architecture diagram cannot be checked against the code/runtime, or silently mixes as-is with to-be | **Keep the model honest**: label a diagram prescriptive or descriptive and keep risk-critical views falsifiable against the real system; when code diverges from the intended architecture, refactor or consciously record the debt (see [[ARCH-07]](engineering.md#arch-07)), because decisions made on a lying diagram fail at integration | Does this diagram still match the running system? | S·r | [just-enough-software-architecture ch15](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-10<a name="arch-10"></a> | Architecture work with no prioritized failure-risk list, or effort justified only by a doc template or % budget | **Risk-driven architecture**: spend architecture effort in proportion to the project's prioritized failure risks: list the risks, apply only techniques that reduce them, and stop when residual risk is explicitly acceptable, because ritual (full docs, fixed budget) over-architects low-risk work and under-architects the risks that sink the project | Is there a prioritized risk list, and does the effort trace to it? | J·p | [just-enough-software-architecture ch-3](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-11<a name="arch-11"></a> | An architectural risk is stated as a bare quality-attribute word ("reliability", "security") | **State risk as a testable failure scenario**: rewrite each priority risk as a concrete scenario with a stimulus and an observable failure ("at peak load, p99 latency exceeds 5s"), because a bare "-ility" cannot be checked and yields false confidence it was addressed | Can this risk's mitigation be evaluated pass/fail? | S·p | [just-enough-software-architecture ch-3](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-12<a name="arch-12"></a> | Structure justified by feature decomposition even though hard quality-attribute risks are already named | **Quality attributes drive the skeleton**: justify and review structure against its quality-attribute risks (latency, security, modifiability), not feature decomposition, because functionality runs on almost any architecture but the quality attributes are what a structure enables or forecloses (↔ biz [[PROD-02]](business-marketing.md#prod-02) problem before solution; ↔ ux [[VIZ-02]](interaction-ux.md#viz-02) rank the critical channel before decoration; ↔ design [[COL-04]](design-aesthetics.md#col-04) rank palette by value before hue exists; ↔ design [[LAY-08]](design-aesthetics.md#lay-08) start layout from real content, not a moodboard) | Is the structure justified by its quality attributes or just its features? | S·p | [just-enough-software-architecture ch-2](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-13<a name="arch-13"></a> | A must-hold property is left to "everyone will be careful" with no structural support | **Architecture hoisting**: when a property must always hold, make the structure enforce it so a violation is unrepresentable or fails closed, rather than relying on every developer's vigilance, because a property enforced only by discipline is eventually violated (↔ [[TEAM-01]](engineering.md#team-01) a software split the org does not communicate across is a boundary only on the diagram; ↔ [[NAME-03]](engineering.md#name-03) a name that promises a type the body does not hold is the same lie; ↔ biz [[CLM-03]](business-marketing.md#clm-03) a policy sentence that diverges from the implementation is a perceived boundary the system does not enforce; ↔ ux [[HAI-05]](interaction-ux.md#hai-05) naming full autonomy beyond the tested envelope is a boundary the system does not hold; ↔ sec [[SEC-01]](security.md#sec-01) trust changes at every crossing: an unenforced boundary exists only in the mind; ↔ ux [[PERC-03]](interaction-ux.md#perc-03) Gestalt grouping the eye reads must match the relations the code wires) | Does the structure enforce this property, or only good intentions? | J·p | [just-enough-software-architecture ch-2](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-14<a name="arch-14"></a> | A risk is argued from the wrong diagram (latency from a static module diagram, single-point-of-failure from a class diagram) | **Match the view to the risk**: use the module, runtime, or allocation view that actually reveals the risk (modifiability to module, performance to runtime, single-point-of-failure to allocation) and don't overload one diagram with all three, because the wrong viewtype hides the very detail the risk lives in (↔ ux [[UXR-01]](interaction-ux.md#uxr-01) the method must be able to reveal the claim it purports to check) | Which view reveals this risk, and is that the one being used? | S·r | [just-enough-software-architecture ch-15](../SOURCES.md#src-just-enough-software-architecture) |
+| ARCH-15<a name="arch-15"></a> | An architecture diagram cannot be checked against the code/runtime, or silently mixes as-is with to-be | **Keep the model honest**: label a diagram prescriptive or descriptive and keep risk-critical views falsifiable against the real system; when code diverges from the intended architecture, refactor or consciously record the debt (see [[ARCH-07]](engineering.md#arch-07)), because decisions made on a lying diagram fail at integration | Does this diagram still match the running system? | S·r | [just-enough-software-architecture ch-15](../SOURCES.md#src-just-enough-software-architecture) |
 | ARCH-16<a name="arch-16"></a> | A plan adds microservices or many new deployables | **Microservices must earn their keep**: before distributing, require a named benefit over a modular monolith (see [[ARCH-08]](engineering.md#arch-08)), independent deployability in practice (see [[REF-14]](engineering.md#ref-14)), and a domain stable enough to place boundaries (see [[DOM-01]](engineering.md#dom-01)); missing any of the three yields a distributed monolith, paying distribution's cost plus the monolith's coordination cost with neither's benefit | Which of benefit, independent-deployability, or stable domain is missing? | J·p | [building-microservices ch-1](../SOURCES.md#src-building-microservices) + [building-microservices ch-2](../SOURCES.md#src-building-microservices) |
 | ARCH-17<a name="arch-17"></a> | Plan or design adopts a named architectural pattern (or claims a quality-attribute win) without naming the single-QA design decisions that achieve the response, or without naming which other QAs the pattern degrades | **Name the tactics inside the pattern**: a tactic is a design decision that controls one quality-attribute response to a stimulus; patterns bundle tactics and therefore trade off QAs; when no pattern fits, compose or adapt from tactics rather than inventing structure from features alone (extends [[ARCH-12]](engineering.md#arch-12) QA-driven skeleton with the primitive unit; does not replace [[ARCH-06]](engineering.md#arch-06) least-worst, which stays the trade-off posture) | Which tactics does this pattern package for the target QA, and which QA responses does it degrade? | S·p | [software-architecture-in-practice ch-3](../SOURCES.md#src-software-architecture-in-practice) |
 | ARCH-18<a name="arch-18"></a> | Architecture evaluation or design review of a consequential system walks only structure diagrams or chosen "approaches," with no prioritized concrete quality-attribute scenarios and no recorded risks, sensitivity points, or tradeoff points | **Evaluate against scenarios, not vibes**: run ATAM (external or high-stakes) or LAE (peer, routine, limited scope) so the exit artifacts include prioritized QA scenarios, risks/non-risks, risk themes, sensitivity points (decisions that markedly move a QA response), and tradeoff points (one decision helps one QA and hurts another) (distinct from [[ARCH-07]](engineering.md#arch-07) ADR, which records why a choice was made; this row requires a scenario-based fitness check before or beside that record) | Which prioritized scenarios were walked, and where are the risks, sensitivity points, and tradeoffs written down? | S·r | [software-architecture-in-practice ch-21](../SOURCES.md#src-software-architecture-in-practice) |
 | ARCH-19<a name="arch-19"></a> | plan or spike labeled "prototype" that is kept, wired into production paths, and extended; or "tracer"/"vertical slice we keep" that omits production error handling and is intended to be thrown away | **Tracer vs prototype**: tracer code is lean, end-to-end, production-structured and *kept*; a prototype is disposable learning. Both mislabelings are defects: a "prototype" that gets kept and extended freezes disposable code under a production quality bar; a "tracer" that omits production error handling because someone intends to throw it away freezes the wrong quality bar the other way | Is this spike disposable reconnaissance, or a kept skeletal path through real layers? | S·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-arch -->
+
+**Sources for this section**
+
+- [architecture-hard-parts](../SOURCES.md#src-architecture-hard-parts)
+- [building-microservices](../SOURCES.md#src-building-microservices)
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [just-enough-software-architecture](../SOURCES.md#src-just-enough-software-architecture)
+- [observability-engineering](../SOURCES.md#src-observability-engineering)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+- [software-architecture-in-practice](../SOURCES.md#src-software-architecture-in-practice)
+
+<!-- END GENERATED SECTION SOURCES fam-arch -->
 
 ## 17. TEAM: Team & Organization Design<a name="fam-team"></a>
 
@@ -412,6 +584,15 @@ never copying row bodies.
 | TEAM-18<a name="team-18"></a> | The same unpaid heroics or weekend firefighting are required every release while estimators and managers keep the same plan shape | **Do not institutionalize heroics**: correct estimates, scope, and staffing; credit line work; managers join recovery; adopt sustainable pace so success is not only *despite* planning | Is delivery success coming from plan quality or from recurring heroics? | S·r | [antipatterns-laplante-neill ch-6](../SOURCES.md#src-antipatterns-laplante-neill) |
 | TEAM-19<a name="team-19"></a> | Two groups must exchange work but reject each other's artifacts or ceremonies, with no written interface between processes | **Hybridize process interfaces**: define the artifact contract and handoff rules (or choose one process / a bridging third), because process clash is an interface defect, not a motivation defect (↔ [[TEAM-09]](engineering.md#team-09) name each material interaction) | What is the agreed interface between these two processes? | S·p | [antipatterns-laplante-neill ch-6](../SOURCES.md#src-antipatterns-laplante-neill) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-team -->
+
+**Sources for this section**
+
+- [antipatterns-laplante-neill](../SOURCES.md#src-antipatterns-laplante-neill)
+- [team-topologies](../SOURCES.md#src-team-topologies)
+
+<!-- END GENERATED SECTION SOURCES fam-team -->
+
 ## 18. ALG: Algorithms & Data Structures<a name="fam-alg"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -422,6 +603,14 @@ never copying row bodies.
 | ALG-04<a name="alg-04"></a> | Repeated linear scans for membership/min/max inside a loop | **Dictionary/heap reflex**: repeated scan-for-min is a heap; repeated scan-for-key is a hash table | Which operations repeat, and which structure serves exactly that set? | S·w | [algorithm-design-manual ch-3](../SOURCES.md#src-algorithm-design-manual) |
 | ALG-05<a name="alg-05"></a> | Optimization problem resembling longest path, TSP, coloring, cover, or partition | **Hardness recognition**: one word separates easy from NP-hard twins; check the catalog before promising exact-and-fast; then choose an escape deliberately (pruned exact / approximation / heuristic) | Is this a known NP-hard entry, and is my instance a polynomial special case? | S·p | [algorithm-design-manual ch-11](../SOURCES.md#src-algorithm-design-manual) |
 | ALG-06<a name="alg-06"></a> | Hand-rolled sort, RNG, date math, crypto, or geometry predicates in a diff | **Catalog before code**: these are solved problems with tuned, correct libraries; hand-rolling trades correctness for nothing | Which library implements this catalog problem? | S·r | [algorithm-design-manual ch-14](../SOURCES.md#src-algorithm-design-manual) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-alg -->
+
+**Sources for this section**
+
+- [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual)
+
+<!-- END GENERATED SECTION SOURCES fam-alg -->
 
 ## 19. NAME: Naming & Comprehension<a name="fam-name"></a>
 
@@ -435,18 +624,35 @@ never copying row bodies.
 | NAME-06<a name="name-06"></a> | Cluster of vague/broken names in one region of a diff | **Bad names mark bug hotspots**: naming-violation sites statistically co-locate with defects; review those regions deeper | Where names are worst, has the logic had extra scrutiny? | J·r | [programmers-brain ch-8](../SOURCES.md#src-programmers-brain) |
 | NAME-07<a name="name-07"></a> | Type or module named Helper/Utils/Manager with unrelated static methods | **Rename and split dump names**: Helper/Utils rarely map 1:1 to a real-world role; split into cohesive domain services (pairs with [[REF-35]](engineering.md#ref-35) God-object split) | What real-world entity or role is this? | S·r | [clean-code-cookbook ch-7](../SOURCES.md#src-clean-code-cookbook) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-name -->
+
+**Sources for this section**
+
+- [clean-code-cookbook](../SOURCES.md#src-clean-code-cookbook)
+- [programmers-brain](../SOURCES.md#src-programmers-brain)
+
+<!-- END GENERATED SECTION SOURCES fam-name -->
+
 ## 20. UI: UI & Visual Design<a name="fam-ui"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| UI-01<a name="ui-01"></a> | New CSS declares a raw literal for spacing, font-size, radius, shadow, or color where the project has tokens/scales | **Predefined scales only**: one-off values accumulate into inconsistency and re-litigate the same decision every time | Is this value from the project scale/tokens? | S·w | [refactoring-ui ch-1](../SOURCES.md#src-refactoring-ui) |
-| UI-02<a name="ui-02"></a> | State, trend, or series distinguished by hue alone; or text contrast below 4.5:1 / 3:1 | **Never color alone, never below WCAG**: pair color with an icon/label; flip to dark-on-tint when white-on-color fails contrast | Does every color signal have a second channel; does all text meet its floor? | B·r | [refactoring-ui ch-5](../SOURCES.md#src-refactoring-ui) |
-| UI-03<a name="ui-03"></a> | Margin within a group equals or exceeds margin between groups | **Unambiguous spacing**: spacing signals grouping; space around a group must exceed space within it | Is every intra-group gap smaller than the surrounding inter-group gap? | S·r | [refactoring-ui ch-3](../SOURCES.md#src-refactoring-ui) |
-| UI-04<a name="ui-04"></a> | Text hierarchy varies only `font-size` across roles | **Size isn't everything**: weight and a 2–3-step grey ramp communicate importance better than size alone (↔ design [[COL-04]](design-aesthetics.md#col-04) rank by value before hue; ↔ ux [[VIZ-02]](interaction-ux.md#viz-02) give the critical attribute the most accurate free channel) | Could this hierarchy use weight or color instead of another size? | S·r | [refactoring-ui ch-2](../SOURCES.md#src-refactoring-ui) |
-| UI-05<a name="ui-05"></a> | Grey text, or white/black at reduced opacity, over a colored/image background | **Same-hue de-emphasis**: grey/alpha on color looks disabled and bleeds; hand-pick a same-hue shade | Is de-emphasized text sitting on non-white via grey or alpha? | S·r | [refactoring-ui ch-2](../SOURCES.md#src-refactoring-ui) |
-| UI-06<a name="ui-06"></a> | Destructive action styled as the big red primary button on a normal page | **Hierarchy over semantics**: destructive ≠ prominent; red-primary belongs on the confirmation step (↔ design [[COL-09]](design-aesthetics.md#col-09) thrift of accent: dense emphasis is noise; ↔ ux [[PERC-06]](interaction-ux.md#perc-06) reserve pop for the true target) | Is delete competing with the page's true primary action? | S·r | [refactoring-ui ch-2](../SOURCES.md#src-refactoring-ui) |
-| UI-07<a name="ui-07"></a> | Shade generated at use-site via lighten()/darken() or a new near-duplicate hex | **Define shades up front**: a fixed scale per color; on-the-fly derivation breeds near-identical variants | Does this shade exist in the palette, or is it invented inline? | S·w | [refactoring-ui ch-5](../SOURCES.md#src-refactoring-ui) |
-| UI-08<a name="ui-08"></a> | Box-shadow values invented per component | **Elevation system**: a fixed shadow scale mapped to z-meaning, chosen by layer, not taste | Which elevation level is this, and is the shadow from the shared scale? | S·w | [refactoring-ui ch-6](../SOURCES.md#src-refactoring-ui) |
+| UI-01<a name="ui-01"></a> | New CSS declares a raw literal for spacing, font-size, radius, shadow, or color where the project has tokens/scales | **Predefined scales only**: one-off values accumulate into inconsistency and re-litigate the same decision every time | Is this value from the project scale/tokens? | S·w | [refactoring-ui sec-limit-your-choices](../SOURCES.md#src-refactoring-ui) |
+| UI-02<a name="ui-02"></a> | State, trend, or series distinguished by hue alone; or text contrast below 4.5:1 / 3:1 | **Never color alone, never below WCAG**: pair color with an icon/label; flip to dark-on-tint when white-on-color fails contrast | Does every color signal have a second channel; does all text meet its floor? | B·r | [refactoring-ui sec-dont-rely-on-color-alone](../SOURCES.md#src-refactoring-ui) |
+| UI-03<a name="ui-03"></a> | Margin within a group equals or exceeds margin between groups | **Unambiguous spacing**: spacing signals grouping; space around a group must exceed space within it | Is every intra-group gap smaller than the surrounding inter-group gap? | S·r | [refactoring-ui sec-avoid-ambiguous-spacing](../SOURCES.md#src-refactoring-ui) |
+| UI-04<a name="ui-04"></a> | Text hierarchy varies only `font-size` across roles | **Size isn't everything**: weight and a 2–3-step grey ramp communicate importance better than size alone (↔ design [[COL-04]](design-aesthetics.md#col-04) rank by value before hue; ↔ ux [[VIZ-02]](interaction-ux.md#viz-02) give the critical attribute the most accurate free channel) | Could this hierarchy use weight or color instead of another size? | S·r | [refactoring-ui sec-size-isnt-everything](../SOURCES.md#src-refactoring-ui) |
+| UI-05<a name="ui-05"></a> | Grey text, or white/black at reduced opacity, over a colored/image background | **Same-hue de-emphasis**: grey/alpha on color looks disabled and bleeds; hand-pick a same-hue shade | Is de-emphasized text sitting on non-white via grey or alpha? | S·r | [refactoring-ui sec-dont-use-grey-text-on-colored-backgrounds](../SOURCES.md#src-refactoring-ui) |
+| UI-06<a name="ui-06"></a> | Destructive action styled as the big red primary button on a normal page | **Hierarchy over semantics**: destructive ≠ prominent; red-primary belongs on the confirmation step (↔ design [[COL-09]](design-aesthetics.md#col-09) thrift of accent: dense emphasis is noise; ↔ ux [[PERC-06]](interaction-ux.md#perc-06) reserve pop for the true target) | Is delete competing with the page's true primary action? | S·r | [refactoring-ui sec-semantics-are-secondary](../SOURCES.md#src-refactoring-ui) |
+| UI-07<a name="ui-07"></a> | Shade generated at use-site via lighten()/darken() or a new near-duplicate hex | **Define shades up front**: a fixed scale per color; on-the-fly derivation breeds near-identical variants | Does this shade exist in the palette, or is it invented inline? | S·w | [refactoring-ui sec-define-your-shades-up-front](../SOURCES.md#src-refactoring-ui) |
+| UI-08<a name="ui-08"></a> | Box-shadow values invented per component | **Elevation system**: a fixed shadow scale mapped to z-meaning, chosen by layer, not taste | Which elevation level is this, and is the shadow from the shared scale? | S·w | [refactoring-ui sec-use-shadows-to-convey-elevation](../SOURCES.md#src-refactoring-ui) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-ui -->
+
+**Sources for this section**
+
+- [refactoring-ui](../SOURCES.md#src-refactoring-ui)
+
+<!-- END GENERATED SECTION SOURCES fam-ui -->
 
 ## 21. RLSE: Release Readiness<a name="fam-rlse"></a>
 
@@ -454,15 +660,15 @@ never copying row bodies.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| RLSE-01<a name="rlse-01"></a> | release audited by a single reviewer or one flat checklist | **Non-overlapping lenses**: distinct threat models (UX/arch/QA/product/compliance) catch disjoint failure classes; checklists miss the adversarial layer (↔ biz [[STRAT-01]](business-marketing.md#strat-01) hang the decision on multiple independent models or refuse certainty) | Which lens produced zero findings; did it actually run? | S·p | [product-deploy-agents-fields ch-1](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-02<a name="rlse-02"></a> | ship argued past an unresolved gate verdict ("probably fine") | **Gates are not suggestions**: proximity makes the shipping team the worst judge of shipping; CONDITIONAL is red, not yellow (↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader does not grade on a curve; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies) | Is any gate unresolved, and who besides us says so? | B·r | [product-deploy-agents-fields ch-1](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-03<a name="rlse-03"></a> | audit or release review begins without stated invariants / "working correctly" criteria | **Invariants before audit**: explicit per-persona criteria convert judgment calls into pattern matches; violating a stated invariant is automatic P0 (↔ [[FORE-02]](epistemics.md#fore-02) a check with no resolution criterion cannot prove you wrong; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) scoped criteria make conformance falsifiable) | What does "working correctly" mean for this user, in writing? | S·p | [product-deploy-agents-fields ch-2](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-04<a name="rlse-04"></a> | UI diff ships a screen with states that merely render | **Undesigned state is a bug**: loading/empty/error/offline/first-time/edge-input each intentionally designed, incl. focus and announcements (↔ a11y [[A11Y-24]](accessibility.md#a11y-24); ↔ ml [[CAL-02]](ml-systems.md#cal-02) unknown is a valid designed result, not a forced label; ↔ ux [[NAV-08]](interaction-ux.md#nav-08) first-run and dead-end are entry points, not voids; ↔ ml [[HITL-07]](ml-systems.md#hitl-07) route the least-sure item to a human instead of guessing; ↔ biz [[STRAT-03]](business-marketing.md#strat-03) too-tough is a designed basket, not fake fluency; ↔ [[API-06]](engineering.md#api-06) empty match is a successful answer, not an error) | Which of the seven states did nobody design? | S·r | [product-deploy-agents-fields ch-3](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-05<a name="rlse-05"></a> | failure path leaves the user believing success | **Silent failure is the worst failure**: a crash is honest; silent data loss is a trust violation, P0 by definition (extends [[AGT-10]](engineering.md#agt-10), [[OBS-08]](engineering.md#obs-08) to user-facing data) | Can data appear saved here while not durable? | B·r | [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-06<a name="rlse-06"></a> | test plan covers happy path + malicious inputs only | **The adversarial user is in a hurry**: double-tap, force-quit, background mid-save aren't attacks, they're Tuesday; enumerate action × adverse condition × timing per flow step (↔ [[PROD-04]](business-marketing.md#prod-04) the adversarial audit and the kill-criterion both go hunting for the result that would kill the darling) | What happens at each step under kill/background/offline/token-expiry? | S·p | [product-deploy-agents-fields ch-5](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-07<a name="rlse-07"></a> | rollout plan goes 0→100%, or phases lack stop criteria | **Phased rollout is instrumentation**: the first 10% is production with a smaller blast radius; stop criteria (crash floor, flow-completion baseline) named before launch (↔ biz [[AIPX-06]](business-marketing.md#aipx-06) shadow then canary before cutover; ↔ biz [[PROD-03]](business-marketing.md#prod-03) cheapest production learning first) | What number, watched for how long, pauses this rollout? | S·p | [product-deploy-agents-fields ch-8](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-08<a name="rlse-08"></a> | release plan has no rollback section | **Rollback written before ship**: at 2am you execute, you don't design; must answer whether the old build can read the new build's data (↔ [[DATA-03]](engineering.md#data-03), backward direction; ↔ biz [[CLM-02]](business-marketing.md#clm-02) the safe phrasing costs little now, the aggressive claim costs orders of magnitude later; ↔ [[DATA-17]](engineering.md#data-17) weak isolation looks free at write time and surfaces as integrity loss later; ↔ [[DATA-18]](engineering.md#data-18) snapshot check-then-act is the underpriced irreversible concurrency bet; ↔ biz [[AIPX-09]](business-marketing.md#aipx-09) human/check layer is cheap when model output can drive irreversible harm) | If we revert at 50%, what happens to data the new build wrote? | B·p | [product-deploy-agents-fields ch-8](../SOURCES.md#src-product-deploy-agents-fields) |
-| RLSE-09<a name="rlse-09"></a> | expert/legal/clinical sign-off requested with a jargon document | **Plain-English expert gate**: exact quoted strings, specific yes/no questions, five-minute read, explicit "not your problem" section; jargon sign-off shifts liability without informing (↔ [[RLSE-02]](engineering.md#rlse-02) CONDITIONAL is red: proximity makes the shipping team the worst judge; ↔ [[AGT-08]](engineering.md#agt-08) rejection is the named contract to satisfy, not a cosmetic obstacle; ↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader checks the named contract literally; ↔ biz [[PROD-09]](business-marketing.md#prod-09) write the channel contract before the song; ↔ sec [[SECD-01]](security.md#secd-01) write what must not happen before choosing mechanisms; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim) | Could the expert answer without asking what a term means? | S·w | [product-deploy-agents-fields ch-8](../SOURCES.md#src-product-deploy-agents-fields) |
+| RLSE-01<a name="rlse-01"></a> | release audited by a single reviewer or one flat checklist | **Non-overlapping lenses**: distinct threat models (UX/arch/QA/product/compliance) catch disjoint failure classes; checklists miss the adversarial layer (↔ biz [[STRAT-01]](business-marketing.md#strat-01) hang the decision on multiple independent models or refuse certainty) | Which lens produced zero findings; did it actually run? | S·p | [bootstrap](../SOURCES.md#src-bootstrap) |
+| RLSE-02<a name="rlse-02"></a> | ship argued past an unresolved gate verdict ("probably fine") | **Gates are not suggestions**: proximity makes the shipping team the worst judge of shipping; CONDITIONAL is red, not yellow (↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader does not grade on a curve; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies) | Is any gate unresolved, and who besides us says so? | B·r | [release-it ch-18](../SOURCES.md#src-release-it) |
+| RLSE-03<a name="rlse-03"></a> | audit or release review begins without stated invariants / "working correctly" criteria | **Invariants before audit**: explicit per-persona criteria convert judgment calls into pattern matches; violating a stated invariant is automatic P0 (↔ [[FORE-02]](epistemics.md#fore-02) a check with no resolution criterion cannot prove you wrong; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) scoped criteria make conformance falsifiable) | What does "working correctly" mean for this user, in writing? | S·p | [bootstrap](../SOURCES.md#src-bootstrap) |
+| RLSE-04<a name="rlse-04"></a> | UI diff ships a screen with states that merely render | **Undesigned state is a bug**: loading/empty/error/offline/first-time/edge-input each intentionally designed, incl. focus and announcements (↔ a11y [[A11Y-24]](accessibility.md#a11y-24); ↔ ml [[CAL-02]](ml-systems.md#cal-02) unknown is a valid designed result, not a forced label; ↔ ux [[NAV-08]](interaction-ux.md#nav-08) first-run and dead-end are entry points, not voids; ↔ ml [[HITL-07]](ml-systems.md#hitl-07) route the least-sure item to a human instead of guessing; ↔ biz [[STRAT-03]](business-marketing.md#strat-03) too-tough is a designed basket, not fake fluency; ↔ [[API-06]](engineering.md#api-06) empty match is a successful answer, not an error) | Which of the seven states did nobody design? | S·r | [bootstrap](../SOURCES.md#src-bootstrap) |
+| RLSE-05<a name="rlse-05"></a> | failure path leaves the user believing success | **Silent failure is the worst failure**: a crash is honest; silent data loss is a trust violation, P0 by definition (extends [[AGT-10]](engineering.md#agt-10), [[OBS-08]](engineering.md#obs-08) to user-facing data) | Can data appear saved here while not durable? | B·r | [pragmatic-programmer ch-4](../SOURCES.md#src-pragmatic-programmer) |
+| RLSE-06<a name="rlse-06"></a> | test plan covers happy path + malicious inputs only | **The adversarial user is in a hurry**: double-tap, force-quit, background mid-save aren't attacks, they're Tuesday; enumerate action × adverse condition × timing per flow step (↔ [[PROD-04]](business-marketing.md#prod-04) the adversarial audit and the kill-criterion both go hunting for the result that would kill the darling) | What happens at each step under kill/background/offline/token-expiry? | S·p | [bootstrap](../SOURCES.md#src-bootstrap) |
+| RLSE-07<a name="rlse-07"></a> | rollout plan goes 0→100%, or phases lack stop criteria | **Phased rollout is instrumentation**: the first 10% is production with a smaller blast radius; stop criteria (crash floor, flow-completion baseline) named before launch (↔ biz [[AIPX-06]](business-marketing.md#aipx-06) shadow then canary before cutover; ↔ biz [[PROD-03]](business-marketing.md#prod-03) cheapest production learning first) | What number, watched for how long, pauses this rollout? | S·p | [software-architecture-in-practice ch-5](../SOURCES.md#src-software-architecture-in-practice) |
+| RLSE-08<a name="rlse-08"></a> | release plan has no rollback section | **Rollback written before ship**: at 2am you execute, you don't design; must answer whether the old build can read the new build's data (↔ [[DATA-03]](engineering.md#data-03), backward direction; ↔ biz [[CLM-02]](business-marketing.md#clm-02) the safe phrasing costs little now, the aggressive claim costs orders of magnitude later; ↔ [[DATA-17]](engineering.md#data-17) weak isolation looks free at write time and surfaces as integrity loss later; ↔ [[DATA-18]](engineering.md#data-18) snapshot check-then-act is the underpriced irreversible concurrency bet; ↔ biz [[AIPX-09]](business-marketing.md#aipx-09) human/check layer is cheap when model output can drive irreversible harm) | If we revert at 50%, what happens to data the new build wrote? | B·p | [designing-data-intensive-applications ch-4](../SOURCES.md#src-designing-data-intensive-applications) |
+| RLSE-09<a name="rlse-09"></a> | expert/legal/clinical sign-off requested with a jargon document | **Plain-English expert gate**: exact quoted strings, specific yes/no questions, five-minute read, explicit "not your problem" section; jargon sign-off shifts liability without informing (↔ [[RLSE-02]](engineering.md#rlse-02) CONDITIONAL is red: proximity makes the shipping team the worst judge; ↔ [[AGT-08]](engineering.md#agt-08) rejection is the named contract to satisfy, not a cosmetic obstacle; ↔ biz [[CLM-05]](business-marketing.md#clm-05) the hostile reader checks the named contract literally; ↔ biz [[PROD-09]](business-marketing.md#prod-09) write the channel contract before the song; ↔ sec [[SECD-01]](security.md#secd-01) write what must not happen before choosing mechanisms; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim) | Could the expert answer without asking what a term means? | S·w | [bootstrap](../SOURCES.md#src-bootstrap) |
 | RLSE-10<a name="rlse-10"></a> | An incident runbook can revert the application build but names no previous-good model artifact, or reverting the model requires shipping a code release | **The model is a separately revertible artifact**: pin a named previous-good model artifact and keep a restore path that does not depend on a code release, because the model can be the failing component while the binary is correct, and a recovery that requires a build lengthens every incident it is used in (the code-and-data side is [[RLSE-08]](engineering.md#rlse-08); exercising a claimed recovery path on a recurring drill against a recovery-time objective is [[RES-16]](engineering.md#res-16)) | Which model artifact do we revert to, and can it be restored without a code release? | S·p | [ml-test-score](../SOURCES.md#src-ml-test-score) |
 | RLSE-11<a name="rlse-11"></a> | build, deploy, migrate, or release step is a human click-path or wiki runbook executed more than once | **Don't use manual procedures**: people are not repeatable; script the procedure and preferably drive it from version control | Is this step automated, or will a human recreate it under stress? | S·p | [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer) |
 | RLSE-12<a name="rlse-12"></a> | green pipeline is followed by manual sign-offs or joint integration testing before release | **Pipeline scope = deployable unit**: if green does not mean no more work, the evaluation scope is wrong; widen it or decouple (↔ [[REF-14]](engineering.md#ref-14) unit ships only if tested without collaborators; ↔ [[TEST-10]](engineering.md#test-10) E2E is a supplement, not the evaluation strategy) | Would you deploy on green alone, and if not, what is missing from the pipeline? | S·p | [modern-software-engineering ch-14](../SOURCES.md#src-modern-software-engineering) |
@@ -470,3 +676,18 @@ never copying row bodies.
 | RLSE-14<a name="rlse-14"></a> | metric target or incentive is coverage % (or test count) without defect-removal efficiency, escape rate, or delivered-defect density | **DRE and escapes over coverage targets**: removal efficiency and post-release escapes measure the economic outcome a coverage target does not (strengthens [[TEST-11]](engineering.md#test-11) coverage is gameable; ↔ biz [[OPS-19]](business-marketing.md#ops-19) defect potential + DRE pair) | If coverage hit 100% and customers still file bugs, what number moved? | S·r | [software-development-patterns-antipatterns ch-11](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | RLSE-15<a name="rlse-15"></a> | project declares quality "done" at ship with no defined post-release defect comparison window against development-found defects | **90-day escape window for DRE**: compare development-found vs customer-found defects over ~90 days (30 days is too short for many major apps) | On what date do we compute DRE from real usage escapes? | S·p | [software-development-patterns-antipatterns ch-5](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | RLSE-16<a name="rlse-16"></a> | release/milestone status is green on calendar progress alone — no size remaining, requirements growth, or defect inventory trend | **Track size, creep, and defects with the date**: late cancel decisions destroy ROI; status without quality/size is how overruns hide | What size remains, how much grew, and what is the open defect inventory? | S·r | [software-development-patterns-antipatterns ch-14](../SOURCES.md#src-software-development-patterns-antipatterns) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-rlse -->
+
+**Sources for this section**
+
+- [bootstrap](../SOURCES.md#src-bootstrap)
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [ml-test-score](../SOURCES.md#src-ml-test-score)
+- [modern-software-engineering](../SOURCES.md#src-modern-software-engineering)
+- [pragmatic-programmer](../SOURCES.md#src-pragmatic-programmer)
+- [release-it](../SOURCES.md#src-release-it)
+- [software-architecture-in-practice](../SOURCES.md#src-software-architecture-in-practice)
+- [software-development-patterns-antipatterns](../SOURCES.md#src-software-development-patterns-antipatterns)
+
+<!-- END GENERATED SECTION SOURCES fam-rlse -->

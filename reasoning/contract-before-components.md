@@ -115,7 +115,9 @@ structure from banners and narrative.
 ## Evidence / source slugs
 
 - [`klf-the-manual`](../SOURCES.md#src-klf-the-manual): supports [PROD-09](../lexicons/business-marketing.md#prod-09)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [CLM-05](../lexicons/business-marketing.md#clm-05), [RLSE-09](../lexicons/engineering.md#rlse-09), [RLSE-02](../lexicons/engineering.md#rlse-02), [AGT-08](../lexicons/engineering.md#agt-08), [AGT-04](../lexicons/engineering.md#agt-04)
+- [`pragmatic-programmer`](../SOURCES.md#src-pragmatic-programmer): supports [AGT-08](../lexicons/engineering.md#agt-08)
+- [`release-it`](../SOURCES.md#src-release-it): supports [RLSE-02](../lexicons/engineering.md#rlse-02)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-05](../lexicons/business-marketing.md#clm-05), [RLSE-09](../lexicons/engineering.md#rlse-09), [AGT-04](../lexicons/engineering.md#agt-04)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-22](../lexicons/accessibility.md#a11y-22)
 - [`anderson-security-engineering`](../SOURCES.md#src-anderson-security-engineering): supports [SECD-01](../lexicons/security.md#secd-01)
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [FM-04](../lexicons/ml-systems.md#fm-04)

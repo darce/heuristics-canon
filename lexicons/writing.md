@@ -38,7 +38,7 @@ the source does not justify borrowing the row's tier as authority.
 
 **Contents**
 
-- [1. Diction & Word Choice<a name="fam-writ"></a>](#1-diction--word-choicea-namefam-writa)
+- [1. Diction & Word Choice](#fam-writ)
 - [2. Sentence Structure](#2-sentence-structure)
 - [3. Paragraph & Rhythm](#3-paragraph--rhythm)
 - [4. Tone & Stance](#4-tone--stance)
@@ -78,6 +78,14 @@ authorship or check sourcing).
 | WRIT-05<a name="writ-05"></a> | intensifier cluster (significant, crucial, pivotal, dynamic, evolving, broader, notable) stacked in one passage | **One claim, sourced**: five abstract intensifiers replace one concrete fact (↔ [[FORE-01]](epistemics.md#fore-01) vague words hide a scorable magnitude; ↔ biz [[CLM-04]](business-marketing.md#clm-04) adjectives are not evidence) | How many empty intensifiers are in this paragraph? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-06<a name="writ-06"></a> | elegant variation: the same subject renamed each mention to avoid repetition | **Repeat the precise term**: synonym-swapping blurs a technical referent (↔ eng [[NAME-04]](engineering.md#name-04) consistency beats local quality) | Did the noun change while the thing didn't? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-writ -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES fam-writ -->
+
 ## 2. Sentence Structure
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -91,6 +99,14 @@ authorship or check sourcing).
 | WRIT-13<a name="writ-13"></a> | trailing "-ing" pseudo-analysis (highlighting its importance, reflecting broader trends, underscoring its role) | **Cut or replace with a specific effect**: the participle attaches fake significance to a plain fact | Is the "-ing" clause falsifiable, or ceremonial? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-14<a name="writ-14"></a> | false range "from X to Y" where X and Y are not on any real scale | **List them plainly**: a true range has a meaningful middle | What lies between X and Y? If nothing, it's not a range | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 2-sentence-structure -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 2-sentence-structure -->
+
 ## 3. Paragraph & Rhythm
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -99,6 +115,15 @@ authorship or check sourcing).
 | WRIT-16<a name="writ-16"></a> | listicle in prose: "The first… The second… The third…" wrapping what is really a list | **Use a real list or real prose**: don't disguise a listicle as paragraphs | Is this a numbered list in a trench coat? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-17<a name="writ-17"></a> | one-point dilution: a single thesis restated many ways to feel comprehensive | **Cut to the one argument**: 800 words padded to 4000 adds nothing | Does this paragraph add a new point, or re-skin the last? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-18<a name="writ-18"></a> | dead metaphor: one figure beaten across the whole piece | **Introduce a figure once, then move on**: a useful metaphor does not need to be re-run in every section | How many times has this same image recurred? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 3-paragraph--rhythm -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 3-paragraph--rhythm -->
+
 ## 4. Tone & Stance
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -115,6 +140,14 @@ authorship or check sourcing).
 | WRIT-28<a name="writ-28"></a> | significance / media-coverage puffery (drew wide attention, a pivotal moment, widely praised) | **Concrete effect + named source, or omit**: routine facts framed as legacy is a padding tell (↔ biz [[CLM-04]](business-marketing.md#clm-04) adjectives are not evidence) | Who, specifically, and with what measurable effect? | S·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-29<a name="writ-29"></a> | closing paragraph is a generic challenges/future wrap-up that would fit any topic | **One real constraint, one real next step (or cut)**: the generic challenges/future paragraph fits any topic | Is this a real caveat or a template wrap-up? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 4-tone--stance -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 4-tone--stance -->
+
 ## 5. Formatting & Markup
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -127,6 +160,14 @@ authorship or check sourcing).
 | WRIT-35<a name="writ-35"></a> | excess boldface, title-case drift, decorative rules before every heading, skipped heading levels | **Emphasis and structure only where earned**: mechanical symmetry signals a template, not an author (↔ eng [[UI-01]](engineering.md#ui-01) one-off values re-litigate the scale; ↔ design [[COL-09]](design-aesthetics.md#col-09) thrift of accent) | Is this markup doing rhetorical work, or filling a mold? | J·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-36<a name="writ-36"></a> | table with no data need (vague high/medium/important cells, symmetry-only rows) | **Prose or a list instead**: force information into a table only when the cells carry distinct data | Does every cell hold a real, distinct value? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 5-formatting--markup -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 5-formatting--markup -->
+
 ## 6. Composition & Structure
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -136,12 +177,28 @@ authorship or check sourcing).
 | WRIT-39<a name="writ-39"></a> | historical-analogy stacking: rapid-fire company or tech-era name-drops for borrowed authority | **One apt example, cut the parade**: the list of famous names is authority theater (↔ biz [[STRAT-05]](business-marketing.md#strat-05) status-mediated desire is not independent evidence) | Is this evidence, or a roll call? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-40<a name="writ-40"></a> | content duplication: a section or paragraph repeated near-verbatim within one piece | **Deduplicate**: a dead giveaway of unedited long-form model output | Did I already write this passage? | B·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 6-composition--structure -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 6-composition--structure -->
+
 ## 7. Sourcing & Citation
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
 | WRIT-41<a name="writ-41"></a> | hollow or fabricated citations (invalid DOI/ISBN, refs that resolve to nothing, missing page numbers, tracking junk in URLs) | **Every citation resolves and is checkable**: a reference that looks complete but can't be verified is worse than none (↔ ml [[RAG-07]](ml-systems.md#rag-07) a citation must materially support its claim; ↔ ml [[PROV-01]](ml-systems.md#prov-01) every output walks back to its evidence) | Can a reader actually follow this to the source? | B·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-42<a name="writ-42"></a> | assistant-output leakage in finished prose (knowledge-cutoff disclaimers, `[insert source here]`, "this section can be expanded", tool tokens, "as of my last update", forced collaborative voice "we can now explore…") | **Strip all scaffolding**: template and tool residue is unmistakable machine debris | Is there any placeholder or disclaimer left in? | B·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 7-sourcing--citation -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 7-sourcing--citation -->
 
 ## 8. Detection Posture (meta)
 
@@ -151,6 +208,14 @@ authorship or check sourcing).
 | WRIT-44<a name="writ-44"></a> | editing pass that swaps the flagged phrase but leaves the underlying problem | **Fix the cause, not the phrase**: vague→source or cut; inflated→narrow the claim; decorative→simplify; synonym churn→one precise term; template residue→rewrite (↔ eng [[DBG-10]](engineering.md#dbg-10) fix the cause, not the symptom; ↔ ux [[HAI-02]](interaction-ux.md#hai-02) correction must reach the source) | Did I fix the sentence, or just launder the tell? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-45<a name="writ-45"></a> | an authorship check treats every stylistic tell as affirmative and ignores signs that point away | **Weigh counter-evidence against authorship claims**: pre-ChatGPT text, or text whose author can explain specific editorial choices, weighs against AI authorship (↔ [[WRIT-43]](writing.md#writ-43) a cluster is still scrutiny, not proof) | Is there pre-ChatGPT provenance, or can the author defend specific editorial choices? | J·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-46<a name="writ-46"></a> | detection or edit pass relies on historical tells (old refusal styles, abrupt cutoffs) that decay with model drift | **Prefer durable structural signals**: weight genericity, inflation, template structure, and citation sloppiness; historical phrase-level tells age out as models change (↔ [[WRIT-43]](writing.md#writ-43) cluster of durable classes, not one obsolete tell) | Am I scoring durable structure, or a tell that already aged out? | S·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 8-detection-posture-meta -->
+
+**Sources for this section**
+
+- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
+
+<!-- END GENERATED SECTION SOURCES 8-detection-posture-meta -->
 
 ## Cross-lexicon links
 

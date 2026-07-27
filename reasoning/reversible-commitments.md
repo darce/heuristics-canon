@@ -107,9 +107,9 @@ rollback plan, only invention.
 
 ## Evidence / source slugs
 
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [CLM-02](../lexicons/business-marketing.md#clm-02), [A11Y-25](../lexicons/accessibility.md#a11y-25), [RLSE-08](../lexicons/engineering.md#rlse-08)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-02](../lexicons/business-marketing.md#clm-02), [A11Y-25](../lexicons/accessibility.md#a11y-25)
 - [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [STRAT-14](../lexicons/business-marketing.md#strat-14)
-- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13)
+- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13), [RLSE-08](../lexicons/engineering.md#rlse-08)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-02](../lexicons/engineering.md#api-02)
 
 ## Non-claims

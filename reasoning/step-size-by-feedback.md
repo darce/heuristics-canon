@@ -114,7 +114,7 @@ missing kill criteria rather than step size (see
 - [`pragmatic-programmer`](../SOURCES.md#src-pragmatic-programmer): supports [REF-28](../lexicons/engineering.md#ref-28)
 - [`lean-ux`](../SOURCES.md#src-lean-ux): supports [PROD-03](../lexicons/business-marketing.md#prod-03)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-06](../lexicons/business-marketing.md#aipx-06)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [RLSE-07](../lexicons/engineering.md#rlse-07)
+- [`software-architecture-in-practice`](../SOURCES.md#src-software-architecture-in-practice): supports [RLSE-07](../lexicons/engineering.md#rlse-07)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [MLDATA-05](../lexicons/ml-systems.md#mldata-05)
 - [`reliable-machine-learning`](../SOURCES.md#src-reliable-machine-learning): supports [COST-14](../lexicons/ml-systems.md#cost-14)
 

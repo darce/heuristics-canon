@@ -21,7 +21,7 @@ complete the AA surface by POUR principle; §5 governs process and claims.
 
 **Contents**
 
-- [1. The Working Set (96% of shipped failures)<a name="fam-a11y"></a>](#1-the-working-set-96-of-shipped-failuresa-namefam-a11ya)
+- [1. The Working Set (96% of shipped failures)](#fam-a11y)
 - [2. Perceivable (beyond the working set)](#2-perceivable-beyond-the-working-set)
 - [3. Operable](#3-operable)
 - [4. Understandable & Robust](#4-understandable--robust)
@@ -59,6 +59,15 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-05<a name="a11y-05"></a> | page template or HTML shell in a diff | **Declare the language (3.1.1)**: `lang` on the document; mark language changes inline (3.1.2) | Does AT know how to pronounce this page? | B·w | [wcag22-accessibility sc-3.1.1](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-06<a name="a11y-06"></a> | status, trend, series, or validity distinguished by hue alone | **Second channel always (1.4.1)**: pair color with icon/label/weight/pattern (↔ eng [[UI-02]](engineering.md#ui-02): same rule, this row adds the criterion number and scan trigger) | Does the signal survive greyscale? | B·r | [wcag22-accessibility sc-1.4.1](../SOURCES.md#src-wcag22-accessibility) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-a11y -->
+
+**Sources for this section**
+
+- [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
+- [webaim-million](../SOURCES.md#src-webaim-million)
+
+<!-- END GENERATED SECTION SOURCES fam-a11y -->
+
 ## 2. Perceivable (beyond the working set)
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -67,6 +76,15 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-08<a name="a11y-08"></a> | layout reviewed only at desktop width / 100% zoom | **Reflow and resize (1.4.4/1.4.10/1.4.12)**: usable at 200% zoom and 320px width without 2-D scroll; survives user-forced text spacing; 2-D-essential content (maps, tables) exempt | What breaks at 320px and 200%? | S·r | [wcag22-accessibility sc-1.4.4](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-09<a name="a11y-09"></a> | video/audio content added | **Captions and alternatives (1.2.x)**: captions for prerecorded (A) and live (AA) audio; audio description for prerecorded video (AA); transcript for audio-only | Can this media be consumed deaf, or blind? | S·p | [wcag22-accessibility sc-1.2.2](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-10<a name="a11y-10"></a> | tooltip/popover appears on hover or focus | **Dismissible, hoverable, persistent (1.4.13)**: Esc dismisses, pointer can enter the popup, content stays until dismissed | Can the user read the tooltip without a steady hand? | S·w | [wcag22-accessibility sc-1.4.13](../SOURCES.md#src-wcag22-accessibility) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 2-perceivable-beyond-the-working-set -->
+
+**Sources for this section**
+
+- [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
+- [webaim-million](../SOURCES.md#src-webaim-million)
+
+<!-- END GENERATED SECTION SOURCES 2-perceivable-beyond-the-working-set -->
 
 ## 3. Operable
 
@@ -79,15 +97,31 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-15<a name="a11y-15"></a> | drag, swipe, multipoint, or path gesture added | **Single-pointer alternative (2.5.1/2.5.7)**: click/keyboard path for every gesture unless the gesture is essential | How does this work without a drag? | S·w | [wcag22-accessibility sc-2.5.1](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-16<a name="a11y-16"></a> | carousel, auto-updating region, or author-set time limit | **User's time, user's motion (2.2.1/2.2.2/2.3.1)**: pause/stop/hide for motion >5s, adjustable timeouts, nothing flashes >3×/s (↔ ux [[INT-10]](interaction-ux.md#int-10) continuous system change needs a user stop) | Who set this tempo: the user or us? | S·w | [wcag22-accessibility sc-2.2.1](../SOURCES.md#src-wcag22-accessibility) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 3-operable -->
+
+**Sources for this section**
+
+- [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
+
+<!-- END GENERATED SECTION SOURCES 3-operable -->
+
 ## 4. Understandable & Robust
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| A11Y-17<a name="a11y-17"></a> | form validation or error handling in a diff | **Errors name the field and the fix (3.3.1/3.3.3)**: detected errors identified in text at the field, corrections suggested; a bare "invalid input" toast fails (↔ product-deploy-agents-fields ch-3: specific, non-alarming, actionable) | Which field, what's wrong, how to fix: all in text? | S·w | [wcag22-accessibility sc-3.3.1](../SOURCES.md#src-wcag22-accessibility) |
+| A11Y-17<a name="a11y-17"></a> | form validation or error handling in a diff | **Errors name the field and the fix (3.3.1/3.3.3)**: detected errors identified in text at the field, corrections suggested; a bare "invalid input" toast fails | Which field, what's wrong, how to fix: all in text? | S·w | [wcag22-accessibility sc-3.3.1](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-18<a name="a11y-18"></a> | legal, financial, or data-destroying submission flow | **Reversible, checked, or confirmed (3.3.4)**: at least one of undo / validation-with-correction / confirmation step (↔ ux [[INT-07]](interaction-ux.md#int-07) preview before a costly commit; ↔ ux [[INT-09]](interaction-ux.md#int-09) reversible command stack) | Can one mis-tap destroy something permanent? | B·r | [wcag22-accessibility sc-3.3.4](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-19<a name="a11y-19"></a> | login/auth or multi-step form in a diff | **No cognitive gate (3.3.7/3.3.8)**: paste/autofill are the mechanisms that usually satisfy 3.3.8; blocking them with no alternative method fails; data entered once is never re-typed in the same process (↔ ux [[COG-02]](interaction-ux.md#cog-02) recognition and choosers beat pure recall) | Does a password manager complete this unaided? | S·r | [wcag22-accessibility sc-3.3.7](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-20<a name="a11y-20"></a> | focus or input triggers navigation/submission | **No surprise context change (3.2.1/3.2.2)**: focusing never changes context; input changes warn first | Did the user ask to go somewhere? | S·r | [wcag22-accessibility sc-3.2.1](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-21<a name="a11y-21"></a> | async result, toast, or counter updates without focus | **Announce status (4.1.3)**: live region/`role="status"` so AT hears what sighted users see (the accessible half of "every async op has visible progress") | Does a screen reader learn this happened? | S·w | [wcag22-accessibility sc-4.1.3](../SOURCES.md#src-wcag22-accessibility) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 4-understandable--robust -->
+
+**Sources for this section**
+
+- [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
+
+<!-- END GENERATED SECTION SOURCES 4-understandable--robust -->
 
 ## 5. Process & Claims
 
@@ -95,8 +129,8 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | --- | --- | --- | --- | --- | --- |
 | A11Y-22<a name="a11y-22"></a> | "accessible" / "WCAG compliant" in copy, contract, or VPAT | **Scoped conformance claims**: version + level + page scope + date; conformance attaches to full pages and *every step* of a process; one failing step falsifies the sentence (↔ biz [[CLM-01]](business-marketing.md#clm-01): a conformance claim is a claim-as-product with EAA/ADA force) | Could one failing page falsify this sentence? | B·g | [wcag22-accessibility sec-conformance](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-23<a name="a11y-23"></a> | accessibility verified by automated scan only | **Scanner-pass is the floor of the floor**: automation detects a minority of criteria (<4.1% of pages actually conform); keyboard walk + AT pass on primary flows required (↔ biz [[PROD-12]](business-marketing.md#prod-12): the worst-day user includes the AT user) | What did a human verify that axe cannot? | S·r | [webaim-million 2026](../SOURCES.md#src-webaim-million) |
-| A11Y-24<a name="a11y-24"></a> | screen states enumerated in a design/release review | **Every state accessible (process de-conformance)**: one inaccessible step de-conforms the process; on PDA's state matrix, loading, empty, error, offline each keep focus management, announcements, and contrast, so an accessible happy path with an inaccessible error state fails the process (↔ eng [[RLSE-04]](engineering.md#rlse-04) both fail when a state ships that was rendered but never designed) | Where does focus go when this errors? | S·r | [wcag22-accessibility sec-conformance](../SOURCES.md#src-wcag22-accessibility) + [product-deploy-agents-fields ch-3](../SOURCES.md#src-product-deploy-agents-fields) |
-| A11Y-25<a name="a11y-25"></a> | accessibility work postponed as post-launch polish | **Retrofit costs more than the hedge**: the safe side (native elements, labels, contrast tokens) costs ~zero at write time and a rewrite later; same cost asymmetry as regulatory claims (↔ biz [[CLM-02]](business-marketing.md#clm-02) both price the cheap precaution now against the expensive reversal later) | What does doing this now actually cost? | S·p | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
+| A11Y-24<a name="a11y-24"></a> | screen states enumerated in a design/release review | **Every state accessible (process de-conformance)**: one inaccessible step de-conforms the process, so loading, empty, error and offline each have to keep focus management, announcements, and contrast: an accessible happy path with an inaccessible error state fails as a whole (↔ eng [[RLSE-04]](engineering.md#rlse-04) both fail when a state ships that was rendered but never designed) | Where does focus go when this errors? | S·r | [wcag22-accessibility sec-conformance](../SOURCES.md#src-wcag22-accessibility) |
+| A11Y-25<a name="a11y-25"></a> | accessibility work postponed as post-launch polish | **Retrofit costs more than the hedge**: the safe side (native elements, labels, contrast tokens) costs ~zero at write time and a rewrite later; same cost asymmetry as regulatory claims (↔ biz [[CLM-02]](business-marketing.md#clm-02) both price the cheap precaution now against the expensive reversal later) | What does doing this now actually cost? | S·p | [bootstrap](../SOURCES.md#src-bootstrap) |
 | A11Y-26<a name="a11y-26"></a> | org or customer base touches Ontario | **AODA nexus check**: 1+ Ontario employee attaches duties (training, documents, web); 20+ employees or public sector adds mandatory compliance reports every three years (next deadline 31 December 2026); fines run per-day to a $100,000/day maximum for a corporation, and officers are personally liable | Do we have Ontario nexus, and who owns the filing? | S·p | [aoda-iasr](../SOURCES.md#src-aoda-iasr) |
 | A11Y-27<a name="a11y-27"></a> | binding WCAG version taken from a vendor page or consultant summary | **Regulation text over vendor summary**: O. Reg. 191/11 binds WCAG 2.0 Level AA; secondary sources are not authority for the binding version; build to 2.2 AA (a superset that satisfies 2.0), claim per the regulation's own citation | What does the regulation itself cite? | S·r | [aoda-iasr sec-14](../SOURCES.md#src-aoda-iasr) |
 | A11Y-28<a name="a11y-28"></a> | accessibility or UI-automation path recovers structure from screenshots because view hierarchy / a11y tags are missing or incomplete | **Pixel parse is proposal, not certificate**: when structure is inferred from pixels, treat the hierarchy as an assistive proposal for navigation/tooling and still require human AT verification, because detection and grouping errors leave residual barriers and the model does not certify name quality, states, or other POUR criteria (↔ [[A11Y-23]](accessibility.md#a11y-23) both refuse to certify from a surface the assistive contract does not actually expose) | What residual detection/group errors remain, and what did a human AT pass still check? | J·r | [screen-parsing](../SOURCES.md#src-screen-parsing) |
@@ -125,6 +159,23 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-51<a name="a11y-51"></a> | expanded (extended) description is in use, so the production pauses to carry a description the gaps could not hold | **Pre-teach inside the pause**: when a pause slot carries the description, place it before the content it explains rather than after playback resumes, so listeners who cannot see receive the information at or near the moment sighted viewers do, because a slot that describes content already played delivers the explanation after the comprehension it was meant to support (bounded: this orders description *within* a chosen pause slot only — concurrent inline cues still start at or after their event under [[A11Y-42]](accessibility.md#a11y-42), and this is not licence to spoil a reveal; pause mode itself is chosen under [[A11Y-40]](accessibility.md#a11y-40)/[[A11Y-41]](accessibility.md#a11y-41)) | In each expanded slot, does the description precede the content it covers? | S·w | [dcmp-description-key](../SOURCES.md#src-dcmp-description-key) |
 | A11Y-52<a name="a11y-52"></a> | on-screen text is needed for comprehension, or subtitles carry speech the soundtrack does not | **Voice text by pattern, subtitles verbatim**: establish and reuse one signal that written words are being read (a set phrase or a distinct tone) and read subtitled speech word for word rather than summarising it, because an unmarked switch leaves the listener unable to tell the screen's words from the describer's, and paraphrase silently rewrites a channel the viewer was entitled to in full (↔ [[A11Y-44]](accessibility.md#a11y-44) owns whether critical text survives the fit; this row owns how it is voiced once kept) | Is every read of on-screen text marked by the same signal, and is subtitled speech verbatim? | S·w | [dcmp-description-key](../SOURCES.md#src-dcmp-description-key) |
 | A11Y-53<a name="a11y-53"></a> | a non-speech gap is available in a pass where description is being authored | **Not every gap is budget**: leave mood-bearing silence unfilled instead of spending it on optional detail, because atmosphere is program content the description is there to convey, and a track that describes into every available window replaces the experience it was meant to provide access to (↔ [[A11Y-41]](accessibility.md#a11y-41) prefers such windows when a cue must be placed — this row is the counterweight: available is not the same as spendable; ↔ [[A11Y-43]](accessibility.md#a11y-43) ranks what to say when the gap is spent) | Which silences did we judge as content and deliberately leave empty? | J·r | [dcmp-description-key](../SOURCES.md#src-dcmp-description-key) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 5-process--claims -->
+
+**Sources for this section**
+
+- [accessibility-report-generation](../SOURCES.md#src-accessibility-report-generation)
+- [aoda-iasr](../SOURCES.md#src-aoda-iasr)
+- [atag20](../SOURCES.md#src-atag20)
+- [bootstrap](../SOURCES.md#src-bootstrap)
+- [dcmp-description-key](../SOURCES.md#src-dcmp-description-key)
+- [rescribe-audio-descriptions](../SOURCES.md#src-rescribe-audio-descriptions)
+- [screen-parsing](../SOURCES.md#src-screen-parsing)
+- [wcag-em-2](../SOURCES.md#src-wcag-em-2)
+- [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
+- [webaim-million](../SOURCES.md#src-webaim-million)
+
+<!-- END GENERATED SECTION SOURCES 5-process--claims -->
 
 ## 6. Cross-lexicon amplifications
 

@@ -136,7 +136,7 @@ Autonomy marketing outruns the tested envelope and causes harm.
 - [`video-pipeline-practice`](../SOURCES.md#src-video-pipeline-practice): supports [GRPH-18](../lexicons/graph-theory.md#grph-18)
 - [`llm-security-playbook`](../SOURCES.md#src-llm-security-playbook): supports [SEC-01](../lexicons/security.md#sec-01)
 - [`human-centered-ai`](../SOURCES.md#src-human-centered-ai): supports [HAI-05](../lexicons/interaction-ux.md#hai-05)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [CLM-03](../lexicons/business-marketing.md#clm-03)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-03](../lexicons/business-marketing.md#clm-03)
 - [`designing-ai-interfaces`](../SOURCES.md#src-designing-ai-interfaces): supports [AIPX-13](../lexicons/business-marketing.md#aipx-13)
 - [`team-topologies`](../SOURCES.md#src-team-topologies): supports [TEAM-01](../lexicons/engineering.md#team-01)
 - [`just-enough-software-architecture`](../SOURCES.md#src-just-enough-software-architecture): supports [ARCH-13](../lexicons/engineering.md#arch-13)

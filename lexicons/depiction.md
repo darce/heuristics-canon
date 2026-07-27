@@ -34,8 +34,8 @@ recorded in `rule-ledger.json`.
 
 **Contents**
 
-- [1. ATTRIB: Attribution & identity claims in description<a name="fam-attrib"></a>](#1-attrib-attribution--identity-claims-in-descriptiona-namefam-attriba)
-- [2. BOUND: Descriptive boundaries & the limits of the frame<a name="fam-bound"></a>](#2-bound-descriptive-boundaries--the-limits-of-the-framea-namefam-bounda)
+- [1. ATTRIB: Attribution & identity claims in description](#fam-attrib)
+- [2. BOUND: Descriptive boundaries & the limits of the frame](#fam-bound)
 - [Cross-lexicon links](#cross-lexicon-links)
 - [Consumption](#consumption)
 
@@ -80,6 +80,21 @@ it appears.
 | ATTRIB-09<a name="attrib-09"></a> | A person held in bondage is described or indexed under the name of the person who enslaved them, because that is how the record was filed | **Enslaved person's name is the entry**: a name by which an enslaved or formerly enslaved person identified is recoverable -> make it the primary entry, even when only a first name survives, and keep enslaver names as supplemental identifying data -> filing a person under their enslaver reproduces the record-keeping economy that treated them as property, and keyword search already reaches enslaver names held elsewhere in the description ↔ [[ATTRIB-05]](depiction.md#attrib-05) | Is the retrieval key this person's own name, or their enslaver's? | S·d | [anti-racist-description-resources](../SOURCES.md#src-anti-racist-description-resources) |
 | ATTRIB-10<a name="attrib-10"></a> | Materials documenting oppressed or marginalized people carry rich description of who made the records and thin naming of who appears in them, though the names are recoverable from the records | **Name subjects to creator depth**: subject names present in the material -> describe subjects at least to the extent creators are described, subject to living-person and surveillance risk -> provenance-shaped effort makes the documented findable and the documented-about unfindable, so the imbalance is a retrieval decision rather than a records limitation ↔ [[ATTRIB-05]](depiction.md#attrib-05) ↔ [[ATTRIB-06]](depiction.md#attrib-06) | Are subjects named as findably as creators where the records support it? | S·e | [anti-racist-description-resources](../SOURCES.md#src-anti-racist-description-resources) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-attrib -->
+
+**Sources for this section**
+
+- [anti-racist-description-resources](../SOURCES.md#src-anti-racist-description-resources)
+- [azoulay-civil-contract-of-photography](../SOURCES.md#src-azoulay-civil-contract-of-photography)
+- [barthes-image-music-text](../SOURCES.md#src-barthes-image-music-text)
+- [berger-understanding-a-photograph](../SOURCES.md#src-berger-understanding-a-photograph)
+- [berger-ways-of-seeing](../SOURCES.md#src-berger-ways-of-seeing)
+- [dcmp-description-key](../SOURCES.md#src-dcmp-description-key)
+- [sontag-on-photography](../SOURCES.md#src-sontag-on-photography)
+- [sontag-regarding-the-pain-of-others](../SOURCES.md#src-sontag-regarding-the-pain-of-others)
+
+<!-- END GENERATED SECTION SOURCES fam-attrib -->
+
 ## 2. BOUND: Descriptive boundaries & the limits of the frame<a name="fam-bound"></a>
 
 Where a description must stop: what the frame excludes, what the caption supplies
@@ -95,6 +110,19 @@ boundary; ATTRIB owns the identity claim inside it.
 | BOUND-03<a name="bound-03"></a> | Event caption or official purpose, threat-prevented, or routine-procedure language is present while high-salience control, body, or force cues are omitted | **Frame before institutional story**: accompanying event or purpose text given -> inventory visible relations of force first; put event, purpose, or justification in attributed EDITORIAL voice second -> blocks caption and purpose indifference to the photo ↔ epi [[BIAS-02]](epistemics.md#bias-02) | Does the text report what the picture shows before what the institution says it means? | S·d | [azoulay-civil-contract-of-photography](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
 | BOUND-04<a name="bound-04"></a> | Degrading undress or forced pose; text either restages the invasive gaze or suppresses all injury address | **Refuse restage, refuse erasure**: photograph shows humiliating forced undress or pose -> address the injury without unmediated restaging of the degrading gaze; refuse spectacle that reenacts and refuse total suppression that leaves injury unaddressed -> neither magnifies the ritual of humiliation nor abandons the field to pornographic fantasy | Does this description reenact the ritual of humiliation for the spectator, or erase the injury entirely? | J·d | [azoulay-civil-contract-of-photography](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
 | BOUND-05<a name="bound-05"></a> | Caption, alt, or description uses rank or itinerary language such as emphasizes, focus, main, or ordered walkthrough about image content | ***Emphase* is not image privilege**: if rank or order comes from the sentence, not from a visible crop, contrast, scale, or other pictorial cue -> state named traits as editorial selection or plain inventory; never report that hierarchy as a property of the photograph -> non-seeing users get a false map of what the image privileges ↔ a11y [[A11Y-02]](accessibility.md#a11y-02) | Is every emphasis word licensed by a pictorial cue, or only by word order? | S·d | [barthes-systeme-de-la-mode](../SOURCES.md#src-barthes-systeme-de-la-mode) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-bound -->
+
+**Sources for this section**
+
+- [azoulay-civil-contract-of-photography](../SOURCES.md#src-azoulay-civil-contract-of-photography)
+- [barthes-image-music-text](../SOURCES.md#src-barthes-image-music-text)
+- [barthes-systeme-de-la-mode](../SOURCES.md#src-barthes-systeme-de-la-mode)
+- [berger-ways-of-seeing](../SOURCES.md#src-berger-ways-of-seeing)
+- [sontag-on-photography](../SOURCES.md#src-sontag-on-photography)
+- [sontag-regarding-the-pain-of-others](../SOURCES.md#src-sontag-regarding-the-pain-of-others)
+
+<!-- END GENERATED SECTION SOURCES fam-bound -->
 
 ## Cross-lexicon links
 

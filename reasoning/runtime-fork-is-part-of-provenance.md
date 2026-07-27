@@ -109,7 +109,7 @@ While a required runtime fork is in play:
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [PROV-09](../lexicons/ml-systems.md#prov-09), [SERVE-07](../lexicons/ml-systems.md#serve-07)
 - [`ml-design-patterns`](../SOURCES.md#src-ml-design-patterns): supports [SERVE-08](../lexicons/ml-systems.md#serve-08)
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [RLSE-10](../lexicons/engineering.md#rlse-10)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
+- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [RLSE-12](../lexicons/engineering.md#rlse-12)
 
 ## Non-claims

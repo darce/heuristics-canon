@@ -101,7 +101,7 @@ everyone to look away.
 - [`art-of-unix-programming`](../SOURCES.md#src-art-of-unix-programming): supports [AGT-15](../lexicons/engineering.md#agt-15)
 - [`unix-programming-environment`](../SOURCES.md#src-unix-programming-environment): supports [AGT-15](../lexicons/engineering.md#agt-15)
 - [`clean-code-cookbook`](../SOURCES.md#src-clean-code-cookbook): supports [REF-37](../lexicons/engineering.md#ref-37)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [RLSE-05](../lexicons/engineering.md#rlse-05)
+- [`pragmatic-programmer`](../SOURCES.md#src-pragmatic-programmer): supports [RLSE-05](../lexicons/engineering.md#rlse-05)
 
 ## Non-claims
 

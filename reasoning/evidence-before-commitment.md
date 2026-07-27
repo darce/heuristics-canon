@@ -141,7 +141,7 @@ mechanism; do not re-own correction or source-of-truth repair here (see
 - [`human-in-the-loop-ml`](../SOURCES.md#src-human-in-the-loop-ml): supports [HITL-05](../lexicons/ml-systems.md#hitl-05)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-05](../lexicons/epistemics.md#fore-05)
 - [`working-effectively-with-legacy-code`](../SOURCES.md#src-working-effectively-with-legacy-code): supports [TEST-03](../lexicons/engineering.md#test-03)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [AGT-04](../lexicons/engineering.md#agt-04)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [AGT-04](../lexicons/engineering.md#agt-04)
 - [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [GTM-01](../lexicons/business-marketing.md#gtm-01), [GTM-02](../lexicons/business-marketing.md#gtm-02)
 - [`lean-ux`](../SOURCES.md#src-lean-ux): supports [PROD-05](../lexicons/business-marketing.md#prod-05)
 - [`trustworthy-controlled-experiments`](../SOURCES.md#src-trustworthy-controlled-experiments): supports [EXP-01](../lexicons/epistemics.md#exp-01)

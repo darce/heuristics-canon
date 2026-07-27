@@ -135,7 +135,7 @@ inspectable evidence package, not only a named disconfirmer (see
 - [`why-programs-fail`](../SOURCES.md#src-why-programs-fail): supports [DBG-11](../lexicons/engineering.md#dbg-11)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-06](../lexicons/engineering.md#test-06)
 - [`anderson-security-engineering`](../SOURCES.md#src-anderson-security-engineering): supports [SECD-07](../lexicons/security.md#secd-07)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [CLM-05](../lexicons/business-marketing.md#clm-05)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-05](../lexicons/business-marketing.md#clm-05)
 
 ## Non-claims
 

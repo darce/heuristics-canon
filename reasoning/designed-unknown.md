@@ -119,7 +119,7 @@ needs evidence.
 - [`adaface`](../SOURCES.md#src-adaface): supports [EMB-04](../lexicons/ml-systems.md#emb-04)
 - [`human-in-the-loop-ml`](../SOURCES.md#src-human-in-the-loop-ml): supports [HITL-07](../lexicons/ml-systems.md#hitl-07)
 - [`human-centered-ai`](../SOURCES.md#src-human-centered-ai): supports [HAI-04](../lexicons/interaction-ux.md#hai-04)
-- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [RLSE-04](../lexicons/engineering.md#rlse-04)
+- [`bootstrap`](../SOURCES.md#src-bootstrap): supports [RLSE-04](../lexicons/engineering.md#rlse-04)
 - [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [NAV-08](../lexicons/interaction-ux.md#nav-08)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-01](../lexicons/epistemics.md#fore-01), [FORE-08](../lexicons/epistemics.md#fore-08)
 - [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-43](../lexicons/writing.md#writ-43)

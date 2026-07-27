@@ -41,14 +41,14 @@ source.
 
 **Contents**
 
-- [1. PERC: Perception, Gestalt grouping, attention<a name="fam-perc"></a>](#1-perc-perception-gestalt-grouping-attentiona-namefam-perca)
-- [2. COG: Memory, cognitive load, decision cost<a name="fam-cog"></a>](#2-cog-memory-cognitive-load-decision-costa-namefam-coga)
-- [3. NAV: Information architecture, wayfinding, information scent<a name="fam-nav"></a>](#3-nav-information-architecture-wayfinding-information-scenta-namefam-nava)
-- [4. INT: Feedback, direct manipulation, undo, state transitions<a name="fam-int"></a>](#4-int-feedback-direct-manipulation-undo-state-transitionsa-namefam-inta)
-- [5. FORM: Data entry, validation, recovery, destructive actions<a name="fam-form"></a>](#5-form-data-entry-validation-recovery-destructive-actionsa-namefam-forma)
-- [6. HAI: Human-AI interaction, calibrated reliance, correction<a name="fam-hai"></a>](#6-hai-human-ai-interaction-calibrated-reliance-correctiona-namefam-haia)
-- [7. VIZ: Data-to-channel encoding, glyph design, colour-for-data, comparison<a name="fam-viz"></a>](#7-viz-data-to-channel-encoding-glyph-design-colour-for-data-comparisona-namefam-viza)
-- [8. UXR: Usability research, metrics, and validation<a name="fam-uxr"></a>](#8-uxr-usability-research-metrics-and-validationa-namefam-uxra)
+- [1. PERC: Perception, Gestalt grouping, attention](#fam-perc)
+- [2. COG: Memory, cognitive load, decision cost](#fam-cog)
+- [3. NAV: Information architecture, wayfinding, information scent](#fam-nav)
+- [4. INT: Feedback, direct manipulation, undo, state transitions](#fam-int)
+- [5. FORM: Data entry, validation, recovery, destructive actions](#fam-form)
+- [6. HAI: Human-AI interaction, calibrated reliance, correction](#fam-hai)
+- [7. VIZ: Data-to-channel encoding, glyph design, colour-for-data, comparison](#fam-viz)
+- [8. UXR: Usability research, metrics, and validation](#fam-uxr)
 - [9. Cross-lexicon links](#9-cross-lexicon-links)
 - [10. Consumption](#10-consumption)
 
@@ -84,6 +84,14 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | PERC-06<a name="perc-06"></a> | A target must be found among many distractors that differ only by fine shape or detail | **Make it pop**: encode the target with weight, colour, motion, or gross shape the periphery can detect, or visual search stays linear in the number of items (↔ eng [[UI-02]](engineering.md#ui-02), a11y non-colour signalling) | Does the target pop without a foveal scan? | S·w | [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind) |
 | PERC-07<a name="perc-07"></a> | A strong interrupt (modal, blink, beep, confirm) fires on a high-frequency path | **Don't habituate alarms**: reserve strong attention-getting methods for rare, critical, irreversible events and suppress the routine, or users learn to dismiss the one that matters (↔ [[HAI-13]](interaction-ux.md#hai-13) the AI-verify-cue instance: a standing "verify" cue on every fluent output is the alarm that habituates, so the last error detector goes quiet; ↔ eng [[OBS-04]](engineering.md#obs-04) a signal that always fires goes quiet in the reader, [[AGT-16]](engineering.md#agt-16) constant confirmation trains the reflex press) | Is this interrupt rarer and worse than the routine noise around it? | B·p | [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-perc -->
+
+**Sources for this section**
+
+- [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind)
+
+<!-- END GENERATED SECTION SOURCES fam-perc -->
+
 ## 2. COG: Memory, cognitive load, decision cost<a name="fam-cog"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -92,6 +100,14 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | COG-02<a name="cog-02"></a> | A frequent action requires a typed command or buried recall with no chooser | **Recognition over recall**: let a broad audience see-or-hear-and-choose rather than recall-and-type; pure recall means non-discovery (↔ security; an authentication scheme that overloads recall gets written down or worked around) | Can a new user choose without remembering a string? | S·w | [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind) |
 | COG-03<a name="cog-03"></a> | The success path depends on the user noticing non-goal promo or chrome | **Design to the goal filter**: put goal-scented actions on the path and never require noticing orthogonal content; perception is filtered by the user's current goal, so off-goal cues are systematically missed | Does every required cue map to words of the user's goal? | B·p | [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind) |
 | COG-04<a name="cog-04"></a> | A high-stakes choice is worded as only gains or only losses, or forces mental calculation | **Support deliberate comparison**: present a neutral or dual frame side by side and compute the comparison for the user; a one-sided frame reverses the preference the user would reflectively hold (↔ [Principle 13]; ↔ [[GTM-01]](business-marketing.md#gtm-01) only a costly action is demand evidence before inventory commit; ↔ [[TEST-03]](engineering.md#test-03) pin actual behaviour before the edit commits a new contract; ↔ [[AIPX-01]](business-marketing.md#aipx-01) ship the heuristic baseline before the ML commitment) | Can the deliberate mind compare options without re-wording tricks? | B·p | [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-cog -->
+
+**Sources for this section**
+
+- [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind)
+
+<!-- END GENERATED SECTION SOURCES fam-cog -->
 
 ## 3. NAV: Information architecture, wayfinding, information scent<a name="fam-nav"></a>
 
@@ -109,6 +125,15 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | NAV-10<a name="nav-10"></a> | A large catalog or content product offers only search or only browse on entry | **Feature, Search, and Browse**: a large item set needs all three entry modes, or known-item and exploratory users each lose half their find strategies | Can both a known-item and an exploratory user start without help? | S·p | [designing-interfaces](../SOURCES.md#src-designing-interfaces) |
 | NAV-11<a name="nav-11"></a> | A shareable or restorable view (map, filter, doc) does not round-trip through the URL | **Deep Links encode place and state**: put location and critical view params in the URL (excluding preference-stomping state), or the view cannot be shared or restored | Does opening the URL restore the same place and view? | S·w | [designing-interfaces](../SOURCES.md#src-designing-interfaces) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-nav -->
+
+**Sources for this section**
+
+- [designing-interfaces](../SOURCES.md#src-designing-interfaces)
+- [designing-with-the-mind-in-mind](../SOURCES.md#src-designing-with-the-mind-in-mind)
+
+<!-- END GENERATED SECTION SOURCES fam-nav -->
+
 ## 4. INT: Feedback, direct manipulation, undo, state transitions<a name="fam-int"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -125,6 +150,16 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | INT-10<a name="int-10"></a> | AI or automation mutates content or state with no status, predictable next step, or stop | **Status–predict–stop**: automated action exposes its status, the predictable next step, and a cancel/undo; prefer an optional suggestion over a silent auto-commit, or the user cannot intervene (↔ [[HAI-04]](interaction-ux.md#hai-04) for AI effectors) | Can the user see state, predict the next action, and stop it? | B·w | [human-centered-ai](../SOURCES.md#src-human-centered-ai) |
 | INT-11<a name="int-11"></a> | recovery from a bad or partial generation is full-restart-only (delete and re-prompt), discarding valid work | **Refine over restart**: offer regenerate-in-place, edit-and-retry, and section-level rewrite before a full reset, and on a soft or partial failure preserve the good prefix instead of wiping it (↔ [[INT-09]](interaction-ux.md#int-09) undo stack, [[HAI-12]](interaction-ux.md#hai-12) output is a proposal) | Does recovery preserve the part that already works? | S·w | [designing-ai-interfaces](../SOURCES.md#src-designing-ai-interfaces) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-int -->
+
+**Sources for this section**
+
+- [designing-ai-interfaces](../SOURCES.md#src-designing-ai-interfaces)
+- [designing-interfaces](../SOURCES.md#src-designing-interfaces)
+- [human-centered-ai](../SOURCES.md#src-human-centered-ai)
+
+<!-- END GENERATED SECTION SOURCES fam-int -->
+
 ## 5. FORM: Data entry, validation, recovery, destructive actions<a name="fam-form"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -136,6 +171,16 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | FORM-05<a name="form-05"></a> | A validation error shows in a modal, a separate page, or a toast, with no field link, or only after full submit | **Inline actionable errors**: show the error at its field (which, why, how to fix) as soon as it is knowable, and keep it visible while editing, or recovery fails (↔ a11y [[A11Y-17]](accessibility.md#a11y-17) errors name the field and the fix) | Can the user fix the error without memorizing a vanished message? | B·w | [designing-interfaces](../SOURCES.md#src-designing-interfaces) |
 | FORM-06<a name="form-06"></a> | High-volume discrete input is mouse-only or uses non-native widgets | **Keyboard-complete, native controls**: make discrete entry keyboard-completable and use native semantic controls for the input type, or throughput and quality drop (↔ a11y [[A11Y-11]](accessibility.md#a11y-11) keyboard walk; ↔ a11y [[A11Y-12]](accessibility.md#a11y-12) native first) | Can a user complete this without the mouse, on native controls? | S·w | [human-in-the-loop-ml](../SOURCES.md#src-human-in-the-loop-ml) |
 | FORM-07<a name="form-07"></a> | An exclusive category control (e.g. binary gender) selects which norm template, risk model, or gallery scores the same person | **Norm-template category gate**: when a UI, schema, or operator step requires an exclusive category and that choice loads the normative template used to score or match the same person, require a documented non-matching path (multi-template score, abstain, or human review) and a test-matrix row for bodies or identities outside each template, because people who fit no selected norm absorb false-risk flags and secondary-search or rejection cost (↔ ml [[CAL-02]](ml-systems.md#cal-02) unknown is a valid result; ↔ ml [[FAIR-01]](ml-systems.md#fair-01) the downstream disaggregated audit of the gate's cost) | Does this category field choose a template that can fail people who do not match it? | S·w | [design-justice §intro](../SOURCES.md#src-design-justice) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-form -->
+
+**Sources for this section**
+
+- [design-justice](../SOURCES.md#src-design-justice)
+- [designing-interfaces](../SOURCES.md#src-designing-interfaces)
+- [human-in-the-loop-ml](../SOURCES.md#src-human-in-the-loop-ml)
+
+<!-- END GENERATED SECTION SOURCES fam-form -->
 
 ## 6. HAI: Human-AI interaction, calibrated reliance, correction<a name="fam-hai"></a>
 
@@ -160,6 +205,19 @@ cite `↔ ui/a11y/grph [X]` rather than restating them.
 | HAI-17<a name="hai-17"></a> | A review screen shows one stored reference against the item under review while the store holds several independent captures of the same entity | **Every reference the store holds**: when a human is asked whether two observations are the same entity and the store holds more than one independent capture of the claimed entity, render a reference set spanning the available capture times and conditions instead of a single stored image, because one reference is a single sample of an entity that varies within itself: the true entity is rejected when the lone reference is old or unlike it, and an impostor is accepted when one flattering reference is all there was to compare against (↔ ml [[EMB-02]](ml-systems.md#emb-02) the machine-side twin; one observation must not define the identity; ↔ [[HAI-01]](interaction-ux.md#hai-01) the reviewer reaches the decisive evidence in one action) | How many references does the store hold, and how many did the screen render? | S·w | [forensic-face-matching](../SOURCES.md#src-forensic-face-matching) |
 | HAI-18<a name="hai-18"></a> | A control that trains, reweights, or changes what the system will do later fires, the screen state is unchanged, and no copy names the future effect | **Name the deferred effect**: when a control's only effect is on future system behaviour, state the direction of that change in the interface at the moment the control fires, because an action with no perceptible result reads as a no-op: the user stops using the control and the correction stream the model learns from dries up at its source (↔ biz [[AIPX-03]](business-marketing.md#aipx-03) this control is where the next label comes from; ↔ [[PERC-05]](interaction-ux.md#perc-05) post-action feedback the user cannot perceive is feedback that did not happen; ↔ [[HAI-02]](interaction-ux.md#hai-02) there is a consequence to state only where the correction actually reaches the source) | After this control fires, what on screen tells the user what will be different next time? | J·w | [guidelines-human-ai-interaction](../SOURCES.md#src-guidelines-human-ai-interaction) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-hai -->
+
+**Sources for this section**
+
+- [bootstrap](../SOURCES.md#src-bootstrap)
+- [designing-ai-interfaces](../SOURCES.md#src-designing-ai-interfaces)
+- [forensic-face-matching](../SOURCES.md#src-forensic-face-matching)
+- [guidelines-human-ai-interaction](../SOURCES.md#src-guidelines-human-ai-interaction)
+- [human-centered-ai](../SOURCES.md#src-human-centered-ai)
+- [human-in-the-loop-ml](../SOURCES.md#src-human-in-the-loop-ml)
+
+<!-- END GENERATED SECTION SOURCES fam-hai -->
+
 ## 7. VIZ: Data-to-channel encoding, glyph design, colour-for-data, comparison<a name="fam-viz"></a>
 
 Governs how evidence is *drawn*: which visual channel carries which data type, how accurately a quantity is read, when a glyph should fuse or separate its variables, how to highlight and layer, and how to lay out comparison. Builds on `PERC` (can the eye see it) rather than restating it; borders `GRPH` (layout/partition algorithms) and `A11Y` (never colour alone). It does **not** own uncertainty display: that is `HAI-08`.
@@ -182,6 +240,15 @@ Governs how evidence is *drawn*: which visual channel carries which data type, h
 | VIZ-14<a name="viz-14"></a> | A detailed comparison across many states is delivered only as multiframe animation the viewer must remember | **Small multiples over animation**: show aligned, same-encoding partitions side by side for detailed multi-state comparison and reserve animation for transitions, or change blindness hides the differences (Munzner Ch6.5/Ch12.3.2; ↔ cog [[COG-01]](interaction-ux.md#cog-01)) | Can two non-adjacent states be compared without replaying the animation? | S·p | [visualization-analysis-design-munzner](../SOURCES.md#src-visualization-analysis-design-munzner) |
 | VIZ-15<a name="viz-15"></a> | Coordinated or overview–detail views do not share an encoding or linked highlighting, or partitions are unaligned | **Coordinate multiple views**: share at least one encoding (especially a linked-highlight colour) and align partitions across related views, so a set selected in one view is traceable in the others (Munzner Ch12.3) | Selecting a set in one view, does the same set light up in the others? | S·w | [visualization-analysis-design-munzner](../SOURCES.md#src-visualization-analysis-design-munzner) |
 | VIZ-16<a name="viz-16"></a> | The named marks a stated visual query must compare require multi-panel or multi-screen jumps (large saccades at the intended viewing size) | **Compact the visual query**: place the marks one query compares within a compact region so fixations stay short, except in maps or networks where space itself encodes the data, or search turns serial and secondary marks are missed (Ware G5.1, searchlight/UFOV; ↔ perc [[PERC-05]](interaction-ux.md#perc-05)) | Are the marks for one comparison within a compact fixation neighbourhood? | S·p | [information-visualization-ware](../SOURCES.md#src-information-visualization-ware) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-viz -->
+
+**Sources for this section**
+
+- [information-visualization-ware](../SOURCES.md#src-information-visualization-ware)
+- [visualization-analysis-design-munzner](../SOURCES.md#src-visualization-analysis-design-munzner)
+
+<!-- END GENERATED SECTION SOURCES fam-viz -->
 
 ## 8. UXR: Usability research, metrics, and validation<a name="fam-uxr"></a>
 
@@ -206,6 +273,16 @@ Governs *what to measure, how to collect it without biasing it, how many partici
 | UXR-15<a name="uxr-15"></a> | A decision deck leads with one composite UX score and no component metrics or weights | **Show the composite's components**: document a combined UX score's components, scales, and weights and always show the per-metric breakdown beside it, or a weighted "win" hides a collapse in a critical dimension (↔ hai [[HAI-08]](interaction-ux.md#hai-08); ↔ [[UXR-03]](interaction-ux.md#uxr-03) the metric must be able to decide the goal; ↔ [[AIPX-04]](business-marketing.md#aipx-04) aggregate accuracy clearing while a slice fails; ↔ [[SEC-12]](security.md#sec-12) clean accuracy is the number paid for, not the backdoor) | Can we see which dimension drives the combined score? | S·r | [measuring-the-ux-albert-tullis](../SOURCES.md#src-measuring-the-ux-albert-tullis) |
 | UXR-16<a name="uxr-16"></a> | An inclusion claim rests on personas, journey maps, or disability simulation while the participant or team roster has no matching lived experience | **Stand-in is not inclusion**: when a plan claims to serve or include a cohort under disparity risk, do not count designer-authored personas or disability simulation as inclusion evidence; require a named participant, co-designer, or accountable representative with that lived experience in framing or validation (or drop the inclusion claim), because stand-ins objectify assumptions and miss failures only lived experience surfaces (↔ [[UXR-14]](interaction-ux.md#uxr-14) n is not lived-experience match; ↔ biz [[PROD-06]](business-marketing.md#prod-06) recruit to prove the persona exists) | Does any roster name match the persona attributes we claim to include? | J·r | [design-justice ch-2](../SOURCES.md#src-design-justice) |
 | UXR-17<a name="uxr-17"></a> | A user story, persona, or acceptance criterion says only "user" / "everyone" with no product-relevant attributes | **Name the unmarked default**: when a human-facing path is specified without product-relevant attributes (language, body, device, legal status, or other axes the product uses), write the assumed default user and add at least one out-of-default acceptance case per in-scope axis (or list the axis as an explicit non-goal), because unmarked defaults calibrate the system to the privileged imagined user and leave non-default cohorts untested (↔ [[UXR-02]](interaction-ux.md#uxr-02) abstraction before validation; ↔ biz [[PROD-12]](business-marketing.md#prod-12) a requirements doc is not the operational user) | Who is the happy-path user, and which out-of-default case is in the test matrix? | J·p | [design-justice ch-1](../SOURCES.md#src-design-justice) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-uxr -->
+
+**Sources for this section**
+
+- [design-justice](../SOURCES.md#src-design-justice)
+- [measuring-the-ux-albert-tullis](../SOURCES.md#src-measuring-the-ux-albert-tullis)
+- [visualization-analysis-design-munzner](../SOURCES.md#src-visualization-analysis-design-munzner)
+
+<!-- END GENERATED SECTION SOURCES fam-uxr -->
 
 ## 9. Cross-lexicon links
 

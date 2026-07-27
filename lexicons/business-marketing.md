@@ -11,14 +11,14 @@ the claim behind it.
 
 **Contents**
 
-- [1. Strategy & Bets<a name="fam-strat"></a>](#1-strategy--betsa-namefam-strata)
-- [2. Product & Validation<a name="fam-prod"></a>](#2-product--validationa-namefam-proda)
-- [3. AI-Product Craft<a name="fam-aipx"></a>](#3-ai-product-crafta-namefam-aipxa)
-- [4. Go-to-Market & Distribution<a name="fam-gtm"></a>](#4-go-to-market--distributiona-namefam-gtma)
-- [5. Negotiation & Sales Conversations<a name="fam-neg"></a>](#5-negotiation--sales-conversationsa-namefam-nega)
-- [6. Operations & Incentives<a name="fam-ops"></a>](#6-operations--incentivesa-namefam-opsa)
-- [7. Bootstrap Brand Economics<a name="fam-boot"></a>](#7-bootstrap-brand-economicsa-namefam-boota)
-- [8. Claims & Regulatory Surface<a name="fam-clm"></a>](#8-claims--regulatory-surfacea-namefam-clma)
+- [1. Strategy & Bets](#fam-strat)
+- [2. Product & Validation](#fam-prod)
+- [3. AI-Product Craft](#fam-aipx)
+- [4. Go-to-Market & Distribution](#fam-gtm)
+- [5. Negotiation & Sales Conversations](#fam-neg)
+- [6. Operations & Incentives](#fam-ops)
+- [7. Bootstrap Brand Economics](#fam-boot)
+- [8. Claims & Regulatory Surface](#fam-clm)
 - [9. Cross-source tensions worth keeping](#9-cross-source-tensions-worth-keeping)
 - [Consumption](#consumption)
 
@@ -57,12 +57,25 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | STRAT-10<a name="strat-10"></a> | vendor offers free work for equity/rights or "I'll intro the majors" | **Keep the rights; hire the services**: flattery trades are how spikes lose their only real money | Who owns the IP if this works? | B·s | [klf-the-manual](../SOURCES.md#src-klf-the-manual) |
 | STRAT-11<a name="strat-11"></a> | pressure to average two strong opposed options | **Do not average opposed goods**: the middle can be worse than either pole; name the dimension each option optimizes and repackage or choose | What dimension makes each pole right, and is there a package better than 50/50? | S·s | [never-split-the-difference](../SOURCES.md#src-never-split-the-difference) |
 | STRAT-12<a name="strat-12"></a> | market price/hype spike used as validation of quality | **Price ≠ value**: intrinsic math over Mr. Market mood | What is the value if the quote were unavailable for a year? | S·s | [poor-charlies-almanack sec-price-value](../SOURCES.md#src-poor-charlies-almanack) |
-| STRAT-13<a name="strat-13"></a> | comparing options by revenue alone | **Relative income**: dollars without time/mobility are a false wealth score | What is the per-founder-hour value, and which levers do we control? | S·s | [four-hour-workweek ch-1](../SOURCES.md#src-four-hour-workweek) |
+| STRAT-13<a name="strat-13"></a> | comparing options by revenue alone | **Relative income**: dollars without time/mobility are a false wealth score | What is the per-founder-hour value, and which levers do we control? | S·s | [four-hour-workweek ch-2](../SOURCES.md#src-four-hour-workweek) |
 | STRAT-14<a name="strat-14"></a> | big reversible decision frozen by dread | **Fear-setting**: named worst cases become repair plans; vague fear freezes (↔ epi [[NDM-02]](epistemics.md#ndm-02) pre-mortem names the failure modes before commit; ↔ eng [[RLSE-08]](engineering.md#rlse-08) write the recovery before ship) | Worst case, repair path, and the 10-year cost of inaction? | S·s | [four-hour-workweek ch-3](../SOURCES.md#src-four-hour-workweek) |
 | STRAT-15<a name="strat-15"></a> | leaders/deciders carry no downside | **Ownership society**: stake in success and failure for whoever decides | What do decision-makers lose if this fails? | B·s | [technological-republic ch-18](../SOURCES.md#src-technological-republic) |
 | STRAT-16<a name="strat-16"></a> | competitive or positioning brief treats a remote aspirational model and a same-segment rival as the same kind of reference | **Name the mediation**: classify the model as remote (spheres do not touch; rivalry for the object is impossible; imitation may be open and declared) vs same-sphere (shared market; concurrent desire; the model is also the obstacle; imitation is usually denied); strategy and messaging differ by which one it is (↔ [[STRAT-05]](business-marketing.md#strat-05) audit mediated desire once the type is named) | Could we and the model actually compete for the same object this quarter, or is the model outside our sphere of possibles? | S·s | [girard-mensonge-romantique](../SOURCES.md#src-girard-mensonge-romantique) |
 | STRAT-17<a name="strat-17"></a> | research plan or persona work treats stated "I want X" as autonomous preference with no probe for who models X as desirable | **Borrowed-desire filter**: treat a stated "I want X" as possibly desire copied from a prestige model until non-mediated evidence (willingness to pay under model-absent framing, revealed behaviour, plain functional need) separates object-intrinsic demand from prestige-mediated demand (↔ [[STRAT-05]](business-marketing.md#strat-05) hide the model and re-test the want) | Would they still want this if the prestige model's desire were hidden? | S·p | [girard-mensonge-romantique](../SOURCES.md#src-girard-mensonge-romantique) |
 | STRAT-18<a name="strat-18"></a> | brand or positioning claims radical originality while the feature or narrative checklist is peer-parity, or the team shows unusually sharp scorn for "copycats" | **Denied imitation**: under same-sphere rivalry the most exact imitation is the most vigorously denied; originality rhetoric plus a peer-parity feature checklist, or scorn for "copycats", is a cue to audit the hidden model, not proof of autonomy (↔ [[STRAT-05]](business-marketing.md#strat-05) mediated desire is not independent evidence; ↔ [[STRAT-16]](business-marketing.md#strat-16) same-sphere mediation is the denial regime) | Who is the model we refuse to name, and what of theirs are we shipping? | J·g | [girard-mensonge-romantique](../SOURCES.md#src-girard-mensonge-romantique) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-strat -->
+
+**Sources for this section**
+
+- [four-hour-workweek](../SOURCES.md#src-four-hour-workweek)
+- [girard-mensonge-romantique](../SOURCES.md#src-girard-mensonge-romantique)
+- [klf-the-manual](../SOURCES.md#src-klf-the-manual)
+- [never-split-the-difference](../SOURCES.md#src-never-split-the-difference)
+- [poor-charlies-almanack](../SOURCES.md#src-poor-charlies-almanack)
+- [technological-republic](../SOURCES.md#src-technological-republic)
+
+<!-- END GENERATED SECTION SOURCES fam-strat -->
 
 ## 2. Product & Validation<a name="fam-prod"></a>
 
@@ -84,6 +97,17 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | PROD-14<a name="prod-14"></a> | UI quality never revisited after v1 | **UX debt is debt**: track and pay down like tech debt | Where does the current journey diverge from the ideal? | J·p | [lean-ux ch-17](../SOURCES.md#src-lean-ux) |
 | PROD-15<a name="prod-15"></a> | backlog of untested ideas | **HPC triage**: test Q1 (high value, high risk), build Q2 (high value, low risk), trash Q4 (high risk, low value) (↔ [[PROD-03]](business-marketing.md#prod-03) cheapest learning for the Q1 path; ↔ [[PROD-04]](business-marketing.md#prod-04) kill when triage or evidence says so) | High value *and* high risk, or just loud? | S·p | [lean-ux ch-10](../SOURCES.md#src-lean-ux) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-prod -->
+
+**Sources for this section**
+
+- [klf-the-manual](../SOURCES.md#src-klf-the-manual)
+- [lean-ux](../SOURCES.md#src-lean-ux)
+- [poor-charlies-almanack](../SOURCES.md#src-poor-charlies-almanack)
+- [technological-republic](../SOURCES.md#src-technological-republic)
+
+<!-- END GENERATED SECTION SOURCES fam-prod -->
+
 ## 3. AI-Product Craft<a name="fam-aipx"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -104,12 +128,21 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | AIPX-15<a name="aipx-15"></a> | next sprint is "try another architecture" | **Error-analysis drives work**: top-k and slices assign the next tasks; no blind architecture thrash (↔ [[AIPX-04]](business-marketing.md#aipx-04) slices name the failure modes that now get tasks) | What concrete failure mode are we fixing? | S·p | [building-ml-powered-applications ch-5](../SOURCES.md#src-building-ml-powered-applications) |
 | AIPX-16<a name="aipx-16"></a> | multi-step autonomous workflow | **Early draft plan + step control**: show the scaffold early and allow stop, edit, or redirect mid-flight (↔ ux [[HAI-04]](interaction-ux.md#hai-04) activate-operate-override; ↔ [[AIPX-11]](business-marketing.md#aipx-11) user must detect and steer when the system cannot) | Can the user stop, edit, or redirect mid-flight? | S·p | [designing-ai-interfaces sec-exposing-planning](../SOURCES.md#src-designing-ai-interfaces) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-aipx -->
+
+**Sources for this section**
+
+- [building-ml-powered-applications](../SOURCES.md#src-building-ml-powered-applications)
+- [designing-ai-interfaces](../SOURCES.md#src-designing-ai-interfaces)
+
+<!-- END GENERATED SECTION SOURCES fam-aipx -->
+
 ## 4. Go-to-Market & Distribution<a name="fam-gtm"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
 | GTM-01<a name="gtm-01"></a> | "users said they'd buy" without money | **Ask them to buy**: only paid intent validates (↔ ux [[UXR-03]](interaction-ux.md#uxr-03) a metric that cannot decide the goal is the wrong number; stated intent cannot decide paid demand; ↔ [[STRAT-02]](business-marketing.md#strat-02) evidence before the inventory commitment) | What costly action (purchase, preorder, deposit) proves demand? | B·g | [four-hour-workweek ch-10](../SOURCES.md#src-four-hour-workweek) |
-| GTM-02<a name="gtm-02"></a> | building capability/inventory pre-demand | **Micro-test the offer**: measure conversion at target price before committing | Can we measure conversion before we build? | B·g | [four-hour-workweek ch-10](../SOURCES.md#src-four-hour-workweek) |
+| GTM-02<a name="gtm-02"></a> | building capability/inventory pre-demand | **Micro-test the offer**: measure conversion at target price before committing | Can we measure conversion before we build? | B·g | [four-hour-workweek sec-micro-test](../SOURCES.md#src-four-hour-workweek) |
 | GTM-03<a name="gtm-03"></a> | product idea without a reachable tribe | **Niche-first**: market membership before invention | Which group do we already understand that spends and is reachable affordably? | S·g | [four-hour-workweek ch-9](../SOURCES.md#src-four-hour-workweek) |
 | GTM-04<a name="gtm-04"></a> | plan waits on a major platform/partner for distribution | **Distribution-as-product via service stack**: rent the infrastructure under your own label (↔ eng [[REF-15]](engineering.md#ref-15) every hard-coded dependency is a forfeited exit) | Can we rent the muscle without selling the company? | S·g | [klf-the-manual](../SOURCES.md#src-klf-the-manual) |
 | GTM-05<a name="gtm-05"></a> | awareness funded before conversion infrastructure | **Conversion path before vanity press**: reach the ranking and conversion nodes, then press | Who gets us heard *and* who writes the ranking signal? | S·g | [klf-the-manual](../SOURCES.md#src-klf-the-manual) |
@@ -121,6 +154,16 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | GTM-11<a name="gtm-11"></a> | no reply after a written touch | **Rotate the format**: audio/video/other channel after 5–7 days, not bump #2 | Which untried door remains? | S·g | [linkedin-messaging-guide ch-6](../SOURCES.md#src-linkedin-messaging-guide) |
 | GTM-12<a name="gtm-12"></a> | pipeline counted as quota-matching opportunities | **Inverse close-rate pipeline**: 2–4× closes as live opps; always prospecting | Do we have the multiple? | B·o | [linkedin-messaging-guide ch-27](../SOURCES.md#src-linkedin-messaging-guide) |
 | GTM-13<a name="gtm-13"></a> | packaging/stunts multiply after the product converts | **Bare-product test**: if it works without packaging stunts, stop funding lore | Would this still win without the stunt budget? | J·g | [klf-the-manual](../SOURCES.md#src-klf-the-manual) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-gtm -->
+
+**Sources for this section**
+
+- [four-hour-workweek](../SOURCES.md#src-four-hour-workweek)
+- [klf-the-manual](../SOURCES.md#src-klf-the-manual)
+- [linkedin-messaging-guide](../SOURCES.md#src-linkedin-messaging-guide)
+
+<!-- END GENERATED SECTION SOURCES fam-gtm -->
 
 ## 5. Negotiation & Sales Conversations<a name="fam-neg"></a>
 
@@ -136,6 +179,15 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | NEG-08<a name="neg-08"></a> | "they're irrational" | **Search for hidden constraints**: unknown interests or information often make an "irrational" move rational | What unknown constraint would make their move rational? | J·s | [never-split-the-difference](../SOURCES.md#src-never-split-the-difference) |
 | NEG-09<a name="neg-09"></a> | deadlock on story or principles | **Seek ownership, not courtesy agreement**: restate the counterpart's facts, stakes, and emotions until they confirm the account as their own rather than merely ending the discussion (↔ [[NEG-04]](business-marketing.md#neg-04) restatement tests ownership) | Did they claim the summary as their own? | S·g | [never-split-the-difference](../SOURCES.md#src-never-split-the-difference) |
 | NEG-10<a name="neg-10"></a> | need safe disagreement or a cold open | **Make refusal safe at the opening**: use an autonomy-preserving question that allows no instead of a yes-trap that invites counterfeit agreement (↔ [[NEG-07]](business-marketing.md#neg-07) loss-framed reopen when silence is the problem) | Can the counterpart refuse without social cost? | S·g | [never-split-the-difference](../SOURCES.md#src-never-split-the-difference) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-neg -->
+
+**Sources for this section**
+
+- [never-split-the-difference](../SOURCES.md#src-never-split-the-difference)
+
+<!-- END GENERATED SECTION SOURCES fam-neg -->
+
 ## 6. Operations & Incentives<a name="fam-ops"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -145,7 +197,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | OPS-03<a name="ops-03"></a> | vendor/agency advice coincides with their upsell | **Incentive-caused-bias discount**: especially fear advice that's good for the advisor | Who gets paid if we say yes? | S·o | [poor-charlies-almanack sec-tendency-1-reward](../SOURCES.md#src-poor-charlies-almanack) |
 | OPS-04<a name="ops-04"></a> | only good news reaches the operator | **Welcome bad news promptly**: kill messenger-shooting structurally | What bad news arrived last, and who brought it safely? | S·o | [poor-charlies-almanack sec-tendency-10-association](../SOURCES.md#src-poor-charlies-almanack) |
 | OPS-05<a name="ops-05"></a> | hiring or automating a mess | **Eliminate before automate/delegate**: never scale waste | What can we delete before we build or pay? | B·o | [four-hour-workweek ch-8](../SOURCES.md#src-four-hour-workweek) |
-| OPS-06<a name="ops-06"></a> | calendar full, outcomes flat | **80/20 elimination**: cut the sources of 80% of pain; clone the 20% of gain | Which 20% creates the profit, and which creates the misery? | B·o | [four-hour-workweek ch-5](../SOURCES.md#src-four-hour-workweek) |
+| OPS-06<a name="ops-06"></a> | calendar full, outcomes flat | **80/20 elimination**: cut the sources of 80% of pain; clone the 20% of gain | Which 20% creates the profit, and which creates the misery? | B·o | [four-hour-workweek sec-pareto-80-20](../SOURCES.md#src-four-hour-workweek) |
 | OPS-07<a name="ops-07"></a> | endless inputs while shipping stalls | **Low-information diet**: just-in-time inputs; attention is inventory | Will I use this immediately, or is it just-in-case? | S·o | [four-hour-workweek ch-6](../SOURCES.md#src-four-hour-workweek) |
 | OPS-08<a name="ops-08"></a> | founder is the bottleneck after sales exist | **Management by absence**: written authority and rules beat heroics (↔ [[OPS-13]](business-marketing.md#ops-13) who/what/when/where/why or rewrite; ↔ eng [[AGT-07]](engineering.md#agt-07) externalize at discovery before compaction; ↔ des [[BRND-12]](design-aesthetics.md#brnd-12) systemize taste so the brand outlives the founder) | What written rule would let this run without me for 30 days? | S·o | [four-hour-workweek ch-11](../SOURCES.md#src-four-hour-workweek) |
 | OPS-09<a name="ops-09"></a> | launch team is a committee with >2 equal votes | **One decision owner**: a single rudder; factions kill timelines | Who can say no without a meeting? | S·o | [klf-the-manual](../SOURCES.md#src-klf-the-manual) |
@@ -154,7 +206,7 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | OPS-12<a name="ops-12"></a> | hiring/partnering on charisma | **Record over presence**: underweight the interview, overweight the track record | What would the dossier say with the charm muted? | S·o | [poor-charlies-almanack sec-tendency-12-self-regard](../SOURCES.md#src-poor-charlies-almanack) |
 | OPS-13<a name="ops-13"></a> | order/plan omits rationale | **Braun why-rule**: who/what/when/where/why or rewrite (↔ eng [[ARCH-07]](engineering.md#arch-07) context, decision, and consequences must outlive the author) | Why would a smart skeptic comply? | S·o | [poor-charlies-almanack sec-talk-2](../SOURCES.md#src-poor-charlies-almanack) |
 | OPS-14<a name="ops-14"></a> | multi-year custom program vs market product | **Commercial-first gate**: buy before greenfield when a suitable commercial item exists; require a written reject of the market option | What commercial item did we formally reject, and why? | S·o | [technological-republic ch-13](../SOURCES.md#src-technological-republic) |
-| OPS-15<a name="ops-15"></a> | work expands to fill the week | **Parkinson deadline**: short clear deadlines force essentials; tasks swell with the time allotted (↔ [[OPS-06]](business-marketing.md#ops-06) pair with 80/20 elimination of the non-essentials) | If this were due in 2 hours, what would I still do? | S·o | [four-hour-workweek ch-5](../SOURCES.md#src-four-hour-workweek) |
+| OPS-15<a name="ops-15"></a> | work expands to fill the week | **Parkinson deadline**: short clear deadlines force essentials; tasks swell with the time allotted (↔ [[OPS-06]](business-marketing.md#ops-06) pair with 80/20 elimination of the non-essentials) | If this were due in 2 hours, what would I still do? | S·o | [four-hour-workweek sec-parkinson](../SOURCES.md#src-four-hour-workweek) |
 | OPS-16<a name="ops-16"></a> | plan or status reports feature/coding capacity with no line for defect repair, canceled-work drag, or legacy bugfix | **Wastage-visible capacity**: put find/fix and cancel risk in the capacity model — coding days are often the minority of the year | Where are the bug-repair and cancel days in this plan? | S·o | [software-development-patterns-antipatterns ch-2](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | OPS-17<a name="ops-17"></a> | plan, KPI, or benchmark uses LOC/KLOC as the primary productivity or quality normalizer | **Function-point economics over LOC**: LOC penalizes high-level languages, hides requirements/design defects, and varies wildly by counting rules | What size unit still works if we rewrite in a denser language? | S·o | [software-development-patterns-antipatterns ch-5](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | OPS-18<a name="ops-18"></a> | quality report claims improvement because cost-per-defect dropped while defect volume fell | **Ban cost-per-defect as quality proof**: fixed verification costs make unit cost rise as bugs disappear — use delivered defects per size and defect-removal efficiency | Did delivered defects per size unit fall, or only cost per remaining bug? | S·o | [software-development-patterns-antipatterns ch-5](../SOURCES.md#src-software-development-patterns-antipatterns) |
@@ -163,6 +215,18 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | OPS-21<a name="ops-21"></a> | large-work cost/schedule is a single manual expert estimate with no parametric model and no reference-class benchmark | **Parametric + benchmark estimates for large work**: manual estimates go optimistic as size grows; suit-class failures share this pattern (↔ epi [[FORE-05]](epistemics.md#fore-05) outside view) | Where is the parametric (or reference-class) estimate that can be wrong on paper? | S·o | [software-development-patterns-antipatterns ch-10](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | OPS-22<a name="ops-22"></a> | "maintenance" budget or team KPI merges production defect repair with enhancements/renovation | **Split geriatric work kinds**: repair, enhancement, and renovation have different requirements, tests, and economics; aging code needs entropy/error-prone-module care | Which dollars are defect repair vs new feature vs structural renovation? | S·o | [software-development-patterns-antipatterns ch-13](../SOURCES.md#src-software-development-patterns-antipatterns) |
 | OPS-23<a name="ops-23"></a> | greenfield or major rewrite at scale targets hand-built custom artifacts with ~0% certified reuse across requirements/design/code/tests | **Certified reuse as productivity ceiling breaker**: method tweaks top out ~15%; multi-artifact certified reuse is the order-of-magnitude lever | What percent of this delivery is certified reused vs custom? | J·o | [software-development-patterns-antipatterns ch-2](../SOURCES.md#src-software-development-patterns-antipatterns) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-ops -->
+
+**Sources for this section**
+
+- [four-hour-workweek](../SOURCES.md#src-four-hour-workweek)
+- [klf-the-manual](../SOURCES.md#src-klf-the-manual)
+- [poor-charlies-almanack](../SOURCES.md#src-poor-charlies-almanack)
+- [software-development-patterns-antipatterns](../SOURCES.md#src-software-development-patterns-antipatterns)
+- [technological-republic](../SOURCES.md#src-technological-republic)
+
+<!-- END GENERATED SECTION SOURCES fam-ops -->
 
 ## 7. Bootstrap Brand Economics<a name="fam-boot"></a>
 
@@ -183,17 +247,33 @@ A new rule from a lived outcome enters at tier J with the outcome as its provena
 | BOOT-11<a name="boot-11"></a> | scope changes mid-delivery | **Renegotiate on change**: new deliverable, new deal; silence re-prices you at zero | Did terms change without a new price? | B·o | [porn-work sec-consenting](../SOURCES.md#src-porn-work) |
 | BOOT-12<a name="boot-12"></a> | "just refuse bad clients" advice | **Stratified refusal power**: build the alternate stream before moralizing about walking away | Who in this market can actually walk? | J·s | [porn-work sec-economics-hustle](../SOURCES.md#src-porn-work) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-boot -->
+
+**Sources for this section**
+
+- [porn-work](../SOURCES.md#src-porn-work)
+
+<!-- END GENERATED SECTION SOURCES fam-boot -->
+
 ## 8. Claims & Regulatory Surface<a name="fam-clm"></a>
 
 > Source: Jason Fields, *Product Deploy Agents* (CC BY 4.0; jasonpfields.com, @fasonista).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| CLM-01<a name="clm-01"></a> | user-facing copy describes a capability in a regulated domain | **Claims are products**: the same capability framed two ways lives in opposite regulatory universes ("supports stress awareness" vs "treats anxiety disorder"; "educational content" vs "investment advice") | Which side of the line does a *literal* reading land on? | B·g | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
-| CLM-02<a name="clm-02"></a> | stronger claim proposed because it converts better | **The cost asymmetry is absolute**: the safe side costs a softer verb or a hedge; crossing costs orders of magnitude; no aggressive claim is worth the exposure (↔ [[AIPX-09]](business-marketing.md#aipx-09) high-stakes accept needs a check layer; ↔ eng [[RLSE-08]](engineering.md#rlse-08) write the rollback before ship; ↔ eng [[DATA-17]](engineering.md#data-17) weak isolation looks free and costs integrity later; ↔ sec [[SEC-04]](security.md#sec-04) narrow scope now, not after the jailbreak) | What does the cautious phrasing actually lose? | B·g | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
-| CLM-03<a name="clm-03"></a> | privacy policy (or ToS) and implementation drift apart | **The policy is a contract**: every statement is a promise; audit claim-by-claim; usually the policy is the stale side; never ship them in contradiction (↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim; ↔ [[AIPX-13]](business-marketing.md#aipx-13) synthetic labeled as human is a boundary the system does not hold; ↔ sec [[SEC-01]](security.md#sec-01) trust that changes at every crossing; ↔ eng [[ARCH-13]](engineering.md#arch-13) a property left to "everyone will be careful" is only perceived; ↔ ux [[HAI-14]](interaction-ux.md#hai-14) disclose the synthetic hand; ↔ eng [[NAME-03]](engineering.md#name-03) names that lie about the type) | Which policy sentence does this diff falsify? | B·o | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
-| CLM-04<a name="clm-04"></a> | "encrypted", "compliant", "secure", "accessible" as bare adjectives | **Adjectives are not evidence**: the full claim is mechanism + location + failure behavior; anything less is assertion (↔ ux [[HAI-08]](interaction-ux.md#hai-08) uncertainty at the decision granularity; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) for "accessible") | What completes this claim? | B·o | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
-| CLM-05<a name="clm-05"></a> | copy reviewed only by its author's intent | **Three hostile readers**: the regulator, the platform review team, and the plaintiff's attorney in three years; read literally, not charitably (the platform reviewer is [[BOOT-07]](business-marketing.md#boot-07)'s hostile landlord wearing a badge; ↔ [[STRAT-02]](business-marketing.md#strat-02) the claim must survive its disconfirmers before it ships; ↔ eng [[RLSE-09]](engineering.md#rlse-09) plain-English expert gate, not liability-shifting jargon) | Who profits from reading this against us, and what do they find? | S·g | [product-deploy-agents-fields ch-7](../SOURCES.md#src-product-deploy-agents-fields) |
+| CLM-01<a name="clm-01"></a> | user-facing copy describes a capability in a regulated domain | **Claims are products**: the same capability framed two ways lives in opposite regulatory universes ("supports stress awareness" vs "treats anxiety disorder"; "educational content" vs "investment advice") | Which side of the line does a *literal* reading land on? | B·g | [bootstrap](../SOURCES.md#src-bootstrap) |
+| CLM-02<a name="clm-02"></a> | stronger claim proposed because it converts better | **The cost asymmetry is absolute**: the safe side costs a softer verb or a hedge; crossing costs orders of magnitude; no aggressive claim is worth the exposure (↔ [[AIPX-09]](business-marketing.md#aipx-09) high-stakes accept needs a check layer; ↔ eng [[RLSE-08]](engineering.md#rlse-08) write the rollback before ship; ↔ eng [[DATA-17]](engineering.md#data-17) weak isolation looks free and costs integrity later; ↔ sec [[SEC-04]](security.md#sec-04) narrow scope now, not after the jailbreak) | What does the cautious phrasing actually lose? | B·g | [bootstrap](../SOURCES.md#src-bootstrap) |
+| CLM-03<a name="clm-03"></a> | privacy policy (or ToS) and implementation drift apart | **The policy is a contract**: every statement is a promise; audit claim-by-claim; usually the policy is the stale side; never ship them in contradiction (↔ a11y [[A11Y-22]](accessibility.md#a11y-22) one failing step falsifies the claim; ↔ [[AIPX-13]](business-marketing.md#aipx-13) synthetic labeled as human is a boundary the system does not hold; ↔ sec [[SEC-01]](security.md#sec-01) trust that changes at every crossing; ↔ eng [[ARCH-13]](engineering.md#arch-13) a property left to "everyone will be careful" is only perceived; ↔ ux [[HAI-14]](interaction-ux.md#hai-14) disclose the synthetic hand; ↔ eng [[NAME-03]](engineering.md#name-03) names that lie about the type) | Which policy sentence does this diff falsify? | B·o | [bootstrap](../SOURCES.md#src-bootstrap) |
+| CLM-04<a name="clm-04"></a> | "encrypted", "compliant", "secure", "accessible" as bare adjectives | **Adjectives are not evidence**: the full claim is mechanism + location + failure behavior; anything less is assertion (↔ ux [[HAI-08]](interaction-ux.md#hai-08) uncertainty at the decision granularity; ↔ a11y [[A11Y-22]](accessibility.md#a11y-22) for "accessible") | What completes this claim? | B·o | [bootstrap](../SOURCES.md#src-bootstrap) |
+| CLM-05<a name="clm-05"></a> | copy reviewed only by its author's intent | **Three hostile readers**: the regulator, the platform review team, and the plaintiff's attorney in three years; read literally, not charitably (the platform reviewer is [[BOOT-07]](business-marketing.md#boot-07)'s hostile landlord wearing a badge; ↔ [[STRAT-02]](business-marketing.md#strat-02) the claim must survive its disconfirmers before it ships; ↔ eng [[RLSE-09]](engineering.md#rlse-09) plain-English expert gate, not liability-shifting jargon) | Who profits from reading this against us, and what do they find? | S·g | [bootstrap](../SOURCES.md#src-bootstrap) |
+
+<!-- BEGIN GENERATED SECTION SOURCES fam-clm -->
+
+**Sources for this section**
+
+- [bootstrap](../SOURCES.md#src-bootstrap)
+
+<!-- END GENERATED SECTION SOURCES fam-clm -->
 
 ## 9. Cross-source tensions worth keeping
 

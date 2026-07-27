@@ -30,7 +30,7 @@ texts.
 
 **Contents**
 
-- [1. Dependency & Reasoning Structure<a name="fam-grph"></a>](#1-dependency--reasoning-structurea-namefam-grpha)
+- [1. Dependency & Reasoning Structure](#fam-grph)
 - [2. Assignment, Cost & Importance](#2-assignment-cost--importance)
 - [3. Knowledge Modelling as Graphs](#3-knowledge-modelling-as-graphs)
 - [4. Clustering & Entity Grouping (embeddings → graphs)](#4-clustering--entity-grouping-embeddings--graphs)
@@ -68,6 +68,15 @@ and design), **w**rite (implementation), **r**eview. Cross-lexicon borders cite
 | GRPH-05<a name="grph-05"></a> | One module, service, person, or link whose removal would split the system | **Name the cut vertices and bridges as single points of failure**: articulation points and bridges are the *only* nodes/edges whose loss disconnects the graph (↔ biz [[BOOT-07]](business-marketing.md#boot-07) multi-home before the platform is a bridge) | If this node/edge dies, how many components remain, and is that acceptable? | S·p | [graph-theory-with-applications ch-2](../SOURCES.md#src-graph-theory-with-applications) |
 | GRPH-06<a name="grph-06"></a> | A system, codebase, or org that reads as one ball of mud | **Partition by connected components first**: pieces with no path between them are the coarsest natural seams; cut there before inventing layers (↔ eng [[ARCH-01]](engineering.md#arch-01) a split needs a real disintegrator, not an invented layer) | What are the maximal pieces with no edge crossing between them? | S·p | [graph-theory-with-applications ch-1](../SOURCES.md#src-graph-theory-with-applications) |
 
+<!-- BEGIN GENERATED SECTION SOURCES fam-grph -->
+
+**Sources for this section**
+
+- [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual)
+- [graph-theory-with-applications](../SOURCES.md#src-graph-theory-with-applications)
+
+<!-- END GENERATED SECTION SOURCES fam-grph -->
+
 ## 2. Assignment, Cost & Importance
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -77,6 +86,16 @@ and design), **w**rite (implementation), **r**eview. Cross-lexicon borders cite
 | GRPH-09<a name="grph-09"></a> | Scheduling jobs, or allocating locks/registers/rooms with pairwise conflicts | **Colour the conflict graph**: the chromatic number is the minimum resources for a conflict-free assignment, and the largest clique is a hard lower bound on it | What is the conflict graph, and can it be coloured with the resources you have? | S·p | [graph-theory-with-applications ch-8](../SOURCES.md#src-graph-theory-with-applications) |
 | GRPH-10<a name="grph-10"></a> | Wiring a network, linking sites, or connecting stores at minimal total cost | **Prefer a minimum spanning tree over a full mesh**: the MST is the cheapest structure that keeps everything connected; every edge beyond it is paid-for redundancy, not connectivity | Is connectivity the goal, and is total edge weight minimised for it? | S·p | [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual) |
 | GRPH-11<a name="grph-11"></a> | Ranking which service, person, or concept matters most in a network | **Score nodes by the recursive neighbour-sum (Perron eigenvector)**: under the adjacency-eigenvector equation a node's weight equals the sum of its neighbours' weights scaled by the eigenvalue, and for a connected nonnegative graph the positive Perron vector is the unique (up to scale) positive solution | Is the needed score the recursive neighbour-sum (adjacency / Perron eigenvector)? | J·p | [algebraic-graph-theory ch-8](../SOURCES.md#src-algebraic-graph-theory) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 2-assignment-cost--importance -->
+
+**Sources for this section**
+
+- [algebraic-graph-theory](../SOURCES.md#src-algebraic-graph-theory)
+- [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual)
+- [graph-theory-with-applications](../SOURCES.md#src-graph-theory-with-applications)
+
+<!-- END GENERATED SECTION SOURCES 2-assignment-cost--importance -->
 
 ## 3. Knowledge Modelling as Graphs
 
@@ -94,6 +113,17 @@ and design), **w**rite (implementation), **r**eview. Cross-lexicon borders cite
 | GRPH-38<a name="grph-38"></a> | Assignment into a hierarchy decided by a single top-1 similarity match, with no "none of these" branch | **Shortlist by similarity, adjudicate, allow abstention, backstop with traversal**: rank top-k candidate paths by embedding, let a judge pick one *or* return "no reasonable choice", and route abstention into a deterministic root-down walk that always terminates at a node, because a ranker with no abstain places everything and one with no backstop drops what it abstains on (↔ [[GRPH-22]](graph-theory.md#grph-22) partition-plus-verification; ↔ [[GRPH-36]](graph-theory.md#grph-36) similarity ranks, never adjudicates) | What happens to an item the ranker has no good slot for: silently placed, dropped, or re-decided by an exhaustive pass? | S·w | [storm-knowledge-curation-system](../SOURCES.md#src-storm-knowledge-curation-system) |
 | GRPH-39<a name="grph-39"></a> | Placement, classification, or assignment work over a mutable graph is run on a thread pool or parallel map | **Parallelise only against a frozen topology**: when the callee can create or move nodes, run sequentially and re-derive the structure snapshot per item; parallelise only when the structure provably cannot change, because a decision computed off a stale snapshot resolves to a path that has moved, and a write-side mutex does not cover the decision | Can any worker in this pool create or move a node while another worker is deciding a path? | B·w | [storm-knowledge-curation-system](../SOURCES.md#src-storm-knowledge-curation-system) |
 
+<!-- BEGIN GENERATED SECTION SOURCES 3-knowledge-modelling-as-graphs -->
+
+**Sources for this section**
+
+- [building-knowledge-graphs](../SOURCES.md#src-building-knowledge-graphs)
+- [graph-partitioning-and-clustering](../SOURCES.md#src-graph-partitioning-and-clustering)
+- [storm-knowledge-curation-system](../SOURCES.md#src-storm-knowledge-curation-system)
+- [storm-multi-perspective-prewriting](../SOURCES.md#src-storm-multi-perspective-prewriting)
+
+<!-- END GENERATED SECTION SOURCES 3-knowledge-modelling-as-graphs -->
+
 ## 4. Clustering & Entity Grouping (embeddings → graphs)
 
 | ID | Trigger | Rule | Answers | T·P | Src |
@@ -106,6 +136,17 @@ and design), **w**rite (implementation), **r**eview. Cross-lexicon borders cite
 | GRPH-22<a name="grph-22"></a> | Production clustering still merges distinct entities or splits one entity | **Replace hard-τ-plus-components with partition-plus-verification**: keep only high-precision edges, cut with a constrained objective ([[GRPH-19]](graph-theory.md#grph-19); community detection at scale is [[GRPH-21]](graph-theory.md#grph-21)), then re-verify the residual cross-group bridges pairwise; gate on pair precision/recall at the operating edge set, not component purity | What is pair-level precision at the operating edge set, and which bridges are re-verified? | S·w | [video-pipeline-practice](../SOURCES.md#src-video-pipeline-practice) |
 | GRPH-23<a name="grph-23"></a> | A similarity graph built with one global cosine/L2 threshold | **Calibrate the edge policy per quality stratum**: pose, age, and capture quality shift the similarity distribution, so one global τ over-links easy negatives and under-links hard positives; use adaptive or learned thresholds per regime (edge construction itself: see [[GRPH-17]](graph-theory.md#grph-17)) | Is the edge policy validated across quality strata, or only on clean high-quality pairs? | S·w | [video-pipeline-practice](../SOURCES.md#src-video-pipeline-practice) |
 | GRPH-36<a name="grph-36"></a> | An eval scores free-text answers by cosine similarity to a reference, with short or numeric reference answers | **Similarity ranks candidates; it never issues the verdict**: when scoring correctness, use a rubric that separates correctness from relatedness and demands per-score justification, because embedding similarity can rank a wrong answer nearly as high as a right one when both are topically related, while a correctness rubric separates them cleanly (↔ [[GRPH-18]](graph-theory.md#grph-18) the score proposes, something else decides) | Would this metric clearly separate a right verbose answer from a wrong verbose one, or only rank topical relatedness? | B·r | [chatpid-graphrag-engineering-diagrams](../SOURCES.md#src-chatpid-graphrag-engineering-diagrams) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 4-clustering--entity-grouping-embeddings--graphs -->
+
+**Sources for this section**
+
+- [chatpid-graphrag-engineering-diagrams](../SOURCES.md#src-chatpid-graphrag-engineering-diagrams)
+- [graph-partitioning-and-clustering](../SOURCES.md#src-graph-partitioning-and-clustering)
+- [spectral-clustering-and-biclustering](../SOURCES.md#src-spectral-clustering-and-biclustering)
+- [video-pipeline-practice](../SOURCES.md#src-video-pipeline-practice)
+
+<!-- END GENERATED SECTION SOURCES 4-clustering--entity-grouping-embeddings--graphs -->
 
 ## 5. Control Flow & Agent Loops as Graphs
 
@@ -134,6 +175,19 @@ import licenses an unbuildable system. Naming which graph you are holding is the
 | GRPH-32<a name="grph-32"></a> | An agent pipeline whose steps are chained by "and then" with no data passed between them | **An edge exists only where data moves**: when a step is sequenced after another, require that the downstream node actually read a named field of the upstream node's output, and delete the arrow when no such field can be named, because arrows inherited from typing order serialize independent work for nothing (↔ eng [[DATA-15]](engineering.md#data-15) order from the causal structure, not wall-clock or gut; ↔ [[GRPH-01]](graph-theory.md#grph-01) toposort only after the edges are real) | For this arrow, which field of the previous output does the next node read? | S·p | [graph-engineering-agent-roadmap](../SOURCES.md#src-graph-engineering-agent-roadmap) |
 | GRPH-33<a name="grph-33"></a> | A node reads from shared conversation context, or returns free text a later node must parse | **A node without a contract cannot be parallelised**: when a node is to run concurrently, pass its inputs explicitly and constrain its output with a schema the runtime validates, because an implicit shared-window read is an undeclared in-edge that makes the drawn topology not the real one (↔ [[GRPH-32]](graph-theory.md#grph-32) declared edges must carry named data) | What are this node's declared inputs, and does it still produce the same output in a fresh context? | S·w | [graph-engineering-agent-roadmap](../SOURCES.md#src-graph-engineering-agent-roadmap) |
 | GRPH-34<a name="grph-34"></a> | A model-backed node whose whole job is flatten, dedupe, filter, sort, or reshape between two stages | **Edge work is code, not a node**: when a step is a pure function of shapes already returned upstream, move it into the orchestration script, because orchestration executed as code costs zero model tokens and is reproducible, while a node costs a turn and can perform a deterministic transform wrongly (↔ [[GRPH-32]](graph-theory.md#grph-32) an edge is a data promise, not a model turn) | Is this step judgment on content, or a pure function of the shapes upstream already returned? | S·w | [graph-engineering-agent-roadmap](../SOURCES.md#src-graph-engineering-agent-roadmap) |
+
+<!-- BEGIN GENERATED SECTION SOURCES 5-control-flow--agent-loops-as-graphs -->
+
+**Sources for this section**
+
+- [algorithm-design-manual](../SOURCES.md#src-algorithm-design-manual)
+- [designing-data-intensive-applications](../SOURCES.md#src-designing-data-intensive-applications)
+- [erickson-models-of-computation](../SOURCES.md#src-erickson-models-of-computation)
+- [graph-engineering-agent-roadmap](../SOURCES.md#src-graph-engineering-agent-roadmap)
+- [pinedo-scheduling](../SOURCES.md#src-pinedo-scheduling)
+- [refactoring-fowler-beck](../SOURCES.md#src-refactoring-fowler-beck)
+
+<!-- END GENERATED SECTION SOURCES 5-control-flow--agent-loops-as-graphs -->
 
 ## 6. Cross-lexicon links
 
