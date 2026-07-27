@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "date": "2026-07-27",
   "rules": 1143,
   "principles": 0,
@@ -14,7 +14,7 @@
       "rules": 111
     },
     "lexicons/depiction.md": {
-      "sha256": "d7100859d1d0975199db0e40a1a780e15da58ba3ac1120fe1f2c26a6bd65143c",
+      "sha256": "ec1983297757fac9100a8c6889ff5ff865a818d3162337a7b802afecb7a50628",
       "rules": 15
     },
     "lexicons/design-aesthetics.md": {
