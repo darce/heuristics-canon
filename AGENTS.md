@@ -57,6 +57,7 @@ cover every principle.
 |---|---|
 | [`lexicons/accessibility.md`](lexicons/accessibility.md) | [A11Y](lexicons/accessibility.md#fam-a11y) |
 | [`lexicons/business-marketing.md`](lexicons/business-marketing.md) | [STRAT](lexicons/business-marketing.md#fam-strat) · [PROD](lexicons/business-marketing.md#fam-prod) · [AIPX](lexicons/business-marketing.md#fam-aipx) · [GTM](lexicons/business-marketing.md#fam-gtm) · [NEG](lexicons/business-marketing.md#fam-neg) · [OPS](lexicons/business-marketing.md#fam-ops) · [BOOT](lexicons/business-marketing.md#fam-boot) · [CLM](lexicons/business-marketing.md#fam-clm) |
+| [`lexicons/depiction.md`](lexicons/depiction.md) | [ATTRIB](lexicons/depiction.md#fam-attrib) · [BOUND](lexicons/depiction.md#fam-bound) |
 | [`lexicons/design-aesthetics.md`](lexicons/design-aesthetics.md) | [IDNT](lexicons/design-aesthetics.md#fam-idnt) · [TYPE](lexicons/design-aesthetics.md#fam-type) · [COL](lexicons/design-aesthetics.md#fam-col) · [LAY](lexicons/design-aesthetics.md#fam-lay) · [BRND](lexicons/design-aesthetics.md#fam-brnd) |
 | [`lexicons/engineering.md`](lexicons/engineering.md) | [AGT](lexicons/engineering.md#fam-agt) · [RES](lexicons/engineering.md#fam-res) · [CON](lexicons/engineering.md#fam-con) · [DATA](lexicons/engineering.md#fam-data) · [MODEL](lexicons/engineering.md#fam-model) · [STOR](lexicons/engineering.md#fam-stor) · [FLOW](lexicons/engineering.md#fam-flow) · [PERF](lexicons/engineering.md#fam-perf) · [REF](lexicons/engineering.md#fam-ref) · [TEST](lexicons/engineering.md#fam-test) · [DBG](lexicons/engineering.md#fam-dbg) · [DIAG](lexicons/engineering.md#fam-diag) · [OBS](lexicons/engineering.md#fam-obs) · [API](lexicons/engineering.md#fam-api) · [DOM](lexicons/engineering.md#fam-dom) · [ARCH](lexicons/engineering.md#fam-arch) · [TEAM](lexicons/engineering.md#fam-team) · [ALG](lexicons/engineering.md#fam-alg) · [NAME](lexicons/engineering.md#fam-name) · [UI](lexicons/engineering.md#fam-ui) · [RLSE](lexicons/engineering.md#fam-rlse) |
 | [`lexicons/epistemics.md`](lexicons/epistemics.md) | [FORE](lexicons/epistemics.md#fam-fore) · [NDM](lexicons/epistemics.md#fam-ndm) · [BIAS](lexicons/epistemics.md#fam-bias) · [RSCH](lexicons/epistemics.md#fam-rsch) · [MEAS](lexicons/epistemics.md#fam-meas) · [EXP](lexicons/epistemics.md#fam-exp) |
@@ -79,6 +80,7 @@ unless you mean one lexicon's code.
 |---|---|
 | accessibility | p plan→plan · w write→write · r review→review · g gtm→ship |
 | business-marketing | s strategy→plan · p product→plan · g gtm→ship · o ops→ship |
+| depiction | d draft→write · e edit→review · v verify→review |
 | design-aesthetics | i identity→plan · b brand→plan · t type→write · c colour→write · l layout→write · im image→write |
 | engineering | p plan→plan · w write→write · r review→review |
 | graph-theory | p plan→plan · w write→write · r review→review |
@@ -121,6 +123,8 @@ A rule fires on the artifact that changed, not merely its file type.
 | public naming or api surface | [NAME](lexicons/engineering.md#fam-name) · [API](lexicons/engineering.md#fam-api) · [DOM](lexicons/engineering.md#fam-dom) · [BRND](lexicons/design-aesthetics.md#fam-brnd) |
 | algorithm or data structure choice | [ALG](lexicons/engineering.md#fam-alg) · [PERF](lexicons/engineering.md#fam-perf) · [GRPH](lexicons/graph-theory.md#fam-grph) · [DATA](lexicons/engineering.md#fam-data) |
 | prose or documentation change | [WRIT](lexicons/writing.md#fam-writ) · [CLM](lexicons/business-marketing.md#fam-clm) |
+| image description or alt text change | [ATTRIB](lexicons/depiction.md#fam-attrib) · [BOUND](lexicons/depiction.md#fam-bound) · [A11Y](lexicons/accessibility.md#fam-a11y) · [WRIT](lexicons/writing.md#fam-writ) · [CLM](lexicons/business-marketing.md#fam-clm) · [PROV](lexicons/ml-systems.md#fam-prov) |
+| archival description or catalogue change | [ATTRIB](lexicons/depiction.md#fam-attrib) · [WRIT](lexicons/writing.md#fam-writ) · [CLM](lexicons/business-marketing.md#fam-clm) · [PROV](lexicons/ml-systems.md#fam-prov) |
 | strategy or product bet | [STRAT](lexicons/business-marketing.md#fam-strat) · [PROD](lexicons/business-marketing.md#fam-prod) · [AIPX](lexicons/business-marketing.md#fam-aipx) · [BOOT](lexicons/business-marketing.md#fam-boot) · [NEG](lexicons/business-marketing.md#fam-neg) · [FORE](lexicons/epistemics.md#fam-fore) · [NDM](lexicons/epistemics.md#fam-ndm) · [BIAS](lexicons/epistemics.md#fam-bias) · [RSCH](lexicons/epistemics.md#fam-rsch) |
 | estimate or forecast in a plan | [FORE](lexicons/epistemics.md#fam-fore) · [STRAT](lexicons/business-marketing.md#fam-strat) · [EVAL](lexicons/ml-systems.md#fam-eval) · [CAL](lexicons/ml-systems.md#fam-cal) · [NDM](lexicons/epistemics.md#fam-ndm) · [BIAS](lexicons/epistemics.md#fam-bias) · [MEAS](lexicons/epistemics.md#fam-meas) |
 | choosing a problem or research direction | [RSCH](lexicons/epistemics.md#fam-rsch) · [STRAT](lexicons/business-marketing.md#fam-strat) · [FORE](lexicons/epistemics.md#fam-fore) · [NDM](lexicons/epistemics.md#fam-ndm) · [BIAS](lexicons/epistemics.md#fam-bias) |
@@ -156,7 +160,7 @@ A rule fires on the artifact that changed, not merely its file type.
 8. Stop retrieval when every applicable blocker and strong default is
    satisfied, exempted with evidence, or explicitly escalated.
 
-Do not open all ten lexicons for a single change. Do not cite rules whose
+Do not open every lexicon for a single change. Do not cite rules whose
 triggers did not fire. Citation count is not review quality.
 
 ## Retrieve rules

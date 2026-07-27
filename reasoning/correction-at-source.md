@@ -131,7 +131,7 @@ not a claimed principle on this card.
 ## Evidence / source slugs
 
 - [`human-in-the-loop-ml`](../SOURCES.md#src-human-in-the-loop-ml): supports [HAI-02](../lexicons/interaction-ux.md#hai-02), [HITL-01](../lexicons/ml-systems.md#hitl-01)
-- [`designing-interfaces-int-form`](../SOURCES.md#src-designing-interfaces-int-form): supports [INT-09](../lexicons/interaction-ux.md#int-09)
+- [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [INT-09](../lexicons/interaction-ux.md#int-09)
 - [`hidden-technical-debt-ml`](../SOURCES.md#src-hidden-technical-debt-ml): supports [SERVE-04](../lexicons/ml-systems.md#serve-04)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-14](../lexicons/engineering.md#data-14), [FLOW-06](../lexicons/engineering.md#flow-06), [STOR-07](../lexicons/engineering.md#stor-07)
 - [`refactoring-fowler-beck`](../SOURCES.md#src-refactoring-fowler-beck): supports [REF-09](../lexicons/engineering.md#ref-09)

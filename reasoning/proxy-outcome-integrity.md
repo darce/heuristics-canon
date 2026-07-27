@@ -56,10 +56,15 @@ question.
 5. Prefer stability outcomes over gameable coverage
    ([TEST-11](../lexicons/engineering.md#test-11)); score forecasts rather than
    narrative confidence ([FORE-03](../lexicons/epistemics.md#fore-03)).
-6. Refuse scanner-green as conformance and tokens-per-second as goodput at the
+6. For software quality economics: refuse cost-per-defect and coverage-as-target;
+   pair multi-origin defect potential with defect-removal efficiency and escapes
+   ([OPS-18](../lexicons/business-marketing.md#ops-18),
+   [OPS-19](../lexicons/business-marketing.md#ops-19),
+   [RLSE-14](../lexicons/engineering.md#rlse-14)).
+7. Refuse scanner-green as conformance and tokens-per-second as goodput at the
    latency target ([A11Y-23](../lexicons/accessibility.md#a11y-23),
    [COST-15](../lexicons/ml-systems.md#cost-15)).
-7. Measure the decision variable; composites can lie
+8. Measure the decision variable; composites can lie
    ([UXR-15](../lexicons/interaction-ux.md#uxr-15)).
 
 ## Predicted failure
@@ -113,6 +118,10 @@ almost no page meets the real bar. Comp plans reward the wrong 2am behavior.
 - [RSCH-07](../lexicons/epistemics.md#rsch-07): simulate how the measured party optimizes the number
 - [OBS-07](../lexicons/engineering.md#obs-07): page on symptoms, not cause proxies
 - [TEST-11](../lexicons/engineering.md#test-11): coverage is gameable; prefer stability outcomes
+- [OPS-18](../lexicons/business-marketing.md#ops-18): ban cost-per-defect as quality proof
+- [OPS-19](../lexicons/business-marketing.md#ops-19): defect potential + DRE pair
+- [RLSE-14](../lexicons/engineering.md#rlse-14): DRE and escapes over coverage targets
+- [TEAM-12](../lexicons/engineering.md#team-12): name the decision a metric changes before collecting it
 - [AIPX-02](../lexicons/business-marketing.md#aipx-02): offline score up, acceptance flat
 - [EVAL-22](../lexicons/ml-systems.md#eval-22): offline gate needs a live degrade check
 - [UXR-03](../lexicons/interaction-ux.md#uxr-03) / [UXR-15](../lexicons/interaction-ux.md#uxr-15): measure the decision variable; composites can lie
@@ -131,11 +140,13 @@ almost no page meets the real bar. Comp plans reward the wrong 2am behavior.
 - [`hamming-art-of-doing-science`](../SOURCES.md#src-hamming-art-of-doing-science): supports [RSCH-07](../lexicons/epistemics.md#rsch-07)
 - [`observability-engineering`](../SOURCES.md#src-observability-engineering): supports [OBS-07](../lexicons/engineering.md#obs-07)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-11](../lexicons/engineering.md#test-11)
+- [`software-development-patterns-antipatterns`](../SOURCES.md#src-software-development-patterns-antipatterns): supports [OPS-18](../lexicons/business-marketing.md#ops-18), [OPS-19](../lexicons/business-marketing.md#ops-19), [RLSE-14](../lexicons/engineering.md#rlse-14)
+- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-12](../lexicons/engineering.md#team-12)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-02](../lexicons/business-marketing.md#aipx-02)
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [EVAL-22](../lexicons/ml-systems.md#eval-22)
 - [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-03](../lexicons/interaction-ux.md#uxr-03), [UXR-15](../lexicons/interaction-ux.md#uxr-15)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-03](../lexicons/epistemics.md#fore-03)
-- [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-23](../lexicons/accessibility.md#a11y-23)
+- [`webaim-million`](../SOURCES.md#src-webaim-million): supports [A11Y-23](../lexicons/accessibility.md#a11y-23)
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [COST-15](../lexicons/ml-systems.md#cost-15)
 
 ## Non-claims

@@ -102,6 +102,8 @@ unstated constraints and reverse hard-won decisions.
 - [OPS-13](../lexicons/business-marketing.md#ops-13): orders include who/what/when/where/why
 - [NDM-07](../lexicons/epistemics.md#ndm-07): intent and constraints on the handoff
 - [AGT-12](../lexicons/engineering.md#agt-12): legible handoff after timebox
+- [TEAM-17](../lexicons/engineering.md#team-17): no single-head knowledge concentration
+- [TEAM-14](../lexicons/engineering.md#team-14): published plan with an owned revision trail
 
 ## Principles
 
@@ -121,6 +123,7 @@ starting at GRPH-14). Walkable lineage is not this card's owned mechanism.
 - [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-13](../lexicons/business-marketing.md#ops-13)
 - [`sources-of-power`](../SOURCES.md#src-sources-of-power): supports [NDM-07](../lexicons/epistemics.md#ndm-07)
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [AGT-12](../lexicons/engineering.md#agt-12)
+- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-17](../lexicons/engineering.md#team-17), [TEAM-14](../lexicons/engineering.md#team-14)
 
 ## Non-claims
 

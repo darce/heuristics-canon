@@ -10,12 +10,21 @@ not read end to end: an edit pass or authorship check cites a rule by ID at the
 phrase it fires on, and this file holds the claim behind it.
 
 Scope boundary: this lexicon is about how the writing reads, not what it argues.
-Claims, evidence, and positioning live in the domain lexicons; this one fires on
-the surface (a phrase, a rhythm, a formatting habit) regardless of subject. It
-applies to any prose output: docs, READMEs, essays, commit bodies, and assistant
-replies. It does not override a format that legitimately calls for a flagged
-pattern (an API reference bolds code identifiers; a pipeline diagram uses
-arrows); the rules name those exemptions inline.
+Claims, evidence, and positioning live in the domain lexicons; every family here
+fires on the surface (a phrase, a rhythm, a formatting habit) regardless of
+subject. They apply to any prose output: docs, READMEs, essays, commit bodies,
+and assistant replies. They do not override a format that legitimately calls for
+a flagged pattern (an API reference bolds code identifiers; a pipeline diagram
+uses arrows); the rules name those exemptions inline.
+
+Description of images is not here. `ATTRIB` (on whose authority a text names
+what is depicted) and `BOUND` (how far a description may reach past the frame)
+sat in this file until 2026-07-26 and now live in
+[`depiction.md`](depiction.md). They fire on prose whose subject is an *external
+referent*, where what the text asserts is exactly what is at stake and surface
+hygiene is necessary but not sufficient — a different question from the one
+every row below asks. `WRIT` still applies to a description like any other
+prose, and the `image_description_or_alt_text_change` route loads both files.
 
 Source-status warning: the current `ai-writing-tropes` source is a blog and
 Wikipedia synthesis, so it does not meet the corpus authority policy. Treat
@@ -142,11 +151,13 @@ authorship or check sourcing).
 | WRIT-44<a name="writ-44"></a> | editing pass that swaps the flagged phrase but leaves the underlying problem | **Fix the cause, not the phrase**: vague→source or cut; inflated→narrow the claim; decorative→simplify; synonym churn→one precise term; template residue→rewrite (↔ eng [[DBG-10]](engineering.md#dbg-10) fix the cause, not the symptom; ↔ ux [[HAI-02]](interaction-ux.md#hai-02) correction must reach the source) | Did I fix the sentence, or just launder the tell? | S·e | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-45<a name="writ-45"></a> | an authorship check treats every stylistic tell as affirmative and ignores signs that point away | **Weigh counter-evidence against authorship claims**: pre-ChatGPT text, or text whose author can explain specific editorial choices, weighs against AI authorship (↔ [[WRIT-43]](writing.md#writ-43) a cluster is still scrutiny, not proof) | Is there pre-ChatGPT provenance, or can the author defend specific editorial choices? | J·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-46<a name="writ-46"></a> | detection or edit pass relies on historical tells (old refusal styles, abrupt cutoffs) that decay with model drift | **Prefer durable structural signals**: weight genericity, inflation, template structure, and citation sloppiness; historical phrase-level tells age out as models change (↔ [[WRIT-43]](writing.md#writ-43) cluster of durable classes, not one obsolete tell) | Am I scoring durable structure, or a tell that already aged out? | S·v | [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes) |
+
 ## Cross-lexicon links
 
 - `↔ eng NAME-04` (consistency beats local quality): [[WRIT-06]](writing.md#writ-06) and [[WRIT-35]](writing.md#writ-35) serve the same end: match the established convention over personal style.
 - `↔ eng UI-01` / design `TYPE-05`: the token-scale discipline that [[WRIT-35]](writing.md#writ-35) applies to prose markup.
 - `↔ business GTM-07` (title = emotional first line): a naming rule that legitimately *wants* memorable phrasing: [[WRIT-27]](writing.md#writ-27)'s ban on coined labels is about undefended shorthand, not deliberate, earned names.
+- `↔ depiction ATTRIB-02` / `BOUND-01`: [[WRIT-26]](writing.md#writ-26) refuses the unnameable authority in any prose; the depiction rows refuse it for identity claims in captions and archival description, and add the limit of the frame that no prose rule can supply.
 
 ## Consumption
 

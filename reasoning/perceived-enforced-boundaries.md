@@ -131,8 +131,8 @@ Autonomy marketing outruns the tested envelope and causes harm.
 ## Evidence / source slugs
 
 - [`designing-with-the-mind-in-mind`](../SOURCES.md#src-designing-with-the-mind-in-mind): supports [PERC-03](../lexicons/interaction-ux.md#perc-03)
-- [`designing-interfaces-nav`](../SOURCES.md#src-designing-interfaces-nav): supports [NAV-05](../lexicons/interaction-ux.md#nav-05)
-- [`designing-interfaces-int-form`](../SOURCES.md#src-designing-interfaces-int-form): supports [INT-01](../lexicons/interaction-ux.md#int-01)
+- [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [NAV-05](../lexicons/interaction-ux.md#nav-05)
+- [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [INT-01](../lexicons/interaction-ux.md#int-01)
 - [`video-pipeline-practice`](../SOURCES.md#src-video-pipeline-practice): supports [GRPH-18](../lexicons/graph-theory.md#grph-18)
 - [`llm-security-playbook`](../SOURCES.md#src-llm-security-playbook): supports [SEC-01](../lexicons/security.md#sec-01)
 - [`human-centered-ai`](../SOURCES.md#src-human-centered-ai): supports [HAI-05](../lexicons/interaction-ux.md#hai-05)

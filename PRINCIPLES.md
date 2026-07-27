@@ -52,6 +52,7 @@ Order the underlying thing first and the surface decisions fall out correctly, o
 - Value before hue: hierarchy that survives greyscale is the real hierarchy [[COL-04]](lexicons/design-aesthetics.md#col-04), and WCAG contrast then clears by construction [[A11Y-01]](lexicons/accessibility.md#a11y-01).
 - Restate the solution brief as a measurable problem before designing a solution [[PROD-02]](lexicons/business-marketing.md#prod-02); layout starts from real content [[LAY-08]](lexicons/design-aesthetics.md#lay-08).
 - The most accurate visual channel goes to the most important attribute before decoration [[VIZ-02]](lexicons/interaction-ux.md#viz-02); architecture is justified by quality-attribute risks, not feature decomposition [[ARCH-12]](lexicons/engineering.md#arch-12).
+- Under a tight description budget, rank must-include cues before drafting the short form [[A11Y-43]](lexicons/accessibility.md#a11y-43), [[A11Y-44]](lexicons/accessibility.md#a11y-44); budget-driven sentence order is editorial selection, not image privilege [[BOUND-05]](lexicons/depiction.md#bound-05).
 
 Decide the structure before the decoration, and the decoration has nothing left to argue about.
 
@@ -111,6 +112,7 @@ A claim nobody has tried to break is a guess wearing a conclusion's clothes. Nam
 - Reproduce the failure before proposing a fix [[DBG-01]](lexicons/engineering.md#dbg-01); a cause is established when its absence makes the failure vanish [[DBG-11]](lexicons/engineering.md#dbg-11); do not trust a test never observed failing [[TEST-06]](lexicons/engineering.md#test-06).
 - Forecasts need resolution criteria and movers written in advance [[FORE-02]](lexicons/epistemics.md#fore-02), [[FORE-09]](lexicons/epistemics.md#fore-09); pre-mortems assume the plan has already failed [[NDM-02]](lexicons/epistemics.md#ndm-02); do not explain away early-warning cues one at a time; force an alternate diagnosis of the set [[NDM-05]](lexicons/epistemics.md#ndm-05).
 - Threat models list how the policy dies before buying controls [[SECD-07]](lexicons/security.md#secd-07); a post-mortem that reverses process grade on outcome alone has replaced the disconfirmer test with resulting [[NDM-12]](lexicons/epistemics.md#ndm-12).
+- Seal the non-inferiority margin, primary, and α allocation before the run [[EXP-12]](lexicons/epistemics.md#exp-12), [[EXP-10]](lexicons/epistemics.md#exp-10); post-data threshold selection is circular analysis [[EXP-22]](lexicons/epistemics.md#exp-22).
 
 Replace "this looks right" with a stated way to find out it is not.
 
@@ -120,6 +122,8 @@ Any proxy drifts from its target under pressure, and once the proxy becomes a ta
 
 - A metric pays for the behavior it rewards at 2am, not the behavior you meant [[OPS-01]](lexicons/business-marketing.md#ops-01); ship what changes valuable behavior [[PROD-01]](lexicons/business-marketing.md#prod-01).
 - Offline score up while acceptance flat is the proxy moving [[AIPX-02]](lexicons/business-marketing.md#aipx-02); coverage is gameable, change-failure rate is closer to the goal [[TEST-11]](lexicons/engineering.md#test-11).
+- Cost-per-defect falls as quality worsens the fixed-cost accounting; defect-removal efficiency and delivered defects per size unit are the economic pair [[OPS-18]](lexicons/business-marketing.md#ops-18) [[OPS-19]](lexicons/business-marketing.md#ops-19) [[RLSE-14]](lexicons/engineering.md#rlse-14).
+- A metric with no named decision and no anti-gaming check is collected for its own sake [[TEAM-12]](lexicons/engineering.md#team-12).
 - Page on degraded user experience, not a CPU threshold with benign explanations [[OBS-07]](lexicons/engineering.md#obs-07); measure the decision variable, not the convenient composite [[UXR-03]](lexicons/interaction-ux.md#uxr-03).
 - If accuracy is not the measured number, narrative confidence is [[FORE-03]](lexicons/epistemics.md#fore-03); simulate how the measured party will optimise the number before adopting it [[RSCH-07]](lexicons/epistemics.md#rsch-07).
 - Scanner-green is not accessibility conformance [[A11Y-23]](lexicons/accessibility.md#a11y-23); tokens-per-second is not goodput at the latency target [[COST-15]](lexicons/ml-systems.md#cost-15).
@@ -180,6 +184,7 @@ When one option is reversible and the other is not, the reversible one is almost
 - Safe claim language loses a little conversion; aggressive phrasing risks orders of magnitude [[CLM-02]](lexicons/business-marketing.md#clm-02). Early a11y tokens cost nearly nothing next to a post-launch rewrite [[A11Y-25]](lexicons/accessibility.md#a11y-25).
 - Write the rollback before ship [[RLSE-08]](lexicons/engineering.md#rlse-08); least privilege and human gates cost scope now, jailbroken broad scope costs everything it can reach [[SEC-04]](lexicons/security.md#sec-04), [[SEC-05]](lexicons/security.md#sec-05).
 - Weak isolation and non-idempotent retries look free and bill later as integrity incidents [[DATA-17]](lexicons/engineering.md#data-17), [[DATA-13]](lexicons/engineering.md#data-13). High-stakes model output needs a human or external check [[AIPX-09]](lexicons/business-marketing.md#aipx-09).
+- Freeze the shared trunk and train only an additive residual with an unadapted path kept live [[FM-09]](lexicons/ml-systems.md#fm-09); climb PEFT before full-weight change [[FM-07]](lexicons/ml-systems.md#fm-07), [[FM-05]](lexicons/ml-systems.md#fm-05).
 
 Pay the small certain cost of the reversible side; treat "we can fix it after launch" as the expensive answer it usually is.
 
@@ -236,6 +241,7 @@ Knowledge held only in a head, a session, or a founder dies at the next compacti
 - Persist plan, path verdicts, and model into notes at discovery [[AGT-07]](lexicons/engineering.md#agt-07); keep context, decision, and consequences in an ADR [[ARCH-07]](lexicons/engineering.md#arch-07).
 - Correlation IDs turn post-mortems into greps [[OBS-03]](lexicons/engineering.md#obs-03); systemize taste into brand rules so the brand outlives the founder [[BRND-12]](lexicons/design-aesthetics.md#brnd-12).
 - Orders need who/what/when/where/why [[OPS-13]](lexicons/business-marketing.md#ops-13); handoffs carry intent, priorities, constraints, and forbidden moves [[NDM-07]](lexicons/epistemics.md#ndm-07).
+- Single-head knowledge concentration is an operational hostage; require a backup path and a published store [[TEAM-17]](lexicons/engineering.md#team-17).
 
 A session, an author, and a founder all leave; only what they wrote down stays.
 
@@ -266,6 +272,7 @@ An outcome channel earns trust in both directions: failure must be impossible to
 
 - Diagnostics to stderr, silent success on stdout [[AGT-15]](lexicons/engineering.md#agt-15); fail noisily and early [[AGT-10]](lexicons/engineering.md#agt-10), [[RLSE-05]](lexicons/engineering.md#rlse-05).
 - Silence is not success; dead instrumentation must break loudly [[OBS-08]](lexicons/engineering.md#obs-08). ERROR that does not require action trains people to ignore ERROR [[OBS-04]](lexicons/engineering.md#obs-04).
+- Empty catch blocks convert failures into silent lies; handle, translate, or rethrow [[REF-37]](lexicons/engineering.md#ref-37).
 - Localize verify cues to the output at risk rather than a standing banner that habituates [[HAI-13]](lexicons/interaction-ux.md#hai-13), [[PERC-07]](lexicons/interaction-ux.md#perc-07).
 
 A channel where success chatters or failure whispers is not reporting the system.

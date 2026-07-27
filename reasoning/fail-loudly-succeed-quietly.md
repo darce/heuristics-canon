@@ -39,6 +39,8 @@ confuse decoration for payload.
    ([OBS-04](../lexicons/engineering.md#obs-04)).
 3. Keep success quiet on the data path; send diagnostics and progress to the
    human-only channel ([AGT-15](../lexicons/engineering.md#agt-15)).
+4. Never swallow exceptions without a named policy — empty catch blocks are
+   silent lies ([REF-37](../lexicons/engineering.md#ref-37)).
 
 ## Predicted failure
 
@@ -85,6 +87,8 @@ everyone to look away.
 - [OBS-08](../lexicons/engineering.md#obs-08): silence is not success
 - [OBS-04](../lexicons/engineering.md#obs-04): ERROR means action
 - [AGT-15](../lexicons/engineering.md#agt-15): stdout is data, stderr is for humans
+- [REF-37](../lexicons/engineering.md#ref-37): no empty exception blocks
+- [RLSE-05](../lexicons/engineering.md#rlse-05): silent failure is the worst failure
 
 ## Principles
 
@@ -96,6 +100,8 @@ everyone to look away.
 - [`release-it`](../SOURCES.md#src-release-it): supports [OBS-04](../lexicons/engineering.md#obs-04)
 - [`art-of-unix-programming`](../SOURCES.md#src-art-of-unix-programming): supports [AGT-15](../lexicons/engineering.md#agt-15)
 - [`unix-programming-environment`](../SOURCES.md#src-unix-programming-environment): supports [AGT-15](../lexicons/engineering.md#agt-15)
+- [`clean-code-cookbook`](../SOURCES.md#src-clean-code-cookbook): supports [REF-37](../lexicons/engineering.md#ref-37)
+- [`product-deploy-agents-fields`](../SOURCES.md#src-product-deploy-agents-fields): supports [RLSE-05](../lexicons/engineering.md#rlse-05)
 
 ## Non-claims
 

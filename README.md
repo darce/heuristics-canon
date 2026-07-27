@@ -48,6 +48,7 @@ Sketch only; not the full route table.
 | Forecast, experiment, metric | [epistemics](lexicons/epistemics.md) · FORE, EXP, MEAS, BIAS |
 | Product bet, pricing, launch | [business-marketing](lexicons/business-marketing.md) · STRAT, PROD, GTM, CLM |
 | Prose or docs | [writing](lexicons/writing.md) · WRIT |
+| Alt text, caption, image description | [depiction](lexicons/depiction.md) · ATTRIB, BOUND · accessibility · A11Y · writing · WRIT |
 
 ## What is inside
 

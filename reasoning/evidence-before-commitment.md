@@ -136,7 +136,7 @@ mechanism; do not re-own correction or source-of-truth repair here (see
 - [`gender-shades`](../SOURCES.md#src-gender-shades): supports [FAIR-02](../lexicons/ml-systems.md#fair-02)
 - [`nist-frvt-demographics`](../SOURCES.md#src-nist-frvt-demographics): supports [FAIR-03](../lexicons/ml-systems.md#fair-03)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [EVAL-01](../lexicons/ml-systems.md#eval-01)
-- [`designing-interfaces-int-form`](../SOURCES.md#src-designing-interfaces-int-form): supports [INT-07](../lexicons/interaction-ux.md#int-07)
+- [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [INT-07](../lexicons/interaction-ux.md#int-07)
 - [`designing-with-the-mind-in-mind`](../SOURCES.md#src-designing-with-the-mind-in-mind): supports [COG-04](../lexicons/interaction-ux.md#cog-04)
 - [`human-in-the-loop-ml`](../SOURCES.md#src-human-in-the-loop-ml): supports [HITL-05](../lexicons/ml-systems.md#hitl-05)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-05](../lexicons/epistemics.md#fore-05)
