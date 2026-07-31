@@ -10,13 +10,13 @@ Covers: client and RPC timeouts; pool, queue, and result-set capacity;
 agent and automation loop limits; queue-and-retry with a fast answer when
 blocking forever is the alternative.
 
-Excludes: pure measurement-frame integrity (see `measurement-integrity`); pure
-privilege sizing (see `least-privilege-blast-radius`); reversible choice and
-landlord exit (see `reversible-commitments`, `second-exit-hostile-landlord`);
-correction reaching source of truth (see `correction-at-source`); durable
-decision memory (see `durable-decision-memory`); fail-loudly channel design
-(see `fail-loudly-succeed-quietly`); plan and rollout step size (see
-`step-size-by-feedback`). Expert recognition validity is a boundary tension
+Excludes: pure measurement-frame integrity (see [measurement-integrity](measurement-integrity.md)); pure
+privilege sizing (see [least-privilege-blast-radius](least-privilege-blast-radius.md)); reversible choice and
+landlord exit (see [reversible-commitments](reversible-commitments.md), [second-exit-hostile-landlord](second-exit-hostile-landlord.md));
+correction reaching source of truth (see [correction-at-source](correction-at-source.md)); durable
+decision memory (see [durable-decision-memory](durable-decision-memory.md)); fail-loudly channel design
+(see [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md)); plan and rollout step size (see
+[step-size-by-feedback](step-size-by-feedback.md)). Expert recognition validity is a boundary tension
 only, not this card's owned decision.
 
 ## Observable triggers
@@ -62,14 +62,14 @@ completion. Callers hang while a stuck dependency never returns.
 - Bounded waiting is necessary but not sufficient for measurement integrity:
   a timed-out load test can still coordinate omission if arrivals pause.
 - Corrections that must reach training, graph, or system of record are owned
-  by `correction-at-source` (Principle 12); plain pointer only.
-- Handoff and durable intent memory are owned by `durable-decision-memory`
+  by [correction-at-source](correction-at-source.md) (Principle 12); plain pointer only.
+- Handoff and durable intent memory are owned by [durable-decision-memory](durable-decision-memory.md)
   (Principle 7); plain pointer only.
 - Success/failure channel design (silence is not success; ERROR means action;
-  stdout vs stderr) is owned by `fail-loudly-succeed-quietly` (Principle 16);
+  stdout vs stderr) is owned by [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (Principle 16);
   plain pointer only.
 - Plan and rollout step size, canaries, and feedback-lag windowing are owned
-  by `step-size-by-feedback` (Principle 19); plain pointer only.
+  by [step-size-by-feedback](step-size-by-feedback.md) (Principle 19); plain pointer only.
 - Human recognition under time pressure is valid only where cues are valid and
   feedback was fast for long practice ([NDM-01](../lexicons/epistemics.md#ndm-01));
   outside that gate, scored judgment applies. This card does not own that
@@ -110,8 +110,8 @@ completion. Callers hang while a stuck dependency never returns.
 ## Principles
 
 No exclusive principle claim. Bound waits so feedback can arrive; channel
-design is Principle 16 (`fail-loudly-succeed-quietly`) and step size is
-Principle 19 (`step-size-by-feedback`).
+design is Principle 16 ([fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md)) and step size is
+Principle 19 ([step-size-by-feedback](step-size-by-feedback.md)).
 
 ## Evidence / source slugs
 

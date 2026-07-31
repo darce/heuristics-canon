@@ -11,8 +11,8 @@ security policy before controls; release and expert gates; completion claims
 that name evidence; schema for machine-consumed generation.
 
 Excludes: pure taste without a gatekeeper or compliance claim; measurement
-apparatus integrity (see `measurement-integrity`); privilege sizing alone
-(see `least-privilege-blast-radius`).
+apparatus integrity (see [measurement-integrity](measurement-integrity.md)); privilege sizing alone
+(see [least-privilege-blast-radius](least-privilege-blast-radius.md)).
 
 ## Observable triggers
 

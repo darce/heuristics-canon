@@ -1,122 +1,182 @@
 # Reasoning card map
 
-> Generated from the reasoning tree on each release — do not edit by hand. **30 cards**, 18 principles referenced, 69 shared-rule pairs.
+> Generated from the reasoning tree on each release — do not edit by hand. **30 cards**, 18 principles referenced, 69 shared-rule pairs, 36/36 routes reach at least one card.
 
 ## What this is
 
-Topology of the reasoning tree: which cards share rule IDs, and which principles each card owns or also-loads. Every node, edge, and table cell is derived from `public/reasoning/*.md` mechanism cards. Regenerate after any card edit.
+Topology of the reasoning tree: which cards share rule IDs, which principles each card owns or also-loads, and which cards a changed-artifact route can open. Every node, edge, and table cell is derived from `public/reasoning/*.md` mechanism cards and the live `ROUTES` table. Regenerate after any card or route edit.
 
 ## What this does not show
 
 - Rule text, tiers, exemptions, or evidence rows (open the card and the lexicon).
-- Principle force groups from PRINCIPLES.md.
 - Pairs that share only one rule ID in the View B diagram (threshold is >= 2 shared IDs; the View B table lists all 69 pairs with at least one shared ID).
-- Direction of dependence, ranking, or load order beyond own vs also-load.
+- Views A and B: direction of dependence, ranking, or load order beyond own vs also-load. (Cards by route is ranked; see that section.)
+- Phase-filtered select results (the route view uses every live rule in the route's families; `select --route <r> --with-cards` can narrow).
 
 ## View A — principle map
 
-Bipartite graph: card nodes and principle nodes. A **solid** link is the principle the card owns (`- N. Title` in its Principles section). A **dashed** link is an also-load mention (`Principle N` in that section's prose). Owned and also-load are not the same strength of claim.
+One section per force group — the `##` headings in PRINCIPLES.md that contain numbered `### N. Title` principles (document order). A force with at least one reached principle gets a small-multiple diagram of those principles as nodes labelled `P{n}` (the leading `P` marks a principle and is not a rule ID — rules are always `FAM-NN`) and only the cards that own or also-load them; a fully unreached force has heading, legend, and note — no diagram. Members no card reaches appear in the legend with a trailing marker instead of as diagram nodes. A **solid** link is the principle the card owns (`- N. Title` in its Principles section). A **dashed** link is an also-load mention (`Principle N` in that section's prose). Owned and also-load are not the same strength of claim.
+
+A card that links to principles in more than one force appears in each of those diagrams. That is intended — not a duplicate-node bug. Working principle links live in the per-force legend lines and in the card–principle table below (mermaid `click` targets are inert on GitHub under `securityLevel: 'strict'` and exist only for loose renderers such as mermaid.live or VS Code preview). The graph is for adjacency; the legend and table carry the titles and the links that resolve.
+
+A trailing `— no card` on a legend entry means that force member appears in PRINCIPLES.md but no mechanism card owns or also-loads it.
+
+### Contracts and boundaries
+
+**Principles in this force:** [P1](../PRINCIPLES.md#1-author-the-contract-before-the-components) (Author the contract before the components); [P5](../PRINCIPLES.md#5-rank-the-substance-before-you-style-it) (Rank the substance before you style it); [P6](../PRINCIPLES.md#6-an-unchosen-default-is-a-defect-the-user-feels-before-they-can-name-it) (An unchosen default is a defect the user feels before they can name it) — no card; [P10](../PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries) (Perceived boundaries must match enforced boundaries); [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose) (A machine consumes contracts, not prose).
 
 ```mermaid
+%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
 flowchart LR
-  P_1["1. Author the contract before the components"]
-  P_2["2. Specify what would prove you wrong"]
-  P_3["3. The safe side is cheap; the wrong side is not"]
-  P_4["4. You get the number you pay for, not the outcome you want"]
-  P_5["5. Rank the substance before you style it"]
-  P_7["7. Write it where it outlives the person who knows it"]
-  P_8["8. Assume a hostile landlord and keep a second exit"]
-  P_9["9. A claim must walk back to what produced it"]
-  P_10["10. Perceived boundaries must match enforced boundaries"]
-  P_11["11. Unknown is a designed state"]
-  P_12["12. Correction must reach the source"]
-  P_13["13. Evidence precedes commitment"]
-  P_14["14. Grant the least privilege; minimize what a compromise reaches"]
-  P_15["15. A measurement the measured party can shape is not a measurement"]
-  P_16["16. Fail loudly, succeed quietly"]
-  P_17["17. High-impact actions take two independent keys"]
-  P_18["18. A machine consumes contracts, not prose"]
-  P_19["19. Step size is bounded by the feedback that can catch it"]
-  C_attribute_claims_to_their_bearer["attribute-claims-to-their-bearer"]
-  C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"]
-  C_compose_at_the_boundary_before_inside_the_graph["compose-at-the-boundary-before-inside-the-graph"]
-  C_compression_is_selection_not_truncation["compression-is-selection-not-truncation"]
-  C_constrained_domains_have_solved_it["constrained-domains-have-solved-it"]
-  C_context_obedience_is_a_separate_capability["context-obedience-is-a-separate-capability"]
-  C_contract_before_components["contract-before-components"]
-  C_controlled_vocabulary_caps_hallucination["controlled-vocabulary-caps-hallucination"]
-  C_correction_at_source["correction-at-source"]
-  C_designed_unknown["designed-unknown"]
-  C_dual_control_two_keys["dual-control-two-keys"]
-  C_durable_decision_memory["durable-decision-memory"]
-  C_evidence_before_commitment["evidence-before-commitment"]
-  C_fail_loudly_succeed_quietly["fail-loudly-succeed-quietly"]
-  C_falsification_disconfirmers["falsification-disconfirmers"]
-  C_feedback_bounded_waiting["feedback-bounded-waiting"]
-  C_frozen_base_additive_delta["frozen-base-additive-delta"]
-  C_least_privilege_blast_radius["least-privilege-blast-radius"]
-  C_licence_provenance_is_transitive["licence-provenance-is-transitive"]
-  C_margin_and_design_effect_before_the_run["margin-and-design-effect-before-the-run"]
-  C_measurement_integrity["measurement-integrity"]
-  C_perceived_enforced_boundaries["perceived-enforced-boundaries"]
-  C_proxy_outcome_integrity["proxy-outcome-integrity"]
-  C_quantization_delta_on_the_failure_metric["quantization-delta-on-the-failure-metric"]
-  C_reversible_commitments["reversible-commitments"]
-  C_runtime_fork_is_part_of_provenance["runtime-fork-is-part-of-provenance"]
-  C_second_exit_hostile_landlord["second-exit-hostile-landlord"]
-  C_signal_density_not_length["signal-density-not-length"]
-  C_step_size_by_feedback["step-size-by-feedback"]
-  C_synthetic_artifact_control_arm["synthetic-artifact-control-arm"]
-  C_attribute_claims_to_their_bearer --> P_9
-  C_bounded_role_lets_a_small_model_be_safe --> P_11
-  C_bounded_role_lets_a_small_model_be_safe --> P_18
-  C_bounded_role_lets_a_small_model_be_safe --> P_9
-  C_compose_at_the_boundary_before_inside_the_graph --> P_13
-  C_compose_at_the_boundary_before_inside_the_graph --> P_3
-  C_compression_is_selection_not_truncation --> P_5
-  C_constrained_domains_have_solved_it --> P_18
-  C_context_obedience_is_a_separate_capability --> P_13
-  C_context_obedience_is_a_separate_capability --> P_18
-  C_contract_before_components --> P_1
+  subgraph FG_contracts["Contracts and boundaries"]
+    P_1["P1"]
+    P_5["P5"]
+    P_10["P10"]
+    P_18["P18"]
+  end
+  C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"] --> P_18
+  C_compression_is_selection_not_truncation["compression-is-selection-not-truncation"] --> P_5
+  C_constrained_domains_have_solved_it["constrained-domains-have-solved-it"] --> P_18
+  C_context_obedience_is_a_separate_capability["context-obedience-is-a-separate-capability"] --> P_18
+  C_contract_before_components["contract-before-components"] --> P_1
   C_contract_before_components --> P_18
-  C_controlled_vocabulary_caps_hallucination --> P_11
-  C_controlled_vocabulary_caps_hallucination --> P_18
-  C_correction_at_source --> P_12
-  C_correction_at_source -.-> P_9
-  C_designed_unknown --> P_11
-  C_designed_unknown -.-> P_13
-  C_dual_control_two_keys --> P_17
-  C_durable_decision_memory --> P_7
-  C_durable_decision_memory -.-> P_9
-  C_evidence_before_commitment --> P_13
+  C_controlled_vocabulary_caps_hallucination["controlled-vocabulary-caps-hallucination"] --> P_18
+  C_perceived_enforced_boundaries["perceived-enforced-boundaries"] --> P_10
+  classDef force_contracts fill:#386695,color:#FFFFFF,stroke:#386695
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class P_1,P_10,P_18,P_5 force_contracts
+  class C_bounded_role_lets_a_small_model_be_safe,C_compression_is_selection_not_truncation,C_constrained_domains_have_solved_it,C_context_obedience_is_a_separate_capability,C_contract_before_components,C_controlled_vocabulary_caps_hallucination,C_perceived_enforced_boundaries node_card
+  click P_1 "../PRINCIPLES.md#1-author-the-contract-before-the-components" "Author the contract before the components"
+  click P_5 "../PRINCIPLES.md#5-rank-the-substance-before-you-style-it" "Rank the substance before you style it"
+  click P_10 "../PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries" "Perceived boundaries must match enforced boundaries"
+  click P_18 "../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose" "A machine consumes contracts, not prose"
+```
+
+### Evidence and measurement
+
+**Principles in this force:** [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong) (Specify what would prove you wrong); [P4](../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want) (You get the number you pay for, not the outcome you want); [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it) (A claim must walk back to what produced it); [P13](../PRINCIPLES.md#13-evidence-precedes-commitment) (Evidence precedes commitment); [P15](../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement) (A measurement the measured party can shape is not a measurement).
+
+```mermaid
+%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+flowchart LR
+  subgraph FG_evidence["Evidence and measurement"]
+    P_2["P2"]
+    P_4["P4"]
+    P_9["P9"]
+    P_13["P13"]
+    P_15["P15"]
+  end
+  C_attribute_claims_to_their_bearer["attribute-claims-to-their-bearer"] --> P_9
+  C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"] --> P_9
+  C_compose_at_the_boundary_before_inside_the_graph["compose-at-the-boundary-before-inside-the-graph"] --> P_13
+  C_context_obedience_is_a_separate_capability["context-obedience-is-a-separate-capability"] --> P_13
+  C_correction_at_source["correction-at-source"] -.-> P_9
+  C_designed_unknown["designed-unknown"] -.-> P_13
+  C_durable_decision_memory["durable-decision-memory"] -.-> P_9
+  C_evidence_before_commitment["evidence-before-commitment"] --> P_13
   C_evidence_before_commitment -.-> P_2
   C_evidence_before_commitment -.-> P_9
-  C_fail_loudly_succeed_quietly --> P_16
-  C_falsification_disconfirmers --> P_2
+  C_falsification_disconfirmers["falsification-disconfirmers"] --> P_2
   C_falsification_disconfirmers -.-> P_13
-  C_feedback_bounded_waiting -.-> P_16
-  C_feedback_bounded_waiting -.-> P_19
-  C_frozen_base_additive_delta --> P_3
-  C_least_privilege_blast_radius --> P_14
-  C_licence_provenance_is_transitive --> P_13
-  C_licence_provenance_is_transitive --> P_16
-  C_margin_and_design_effect_before_the_run --> P_2
-  C_measurement_integrity --> P_15
-  C_perceived_enforced_boundaries --> P_10
-  C_proxy_outcome_integrity --> P_4
+  C_licence_provenance_is_transitive["licence-provenance-is-transitive"] --> P_13
+  C_margin_and_design_effect_before_the_run["margin-and-design-effect-before-the-run"] --> P_2
+  C_measurement_integrity["measurement-integrity"] --> P_15
+  C_proxy_outcome_integrity["proxy-outcome-integrity"] --> P_4
+  C_quantization_delta_on_the_failure_metric["quantization-delta-on-the-failure-metric"] --> P_4
   C_quantization_delta_on_the_failure_metric --> P_13
-  C_quantization_delta_on_the_failure_metric --> P_4
-  C_reversible_commitments --> P_3
-  C_runtime_fork_is_part_of_provenance --> P_3
-  C_runtime_fork_is_part_of_provenance --> P_8
-  C_second_exit_hostile_landlord --> P_8
+  C_signal_density_not_length["signal-density-not-length"] --> P_4
   C_signal_density_not_length --> P_15
-  C_signal_density_not_length --> P_4
-  C_step_size_by_feedback --> P_19
+  C_step_size_by_feedback["step-size-by-feedback"] -.-> P_2
   C_step_size_by_feedback -.-> P_13
-  C_step_size_by_feedback -.-> P_2
-  C_synthetic_artifact_control_arm --> P_15
+  C_synthetic_artifact_control_arm["synthetic-artifact-control-arm"] --> P_15
+  classDef force_evidence fill:#854E73,color:#FFFFFF,stroke:#854E73
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class P_13,P_15,P_2,P_4,P_9 force_evidence
+  class C_attribute_claims_to_their_bearer,C_bounded_role_lets_a_small_model_be_safe,C_compose_at_the_boundary_before_inside_the_graph,C_context_obedience_is_a_separate_capability,C_correction_at_source,C_designed_unknown,C_durable_decision_memory,C_evidence_before_commitment,C_falsification_disconfirmers,C_licence_provenance_is_transitive,C_margin_and_design_effect_before_the_run,C_measurement_integrity,C_proxy_outcome_integrity,C_quantization_delta_on_the_failure_metric,C_signal_density_not_length,C_step_size_by_feedback,C_synthetic_artifact_control_arm node_card
+  click P_2 "../PRINCIPLES.md#2-specify-what-would-prove-you-wrong" "Specify what would prove you wrong"
+  click P_4 "../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want" "You get the number you pay for, not the outcome you want"
+  click P_9 "../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it" "A claim must walk back to what produced it"
+  click P_13 "../PRINCIPLES.md#13-evidence-precedes-commitment" "Evidence precedes commitment"
+  click P_15 "../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement" "A measurement the measured party can shape is not a measurement"
 ```
+
+### Reversibility and exposure
+
+**Principles in this force:** [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not) (The safe side is cheap; the wrong side is not); [P8](../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit) (Assume a hostile landlord and keep a second exit); [P14](../PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches) (Grant the least privilege; minimize what a compromise reaches); [P17](../PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys) (High-impact actions take two independent keys).
+
+```mermaid
+%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+flowchart LR
+  subgraph FG_reversibility["Reversibility and exposure"]
+    P_3["P3"]
+    P_8["P8"]
+    P_14["P14"]
+    P_17["P17"]
+  end
+  C_compose_at_the_boundary_before_inside_the_graph["compose-at-the-boundary-before-inside-the-graph"] --> P_3
+  C_dual_control_two_keys["dual-control-two-keys"] --> P_17
+  C_frozen_base_additive_delta["frozen-base-additive-delta"] --> P_3
+  C_least_privilege_blast_radius["least-privilege-blast-radius"] --> P_14
+  C_reversible_commitments["reversible-commitments"] --> P_3
+  C_runtime_fork_is_part_of_provenance["runtime-fork-is-part-of-provenance"] --> P_3
+  C_runtime_fork_is_part_of_provenance --> P_8
+  C_second_exit_hostile_landlord["second-exit-hostile-landlord"] --> P_8
+  classDef force_reversibility fill:#2B7351,color:#FFFFFF,stroke:#2B7351
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class P_14,P_17,P_3,P_8 force_reversibility
+  class C_compose_at_the_boundary_before_inside_the_graph,C_dual_control_two_keys,C_frozen_base_additive_delta,C_least_privilege_blast_radius,C_reversible_commitments,C_runtime_fork_is_part_of_provenance,C_second_exit_hostile_landlord node_card
+  click P_3 "../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not" "The safe side is cheap; the wrong side is not"
+  click P_8 "../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit" "Assume a hostile landlord and keep a second exit"
+  click P_14 "../PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches" "Grant the least privilege; minimize what a compromise reaches"
+  click P_17 "../PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys" "High-impact actions take two independent keys"
+```
+
+### Feedback and correction
+
+**Principles in this force:** [P7](../PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it) (Write it where it outlives the person who knows it); [P11](../PRINCIPLES.md#11-unknown-is-a-designed-state) (Unknown is a designed state); [P12](../PRINCIPLES.md#12-correction-must-reach-the-source) (Correction must reach the source); [P16](../PRINCIPLES.md#16-fail-loudly-succeed-quietly) (Fail loudly, succeed quietly); [P19](../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it) (Step size is bounded by the feedback that can catch it).
+
+```mermaid
+%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+flowchart LR
+  subgraph FG_feedback["Feedback and correction"]
+    P_7["P7"]
+    P_11["P11"]
+    P_12["P12"]
+    P_16["P16"]
+    P_19["P19"]
+  end
+  C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"] --> P_11
+  C_controlled_vocabulary_caps_hallucination["controlled-vocabulary-caps-hallucination"] --> P_11
+  C_correction_at_source["correction-at-source"] --> P_12
+  C_designed_unknown["designed-unknown"] --> P_11
+  C_durable_decision_memory["durable-decision-memory"] --> P_7
+  C_fail_loudly_succeed_quietly["fail-loudly-succeed-quietly"] --> P_16
+  C_feedback_bounded_waiting["feedback-bounded-waiting"] -.-> P_16
+  C_feedback_bounded_waiting -.-> P_19
+  C_licence_provenance_is_transitive["licence-provenance-is-transitive"] --> P_16
+  C_step_size_by_feedback["step-size-by-feedback"] --> P_19
+  classDef force_feedback fill:#845922,color:#FFFFFF,stroke:#845922
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class P_11,P_12,P_16,P_19,P_7 force_feedback
+  class C_bounded_role_lets_a_small_model_be_safe,C_controlled_vocabulary_caps_hallucination,C_correction_at_source,C_designed_unknown,C_durable_decision_memory,C_fail_loudly_succeed_quietly,C_feedback_bounded_waiting,C_licence_provenance_is_transitive,C_step_size_by_feedback node_card
+  click P_7 "../PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it" "Write it where it outlives the person who knows it"
+  click P_11 "../PRINCIPLES.md#11-unknown-is-a-designed-state" "Unknown is a designed state"
+  click P_12 "../PRINCIPLES.md#12-correction-must-reach-the-source" "Correction must reach the source"
+  click P_16 "../PRINCIPLES.md#16-fail-loudly-succeed-quietly" "Fail loudly, succeed quietly"
+  click P_19 "../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it" "Step size is bounded by the feedback that can catch it"
+```
+
+### Colour legend
+
+One shared repo palette derived from OKLCH (constant OKLab lightness L and chroma C, stepped hue for forces). Force colour is redundant with the subgraph label and the per-force heading; card colour marks non-principle nodes (light fill, dual-ground stroke contour). Removing colour loses no structure.
+
+| Swatch (fill) | Meaning |
+|---|---|
+| `#386695` | Force: Contracts and boundaries (OKLCH 0.50, 0.09, 250°) |
+| `#854E73` | Force: Evidence and measurement (OKLCH 0.50, 0.09, 340°) |
+| `#2B7351` | Force: Reversibility and exposure (OKLCH 0.50, 0.09, 160°) |
+| `#845922` | Force: Feedback and correction (OKLCH 0.50, 0.09, 70°) |
+| `#E4DDCF` | Card node (neutral fill; stroke `#777165`; OKLCH 0.90, 0.02, 85°) |
 
 ### Card–principle table
 
@@ -124,65 +184,54 @@ Text equivalent of View A (one row per card).
 
 | Card | Owns | Also loads |
 |---|---|---|
-| [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) | 9. A claim must walk back to what produced it | (none) |
-| [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) | 9. A claim must walk back to what produced it; 11. Unknown is a designed state; 18. A machine consumes contracts, not prose | (none) |
-| [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) | 3. The safe side is cheap; the wrong side is not; 13. Evidence precedes commitment | (none) |
-| [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) | 5. Rank the substance before you style it | (none) |
-| [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) | 18. A machine consumes contracts, not prose | (none) |
-| [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) | 13. Evidence precedes commitment; 18. A machine consumes contracts, not prose | (none) |
-| [contract-before-components](contract-before-components.md) | 1. Author the contract before the components; 18. A machine consumes contracts, not prose | (none) |
-| [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) | 11. Unknown is a designed state; 18. A machine consumes contracts, not prose | (none) |
-| [correction-at-source](correction-at-source.md) | 12. Correction must reach the source | 9. A claim must walk back to what produced it |
-| [designed-unknown](designed-unknown.md) | 11. Unknown is a designed state | 13. Evidence precedes commitment |
-| [dual-control-two-keys](dual-control-two-keys.md) | 17. High-impact actions take two independent keys | (none) |
-| [durable-decision-memory](durable-decision-memory.md) | 7. Write it where it outlives the person who knows it | 9. A claim must walk back to what produced it |
-| [evidence-before-commitment](evidence-before-commitment.md) | 13. Evidence precedes commitment | 2. Specify what would prove you wrong; 9. A claim must walk back to what produced it |
-| [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) | 16. Fail loudly, succeed quietly | (none) |
-| [falsification-disconfirmers](falsification-disconfirmers.md) | 2. Specify what would prove you wrong | 13. Evidence precedes commitment |
-| [feedback-bounded-waiting](feedback-bounded-waiting.md) | (none) | 16. Fail loudly, succeed quietly; 19. Step size is bounded by the feedback that can catch it |
-| [frozen-base-additive-delta](frozen-base-additive-delta.md) | 3. The safe side is cheap; the wrong side is not | (none) |
-| [least-privilege-blast-radius](least-privilege-blast-radius.md) | 14. Grant the least privilege; minimize what a compromise reaches | (none) |
-| [licence-provenance-is-transitive](licence-provenance-is-transitive.md) | 13. Evidence precedes commitment; 16. Fail loudly, succeed quietly | (none) |
-| [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) | 2. Specify what would prove you wrong | (none) |
-| [measurement-integrity](measurement-integrity.md) | 15. A measurement the measured party can shape is not a measurement | (none) |
-| [perceived-enforced-boundaries](perceived-enforced-boundaries.md) | 10. Perceived boundaries must match enforced boundaries | (none) |
-| [proxy-outcome-integrity](proxy-outcome-integrity.md) | 4. You get the number you pay for, not the outcome you want | (none) |
-| [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) | 4. You get the number you pay for, not the outcome you want; 13. Evidence precedes commitment | (none) |
-| [reversible-commitments](reversible-commitments.md) | 3. The safe side is cheap; the wrong side is not | (none) |
-| [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) | 3. The safe side is cheap; the wrong side is not; 8. Assume a hostile landlord and keep a second exit | (none) |
-| [second-exit-hostile-landlord](second-exit-hostile-landlord.md) | 8. Assume a hostile landlord and keep a second exit | (none) |
-| [signal-density-not-length](signal-density-not-length.md) | 4. You get the number you pay for, not the outcome you want; 15. A measurement the measured party can shape is not a measurement | (none) |
-| [step-size-by-feedback](step-size-by-feedback.md) | 19. Step size is bounded by the feedback that can catch it | 2. Specify what would prove you wrong; 13. Evidence precedes commitment |
-| [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) | 15. A measurement the measured party can shape is not a measurement | (none) |
+| [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) | [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it). A claim must walk back to what produced it | (none) |
+| [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) | [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it). A claim must walk back to what produced it; [P11](../PRINCIPLES.md#11-unknown-is-a-designed-state). Unknown is a designed state; [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose). A machine consumes contracts, not prose | (none) |
+| [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) | [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not). The safe side is cheap; the wrong side is not; [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment | (none) |
+| [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) | [P5](../PRINCIPLES.md#5-rank-the-substance-before-you-style-it). Rank the substance before you style it | (none) |
+| [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) | [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose). A machine consumes contracts, not prose | (none) |
+| [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) | [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment; [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose). A machine consumes contracts, not prose | (none) |
+| [contract-before-components](contract-before-components.md) | [P1](../PRINCIPLES.md#1-author-the-contract-before-the-components). Author the contract before the components; [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose). A machine consumes contracts, not prose | (none) |
+| [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) | [P11](../PRINCIPLES.md#11-unknown-is-a-designed-state). Unknown is a designed state; [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose). A machine consumes contracts, not prose | (none) |
+| [correction-at-source](correction-at-source.md) | [P12](../PRINCIPLES.md#12-correction-must-reach-the-source). Correction must reach the source | [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it). A claim must walk back to what produced it |
+| [designed-unknown](designed-unknown.md) | [P11](../PRINCIPLES.md#11-unknown-is-a-designed-state). Unknown is a designed state | [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment |
+| [dual-control-two-keys](dual-control-two-keys.md) | [P17](../PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys). High-impact actions take two independent keys | (none) |
+| [durable-decision-memory](durable-decision-memory.md) | [P7](../PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it). Write it where it outlives the person who knows it | [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it). A claim must walk back to what produced it |
+| [evidence-before-commitment](evidence-before-commitment.md) | [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment | [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong). Specify what would prove you wrong; [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it). A claim must walk back to what produced it |
+| [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) | [P16](../PRINCIPLES.md#16-fail-loudly-succeed-quietly). Fail loudly, succeed quietly | (none) |
+| [falsification-disconfirmers](falsification-disconfirmers.md) | [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong). Specify what would prove you wrong | [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment |
+| [feedback-bounded-waiting](feedback-bounded-waiting.md) | (none) | [P16](../PRINCIPLES.md#16-fail-loudly-succeed-quietly). Fail loudly, succeed quietly; [P19](../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it). Step size is bounded by the feedback that can catch it |
+| [frozen-base-additive-delta](frozen-base-additive-delta.md) | [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not). The safe side is cheap; the wrong side is not | (none) |
+| [least-privilege-blast-radius](least-privilege-blast-radius.md) | [P14](../PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches). Grant the least privilege; minimize what a compromise reaches | (none) |
+| [licence-provenance-is-transitive](licence-provenance-is-transitive.md) | [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment; [P16](../PRINCIPLES.md#16-fail-loudly-succeed-quietly). Fail loudly, succeed quietly | (none) |
+| [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) | [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong). Specify what would prove you wrong | (none) |
+| [measurement-integrity](measurement-integrity.md) | [P15](../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement). A measurement the measured party can shape is not a measurement | (none) |
+| [perceived-enforced-boundaries](perceived-enforced-boundaries.md) | [P10](../PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries). Perceived boundaries must match enforced boundaries | (none) |
+| [proxy-outcome-integrity](proxy-outcome-integrity.md) | [P4](../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want). You get the number you pay for, not the outcome you want | (none) |
+| [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) | [P4](../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want). You get the number you pay for, not the outcome you want; [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment | (none) |
+| [reversible-commitments](reversible-commitments.md) | [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not). The safe side is cheap; the wrong side is not | (none) |
+| [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) | [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not). The safe side is cheap; the wrong side is not; [P8](../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit). Assume a hostile landlord and keep a second exit | (none) |
+| [second-exit-hostile-landlord](second-exit-hostile-landlord.md) | [P8](../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit). Assume a hostile landlord and keep a second exit | (none) |
+| [signal-density-not-length](signal-density-not-length.md) | [P4](../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want). You get the number you pay for, not the outcome you want; [P15](../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement). A measurement the measured party can shape is not a measurement | (none) |
+| [step-size-by-feedback](step-size-by-feedback.md) | [P19](../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it). Step size is bounded by the feedback that can catch it | [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong). Specify what would prove you wrong; [P13](../PRINCIPLES.md#13-evidence-precedes-commitment). Evidence precedes commitment |
+| [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) | [P15](../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement). A measurement the measured party can shape is not a measurement | (none) |
 
 ## View B — card adjacency by shared rule IDs
 
-The diagram draws only pairs that share **>= 2** rule IDs (22 edges). Edge labels are the shared count. The table below is the full relation: **all 69** pairs that share at least one rule ID, with the shared IDs linked as on the cards.
+The diagram draws only pairs that share **>= 2** rule IDs (22 edges). Edge labels are the shared count. The table below is the full relation: **all 69** pairs that share at least one rule ID, with the shared IDs linked as on the cards. Every node is a card and therefore carries the card fill from the shared palette; removing colour still loses no structure.
 
 ```mermaid
+%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
 flowchart LR
-  C_attribute_claims_to_their_bearer["attribute-claims-to-their-bearer"]
-  C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"]
-  C_compose_at_the_boundary_before_inside_the_graph["compose-at-the-boundary-before-inside-the-graph"]
-  C_compression_is_selection_not_truncation["compression-is-selection-not-truncation"]
-  C_constrained_domains_have_solved_it["constrained-domains-have-solved-it"]
-  C_context_obedience_is_a_separate_capability["context-obedience-is-a-separate-capability"]
-  C_controlled_vocabulary_caps_hallucination["controlled-vocabulary-caps-hallucination"]
-  C_licence_provenance_is_transitive["licence-provenance-is-transitive"]
-  C_proxy_outcome_integrity["proxy-outcome-integrity"]
-  C_quantization_delta_on_the_failure_metric["quantization-delta-on-the-failure-metric"]
-  C_runtime_fork_is_part_of_provenance["runtime-fork-is-part-of-provenance"]
-  C_signal_density_not_length["signal-density-not-length"]
-  C_attribute_claims_to_their_bearer ---|7| C_bounded_role_lets_a_small_model_be_safe
-  C_attribute_claims_to_their_bearer ---|3| C_compression_is_selection_not_truncation
-  C_attribute_claims_to_their_bearer ---|4| C_constrained_domains_have_solved_it
-  C_attribute_claims_to_their_bearer ---|3| C_controlled_vocabulary_caps_hallucination
-  C_attribute_claims_to_their_bearer ---|2| C_signal_density_not_length
+  C_attribute_claims_to_their_bearer["attribute-claims-to-their-bearer"] ---|7| C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"]
+  C_attribute_claims_to_their_bearer ---|3| C_compression_is_selection_not_truncation["compression-is-selection-not-truncation"]
+  C_attribute_claims_to_their_bearer ---|4| C_constrained_domains_have_solved_it["constrained-domains-have-solved-it"]
+  C_attribute_claims_to_their_bearer ---|3| C_controlled_vocabulary_caps_hallucination["controlled-vocabulary-caps-hallucination"]
+  C_attribute_claims_to_their_bearer ---|2| C_signal_density_not_length["signal-density-not-length"]
   C_bounded_role_lets_a_small_model_be_safe ---|2| C_constrained_domains_have_solved_it
-  C_bounded_role_lets_a_small_model_be_safe ---|3| C_context_obedience_is_a_separate_capability
+  C_bounded_role_lets_a_small_model_be_safe ---|3| C_context_obedience_is_a_separate_capability["context-obedience-is-a-separate-capability"]
   C_bounded_role_lets_a_small_model_be_safe ---|4| C_controlled_vocabulary_caps_hallucination
-  C_compose_at_the_boundary_before_inside_the_graph ---|2| C_quantization_delta_on_the_failure_metric
-  C_compose_at_the_boundary_before_inside_the_graph ---|6| C_runtime_fork_is_part_of_provenance
+  C_compose_at_the_boundary_before_inside_the_graph["compose-at-the-boundary-before-inside-the-graph"] ---|2| C_quantization_delta_on_the_failure_metric["quantization-delta-on-the-failure-metric"]
+  C_compose_at_the_boundary_before_inside_the_graph ---|6| C_runtime_fork_is_part_of_provenance["runtime-fork-is-part-of-provenance"]
   C_compression_is_selection_not_truncation ---|8| C_constrained_domains_have_solved_it
   C_compression_is_selection_not_truncation ---|7| C_signal_density_not_length
   C_constrained_domains_have_solved_it ---|4| C_controlled_vocabulary_caps_hallucination
@@ -191,10 +240,12 @@ flowchart LR
   C_context_obedience_is_a_separate_capability ---|2| C_quantization_delta_on_the_failure_metric
   C_context_obedience_is_a_separate_capability ---|4| C_signal_density_not_length
   C_controlled_vocabulary_caps_hallucination ---|2| C_signal_density_not_length
-  C_licence_provenance_is_transitive ---|3| C_runtime_fork_is_part_of_provenance
-  C_proxy_outcome_integrity ---|2| C_quantization_delta_on_the_failure_metric
+  C_licence_provenance_is_transitive["licence-provenance-is-transitive"] ---|3| C_runtime_fork_is_part_of_provenance
+  C_proxy_outcome_integrity["proxy-outcome-integrity"] ---|2| C_quantization_delta_on_the_failure_metric
   C_proxy_outcome_integrity ---|4| C_signal_density_not_length
   C_quantization_delta_on_the_failure_metric ---|2| C_signal_density_not_length
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class C_attribute_claims_to_their_bearer,C_bounded_role_lets_a_small_model_be_safe,C_compose_at_the_boundary_before_inside_the_graph,C_compression_is_selection_not_truncation,C_constrained_domains_have_solved_it,C_context_obedience_is_a_separate_capability,C_controlled_vocabulary_caps_hallucination,C_licence_provenance_is_transitive,C_proxy_outcome_integrity,C_quantization_delta_on_the_failure_metric,C_runtime_fork_is_part_of_provenance,C_signal_density_not_length node_card
 ```
 
 ### Shared rule ID pairs
@@ -272,3 +323,46 @@ Superset of the diagram. Sorted by Card A, then Card B (slug order).
 | [reversible-commitments](reversible-commitments.md) | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) | 1 | [RLSE-08](../lexicons/engineering.md#rlse-08) |
 | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) | [second-exit-hostile-landlord](second-exit-hostile-landlord.md) | 1 | [REF-15](../lexicons/engineering.md#ref-15) |
 | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) | [signal-density-not-length](signal-density-not-length.md) | 1 | [PROV-01](../lexicons/ml-systems.md#prov-01) |
+
+## Cards by route
+
+For each changed-artifact route, mechanism cards whose `## Rule IDs` intersect the live rules that route selects. Ranked by shared-rule count descending, then slug ascending. A route with no card still appears as *(none)* — silent omission would read as coverage.
+
+| Route | Cards (shared-rule count) |
+|---|---|
+| `database_schema_or_migration` | [least-privilege-blast-radius](least-privilege-blast-radius.md) (3), [reversible-commitments](reversible-commitments.md) (3), [correction-at-source](correction-at-source.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1) |
+| `index_or_query_change` | [reversible-commitments](reversible-commitments.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [correction-at-source](correction-at-source.md) (2), [measurement-integrity](measurement-integrity.md) (1) |
+| `batch_or_stream_worker` | [feedback-bounded-waiting](feedback-bounded-waiting.md) (5), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (2), [measurement-integrity](measurement-integrity.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `architecture_proposal_or_adr` | [durable-decision-memory](durable-decision-memory.md) (4), [falsification-disconfirmers](falsification-disconfirmers.md) (4), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [designed-unknown](designed-unknown.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [correction-at-source](correction-at-source.md) (1), [measurement-integrity](measurement-integrity.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (1) |
+| `codeowners_or_service_catalog_or_org_change` | [durable-decision-memory](durable-decision-memory.md) (3), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [correction-at-source](correction-at-source.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (1) |
+| `concurrency_or_async_code` | [feedback-bounded-waiting](feedback-bounded-waiting.md) (5), [reversible-commitments](reversible-commitments.md) (3), [correction-at-source](correction-at-source.md) (1) |
+| `security_sensitive_change` | [least-privilege-blast-radius](least-privilege-blast-radius.md) (6), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (4), [dual-control-two-keys](dual-control-two-keys.md) (2), [contract-before-components](contract-before-components.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1) |
+| `ui_or_frontend_change` | [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (10), [signal-density-not-length](signal-density-not-length.md) (7), [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (6), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (3), [evidence-before-commitment](evidence-before-commitment.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [contract-before-components](contract-before-components.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `embedding_or_face_recognition_change` | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (5), [evidence-before-commitment](evidence-before-commitment.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (3), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [designed-unknown](designed-unknown.md) (2), [frozen-base-additive-delta](frozen-base-additive-delta.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [signal-density-not-length](signal-density-not-length.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `video_timeline_segmentation_change` | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (6), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (6), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (4), [signal-density-not-length](signal-density-not-length.md) (4), [measurement-integrity](measurement-integrity.md) (3), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (1) |
+| `model_weights_or_training_change` | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (10), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (8), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (7), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (7), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (6), [signal-density-not-length](signal-density-not-length.md) (5), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (4), [evidence-before-commitment](evidence-before-commitment.md) (4), [measurement-integrity](measurement-integrity.md) (4), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (3), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [frozen-base-additive-delta](frozen-base-additive-delta.md) (1), [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `prompt_or_generation_contract_change` | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (10), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (5), [signal-density-not-length](signal-density-not-length.md) (5), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [measurement-integrity](measurement-integrity.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [contract-before-components](contract-before-components.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (1) |
+| `rag_corpus_or_index_change` | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (6), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [measurement-integrity](measurement-integrity.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (2), [signal-density-not-length](signal-density-not-length.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (1), [designed-unknown](designed-unknown.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `rag_retrieval_or_reranking_change` | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (11), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (6), [signal-density-not-length](signal-density-not-length.md) (5), [measurement-integrity](measurement-integrity.md) (4), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (3), [proxy-outcome-integrity](proxy-outcome-integrity.md) (3), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (2), [frozen-base-additive-delta](frozen-base-additive-delta.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (1), [designed-unknown](designed-unknown.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (1) |
+| `agent_loop_change` | [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (6), [feedback-bounded-waiting](feedback-bounded-waiting.md) (6), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [measurement-integrity](measurement-integrity.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [contract-before-components](contract-before-components.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [signal-density-not-length](signal-density-not-length.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `agent_tool_side_effect_change` | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (10), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (5), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (5), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [reversible-commitments](reversible-commitments.md) (4), [correction-at-source](correction-at-source.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [designed-unknown](designed-unknown.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [contract-before-components](contract-before-components.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [signal-density-not-length](signal-density-not-length.md) (1) |
+| `ai_review_or_curation_ui` | [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (9), [signal-density-not-length](signal-density-not-length.md) (8), [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (6), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (3), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (3), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (3), [designed-unknown](designed-unknown.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [correction-at-source](correction-at-source.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [contract-before-components](contract-before-components.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `agent_session_or_skill_change` | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (4), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [contract-before-components](contract-before-components.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (4), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (3), [durable-decision-memory](durable-decision-memory.md) (3), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [signal-density-not-length](signal-density-not-length.md) (1) |
+| `failing_test_or_incident_investigation` | [falsification-disconfirmers](falsification-disconfirmers.md) (5), [feedback-bounded-waiting](feedback-bounded-waiting.md) (5), [measurement-integrity](measurement-integrity.md) (4), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [durable-decision-memory](durable-decision-memory.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1) |
+| `release_or_deploy_change` | [proxy-outcome-integrity](proxy-outcome-integrity.md) (6), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (4), [durable-decision-memory](durable-decision-memory.md) (4), [measurement-integrity](measurement-integrity.md) (4), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (3), [falsification-disconfirmers](falsification-disconfirmers.md) (3), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [contract-before-components](contract-before-components.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (2), [designed-unknown](designed-unknown.md) (1), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (1), [reversible-commitments](reversible-commitments.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `public_naming_or_api_surface` | [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `algorithm_or_data_structure_choice` | [reversible-commitments](reversible-commitments.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (1), [correction-at-source](correction-at-source.md) (1), [measurement-integrity](measurement-integrity.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1) |
+| `prose_or_documentation_change` | [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (7), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (3), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [signal-density-not-length](signal-density-not-length.md) (2), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (1), [contract-before-components](contract-before-components.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `image_description_or_alt_text_change` | [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (14), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (14), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (13), [signal-density-not-length](signal-density-not-length.md) (10), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (6), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (5), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [contract-before-components](contract-before-components.md) (2), [reversible-commitments](reversible-commitments.md) (2), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1) |
+| `archival_description_or_catalogue_change` | [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (8), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (8), [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (7), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (5), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (5), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [signal-density-not-length](signal-density-not-length.md) (3), [contract-before-components](contract-before-components.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [evidence-before-commitment](evidence-before-commitment.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `strategy_or_product_bet` | [designed-unknown](designed-unknown.md) (6), [falsification-disconfirmers](falsification-disconfirmers.md) (6), [evidence-before-commitment](evidence-before-commitment.md) (4), [proxy-outcome-integrity](proxy-outcome-integrity.md) (4), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (3), [correction-at-source](correction-at-source.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (2), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (2), [signal-density-not-length](signal-density-not-length.md) (2), [step-size-by-feedback](step-size-by-feedback.md) (2), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (1), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (1), [contract-before-components](contract-before-components.md) (1), [dual-control-two-keys](dual-control-two-keys.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [reversible-commitments](reversible-commitments.md) (1) |
+| `estimate_or_forecast_in_a_plan` | [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (7), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (6), [designed-unknown](designed-unknown.md) (5), [falsification-disconfirmers](falsification-disconfirmers.md) (5), [signal-density-not-length](signal-density-not-length.md) (4), [evidence-before-commitment](evidence-before-commitment.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [measurement-integrity](measurement-integrity.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (1), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [durable-decision-memory](durable-decision-memory.md) (1), [reversible-commitments](reversible-commitments.md) (1), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (1) |
+| `choosing_a_problem_or_research_direction` | [falsification-disconfirmers](falsification-disconfirmers.md) (5), [designed-unknown](designed-unknown.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (2), [durable-decision-memory](durable-decision-memory.md) (1), [reversible-commitments](reversible-commitments.md) (1), [signal-density-not-length](signal-density-not-length.md) (1) |
+| `data_analysis_or_experiment` | [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) (11), [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (9), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (7), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (6), [evidence-before-commitment](evidence-before-commitment.md) (4), [measurement-integrity](measurement-integrity.md) (4), [signal-density-not-length](signal-density-not-length.md) (4), [designed-unknown](designed-unknown.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (2), [falsification-disconfirmers](falsification-disconfirmers.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `corpus_audit_or_population_rate_claim` | [quantization-delta-on-the-failure-metric](quantization-delta-on-the-failure-metric.md) (7), [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (7), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (6), [margin-and-design-effect-before-the-run](margin-and-design-effect-before-the-run.md) (4), [measurement-integrity](measurement-integrity.md) (4), [signal-density-not-length](signal-density-not-length.md) (4), [evidence-before-commitment](evidence-before-commitment.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [designed-unknown](designed-unknown.md) (2), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (1), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `pricing_positioning_or_launch` | [evidence-before-commitment](evidence-before-commitment.md) (3), [contract-before-components](contract-before-components.md) (2), [falsification-disconfirmers](falsification-disconfirmers.md) (2), [durable-decision-memory](durable-decision-memory.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [reversible-commitments](reversible-commitments.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `brand_or_visual_identity_change` | [durable-decision-memory](durable-decision-memory.md) (1) |
+| `php_or_wordpress_change` | [least-privilege-blast-radius](least-privilege-blast-radius.md) (2), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [dual-control-two-keys](dual-control-two-keys.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1) |
+| `usability_evaluation_or_metric` | [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (2), [proxy-outcome-integrity](proxy-outcome-integrity.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (1), [correction-at-source](correction-at-source.md) (1), [designed-unknown](designed-unknown.md) (1), [measurement-integrity](measurement-integrity.md) (1), [signal-density-not-length](signal-density-not-length.md) (1) |
+| `generated_rule_index_or_registry_change` | [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (7), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (5), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (4), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [correction-at-source](correction-at-source.md) (3), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [measurement-integrity](measurement-integrity.md) (3), [reversible-commitments](reversible-commitments.md) (3), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (2), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (2), [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (1), [contract-before-components](contract-before-components.md) (1), [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [proxy-outcome-integrity](proxy-outcome-integrity.md) (1), [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (1), [signal-density-not-length](signal-density-not-length.md) (1), [step-size-by-feedback](step-size-by-feedback.md) (1) |
+| `canon_rule_or_card_change` | [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md) (8), [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) (8), [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) (7), [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) (6), [runtime-fork-is-part-of-provenance](runtime-fork-is-part-of-provenance.md) (6), [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) (5), [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) (4), [frozen-base-additive-delta](frozen-base-additive-delta.md) (4), [licence-provenance-is-transitive](licence-provenance-is-transitive.md) (3), [signal-density-not-length](signal-density-not-length.md) (3), [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) (2), [contract-before-components](contract-before-components.md) (2), [correction-at-source](correction-at-source.md) (2), [designed-unknown](designed-unknown.md) (2), [reversible-commitments](reversible-commitments.md) (2), [evidence-before-commitment](evidence-before-commitment.md) (1), [falsification-disconfirmers](falsification-disconfirmers.md) (1), [feedback-bounded-waiting](feedback-bounded-waiting.md) (1), [perceived-enforced-boundaries](perceived-enforced-boundaries.md) (1) |

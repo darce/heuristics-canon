@@ -40,6 +40,14 @@ able to:
 Use these headings in order. Keep each section short. Prefer named lists over
 narrative.
 
+## Card identity
+
+Published identity is the path `reasoning/<slug>.md`. The `Slug:` line must
+equal the filename stem; validation enforces that mirror. A post-publication
+rename is **retire + add**, not `mv` — the old slug stays retired and is never
+reused. The H1 title is free to move independently of the slug (many cards
+already carry an H1 that no longer kebab-cases to their slug).
+
 | Section | Content | Audience |
 |---|---|---|
 | Title and slug | Stable filename slug; one-line mechanism claim | both |

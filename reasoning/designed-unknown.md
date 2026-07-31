@@ -10,9 +10,9 @@ Covers: calibration thresholds and decline-to-decide paths; annotation and HITL
 routing; empty/error/offline UI; graded uncertainty in forecasts; precision-first
 guidance; competence "too tough" baskets; partial measurement as a valid state.
 
-Excludes: measurement frames the system can shape (see `measurement-integrity`);
-correction loops after a wrong durable label (see `correction-at-source`);
-timeouts as the only bound (see `feedback-bounded-waiting`).
+Excludes: measurement frames the system can shape (see [measurement-integrity](measurement-integrity.md));
+correction loops after a wrong durable label (see [correction-at-source](correction-at-source.md));
+timeouts as the only bound (see [feedback-bounded-waiting](feedback-bounded-waiting.md)).
 
 ## Observable triggers
 

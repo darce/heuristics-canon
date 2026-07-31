@@ -13,9 +13,9 @@ software splits; policy text vs implementation; click affordances that match
 reality.
 
 Excludes: contract-before-components gatekeeper specs (see
-`contract-before-components`); least-privilege radius and dual control (see
-`least-privilege-blast-radius`, `dual-control-two-keys`); pure measurement
-frames (see `measurement-integrity`).
+[contract-before-components](contract-before-components.md)); least-privilege radius and dual control (see
+[least-privilege-blast-radius](least-privilege-blast-radius.md), [dual-control-two-keys](dual-control-two-keys.md)); pure measurement
+frames (see [measurement-integrity](measurement-integrity.md)).
 
 ## Observable triggers
 
@@ -75,11 +75,11 @@ Autonomy marketing outruns the tested envelope and causes harm.
 
 - Exploratory sketches may imply structure before enforcement exists if labeled
   as non-normative; the card fires when the boundary is presented as real.
-- Privilege *radius* remains `least-privilege-blast-radius`; two-key completion
-  remains `dual-control-two-keys`; this card asks whether the boundary users
+- Privilege *radius* remains [least-privilege-blast-radius](least-privilege-blast-radius.md); two-key completion
+  remains [dual-control-two-keys](dual-control-two-keys.md); this card asks whether the boundary users
   perceive is the one mediation enforces.
 - Gatekeeper *contracts* before shipping are
-  `contract-before-components`; this card is the match between perceived and
+  [contract-before-components](contract-before-components.md); this card is the match between perceived and
   enforced cuts after a boundary is claimed.
 
 ## Tensions

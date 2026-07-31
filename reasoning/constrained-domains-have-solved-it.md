@@ -7,7 +7,7 @@ Mechanism claim: When a task requires describing something in words, look first 
 
 Covers: plan, schema, prompt, or product paths that turn a finite descriptive attribute, a media alternative, a control name, or a known technical sub-problem into free-form generation; decisions about lookup, classification, native platform semantics, or an adopted constrained-domain grammar versus open invention.
 
-Excludes: pure literary or open-interpretive description with no inter-party agreement duty; which attribute classes may safely close into a controlled set (sibling card `controlled-vocabulary-caps-hallucination`); multi-budget survival rules once a description already exists (sibling card `compression-is-selection-not-truncation`); claim-bearer assignment for non-visible photo content (sibling card `attribute-claims-to-their-bearer`).
+Excludes: pure literary or open-interpretive description with no inter-party agreement duty; which attribute classes may safely close into a controlled set (sibling card [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md)); multi-budget survival rules once a description already exists (sibling card [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md)); claim-bearer assignment for non-visible photo content (sibling card [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md)).
 
 ## Observable triggers
 
@@ -39,9 +39,9 @@ Teams reinvent a controlled vocabulary badly: terms look specific, disagree acro
 ## Exemptions and boundaries
 
 - Domains that describe for pleasure or open interpretation are not sources of binding vocabulary for product claims.
-- This card does not decide which attribute classes may close; that cut belongs to `controlled-vocabulary-caps-hallucination`.
-- Length-budget selection (what must survive a shorter caption) belongs to `compression-is-selection-not-truncation`.
-- Who may own non-visual photo claims belongs to `attribute-claims-to-their-bearer`.
+- This card does not decide which attribute classes may close; that cut belongs to [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md).
+- Length-budget selection (what must survive a shorter caption) belongs to [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md).
+- Who may own non-visual photo claims belongs to [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md).
 - A general "search the web for prior art" hunt with no named list in the plan is not a fireable action; name the candidate domain or keep free text.
 - [ARCH-05](../lexicons/engineering.md#arch-05) still owns when shared assets change too fast to reuse; this card owns description vocabulary and constraint-born grammar, not platform reuse rates.
 

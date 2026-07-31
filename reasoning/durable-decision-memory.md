@@ -12,8 +12,8 @@ must outlive a founder; handoff packets with intent and constraints.
 
 Excludes: full provenance graphs for every data artifact (open PRINCIPLES
 Principle 9 starting at GRPH-14 for walk-back of claims); measurement
-dashboards (see `measurement-integrity`); dual-control completion (see
-`dual-control-two-keys`).
+dashboards (see [measurement-integrity](measurement-integrity.md)); dual-control completion (see
+[dual-control-two-keys](dual-control-two-keys.md)).
 
 ## Observable triggers
 

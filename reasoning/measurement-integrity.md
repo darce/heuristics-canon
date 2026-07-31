@@ -11,9 +11,9 @@ edit; load and eval apparatus that delete hard cases; independent watchers on
 goal, sample, or pass bar; dataset filters that define a benchmark.
 
 Excludes: choosing the *right outcome vs a convenient proxy* (see
-`proxy-outcome-integrity`); designed unknown / forced precision (see
-`designed-unknown`); evidence clocks before a durable commit (see
-`evidence-before-commitment`).
+[proxy-outcome-integrity](proxy-outcome-integrity.md)); designed unknown / forced precision (see
+[designed-unknown](designed-unknown.md)); evidence clocks before a durable commit (see
+[evidence-before-commitment](evidence-before-commitment.md)).
 
 ## Observable triggers
 
@@ -68,13 +68,13 @@ never could have gone red.
   may stay rough; the card fires when the number *decides*.
 - Regulatory or contractual metrics you did not choose still need an integrity
   audit; "required by audit" is not an exemption from a shaped sample.
-- Wrong-proxy / outcome mismatch is owned by `proxy-outcome-integrity`
+- Wrong-proxy / outcome mismatch is owned by [proxy-outcome-integrity](proxy-outcome-integrity.md)
   (Principle 4), not this card.
 - Partial knowledge and designed unknown states are owned by
-  `designed-unknown` (Principle 11).
-- Evidence-before-commit clocks are owned by `evidence-before-commitment`
+  [designed-unknown](designed-unknown.md) (Principle 11).
+- Evidence-before-commit clocks are owned by [evidence-before-commitment](evidence-before-commitment.md)
   (Principle 13). Named disconfirmers as posture are owned by
-  `falsification-disconfirmers` (Principle 2); TEST-06 may load both that card
+  [falsification-disconfirmers](falsification-disconfirmers.md) (Principle 2); TEST-06 may load both that card
   and this one when a never-failing suite is also a shaped instrument.
 
 ## Tensions

@@ -7,7 +7,7 @@ Mechanism claim: A model that requires a vendor fork of the inference runtime ca
 
 Covers: adoption, pin, release, rollback, and audit decisions when a model only loads or scores correctly on a non-stock inference runtime (vendor fork, patched engine, private kernel/tokenizer/scheduler image), so that runtime must appear in the dependency closure and serving contract.
 
-Excludes: pure legal review of weight licences; training-data lineage; managed-API endpoints where the provider owns the runtime and the contract surface is an API version you do not operate; stock runtimes differing only by reviewed config; general model-card discipline when no fork is required (plain pointer to sibling provenance cards such as C3).
+Excludes: pure legal review of weight licences; training-data lineage; managed-API endpoints where the provider owns the runtime and the contract surface is an API version you do not operate; stock runtimes differing only by reviewed config; general model-card discipline when no fork is required.
 
 ## Observable triggers
 
@@ -50,7 +50,7 @@ While a required runtime fork is in play:
 - Stock upstream runtime with only config, prompt, or decoding differences: still pin behaviour-affecting config ([PROV-08](../lexicons/ml-systems.md#prov-08), [PROV-09](../lexicons/ml-systems.md#prov-09)); do not invent a "fork" where none exists.
 - Offline research that never produces production decisions or customer-facing scores.
 - Weight-licence and redistribution legal review remains a separate decision; it does not satisfy runtime provenance.
-- Sibling general provenance and model-card cards (including C3): this card only when a required runtime fork is on the serve path. Do not re-own their full rule sets here.
+- Sibling general provenance and model-card cards: this card only when a required runtime fork is on the serve path. Do not re-own their full rule sets here.
 - Continuous-batching and KV-cache sizing are capacity decisions ([SERVE-05](../lexicons/ml-systems.md#serve-05), [SERVE-06](../lexicons/ml-systems.md#serve-06)); cite them only when the fork is also the capacity owner, not as substitutes for lineage.
 
 ## Tensions

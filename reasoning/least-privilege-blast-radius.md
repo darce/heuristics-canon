@@ -10,12 +10,12 @@ Covers: privilege grants and tool scope; trusted computing base size; split of
 train / promote / serve and other high-impact identities; non-superuser app
 roles; refusal of needless `PUBLIC` or write-heavy ops grants.
 
-Excludes: two-key completion of high-impact acts (see `dual-control-two-keys`);
+Excludes: two-key completion of high-impact acts (see [dual-control-two-keys](dual-control-two-keys.md));
 pricing reversible vs irreversible *choices* and hostile-landlord exits (see
-`reversible-commitments`, `second-exit-hostile-landlord`); correction at source
-of truth (see `correction-at-source`); step size of rollouts (see
-`step-size-by-feedback`); pure measurement integrity (see
-`measurement-integrity`).
+[reversible-commitments](reversible-commitments.md), [second-exit-hostile-landlord](second-exit-hostile-landlord.md)); correction at source
+of truth (see [correction-at-source](correction-at-source.md)); step size of rollouts (see
+[step-size-by-feedback](step-size-by-feedback.md)); pure measurement integrity (see
+[measurement-integrity](measurement-integrity.md)).
 
 ## Observable triggers
 
@@ -55,17 +55,17 @@ cluster. One fat identity silently replaces production weights or labels.
 
 - Break-glass emergency paths may temporarily widen scope if time-boxed,
   audited, and dual-controlled on entry (dual control owned by
-  `dual-control-two-keys`).
+  [dual-control-two-keys](dual-control-two-keys.md)).
 - Read-only broad visibility is a smaller radius than write; still minimize
   sensitive read sets when compromise is the threat model.
 - Human gates, dual authorizers, and secondary checks on irreversible acts are
-  owned by `dual-control-two-keys` (Principle 17); plain pointer only. Do not
+  owned by [dual-control-two-keys](dual-control-two-keys.md) (Principle 17); plain pointer only. Do not
   load two-key machinery from this card's triggers alone.
 - Reversible claim language, rollback plans, isolation/idempotency defaults are
-  owned by `reversible-commitments` (Principle 3); second exits from external
-  landlords by `second-exit-hostile-landlord` (Principle 8).
+  owned by [reversible-commitments](reversible-commitments.md) (Principle 3); second exits from external
+  landlords by [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (Principle 8).
 - Phased rollout reduces blast radius of *change* as step size; that decision
-  is owned by `step-size-by-feedback` (Principle 19).
+  is owned by [step-size-by-feedback](step-size-by-feedback.md) (Principle 19).
 
 ## Tensions
 

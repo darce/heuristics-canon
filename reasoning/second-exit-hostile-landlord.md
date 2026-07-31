@@ -12,10 +12,10 @@ parties; cut vertices and bridges whose loss partitions the system; trust
 change at every external boundary.
 
 Excludes: pricing reversible vs irreversible *choices* inside your own plan
-(see `reversible-commitments`); standing privilege radius (see
-`least-privilege-blast-radius`); dual-control completion (see
-`dual-control-two-keys`); perceived-vs-enforced boundary lies alone (see
-`perceived-enforced-boundaries`).
+(see [reversible-commitments](reversible-commitments.md)); standing privilege radius (see
+[least-privilege-blast-radius](least-privilege-blast-radius.md)); dual-control completion (see
+[dual-control-two-keys](dual-control-two-keys.md)); perceived-vs-enforced boundary lies alone (see
+[perceived-enforced-boundaries](perceived-enforced-boundaries.md)).
 
 ## Observable triggers
 
@@ -60,11 +60,11 @@ A single bridge node fails and partitions the system.
   deadline are written; "we will multi-home later" without a date is not an
   exit.
 - Soft claim language, rollback plans, and isolation defaults are owned by
-  `reversible-commitments` (Principle 3); plain pointer only.
-- Shrink of standing grants is owned by `least-privilege-blast-radius`
+  [reversible-commitments](reversible-commitments.md) (Principle 3); plain pointer only.
+- Shrink of standing grants is owned by [least-privilege-blast-radius](least-privilege-blast-radius.md)
   (Principle 14); do not load privilege sizing from this card alone.
 - When the issue is a boundary users *believe* but the system does not
-  *enforce*, also open `perceived-enforced-boundaries`; SEC-01 may load both.
+  *enforce*, also open [perceived-enforced-boundaries](perceived-enforced-boundaries.md); SEC-01 may load both.
 
 ## Tensions
 

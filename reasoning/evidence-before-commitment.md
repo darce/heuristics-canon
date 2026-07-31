@@ -11,12 +11,12 @@ purchase and inventory bets; agent completion claims; characterization before
 legacy edit; outside-view priors before narrative lock-in.
 
 Excludes: naming disconfirmers and kill criteria as a posture (see
-`falsification-disconfirmers`); pure apparatus integrity when no commit is
-pending (see `measurement-integrity`); wrong-proxy targets (see
-`proxy-outcome-integrity`); step-size after the gate is open (see
-`step-size-by-feedback`); dual-control mechanics alone (see
-`dual-control-two-keys`); reversible choice and landlord exit (see
-`reversible-commitments`, `second-exit-hostile-landlord`).
+[falsification-disconfirmers](falsification-disconfirmers.md)); pure apparatus integrity when no commit is
+pending (see [measurement-integrity](measurement-integrity.md)); wrong-proxy targets (see
+[proxy-outcome-integrity](proxy-outcome-integrity.md)); step-size after the gate is open (see
+[step-size-by-feedback](step-size-by-feedback.md)); dual-control mechanics alone (see
+[dual-control-two-keys](dual-control-two-keys.md)); reversible choice and landlord exit (see
+[reversible-commitments](reversible-commitments.md), [second-exit-hostile-landlord](second-exit-hostile-landlord.md)).
 
 ## Observable triggers
 
@@ -67,15 +67,15 @@ nothing green proves it. Confidence tracks a coherent story, not evidence amount
 ## Exemptions and boundaries
 
 - Reversible experiments may commit *small* exposure to *gain* evidence; that
-  is Principle 19 step size (`step-size-by-feedback`), not a waiver of evidence
+  is Principle 19 step size ([step-size-by-feedback](step-size-by-feedback.md)), not a waiver of evidence
   for the larger freeze.
 - Emergency break-glass commits still need post-hoc evidence packages and dual
-  control where high impact applies (`dual-control-two-keys`).
+  control where high impact applies ([dual-control-two-keys](dual-control-two-keys.md)).
 - Expert recognition under high validity and fast feedback
   ([NDM-01](../lexicons/epistemics.md#ndm-01)) can support operational micro-decisions; it does
   not replace scored evidence for durable public claims.
 - Writing disconfirmers, kill criteria, and resolution criteria as a *posture*
-  is owned by `falsification-disconfirmers` (Principle 2); this card owns the
+  is owned by [falsification-disconfirmers](falsification-disconfirmers.md) (Principle 2); this card owns the
   commit clock once those criteria and packages are in play.
 
 ## Tensions
@@ -124,11 +124,11 @@ nothing green proves it. Confidence tracks a coherent story, not evidence amount
 - 13. Evidence precedes commitment
 
 Also load Principle 2 when the gap is missing kill criteria rather than a late
-package (see `falsification-disconfirmers`). Also load Principle 9 when the
+package (see [falsification-disconfirmers](falsification-disconfirmers.md)). Also load Principle 9 when the
 commitment is a claim that must walk back to what produced it (open the
 principle row, starting at GRPH-14). Walkable lineage is not this card's owned
 mechanism; do not re-own correction or source-of-truth repair here (see
-`correction-at-source`).
+[correction-at-source](correction-at-source.md)).
 
 ## Evidence / source slugs
 

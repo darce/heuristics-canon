@@ -11,8 +11,8 @@ greens used to gate, promote, page, or claim success; incentive design that
 pays for a number instead of a user or risk outcome.
 
 Excludes: sampling-frame / denominator ownership when the *target* is already
-right (see `measurement-integrity`); evidence clocks before a durable commit
-(see `evidence-before-commitment`); pure taste with no claimed metric.
+right (see [measurement-integrity](measurement-integrity.md)); evidence clocks before a durable commit
+(see [evidence-before-commitment](evidence-before-commitment.md)); pure taste with no claimed metric.
 
 ## Observable triggers
 
@@ -79,7 +79,7 @@ almost no page meets the real bar. Comp plans reward the wrong 2am behavior.
   degrade-and-check against the product metric
   ([EVAL-22](../lexicons/ml-systems.md#eval-22)).
 - Frame, sample, and denominator integrity (shaped apparatus with the *right*
-  target) is owned by `measurement-integrity` (Principle 15).
+  target) is owned by [measurement-integrity](measurement-integrity.md) (Principle 15).
 - Expert judgment under high validity and fast feedback may outrank a weak
   meter for operational micro-decisions; it does not license a public numeric
   claim that the proxy is the outcome.

@@ -13,10 +13,10 @@ dies; reproduce-before-fix and absence-of-cause tests; hostile literal reading
 of claims.
 
 Excludes: the *timing* of inspectable evidence packages before a durable
-commit (see `evidence-before-commitment`); sampling-frame integrity of meters
-(see `measurement-integrity`); proxy-vs-outcome target choice (see
-`proxy-outcome-integrity`); step size after a gate opens (see
-`step-size-by-feedback`).
+commit (see [evidence-before-commitment](evidence-before-commitment.md)); sampling-frame integrity of meters
+(see [measurement-integrity](measurement-integrity.md)); proxy-vs-outcome target choice (see
+[proxy-outcome-integrity](proxy-outcome-integrity.md)); step size after a gate opens (see
+[step-size-by-feedback](step-size-by-feedback.md)).
 
 ## Observable triggers
 
@@ -71,14 +71,14 @@ reading in production.
 ## Exemptions and boundaries
 
 - Reversible experiments may run small exposure to *hunt* disconfirmers; sizing
-  that exposure is `step-size-by-feedback` (Principle 19).
+  that exposure is [step-size-by-feedback](step-size-by-feedback.md) (Principle 19).
 - Whether a durable commit may proceed once disconfirmers and packages exist is
-  owned by `evidence-before-commitment` (Principle 13); plain pointer only.
+  owned by [evidence-before-commitment](evidence-before-commitment.md) (Principle 13); plain pointer only.
 - Whether the meter itself can be shaped by the measured party is owned by
-  `measurement-integrity` (Principle 15); TEST-06 may load both cards when a
+  [measurement-integrity](measurement-integrity.md) (Principle 15); TEST-06 may load both cards when a
   never-failing suite is also a shaped instrument.
 - Contract-before-build authorship of gatekeeper specs is owned by
-  `contract-before-components`; CLM-05 may load both when the hostile reader is
+  [contract-before-components](contract-before-components.md); CLM-05 may load both when the hostile reader is
   also the gatekeeper contract.
 
 ## Tensions
@@ -123,7 +123,7 @@ reading in production.
 
 Also load Principle 13 when the next step is a durable commit that needs an
 inspectable evidence package, not only a named disconfirmer (see
-`evidence-before-commitment`).
+[evidence-before-commitment](evidence-before-commitment.md)).
 
 ## Evidence / source slugs
 

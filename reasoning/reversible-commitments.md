@@ -10,11 +10,11 @@ Covers: ship and rollback plans; claim language and early a11y cost; isolation
 and idempotency choices; fear-setting before freezing a reversible decision.
 
 Excludes: second exits from external landlords and cut vertices (see
-`second-exit-hostile-landlord`); standing privilege and dual control (see
-`least-privilege-blast-radius`, `dual-control-two-keys`); correction at source
-(see `correction-at-source`); step size after the gate (see
-`step-size-by-feedback`); evidence clocks before durable commit (see
-`evidence-before-commitment`).
+[second-exit-hostile-landlord](second-exit-hostile-landlord.md)); standing privilege and dual control (see
+[least-privilege-blast-radius](least-privilege-blast-radius.md), [dual-control-two-keys](dual-control-two-keys.md)); correction at source
+(see [correction-at-source](correction-at-source.md)); step size after the gate (see
+[step-size-by-feedback](step-size-by-feedback.md)); evidence clocks before durable commit (see
+[evidence-before-commitment](evidence-before-commitment.md)).
 
 ## Observable triggers
 
@@ -61,13 +61,13 @@ rollback plan, only invention.
 ## Exemptions and boundaries
 
 - Truly irreversible legal or physical acts still need dual control and
-  evidence before commit; raise the gate via `dual-control-two-keys` and
-  `evidence-before-commitment`.
-- Privilege sizing is owned by `least-privilege-blast-radius` (Principle 14);
-  two-key completion by `dual-control-two-keys` (Principle 17); plain pointer
+  evidence before commit; raise the gate via [dual-control-two-keys](dual-control-two-keys.md) and
+  [evidence-before-commitment](evidence-before-commitment.md).
+- Privilege sizing is owned by [least-privilege-blast-radius](least-privilege-blast-radius.md) (Principle 14);
+  two-key completion by [dual-control-two-keys](dual-control-two-keys.md) (Principle 17); plain pointer
   only.
 - Multi-home, adapters, cut vertices, and hostile-landlord exits are owned by
-  `second-exit-hostile-landlord` (Principle 8); plain pointer only.
+  [second-exit-hostile-landlord](second-exit-hostile-landlord.md) (Principle 8); plain pointer only.
 - "We can fix it after launch" is not an exemption; it is usually the
   expensive answer this card refuses.
 

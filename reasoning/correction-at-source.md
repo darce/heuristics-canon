@@ -12,11 +12,11 @@ event publish; prose edits that leave the underlying defect; post-hoc model
 corrector cascades.
 
 Excludes: pure privilege and dual-control design (see
-`least-privilege-blast-radius`, `dual-control-two-keys`); reversible choice and
-landlord exit (see `reversible-commitments`, `second-exit-hostile-landlord`);
-measurement frame ownership (see `measurement-integrity`); wrong-proxy targets
-(see `proxy-outcome-integrity`); step size of rollouts (see
-`step-size-by-feedback`) except where a "fix" is only a temporary patch.
+[least-privilege-blast-radius](least-privilege-blast-radius.md), [dual-control-two-keys](dual-control-two-keys.md)); reversible choice and
+landlord exit (see [reversible-commitments](reversible-commitments.md), [second-exit-hostile-landlord](second-exit-hostile-landlord.md));
+measurement frame ownership (see [measurement-integrity](measurement-integrity.md)); wrong-proxy targets
+(see [proxy-outcome-integrity](proxy-outcome-integrity.md)); step size of rollouts (see
+[step-size-by-feedback](step-size-by-feedback.md)) except where a "fix" is only a temporary patch.
 
 This card exclusively owns the correction-at-source decision for
 [HAI-02](../lexicons/interaction-ux.md#hai-02),

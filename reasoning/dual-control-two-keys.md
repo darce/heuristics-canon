@@ -12,11 +12,11 @@ secondary verification on high-stakes model accepts; expert adjudication before
 low-agreement high-impact labels enter training.
 
 Excludes: standing privilege sizing and TCB shrink (see
-`least-privilege-blast-radius`); pricing reversible vs irreversible *choices*
-and hostile-landlord exits (see `reversible-commitments`,
-`second-exit-hostile-landlord`); designed unknown as abstention state alone
-(see `designed-unknown`); evidence clocks before durable commit (see
-`evidence-before-commitment`).
+[least-privilege-blast-radius](least-privilege-blast-radius.md)); pricing reversible vs irreversible *choices*
+and hostile-landlord exits (see [reversible-commitments](reversible-commitments.md),
+[second-exit-hostile-landlord](second-exit-hostile-landlord.md)); designed unknown as abstention state alone
+(see [designed-unknown](designed-unknown.md)); evidence clocks before durable commit (see
+[evidence-before-commitment](evidence-before-commitment.md)).
 
 ## Observable triggers
 
@@ -55,18 +55,18 @@ Low-agreement labels poison training without an expert gate.
 ## Exemptions and boundaries
 
 - Truly irreversible legal or physical acts still need dual control and
-  evidence *before* commit (Principle 13 via `evidence-before-commitment`);
+  evidence *before* commit (Principle 13 via [evidence-before-commitment](evidence-before-commitment.md));
   "no rollback possible" raises the gate, it does not remove it.
 - Break-glass emergency paths may temporarily complete under urgency if
   time-boxed, audited, and dual-controlled on entry.
 - Standing privilege and TCB sizing are owned by
-  `least-privilege-blast-radius` (Principle 14); plain pointer only. Do not
+  [least-privilege-blast-radius](least-privilege-blast-radius.md) (Principle 14); plain pointer only. Do not
   load grant-sizing machinery from this card's triggers alone.
 - When the same low-agreement path is about *forcing a class* rather than
-  *who may authorize the label*, also open `designed-unknown` (Principle 11);
+  *who may authorize the label*, also open [designed-unknown](designed-unknown.md) (Principle 11);
   both mechanisms can apply.
 - Corrections that must update the system of record are owned by
-  `correction-at-source` (Principle 12); plain pointer only.
+  [correction-at-source](correction-at-source.md) (Principle 12); plain pointer only.
 
 ## Tensions
 

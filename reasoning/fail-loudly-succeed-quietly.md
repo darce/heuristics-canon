@@ -11,10 +11,10 @@ ERROR and page severity that imply operator action; program I/O where stdout is
 data and diagnostics stay on the human-only channel.
 
 Excludes: timeouts and queue bounds that make stalls detectable at all (see
-`feedback-bounded-waiting`); plan and rollout step size (see
-`step-size-by-feedback`); pure measurement-frame integrity (see
-`measurement-integrity`); correction reaching source of truth (see
-`correction-at-source`).
+[feedback-bounded-waiting](feedback-bounded-waiting.md)); plan and rollout step size (see
+[step-size-by-feedback](step-size-by-feedback.md)); pure measurement-frame integrity (see
+[measurement-integrity](measurement-integrity.md)); correction reaching source of truth (see
+[correction-at-source](correction-at-source.md)).
 
 ## Observable triggers
 
@@ -57,8 +57,8 @@ everyone to look away.
 - A deliberate quiet success channel still needs a separate dead-man's path
   for capture health (Principle 16 via [OBS-08](../lexicons/engineering.md#obs-08)).
 - Bounding the wait so a failure can occur at all is owned by
-  `feedback-bounded-waiting`; this card owns where that failure is reported.
-- Step size of plans and rollouts is owned by `step-size-by-feedback`
+  [feedback-bounded-waiting](feedback-bounded-waiting.md); this card owns where that failure is reported.
+- Step size of plans and rollouts is owned by [step-size-by-feedback](step-size-by-feedback.md)
   (Principle 19); plain pointer only.
 
 ## Tensions

@@ -12,11 +12,11 @@ pre-named stops; learning-loop windows where delayed labels or self-generated
 serving diet set how far the next step may go.
 
 Excludes: pre-commit evidence clocks for a single durable gate (see
-`evidence-before-commitment`); pure timeouts and queue bounds (see
-`feedback-bounded-waiting`); fail-loudly channel design (see
-`fail-loudly-succeed-quietly`); pure privilege sizing (see
-`least-privilege-blast-radius`); correction reaching source of truth (see
-`correction-at-source`) except where a "fix" is only a temporary patch sized
+[evidence-before-commitment](evidence-before-commitment.md)); pure timeouts and queue bounds (see
+[feedback-bounded-waiting](feedback-bounded-waiting.md)); fail-loudly channel design (see
+[fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md)); pure privilege sizing (see
+[least-privilege-blast-radius](least-privilege-blast-radius.md)); correction reaching source of truth (see
+[correction-at-source](correction-at-source.md)) except where a "fix" is only a temporary patch sized
 to the next feedback check.
 
 ## Observable triggers
@@ -59,15 +59,15 @@ and mark late converters as permanent negatives.
 - Single-moment launches may still be required for coordination; bound the
   *risk radius* and keep stop criteria even if the calendar shows one date.
 - Evidence before the first durable freeze is owned by
-  `evidence-before-commitment` (Principle 13); named disconfirmers as posture
-  by `falsification-disconfirmers` (Principle 2); this card owns increments
+  [evidence-before-commitment](evidence-before-commitment.md) (Principle 13); named disconfirmers as posture
+  by [falsification-disconfirmers](falsification-disconfirmers.md) (Principle 2); this card owns increments
   after that gate.
-- Client timeouts and pool bounds are owned by `feedback-bounded-waiting`;
+- Client timeouts and pool bounds are owned by [feedback-bounded-waiting](feedback-bounded-waiting.md);
   plain pointer only.
 - Channel design for success/failure signals is owned by
-  `fail-loudly-succeed-quietly` (Principle 16); plain pointer only.
+  [fail-loudly-succeed-quietly](fail-loudly-succeed-quietly.md) (Principle 16); plain pointer only.
 - Labels that must reach the next train as *source correction* are owned by
-  `correction-at-source` ([HITL-01](../lexicons/ml-systems.md#hitl-01)); this
+  [correction-at-source](correction-at-source.md) ([HITL-01](../lexicons/ml-systems.md#hitl-01)); this
   card owns how large a step you take before delayed truth can arrive.
 
 ## Tensions
@@ -76,7 +76,7 @@ and mark late converters as permanent negatives.
 |---|---|---|---|
 | sequence | [REF-28](../lexicons/engineering.md#ref-28) / [RLSE-07](../lexicons/engineering.md#rlse-07) small steps and phased exposure | single-moment launches when coordination demands it | bound the *risk radius* even if the calendar shows one date; stop criteria still required |
 | sequence | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait long enough for delayed truth | step-size pressure to close the window early | close the loop, but do not cut the label window shorter than the feedback process |
-| sequence | [HITL-01](../lexicons/ml-systems.md#hitl-01) labels into next train (owned by `correction-at-source`) | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait for delayed truth | route corrections to source; size the training step to the lag |
+| sequence | [HITL-01](../lexicons/ml-systems.md#hitl-01) labels into next train (owned by [correction-at-source](correction-at-source.md)) | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait for delayed truth | route corrections to source; size the training step to the lag |
 
 ## Disconfirmers
 
@@ -105,9 +105,9 @@ and mark late converters as permanent negatives.
 - 19. Step size is bounded by the feedback that can catch it
 
 Also load Principle 13 when the step is a durable commit, not only a size
-question (see `evidence-before-commitment`). Load Principle 2 when the gap is
+question (see [evidence-before-commitment](evidence-before-commitment.md)). Load Principle 2 when the gap is
 missing kill criteria rather than step size (see
-`falsification-disconfirmers`).
+[falsification-disconfirmers](falsification-disconfirmers.md)).
 
 ## Evidence / source slugs
 

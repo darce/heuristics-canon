@@ -39,7 +39,7 @@ The bake-off winner is the most verbose candidate. Holistic quality and coverage
 - Time-aligned cue *placement* against speech gaps, overflow modes, and pause-vs-compress order are composition decisions ([A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41)); this card owns the *scorecard* density cut, not gap collision.
 - Hard-locked verbatim on-screen text or must-include cues may force length without density gain; lock those units rather than punish them as padding ([A11Y-44](../lexicons/accessibility.md#a11y-44)).
 - Non-spoken text where the reader truly skims: still report density; do not invent a speech-rate harm you cannot measure.
-- General proxy-vs-outcome gaming without a length-as-listen-cost path is owned by `proxy-outcome-integrity`. Shaped denominators and frames are owned by `measurement-integrity`.
+- General proxy-vs-outcome gaming without a length-as-listen-cost path is owned by [proxy-outcome-integrity](proxy-outcome-integrity.md). Shaped denominators and frames are owned by [measurement-integrity](measurement-integrity.md).
 - Runtime answer grounding and citation support remain [RAG-06](../lexicons/ml-systems.md#rag-06) / [RAG-07](../lexicons/ml-systems.md#rag-07) / [PROV-01](../lexicons/ml-systems.md#prov-01); this card is evaluation and ranking of description systems, not the emission gate.
 
 ## Tensions
