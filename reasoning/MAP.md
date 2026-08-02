@@ -26,7 +26,7 @@ A trailing `— no card` on a legend entry means that force member appears in PR
 **Principles in this force:** [P1](../PRINCIPLES.md#1-author-the-contract-before-the-components) (Author the contract before the components); [P5](../PRINCIPLES.md#5-rank-the-substance-before-you-style-it) (Rank the substance before you style it); [P6](../PRINCIPLES.md#6-an-unchosen-default-is-a-defect-the-user-feels-before-they-can-name-it) (An unchosen default is a defect the user feels before they can name it) — no card; [P10](../PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries) (Perceived boundaries must match enforced boundaries); [P18](../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose) (A machine consumes contracts, not prose).
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
 flowchart LR
   subgraph FG_contracts["Contracts and boundaries"]
     P_1["P1"]
@@ -57,7 +57,7 @@ flowchart LR
 **Principles in this force:** [P2](../PRINCIPLES.md#2-specify-what-would-prove-you-wrong) (Specify what would prove you wrong); [P4](../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want) (You get the number you pay for, not the outcome you want); [P9](../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it) (A claim must walk back to what produced it); [P13](../PRINCIPLES.md#13-evidence-precedes-commitment) (Evidence precedes commitment); [P15](../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement) (A measurement the measured party can shape is not a measurement).
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
 flowchart LR
   subgraph FG_evidence["Evidence and measurement"]
     P_2["P2"]
@@ -105,7 +105,7 @@ flowchart LR
 **Principles in this force:** [P3](../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not) (The safe side is cheap; the wrong side is not); [P8](../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit) (Assume a hostile landlord and keep a second exit); [P14](../PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches) (Grant the least privilege; minimize what a compromise reaches); [P17](../PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys) (High-impact actions take two independent keys).
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
 flowchart LR
   subgraph FG_reversibility["Reversibility and exposure"]
     P_3["P3"]
@@ -136,7 +136,7 @@ flowchart LR
 **Principles in this force:** [P7](../PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it) (Write it where it outlives the person who knows it); [P11](../PRINCIPLES.md#11-unknown-is-a-designed-state) (Unknown is a designed state); [P12](../PRINCIPLES.md#12-correction-must-reach-the-source) (Correction must reach the source); [P16](../PRINCIPLES.md#16-fail-loudly-succeed-quietly) (Fail loudly, succeed quietly); [P19](../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it) (Step size is bounded by the feedback that can catch it).
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
 flowchart LR
   subgraph FG_feedback["Feedback and correction"]
     P_7["P7"]
@@ -168,15 +168,40 @@ flowchart LR
 
 ### Colour legend
 
-One shared repo palette derived from OKLCH (constant OKLab lightness L and chroma C, stepped hue for forces). Force colour is redundant with the subgraph label and the per-force heading; card colour marks non-principle nodes (light fill, dual-ground stroke contour). Removing colour loses no structure.
+One shared repo palette: constant OKLab lightness and chroma, stepped hue per force. Force colour is redundant with the subgraph label and the per-force heading; card colour marks non-principle nodes (light fill, dual-ground stroke contour). Removing colour loses no structure. Swatches below are painted by the same `classDef` lines the diagrams use — the legend is the colour, not a name for it.
 
-| Swatch (fill) | Meaning |
-|---|---|
-| `#386695` | Force: Contracts and boundaries (OKLCH 0.50, 0.09, 250°) |
-| `#854E73` | Force: Evidence and measurement (OKLCH 0.50, 0.09, 340°) |
-| `#2B7351` | Force: Reversibility and exposure (OKLCH 0.50, 0.09, 160°) |
-| `#845922` | Force: Feedback and correction (OKLCH 0.50, 0.09, 70°) |
-| `#E4DDCF` | Card node (neutral fill; stroke `#777165`; OKLCH 0.90, 0.02, 85°) |
+The categorical scale is derived, not picked: OKLab lightness 0.50, chroma 0.09; hue starts at 250° and steps 90° per force (4 forces → 270° span). Card nodes sit off the force steps at OKLCH (0.90, 0.02, 85°).
+
+```mermaid
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
+flowchart LR
+  leg_contracts["Contracts and boundaries"]
+  leg_evidence["Evidence and measurement"]
+  leg_reversibility["Reversibility and exposure"]
+  leg_feedback["Feedback and correction"]
+  leg_card["card node"]
+  classDef force_contracts fill:#386695,color:#FFFFFF,stroke:#386695
+  classDef force_evidence fill:#854E73,color:#FFFFFF,stroke:#854E73
+  classDef force_feedback fill:#845922,color:#FFFFFF,stroke:#845922
+  classDef force_reversibility fill:#2B7351,color:#FFFFFF,stroke:#2B7351
+  classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
+  class leg_contracts force_contracts
+  class leg_evidence force_evidence
+  class leg_reversibility force_reversibility
+  class leg_feedback force_feedback
+  class leg_card node_card
+```
+
+### Connector legend
+
+Solid arrow: the card **owns** the principle (`- N. Title` in its Principles section). Dotted arrow: the card **also-loads** it (`Principle N` in that section's prose). Same strength distinction as in the force diagrams above.
+
+```mermaid
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
+flowchart LR
+  ownCard["card"] -->|owns| ownP["P"]
+  alsoCard["card"] -.->|also-load| alsoP["P"]
+```
 
 ### Card–principle table
 
@@ -220,7 +245,7 @@ Text equivalent of View A (one row per card).
 The diagram draws only pairs that share **>= 2** rule IDs (22 edges). Edge labels are the shared count. The table below is the full relation: **all 69** pairs that share at least one rule ID, with the shared IDs linked as on the cards. Every node is a card and therefore carries the card fill from the shared palette; removing colour still loses no structure.
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '18px'}}}%%
+%%{init: {'themeVariables': {'fontSize': '22px'}}}%%
 flowchart LR
   C_attribute_claims_to_their_bearer["attribute-claims-to-their-bearer"] ---|7| C_bounded_role_lets_a_small_model_be_safe["bounded-role-lets-a-small-model-be-safe"]
   C_attribute_claims_to_their_bearer ---|3| C_compression_is_selection_not_truncation["compression-is-selection-not-truncation"]

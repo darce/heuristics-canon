@@ -1,7 +1,7 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.18.0",
-  "date": "2026-07-30",
+  "version": "0.18.1",
+  "date": "2026-08-01",
   "rules": 1142,
   "principles": 0,
   "lexicons": {
@@ -1219,7 +1219,7 @@
       "sha256": "08c1273429b391ac1d2c2a84297044433aee07b79d86e3d64374a32f982f92b7"
     },
     "reasoning/MAP.md": {
-      "sha256": "ebb09edf7a1cc2a2449af0b32d452622a0351ecfa4a00a59918cd5bcd0bf02fc"
+      "sha256": "902957b41e86b30d8d091d52f6231f95d83e01b78928510fa9680ed19540436c"
     },
     "reasoning/README.md": {
       "sha256": "058b084122422c04b3ce7ad49fb0553b38a22d4eea565f1827f4b4b76e436d1f"
