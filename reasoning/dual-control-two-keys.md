@@ -1,6 +1,7 @@
 # Dual control and two independent keys
 
 Slug: `dual-control-two-keys`
+ID: `CARD-04`
 Mechanism claim: High-impact acts must not complete under one principal or one
 mechanism class; split completion across two independent keys.
 
@@ -51,6 +52,10 @@ standing radius, it does not replace the second key on completion.
 One trusted principal completes a fund move, data destroy, or audit delete
 alone. High-stakes model accepts create outsized exposure with no second key.
 Low-agreement labels poison training without an expert gate.
+
+## Worked example
+
+A production deploy key is shared in a team password manager so any on-call can ship alone at 2am. The trigger is one principal completing a high-impact act. Require a second approver (or break-glass with logged dual control) on the release gate. Without two keys, a single compromised or mistaken actor can push irreversible traffic.
 
 ## Exemptions and boundaries
 

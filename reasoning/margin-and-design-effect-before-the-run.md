@@ -1,6 +1,7 @@
 # Seal the margin and size the floor from design-effect n_eff
 
 Slug: `margin-and-design-effect-before-the-run`
+ID: `CARD-27`
 Mechanism claim: A non-inferiority margin sealed after the data, or a floor sized from clustered row count instead of design-effect n_eff, both move the gate toward a false pass.
 
 ## Scope
@@ -34,6 +35,10 @@ While a non-inferiority or practical-significance gate is in play on clustered o
 ## Predicted failure
 
 The gate passes at a margin a correctly sized study would have failed. Failure is hard to see in the report: δ looks principled and n looks large, while both hide under-powered clustered precision and a post-hoc pass criterion.
+
+## Worked example
+
+An A/B write-up picks a non-inferiority margin after seeing the lift, sized from raw user rows in a cluster-randomized test. The trigger is a post-data margin and an n that ignores design effect. Seal the margin and compute n_eff from the pre-registered ICC before unblinding. Without that, a clustered null passes as non-inferior by construction.
 
 ## Exemptions and boundaries
 

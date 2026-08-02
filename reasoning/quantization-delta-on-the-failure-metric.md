@@ -1,6 +1,7 @@
 # Aggregate retention is not the adoption metric
 
 Slug: `quantization-delta-on-the-failure-metric`
+ID: `CARD-28`
 Mechanism claim: An aggregate retention figure for a quantized or reduced-precision model is not evidence about the metric that ranks it; gate the change on the stratified delta of the failure mode that decides adoption.
 
 ## Scope
@@ -33,6 +34,10 @@ Quantization and related serving optimizations change numerical behaviour. Easy 
 ## Predicted failure
 
 A quantized model that retains most of its aggregate score while losing most of its factual calibration (or other adoption-critical failure mode) is adopted on the aggregate. Users and reviewers see a reassuring retention figure; the product ships the cheaper path; the failure that should have blocked promotion is invisible until production.
+
+## Worked example
+
+Product wants INT8 to cut GPU cost. The release note celebrates ninety-seven percent MMLU retention. The shopping task that decides ship is price-citation error, and that number exists only for the full-precision build. Hold the promote until full-precision versus INT8 price-error is on the same sheet. Otherwise the cheaper build ships and wrong prices climb without a gate that can see them.
 
 ## Exemptions and boundaries
 

@@ -1,6 +1,7 @@
 # Constrained domains have solved it
 
 Slug: `constrained-domains-have-solved-it`
+ID: `CARD-22`
 Mechanism claim: When a task requires describing something in words, look first for a domain already forced to do it under an external constraint; that constraint is what produced a reusable vocabulary, grammar, or ordering rule.
 
 ## Scope
@@ -35,6 +36,10 @@ External constraints (legal access, spoken-only transmission, inter-party agreem
 ## Predicted failure
 
 Teams reinvent a controlled vocabulary badly: terms look specific, disagree across authors, and cannot be membership-checked. Generation replaces lookup, so model cost and hallucination risk buy a mapping that already existed. Accessibility alternatives invent rank, inventory, or timing the constrained domain already ordered. Readers and downstream machines treat private coinages as shared facts.
+
+## Worked example
+
+Checkout needs a product picker with typeahead. Engineering opens a PR that builds a div with three invented ARIA roles and a home-grown keyboard map. The design system already ships Select that announces its name and handles arrow keys. Merge the design-system Select and close the custom roles. If each squad keeps inventing roles, assistive tech paths diverge and no two pickers announce alike.
 
 ## Exemptions and boundaries
 

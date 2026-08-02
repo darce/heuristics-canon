@@ -1,6 +1,7 @@
 # Contract before components
 
 Slug: `contract-before-components`
+ID: `CARD-01`
 Mechanism claim: Write the checkable contract the gatekeeper will enforce
 before building the surface that must pass it.
 
@@ -57,6 +58,10 @@ Charts and stores reject late. Accessibility claims fail audit after launch.
 Security theatre: mechanisms without a policy sentence. Teams argue past gates
 instead of meeting them. "Done" cannot be verified. Downstream parsers invent
 structure from banners and narrative.
+
+## Worked example
+
+A redesign starts by picking a chart library before writing the checkable contract the dashboard gate will enforce (metric definitions, empty states, refresh SLA). The trigger is components first, gate second. Write the acceptance checks as named assertions, then choose the library that can meet them. Without the contract, the team swaps components twice and still cannot say when the board is done.
 
 ## Exemptions and boundaries
 

@@ -1,6 +1,7 @@
 # Measurement integrity
 
 Slug: `measurement-integrity`
+ID: `CARD-11`
 Mechanism claim: A measurement the measured system can shape (frame, sample, or
 denominator) is not evidence of the world.
 
@@ -61,6 +62,10 @@ Latency looks fine while tails burn. Benchmarks pass because hard cases were
 filtered. Denominators expand until the rate is meaningless. Absolute SLOs
 drift into recent averages. The next incident postmortem discovers the meter
 never could have gone red.
+
+## Worked example
+
+A ranking team optimizes offline NDCG on a eval set that is re-sampled each week from the same logs the model already serves. The trigger is a measurement the system can shape. Freeze a holdout cohort and a fixed sample recipe the trainer cannot rewrite. Without integrity, scores climb while live satisfaction stays flat.
 
 ## Exemptions and boundaries
 

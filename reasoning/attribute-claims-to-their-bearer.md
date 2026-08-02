@@ -1,6 +1,7 @@
 # Attribute claims to their bearer
 
 Slug: `attribute-claims-to-their-bearer`
+ID: `CARD-18`
 Mechanism claim: Every non-visual claim in a description is attributed to the artefact, the source, or the viewer, never to the depicted person as fact-owner.
 
 ## Scope
@@ -38,6 +39,10 @@ While any trigger holds:
 ## Predicted failure
 
 The system asserts inner states, relationships, guilt, and significance it cannot know, in the confident register readers and AT users trust most. Swapped side-labels, objectification laundered as attitude, caption story read as pixel evidence, institutional purpose indifference to the photo, and false maps of what the image privileges all follow from unmarked bearer theft.
+
+## Worked example
+
+Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swaps it for the unmarked claim that the sitter looks resigned after isolation. Keep the inventory in FORENSIC voice; if affect stays, label it as a viewer reading. Screen-reader users otherwise take private psychology as what the frame itself shows.
 
 ## Exemptions and boundaries
 

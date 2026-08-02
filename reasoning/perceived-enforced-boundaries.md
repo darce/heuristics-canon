@@ -1,6 +1,7 @@
 # Perceived and enforced boundaries
 
 Slug: `perceived-enforced-boundaries`
+ID: `CARD-12`
 Mechanism claim: A grouping the surface implies but the system does not enforce
 is a lie the user (or operator) believes.
 
@@ -70,6 +71,10 @@ Users click a "group" that is only pixels. Tenants read each other's rows via
 IDOR. Policy promises privacy the product does not implement. Org charts and
 service boundaries diverge until every change is a cross-team negotiation.
 Autonomy marketing outruns the tested envelope and causes harm.
+
+## Worked example
+
+Settings shows Work and Private as two tabs. Draft notes still share one ACL table, so a coworker who guesses a note ID opens a private draft. Bind separate principals in the API, or drop the Private tab so the surface stops promising a wall that is not there. People currently treat the tab edge as security and paste secrets into the wrong side.
 
 ## Exemptions and boundaries
 

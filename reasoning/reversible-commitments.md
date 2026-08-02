@@ -1,6 +1,7 @@
 # Reversible commitments
 
 Slug: `reversible-commitments`
+ID: `CARD-15`
 Mechanism claim: Prefer the cheap reversible option while the irreversible path
 is underpriced; write the soft side and the rollback before freeze.
 
@@ -57,6 +58,10 @@ control points, not the price of this choice.
 Aggressive claims and deferred a11y create outsized exposure. Weak isolation
 commits silent integrity loss. Retries double-apply. At 2am there is no
 rollback plan, only invention.
+
+## Worked example
+
+A migration plan rewrites a production table in place with no rollback section because the forward SQL "looks simple." The trigger is freezing a hard path while a dual-write was available. Dual-write to the new shape, cut reads with a flag, keep reverse path until soak. Without reversibility, a bad night leaves invent-a-restore as the only plan.
 
 ## Exemptions and boundaries
 

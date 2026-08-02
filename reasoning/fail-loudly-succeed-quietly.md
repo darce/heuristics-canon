@@ -1,6 +1,7 @@
 # Fail loudly, succeed quietly
 
 Slug: `fail-loudly-succeed-quietly`
+ID: `CARD-07`
 Mechanism claim: Design the success and failure channels so failure is
 impossible to miss and success is impossible to confuse with noise.
 
@@ -48,6 +49,10 @@ On-call staff ignore alerts; silent dashboards hide dead instrumentation.
 Pipelines mis-parse banners as payload when success chatters on stdout.
 Real failures arrive too late because the loud channel already trained
 everyone to look away.
+
+## Worked example
+
+A batch importer swallows parse errors, writes partial rows, and returns HTTP 200 with an empty errors array. The trigger is success-shaped responses for failed work. Fail the job, emit a non-zero exit, and page on partial write. Without loud failure, operators assume the night load finished and downstream joins run on holes.
 
 ## Exemptions and boundaries
 

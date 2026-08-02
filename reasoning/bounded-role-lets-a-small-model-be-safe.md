@@ -1,6 +1,7 @@
 # Bounded role lets a small model be safe
 
 Slug: `bounded-role-lets-a-small-model-be-safe`
+ID: `CARD-19`
 Mechanism claim: When a stage's contract forbids introducing new facts, model capability mainly buys fluent invention so a small model is correct; when a stage must recover truth from hard evidence, capability is required—so one model tier for the whole pipeline is the wrong decision.
 
 ## Scope
@@ -30,6 +31,10 @@ A closed assertable set turns generation into constrained rephrasing of allowed 
 ## Predicted failure
 
 One model tier for the whole pipeline: over-pay and over-fluent at the captioner (invented identity, non-visible plot, secured full meaning) while under-paying at fusion or hard evidence recovery, so end-to-end cost rises and truth falls in different places for the same wrong reason.
+
+## Worked example
+
+Alt text and multi-camera identity fusion share one API tier in the capacity plan because "one model is simpler to operate." Captions start inventing names for people barely in frame while fusion of badge and face still runs on leftover budget. Put a small model plus schema check on captions; spend the large tier only where fusion error drops. One tier for both jobs overpays fluency and underpays truth.
 
 ## Exemptions and boundaries
 

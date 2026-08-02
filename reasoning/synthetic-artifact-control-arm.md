@@ -1,6 +1,7 @@
 # Artifact-only control for synthetic occlusion
 
 Slug: `synthetic-artifact-control-arm`
+ID: `CARD-31`
 Mechanism claim: A model can hit a synthetic-occlusion metric by detecting the compositing signature rather than the occlusion, so gains need an artifact-only control arm and a real-occlusion holdout.
 
 ## Scope
@@ -35,6 +36,10 @@ While synthetic occlusion is in the train or gate path:
 ## Predicted failure
 
 Masked or occluded recall rises on synthetic evaluation and stays flat on real occlusion. The release gate passes. Field occlusion performance does not improve. Teams then amplify the synthetic recipe, deepen the shortcut, and delete hard real cells as outliers, locking the false win in.
+
+## Worked example
+
+Ship gate for an occlusion restorer reports only recall on soft alpha pastes from the same compositor used at train time. Hold out real phone photos with hands and scarves, plus a control set that pastes a neutral patch with no identity change. If scores rise only on the soft paste set, the model is reading the matte edge, not recovering the face under real cover.
 
 ## Exemptions and boundaries
 

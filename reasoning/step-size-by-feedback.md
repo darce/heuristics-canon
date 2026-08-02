@@ -1,6 +1,7 @@
 # Step size by feedback
 
 Slug: `step-size-by-feedback`
+ID: `CARD-17`
 Mechanism claim: Keep each plan and rollout increment inside what a real
 feedback signal can catch before the next commitment.
 
@@ -53,6 +54,10 @@ truth arrives, and the next step optimizes yesterday's policy, not the world.
 Large releases discover failure only after full exposure. Plans commit months
 of work before any independent check. Models learn their own recommendations
 and mark late converters as permanent negatives.
+
+## Worked example
+
+On Friday a ranking change for site search goes straight to full traffic with no abort line on the dashboard. Ops only notices NDCG collapse after the weekend paging spiral. Hold five percent of traffic first, abort on NDCG and complaint rate, then expand. A single full cutover leaves the only signal after the whole base is already on the bad ranker.
 
 ## Exemptions and boundaries
 

@@ -1,6 +1,7 @@
 # Frozen base, additive residual delta
 
 Slug: `frozen-base-additive-delta`
+ID: `CARD-25`
 Mechanism claim: When consumers already hold vectors or bind a shared trunk, adapt with a frozen base plus a zero-at-init additive residual so the base function stays bit-identical until trained and remains a control arm and rollback.
 
 ## Scope
@@ -27,6 +28,10 @@ While prior consumers bind the base, freeze trunk tensors (no grad; absent from 
 ## Predicted failure
 
 Trunk fine-tune silently changes the space. Old and new vectors coexist under one index or version label; similarities are incomparable. Failure shows as slow accuracy rot, not a hard train error, and is found months later when galleries and probes no longer share a contract.
+
+## Worked example
+
+A team fine-tunes a shared embedding checkpoint in place so product A and product B diverge on the same vector IDs. The trigger is mutating a base consumers already hold. Freeze the base weights; train a zero-at-init residual adapter per product. Without the freeze, reindexing and cross-product nearest-neighbor tables silently disagree.
 
 ## Exemptions and boundaries
 

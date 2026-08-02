@@ -1,6 +1,7 @@
 # Feedback and bounded waiting
 
 Slug: `feedback-bounded-waiting`
+ID: `CARD-09`
 Mechanism claim: Bound every blocking wait, queue, pool, and automation loop
 so a stall fails closed instead of hanging the system.
 
@@ -52,6 +53,10 @@ result, and the rest of the system cannot shed load or answer.
 
 Thread pools exhaust on eternal waits. Agents loop until budget death or false
 completion. Callers hang while a stuck dependency never returns.
+
+## Worked example
+
+Nightly import workers call BLPOP on a Redis list and never pass a timeout. When the upstream CSV job stalls, every consumer blocks on the empty list and the pool reports healthy idle. Set a deadline, dead-letter the wait, and page on the timeout metric. One stalled producer then cannot pin the whole consumer fleet overnight.
 
 ## Exemptions and boundaries
 

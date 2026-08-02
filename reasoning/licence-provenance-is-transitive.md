@@ -1,6 +1,7 @@
 # Licence provenance is transitive
 
 Slug: `licence-provenance-is-transitive`
+ID: `CARD-26`
 Mechanism claim: A permissive direct licence does not launder the terms of what a package calls, embeds, or was trained on; only a machine-checked transitive closure at the registry can refuse a ban-list hit before ship.
 
 ## Scope
@@ -33,6 +34,10 @@ While any candidate may enter a shared registry or train/serve path:
 ## Predicted failure
 
 A banned transitive dependency or non-commercial generator enters the benchmark or product path under a permissive wrapper name. The violation ships, is discovered at commercialisation or partner review, and forces emergency removal of models, corpora, and published comparisons after sunk evaluation cost.
+
+## Worked example
+
+A model card lists a permissive weight licence while the tokenizer and a required dataset component remain under a ban-list term. The trigger is treating the direct licence as the whole story. Run a machine-checked closure over declared dependencies and refuse ship on any ban-list hit. Without transitive check, legal review clears the card and distribution still infringes upstream terms.
 
 ## Exemptions and boundaries
 

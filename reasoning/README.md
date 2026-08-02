@@ -8,8 +8,8 @@ to do, and how to check.
 
 | Reader | Use these sections |
 |---|---|
-| Human | Title, Scope, Observable triggers, Causal mechanism, Predicted failure, Exemptions, Non-claims |
-| Agent / integrator | Required action, Tensions, Disconfirmers, Verification, Rule IDs, Principles, Evidence |
+| Human | Title, Scope, Observable triggers, Causal mechanism, Predicted failure, Worked example, Exemptions and boundaries, Non-claims |
+| Agent / integrator | Required action, Tensions, Disconfirmers, Verification, Rule IDs, Principles, Evidence / source slugs |
 
 Schema and anti-reconstruction rules: [CONTRACT.md](CONTRACT.md). Apply cards
 with the progressive-retrieval steps in [AGENTS.md](../AGENTS.md).

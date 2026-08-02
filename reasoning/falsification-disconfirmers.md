@@ -1,6 +1,7 @@
 # Falsification and disconfirmers
 
 Slug: `falsification-disconfirmers`
+ID: `CARD-08`
 Mechanism claim: Name the observation that would make you wrong, then look for
 it before confidence hardens into a plan, diagnosis, or forecast.
 
@@ -67,6 +68,10 @@ Plans commit to a thesis that never named how it dies. Forecasts cannot be
 scored. Fixes chase the last anomaly. Controls buy theater. Green suites certify
 nothing because they never exercised failure. Claims fail the first hostile
 reading in production.
+
+## Worked example
+
+The design doc for the cart service promises a Redis read-through layer will cut checkout p99 by half, and the only scheduled work is a confirmatory load test. Write the kill line before ship: if two weeks of shadow traffic leave p99 within five percent of baseline, revert and close the bet. Without that line, every noisy win is celebrated and the hypothesis never dies.
 
 ## Exemptions and boundaries
 

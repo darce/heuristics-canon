@@ -1,6 +1,7 @@
 # Durable decision memory
 
 Slug: `durable-decision-memory`
+ID: `CARD-05`
 Mechanism claim: Decisions, rationale, and operational intent must live where
 the next reader will find them; head-only knowledge dies at handoff.
 
@@ -56,6 +57,10 @@ decision where the next person will look.
 Rework after context loss. Conflicting architecture "truths." Untraceable
 incidents. Brand drift when the founder steps away. Executors improvise against
 unstated constraints and reverse hard-won decisions.
+
+## Worked example
+
+A retro decides to freeze an API field, but the rationale lives only in chat and the OpenAPI file has no deprecation note. The trigger is operational intent stored outside the artifact consumers read. Record the decision, owner, and date next to the field (or linked ADR). Without durable memory, a later PR "cleans up" the field and breaks clients the chat no longer remembers.
 
 ## Exemptions and boundaries
 

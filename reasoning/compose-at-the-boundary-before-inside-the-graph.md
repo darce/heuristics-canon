@@ -1,6 +1,7 @@
 # Compose at the boundary before inside the graph
 
 Slug: `compose-at-the-boundary-before-inside-the-graph`
+ID: `CARD-20`
 Mechanism claim: Two independently exported inference graphs composed as sequential runtime sessions keep a debuggable, independently versionable seam; merging them into one graph for unmeasured latency deletes that seam and turns graph-surgery defects into silent numeric drift.
 
 ## Scope
@@ -34,6 +35,10 @@ While independently exported stages must run in sequence and a merge has not ear
 ## Predicted failure
 
 Skipping the action lands a fused graph as the first path. Graph-surgery and optimizer bugs surface as silent numeric drift rather than hard errors. Stages lose independent versioning and rollback ([RLSE-10](../lexicons/engineering.md#rlse-10)). Claimed latency wins stay unmeasured. Offline shapes and happy-path scores look fine while production numbers diverge from a staged path no longer kept as reference.
+
+## Worked example
+
+On-device launch wants the face embedder and the matcher fused into one optimized binary "to cut a hop," with no fixed-input parity suite. Ship them as sequential sessions first, pin the handoff tensor, and promote fusion only after bit-parity holds. Without that sequence, a graph-surgery bug looks like quiet score drift, and neither stage can roll back alone.
 
 ## Exemptions and boundaries
 

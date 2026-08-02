@@ -1,6 +1,7 @@
 # Least privilege and blast radius
 
 Slug: `least-privilege-blast-radius`
+ID: `CARD-10`
 Mechanism claim: Every principal inherits exactly the authority it holds; grant
 the minimum so compromise or mistake reaches little.
 
@@ -50,6 +51,10 @@ but does not replace small standing scope.
 A jailbroken agent spends everything in scope. A stolen ops role rewrites the
 cluster. One fat identity silently replaces production weights or labels.
 `PUBLIC` grants hand every role unintended DML.
+
+## Worked example
+
+A CI job that only needs package-read holds org-admin tokens so it can also push tags. The trigger is a principal inheriting authority beyond its task. Split tokens: read-only for build, a separate protected job for tag push. Without the split, a compromised build script can rewrite releases.
 
 ## Exemptions and boundaries
 

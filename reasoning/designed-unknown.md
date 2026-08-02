@@ -1,6 +1,7 @@
 # Designed unknown
 
 Slug: `designed-unknown`
+ID: `CARD-03`
 Mechanism claim: When evidence runs out, ship a first-class unknown or
 abstention state; forced certainty is a false answer.
 
@@ -55,6 +56,10 @@ decline, escalate, or report partial knowledge on purpose.
 False identities merge. Silent wrong answers pass as product. Progress bars lie.
 Annotators rubber-stamp machine labels. Users trust fluent hallucination.
 Teams either freeze waiting for perfect data or invent fake precision.
+
+## Worked example
+
+A fusion stage always emits a best-guess person_id when embedding matches fall below the calibrated threshold. The trigger is forced resolution past evidence. Ship an explicit unknown / abstain output with a reason code and block auto-merge on it. Without designed unknown, low-evidence IDs enter the graph as facts and later audits cannot tell guess from match.
 
 ## Exemptions and boundaries
 

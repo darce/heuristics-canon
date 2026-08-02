@@ -1,6 +1,7 @@
 # Proxy-outcome integrity
 
 Slug: `proxy-outcome-integrity`
+ID: `CARD-13`
 Mechanism claim: A proxy that drifted from the outcome it stands for is not
 evidence of that outcome; under pressure you get the number you pay for.
 
@@ -72,6 +73,10 @@ question.
 Teams ship confidence. Model promotions win offline and lose live. Coverage
 climbs while change-failure stays flat. Accessibility scanners go green while
 almost no page meets the real bar. Comp plans reward the wrong 2am behavior.
+
+## Worked example
+
+A support bot is gated on "deflection rate" while the product outcome is first-contact resolution; the bot now closes tickets users reopen the next day. The trigger is a proxy that drifted from the outcome. Rebind the gate to 7-day reopen rate (or joint thresholds). Without rebinding, the team ships higher deflection and worse resolution.
 
 ## Exemptions and boundaries
 

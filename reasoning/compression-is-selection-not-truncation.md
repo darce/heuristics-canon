@@ -1,6 +1,7 @@
 # Compression is selection, not truncation
 
 Slug: `compression-is-selection-not-truncation`
+ID: `CARD-21`
 Mechanism claim: A short output at a tighter budget is a different selection under declared survival rules, not a tail-cut of a longer draft.
 
 ## Scope
@@ -38,6 +39,10 @@ While a length, gap, or token budget binds:
 ## Predicted failure
 
 The short form drops mandatory facts and keeps decorative ones. Non-seeing users receive a false map of purpose. Critical on-screen text or time-locked events vanish because the optimizer or truncate step treated them as disposable tail. Dialog is restated while unique visuals go undescribed. Overflow freezes or hides content with no recorded decision. Trust in every later short caption falls because survivors look polished and incompleteness is invisible.
+
+## Worked example
+
+The long product caption ends with the on-screen price. Someone pastes it into the 125-character alt field and trims the overflow, so the short form keeps "soft morning light" and loses the price. Write the must-keep list first (name, price, primary action), then draft the short alt to that list. End-trim alone leaves the money fact on the cutting-room floor.
 
 ## Exemptions and boundaries
 

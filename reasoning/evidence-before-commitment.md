@@ -1,6 +1,7 @@
 # Evidence before commitment
 
 Slug: `evidence-before-commitment`
+ID: `CARD-06`
 Mechanism claim: Durable state (deploy, merge, buy, label, "done") requires
 inspectable evidence *before* the commit, not after the harm.
 
@@ -63,6 +64,10 @@ whether the commit may fire once the package is due.
 Models ship and fail only on slices never tabulated. Refactors redefine behavior
 silently. Inventory and headcount follow survey optimism. Agents mark done while
 nothing green proves it. Confidence tracks a coherent story, not evidence amount.
+
+## Worked example
+
+A merge is marked ready because CI is green on the author's laptop cache, with no recorded run on the shared gate. The trigger is durable "done" without checkable evidence. Require the PR checklist to link the shared CI run (or re-run) before merge rights unlock. Without that, local-only green becomes production red on a clean runner.
 
 ## Exemptions and boundaries
 

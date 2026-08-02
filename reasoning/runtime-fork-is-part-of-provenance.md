@@ -1,6 +1,7 @@
 # Runtime fork is part of provenance
 
 Slug: `runtime-fork-is-part-of-provenance`
+ID: `CARD-29`
 Mechanism claim: A model that requires a vendor fork of the inference runtime carries that fork as a production dependency and as part of output provenance; the weight licence alone does not close the lineage question.
 
 ## Scope
@@ -43,6 +44,10 @@ While a required runtime fork is in play:
 - Train/serve or multi-environment skew when featurization or decode paths live only in the forked stack ([SERVE-08](../lexicons/ml-systems.md#serve-08)).
 - Landlord lock-in: the fork is the only runnable path, with no second exit and no isolatable API.
 - Dead experimental runtime branches remain callable in production ([SERVE-03](../lexicons/ml-systems.md#serve-03)).
+
+## Worked example
+
+Incident review for a scoring drift finds the checkpoint hash and licence on the model card, but the private engine image that actually ran is missing from the card and the rollback runbook. Add the image digest, licence, and owner beside the checkpoint in the generation contract. Without those fields, the next bump of that engine can change outputs while every card still reads as complete lineage.
 
 ## Exemptions and boundaries
 

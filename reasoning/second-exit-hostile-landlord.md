@@ -1,6 +1,7 @@
 # Hostile landlord and second exit
 
 Slug: `second-exit-hostile-landlord`
+ID: `CARD-16`
 Mechanism claim: Assume a single external control point will turn; keep a
 second exit cheap enough to throw before you need it.
 
@@ -53,6 +54,10 @@ rollback is a different price curve, owned elsewhere.
 One platform ToS change zeros the business. A dependency or model provider
 outage has no alternate path. Brand and customer list vanish with the landlord.
 A single bridge node fails and partitions the system.
+
+## Worked example
+
+Password resets and invoices both leave through Mailgun alone, and the only full address book lives inside that vendor console. Wire a second provider behind the same send adapter and nightly export contacts to owned storage. If Mailgun freezes the account on a ToS dispute, outbound mail and the contact list both go dark at once.
 
 ## Exemptions and boundaries
 

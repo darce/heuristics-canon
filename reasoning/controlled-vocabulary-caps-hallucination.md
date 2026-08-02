@@ -1,6 +1,7 @@
 # Controlled vocabulary caps hallucination
 
 Slug: `controlled-vocabulary-caps-hallucination`
+ID: `CARD-24`
 Mechanism claim: Free-form attribute words can sound precise without being checkable; binding those attributes to a closed, named vocabulary makes specificity falsifiable and stops rare confident nouns from counting as quality.
 
 ## Scope
@@ -35,6 +36,10 @@ While the trigger holds:
 ## Predicted failure
 
 If the action is skipped or faked (prompt advice without a hard membership gate), informativeness and specificity metrics climb with the hallucination rate: the rarest confident nouns score best, readers trust false precision, and filters, recipes, and audits treat invented labels as real identity.
+
+## Worked example
+
+A labelling schema accepts free-text "scene mood" and the model emits confident rare nouns that no two annotators reuse. The trigger is an open attribute string where membership is uncheckable. Bind the field to a closed enum with an Other+note escape. Without the closed set, eval treats inventive synonyms as new classes and rare confident words score as precision.
 
 ## Exemptions and boundaries
 

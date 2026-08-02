@@ -1,6 +1,7 @@
 # Correction at source
 
 Slug: `correction-at-source`
+ID: `CARD-02`
 Mechanism claim: A correction is real only when it updates the source of truth
 that recomputation will read; surface patches return after the next rebuild.
 
@@ -70,6 +71,10 @@ underlying model and train the organization to paper over it forever.
 The same wrong entity returns after retrain. Patched dashboards diverge from
 the warehouse rebuild. Corrector layers deadlock improvement. Brand voice
 "fixes" reappear next draft. Event consumers and the database disagree forever.
+
+## Worked example
+
+An incident patch hard-codes a corrected SKU in the API response layer while the product master still holds the wrong value. The trigger is a downstream fix that never updates the source of truth. Write the SKU once in the master and delete the response override. Without source correction, every new consumer re-ships the bug.
 
 ## Exemptions and boundaries
 

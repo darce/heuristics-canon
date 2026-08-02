@@ -1,6 +1,7 @@
 # Signal density, not length
 
 Slug: `signal-density-not-length`
+ID: `CARD-30`
 Mechanism claim: When description quality metrics rise with word count, optimization treats listener time as free benefit and the verbose candidate wins.
 
 ## Scope
@@ -33,6 +34,10 @@ Linear consumers (screen readers, TTS, time-aligned audio description) pay every
 ## Predicted failure
 
 The bake-off winner is the most verbose candidate. Holistic quality and coverage rise; denser, more checkable systems lose on paper. Screen-reader and TTS users pay more seconds for less substance. Unverifiable invention is rewarded as richness. Teams ship the long model and discover that listening cost bought padding.
+
+## Worked example
+
+A museum alt bake-off scores three systems on holistic richness. System B wins by inventing fabric brands and ages no pixel supports, while the shorter inventory that names coat, hatstand, and doorway loses. Length-match every pair and score only verified facts per listener-second. Otherwise the verbose model ships and screen-reader users sit through padding that adds no new fact.
 
 ## Exemptions and boundaries
 

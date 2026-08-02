@@ -1,6 +1,7 @@
 # Context obedience is a separate capability
 
 Slug: `context-obedience-is-a-separate-capability`
+ID: `CARD-23`
 Mechanism claim: Caption quality on a bare image and faithful use of injected context are uncorrelated capabilities, so ranking on the first and shipping into a context-dependent path selects on the wrong axis.
 
 ## Scope
@@ -33,6 +34,10 @@ While the production path injects context that the answer must respect:
 ## Predicted failure
 
 The bake-off winner ships on caption or preference rank. Context assembly, retrieval packing, and prompt engineering then show no measurable lift: the model was never selected for using the block. Operators see confident prose that drops names, invents dates, or contradicts the supplied place line. Stage metrics look fine while the product metric does not move.
+
+## Worked example
+
+Lab ranking picks the model humans prefer on bare photos. Production injects catalogue SKU and shoot date into every prompt, and that winner systematically drops the date line. Score each candidate twice: image only, and image plus the injected block, and rank on whether the block lands intact. Otherwise the fluent lab winner ships and the prompt plumbing looks broken when it is the model.
 
 ## Exemptions and boundaries
 
