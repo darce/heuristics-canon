@@ -4,7 +4,7 @@
 
 ## What this is
 
-Topology of the reasoning tree: which cards share rule IDs, which principles each card owns or also-loads, and which cards a changed-artifact route can open. Every node, edge, and table cell is derived from `public/reasoning/*.md` mechanism cards and the live `ROUTES` table. Regenerate after any card or route edit.
+Topology of the reasoning tree: which cards share rule IDs, which principles each card owns or also-loads, and which cards a changed-artifact route can open. Every node, edge, and table cell is derived from `reasoning/*.md` mechanism cards and the live `ROUTES` table. Regenerate after any card or route edit.
 
 ## What this does not show
 
@@ -17,7 +17,7 @@ Topology of the reasoning tree: which cards share rule IDs, which principles eac
 
 One section per force group — the `##` headings in PRINCIPLES.md that contain numbered `### N. Title` principles (document order). A force with at least one reached principle gets a small-multiple diagram of those principles as nodes labelled `P{n}` (the leading `P` marks a principle and is not a rule ID — rules are always `FAM-NN`) and only the cards that own or also-load them; a fully unreached force has heading, legend, and note — no diagram. Members no card reaches appear in the legend with a trailing marker instead of as diagram nodes. A **solid** link is the principle the card owns (`- N. Title` in its Principles section). A **dashed** link is an also-load mention (`Principle N` in that section's prose). Owned and also-load are not the same strength of claim.
 
-A card that links to principles in more than one force appears in each of those diagrams. That is intended — not a duplicate-node bug. Working principle links live in the per-force legend lines and in the card–principle table below (mermaid `click` targets are inert on GitHub under `securityLevel: 'strict'` and exist only for loose renderers such as mermaid.live or VS Code preview). The graph is for adjacency; the legend and table carry the titles and the links that resolve.
+A card that links to principles in more than one force appears in each of those diagrams. That is intended — not a duplicate-node bug. Principle links live in the per-force legend lines, the card–principle table below, and mermaid `click` targets on principle nodes. Legend and table use repo-relative hrefs; `click` targets use absolute published URLs because GitHub renders mermaid inside a `viewscreen.githubusercontent.com` iframe whose origin has no repo path. The graph is for adjacency; titles and full wording live in the legend and table.
 
 A trailing `— no card` on a legend entry means that force member appears in PRINCIPLES.md but no mechanism card owns or also-loads it.
 
@@ -46,10 +46,10 @@ flowchart LR
   classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
   class P_1,P_10,P_18,P_5 force_contracts
   class C_bounded_role_lets_a_small_model_be_safe,C_compression_is_selection_not_truncation,C_constrained_domains_have_solved_it,C_context_obedience_is_a_separate_capability,C_contract_before_components,C_controlled_vocabulary_caps_hallucination,C_perceived_enforced_boundaries node_card
-  click P_1 "../PRINCIPLES.md#1-author-the-contract-before-the-components" "Author the contract before the components"
-  click P_5 "../PRINCIPLES.md#5-rank-the-substance-before-you-style-it" "Rank the substance before you style it"
-  click P_10 "../PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries" "Perceived boundaries must match enforced boundaries"
-  click P_18 "../PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose" "A machine consumes contracts, not prose"
+  click P_1 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#1-author-the-contract-before-the-components" "Author the contract before the components"
+  click P_5 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#5-rank-the-substance-before-you-style-it" "Rank the substance before you style it"
+  click P_10 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#10-perceived-boundaries-must-match-enforced-boundaries" "Perceived boundaries must match enforced boundaries"
+  click P_18 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#18-a-machine-consumes-contracts-not-prose" "A machine consumes contracts, not prose"
 ```
 
 ### Evidence and measurement
@@ -93,11 +93,11 @@ flowchart LR
   classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
   class P_13,P_15,P_2,P_4,P_9 force_evidence
   class C_attribute_claims_to_their_bearer,C_bounded_role_lets_a_small_model_be_safe,C_compose_at_the_boundary_before_inside_the_graph,C_context_obedience_is_a_separate_capability,C_correction_at_source,C_designed_unknown,C_durable_decision_memory,C_evidence_before_commitment,C_falsification_disconfirmers,C_licence_provenance_is_transitive,C_margin_and_design_effect_before_the_run,C_measurement_integrity,C_proxy_outcome_integrity,C_quantization_delta_on_the_failure_metric,C_signal_density_not_length,C_step_size_by_feedback,C_synthetic_artifact_control_arm node_card
-  click P_2 "../PRINCIPLES.md#2-specify-what-would-prove-you-wrong" "Specify what would prove you wrong"
-  click P_4 "../PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want" "You get the number you pay for, not the outcome you want"
-  click P_9 "../PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it" "A claim must walk back to what produced it"
-  click P_13 "../PRINCIPLES.md#13-evidence-precedes-commitment" "Evidence precedes commitment"
-  click P_15 "../PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement" "A measurement the measured party can shape is not a measurement"
+  click P_2 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#2-specify-what-would-prove-you-wrong" "Specify what would prove you wrong"
+  click P_4 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#4-you-get-the-number-you-pay-for-not-the-outcome-you-want" "You get the number you pay for, not the outcome you want"
+  click P_9 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#9-a-claim-must-walk-back-to-what-produced-it" "A claim must walk back to what produced it"
+  click P_13 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#13-evidence-precedes-commitment" "Evidence precedes commitment"
+  click P_15 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#15-a-measurement-the-measured-party-can-shape-is-not-a-measurement" "A measurement the measured party can shape is not a measurement"
 ```
 
 ### Reversibility and exposure
@@ -125,10 +125,10 @@ flowchart LR
   classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
   class P_14,P_17,P_3,P_8 force_reversibility
   class C_compose_at_the_boundary_before_inside_the_graph,C_dual_control_two_keys,C_frozen_base_additive_delta,C_least_privilege_blast_radius,C_reversible_commitments,C_runtime_fork_is_part_of_provenance,C_second_exit_hostile_landlord node_card
-  click P_3 "../PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not" "The safe side is cheap; the wrong side is not"
-  click P_8 "../PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit" "Assume a hostile landlord and keep a second exit"
-  click P_14 "../PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches" "Grant the least privilege; minimize what a compromise reaches"
-  click P_17 "../PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys" "High-impact actions take two independent keys"
+  click P_3 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#3-the-safe-side-is-cheap-the-wrong-side-is-not" "The safe side is cheap; the wrong side is not"
+  click P_8 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#8-assume-a-hostile-landlord-and-keep-a-second-exit" "Assume a hostile landlord and keep a second exit"
+  click P_14 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#14-grant-the-least-privilege-minimize-what-a-compromise-reaches" "Grant the least privilege; minimize what a compromise reaches"
+  click P_17 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#17-high-impact-actions-take-two-independent-keys" "High-impact actions take two independent keys"
 ```
 
 ### Feedback and correction
@@ -159,11 +159,11 @@ flowchart LR
   classDef node_card fill:#E4DDCF,color:#1A1523,stroke:#777165
   class P_11,P_12,P_16,P_19,P_7 force_feedback
   class C_bounded_role_lets_a_small_model_be_safe,C_controlled_vocabulary_caps_hallucination,C_correction_at_source,C_designed_unknown,C_durable_decision_memory,C_fail_loudly_succeed_quietly,C_feedback_bounded_waiting,C_licence_provenance_is_transitive,C_step_size_by_feedback node_card
-  click P_7 "../PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it" "Write it where it outlives the person who knows it"
-  click P_11 "../PRINCIPLES.md#11-unknown-is-a-designed-state" "Unknown is a designed state"
-  click P_12 "../PRINCIPLES.md#12-correction-must-reach-the-source" "Correction must reach the source"
-  click P_16 "../PRINCIPLES.md#16-fail-loudly-succeed-quietly" "Fail loudly, succeed quietly"
-  click P_19 "../PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it" "Step size is bounded by the feedback that can catch it"
+  click P_7 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#7-write-it-where-it-outlives-the-person-who-knows-it" "Write it where it outlives the person who knows it"
+  click P_11 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#11-unknown-is-a-designed-state" "Unknown is a designed state"
+  click P_12 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#12-correction-must-reach-the-source" "Correction must reach the source"
+  click P_16 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#16-fail-loudly-succeed-quietly" "Fail loudly, succeed quietly"
+  click P_19 "https://github.com/darce/heuristics-canon/blob/main/PRINCIPLES.md#19-step-size-is-bounded-by-the-feedback-that-can-catch-it" "Step size is bounded by the feedback that can catch it"
 ```
 
 ### Colour legend
