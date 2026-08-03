@@ -236,10 +236,10 @@ equally informative and much less common.
 
 ## Intra-lexicon vs cross-lexicon edges
 
-Of **1061** simple undirected edges among rules, **493** stay inside one lexicon file and **568** cross a file boundary (cut ratio **0.54** = cross / (intra + cross)).
+Of **1068** simple undirected edges among rules, **500** stay inside one lexicon file and **568** cross a file boundary (cut ratio **0.53** = cross / (intra + cross)).
 
 **Reading A.** If the eleven lexicons were natural communities of the
-citation graph, most edges would fall inside files. A cut ratio of 0.54
+citation graph, most edges would fall inside files. A cut ratio of 0.53
 says they are not: the file partition is not a low-conductance community
 partition. Read alone, that can look like a filing error.
 
@@ -272,7 +272,7 @@ column sums to twice the cross-edge total rather than to it.
 
 | lexicon | rule nodes | internal edges | external edges | cut ratio |
 |---|---:|---:|---:|---:|
-| [accessibility](lexicons/accessibility.md) | 54 | 23 | 48 | 0.68 |
+| [accessibility](lexicons/accessibility.md) | 59 | 30 | 48 | 0.62 |
 | [business-marketing](lexicons/business-marketing.md) | 109 | 34 | 187 | 0.85 |
 | [depiction](lexicons/depiction.md) | 15 | 9 | 15 | 0.62 |
 | [design-aesthetics](lexicons/design-aesthetics.md) | 74 | 12 | 39 | 0.76 |
@@ -284,5 +284,5 @@ column sums to twice the cross-edge total rather than to it.
 | [security](lexicons/security.md) | 122 | 76 | 80 | 0.51 |
 | [writing](lexicons/writing.md) | 46 | 2 | 30 | 0.94 |
 
-Underlying rule graph (not drawn here): **1142** rule nodes, **1061** distinct undirected edges (simple 1061 + self-loops 0).
+Underlying rule graph (not drawn here): **1147** rule nodes, **1068** distinct undirected edges (simple 1068 + self-loops 0).
 

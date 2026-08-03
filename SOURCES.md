@@ -11,6 +11,7 @@ per-source rights posture or legal clearance for each entry.
 | Source | Citation | Feeds | Rules |
 |---|---|---|---|
 | <a name="src-accessibility-report-generation"></a>`accessibility-report-generation` | Swearngin, Amanda; Wu, Jason; Zhang, Xiaoyi; et al. *Towards Automated Accessibility Report Generation for Mobile Apps*. Apple / CMU | [accessibility](lexicons/accessibility.md) | 3 |
+| <a name="src-accname"></a>`accname` | W3C. *Accessible Name and Description Computation 1.2*. W3C Working Draft, 29 May 2026. | [accessibility](lexicons/accessibility.md) | 5 |
 | <a name="src-adaface"></a>`adaface` | Kim, Jain, and Liu. "AdaFace: Quality Adaptive Margin for Face Recognition." *CVPR*, 2022 | [ml-systems](lexicons/ml-systems.md) | 3 |
 | <a name="src-agent-operations"></a>`agent-operations` | Unsourced practice label (no citable book, paper, or standard registered) | [engineering](lexicons/engineering.md) | 1 |
 | <a name="src-ai-engineering"></a>`ai-engineering` | Huyen, Chip. *AI Engineering: Building Applications with Foundation Models*. O'Reilly, 2025 | [ml-systems](lexicons/ml-systems.md) | 29 |
@@ -162,4 +163,4 @@ per-source rights posture or legal clearance for each entry.
 | <a name="src-zalewski-tangled-web"></a>`zalewski-tangled-web` | Zalewski, Michal. *The Tangled Web: A Guide to Securing Modern Web Applications*. No Starch Press, 2011 | [security](lexicons/security.md) | 15 |
 | <a name="src-zezula-similarity-search"></a>`zezula-similarity-search` | Zezula, Pavel; Amato, Giuseppe; Dohnal, Vlastislav; Batko, Michal. *Similarity Search: The Metric Space Approach*. Advances in Database Systems, Springer, 2006 | [ml-systems](lexicons/ml-systems.md) | 4 |
 
-_151 sources. Generated; do not edit._
+_152 sources. Generated; do not edit._
