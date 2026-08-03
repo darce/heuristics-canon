@@ -38,15 +38,20 @@ able to:
 ## Required sections
 
 Use these headings in order. Keep each section short. Prefer named lists over
-narrative. Every required section must have a non-empty body. Well-formed HTML
-comments, HTML tags, and link reference definitions do not count as body text.
-A CommonMark HTML block is rejected when it is unterminated (types 1–5 run to
-EOF) or when its span covers required `##` headings or their bodies — including
-a terminated opener in the preamble that wraps the whole card. Types covered:
-1–5 (`<script`/`<pre`/`<style`/`<textarea`, `<!--`, `<?`, `<!` + letter,
-`<![CDATA[`) and type 6 (block-level tags such as `<div>`, which end at the
-next blank line). Type 7 is out of scope. Required `##` headings inside fenced
-code blocks or well-formed HTML comments do not satisfy a required section.
+narrative. Every required section must have a non-empty body. The literal `<!--`
+substring is refused anywhere in a card body (see **No HTML comments** below),
+so HTML comments cannot pad or hide section content; HTML tags and link
+reference definitions do not count as body text. A CommonMark HTML block is
+rejected when it is unterminated (types 1–5 run to EOF) or when its span covers
+required `##` headings or their bodies — including a terminated opener in the
+preamble that wraps the whole card. Types covered for that span check: 1 and
+3–6 (`<script`/`<pre`/`<style`/`<textarea`, `<?`, `<!` + letter, `<![CDATA[`,
+and block-level tags such as `<div>`). Type 2 (`<!-- … -->`) is already
+refused by the literal-`<!--` ban, so type-2 classification cannot change
+acceptance — any remaining type-2 handling is redundant diagnostic only.
+Type 7 is out of scope. Required `##` headings inside fenced code blocks do
+not satisfy a required section; HTML comments are banned outright and so
+cannot supply one.
 Invisible characters and HTML entities that render as nothing also do not count.
 The Worked example gate is a **bounded writing aid**, not a security boundary
 and not a complete confusable detector. It counts prose words after stripping
@@ -78,6 +83,41 @@ Two identities sit side by side:
   (Authoring tracks issuance in a private ledger that is not part of the
   published tree; public consumers treat the body `ID:` line as the durable
   identifier.)
+
+**No HTML comments in a card body.** The literal substring `<!--` is refused
+anywhere in a card, including inside fenced and indented code. There is no
+escape hatch: a card that needs to discuss the opener must describe it rather
+than write it.
+
+**Card identity scan.** A line is an identity line when its first content
+character is the start of `ID:` or `Slug:`. "First content" means after
+skipping whitespace and Unicode characters whose general category is one of
+`Cf`, `Cc`, `Mn`, `Mc`, or `Me` (a category membership test, not a code-point
+list). That skip applies **only when locating the first content character on
+the line**; those characters are **not** removed from inside the keyword, so
+`I` + U+200B + `D:` (or `ID` + U+200B + `:`, or `S` + U+200B + `lug:`) is not
+an identity line. The scan runs over every raw body line — including lines
+inside fenced and indented code blocks. Exactly one `ID:` identity line and
+exactly one `Slug:` identity line are required; a second of either kind is a
+duplicate and is refused. The sole line of each kind must match the strict
+backticked pattern (Slug and ID each written as the keyword, optional
+whitespace, then a backticked value) with the keyword at column 0: a sole
+identity line that has leading whitespace or a skipped-category prefix before
+the keyword is refused as indented (identity lines must start at column 0),
+not accepted. Do not add `Lo` or `So` to the skip set: `Lo` includes ordinary
+CJK and Hangul letters, so skipping it would misclassify multilingual prose
+such as a line that begins with Japanese text then `ID:`. Do not add `Po`
+either: it includes ordinary punctuation (`!`, `.`, `,`, `#`, `%`, `&`, `*`),
+so skipping it would misclassify far more prose than the CJK case. Residual
+hiders are a class — any character that renders as nothing yet falls outside
+`{Cf, Cc, Mn, Mc, Me}` and outside `str.isspace()` — not a closed list;
+non-exhaustive examples include U+3164 HANGUL FILLER (`Lo`) and U+2800
+BRAILLE PATTERN BLANK (`So`). A CommonMark list marker (`-`, `1.`),
+blockquote marker (`>`), or heading marker (`#`) before the text means the
+line is not an identity line; those markers are not stripped. Card body text
+is normalized so CRLF and lone CR become LF before the scan (including
+`.json` string values), so a CR-glued second identity line is still a
+duplicate.
 
 The H1 title is free to move independently of the slug (many cards already
 carry an H1 that no longer kebab-cases to their slug).

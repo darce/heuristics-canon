@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.18.3",
+  "version": "0.18.4",
   "date": "2026-08-02",
   "rules": 1142,
   "principles": 19,
@@ -1216,7 +1216,7 @@
   },
   "reasoning": {
     "reasoning/CONTRACT.md": {
-      "sha256": "c3a2d4d1dbd87b78e602bab95d9bb96dfe997f009c769ace9d2249d99f1ed344"
+      "sha256": "ee0a329a01d185903611a9e8eeca71cdd200f6ecff90069ecdc67a6818242e71"
     },
     "reasoning/MAP.md": {
       "sha256": "a8a599a34048d4e75ac7b86766b2e57b0699f689e228d77d173234f0d9dfbdad"
