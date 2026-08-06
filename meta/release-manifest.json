@@ -1,20 +1,20 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.19.0",
-  "date": "2026-08-03",
+  "version": "0.19.1",
+  "date": "2026-08-06",
   "rules": 1147,
   "principles": 19,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "6dc249e03116fff87ee0bebe91e1ec0f68f7e0f5f6082cbb507c4318aa41fdff",
+      "sha256": "f379c96a10c30bfaa6ecfc1b7663821d2767916f079697d6b96611a10860d927",
       "rules": 59
     },
     "lexicons/business-marketing.md": {
-      "sha256": "72b55a7ce8a74bb7e9cc9009880952685f7b4a67608f6bb140418f4c3a5523d3",
+      "sha256": "cd0231f01c920ceb73bd655ed194be7e0251fb6a56226822e4f169333b8fb96d",
       "rules": 109
     },
     "lexicons/depiction.md": {
-      "sha256": "e0ab0d2c9325dc8cb15ea246c12074155a21aaf111ba611cc40f10ee6ac59d1f",
+      "sha256": "90ea83eb4d0ca78a4250bb0c543db0a1877e99db6e73252383660ce101ebbe0e",
       "rules": 15
     },
     "lexicons/design-aesthetics.md": {
@@ -22,7 +22,7 @@
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "fa5a4155fadd6f880e594f5f1f33207eb42936dd744b218360094dcee74d16ff",
+      "sha256": "4810e560be43945465568aa32465a5a71e61e4bdb18c7428210cd4ecee0bdce7",
       "rules": 301
     },
     "lexicons/epistemics.md": {
@@ -30,19 +30,19 @@
       "rules": 83
     },
     "lexicons/graph-theory.md": {
-      "sha256": "2960cc212dcfdca910b29e84d4b154561bb0ce19197b0aff501a93e7830f41f1",
+      "sha256": "ad1ee5780d8a564bd432fa3922c4d7b9b1a889d7db2b95c0aab9b2d89dc36a76",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "0729f3094b03cf5f53c73b6f79e01bc490221392d015d7a6a35ef0ac95fc3c23",
+      "sha256": "0227eb058f42a0e30cf34283889beaa7002a0c707396ae4a386fa6c24021c56d",
       "rules": 91
     },
     "lexicons/ml-systems.md": {
-      "sha256": "61a4be7e31706fb4039b85805f03cd65616a7da2ed9a3491a2334a2fc28976dc",
+      "sha256": "cb09b12c0a24e89a3b713addecc7da0a2d7897ccbc7db37390b4d76c38a5ee4e",
       "rules": 208
     },
     "lexicons/security.md": {
-      "sha256": "58306c751fde6e499e27f208b4b3b25116515e310cd890ada5cfcff95fb1e51b",
+      "sha256": "a473ec1008900ce185f231f26e4fe67aa1d52c2fd2748a47dcf7978ac9b7b44a",
       "rules": 122
     },
     "lexicons/writing.md": {
