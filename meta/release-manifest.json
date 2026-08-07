@@ -1,8 +1,8 @@
 {
   "schema": "heuristics-canon/release@2",
-  "version": "0.19.1",
+  "version": "0.20.0",
   "date": "2026-08-06",
-  "rules": 1147,
+  "rules": 1185,
   "principles": 19,
   "lexicons": {
     "lexicons/accessibility.md": {
@@ -10,8 +10,8 @@
       "rules": 59
     },
     "lexicons/business-marketing.md": {
-      "sha256": "cd0231f01c920ceb73bd655ed194be7e0251fb6a56226822e4f169333b8fb96d",
-      "rules": 109
+      "sha256": "01dbed0a6409a62451b3a32e8c27b769d1003c4c2dad5af4c8a37554763e8795",
+      "rules": 127
     },
     "lexicons/depiction.md": {
       "sha256": "90ea83eb4d0ca78a4250bb0c543db0a1877e99db6e73252383660ce101ebbe0e",
@@ -22,20 +22,20 @@
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "4810e560be43945465568aa32465a5a71e61e4bdb18c7428210cd4ecee0bdce7",
-      "rules": 301
+      "sha256": "c99e440f2e7a32c4db2f9e2bb26610b89842471700984cd67ed21f065e2a9ce7",
+      "rules": 311
     },
     "lexicons/epistemics.md": {
-      "sha256": "0ce65fdb9d146c79132a11c1a765927059844be5634e9200172a7e086af2df32",
-      "rules": 83
+      "sha256": "370285007c25ed265f9b4f2ecaf9dc46701bb3c30856a47019bf95c6b420449a",
+      "rules": 84
     },
     "lexicons/graph-theory.md": {
       "sha256": "ad1ee5780d8a564bd432fa3922c4d7b9b1a889d7db2b95c0aab9b2d89dc36a76",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "0227eb058f42a0e30cf34283889beaa7002a0c707396ae4a386fa6c24021c56d",
-      "rules": 91
+      "sha256": "4df86fe7d78677283935e753a1dcbe589c6e0fb335c106202840c4f576aae57d",
+      "rules": 100
     },
     "lexicons/ml-systems.md": {
       "sha256": "cb09b12c0a24e89a3b713addecc7da0a2d7897ccbc7db37390b4d76c38a5ee4e",
@@ -177,6 +177,7 @@
     "ARCH-17",
     "ARCH-18",
     "ARCH-19",
+    "ARCH-20",
     "ATTRIB-01",
     "ATTRIB-02",
     "ATTRIB-03",
@@ -300,6 +301,7 @@
     "CON-20",
     "CON-21",
     "CON-22",
+    "CON-23",
     "COST-01",
     "COST-02",
     "COST-03",
@@ -366,6 +368,7 @@
     "DOM-07",
     "DOM-08",
     "DOM-09",
+    "DOM-10",
     "DRIFT-01",
     "DRIFT-02",
     "DRIFT-03",
@@ -478,6 +481,7 @@
     "FORE-12",
     "FORE-13",
     "FORE-14",
+    "FORE-15",
     "FORM-01",
     "FORM-02",
     "FORM-03",
@@ -485,6 +489,8 @@
     "FORM-05",
     "FORM-06",
     "FORM-07",
+    "FORM-08",
+    "FORM-09",
     "GRPH-01",
     "GRPH-02",
     "GRPH-03",
@@ -608,6 +614,7 @@
     "INT-09",
     "INT-10",
     "INT-11",
+    "INT-12",
     "LAY-01",
     "LAY-02",
     "LAY-03",
@@ -661,6 +668,7 @@
     "MODEL-01",
     "MODEL-02",
     "MODEL-03",
+    "MODEL-04",
     "NAME-01",
     "NAME-02",
     "NAME-03",
@@ -679,6 +687,9 @@
     "NAV-09",
     "NAV-10",
     "NAV-11",
+    "NAV-12",
+    "NAV-13",
+    "NAV-14",
     "NDM-01",
     "NDM-02",
     "NDM-03",
@@ -737,6 +748,13 @@
     "OPS-21",
     "OPS-22",
     "OPS-23",
+    "OPS-24",
+    "OPS-25",
+    "OPS-26",
+    "OPS-27",
+    "OPS-28",
+    "OPS-29",
+    "OPS-30",
     "PERC-01",
     "PERC-02",
     "PERC-03",
@@ -868,6 +886,11 @@
     "REF-35",
     "REF-36",
     "REF-37",
+    "REF-38",
+    "REF-39",
+    "REF-40",
+    "REF-41",
+    "REF-42",
     "RES-01",
     "RES-02",
     "RES-03",
@@ -984,6 +1007,17 @@
     "STRAT-16",
     "STRAT-17",
     "STRAT-18",
+    "STRAT-19",
+    "STRAT-20",
+    "STRAT-21",
+    "STRAT-22",
+    "STRAT-23",
+    "STRAT-24",
+    "STRAT-25",
+    "STRAT-26",
+    "STRAT-27",
+    "STRAT-28",
+    "STRAT-29",
     "TEAM-01",
     "TEAM-02",
     "TEAM-03",
@@ -1003,6 +1037,7 @@
     "TEAM-17",
     "TEAM-18",
     "TEAM-19",
+    "TEAM-20",
     "TEST-01",
     "TEST-02",
     "TEST-03",
@@ -1072,6 +1107,8 @@
     "UXR-15",
     "UXR-16",
     "UXR-17",
+    "UXR-18",
+    "UXR-19",
     "VIZ-01",
     "VIZ-02",
     "VIZ-03",
@@ -1088,6 +1125,7 @@
     "VIZ-14",
     "VIZ-15",
     "VIZ-16",
+    "VIZ-17",
     "VSEG-01",
     "VSEG-02",
     "VSEG-03",
@@ -1216,7 +1254,7 @@
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
     },
     "SOURCES.md": {
-      "sha256": "19d8fb6afd69fa1a63e2fb515ff97f6984ad246d341b972760ffe529bca7c426"
+      "sha256": "51118c6418ac39d53353fbddda9d4921aaf90fc049835253ef4662e343da3569"
     }
   },
   "reasoning": {
@@ -1224,7 +1262,7 @@
       "sha256": "ee0a329a01d185903611a9e8eeca71cdd200f6ecff90069ecdc67a6818242e71"
     },
     "reasoning/MAP.md": {
-      "sha256": "a8a599a34048d4e75ac7b86766b2e57b0699f689e228d77d173234f0d9dfbdad"
+      "sha256": "0fdf1cd08ebbc417713a5c89ed2a59ae190655d6fbf4a420ea556c20b3fbb5a3"
     },
     "reasoning/README.md": {
       "sha256": "11e9ba55157723d798e6caf45a6c791779f1a90ee909ad293df556c2505ab14a"
@@ -1257,7 +1295,7 @@
       "sha256": "d1a464a88fefc33f5ff3d7cbaa4e8581ab1c4b0c4ee8dde859845438c28360cd"
     },
     "reasoning/designed-unknown.md": {
-      "sha256": "d041f5dbd4661d653d6e7af2be3c6dd011e75f83b4143dc23ec14f09f37e5daa"
+      "sha256": "250b0b8c1ffcb3d47287fcaab8f1c21455ac29c04950e1ea21f754187d90e19a"
     },
     "reasoning/dual-control-two-keys.md": {
       "sha256": "3c89795d91363b051cd25823ae0ccfff51812b68710f844aa80e1da4e2652775"
@@ -1296,13 +1334,13 @@
       "sha256": "78cdcec47ff6b7a71162b50dfd4cf78130cccfce5bd311a97c8ae9616e33a601"
     },
     "reasoning/proxy-outcome-integrity.md": {
-      "sha256": "7f73e91a453e4a2c1b6d33b8c41489acd03b326089d592ee6789d3e2568723aa"
+      "sha256": "891b503424eaea5f0769b42256502df8fe38cb2f118410005e098f6146fe2d8a"
     },
     "reasoning/quantization-delta-on-the-failure-metric.md": {
       "sha256": "db8b7361100e25882a86f85a633f3e85e8b82b74a3cd72b01c32e6f84e04f8d3"
     },
     "reasoning/reversible-commitments.md": {
-      "sha256": "6631a50e93e4e6f956aa5cf61b02d56cee13d4875532596578d66f566058e58e"
+      "sha256": "9c68fbf12b63af11578b97b0967bab9643ab12927643c7411179058d4219f7b0"
     },
     "reasoning/runtime-fork-is-part-of-provenance.md": {
       "sha256": "124e1ff12ccbf48ce5f8e364403a14cbb6f523b11302739e5524d33e7bd36c83"

@@ -22,6 +22,8 @@ timeouts as the only bound (see [feedback-bounded-waiting](feedback-bounded-wait
 - Empty, error, offline, or first-run screens are blank framework defaults.
 - Forecasts use vague words ("likely") where the decision needs a number or an
   explicit refuse.
+- An unquantified delivery estimate is collapsed into a hard promised date
+  while scope, unknowns, or dependencies still carry a real tail.
 - Product guidance prefers a polished wrong answer over silence.
 - Plans wait forever for "exact" data instead of a narrowed range.
 
@@ -43,7 +45,10 @@ decline, escalate, or report partial knowledge on purpose.
 3. Design empty, error, offline, and first-run as intentional screens
    ([RLSE-04](../lexicons/engineering.md#rlse-04), [NAV-08](../lexicons/interaction-ux.md#nav-08)).
 4. Prefer numeric uncertainty or explicit refuse over fake crisp labels
-   ([FORE-01](../lexicons/epistemics.md#fore-01), [FORE-08](../lexicons/epistemics.md#fore-08)).
+   ([FORE-01](../lexicons/epistemics.md#fore-01), [FORE-08](../lexicons/epistemics.md#fore-08));
+   keep delivery dates as a distribution (modal + tail, or O/N/P) until certainty
+   holds — an estimate is not a promise
+   ([FORE-15](../lexicons/epistemics.md#fore-15)).
 5. Precision-first guidance: silence beats wrong advice
    ([AIPX-07](../lexicons/business-marketing.md#aipx-07), [AIPX-14](../lexicons/business-marketing.md#aipx-14)); strategy keeps a too-tough basket
    ([STRAT-03](../lexicons/business-marketing.md#strat-03)).
@@ -56,6 +61,8 @@ decline, escalate, or report partial knowledge on purpose.
 False identities merge. Silent wrong answers pass as product. Progress bars lie.
 Annotators rubber-stamp machine labels. Users trust fluent hallucination.
 Teams either freeze waiting for perfect data or invent fake precision.
+Unquantified delivery estimates harden into calendar promises the team cannot
+actually control.
 
 ## Worked example
 
@@ -93,6 +100,8 @@ A fusion stage always emits a best-guess person_id when embedding matches fall b
   advice is emitted.
 - Threshold policy names the action below the line (escalate, defer, silent).
 - Forecast template requires number *or* explicit refuse with reason.
+- Delivery dates that remain estimates show modal + tail (or O/N/P); hard
+  commit dates name the certainty that justifies them.
 - Guidance product metrics track wrongful-advice rate, not only coverage.
 
 ## Rule IDs
@@ -104,6 +113,7 @@ A fusion stage always emits a best-guess person_id when embedding matches fall b
 - [RLSE-04](../lexicons/engineering.md#rlse-04): designed empty/error/offline states
 - [NAV-08](../lexicons/interaction-ux.md#nav-08): first-run and dead-end as entry points
 - [FORE-01](../lexicons/epistemics.md#fore-01) / [FORE-08](../lexicons/epistemics.md#fore-08): numeric uncertainty; refuse coarse fake precision when odds matter
+- [FORE-15](../lexicons/epistemics.md#fore-15): estimate is a distribution, not a promised date
 - [WRIT-43](../lexicons/writing.md#writ-43): single weak cue is not an authorship verdict
 - [FLOW-08](../lexicons/engineering.md#flow-08): late-event policy before complete windows
 - [API-06](../lexicons/engineering.md#api-06): empty search is 200, not 404
@@ -127,6 +137,7 @@ needs evidence.
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [RLSE-04](../lexicons/engineering.md#rlse-04)
 - [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [NAV-08](../lexicons/interaction-ux.md#nav-08)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-01](../lexicons/epistemics.md#fore-01), [FORE-08](../lexicons/epistemics.md#fore-08)
+- [`clean-coder-martin`](../SOURCES.md#src-clean-coder-martin): supports [FORE-15](../lexicons/epistemics.md#fore-15)
 - [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-43](../lexicons/writing.md#writ-43)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [FLOW-08](../lexicons/engineering.md#flow-08)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-06](../lexicons/engineering.md#api-06)

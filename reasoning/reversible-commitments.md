@@ -8,7 +8,8 @@ is underpriced; write the soft side and the rollback before freeze.
 ## Scope
 
 Covers: ship and rollback plans; claim language and early a11y cost; isolation
-and idempotency choices; fear-setting before freezing a reversible decision.
+and idempotency choices; fear-setting before freezing a reversible decision;
+iterative vs locked process form when rework cost differs.
 
 Excludes: second exits from external landlords and cut vertices (see
 [second-exit-hostile-landlord](second-exit-hostile-landlord.md)); standing privilege and dual control (see
@@ -25,6 +26,8 @@ Excludes: second exits from external landlords and cut vertices (see
   isolation is chosen because it "looks free" at write time.
 - Claim language, accessibility deferral, or cutover plan prices the soft side
   as expensive and the hard side as free.
+- Agile vs committed-plan / waterfall is chosen without pricing a wrong
+  reversible cycle against a wrong locked-in plan.
 
 ## Causal mechanism
 
@@ -52,12 +55,16 @@ control points, not the price of this choice.
    [DATA-18](../lexicons/engineering.md#data-18)). Make writes idempotent
    end-to-end ([DATA-13](../lexicons/engineering.md#data-13),
    [API-02](../lexicons/engineering.md#api-02)).
+5. At the process gate, price rework: short iterative cycles when reversals are
+   cheap enough; committed plans when rework and multi-tier contracts dominate
+   ([OPS-29](../lexicons/business-marketing.md#ops-29)).
 
 ## Predicted failure
 
 Aggressive claims and deferred a11y create outsized exposure. Weak isolation
 commits silent integrity loss. Retries double-apply. At 2am there is no
-rollback plan, only invention.
+rollback plan, only invention. Process form chosen without a rework-cost
+comparison locks the team into the expensive side of the price curve.
 
 ## Worked example
 
@@ -96,6 +103,8 @@ A migration plan rewrites a production table in place with no rollback section b
 - Request IDs and idempotency keys on every retried side effect.
 - Claim and a11y plans show the cheap reversible side was taken unless
   exempted in writing.
+- Process choice (iterative vs locked plan) names the rework-cost comparison
+  that justified it.
 
 ## Rule IDs
 
@@ -105,6 +114,7 @@ A migration plan rewrites a production table in place with no rollback section b
 - [STRAT-14](../lexicons/business-marketing.md#strat-14): fear-setting before reversible freezes
 - [DATA-17](../lexicons/engineering.md#data-17) / [DATA-18](../lexicons/engineering.md#data-18): isolation names vs real anomalies; check-then-act gap
 - [DATA-13](../lexicons/engineering.md#data-13) / [API-02](../lexicons/engineering.md#api-02): end-to-end idempotency
+- [OPS-29](../lexicons/business-marketing.md#ops-29): rework-cost gate for iterative vs locked process form
 
 ## Principles
 
@@ -116,6 +126,7 @@ A migration plan rewrites a production table in place with no rollback section b
 - [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [STRAT-14](../lexicons/business-marketing.md#strat-14)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13), [RLSE-08](../lexicons/engineering.md#rlse-08)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-02](../lexicons/engineering.md#api-02)
+- [`measure-anything-project-management`](../SOURCES.md#src-measure-anything-project-management): supports [OPS-29](../lexicons/business-marketing.md#ops-29)
 
 ## Non-claims
 

@@ -23,6 +23,8 @@ right (see [measurement-integrity](measurement-integrity.md)); evidence clocks b
   harm-typed error rates do not.
 - Coverage, tokens-per-second, or composite UX scores stand in for change
   failure, goodput at latency, or task success.
+- A multi-metric absolute goal is declared met because each clause's group
+  mean hit its target, without a per-person conjunction rate.
 - A green accessibility scan or unscored forecast is treated as conformance or
   accuracy.
 - Comp, pricing, or SLA language pays for the proxy, not the 2am behavior you
@@ -66,13 +68,18 @@ question.
    latency target ([A11Y-23](../lexicons/accessibility.md#a11y-23),
    [COST-15](../lexicons/ml-systems.md#cost-15)).
 8. Measure the decision variable; composites can lie
-   ([UXR-15](../lexicons/interaction-ux.md#uxr-15)).
+   ([UXR-15](../lexicons/interaction-ux.md#uxr-15)); when a study sets joint
+   targets, score the conjunction per person and report that rate — group means
+   per clause are not proof the combined goal held
+   ([UXR-19](../lexicons/interaction-ux.md#uxr-19)).
 
 ## Predicted failure
 
 Teams ship confidence. Model promotions win offline and lose live. Coverage
 climbs while change-failure stays flat. Accessibility scanners go green while
 almost no page meets the real bar. Comp plans reward the wrong 2am behavior.
+Joint UX goals pass on separate averages while almost no participant met every
+clause.
 
 ## Worked example
 
@@ -115,6 +122,8 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
   ([OPS-01](../lexicons/business-marketing.md#ops-01)).
 - Composites decompose to the decision variable
   ([UXR-03](../lexicons/interaction-ux.md#uxr-03)).
+- Multi-metric absolute goals report the per-person conjunction rate with
+  n/interval ([UXR-19](../lexicons/interaction-ux.md#uxr-19)).
 
 ## Rule IDs
 
@@ -130,6 +139,7 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 - [AIPX-02](../lexicons/business-marketing.md#aipx-02): offline score up, acceptance flat
 - [EVAL-22](../lexicons/ml-systems.md#eval-22): offline gate needs a live degrade check
 - [UXR-03](../lexicons/interaction-ux.md#uxr-03) / [UXR-15](../lexicons/interaction-ux.md#uxr-15): measure the decision variable; composites can lie
+- [UXR-19](../lexicons/interaction-ux.md#uxr-19): multi-metric goals need per-person conjunction rate, not group-mean clauses
 - [FORE-03](../lexicons/epistemics.md#fore-03): score forecasts; unscored accuracy is theater
 - [A11Y-23](../lexicons/accessibility.md#a11y-23): scanner-green is not conformance
 - [COST-15](../lexicons/ml-systems.md#cost-15): tokens-per-second is not goodput at latency
@@ -149,7 +159,7 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 - [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-12](../lexicons/engineering.md#team-12)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-02](../lexicons/business-marketing.md#aipx-02)
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [EVAL-22](../lexicons/ml-systems.md#eval-22)
-- [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-03](../lexicons/interaction-ux.md#uxr-03), [UXR-15](../lexicons/interaction-ux.md#uxr-15)
+- [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-03](../lexicons/interaction-ux.md#uxr-03), [UXR-15](../lexicons/interaction-ux.md#uxr-15), [UXR-19](../lexicons/interaction-ux.md#uxr-19)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-03](../lexicons/epistemics.md#fore-03)
 - [`webaim-million`](../SOURCES.md#src-webaim-million): supports [A11Y-23](../lexicons/accessibility.md#a11y-23)
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [COST-15](../lexicons/ml-systems.md#cost-15)

@@ -273,16 +273,16 @@ column sums to twice the cross-edge total rather than to it.
 | lexicon | rule nodes | internal edges | external edges | cut ratio |
 |---|---:|---:|---:|---:|
 | [accessibility](lexicons/accessibility.md) | 59 | 30 | 48 | 0.62 |
-| [business-marketing](lexicons/business-marketing.md) | 109 | 34 | 187 | 0.85 |
+| [business-marketing](lexicons/business-marketing.md) | 127 | 34 | 187 | 0.85 |
 | [depiction](lexicons/depiction.md) | 15 | 9 | 15 | 0.62 |
 | [design-aesthetics](lexicons/design-aesthetics.md) | 74 | 12 | 39 | 0.76 |
-| [engineering](lexicons/engineering.md) | 301 | 138 | 257 | 0.65 |
-| [epistemics](lexicons/epistemics.md) | 83 | 41 | 110 | 0.73 |
+| [engineering](lexicons/engineering.md) | 311 | 138 | 257 | 0.65 |
+| [epistemics](lexicons/epistemics.md) | 84 | 41 | 110 | 0.73 |
 | [graph-theory](lexicons/graph-theory.md) | 39 | 16 | 46 | 0.74 |
-| [interaction-ux](lexicons/interaction-ux.md) | 91 | 33 | 157 | 0.83 |
+| [interaction-ux](lexicons/interaction-ux.md) | 100 | 33 | 157 | 0.83 |
 | [ml-systems](lexicons/ml-systems.md) | 208 | 109 | 167 | 0.61 |
 | [security](lexicons/security.md) | 122 | 76 | 80 | 0.51 |
 | [writing](lexicons/writing.md) | 46 | 2 | 30 | 0.94 |
 
-Underlying rule graph (not drawn here): **1147** rule nodes, **1068** distinct undirected edges (simple 1068 + self-loops 0).
+Underlying rule graph (not drawn here): **1185** rule nodes, **1068** distinct undirected edges (simple 1068 + self-loops 0).
 
