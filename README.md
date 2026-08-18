@@ -1,102 +1,153 @@
 # Heuristics canon
 
-A shared set of decision rules for software, product, design, security,
-research, and operations. Each rule is a stable ID with an observable trigger,
-a falsifiable action, a question, a tier, and a citable source.
+A library of short, checkable rules for building and shipping software, in
+eleven domains from engineering and security to writing and judgment under
+uncertainty. The rules are distilled from books, papers, and standards, and
+every rule points at the work it came from (a small number, under thirty of
+some 1,200, are labelled unsourced practice in the bibliography and are still
+waiting for one).
 
-Rules exist so people and tools can cite a short claim without restating the
-whole argument. Texts from different fields sometimes describe the same causal
-mechanism; [PRINCIPLES.md](PRINCIPLES.md) joins those rules so a question in one
-domain can surface evidence another domain would miss.
+Each rule is one line. It names a situation you can see (the trigger), says
+what to do about it (the rule), and gives you the one question to ask at that
+moment. Every rule has a permanent ID such as `RES-02`, so a person or a tool
+can cite it in a review, a plan, or a commit message without restating the
+argument. Two fields often describe the same failure in different words;
+[PRINCIPLES.md](PRINCIPLES.md) records those meeting points, so a question
+about a database schema can surface evidence written about forms, contracts,
+or experiments.
 
-## A concrete example
+## A one-minute example
 
-You are reviewing a service change that adds an HTTP client. The client has no
-timeout. The engineering lexicon has [RES-02](lexicons/engineering.md#res-02):
-**timeout every blocking call**. You cite `[RES-02]`, set the timeout, and move
-on. If the same change also grows irreversible blast radius, open a
-[reasoning card](reasoning/) such as `least-privilege-blast-radius` for the joined
-decision. The rule row is the default depth; the card is optional.
+You are reviewing a change that adds an HTTP client. Nothing sets a timeout.
+That is a trigger you can see in the diff. The engineering lexicon has
+[RES-02](lexicons/engineering.md#res-02), **timeout on every blocking call**,
+tier B, which means it blocks the change until it is handled or explicitly
+exempted. You set the timeout, write `[RES-02]` in the review, and move on.
 
-## How to use it
+If the same change also widens what the code is allowed to touch, a
+[reasoning card](reasoning/) such as
+[least-privilege-blast-radius](reasoning/least-privilege-blast-radius.md)
+walks through the whole decision across several related rules. Cards are
+optional depth. The one-line rule is the default.
 
-1. **Name what changed** (schema, plan, UI, model, incident, launch).
-2. **Open only the relevant families.** A **family** is a short prefix group
-   inside a lexicon (for example [`RES`](lexicons/engineering.md#fam-res)
-   resilience, [`SEC`](lexicons/security.md#fam-sec) security,
-   [`FORE`](lexicons/epistemics.md#fam-fore) forecasting). Use the sketch
-   below, the routing table in [AGENTS.md](AGENTS.md), or a lexicon table of
-   contents.
-3. **Keep rules whose trigger you can observe.** Read exemptions and tier.
-4. **Cite by ID and stop** when applicable blockers and strong defaults are
-   handled.
+## Ask an agent to use it
 
-Agents and integrators: follow the full contract in [AGENTS.md](AGENTS.md)
-(pin a release tag, verify digests, progressive card retrieval).
+The canon is written for tools as much as for people. Point an agent (Claude
+Code, Claude Cowork, Codex, or any assistant that can read a repository) at
+this repo. The agent decides which lexicons, principles, and cards apply; you
+tell it what changed and, when it helps, where to look. Set it up once:
 
-### Common artifacts → where to look
+```text
+Clone https://github.com/darce/heuristics-canon next to this project and
+read its AGENTS.md. Apply the canon whenever I ask you to review, plan,
+or write, and cite the rule IDs you used.
+```
 
-Sketch only; not the full route table.
+Then ask in plain words. Three examples, each with the rules an agent would
+find in a typical case.
 
-| If you changed… | Start here (lexicon · families) |
-|---|---|
-| Schema, migration, storage | [engineering](lexicons/engineering.md) · MODEL, DATA, STOR · [security](lexicons/security.md) · PG |
-| API or public name | engineering · API, NAME · [design](lexicons/design-aesthetics.md) · BRND |
-| Concurrent or async code | engineering · CON, DATA, RES |
-| Release, deploy, rollback | engineering · RLSE, OBS, TEST |
-| UI, form, navigation | [interaction-ux](lexicons/interaction-ux.md) · PERC, COG, NAV, INT, FORM · [accessibility](lexicons/accessibility.md) · A11Y |
-| Auth, tenancy, web threat | [security](lexicons/security.md) · SEC, WEB, SECD, PG |
-| Model eval, RAG, agent loop | [ml-systems](lexicons/ml-systems.md) · EVAL, RAG, FM, COST · engineering · RES, OBS |
-| Forecast, experiment, metric | [epistemics](lexicons/epistemics.md) · FORE, EXP, MEAS, BIAS |
-| Product bet, pricing, launch | [business-marketing](lexicons/business-marketing.md) · STRAT, PROD, GTM, CLM |
-| Prose or docs | [writing](lexicons/writing.md) · WRIT |
-| Alt text, caption, image description | [depiction](lexicons/depiction.md) · ATTRIB, BOUND · accessibility · A11Y · writing · WRIT |
+Review a change:
+
+```text
+Review this diff against the heuristics canon.
+```
+
+The diff adds an HTTP call with a retry loop and a new index. What fires:
+
+```text
+RES-02  B  client.py:41   http.get() has no timeout        set one
+RES-01  B  client.py:47   POST retried, not idempotent     add an idempotency key
+API-08  S  client.py:44   fixed 1s retry, no ceiling       backoff, ~3 attempts, 5xx only
+STOR-01 S  0007_orders.sql new index on a write-hot table  name the query it serves
+```
+
+Check a plan, steering the agent to one area:
+
+```text
+Check this migration plan against the canon. Focus on data and rollout.
+```
+
+The plan renames a column in place and has a runbook. What fires:
+
+```text
+DATA-04  S  step 2   rename in place under no-downtime     expand, migrate, contract
+STOR-01  S  step 3   adds an index, no query named          cite the query or drop it
+RLSE-11  S  step 5   manual click-path runbook, run weekly  script it
+```
+
+Edit prose:
+
+```text
+Edit this post with the canon's writing rules. Keep my argument.
+```
+
+What fires on a draft with the usual tells:
+
+```text
+WRIT-30  S  27 em dashes                          vary the punctuation
+WRIT-07  B  three "not X, it's Y" pivots          keep one
+WRIT-05  S  "crucial, pivotal, evolving" cluster  one concrete claim
+CLM-04   B  "secure" as a bare adjective          mechanism, location, failure
+```
+
+Good output looks like this: a handful of IDs beside concrete lines, each with
+what to do. An answer that cites twenty rules for a ten-line change has read
+too much; ask it to keep only the rules whose trigger it can point at.
 
 ## What is inside
 
 | Path | What it is |
 |---|---|
-| [lexicons/](lexicons/) | Decision rules by domain and family |
-| [PRINCIPLES.md](PRINCIPLES.md) | Cross-domain mechanisms that join rules |
-| [SOURCES.md](SOURCES.md) | Bibliography registry for every cited work |
-| [reasoning/](reasoning/) | Mechanism cards (optional decision depth) |
-| [AGENTS.md](AGENTS.md) | Technical consumer contract |
-| [NOTICE.md](NOTICE.md) | Rights boundary and CC BY scope |
-| `meta/release-manifest.json` | Per-release digests and published rule IDs |
+| [lexicons/](lexicons/) | The rules, one file per domain, grouped by family, keyed by ID |
+| [PRINCIPLES.md](PRINCIPLES.md) | Cross-domain mechanisms that join rules from unrelated sources |
+| [reasoning/](reasoning/) | Mechanism cards: optional decision depth above the one-line rule |
+| [SOURCES.md](SOURCES.md) | The bibliography: every work a rule cites |
+| [GRAPH.md](GRAPH.md) | A picture of how the lexicons reference each other |
+| [AGENTS.md](AGENTS.md) | The contract for tools: routing, phases, retrieval |
+| [NOTICE.md](NOTICE.md) | What is licensed and what never ships |
 
-### Reading a rule
+The eleven lexicons cover engineering, security, business and marketing,
+design, writing, depiction (what a description may claim about what it
+depicts), accessibility, graph theory, interaction and UX, ML systems, and
+epistemics (judgment under uncertainty). Reading by hand works too: each
+lexicon is a Markdown table grouped into families with short prefixes such as
+[`RES`](lexicons/engineering.md#fam-res) (resilience) or
+[`WRIT`](lexicons/writing.md#fam-writ) (writing).
+
+## Reading a rule
 
 ```text
-| RES-02 | blocking call with no timeout | Timeout every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call ... | What bounds this wait? | B·w | release-it ch-5 |
 ```
 
-- **ID** is the permanent citation key (`[RES-02]`, anchor `#res-02`).
-- **Trigger** is observable in an artifact, plan, error, or metric.
-- **Rule** is the condition, action, and consequence.
-- **Answers** is the decision-point question.
-- **T·P** is tier and phase (`B` blocks, `S` strong default, `J` needs judgment;
-  phase buckets are plan / write / review / ship; see AGENTS).
-- **Src** resolves through [SOURCES.md](SOURCES.md).
+The columns are the ID, the trigger, the rule, the question it answers, the
+tier and phase, and the source. The ID is permanent and anchors as `#res-02`.
+The tier says how hard the rule is: B blocks until it is handled or explicitly
+exempted, S is a strong default with named exemptions, J needs your judgment.
+Rules are evidence-backed defaults, not an authority that overrides your
+judgment, the facts in front of you, or a documented exemption. The phase
+letter says when in the work the rule tends to bite; the source resolves in
+[SOURCES.md](SOURCES.md).
 
-## Principles and reasoning cards
+## Principles and cards
 
-**Principles** surface the same mechanism in another material. Use siblings as
-independent checks, not as a citation quota. They are grouped into four forces
-(contracts, evidence, reversibility, feedback) for navigation; the numbered
-principles stay separate.
+A principle answers "this failure has the same shape in another field". When a
+rule that fired appears in [PRINCIPLES.md](PRINCIPLES.md), the rules listed
+beside it are independent checks of the same mechanism from other domains.
+Read them as a second opinion, not as extra citations.
 
-**Reasoning cards** rebuild a multi-rule decision: what to notice, why it fails,
-what to do, and how to check. Open a card when several retained rules share one
-mechanism. Cards are optional depth above the row and selective pilots, not
-full coverage. [SOURCES.md](SOURCES.md) is the complete registry of cited
-works; it is not a substitute for reading the originals through ordinary legal
-channels.
+A reasoning card answers "several rules that fired share one decision". A card
+rebuilds the triggers, the failure, the action, the tensions, and how to
+verify, for one mechanism. Cards cover a few dozen hot decisions.
+[SOURCES.md](SOURCES.md) lists the works behind the rules; obtain the originals
+through ordinary legal channels.
 
-## Rights
+## Rights and where the technical detail lives
 
-Original rule, principle, and card prose is offered under CC BY 4.0 as stated in
-[NOTICE.md](NOTICE.md). That grant does not cover third-party works listed in
-SOURCES.md.
+The rule, principle, and card prose is offered under CC BY 4.0, as stated in
+[NOTICE.md](NOTICE.md). That grant does not cover the third-party works listed
+in SOURCES.md.
 
-Integrity, versioning, routing tables, and card-open rules live in
-[AGENTS.md](AGENTS.md).
+Everything a tool or an integrator needs, including the routing table and
+phase codes, is in [AGENTS.md](AGENTS.md). In the published repository that
+file also explains how to pin a release and verify digests.

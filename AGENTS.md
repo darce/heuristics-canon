@@ -13,8 +13,9 @@ orientation: [reasoning/README.md](reasoning/README.md).
   in a breaking release.
 - Pin a tag, not `main`, and verify lexicon and (when present) `reasoning/`
   SHA-256 values against
-  [`meta/release-manifest.json`](meta/release-manifest.json)
-  (`heuristics-canon/release@2`).
+  [`meta/release-manifest.json`](meta/release-manifest.json). The current
+  schema is `heuristics-canon/release@4`; tags cut before it carry `release@1`
+  or `release@2` and stay verifiable the same way.
 - Semver: removal of a published rule ID or reasoning card is breaking;
   addition is minor; same-path content change is patch.
 - Tier controls force: `B` blocks, `S` is a strong default with named
@@ -34,16 +35,16 @@ rule row  ->  reasoning card  ->  original source
  (lexicon)     (reasoning/)        (publisher copy)
 ```
 
-1. **Rule row** (default). Route the artifact, keep rows whose triggers fire,
+1. Rule row (default). Route the artifact, keep rows whose triggers fire,
    read exemptions and tier. Cite `[FAM-NN]`.
-2. **Reasoning card.** For every retained rule ID, open **every** mechanism
+2. Reasoning card. For every retained rule ID, open **every** mechanism
    card that lists that ID in its `## Rule IDs` section, **once each**, in
    deterministic ascending slug order. Do not stop at the first match. A
    principle join is a reason to open, not a checklist to satisfy. Use each
    card's verification section. Cite rule IDs in the durable record, not the
    card slug alone. On every card, Rule ID mentions and Evidence slugs are
    Markdown links to lexicon anchors and `SOURCES.md` rows.
-3. **Original source.** Last resort for primary text. Obtain the work through
+3. Original source. Last resort for primary text. Obtain the work through
    ordinary legal channels.
 
 A card without a firing trigger is inert. Cards are selective; they do not
@@ -179,7 +180,7 @@ A `Src` slug resolves in [SOURCES.md](SOURCES.md). Deep-link a row as
 ## Read and cite a row
 
 ```text
-| RES-02 | blocking call with no timeout | Timeout every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
 ```
 
 The columns are ID, Trigger, Rule, Answers, tier/phase, and source. Cite
@@ -202,6 +203,7 @@ find reasoning -type f 2>/dev/null | sort | xargs shasum -a 256
 ```
 
 Compare the output with `meta/release-manifest.json` (schema
-`heuristics-canon/release@2`). The manifest carries the full rule-ID set and
-per-file digests for lexicons and reasoning cards, so contract drift is
-checkable offline.
+`heuristics-canon/release@4`; older tags carry `@1` or `@2`). The manifest
+carries the full rule-ID set, per-file digests for lexicons and reasoning
+cards, and from `@4` a map of withdrawn rule IDs to their successors, so
+contract drift is checkable offline.

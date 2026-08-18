@@ -1,20 +1,20 @@
 {
-  "schema": "heuristics-canon/release@2",
-  "version": "0.20.0",
-  "date": "2026-08-06",
-  "rules": 1185,
-  "principles": 19,
+  "schema": "heuristics-canon/release@4",
+  "version": "0.21.0",
+  "date": "2026-08-18",
+  "rules": 1213,
+  "principles": 20,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "f379c96a10c30bfaa6ecfc1b7663821d2767916f079697d6b96611a10860d927",
+      "sha256": "5d5f3fe63105e5f75cd4d520bd2f02f069fa67aedd0d38f0f696d2a34d9ea035",
       "rules": 59
     },
     "lexicons/business-marketing.md": {
-      "sha256": "01dbed0a6409a62451b3a32e8c27b769d1003c4c2dad5af4c8a37554763e8795",
+      "sha256": "f8aee7016df465521a62e56d79bf9880f69b0d356256c816fd16520389f103de",
       "rules": 127
     },
     "lexicons/depiction.md": {
-      "sha256": "90ea83eb4d0ca78a4250bb0c543db0a1877e99db6e73252383660ce101ebbe0e",
+      "sha256": "5771aa545be74c00404f948cc238a4ccbda5530f23f8afc23d737239fdcf5edb",
       "rules": 15
     },
     "lexicons/design-aesthetics.md": {
@@ -22,28 +22,28 @@
       "rules": 74
     },
     "lexicons/engineering.md": {
-      "sha256": "c99e440f2e7a32c4db2f9e2bb26610b89842471700984cd67ed21f065e2a9ce7",
+      "sha256": "9e88458dde9235488982acede4e3a3301263819805b4c398ed14662a28ab0b8d",
       "rules": 311
     },
     "lexicons/epistemics.md": {
-      "sha256": "370285007c25ed265f9b4f2ecaf9dc46701bb3c30856a47019bf95c6b420449a",
-      "rules": 84
+      "sha256": "d879e8a279cf3d7988a24d108912de87f7621f1c119300ad53267b2af3c944c9",
+      "rules": 85
     },
     "lexicons/graph-theory.md": {
-      "sha256": "ad1ee5780d8a564bd432fa3922c4d7b9b1a889d7db2b95c0aab9b2d89dc36a76",
+      "sha256": "c04f51ef25426c7a880988bf821d0dd28b8689423067fb7ff479f98b4776fe59",
       "rules": 39
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "4df86fe7d78677283935e753a1dcbe589c6e0fb335c106202840c4f576aae57d",
-      "rules": 100
+      "sha256": "0d0219d205d5a036f5bbbdf58ffe4bffa1e1172c13c8b718df8d90397cac5699",
+      "rules": 104
     },
     "lexicons/ml-systems.md": {
-      "sha256": "cb09b12c0a24e89a3b713addecc7da0a2d7897ccbc7db37390b4d76c38a5ee4e",
-      "rules": 208
+      "sha256": "b9817e0db7b007e33b7cdf5c2f1e508b10f0066991aa2a84d174c16415cbea47",
+      "rules": 230
     },
     "lexicons/security.md": {
-      "sha256": "a473ec1008900ce185f231f26e4fe67aa1d52c2fd2748a47dcf7978ac9b7b44a",
-      "rules": 122
+      "sha256": "f503a3c1eb62c9e4aaef1668d06370a1059519079d2d2cb46737a5dca18432da",
+      "rules": 123
     },
     "lexicons/writing.md": {
       "sha256": "7f90a67ae4f9ec2074c3e036b9923b0dc4ded1eba834ff4bd984e70bc6d0b76b",
@@ -209,6 +209,7 @@
     "BIAS-06",
     "BIAS-07",
     "BIAS-08",
+    "BIAS-09",
     "BOOT-01",
     "BOOT-02",
     "BOOT-03",
@@ -385,6 +386,14 @@
     "EMB-08",
     "EMB-09",
     "EMB-10",
+    "EMB-11",
+    "EMB-12",
+    "EMB-13",
+    "EMB-14",
+    "EMB-15",
+    "EMB-16",
+    "EMB-17",
+    "EMB-18",
     "EVAL-01",
     "EVAL-02",
     "EVAL-03",
@@ -411,6 +420,8 @@
     "EVAL-24",
     "EVAL-25",
     "EVAL-26",
+    "EVAL-27",
+    "EVAL-28",
     "EXP-01",
     "EXP-02",
     "EXP-03",
@@ -561,6 +572,8 @@
     "HAI-16",
     "HAI-17",
     "HAI-18",
+    "HAI-19",
+    "HAI-20",
     "HITL-01",
     "HITL-02",
     "HITL-03",
@@ -575,6 +588,8 @@
     "HITL-12",
     "HITL-13",
     "HITL-14",
+    "HITL-15",
+    "HITL-16",
     "IDNT-01",
     "IDNT-02",
     "IDNT-03",
@@ -665,6 +680,11 @@
     "MLDATA-24",
     "MLDATA-25",
     "MLDATA-26",
+    "MLDATA-27",
+    "MLDATA-28",
+    "MLDATA-29",
+    "MLDATA-30",
+    "MLDATA-31",
     "MODEL-01",
     "MODEL-02",
     "MODEL-03",
@@ -835,6 +855,7 @@
     "PROV-10",
     "PROV-11",
     "PROV-12",
+    "PROV-13",
     "RAG-01",
     "RAG-02",
     "RAG-03",
@@ -973,6 +994,7 @@
     "SECD-12",
     "SECD-13",
     "SECD-14",
+    "SECD-15",
     "SERVE-01",
     "SERVE-02",
     "SERVE-03",
@@ -1126,12 +1148,18 @@
     "VIZ-15",
     "VIZ-16",
     "VIZ-17",
+    "VIZ-18",
+    "VIZ-19",
     "VSEG-01",
     "VSEG-02",
     "VSEG-03",
     "VSEG-04",
     "VSEG-05",
     "VSEG-06",
+    "VSEG-07",
+    "VSEG-08",
+    "VSEG-09",
+    "VSEG-10",
     "WEB-01",
     "WEB-02",
     "WEB-03",
@@ -1239,22 +1267,22 @@
   ],
   "docs": {
     "PRINCIPLES.md": {
-      "sha256": "fd540c9ee741029737f840e81eb79e392865d4c939eb2e3ec20f701d7a71dcc7"
+      "sha256": "184d457f80a762544168af3a1f8ecc74cc0647aee20616691e1ea68b161610d1"
     },
     "NOTICE.md": {
       "sha256": "104fde3eea6b5da7127dd86a481c62c2a548a4b2e3de21cc114ea65c81eb966c"
     },
     "README.md": {
-      "sha256": "24b98a29d6695510240c8b827cfebb0b3cd2d8c5883ff82b696e990b05832077"
+      "sha256": "8b56550fcd6644b5136962684d3bad78be48662fed8df66253cbf1d36d047660"
     },
     "AGENTS.md": {
-      "sha256": "1197da65c6a747b9665ac5be658ae9228657c8e84e2bfd2bfe03bd2d797f671a"
+      "sha256": "b5986415e8469f908254d9dbc295e5d9caada769f888c3f58052964de5741626"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
     },
     "SOURCES.md": {
-      "sha256": "51118c6418ac39d53353fbddda9d4921aaf90fc049835253ef4662e343da3569"
+      "sha256": "5748e425541543d2276a022dfd03807ac9086fbcf0968edeb61e81dd5284419c"
     }
   },
   "reasoning": {
@@ -1262,10 +1290,10 @@
       "sha256": "ee0a329a01d185903611a9e8eeca71cdd200f6ecff90069ecdc67a6818242e71"
     },
     "reasoning/MAP.md": {
-      "sha256": "0fdf1cd08ebbc417713a5c89ed2a59ae190655d6fbf4a420ea556c20b3fbb5a3"
+      "sha256": "321dec80febc86ff051ef669c6dbb27904d09dfde46138f22f3d530d44b38cb0"
     },
     "reasoning/README.md": {
-      "sha256": "11e9ba55157723d798e6caf45a6c791779f1a90ee909ad293df556c2505ab14a"
+      "sha256": "bf2483c7629f2b73eede83c31012394f224f83553a28894cb4e2e5933520d385"
     },
     "reasoning/attribute-claims-to-their-bearer.md": {
       "sha256": "9c02ef9ce477a6c18a81e8ca5a9c050da732b2b18049f2b5a050d063b579db5e"
@@ -1278,6 +1306,9 @@
     },
     "reasoning/compression-is-selection-not-truncation.md": {
       "sha256": "c7791b0f15717afa6dce7b637729b5b2f99c6840ff95aceb44f61278fc9d2f4c"
+    },
+    "reasoning/condition-matched-reference.md": {
+      "sha256": "2ad982f300dacc8633c31e843af71cea57ce496aa3e1fdbf535b9878365542e1"
     },
     "reasoning/constrained-domains-have-solved-it.md": {
       "sha256": "3bff6bff78c3e9439a5f5b8fba7e005d3f6befcdf943f062c8f8fe132f48c2a4"
@@ -1358,5 +1389,38 @@
       "sha256": "2214d35c5567ac0b227d3d0a76e49b85e5fd96379d7e71e982a31ecd031b33a8"
     }
   },
-  "sources": {}
+  "sources": {},
+  "withdrawn": {
+    "AGT-03": {
+      "superseded_by": "DBG-01",
+      "version": "0.4.0"
+    },
+    "AGT-05": {
+      "superseded_by": "REF-05",
+      "version": "0.4.0"
+    },
+    "AGT-09": {
+      "superseded_by": "API-08",
+      "version": "0.4.0"
+    },
+    "AIPX-08": {
+      "superseded_by": "HAI-12",
+      "version": "0.18.0"
+    },
+    "AIPX-11": {
+      "superseded_by": "HAI-13",
+      "version": "0.18.0"
+    }
+  },
+  "withdrawn_cards": {
+    "reversibility-blast-radius": {
+      "superseded_by": [
+        "dual-control-two-keys",
+        "falsification-disconfirmers",
+        "least-privilege-blast-radius",
+        "second-exit-hostile-landlord"
+      ],
+      "version": "0.15.0"
+    }
+  }
 }

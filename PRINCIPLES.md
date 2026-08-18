@@ -10,12 +10,12 @@ Principles explain and navigate. Operational triggers, actions, tensions, and ch
 
 ## Forces at a glance
 
-The 19 mechanisms cluster into four forces without collapsing into four vague rules. These are navigation groups, not merge proposals. Each numbered principle stays separate because its trigger, causal mechanism, or prescribed action differs.
+The 20 mechanisms cluster into four forces without collapsing into four vague rules. These are navigation groups, not merge proposals. Each numbered principle stays separate because its trigger, causal mechanism, or prescribed action differs.
 
 | Force | Principles | Question |
 |---|---|---|
 | [Contracts and boundaries](#contracts-and-boundaries) | 1, 5, 6, 10, 18 | What structure, interface, or default must be true before the surface can be trusted? |
-| [Evidence and measurement](#evidence-and-measurement) | 2, 4, 9, 13, 15 | What produced the claim, what would falsify it, and can the measured party shape the meter? |
+| [Evidence and measurement](#evidence-and-measurement) | 2, 4, 9, 13, 15, 20 | What produced the claim, what would falsify it, and can the measured party shape the meter? |
 | [Reversibility and exposure](#reversibility-and-exposure) | 3, 8, 14, 17 | What is expensive to undo, who controls it, and how much can one failure reach? |
 | [Feedback and correction](#feedback-and-correction) | 7, 11, 12, 16, 19 | Where does error surface, where is it corrected, and can feedback arrive before the next commitment? |
 
@@ -95,14 +95,15 @@ The moment a consumer must act on an outcome, the outcome stops being prose.
 
 <a name="force-evidence-and-measurement"></a>
 
-What produced the claim, what would falsify it, and whether the measured party can shape the meter. Disconfirmers before confidence; outcome over proxy; walkable provenance; evidence before the durable commit; unshaped sampling frames.
+What produced the claim, what would falsify it, and whether the measured party can shape the meter. Disconfirmers before confidence; outcome over proxy; walkable provenance; evidence before the durable commit; unshaped sampling frames; reference conditions matched to the query.
 
 Entry points:
 [[STRAT-02]](lexicons/business-marketing.md#strat-02) ·
 [[OPS-01]](lexicons/business-marketing.md#ops-01) ·
 [[GRPH-14]](lexicons/graph-theory.md#grph-14) ·
 [[PROV-02]](lexicons/ml-systems.md#prov-02) ·
-[[PERF-03]](lexicons/engineering.md#perf-03)
+[[PERF-03]](lexicons/engineering.md#perf-03) ·
+[[HITL-15]](lexicons/ml-systems.md#hitl-15)
 
 ### 2. Specify what would prove you wrong
 
@@ -162,6 +163,17 @@ Where the measured system can decide which cases enter the sample, or how large 
 - The watcher must sit outside the optimizer's reach [[OBS-09]](lexicons/engineering.md#obs-09); metrics on a rebalanced fantasy mix do not report the real one [[EVAL-03]](lexicons/ml-systems.md#eval-03).
 
 Ask what the system under test could do to make this number better without doing anything better.
+
+### 20. Match the reference to the conditions of the query
+
+Every comparison has a query side and a reference side. The reference is almost always built first, under conditions convenient to collect. When the query arrives under different conditions, both sides can be honest and the metric can look fine — the silent failure lives in how the reference was constructed, not in a wrong quantity (Principle 4), a sample the measured party shaped (Principle 15), or evidence that arrived after a durable commit (Principle 13). Build or re-stratify the reference under the query's conditions before comparing; when you cannot, name the mismatch as a stratum rather than pool across it.
+
+- Eyewitness lineup construction: match gallery covering to the probe's encoding [[HITL-15]](lexicons/ml-systems.md#hitl-15).
+- Occluded face recognition: treat occlusion as spatial support and align corresponding parts before score [[EMB-11]](lexicons/ml-systems.md#emb-11), [[EMB-12]](lexicons/ml-systems.md#emb-12); gate real-occlusion claims on real-occlusion cells [[EVAL-28]](lexicons/ml-systems.md#eval-28).
+- Training and serving construction: match training degradation to measured target statistics [[MLDATA-10]](lexicons/ml-systems.md#mldata-10); keep train and serve transforms identical [[SERVE-08]](lexicons/ml-systems.md#serve-08).
+- Calibration and pair evaluation: fit thresholds on demographically matched non-mates [[CAL-04]](lexicons/ml-systems.md#cal-04); calibrate by quality stratum [[CAL-01]](lexicons/ml-systems.md#cal-01); the measured slice is a query×enrolled cell [[EVAL-20]](lexicons/ml-systems.md#eval-20); choose models that win under production-like perturbation [[EVAL-06]](lexicons/ml-systems.md#eval-06).
+
+Before you trust the comparison, ask whether the reference was built under the conditions the query actually has. A filter that deletes the hard cells is the nearest shaped-sample neighbour and stays under Principle 15 — there the act is deletion by the pipeline owner, not mismatched reference construction.
 
 ---
 
@@ -310,7 +322,7 @@ An amplification is the opposite of a tension: two sources watch one failure fro
 
 ## How these earn their place
 
-A convergence is the mechanism by which a rule is promoted. A claim enters a lexicon at the lowest tier with its observed outcome as provenance; it climbs when a second, unrelated source is found to have reached it independently. This file is not a summary of the lexicons: it is the evidence for their tiers, and the index a reader uses to pull a rule's cross-domain siblings into a decision that only named one domain.
+A convergence is the mechanism by which a claim earns a place in this file. A rule enters a lexicon with its source as provenance and its tier set by how hard the rule binds — **B**locker, **S**hould, **J**udgment — not by how much evidence stands behind it: as of 2026-08-15 the mean number of sources per rule is the same at all three tiers. What climbs is the *claim*, not the tier: when a second, unrelated source is found to have reached it independently, that arrival is recorded here. This file is not a summary of the lexicons: it is the record of those independent arrivals, and the index a reader uses to pull a rule's cross-domain siblings into a decision that only named one domain.
 
 ---
 

@@ -39,6 +39,7 @@ are selective pilots, not full coverage of every principle or force.
 | [bounded-role-lets-a-small-model-be-safe](bounded-role-lets-a-small-model-be-safe.md) | Match model capacity to each stage's contract |
 | [compose-at-the-boundary-before-inside-the-graph](compose-at-the-boundary-before-inside-the-graph.md) | Compose independent graphs at the session boundary first |
 | [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) | Rank what survives under budget before writing the short form |
+| [condition-matched-reference](condition-matched-reference.md) | Match the reference to the query's conditions |
 | [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) | Prefer a constrained domain's solved vocabulary over free invention |
 | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) | Score context use separately from bare-image caption quality |
 | [contract-before-components](contract-before-components.md) | Author the gatekeeper contract before building the surface |
