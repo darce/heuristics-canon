@@ -58,10 +58,15 @@ Here is what happens when you then ask for a review:
                              fixes what it can, one rule at a time
                         <--  the fixed brief, plus a short list:
                              what changed and which rule (its ID) said so
+  you check the result:
+  keep each change, or
+  undo it if you know
+  something the rule
+  does not
 ```
 
-You read the list, and disagree with a line if you know something the rule
-does not. That is the whole loop.
+The agent does the work. You judge the outcome; the rule IDs tell you where
+to look. That is the whole loop.
 
 The agent chooses which rules to read. You say what the thing is and, if it
 helps, where to look. Three examples in plain words, each with the rules an
