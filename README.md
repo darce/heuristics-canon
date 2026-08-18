@@ -51,19 +51,17 @@ stale.
 Here is what happens when you then ask for a review:
 
 ```text
-  you                     the agent                        the canon
-  ---                     ---------                        ---------
-  "Review this brief."
-        ---------------->  reads the brief
-                           picks the domains  ------------> business, writing
-                           looks for triggers <------------ rules whose trigger
-                                                            appears in the text
-        <----------------  a short list:
-                           ID . where . what is wrong . what to do
-  you fix each line,
-  or write down why
-  it does not apply
+  you                        the agent
+  ---                        ---------
+  "Review this brief."  -->  reads it
+                             looks up the rules whose trigger it can see
+                             fixes what it can, one rule at a time
+                        <--  the fixed brief, plus a short list:
+                             what changed and which rule (its ID) said so
 ```
+
+You read the list, and disagree with a line if you know something the rule
+does not. That is the whole loop.
 
 The agent chooses which rules to read. You say what the thing is and, if it
 helps, where to look. Three examples in plain words, each with the rules an
@@ -116,7 +114,7 @@ CLM-04   B  "secure" as a bare adjective          mechanism, location, failure
 ```
 
 Good output looks like this: a handful of IDs beside concrete lines, each with
-what to do. An answer that cites twenty rules for a one-page brief has read
+what changed and why. An answer that cites twenty rules for a one-page brief has read
 too much; ask it to keep only the rules whose trigger it can point at.
 
 ## What is inside
