@@ -39,14 +39,12 @@ can use it. You do not need to install anything. Tell it once:
 
 ```text
 Read the heuristics canon at https://github.com/darce/heuristics-canon,
-starting with AGENTS.md. Fetch it fresh each time so you have the current
-version. Whenever I ask you to review, plan, or write, apply the canon and
-cite the rule IDs you used.
+starting with AGENTS.md. Whenever I ask you to review, plan, or write,
+apply the canon and cite the rule IDs you used.
 ```
 
-If your tool cannot fetch web pages, clone the repository next to your
-project instead and pull before you use it. A copy that is never pulled goes
-stale.
+If your tool reads local files but not web pages, clone the repository next
+to your project and point the agent at that instead.
 
 Here is what happens when you then ask for a review:
 
