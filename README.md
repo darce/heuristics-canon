@@ -18,61 +18,86 @@ or experiments.
 
 ## A one-minute example
 
-You are reviewing a change that adds an HTTP client. Nothing sets a timeout.
-That is a trigger you can see in the diff. The engineering lexicon has
-[RES-02](lexicons/engineering.md#res-02), **timeout on every blocking call**,
-tier B, which means it blocks the change until it is handled or explicitly
-exempted. You set the timeout, write `[RES-02]` in the review, and move on.
+You are reading a marketing brief before it goes to an agency. It says the
+campaign will "build awareness", the tagline is a pun that needs a footnote,
+and the proof of demand is a survey where people said they would buy. Each of
+those is a trigger you can see on the page. The business lexicon has
+[GTM-01](lexicons/business-marketing.md#gtm-01), **ask them to buy**, tier B:
+stated intent is not demand, so the brief cannot go out until there is paid
+intent or an explicit exemption. You write `[GTM-01]` in the margin, ask for a
+pre-order or a paid pilot, and move on to the next line.
 
-If the same change also widens what the code is allowed to touch, a
-[reasoning card](reasoning/) such as
-[least-privilege-blast-radius](reasoning/least-privilege-blast-radius.md)
-walks through the whole decision across several related rules. Cards are
-optional depth. The one-line rule is the default.
+If several rules that fired share one decision, a [reasoning card](reasoning/)
+walks through the whole decision. Cards are optional depth. The one-line rule
+is the default.
 
 ## Ask an agent to use it
 
-The canon is written for tools as much as for people. Point an agent (Claude
-Code, Claude Cowork, Codex, or any assistant that can read a repository) at
-this repo. The agent decides which lexicons, principles, and cards apply; you
-tell it what changed and, when it helps, where to look. Set it up once:
+The canon is written for tools as much as for people. Any assistant that can
+read a web page or a repository (Claude Code, Claude Cowork, Codex, or another)
+can use it. You do not need to install anything. Tell it once:
 
 ```text
-Clone https://github.com/darce/heuristics-canon next to this project and
-read its AGENTS.md. Apply the canon whenever I ask you to review, plan,
-or write, and cite the rule IDs you used.
+Read the heuristics canon at https://github.com/darce/heuristics-canon,
+starting with AGENTS.md. Fetch it fresh each time so you have the current
+version. Whenever I ask you to review, plan, or write, apply the canon and
+cite the rule IDs you used.
 ```
 
-Then ask in plain words. Three examples, each with the rules an agent would
-find in a typical case.
+If your tool cannot fetch web pages, clone the repository next to your
+project instead and pull before you use it. A copy that is never pulled goes
+stale.
 
-Review a change:
+Here is what happens when you then ask for a review:
 
 ```text
-Review this diff against the heuristics canon.
+  you                     the agent                        the canon
+  ---                     ---------                        ---------
+  "Review this brief."
+        ---------------->  reads the brief
+                           picks the domains  ------------> business, writing
+                           looks for triggers <------------ rules whose trigger
+                                                            appears in the text
+        <----------------  a short list:
+                           ID . where . what is wrong . what to do
+  you fix each line,
+  or write down why
+  it does not apply
 ```
 
-The diff adds an HTTP call with a retry loop and a new index. What fires:
+The agent chooses which rules to read. You say what the thing is and, if it
+helps, where to look. Three examples in plain words, each with the rules an
+agent would find in a typical case.
+
+Review a marketing brief:
 
 ```text
-RES-02  B  client.py:41   http.get() has no timeout        set one
-RES-01  B  client.py:47   POST retried, not idempotent     add an idempotency key
-API-08  S  client.py:44   fixed 1s retry, no ceiling       backoff, ~3 attempts, 5xx only
-STOR-01 S  0007_orders.sql new index on a write-hot table  name the query it serves
+Review this campaign brief against the heuristics canon.
 ```
 
-Check a plan, steering the agent to one area:
+The brief promises awareness, leans on a survey, and has a clever tagline.
+What fires:
 
 ```text
-Check this migration plan against the canon. Focus on data and rollout.
+STRAT-20  B  goals section    lists targets, never names the obstacle   say what stands in the way
+GTM-01    B  "demand" section survey says people would buy              get a paid pre-order first
+GTM-05    S  media plan       press spend before a way to convert       build the path, then buy press
+GTM-07    S  tagline          pun that needs explaining                 one feeling, said plainly
+CLM-04    B  claims           "secure" and "compliant" as adjectives    say how, where, and what fails
 ```
 
-The plan renames a column in place and has a runbook. What fires:
+Check a launch plan, steering the agent to one area:
 
 ```text
-DATA-04  S  step 2   rename in place under no-downtime     expand, migrate, contract
-STOR-01  S  step 3   adds an index, no query named          cite the query or drop it
-RLSE-11  S  step 5   manual click-path runbook, run weekly  script it
+Check this launch plan against the canon. Focus on what could go wrong.
+```
+
+The plan shows only the path to a win and copies a rival's move. What fires:
+
+```text
+STRAT-02  B  whole plan   no section on how it fails            write the failure case first
+STRAT-05  S  rationale    "because the competitor just did it"  separate their reasons from ours
+STRAT-28  S  tactics      no guess at how the rival responds    write their likely reaction
 ```
 
 Edit prose:
@@ -91,7 +116,7 @@ CLM-04   B  "secure" as a bare adjective          mechanism, location, failure
 ```
 
 Good output looks like this: a handful of IDs beside concrete lines, each with
-what to do. An answer that cites twenty rules for a ten-line change has read
+what to do. An answer that cites twenty rules for a one-page brief has read
 too much; ask it to keep only the rules whose trigger it can point at.
 
 ## What is inside
@@ -150,4 +175,5 @@ in SOURCES.md.
 
 Everything a tool or an integrator needs, including the routing table and
 phase codes, is in [AGENTS.md](AGENTS.md). In the published repository that
-file also explains how to pin a release and verify digests.
+file also explains how to pin a release and verify digests, for teams that
+need a review to be repeatable rather than current.
