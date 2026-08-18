@@ -1,11 +1,11 @@
 # Heuristics canon
 
-A library of short, checkable rules for building and shipping software, in
-eleven domains from engineering and security to writing and judgment under
-uncertainty. The rules are distilled from books, papers, and standards, and
-every rule points at the work it came from (a small number, under thirty of
-some 1,200, are labelled unsourced practice in the bibliography and are still
-waiting for one).
+A library of short, checkable rules for software work and the writing,
+marketing, and decisions around it, in eleven domains including engineering,
+security, business, writing, and judgment under uncertainty. The rules are
+distilled from books, papers, and standards, and each one points at the work
+it came from. Twenty-eight of some 1,200 are labelled unsourced practice in
+the bibliography and are still waiting for a source.
 
 Each rule is one line. It names a situation you can see (the trigger), says
 what to do about it (the rule), and gives you the one question to ask at that
@@ -35,7 +35,7 @@ is the default.
 
 The canon is written for tools as much as for people. Any assistant that can
 read a web page or a repository (Claude Code, Claude Cowork, Codex, or another)
-can use it. You do not need to install anything. Tell it once:
+can use it. Nothing needs installing. Tell it once:
 
 ```text
 Read the heuristics canon at https://github.com/darce/heuristics-canon,
@@ -46,29 +46,25 @@ apply the canon and cite the rule IDs you used.
 If your tool reads local files but not web pages, clone the repository next
 to your project and point the agent at that instead.
 
-Here is what happens when you then ask for a review:
+When you then ask for a review, this is the exchange:
 
 ```text
   you                        the agent
   ---                        ---------
   "Review this brief."  -->  reads it
-                             looks up the rules whose trigger it can see
-                             fixes what it can, one rule at a time
-                        <--  the fixed brief, plus a short list:
-                             what changed and which rule (its ID) said so
-  you check the result:
-  keep each change, or
-  undo it if you know
-  something the rule
-  does not
+                             finds the rules whose trigger appears in the text
+                             edits the brief where a rule applies
+                        <--  the edited brief and a short list:
+                             each change, and the rule ID behind it
+  you read the list and
+  keep or undo each change
 ```
 
-The agent does the work. You judge the outcome; the rule IDs tell you where
-to look. That is the whole loop.
-
-The agent chooses which rules to read. You say what the thing is and, if it
-helps, where to look. Three examples in plain words, each with the rules an
-agent would find in a typical case.
+The list is what makes this checkable. An agent can miss a trigger, or apply
+a rule to a case the rule's own exemptions cover; the ID lets you open the
+rule and decide in under a minute. The agent picks which rules to read. You
+say what the thing is and, if it helps, where to look. Three examples in plain
+words, each with rules an agent might find in a typical case.
 
 Review a marketing brief:
 
@@ -116,9 +112,10 @@ WRIT-05  S  "crucial, pivotal, evolving" cluster  one concrete claim
 CLM-04   B  "secure" as a bare adjective          mechanism, location, failure
 ```
 
-Good output looks like this: a handful of IDs beside concrete lines, each with
-what changed and why. An answer that cites twenty rules for a one-page brief has read
-too much; ask it to keep only the rules whose trigger it can point at.
+Good output looks like this: a handful of IDs beside concrete lines, each
+with what changed and why. An answer that cites twenty rules for a one-page
+brief has read too much; ask it to keep only the rules whose trigger it can
+point at.
 
 ## What is inside
 
@@ -164,7 +161,7 @@ Read them as a second opinion, not as extra citations.
 
 A reasoning card answers "several rules that fired share one decision". A card
 rebuilds the triggers, the failure, the action, the tensions, and how to
-verify, for one mechanism. Cards cover a few dozen hot decisions.
+verify, for one mechanism. There are about thirty cards.
 [SOURCES.md](SOURCES.md) lists the works behind the rules; obtain the originals
 through ordinary legal channels.
 
