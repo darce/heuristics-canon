@@ -77,7 +77,6 @@ A model card lists a permissive weight licence while the tokenizer and a require
 - [PROV-01](../lexicons/ml-systems.md#prov-01): outputs and claims must walk back to producing artifacts (weights, generators, deps)
 - [MLDATA-14](../lexicons/ml-systems.md#mldata-14): basis and obligation fields live on the record the gate reads; prose policy is not queryable
 - [MLDATA-04](../lexicons/ml-systems.md#mldata-04): persist per-sample and per-batch origin so restricted sources remain filterable after merge
-- [MLDATA-26](../lexicons/ml-systems.md#mldata-26): declare generator dependence on identity-labeled (or otherwise restricted) real data when synthetic claims are made
 - [RLSE-02](../lexicons/engineering.md#rlse-02): licence closure against the ban list is a gate, not a suggestion at review
 - [RLSE-05](../lexicons/engineering.md#rlse-05): silent miss of a nested restricted dependency is worse than a loud registry refusal
 - [AGT-17](../lexicons/engineering.md#agt-17): keep ban-list policy separate from the closure-checking mechanism so either can change without rewriting the other
@@ -94,7 +93,6 @@ A model card lists a permissive weight licence while the tokenizer and a require
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [PROV-11](../lexicons/ml-systems.md#prov-11)
 - [`face-recognition-compulsory-visibility`](../SOURCES.md#src-face-recognition-compulsory-visibility): supports [MLDATA-14](../lexicons/ml-systems.md#mldata-14)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [MLDATA-04](../lexicons/ml-systems.md#mldata-04)
-- [`sdfr-synthetic-competition`](../SOURCES.md#src-sdfr-synthetic-competition): supports [MLDATA-26](../lexicons/ml-systems.md#mldata-26)
 
 ## Non-claims
 

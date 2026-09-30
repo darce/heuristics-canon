@@ -58,7 +58,7 @@ A review desk identifies people from short video where the subject wears a lower
 |---|---|---|---|
 | object | [HITL-15](../lexicons/ml-systems.md#hitl-15) construct a covering-matched gallery for the probe | [EVAL-20](../lexicons/ml-systems.md#eval-20) measure every production query×enrolled cell | Build the matched path for the active query; still report the mismatch cell before claiming the product works there |
 | object | [MLDATA-10](../lexicons/ml-systems.md#mldata-10) match train degradation to measured target statistics | [EVAL-28](../lexicons/ml-systems.md#eval-28) real-occlusion claims need real or realistic-accessory cells | Match degradations on train mass; do not treat synthetic-only occlusion scores as the real-occlusion ship proof |
-| object | [CAL-04](../lexicons/ml-systems.md#cal-04) fit T on demographically matched non-mates | [CAL-01](../lexicons/ml-systems.md#cal-01) calibrate FAR/FRR per quality stratum | Match impostor covariates for security FMR; do not pool quality regimes under one unmeasured T |
+| object | [CAL-04](../lexicons/ml-systems.md#cal-04) fit the operating threshold on demographically matched non-mates | [CAL-01](../lexicons/ml-systems.md#cal-01) compare false-negative rates within quality strata | Operating-threshold policy stays on matched non-mates; compare cohort false negatives inside a quality stratum |
 | sequence | [SERVE-08](../lexicons/ml-systems.md#serve-08) identical train/serve transforms at construction | [EVAL-06](../lexicons/ml-systems.md#eval-06) choose models that win under production-like perturbation | Parity makes the features comparable; the gate still picks the model that wins on the matched noise suite |
 | surface | [EMB-11](../lexicons/ml-systems.md#emb-11) / [EMB-12](../lexicons/ml-systems.md#emb-12) spatial support and part correspondence for this compare | Broad multi-condition reference kept for other query regimes | Match support to the active query's visible region; keep other strata named rather than one convenient full-face default for every probe |
 
@@ -87,7 +87,7 @@ A review desk identifies people from short video where the subject wears a lower
 - [MLDATA-10](../lexicons/ml-systems.md#mldata-10): size training degradations from measured target statistics
 - [SERVE-08](../lexicons/ml-systems.md#serve-08): identical featurization on train and serve via package or pinned contract
 - [CAL-04](../lexicons/ml-systems.md#cal-04): fit the operating threshold on demographically matched non-mates
-- [CAL-01](../lexicons/ml-systems.md#cal-01): measure and set policy per quality stratum, not one pooled T
+- [CAL-01](../lexicons/ml-systems.md#cal-01): compare cohort false-negative rates within quality strata; leave the operating threshold to CAL-04
 - [EVAL-20](../lexicons/ml-systems.md#eval-20): stratify by query×enrolled capture cell, not one side alone
 - [EVAL-06](../lexicons/ml-systems.md#eval-06): select models that win under production-like perturbation
 

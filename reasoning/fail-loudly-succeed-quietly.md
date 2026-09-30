@@ -9,7 +9,8 @@ impossible to miss and success is impossible to confuse with noise.
 
 Covers: telemetry and alert channels where silence must not read as health;
 ERROR and page severity that imply operator action; program I/O where stdout is
-data and diagnostics stay on the human-only channel.
+requested data, real error diagnostics go to stderr, and unrequested progress
+stays off both.
 
 Excludes: timeouts and queue bounds that make stalls detectable at all (see
 [feedback-bounded-waiting](feedback-bounded-waiting.md)); plan and rollout step size (see
@@ -38,8 +39,9 @@ confuse decoration for payload.
    break loudly ([OBS-08](../lexicons/engineering.md#obs-08), Principle 16).
 2. Reserve ERROR and pages for conditions that require operator action
    ([OBS-04](../lexicons/engineering.md#obs-04)).
-3. Keep success quiet on the data path; send diagnostics and progress to the
-   human-only channel ([AGT-15](../lexicons/engineering.md#agt-15)).
+3. Keep success quiet on the data path: omit unrequested banners, progress,
+   summaries, and status from stdout, and send real error diagnostics to
+   stderr ([AGT-15](../lexicons/engineering.md#agt-15)).
 4. Never swallow exceptions without a named policy — empty catch blocks are
    silent lies ([REF-37](../lexicons/engineering.md#ref-37)).
 
@@ -71,7 +73,7 @@ A batch importer swallows parse errors, writes partial rows, and returns HTTP 20
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
 | object | [OBS-08](../lexicons/engineering.md#obs-08) silence is not success | [OBS-04](../lexicons/engineering.md#obs-04) ERROR means action | make dead capture loud; keep the loud channel scarce so it stays trusted |
-| surface | [AGT-15](../lexicons/engineering.md#agt-15) stdout is data | human-facing progress and diagnostics | same split: payload channel stays quiet; human channel carries the story |
+| surface | [AGT-15](../lexicons/engineering.md#agt-15) stdout is requested data; stderr is for errors | unrequested progress, banners, and status | omit them from stdout; do not move progress to stderr; stderr carries real error diagnostics |
 
 ## Disconfirmers
 
@@ -83,15 +85,16 @@ A batch importer swallows parse errors, writes partial rows, and returns HTTP 20
 ## Verification
 
 - Alert policy: ERROR implies runbook; absence of telemetry is itself an alert.
-- Piped or parsed success path is undecorated data; diagnostics go to stderr
-  (or the equivalent human-only channel).
+- Piped or parsed success path is undecorated data; real error diagnostics
+  go to stderr. Progress, banners, and status stay off stdout and are not
+  relocated to stderr.
 - Freshness or heartbeat gate exists for each critical instrumented stream.
 
 ## Rule IDs
 
 - [OBS-08](../lexicons/engineering.md#obs-08): silence is not success
 - [OBS-04](../lexicons/engineering.md#obs-04): ERROR means action
-- [AGT-15](../lexicons/engineering.md#agt-15): stdout is data, stderr is for humans
+- [AGT-15](../lexicons/engineering.md#agt-15): stdout is data, stderr is for errors; omit unrequested progress from stdout
 - [REF-37](../lexicons/engineering.md#ref-37): no empty exception blocks
 - [RLSE-05](../lexicons/engineering.md#rlse-05): silent failure is the worst failure
 

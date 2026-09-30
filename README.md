@@ -1,41 +1,55 @@
 # Heuristics canon
 
-A library of short, checkable rules for software work and the writing,
-marketing, and decisions around it, in eleven domains including engineering,
-security, business, writing, and judgment under uncertainty. The rules are
-distilled from books, papers, and standards, and each one points at the work
-it came from. Twenty-eight of some 1,200 are labelled unsourced practice in
-the bibliography and are still waiting for a source.
+A library of about 1,200 short, checkable rules for software work and for the
+writing, marketing, and decisions around it. Nearly every rule is distilled
+from a book, paper, or standard, and cites it. The other twenty-eight are
+labelled unsourced practice until a source is found.
 
-Each rule is one line. It names a situation you can see (the trigger), says
-what to do about it (the rule), and gives you the one question to ask at that
-moment. Every rule has a permanent ID such as `RES-02`, so a person or a tool
-can cite it in a review, a plan, or a commit message without restating the
-argument. Two fields often describe the same failure in different words;
-[PRINCIPLES.md](PRINCIPLES.md) records those meeting points, so a question
-about a database schema can surface evidence written about forms, contracts,
-or experiments.
+A rule names something you can see in the work, says what to do about it, and
+gives you one question to ask. Every rule has a permanent ID, such as
+`RES-02`, so a person or a tool can cite it in a review, a plan, or a commit
+message instead of restating the argument.
 
-## A one-minute example
+## A rule at work
 
-You are reading a marketing brief before it goes to an agency. It says the
-campaign will "build awareness", the tagline is a pun that needs a footnote,
-and the proof of demand is a survey where people said they would buy. Each of
-those is a trigger you can see on the page. The business lexicon has
-[GTM-01](lexicons/business-marketing.md#gtm-01), **ask them to buy**, tier B:
-stated intent is not demand, so the brief cannot go out until there is paid
-intent or an explicit exemption. You write `[GTM-01]` in the margin, ask for a
-pre-order or a paid pilot, and move on to the next line.
+You are reading a marketing brief before it goes to an agency. Its proof of
+demand is a survey in which people said they would buy. That matches
+[GTM-01](lexicons/business-marketing.md#gtm-01), **ask them to buy**: stated
+intent is not demand. GTM-01 is tier B, so the brief waits until it shows paid
+intent, such as a pre-order or a paid pilot, or carries a written exemption.
+You write `[GTM-01]` in the margin and move on to the next line.
 
-If several rules that fired share one decision, a [reasoning card](reasoning/)
-walks through the whole decision. Cards are optional depth. The one-line rule
-is the default.
+## Reading a rule
 
-## Ask an agent to use it
+Each lexicon is a Markdown table, and each row is one rule:
 
-The canon is written for tools as much as for people. Any assistant that can
-read a web page or a repository (Claude Code, Claude Cowork, Codex, or another)
-can use it. Nothing needs installing. Tell it once:
+```text
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+```
+
+| Column | What it holds |
+|---|---|
+| ID | The permanent ID; the row's anchor is `#res-02` |
+| Trigger | What you can see in the work when the rule applies |
+| Rule | The rule's name in bold, then what to do and why |
+| Answers | The question to ask when the trigger appears |
+| Tier·phase | How hard the rule is, and when in the work it tends to apply |
+| Source | The work behind the rule, listed in [SOURCES.md](SOURCES.md) |
+
+The tier sets how hard a rule is:
+
+- **B** blocks the work until the issue is handled or explicitly exempted.
+- **S** is a strong default with named exemptions.
+- **J** calls for your judgment.
+
+Rules are evidence-backed defaults. They do not override your judgment, the
+facts in front of you, or a documented exemption.
+
+## Using it with an agent
+
+Any assistant that can read a web page or a repository can use the canon:
+Claude Code, Claude Cowork, Codex, or another. Nothing needs installing. Tell
+it once:
 
 ```text
 Read the heuristics canon at https://github.com/darce/heuristics-canon,
@@ -44,9 +58,9 @@ apply the canon and cite the rule IDs you used.
 ```
 
 If your tool reads local files but not web pages, clone the repository next
-to your project and point the agent at that instead.
+to your project and point the agent at the copy.
 
-When you then ask for a review, this is the exchange:
+A review then goes like this:
 
 ```text
   you                        the agent
@@ -60,20 +74,20 @@ When you then ask for a review, this is the exchange:
   keep or undo each change
 ```
 
-The list is what makes this checkable. An agent can miss a trigger, or apply
-a rule to a case the rule's own exemptions cover; the ID lets you open the
-rule and decide in under a minute. The agent picks which rules to read. You
-say what the thing is and, if it helps, where to look. Three examples in plain
-words, each with rules an agent might find in a typical case.
+The list is what makes the review checkable. An agent can miss a trigger, or
+apply a rule to a case its exemptions cover. With the ID, you can open the
+rule and decide in under a minute.
 
-Review a marketing brief:
+You say what the work is and, if it helps, where to look. The agent chooses
+which rules to read. Here are three requests, each with the rules an agent
+might cite on a typical draft.
+
+**A campaign brief** that promises awareness, leans on a survey, and has a
+clever tagline:
 
 ```text
 Review this campaign brief against the heuristics canon.
 ```
-
-The brief promises awareness, leans on a survey, and has a clever tagline.
-What fires:
 
 ```text
 STRAT-20  B  goals section    lists targets, never names the obstacle   say what stands in the way
@@ -83,13 +97,11 @@ GTM-07    S  tagline          pun that needs explaining                 one feel
 CLM-04    B  claims           "secure" and "compliant" as adjectives    say how, where, and what fails
 ```
 
-Check a launch plan, steering the agent to one area:
+**A launch plan** that shows only the path to a win and copies a rival's move:
 
 ```text
 Check this launch plan against the canon. Focus on what could go wrong.
 ```
-
-The plan shows only the path to a win and copies a rival's move. What fires:
 
 ```text
 STRAT-02  B  whole plan   no section on how it fails            write the failure case first
@@ -97,13 +109,11 @@ STRAT-05  S  rationale    "because the competitor just did it"  separate their r
 STRAT-28  S  tactics      no guess at how the rival responds    write their likely reaction
 ```
 
-Edit prose:
+**A blog post** with the usual tells of machine-written prose:
 
 ```text
 Edit this post with the canon's writing rules. Keep my argument.
 ```
-
-What fires on a draft with the usual tells:
 
 ```text
 WRIT-30  S  27 em dashes                          vary the punctuation
@@ -112,66 +122,51 @@ WRIT-05  S  "crucial, pivotal, evolving" cluster  one concrete claim
 CLM-04   B  "secure" as a bare adjective          mechanism, location, failure
 ```
 
-Good output looks like this: a handful of IDs beside concrete lines, each
-with what changed and why. An answer that cites twenty rules for a one-page
-brief has read too much; ask it to keep only the rules whose trigger it can
-point at.
+A good answer cites a handful of IDs, each beside a concrete line, and says
+what changed and why. Twenty rules for a one-page brief means the agent read
+too much. Ask it to keep only the rules whose trigger it can point to.
 
 ## What is inside
 
 | Path | What it is |
 |---|---|
-| [lexicons/](lexicons/) | The rules, one file per domain, grouped by family, keyed by ID |
-| [PRINCIPLES.md](PRINCIPLES.md) | Cross-domain mechanisms that join rules from unrelated sources |
-| [reasoning/](reasoning/) | Mechanism cards: optional decision depth above the one-line rule |
+| [lexicons/](lexicons/) | The rules: one file per domain, grouped by family, keyed by ID |
+| [PRINCIPLES.md](PRINCIPLES.md) | Failures that rules from unrelated fields describe in different words |
+| [reasoning/](reasoning/) | Reasoning cards: optional depth for one shared decision |
 | [SOURCES.md](SOURCES.md) | The bibliography: every work a rule cites |
-| [GRAPH.md](GRAPH.md) | A picture of how the lexicons reference each other |
-| [AGENTS.md](AGENTS.md) | The contract for tools: routing, phases, retrieval |
-| [NOTICE.md](NOTICE.md) | What is licensed and what never ships |
+| [GRAPH.md](GRAPH.md) | A picture of how the lexicons refer to each other |
+| [AGENTS.md](AGENTS.md) | The guide for tools: routing, phases, and retrieval |
+| [NOTICE.md](NOTICE.md) | What is licensed, and on what terms |
 
-The eleven lexicons cover engineering, security, business and marketing,
-design, writing, depiction (what a description may claim about what it
-depicts), accessibility, graph theory, interaction and UX, ML systems, and
-epistemics (judgment under uncertainty). Reading by hand works too: each
-lexicon is a Markdown table grouped into families with short prefixes such as
-[`RES`](lexicons/engineering.md#fam-res) (resilience) or
-[`WRIT`](lexicons/writing.md#fam-writ) (writing).
+The eleven lexicons cover accessibility; business and marketing; depiction
+(what a description may claim about what it depicts); design; engineering;
+epistemics (judgment under uncertainty); graph theory; interaction and UX;
+ML systems; security; and writing. Within a lexicon, rules are grouped into
+families with short prefixes, such as
+[`RES`](lexicons/engineering.md#fam-res) for resilience or
+[`WRIT`](lexicons/writing.md#fam-writ) for writing.
 
-## Reading a rule
+## Principles and reasoning cards
 
-```text
-| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call ... | What bounds this wait? | B·w | release-it ch-5 |
-```
+The one-line rule is the default. Two optional layers add depth when a
+decision needs it.
 
-The columns are the ID, the trigger, the rule, the question it answers, the
-tier and phase, and the source. The ID is permanent and anchors as `#res-02`.
-The tier says how hard the rule is: B blocks until it is handled or explicitly
-exempted, S is a strong default with named exemptions, J needs your judgment.
-Rules are evidence-backed defaults, not an authority that overrides your
-judgment, the facts in front of you, or a documented exemption. The phase
-letter says when in the work the rule tends to bite; the source resolves in
-[SOURCES.md](SOURCES.md).
+- **Principles.** [PRINCIPLES.md](PRINCIPLES.md) records failures that rules
+  from unrelated fields describe in different words. When a rule you applied
+  appears there, the rules beside it are independent checks of the same
+  failure, so a question about a database schema can draw on evidence about
+  forms, contracts, or experiments. Treat them as a second opinion, not as
+  extra citations.
+- **Reasoning cards.** A card in [reasoning/](reasoning/) covers one decision
+  that several rules share. It sets out the triggers, the failure, the action,
+  the tensions, and how to verify the result. There are about thirty.
 
-## Principles and cards
+## Licence and sources
 
-A principle answers "this failure has the same shape in another field". When a
-rule that fired appears in [PRINCIPLES.md](PRINCIPLES.md), the rules listed
-beside it are independent checks of the same mechanism from other domains.
-Read them as a second opinion, not as extra citations.
+The text of the rules, principles, and cards is licensed under CC BY 4.0, as
+[NOTICE.md](NOTICE.md) explains. The licence does not cover the works listed
+in [SOURCES.md](SOURCES.md); obtain those through ordinary legal channels.
 
-A reasoning card answers "several rules that fired share one decision". A card
-rebuilds the triggers, the failure, the action, the tensions, and how to
-verify, for one mechanism. There are about thirty cards.
-[SOURCES.md](SOURCES.md) lists the works behind the rules; obtain the originals
-through ordinary legal channels.
-
-## Rights and where the technical detail lives
-
-The rule, principle, and card prose is offered under CC BY 4.0, as stated in
-[NOTICE.md](NOTICE.md). That grant does not cover the third-party works listed
-in SOURCES.md.
-
-Everything a tool or an integrator needs, including the routing table and
-phase codes, is in [AGENTS.md](AGENTS.md). In the published repository that
-file also explains how to pin a release and verify digests, for teams that
-need a review to be repeatable rather than current.
+Tools and integrators should read [AGENTS.md](AGENTS.md). It holds the routing
+table and phase codes and, for teams that need a review to be repeatable,
+explains how to pin a release and verify its digests.

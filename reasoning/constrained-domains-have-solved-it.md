@@ -29,8 +29,8 @@ External constraints (legal access, spoken-only transmission, inter-party agreem
 2. When a name is present, emit by lookup or classification and validate membership; do not open-generate the same class ([FM-04](../lexicons/ml-systems.md#fm-04), [COG-02](../lexicons/interaction-ux.md#cog-02), [AIPX-01](../lexicons/business-marketing.md#aipx-01)).
 3. Prefer retrieve-and-cite for attributable or changing facts; do not fine-tune or free-generate them into the text ([FM-06](../lexicons/ml-systems.md#fm-06)).
 4. For interactive controls, take the native element first; invent ARIA only after native fails ([A11Y-12](../lexicons/accessibility.md#a11y-12)).
-5. For non-text media, meet the alternative-track duty, then adopt the audio-description fit, overflow, proximity, and hard-lock rules already forced by the speech constraint ([A11Y-09](../lexicons/accessibility.md#a11y-09), [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-42](../lexicons/accessibility.md#a11y-42), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)).
-6. Keep purpose-fit alt and concrete, stable terms; refuse invented concept labels and elegant-variation synonyms ([A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06), [WRIT-27](../lexicons/writing.md#writ-27), [NAME-02](../lexicons/engineering.md#name-02), [DOM-03](../lexicons/engineering.md#dom-03)).
+5. For non-text media, meet the alternative-track duty, then adopt the audio-description fit, overflow, no-spoil timing, and hard-lock rules already forced by the speech constraint ([A11Y-09](../lexicons/accessibility.md#a11y-09), [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-42](../lexicons/accessibility.md#a11y-42), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)).
+6. Keep purpose-fit alt and concrete, stable terms ([A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-03](../lexicons/writing.md#writ-03), [NAME-02](../lexicons/engineering.md#name-02), [DOM-03](../lexicons/engineering.md#dom-03)); refuse elegant-variation synonyms ([WRIT-06](../lexicons/writing.md#writ-06)); define a coined label in the text and spell out the mechanism it summarizes ([WRIT-27](../lexicons/writing.md#writ-27)).
 7. When no constrained-domain name appears in the artifact, do not mint a private closed vocabulary; keep free text under assertable bounds or mark acquisition of a real constrained domain as open work ([BOUND-01](../lexicons/depiction.md#bound-01), [ARCH-08](../lexicons/engineering.md#arch-08)).
 
 ## Predicted failure
@@ -57,7 +57,7 @@ Checkout needs a product picker with typeahead. Engineering opens a PR that buil
 | object | [FM-04](../lexicons/ml-systems.md#fm-04) schema-constrain machine-consumed emission | [BOUND-01](../lexicons/depiction.md#bound-01) refuse totalizing claims a still cannot warrant | close only classes with named checkable referents; keep free text or attribution for open interpretive residue |
 | surface | [A11Y-12](../lexicons/accessibility.md#a11y-12) native control semantics first | [A11Y-02](../lexicons/accessibility.md#a11y-02) purpose-fit text when no native non-text equivalent exists | native owns interactive roles; alt/description owns non-text purpose, not reinvented widgets |
 | sequence | [A11Y-39](../lexicons/accessibility.md#a11y-39) fit cues into non-speech gaps first | [A11Y-44](../lexicons/accessibility.md#a11y-44) hard-lock critical cues even if fit must extend or pause | compress and place first; only then pause or extend for locked cues, never silent-drop |
-| object | [WRIT-06](../lexicons/writing.md#writ-06) / [NAME-02](../lexicons/engineering.md#name-02) reuse the established term | [WRIT-27](../lexicons/writing.md#writ-27) refuse undefended coined labels | reuse only terms with a real referent or lexicon home; do not invent a faux catalog |
+| object | [WRIT-06](../lexicons/writing.md#writ-06) / [NAME-02](../lexicons/engineering.md#name-02) reuse the established term | [WRIT-27](../lexicons/writing.md#writ-27) define a coined label in the text | reuse an established term when one exists; a new label must spell out the mechanism it summarizes |
 | surface | [BOUND-05](../lexicons/depiction.md#bound-05) rank from pictorial cues only | [A11Y-43](../lexicons/accessibility.md#a11y-43) spend scarce gap time on non-audio visuals | selection under budget is editorial and explicit; never report word order as image privilege |
 
 ## Disconfirmers
@@ -73,7 +73,7 @@ Checkout needs a product picker with typeahead. Engineering opens a PR that buil
 - Emission paths for closed classes reject out-of-set strings (or take a declared degrade/abstain branch) rather than pass them.
 - Custom widgets document why a native element was insufficient.
 - Description timelines show gap fit, named overflow mode, and hard-locks for must-include cues.
-- Diffs do not introduce synonym pairs for one concept or undefended coined concept labels.
+- Diffs do not introduce synonym pairs for one concept, and a coined label carries an in-text definition of the mechanism it summarizes.
 
 ## Rule IDs
 
@@ -88,12 +88,12 @@ Checkout needs a product picker with typeahead. Engineering opens a PR that buil
 - [A11Y-39](../lexicons/accessibility.md#a11y-39): fit spoken description to non-speech gaps
 - [A11Y-40](../lexicons/accessibility.md#a11y-40): name the overflow mode the AD domain already uses
 - [A11Y-41](../lexicons/accessibility.md#a11y-41): prefer non-pausing placement before pause
-- [A11Y-42](../lexicons/accessibility.md#a11y-42): keep event proximity; no early spoil placement
+- [A11Y-42](../lexicons/accessibility.md#a11y-42): do not schedule a surprise-sensitive description before the reveal
 - [A11Y-43](../lexicons/accessibility.md#a11y-43): spend scarce gap budget on non-audio visuals
 - [A11Y-44](../lexicons/accessibility.md#a11y-44): hard-lock critical cues under fit pressure
 - [WRIT-03](../lexicons/writing.md#writ-03): name the concrete referent, not a decorative stand-in
 - [WRIT-06](../lexicons/writing.md#writ-06): repeat the precise established term
-- [WRIT-27](../lexicons/writing.md#writ-27): refuse invented concept labels as fake controlled vocabulary
+- [WRIT-27](../lexicons/writing.md#writ-27): explain what the coined label means, and spell out the mechanism it summarizes
 - [NAME-02](../lexicons/engineering.md#name-02): one project word per concept when a lexicon term exists
 - [DOM-03](../lexicons/engineering.md#dom-03): one meaning per term per context
 - [COG-02](../lexicons/interaction-ux.md#cog-02): recognition and choosers beat free recall generation
@@ -113,7 +113,7 @@ Checkout needs a product picker with typeahead. Engineering opens a PR that buil
 - [`agent-operations`](../SOURCES.md#src-agent-operations): supports [AGT-11](../lexicons/engineering.md#agt-11)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-02](../lexicons/accessibility.md#a11y-02), [A11Y-09](../lexicons/accessibility.md#a11y-09), [A11Y-12](../lexicons/accessibility.md#a11y-12)
 - [`rescribe-audio-descriptions`](../SOURCES.md#src-rescribe-audio-descriptions): supports [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-42](../lexicons/accessibility.md#a11y-42), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06), [WRIT-27](../lexicons/writing.md#writ-27)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06), [WRIT-27](../lexicons/writing.md#writ-27)
 - [`programmers-brain`](../SOURCES.md#src-programmers-brain): supports [NAME-02](../lexicons/engineering.md#name-02)
 - [`learning-domain-driven-design`](../SOURCES.md#src-learning-domain-driven-design): supports [DOM-03](../lexicons/engineering.md#dom-03)
 - [`designing-with-the-mind-in-mind`](../SOURCES.md#src-designing-with-the-mind-in-mind): supports [COG-02](../lexicons/interaction-ux.md#cog-02)

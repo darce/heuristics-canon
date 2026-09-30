@@ -46,8 +46,12 @@ frame and the denominator first; the formula is usually fine.
    ([MLDATA-09](../lexicons/ml-systems.md#mldata-09),
    [MLDATA-08](../lexicons/ml-systems.md#mldata-08)).
 4. Predefine denominators; do not accept rates the system mints for itself
-   ([EVAL-19](../lexicons/ml-systems.md#eval-19),
-   [UXR-07](../lexicons/interaction-ux.md#uxr-07)).
+   ([UXR-07](../lexicons/interaction-ux.md#uxr-07),
+   [TEST-11](../lexicons/engineering.md#test-11),
+   [OPS-01](../lexicons/business-marketing.md#ops-01),
+   [MLDATA-08](../lexicons/ml-systems.md#mldata-08)).
+   In 1:N face identification, do not let detector false alarms dilute FPIR
+   ([EVAL-19](../lexicons/ml-systems.md#eval-19)).
 5. Evaluate on the real mix, not a rebalanced fantasy
    ([EVAL-03](../lexicons/ml-systems.md#eval-03)).
 6. Hold absolute standards against eroding goals
@@ -111,7 +115,11 @@ A ranking team optimizes offline NDCG on a eval set that is re-sampled each week
   [MLDATA-08](../lexicons/ml-systems.md#mldata-08)).
 - Denominator predefined and not emitted by the system under test
   ([UXR-07](../lexicons/interaction-ux.md#uxr-07),
-  [EVAL-19](../lexicons/ml-systems.md#eval-19)).
+  [TEST-11](../lexicons/engineering.md#test-11),
+  [OPS-01](../lexicons/business-marketing.md#ops-01),
+  [MLDATA-08](../lexicons/ml-systems.md#mldata-08)).
+  Detector false alarms that dilute FPIR in 1:N identification stay with
+  [EVAL-19](../lexicons/ml-systems.md#eval-19).
 
 ## Rule IDs
 
@@ -121,8 +129,10 @@ A ranking team optimizes offline NDCG on a eval set that is re-sampled each week
 - [MLDATA-08](../lexicons/ml-systems.md#mldata-08): detector-harvested sets inherit blind spots
 - [MLDATA-09](../lexicons/ml-systems.md#mldata-09): filters that remove the regime under test
 - [EVAL-03](../lexicons/ml-systems.md#eval-03): evaluate on the real mix, not a rebalanced fantasy
-- [EVAL-19](../lexicons/ml-systems.md#eval-19): denominator must not be system-minted
+- [EVAL-19](../lexicons/ml-systems.md#eval-19): in 1:N face identification, do not let detector false alarms dilute FPIR
 - [UXR-07](../lexicons/interaction-ux.md#uxr-07): predefined denominator
+- [TEST-11](../lexicons/engineering.md#test-11): measure the stability outcome, not a gameable coverage target
+- [OPS-01](../lexicons/business-marketing.md#ops-01): name the behavior the metric pays for before trusting the number
 - [TEST-06](../lexicons/engineering.md#test-06): a test never seen failing may assert nothing
 - [TEST-15](../lexicons/engineering.md#test-15): prove the green can go red
 
@@ -138,7 +148,9 @@ A ranking team optimizes offline NDCG on a eval set that is re-sampled each week
 - [`gender-shades`](../SOURCES.md#src-gender-shades): supports [MLDATA-08](../lexicons/ml-systems.md#mldata-08)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [EVAL-03](../lexicons/ml-systems.md#eval-03)
 - [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-07](../lexicons/interaction-ux.md#uxr-07)
-- [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-06](../lexicons/engineering.md#test-06), [TEST-15](../lexicons/engineering.md#test-15)
+- [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-06](../lexicons/engineering.md#test-06), [TEST-11](../lexicons/engineering.md#test-11)
+- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-01](../lexicons/business-marketing.md#ops-01)
+- [`pragmatic-programmer`](../SOURCES.md#src-pragmatic-programmer): supports [TEST-15](../lexicons/engineering.md#test-15)
 
 ## Non-claims
 

@@ -92,7 +92,8 @@ A labelling schema accepts free-text "scene mood" and the model emits confident 
 
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [FM-04](../lexicons/ml-systems.md#fm-04)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [CAL-02](../lexicons/ml-systems.md#cal-02)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06), [WRIT-44](../lexicons/writing.md#writ-44)
+- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-44](../lexicons/writing.md#writ-44)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06)
 
 ## Non-claims
 

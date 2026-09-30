@@ -41,6 +41,7 @@ are selective pilots, not full coverage of every principle or force.
 | [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md) | Rank what survives under budget before writing the short form |
 | [condition-matched-reference](condition-matched-reference.md) | Match the reference to the query's conditions |
 | [constrained-domains-have-solved-it](constrained-domains-have-solved-it.md) | Prefer a constrained domain's solved vocabulary over free invention |
+| [constraint-before-capacity](constraint-before-capacity.md) | Name the limiting stage before adding capacity |
 | [context-obedience-is-a-separate-capability](context-obedience-is-a-separate-capability.md) | Score context use separately from bare-image caption quality |
 | [contract-before-components](contract-before-components.md) | Author the gatekeeper contract before building the surface |
 | [controlled-vocabulary-caps-hallucination](controlled-vocabulary-caps-hallucination.md) | Bind free attributes to a closed named vocabulary |

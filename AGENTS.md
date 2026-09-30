@@ -1,54 +1,90 @@
 # Agent guide
 
-This repository is a citation target, not an instruction to load every rule into
-every task. Retrieve only rules whose triggers match the artifact being changed.
+This repository is a citation target. Retrieve only the rules whose triggers
+appear in the artifact you are changing; never load every rule into a task.
 
-Human overview: [README.md](README.md). Card format (sections and link rules):
-[reasoning/CONTRACT.md](reasoning/CONTRACT.md). Card inventory and human
-orientation: [reasoning/README.md](reasoning/README.md).
+For people: [README.md](README.md). Card format:
+[reasoning/CONTRACT.md](reasoning/CONTRACT.md). Card inventory:
+[reasoning/README.md](reasoning/README.md).
 
 ## Consumer contract
 
-- IDs are the API. `[FAM-NN]` is immutable once published and disappears only
-  in a breaking release.
-- Pin a tag, not `main`, and verify lexicon and (when present) `reasoning/`
-  SHA-256 values against
-  [`meta/release-manifest.json`](meta/release-manifest.json). The current
-  schema is `heuristics-canon/release@4`; tags cut before it carry `release@1`
-  or `release@2` and stay verifiable the same way.
-- Semver: removal of a published rule ID or reasoning card is breaking;
-  addition is minor; same-path content change is patch.
-- Tier controls force: `B` blocks, `S` is a strong default with named
-  exemptions, and `J` requires context. A context-poor agent escalates a J rule
-  rather than treating it as optional.
-- Rules are evidence-backed defaults, not authority that overrides the task,
-  observed facts, or a documented exemption.
+- IDs are the API. A published `[FAM-NN]` never changes meaning, and it is
+  removed only in a breaking release.
+- Pin a release tag, not `main`, and verify its digests against
+  [`meta/release-manifest.json`](meta/release-manifest.json) (see
+  [Pin and verify](#pin-and-verify)).
+- Semver: removing a published rule ID or reasoning card is a major change;
+  adding one is minor; changing content at the same path is a patch.
+- The tier sets a rule's force. `B` blocks; `S` is a strong default with
+  named exemptions; `J` needs context. A context-poor agent escalates a `J`
+  rule; it does not skip it.
+- Rules are evidence-backed defaults. They do not override the task, observed
+  facts, or a documented exemption.
 
-## Progressive retrieval
+## Apply the canon
 
-Default depth is the rule row. Cards are optional intermediate depth above the
-row. [SOURCES.md](SOURCES.md) is a bibliography registry (identity of the work
-and what it feeds), not a substitute for the original.
+Go deeper only when the decision needs it:
 
 ```text
 rule row  ->  reasoning card  ->  original source
- (lexicon)     (reasoning/)        (publisher copy)
+(lexicons/)   (reasoning/)        (publisher's copy)
 ```
 
-1. Rule row (default). Route the artifact, keep rows whose triggers fire,
-   read exemptions and tier. Cite `[FAM-NN]`.
-2. Reasoning card. For every retained rule ID, open **every** mechanism
-   card that lists that ID in its `## Rule IDs` section, **once each**, in
-   deterministic ascending slug order. Do not stop at the first match. A
-   principle join is a reason to open, not a checklist to satisfy. Use each
-   card's verification section. Cite rule IDs in the durable record, not the
-   card slug alone. On every card, Rule ID mentions and Evidence slugs are
-   Markdown links to lexicon anchors and `SOURCES.md` rows.
-3. Original source. Last resort for primary text. Obtain the work through
-   ordinary legal channels.
+1. **Route.** Match the changed artifact to the [routing table](#routing-by-artifact).
+   A rule fires on what changed, not on its file type.
+2. **Open only the listed families.** Follow the family anchors from the
+   route, and filter by phase bucket when that helps. Do not open every
+   lexicon for one change.
+3. **Keep the rows that fire.** Keep a rule only when its trigger is
+   observable in the artifact. Read the whole row, especially the exemptions
+   and tier. If the source cannot be traced or does not support the
+   mechanism, report a corpus defect instead of citing the rule as authority.
+4. **Check principles.** If [PRINCIPLES.md](PRINCIPLES.md) lists a kept rule,
+   retrieve its siblings from unrelated domains and look for the same
+   mechanism in the new material. Siblings are mechanism checks, not votes and
+   not a checklist. The [Agent application](PRINCIPLES.md#agent-application)
+   section gives the compact protocol.
+5. **Open cards.** For each kept rule ID, open every reasoning card whose
+   `## Rule IDs` section lists it, once each, in ascending slug order. Do not
+   stop at the first match. Apply each card's verification section. A card
+   whose trigger did not fire is inert, and cards do not cover every
+   principle.
+6. **Resolve conflicts.** When two rules pull in opposite directions,
+   partition them by surface, object, or sequence. If no partition works,
+   record a contextual judgment; do not average the rules. When two rules
+   watch the same failure at different stages, apply both.
+7. **Cite.** Put `[FAM-NN]` beside each decision it supports and name the
+   evidence. Cite rule IDs, not card slugs alone. Do not cite rules whose
+   triggers did not fire; the number of citations is not a measure of review
+   quality.
+8. **Stop** when every applicable `B` and `S` rule is satisfied, exempted with
+   evidence, or explicitly escalated.
 
-A card without a firing trigger is inert. Cards are selective; they do not
-cover every principle.
+Original sources are the last resort. [SOURCES.md](SOURCES.md) identifies each
+work and what it feeds; it does not replace the work. Obtain originals through
+ordinary legal channels.
+
+## Read and cite a row
+
+Every rule is one Markdown table row:
+
+```text
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+```
+
+The columns are ID, Trigger, Rule, Answers, Tier·phase, and Source. Cite
+`[RES-02]`, and deep-link the row as `lexicons/engineering.md#res-02` when the
+reader needs its full text. The Answers cell is the cheapest useful review
+prompt. The source slug resolves in [SOURCES.md](SOURCES.md). On a card, rule
+IDs and evidence slugs are links to lexicon anchors and `SOURCES.md` rows.
+
+To pull rows from the command line:
+
+```sh
+grep '^| RES-' lexicons/engineering.md
+grep -h '^| [A-Z][A-Z0-9]*-' lexicons/*.md | wc -l
+```
 
 ## Lexicons
 
@@ -72,8 +108,9 @@ cover every principle.
 
 ## Phase codes
 
-Phase codes are per lexicon; use the buckets (plan / write / review / ship)
-unless you mean one lexicon's code.
+Each lexicon has its own phase letters. This table maps them to four shared
+buckets: plan, write, review, and ship. Use the bucket unless you mean one
+lexicon's code.
 
 <!-- BEGIN GENERATED PHASES -->
 
@@ -95,8 +132,6 @@ unless you mean one lexicon's code.
 
 ## Routing by artifact
 
-A rule fires on the artifact that changed, not merely its file type.
-
 <!-- BEGIN GENERATED ROUTES -->
 
 | Changed artifact | Consult families |
@@ -108,7 +143,7 @@ A rule fires on the artifact that changed, not merely its file type.
 | codeowners or service catalog or org change | [TEAM](lexicons/engineering.md#fam-team) · [ARCH](lexicons/engineering.md#fam-arch) · [DOM](lexicons/engineering.md#fam-dom) |
 | concurrency or async code | [CON](lexicons/engineering.md#fam-con) · [DATA](lexicons/engineering.md#fam-data) · [RES](lexicons/engineering.md#fam-res) |
 | security sensitive change | [SEC](lexicons/security.md#fam-sec) · [WEB](lexicons/security.md#fam-web) · [SECD](lexicons/security.md#fam-secd) · [PG](lexicons/security.md#fam-pg) |
-| ui or frontend change | [PERC](lexicons/interaction-ux.md#fam-perc) · [COG](lexicons/interaction-ux.md#fam-cog) · [NAV](lexicons/interaction-ux.md#fam-nav) · [INT](lexicons/interaction-ux.md#fam-int) · [FORM](lexicons/interaction-ux.md#fam-form) · [VIZ](lexicons/interaction-ux.md#fam-viz) · [A11Y](lexicons/accessibility.md#fam-a11y) · [UI](lexicons/engineering.md#fam-ui) |
+| ui or frontend change | [PERC](lexicons/interaction-ux.md#fam-perc) · [COG](lexicons/interaction-ux.md#fam-cog) · [NAV](lexicons/interaction-ux.md#fam-nav) · [INT](lexicons/interaction-ux.md#fam-int) · [FORM](lexicons/interaction-ux.md#fam-form) · [VIZ](lexicons/interaction-ux.md#fam-viz) · [A11Y](lexicons/accessibility.md#fam-a11y) · [UI](lexicons/engineering.md#fam-ui) · [TYPE](lexicons/design-aesthetics.md#fam-type) · [LAY](lexicons/design-aesthetics.md#fam-lay) · [COL](lexicons/design-aesthetics.md#fam-col) |
 | embedding or face recognition change | [EMB](lexicons/ml-systems.md#fam-emb) · [CAL](lexicons/ml-systems.md#fam-cal) · [FAIR](lexicons/ml-systems.md#fam-fair) · [PROV](lexicons/ml-systems.md#fam-prov) · [TRACK](lexicons/ml-systems.md#fam-track) · [GRPH](lexicons/graph-theory.md#fam-grph) · [COST](lexicons/ml-systems.md#fam-cost) · [SEC](lexicons/security.md#fam-sec) · [IDX](lexicons/ml-systems.md#fam-idx) |
 | video timeline segmentation change | [VSEG](lexicons/ml-systems.md#fam-vseg) · [TRACK](lexicons/ml-systems.md#fam-track) · [EVAL](lexicons/ml-systems.md#fam-eval) · [COST](lexicons/ml-systems.md#fam-cost) · [PERF](lexicons/engineering.md#fam-perf) |
 | model weights or training change | [MLDATA](lexicons/ml-systems.md#fam-mldata) · [EVAL](lexicons/ml-systems.md#fam-eval) · [CAL](lexicons/ml-systems.md#fam-cal) · [FAIR](lexicons/ml-systems.md#fam-fair) · [PROV](lexicons/ml-systems.md#fam-prov) · [SERVE](lexicons/ml-systems.md#fam-serve) · [DRIFT](lexicons/ml-systems.md#fam-drift) · [SEC](lexicons/security.md#fam-sec) |
@@ -140,59 +175,6 @@ A rule fires on the artifact that changed, not merely its file type.
 
 <!-- END GENERATED ROUTES -->
 
-## Apply rules under a context budget
-
-1. Match the changed artifact to the routing table above.
-2. Open only the listed family anchors. Filter by
-   plan/write/review/ship phase when useful.
-3. Keep a rule only when its Trigger is observable. Read the complete row,
-   especially exemptions and tier. If the source is unwalkable or does not
-   support the mechanism, report a corpus defect instead of invoking authority.
-4. If `PRINCIPLES.md` cites the rule, retrieve its siblings from unrelated
-   domains. They are mechanism checks, not votes. Prefer the document's
-   [Agent application](PRINCIPLES.md#agent-application) section for the
-   compact protocol.
-5. Partition opposed rules by surface, object, or sequence. If no partition
-   works, record a contextual judgment; do not average the rules. Keep both
-   rules when they inspect the same failure at earlier and later stages.
-6. For each retained rule ID, open every reasoning card that lists it, once
-   each, in ascending slug order; apply each card's verification. Principle
-   membership joins related IDs; it is not a gate that must be fully checked.
-7. Cite the applied IDs beside the decision and name the evidence.
-8. Stop retrieval when every applicable blocker and strong default is
-   satisfied, exempted with evidence, or explicitly escalated.
-
-Do not open every lexicon for a single change. Do not cite rules whose
-triggers did not fire. Citation count is not review quality.
-
-## Retrieve rules
-
-Every rule is one Markdown table row:
-
-```sh
-grep '^| RES-' lexicons/engineering.md
-grep -h '^| [A-Z][A-Z0-9]*-' lexicons/*.md | wc -l
-```
-
-A `Src` slug resolves in [SOURCES.md](SOURCES.md). Deep-link a row as
-`lexicons/engineering.md#res-02` when the reader needs the full trigger text.
-
-## Read and cite a row
-
-```text
-| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
-```
-
-The columns are ID, Trigger, Rule, Answers, tier/phase, and source. Cite
-`[RES-02]`. The Answers cell is the cheapest useful inline review prompt.
-
-## Use principles without flattening them
-
-`PRINCIPLES.md` maps a fired rule to independent cross-domain arrivals. Use the
-siblings to look for the same mechanism in a different material, not to inflate
-the citation count. When rules disagree, use surface, object, and sequence
-partitions. When they watch the same failure at different stages, apply both.
-
 ## Pin and verify
 
 ```sh
@@ -202,8 +184,8 @@ shasum -a 256 lexicons/*.md
 find reasoning -type f 2>/dev/null | sort | xargs shasum -a 256
 ```
 
-Compare the output with `meta/release-manifest.json` (schema
-`heuristics-canon/release@4`; older tags carry `@1` or `@2`). The manifest
-carries the full rule-ID set, per-file digests for lexicons and reasoning
-cards, and from `@4` a map of withdrawn rule IDs to their successors, so
-contract drift is checkable offline.
+Compare the output with `meta/release-manifest.json`. The current schema is
+`heuristics-canon/release@4`; older tags carry `@1` or `@2` and verify the
+same way. The manifest lists the full rule-ID set and per-file digests for
+lexicons and reasoning cards. From `@4` it also maps each withdrawn rule ID to
+its successor, so contract drift can be checked offline.

@@ -112,8 +112,9 @@ Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swa
 - [`sontag-regarding-the-pain-of-others`](../SOURCES.md#src-sontag-regarding-the-pain-of-others): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-02](../lexicons/depiction.md#attrib-02), [ATTRIB-05](../lexicons/depiction.md#attrib-05), [BOUND-01](../lexicons/depiction.md#bound-01), [BOUND-02](../lexicons/depiction.md#bound-02)
 - [`barthes-image-music-text`](../SOURCES.md#src-barthes-image-music-text): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [BOUND-01](../lexicons/depiction.md#bound-01)
 - [`barthes-systeme-de-la-mode`](../SOURCES.md#src-barthes-systeme-de-la-mode): supports [BOUND-05](../lexicons/depiction.md#bound-05)
-- [`azoulay-civil-contract-of-photography`](../SOURCES.md#src-azoulay-civil-contract-of-photography): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [ATTRIB-05](../lexicons/depiction.md#attrib-05), [BOUND-01](../lexicons/depiction.md#bound-01), [BOUND-02](../lexicons/depiction.md#bound-02), [BOUND-03](../lexicons/depiction.md#bound-03)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-26](../lexicons/writing.md#writ-26), [WRIT-03](../lexicons/writing.md#writ-03)
+- [`azoulay-civil-contract-of-photography`](../SOURCES.md#src-azoulay-civil-contract-of-photography): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [BOUND-01](../lexicons/depiction.md#bound-01), [BOUND-02](../lexicons/depiction.md#bound-02), [BOUND-03](../lexicons/depiction.md#bound-03)
+- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-26](../lexicons/writing.md#writ-26)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-02](../lexicons/accessibility.md#a11y-02)
 
 ## Non-claims

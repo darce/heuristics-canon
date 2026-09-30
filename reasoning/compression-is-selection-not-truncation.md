@@ -33,7 +33,7 @@ While a length, gap, or token budget binds:
 3. Under audio-description time budgets, fit cues to non-speech gaps; spend gaps on visuals the soundtrack does not already give ([A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-43](../lexicons/accessibility.md#a11y-43)).
 4. When draft exceeds budget, name overflow mode: shorten-to-inline, extend non-speech, or pause; prefer place-and-compress before pause; never silent-drop or silent-overlap ([A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41)).
 5. Locked cues extend or pause rather than delete or relocate ([A11Y-44](../lexicons/accessibility.md#a11y-44)).
-6. Mark pure decoration empty or omit it; do not spend budget on style that does not serve purpose ([A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-31](../lexicons/writing.md#writ-31), [WRIT-35](../lexicons/writing.md#writ-35)).
+6. Mark pure decoration empty or omit it; do not spend budget on style that does not serve purpose ([A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-31](../lexicons/writing.md#writ-31)).
 7. If rank or order is editorial selection under the budget, say so; do not present sentence order as image privilege ([BOUND-05](../lexicons/depiction.md#bound-05)).
 
 ## Predicted failure
@@ -48,7 +48,7 @@ The long product caption ends with the on-screen price. Someone pastes it into t
 
 - No hard budget and full-length access text is allowed: compress only for clarity, not as this card's decision.
 - Decorative images with intentional empty alt: omit, do not invent a short story ([A11Y-02](../lexicons/accessibility.md#a11y-02)).
-- Event proximity and no-spoil timing remain binding when placing compressed cues ([A11Y-42](../lexicons/accessibility.md#a11y-42)); this card does not relax timing to save words.
+- No-spoil timing remains binding when placing compressed cues: do not schedule a surprise-sensitive description before the reveal ([A11Y-42](../lexicons/accessibility.md#a11y-42)); this card does not relax that timing to save words.
 - Caption voice, identity attribution, and assertable set limits stay in force; a short form may not invent off-frame meaning to sound complete ([ATTRIB-02](../lexicons/depiction.md#attrib-02), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [BOUND-01](../lexicons/depiction.md#bound-01), [BOUND-03](../lexicons/depiction.md#bound-03)).
 - Context-window packing for models is a sibling budget problem; do not re-own [RAG-05](../lexicons/ml-systems.md#rag-05) or [FM-02](../lexicons/ml-systems.md#fm-02) here.
 
@@ -92,7 +92,7 @@ The long product caption ends with the on-screen price. Someone pastes it into t
 - [WRIT-13](../lexicons/writing.md#writ-13): cut ceremonial significance that displaces facts
 - [WRIT-17](../lexicons/writing.md#writ-17): cut dilution; short form is one argument, not a trimmed long restatement
 - [WRIT-31](../lexicons/writing.md#writ-31): bold and label only data-bearing material under tight layout
-- [WRIT-35](../lexicons/writing.md#writ-35): emphasis only where earned, not as template filler
+- [WRIT-35](../lexicons/writing.md#writ-35): make heading hierarchy visible through labels, title capitals, and weight for unlike section levels
 - [BOUND-05](../lexicons/depiction.md#bound-05): budget-driven order is editorial selection, not image privilege
 
 ## Principles
@@ -103,7 +103,10 @@ The long product caption ends with the on-screen price. Someone pastes it into t
 
 - [`rescribe-audio-descriptions`](../SOURCES.md#src-rescribe-audio-descriptions): supports [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-02](../lexicons/accessibility.md#a11y-02)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-05](../lexicons/writing.md#writ-05), [WRIT-12](../lexicons/writing.md#writ-12), [WRIT-13](../lexicons/writing.md#writ-13), [WRIT-17](../lexicons/writing.md#writ-17), [WRIT-31](../lexicons/writing.md#writ-31), [WRIT-35](../lexicons/writing.md#writ-35)
+- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-31](../lexicons/writing.md#writ-31)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-05](../lexicons/writing.md#writ-05), [WRIT-12](../lexicons/writing.md#writ-12), [WRIT-13](../lexicons/writing.md#writ-13), [WRIT-17](../lexicons/writing.md#writ-17)
+- [`garner-legal-writing-plain-english`](../SOURCES.md#src-garner-legal-writing-plain-english): supports [WRIT-35](../lexicons/writing.md#writ-35)
+- [`asymmetric-typography`](../SOURCES.md#src-asymmetric-typography): supports [WRIT-35](../lexicons/writing.md#writ-35)
 - [`barthes-systeme-de-la-mode`](../SOURCES.md#src-barthes-systeme-de-la-mode): supports [BOUND-05](../lexicons/depiction.md#bound-05)
 
 ## Non-claims
