@@ -34,8 +34,8 @@ pending (see [measurement-integrity](measurement-integrity.md)); wrong-proxy tar
 
 Commitment converts a guess into durable state. After that moment, reverse cost
 jumps: data is written, money is spent, identity is labeled, trust is spent.
-People prefer to gather evidence after commitment because commitment feels like
-progress. Surviving release, discovery, and forecasting disciplines put the
+Model suitability may be discovered only after deployment, through harm to
+users. Surviving release, discovery, and forecasting disciplines put the
 walkable package on a clock: inspectable evidence first, then the irreversible
 bit. Naming what would falsify the thesis is a prior discipline; this card owns
 whether the commit may fire once the package is due.

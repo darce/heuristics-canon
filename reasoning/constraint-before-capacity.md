@@ -2,7 +2,7 @@
 
 Slug: `constraint-before-capacity`
 ID: `CARD-33`
-Mechanism claim: Throughput of a chain is set by its limiting stage, so improving any other stage, or adding capacity in general, does not raise it and can raise queues.
+Mechanism claim: In chain-linked systems, improve the diagnosed weakest link before non-bottlenecks, whose improvement may raise cost without improving system performance.
 
 ## Scope
 
@@ -20,16 +20,16 @@ Excludes: geography and per-hop latency floors ([PERF-09](../lexicons/engineerin
 
 ## Causal mechanism
 
-A chain's completed throughput equals the throughput of its slowest stage. Work added upstream of that stage waits. Work sped up downstream has nothing extra to take. Capacity that is not on the limiting stage therefore does not raise completed throughput, and the extra arrivals show up as queue. Order is part of the mechanism: measure which stage limits, use the capacity that stage already has, hold every other stage to what that stage can absorb, and only then add capacity there. After the add, the limit moves, so the same order starts again.
+In a chain-linked system, a weak link limits system performance. Strengthening other links alone may increase cost without improving the system. Identify the limiting link and sequence improvement campaigns around it, allowing for short-term non-payoff while other links remain weak. This strategy passage supports weakest-link priority; it does not establish a universal throughput equation, queueing consequence, or fixed exploit-subordinate-elevate procedure.
 
 ## Required action
 
-While a proposal would add parallelism, hardware, scale-out, fuller utilization, or a gate in order to raise throughput, do these in order:
+While a proposal would add parallelism, hardware, scale-out, fuller utilization, or a gate in order to raise throughput, use the following checks to prioritize the diagnosed constraint:
 
 1. Identify the constraint by measurement. Record queue length, utilization of each stage, and which delay component dominates.
-2. Exploit the constraint. Remove waste on it, keep it fed, and protect it with a small ready buffer.
+2. Sequence improvement campaigns around the diagnosed weakest link.
 3. Subordinate everything else. Limit work in progress and intake to what the constraint can absorb. A numeric cap that does not change flow is not this step.
-4. Elevate the constraint, and only now. Add capacity at the named stage after steps 1 to 3.
+4. Prioritize work on the diagnosed constraint, including capacity where measurement shows it is the relevant lever. When a budget miss prompts a hardware purchase, [COST-06](../lexicons/ml-systems.md#cost-06) independently requires classifying excess load versus a serial architecture with idle capacity, then removing or deferring avoidable work before buying.
 5. Return to step 1. The constraint moves.
 
 ## Predicted failure
@@ -38,7 +38,7 @@ Parallelism, hardware, and extra gates land on stages that were not the limit. C
 
 ## Worked example
 
-A release review sees a green build followed by a manual sign-off, and the latency plan asks for more compile workers plus a second cluster. Stage timings show compile and test mostly idle, the sign-off queue holds every change, and the deploy queue is near empty. Name the sign-off as the limiting stage. Remove avoidable approvers, keep a small pile of already-tested builds ready for the people who still must sign, and stop starting features that sign-off cannot clear. Only if that stage is still the limit after the waste is gone, add review capacity. If the next measurement shows deploy is now the long queue, repeat on deploy instead of hiring more reviewers. Without that order the team buys compile workers, the sign-off queue lengthens, and lead time does not fall.
+A release review sees a green build followed by a manual sign-off, and the latency plan asks for more compile workers plus a second cluster. Stage timings show compile and test mostly idle, the sign-off queue holds every change, and the deploy queue is near empty. Name the sign-off as the limiting stage. Remove avoidable approvers, keep a small pile of already-tested builds ready for the people who still must sign, and stop starting features that sign-off cannot clear. Consider review capacity if measurement shows it is the relevant lever at the sign-off stage. If the next measurement shows deploy is now the long queue, repeat on deploy instead of hiring more reviewers. Buying compile workers alone leaves the diagnosed sign-off constraint unaddressed.
 
 ## Exemptions and boundaries
 
@@ -53,7 +53,7 @@ A release review sees a green build followed by a manual sign-off, and the laten
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| sequence | [STRAT-22](../lexicons/business-marketing.md#strat-22) identify the limiting link and fund it before other spends | [COST-06](../lexicons/ml-systems.md#cost-06), [ARCH-09](../lexicons/engineering.md#arch-09), and [PERF-04](../lexicons/engineering.md#perf-04) buy hardware, scale out, or parallelize when that is the real lever | Name, exploit, and subordinate first; the capacity rules stay fully right only as the elevate step |
+| sequence | [STRAT-22](../lexicons/business-marketing.md#strat-22) identify the limiting link and fund it before other spends | [COST-06](../lexicons/ml-systems.md#cost-06), [ARCH-09](../lexicons/engineering.md#arch-09), and [PERF-04](../lexicons/engineering.md#perf-04) buy hardware, scale out, or parallelize when that is the real lever | Name the limiting link and prioritize it; use the capacity rules when capacity at that link is the measured lever |
 | object | [OPS-27](../lexicons/business-marketing.md#ops-27) keep a small ready buffer in front of the scarce stage | [PERF-13](../lexicons/engineering.md#perf-13) operate left of saturation so queuing delay does not dominate | The buffer belongs only at the constraint; headroom remains the operating point everywhere else |
 | surface | [TEAM-06](../lexicons/engineering.md#team-06) and [RLSE-12](../lexicons/engineering.md#rlse-12) a standing gate or manual sign-off on the delivery path | [PERF-16](../lexicons/engineering.md#perf-16) name which delay component dominates a request path | A hand-off queue and a propagation or processing delay are different surfaces; name the limit on the surface about to change |
 | object | [PERF-11](../lexicons/engineering.md#perf-11) order jobs on a shared worker by the declared objective | [STRAT-22](../lexicons/business-marketing.md#strat-22) the chain limit may be a different stage than that worker | Apply the sort only at the stage already identified; a local order does not replace the chain limit |
@@ -67,9 +67,10 @@ A release review sees a green build followed by a manual sign-off, and the laten
 ## Verification
 
 - The plan names one limiting stage and the measurement used: queue length, per-stage utilization, or the dominant delay component.
-- Waste removed at that stage, and a ready buffer where upstream can stall it, are recorded before any capacity purchase.
+- Improvement campaigns around the diagnosed weakest link are recorded.
 - Intake or work in progress is capped to what that stage completes.
-- Any capacity add is on the named stage and is dated after the exploit and subordinate steps.
+- Any capacity add addresses the diagnosed constraint and has measurement supporting it as the relevant lever.
+- When a budget miss prompts a hardware purchase, the plan records the load-versus-architecture classification and the work removed or deferred before buying, as required by [COST-06](../lexicons/ml-systems.md#cost-06).
 - A follow-up measurement is scheduled, because the constraint can move.
 
 ## Rule IDs

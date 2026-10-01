@@ -53,7 +53,8 @@ one.
    [NDM-02](../lexicons/epistemics.md#ndm-02),
    [NDM-05](../lexicons/epistemics.md#ndm-05)).
 3. Reproduce the failure before proposing a fix; establish a cause when its
-   absence kills the failure; do not trust a test never seen failing
+   absence kills the failure. For a new test, predict the exact initial failure
+   message; if it passes before code exists or fails differently, fix the test
    ([DBG-01](../lexicons/engineering.md#dbg-01),
    [DBG-11](../lexicons/engineering.md#dbg-11),
    [TEST-06](../lexicons/engineering.md#test-06)).
@@ -81,7 +82,7 @@ The design doc for the cart service promises a Redis read-through layer will cut
   owned by [evidence-before-commitment](evidence-before-commitment.md) (Principle 13); plain pointer only.
 - Whether the meter itself can be shaped by the measured party is owned by
   [measurement-integrity](measurement-integrity.md) (Principle 15); TEST-06 may load both cards when a
-  never-failing suite is also a shaped instrument.
+  new test’s initial failure is also a check of a shaped instrument.
 - Contract-before-build authorship of gatekeeper specs is owned by
   [contract-before-components](contract-before-components.md); CLM-05 may load both when the hostile reader is
   also the gatekeeper contract.
@@ -118,7 +119,7 @@ The design doc for the cart service promises a Redis read-through layer will cut
 - [NDM-05](../lexicons/epistemics.md#ndm-05): alternate diagnosis of the early-warning set
 - [DBG-01](../lexicons/engineering.md#dbg-01): reproduce the failure before the fix
 - [DBG-11](../lexicons/engineering.md#dbg-11): cause established when its absence kills the failure
-- [TEST-06](../lexicons/engineering.md#test-06): a test never seen failing may assert nothing
+- [TEST-06](../lexicons/engineering.md#test-06): predict and observe a new test’s exact initial failure
 - [SECD-07](../lexicons/security.md#secd-07): threat-model how the policy dies before buying controls
 - [CLM-05](../lexicons/business-marketing.md#clm-05): hostile reader can check the claim
 

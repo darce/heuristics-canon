@@ -2,8 +2,8 @@
 
 Slug: `fail-loudly-succeed-quietly`
 ID: `CARD-07`
-Mechanism claim: Design the success and failure channels so failure is
-impossible to miss and success is impossible to confuse with noise.
+Mechanism claim: Design channels so failures are detectable and actionable,
+and success output remains distinguishable from requested data.
 
 ## Scope
 

@@ -2,7 +2,7 @@
 
 Slug: `synthetic-artifact-control-arm`
 ID: `CARD-31`
-Mechanism claim: A model can hit a synthetic-occlusion metric by detecting the compositing signature rather than the occlusion, so gains need an artifact-only control arm and a real-occlusion holdout.
+Mechanism claim: Detecting a compositing signature rather than handling occlusion is a testable shortcut hypothesis, not a mechanism established by the linked sources; synthetic scores must stay separate from operational occlusion evidence.
 
 ## Scope
 
@@ -21,60 +21,60 @@ Excludes: fully real capture of physical occlusion with no synthetic composite p
 
 ## Causal mechanism
 
-Compositing leaves stable side effects: non-premultiplied fringe, matting halo, resample ringing, lighting mismatch, mask-boundary bias. Those cues co-occur with the occluder label on every synthetic train and synthetic test sample. A model can score well by detecting the cue rather than reading through occlusion. Because the held-out synthetic set reuses the same operator, the evaluation rewards the shortcut. Without a non-occluding composite that keeps the same artifact path, and without real occlusion the pipeline never touched, the green gate does not mean product occlusion competence.
+Hypothesis to test: a shared compositor may leave cues such as fringes or boundary errors that a model could exploit on synthetic holdouts. The linked sources do not measure this shortcut. Hard-alpha versus blended twins test the effect of edge treatment; an artifact-only control is a proposed additional experiment. Neither synthetic scores nor that proposed control replace evaluation on operational imagery, including real occlusion for an occlusion claim.
 
 ## Required action
 
 While synthetic occlusion is in the train or gate path:
 
-1. Build an artifact-only control arm: same composite operator (alpha, resample, blend, lighting path) with an identity-preserving, non-occluding patch (for example, paste of the underlying face pixels through the same coverage and resample path).
-2. Score the target metric on the control arm. If it moves with the occluded synthetic arm, treat the gain as signature detection, not occlusion recovery.
+1. If the paste recipe includes seam blending or alpha smoothing, train geometry-matched hard-alpha and blended twins, differing only in edge treatment, and compare the target metric before treating blend as necessary ([MLDATA-22](../lexicons/ml-systems.md#mldata-22)).
+2. An artifact-only control using the same operator with an identity-preserving, non-occluding patch is a proposed experiment, pending independent support. If used, compare it with the uncomposited baseline and occluded synthetic arm; shared movement would motivate further shortcut tests, not establish signature detection.
 3. Independently keep a real-occlusion holdout the synthetic pipeline never wrote, and require movement there before claiming occlusion competence.
 4. On fractional-alpha paths, store and composite as premultiplied RGBA (Porter-Duff over or equivalent) before any occlusion claim.
-5. If the paste recipe includes blend or automatic mattes, ablate hard vs blended twins and audit automatic-mask fidelity before promoting the recipe as train mass.
+5. Before promoting the recipe as train mass, ablate hard vs blended twins if seam blending or alpha smoothing is present, and audit automatic-mask fidelity if automatic mattes are used.
 
 ## Predicted failure
 
-Masked or occluded recall rises on synthetic evaluation and stays flat on real occlusion. The release gate passes. Field occlusion performance does not improve. Teams then amplify the synthetic recipe, deepen the shortcut, and delete hard real cells as outliers, locking the false win in.
+Under the shortcut hypothesis, masked or occluded recall could rise on synthetic evaluation while staying flat on real occlusion. A synthetic-only release gate could then pass without field improvement. This pattern would expose a gap in operational evidence, not prove the model learned compositing signatures.
 
 ## Worked example
 
-Ship gate for an occlusion restorer reports only recall on soft alpha pastes from the same compositor used at train time. Hold out real phone photos with hands and scarves, plus a control set that pastes a neutral patch with no identity change. If scores rise only on the soft paste set, the model is reading the matte edge, not recovering the face under real cover.
+Ship gate for an occlusion restorer reports only recall on soft alpha pastes from the training compositor. Hold out real phone photos with hands and scarves, and compare geometry-matched hard-alpha and blended training twins. An artifact-only control could be added as a proposed experiment. If scores rise only on synthetic pastes, operational occlusion competence remains unestablished; the result does not identify a matte-edge shortcut.
 
 ## Exemptions and boundaries
 
 - Applies only when the claim or gate is about occlusion or composite-induced degradation under a shared synthetic recipe.
-- Strict hard binary paste with no soft alpha, blend, or resample stage still needs a real-occlusion holdout if synthetic occlusion is the only robustness evidence; the control arm is less informative when no composite signature exists.
-- Premultiplied correctness ([MLDATA-21](../lexicons/ml-systems.md#mldata-21)) reduces one fringe class; it does not retire the control arm for lighting, resample, or mask-boundary signatures.
+- Strict hard binary paste with no soft alpha, blend, or resample stage still needs a real-occlusion holdout if synthetic occlusion is the only robustness evidence; the proposed control targets a suspected composite signature, not a demonstrated one.
+- Premultiplied correctness ([MLDATA-21](../lexicons/ml-systems.md#mldata-21)) reduces one fringe class; it does not establish or rule out the hypothesized lighting, resample, or mask-boundary shortcuts.
 - Operational certification of synthetic-trained models remains under [MLDATA-20](../lexicons/ml-systems.md#mldata-20); this card owns the signature-vs-occlusion partition on the composite path, not full synthetic privacy or identity-label structure.
 
 ## Tensions
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [MLDATA-10](../lexicons/ml-systems.md#mldata-10) synthesize degradations to match measured target statistics | Artifact-only control + [MLDATA-20](../lexicons/ml-systems.md#mldata-20) real holdout before competence claims | Match statistics on train mass; never treat synthetic-only recovery as the ship proof |
+| object | [MLDATA-10](../lexicons/ml-systems.md#mldata-10) synthesize degradations to match measured target statistics | Proposed artifact-only control + [MLDATA-20](../lexicons/ml-systems.md#mldata-20) real holdout before competence claims | Match statistics on train mass; never treat synthetic-only recovery as the ship proof |
 | surface | [MLDATA-21](../lexicons/ml-systems.md#mldata-21) premultiplied over for fractional coverage | [MLDATA-22](../lexicons/ml-systems.md#mldata-22) hard vs blended ablation for seam recipes | Correct coverage first; then measure whether blend buys metric, not assume it |
-| sequence | [EVAL-06](../lexicons/ml-systems.md#eval-06) prefer models that win on production-like perturbation | [MLDATA-09](../lexicons/ml-systems.md#mldata-09) keep hard real occlusion cells as strata, not filter rejects | Perturb and composite for training signal; gate competence on cells the product still sees |
+| sequence | [EVAL-06](../lexicons/ml-systems.md#eval-06) prefer models that win on production-like perturbation | [MLDATA-09](../lexicons/ml-systems.md#mldata-09) retain non-frontal poses when a frontal-biased detector harvest supports an unconstrained recognition claim; [MLDATA-20](../lexicons/ml-systems.md#mldata-20) operational imagery for deployment claims | Perturb and composite for training signal; gate competence on cells the product still sees |
 | object | [MLDATA-23](../lexicons/ml-systems.md#mldata-23) automatic masks at scale after fidelity audit | Human-corrected or hard masks when audit fails the bar | Scale only after the pre-registered boundary bar; do not let unmeasured matte bias own every edge |
 
 ## Disconfirmers
 
-- Control-arm metric stays within noise of the uncomposited baseline while the occluded synthetic arm moves, and real-occlusion holdout moves in the same direction and magnitude.
+- If the proposed control is used, its metric stays within noise of the uncomposited baseline while the occluded synthetic arm moves, and real-occlusion holdout moves in the same direction and magnitude.
 - Independent real-occlusion sets from multiple capture conditions show the same gain without any shared composite operator.
-- Switching blend, resample, or alpha representation kills the synthetic gain and leaves real-occlusion gain intact (signature-dependent win).
+- Switching blend, resample, or alpha representation kills the synthetic gain and leaves real-occlusion gain intact (evidence to investigate operator dependence, not proof of signature detection).
 - Premultiplied path and hard-paste path agree within noise on both control and occluded arms for this task and data regime.
 
 ## Verification
 
-- Control-arm assets exist, share the composite code path and config hash with the occluded arm, and differ only by non-occluding patch content.
-- Report table includes three columns: uncomposited baseline, artifact-only control, occluded synthetic; control movement is reviewed before any occlusion claim.
+- If the proposed artifact-only experiment is run, control-arm assets exist, share the composite code path and config hash with the occluded arm, and differ only by non-occluding patch content.
+- If the paste recipe includes seam blending or alpha smoothing, report the hard-alpha versus blended-twin target metrics. If the proposed control is run, also report uncomposited baseline, artifact-only control, and occluded synthetic metrics; keep these separate from operational occlusion results.
 - Real-occlusion holdout IDs are disjoint from every synthetic generator input and composite cache.
 - Soft-alpha fixture: stored pixels and composite kernel match premultiplied over (pixel-diff zero only on that path).
-- If blend or automatic masks are used: hard/blended twin comparison and mask IoU or human-boundary audit numbers are on the training report.
+- If seam blending or alpha smoothing is used, the hard/blended twin comparison is on the training report; if automatic masks are used, mask IoU or human-boundary audit numbers are on the report.
 
 ## Rule IDs
 
-- [MLDATA-09](../lexicons/ml-systems.md#mldata-09): refuse filters and cleanups that delete real hard occlusion from the claim set
+- [MLDATA-09](../lexicons/ml-systems.md#mldata-09): preserve non-frontal pose coverage when frontal-biased detector harvesting supports an unconstrained face-recognition claim
 - [MLDATA-10](../lexicons/ml-systems.md#mldata-10): size synthetic degradation from measured target statistics, then re-check on true target data
 - [MLDATA-20](../lexicons/ml-systems.md#mldata-20): synthetic scores show trainability; operational occlusion still needs real imagery
 - [MLDATA-21](../lexicons/ml-systems.md#mldata-21): premultiplied RGBA so fractional coverage does not mint fringe signatures
@@ -98,4 +98,4 @@ Ship gate for an occlusion restorer reports only recall on soft alpha pastes fro
 
 ## Non-claims
 
-This card does not reconstruct any source's structure, quote its text, or claim to hold every important idea in its domain. It does not assert a dedicated lexicon row whose sole name is "compositing-signature control arm"; that decision is synthesized here from the linked rules. It does not cover synthetic identity privacy, generator labeled-ID dependence, or FID-style corpus ranking. For bibliography identity, open SOURCES.md. For the full rule row, open the lexicon. SOURCES.md is not a substitute for the original work.
+This card does not reconstruct any source's structure, quote its text, or claim to hold every important idea in its domain. It does not assert a dedicated lexicon row whose sole name is "compositing-signature control arm"; the artifact-only control is proposed here and needs independent support before being treated as settled guidance. It does not cover synthetic identity privacy, generator labeled-ID dependence, or FID-style corpus ranking. For bibliography identity, open SOURCES.md. For the full rule row, open the lexicon. SOURCES.md is not a substitute for the original work.

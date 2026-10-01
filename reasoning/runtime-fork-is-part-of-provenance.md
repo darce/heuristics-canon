@@ -27,14 +27,14 @@ Production outputs are not determined by weights alone. Kernels, batching, dtype
 
 While a required runtime fork is in play:
 
-1. Put the fork in the dependency closure: name, version or image digest, licence, owner, and whether production cannot run without it ([PROV-07](../lexicons/ml-systems.md#prov-07)).
+1. Pin the behaviour-affecting runtime fork by version or image digest in the generation contract ([PROV-09](../lexicons/ml-systems.md#prov-09)).
 2. Attach runtime identity to the serving or generation contract with model identity so each output walks back to weights and engine ([PROV-01](../lexicons/ml-systems.md#prov-01), [PROV-06](../lexicons/ml-systems.md#prov-06), [PROV-09](../lexicons/ml-systems.md#prov-09)).
 3. Version-lock the card (or release record) to the same pair: re-issue on fork change that can alter behaviour, not only on weight change ([PROV-03](../lexicons/ml-systems.md#prov-03)).
 4. Treat the pin as a reviewed, asserted artifact in version control (diffable, machine-checked where possible) ([PROV-08](../lexicons/ml-systems.md#prov-08)).
 5. Isolate the package behind an owned I/O boundary so the rest of the path does not freeze fork peculiarities ([SERVE-01](../lexicons/ml-systems.md#serve-01), [REF-15](../lexicons/engineering.md#ref-15)).
 6. Quality-gate any fork bump or runtime optimization that can change numerical or sampling behaviour before promote ([SERVE-07](../lexicons/ml-systems.md#serve-07)).
 7. Write rollback before ship so previous-good weights and previous-good runtime can be restored without inventing a procedure under load; widen the deployable unit when green must include the runtime image ([RLSE-08](../lexicons/engineering.md#rlse-08), [RLSE-10](../lexicons/engineering.md#rlse-10), [RLSE-12](../lexicons/engineering.md#rlse-12)).
-8. Name a second exit (upstream stock runtime with proven parity, alternate model, or managed endpoint) before the fork becomes the only path that can serve production.
+8. Keep the runtime pin in the generation contract and quality-gate behaviour-changing runtime updates ([PROV-09](../lexicons/ml-systems.md#prov-09), [SERVE-07](../lexicons/ml-systems.md#serve-07)); a requirement for a second runtime exit needs a separate source.
 
 ## Predicted failure
 
@@ -42,7 +42,7 @@ While a required runtime fork is in play:
 - Regressions attributed to "the model" after a silent runtime image bump; no contract id binds the engine.
 - Rollback reverts the checkpoint and leaves the failing fork; recovery still requires a code or image release nobody planned.
 - Train/serve or multi-environment skew when featurization or decode paths live only in the forked stack ([SERVE-08](../lexicons/ml-systems.md#serve-08)).
-- Landlord lock-in: the fork is the only runnable path, with no second exit and no isolatable API.
+- An untracked fork change prevents attribution of a behaviour regression to its runtime version.
 - Dead experimental runtime branches remain callable in production ([SERVE-03](../lexicons/ml-systems.md#serve-03)).
 
 ## Worked example
@@ -64,7 +64,7 @@ Incident review for a scoring drift finds the checkpoint hash and licence on the
 |---|---|---|---|
 | surface | [SERVE-01](../lexicons/ml-systems.md#serve-01) / [REF-15](../lexicons/engineering.md#ref-15): hide the fork behind a stable owned API | [PROV-01](../lexicons/ml-systems.md#prov-01) / [PROV-09](../lexicons/ml-systems.md#prov-09): still emit runtime identity on the contract | Isolation stops glue freeze; the contract still names the engine that produced the score |
 | object | [RLSE-10](../lexicons/engineering.md#rlse-10): model artifact separately revertible from app binary | Required fork couples behaviour to a runtime image | Restore previous-good weights and previous-good runtime together when behaviour depends on the fork; separate only when stock runtime is proven interchangeable |
-| sequence | [ARCH-08](../lexicons/engineering.md#arch-08): prefer boring stock technology first | Capability may require a vendor fork | Adopt the fork only after second exit, pin, and quality gate; capability earns the exception, it does not erase provenance |
+| sequence | [ARCH-08](../lexicons/engineering.md#arch-08): prefer boring stock technology first | Capability may require a vendor fork | Adopt the fork only after pin and quality gate; capability earns the exception, it does not erase provenance |
 | sequence | [SERVE-07](../lexicons/ml-systems.md#serve-07): gate behaviour-changing runtime changes | Shipping pressure to bump the vendor image | No promote of a fork digest that can alter numerics or sampling without a task-plus-regression (or exact-equivalence) gate |
 
 ## Disconfirmers
@@ -78,18 +78,17 @@ Incident review for a scoring drift finds the checkpoint hash and licence on the
 
 - Serving or generation contract for a production output includes model id/version and runtime fork identity (version or image digest).
 - Model card or release record is version-locked to that pair; a fork-only bump either re-issues the card or is forbidden.
-- `PROV-07`-style dependency list for the model names the runtime package and owner.
+- Generation-contract id resolves to the runtime version or image digest that produced the output.
 - Rollback runbook answers: which previous-good weight artifact and which previous-good runtime image, and whether restore needs a full app release.
 - Pipeline green scope includes the runtime image when the model cannot serve without it ([RLSE-12](../lexicons/engineering.md#rlse-12)).
 - Inventory of serve path shows no abandoned experimental runtime branches still executable ([SERVE-03](../lexicons/ml-systems.md#serve-03)).
-- Second-exit note exists: stock runtime parity result, alternate model, or managed fallback named before sole dependence on the fork.
+- Behaviour-changing runtime updates have recorded quality-gate results before promotion.
 
 ## Rule IDs
 
 - [PROV-01](../lexicons/ml-systems.md#prov-01): outputs must walk back through engine and weights, not weights alone
 - [PROV-03](../lexicons/ml-systems.md#prov-03): card version moves when the behaviour-affecting runtime pin moves
 - [PROV-06](../lexicons/ml-systems.md#prov-06): typed predictions carry producer identity usable with the serve contract
-- [PROV-07](../lexicons/ml-systems.md#prov-07): transitive dependency closure includes the required runtime fork
 - [PROV-08](../lexicons/ml-systems.md#prov-08): runtime pin is a reviewed, asserted config-class artifact
 - [PROV-09](../lexicons/ml-systems.md#prov-09): generation/serving contract id covers behaviour-affecting runtime components
 - [SERVE-01](../lexicons/ml-systems.md#serve-01): isolate the vendor package so the fork does not freeze the whole path
@@ -110,11 +109,11 @@ Incident review for a scoring drift finds the checkpoint hash and licence on the
 ## Evidence / source slugs
 
 - [`model-cards`](../SOURCES.md#src-model-cards): supports [PROV-01](../lexicons/ml-systems.md#prov-01), [PROV-02](../lexicons/ml-systems.md#prov-02), [PROV-03](../lexicons/ml-systems.md#prov-03)
-- [`hidden-technical-debt-ml`](../SOURCES.md#src-hidden-technical-debt-ml): supports [PROV-06](../lexicons/ml-systems.md#prov-06), [PROV-07](../lexicons/ml-systems.md#prov-07), [PROV-08](../lexicons/ml-systems.md#prov-08), [SERVE-01](../lexicons/ml-systems.md#serve-01), [SERVE-03](../lexicons/ml-systems.md#serve-03)
+- [`hidden-technical-debt-ml`](../SOURCES.md#src-hidden-technical-debt-ml): supports [PROV-06](../lexicons/ml-systems.md#prov-06), [PROV-08](../lexicons/ml-systems.md#prov-08), [SERVE-01](../lexicons/ml-systems.md#serve-01), [SERVE-03](../lexicons/ml-systems.md#serve-03)
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [PROV-09](../lexicons/ml-systems.md#prov-09), [SERVE-07](../lexicons/ml-systems.md#serve-07)
 - [`ml-design-patterns`](../SOURCES.md#src-ml-design-patterns): supports [SERVE-08](../lexicons/ml-systems.md#serve-08)
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [RLSE-10](../lexicons/engineering.md#rlse-10)
-- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
+- [`continuous-delivery-humble-farley`](../SOURCES.md#src-continuous-delivery-humble-farley): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [RLSE-12](../lexicons/engineering.md#rlse-12)
 
 ## Non-claims

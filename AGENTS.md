@@ -57,7 +57,15 @@ rule row  ->  reasoning card  ->  original source
 7. **Cite.** Put `[FAM-NN]` beside each decision it supports and name the
    evidence. Cite rule IDs, not card slugs alone. Do not cite rules whose
    triggers did not fire; the number of citations is not a measure of review
-   quality.
+   quality. Beside each rule ID, name the rule (the bold name at the start of
+   its Rule cell) and the source as the Source cell prints it: title plus
+   locator (chapter, section, or success criterion) when the cell has one.
+   Quote the locator only as the cell gives it. Do not add a chapter or
+   section the cell does not carry, and do not attribute the rule to a
+   book other than its own Source cell. For the full reference, follow
+   the [SOURCES.md](SOURCES.md) link. For an unsourced practice label
+   (`bootstrap`, `agent-operations`, or `video-pipeline-practice`), say
+   "practice label" instead of naming the key as a book.
 8. **Stop** when every applicable `B` and `S` rule is satisfied, exempted with
    evidence, or explicitly escalated.
 
@@ -70,7 +78,7 @@ ordinary legal channels.
 Every rule is one Markdown table row:
 
 ```text
-| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | Release It!, ch. 5 |
 ```
 
 The columns are ID, Trigger, Rule, Answers, Tier·phase, and Source. Cite
@@ -78,6 +86,11 @@ The columns are ID, Trigger, Rule, Answers, Tier·phase, and Source. Cite
 reader needs its full text. The Answers cell is the cheapest useful review
 prompt. The source slug resolves in [SOURCES.md](SOURCES.md). On a card, rule
 IDs and evidence slugs are links to lexicon anchors and `SOURCES.md` rows.
+Cite that RES-02 row as
+`Timeout on every blocking call ([RES-02], *Release It!*, ch. 5)`.
+Its Source cell prints `Release It!, ch. 5`. The
+[SOURCES.md](SOURCES.md#src-release-it) key resolves to the full
+bibliographic entry.
 
 To pull rows from the command line:
 

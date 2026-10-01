@@ -22,7 +22,7 @@ Excludes: pure decorative marking with no content claim; pure in-frame inventory
 
 ## Causal mechanism
 
-Readers treat unmarked descriptive prose as what the frame shows. When the system places non-visual content on the depicted person, that confidence transfers from surface inventory to psychology, identity verdict, and institutional story the still cannot secure. Non-seeing users inherit the false map most of all, because they cannot cross-check the picture. Attribution to artefact, named source, convention, or viewer keeps the claim checkable; omission of bearer converts speculation into evidence.
+Readers treat unmarked descriptive prose as what the frame shows. When the system places non-visual content on the depicted person, that confidence transfers from surface inventory to psychology, identity verdict, and institutional story the still cannot secure. As an accessibility inference, unmarked text can be received as image evidence by non-seeing users when words are their image channel. Attribution to artefact, named source, convention, or viewer keeps the claim checkable; omission of bearer converts speculation into evidence.
 
 ## Required action
 
@@ -62,7 +62,7 @@ Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swa
 | sequence | [BOUND-03](../lexicons/depiction.md#bound-03) inventory force and body first | event or purpose text that accompanies the still | attributed EDITORIAL purpose only after visible relations |
 | object (identity) | [ATTRIB-02](../lexicons/depiction.md#attrib-02) uncited who/guilt is not forensic | [ATTRIB-05](../lexicons/depiction.md#attrib-05) source name and singularity decisions stay intact | cite or mark non-forensic; never invent or type-cast over the record |
 | surface (distress) | [ATTRIB-04](../lexicons/depiction.md#attrib-04) literal undercoding under harm | [BOUND-05](../lexicons/depiction.md#bound-05) rank only when pictorial cues license it | no beauty or itinerary hierarchy as emulsion fact |
-| warrant | [BOUND-01](../lexicons/depiction.md#bound-01) still cannot fund cause, fate, or institutional thesis alone | [WRIT-26](../lexicons/writing.md#writ-26) name the source or cut | non-image claims walk to a named source or drop |
+| warrant | [BOUND-01](../lexicons/depiction.md#bound-01) still cannot fund cause, fate, or institutional thesis alone | [WRIT-26](../lexicons/writing.md#writ-26) restore an omitted actor when needed for responsibility or attribution | source or drop still-unsupported claims under Side A; restore needed actors under Side B |
 
 ## Disconfirmers
 
@@ -92,7 +92,7 @@ Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swa
 - [BOUND-02](../lexicons/depiction.md#bound-02): separate craft and production claims from unmarked show-through
 - [BOUND-03](../lexicons/depiction.md#bound-03): frame visible relations before attributed institutional story
 - [BOUND-05](../lexicons/depiction.md#bound-05): sentence order is not image privilege unless pictorial cues license it
-- [WRIT-26](../lexicons/writing.md#writ-26): name the source or cut the unnameable authority claim
+- [WRIT-26](../lexicons/writing.md#writ-26): name an omitted actor when omission conceals responsibility or evades a needed attribution
 - [WRIT-03](../lexicons/writing.md#writ-03): refuse plight-type abstracts that hide a missing concrete referent
 - [A11Y-02](../lexicons/accessibility.md#a11y-02): purpose-serving alt still required; attribution keeps that purpose honest
 - [PROV-01](../lexicons/ml-systems.md#prov-01): every retained claim walks back to its evidence
@@ -113,8 +113,7 @@ Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swa
 - [`barthes-image-music-text`](../SOURCES.md#src-barthes-image-music-text): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [BOUND-01](../lexicons/depiction.md#bound-01)
 - [`barthes-systeme-de-la-mode`](../SOURCES.md#src-barthes-systeme-de-la-mode): supports [BOUND-05](../lexicons/depiction.md#bound-05)
 - [`azoulay-civil-contract-of-photography`](../SOURCES.md#src-azoulay-civil-contract-of-photography): supports [ATTRIB-01](../lexicons/depiction.md#attrib-01), [ATTRIB-03](../lexicons/depiction.md#attrib-03), [BOUND-01](../lexicons/depiction.md#bound-01), [BOUND-02](../lexicons/depiction.md#bound-02), [BOUND-03](../lexicons/depiction.md#bound-03)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-26](../lexicons/writing.md#writ-26)
-- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-26](../lexicons/writing.md#writ-26)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-02](../lexicons/accessibility.md#a11y-02)
 
 ## Non-claims

@@ -20,13 +20,13 @@ Excludes: open literary description with no claim of catalog identity; continuou
 
 ## Causal mechanism
 
-Specificity and accuracy are independent. Under free-form description, a model can emit a precise-sounding word it has no evidence for. Readers and scorers treat precision as a trust signal, so confident rare nouns raise informativeness scores while the hallucination rate rises with them. A controlled vocabulary with named referents turns the specific word into a membership test: the term is either in the set (and therefore checkable) or it is not. Without that test, precision is free and the system cannot tell style from evidence.
+Specificity and accuracy are independent. Under free-form description, a model can emit a precise-sounding word it has no evidence for. A closed vocabulary makes membership checkable; the sources do not establish that rare nouns increase reader or scorer trust or predict a higher hallucination rate. A controlled vocabulary with named referents turns the specific word into a membership test: the term is either in the set (and therefore checkable) or it is not. Without that test, precision is free and the system cannot tell style from evidence.
 
 ## Required action
 
 While the trigger holds:
 
-1. Identify attribute classes with a defensible closed set; treat colour as the default case requiring a bound catalog of fixed referents.
+1. Use a bounded catalog for an attribute only when its domain has a defensible, task-specific closed set; the cited material does not establish colour as the default case.
 2. Bind generation of those fields to the catalog (schema, enum, constrained decode, or post-generation membership check). Prefer structured, validated output over free prose for machine-consumed fields.
 3. Validate every emitted term deterministically against the set. Out-of-set terms are rejected, marked unknown, or degraded to the nearest in-set term by an explicit mapping rule—not passed through.
 4. When evidence does not support any in-set term, emit unknown / abstain rather than inventing a precise-sounding label.
@@ -81,7 +81,7 @@ A labelling schema accepts free-text "scene mood" and the model emits confident 
 - [WRIT-06](../lexicons/writing.md#writ-06): once an in-set term is chosen, repeat it; synonym churn escapes the catalog
 - [PROV-01](../lexicons/ml-systems.md#prov-01): an attribute claim must walk back to evidence or catalog membership, not to fluent invention
 - [EVAL-11](../lexicons/ml-systems.md#eval-11): open attribute tasks need a scorer that does not treat rare free nouns as success
-- [WRIT-44](../lexicons/writing.md#writ-44): fix free-vocabulary generation, not a single hallucinated synonym after the fact
+- [WRIT-44](../lexicons/writing.md#writ-44): prose boundary only: recast ambiguous phrase attachment; this does not constrain vocabulary membership
 
 ## Principles
 
@@ -92,8 +92,7 @@ A labelling schema accepts free-text "scene mood" and the model emits confident 
 
 - [`ai-engineering`](../SOURCES.md#src-ai-engineering): supports [FM-04](../lexicons/ml-systems.md#fm-04)
 - [`designing-ml-systems`](../SOURCES.md#src-designing-ml-systems): supports [CAL-02](../lexicons/ml-systems.md#cal-02)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-44](../lexicons/writing.md#writ-44)
-- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-06](../lexicons/writing.md#writ-06), [WRIT-44](../lexicons/writing.md#writ-44)
 
 ## Non-claims
 

@@ -6,13 +6,13 @@ Mechanism claim: When description quality metrics rise with word count, optimiza
 
 ## Scope
 
-Covers: scorecards, bake-offs, and model-ranking reports for image or video descriptions, alt text, audio description, or other linearly consumed captions where a quality, richness, or coverage score correlates with length; any judge or rubric that rewards longer-is-richer without a density companion.
+Covers: scorecards, bake-offs, and model-ranking reports for image or video descriptions, alt text, audio description, or other linearly consumed captions where a quality, richness, or coverage score correlates with length; any judge or rubric that rewards longer-is-richer without a listening-cost budget or user-task metric.
 
 Excludes: time-aligned *composition* fit of spoken cues into speech gaps (owned by accessibility placement rows, not this scorecard cut); general prose brevity for human-written articles with free skim; pure retrieval or answer grounding at emission time; ranking-list depth metrics for operators who scan rather than listen.
 
 ## Observable triggers
 
-- A bake-off or harness ranks description systems on BLEU, CIDEr, holistic human quality, coverage, or similar scores that move upward with word count, with no density column.
+- A bake-off or harness ranks description systems on BLEU, CIDEr, holistic human quality, coverage, or similar scores that move upward with word count, with no listening-cost budget or user-task metric.
 - A pairwise judge is not length-matched and longer answers win systematically.
 - Reported quality climbs while estimated speech seconds and unverified detail also climb.
 - Length is treated as a free quality surrogate rather than a budget or cost column.
@@ -20,14 +20,14 @@ Excludes: time-aligned *composition* fit of spoken cues into speech gaps (owned 
 
 ## Causal mechanism
 
-Linear consumers (screen readers, TTS, time-aligned audio description) pay every extra word in fixed-rate listen time with little skim. Metrics that rise with length pay the system for producing those words. Optimization therefore lengthens. Unless the scorecard also rewards *verified* facts per unit of listening cost, and zeros unverifiable specificity, fluency and decorative detail crowd out checkable substance. Comprehension per second falls while every reported number rises. Composition rules may still budget gap time correctly; this failure is the *selection* meter, not the authoring timeline.
+Linear consumers (screen readers, TTS, time-aligned audio description) pay every extra word in fixed-rate listen time with little skim. Metrics that rise with length pay the system for producing those words. Optimization therefore lengthens. Without a listening-cost budget and a metric validated against user-task outcomes, fluency and decorative detail can crowd out checkable substance. A verified-facts-per-time composite is a candidate metric, not a source-established quality score. Comprehension per second falls while every reported number rises. Composition rules may still budget gap time correctly; this failure is the *selection* meter, not the authoring timeline.
 
 ## Required action
 
-1. When any description quality metric is length-correlated, report verified facts per estimated listener-second (or per 100 words at a fixed, documented speech-rate proxy) as a required companion column, and treat length as a budget or cost, not as free quality ([EVAL-11](../lexicons/ml-systems.md#eval-11), [UXR-03](../lexicons/interaction-ux.md#uxr-03), [A11Y-16](../lexicons/accessibility.md#a11y-16)).
-2. Count a fact in the numerator only when it is checkable against the image or a trusted supplied field; unverifiable specificity scores zero ([PROV-01](../lexicons/ml-systems.md#prov-01), [RAG-07](../lexicons/ml-systems.md#rag-07), [WRIT-05](../lexicons/writing.md#writ-05)).
+1. When a description quality metric is length-correlated, treat listening duration as a budget or cost and choose a metric for the user task ([EVAL-11](../lexicons/ml-systems.md#eval-11), [UXR-03](../lexicons/interaction-ux.md#uxr-03), [A11Y-16](../lexicons/accessibility.md#a11y-16)). Validate any verified-facts-per-time composite against user outcomes before making it a required quality score.
+2. If evaluating a facts-per-time composite, count a fact in the numerator only when it is checkable against the image or a trusted supplied field; unverifiable specificity scores zero ([PROV-01](../lexicons/ml-systems.md#prov-01), [RAG-07](../lexicons/ml-systems.md#rag-07), [WRIT-05](../lexicons/writing.md#writ-05)).
 3. Length-match or otherwise control verbosity when a judge ranks candidates; report position and verbosity effects ([EVAL-14](../lexicons/ml-systems.md#eval-14)).
-4. Do not let the system mint its own success divisor; use a fixed external exposure or a fixed speech-rate proxy for the density denominator ([UXR-07](../lexicons/interaction-ux.md#uxr-07), [TEST-11](../lexicons/engineering.md#test-11), [OPS-01](../lexicons/business-marketing.md#ops-01), [MLDATA-08](../lexicons/ml-systems.md#mldata-08)). In 1:N face identification, do not let detector false alarms add searches that dilute FPIR ([EVAL-19](../lexicons/ml-systems.md#eval-19)).
+4. If evaluating a density composite, do not let the system mint its own success divisor; use a fixed external exposure or a fixed speech-rate proxy for the density denominator ([UXR-07](../lexicons/interaction-ux.md#uxr-07), [TEST-11](../lexicons/engineering.md#test-11), [OPS-01](../lexicons/business-marketing.md#ops-01), [MLDATA-08](../lexicons/ml-systems.md#mldata-08)). In 1:N face identification, do not let detector false alarms add searches that dilute FPIR ([EVAL-19](../lexicons/ml-systems.md#eval-19)).
 5. Prefer media-local visual content over restatement and ornament when words are scarce; alt and description still serve purpose, not decoration ([A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-17](../lexicons/writing.md#writ-17)).
 6. Before trusting a length-friendly offline score as a ship gate, validate that moving it moves a user or product metric, not only word count ([EVAL-22](../lexicons/ml-systems.md#eval-22), [AIPX-02](../lexicons/business-marketing.md#aipx-02), [RSCH-07](../lexicons/epistemics.md#rsch-07)).
 
@@ -37,13 +37,13 @@ The bake-off winner is the most verbose candidate. Holistic quality and coverage
 
 ## Worked example
 
-A museum alt bake-off scores three systems on holistic richness. System B wins by inventing fabric brands and ages no pixel supports, while the shorter inventory that names coat, hatstand, and doorway loses. Length-match every pair and score only verified facts per listener-second. Otherwise the verbose model ships and screen-reader users sit through padding that adds no new fact.
+A museum alt bake-off scores three systems on holistic richness. System B wins by inventing fabric brands and ages no pixel supports, while the shorter inventory that names coat, hatstand, and doorway loses. Length-match every pair, budget listening time, and measure user-task outcomes. Test verified facts per listener-second against those outcomes before using it as a quality gate. Otherwise the verbose model ships and screen-reader users sit through padding that adds no new fact.
 
 ## Exemptions and boundaries
 
 - Time-aligned cue *placement* against speech gaps, overflow modes, and pause-vs-compress order are composition decisions ([A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41)); this card owns the *scorecard* density cut, not gap collision.
 - Hard-locked verbatim on-screen text or must-include cues may force length without density gain; lock those units rather than punish them as padding ([A11Y-44](../lexicons/accessibility.md#a11y-44)).
-- Non-spoken text where the reader truly skims: still report density; do not invent a speech-rate harm you cannot measure.
+- Non-spoken text where the reader truly skims: choose a task metric; do not invent a speech-rate harm you cannot measure.
 - General proxy-vs-outcome gaming without a length-as-listen-cost path is owned by [proxy-outcome-integrity](proxy-outcome-integrity.md). Shaped denominators and frames are owned by [measurement-integrity](measurement-integrity.md).
 - Runtime answer grounding and citation support remain [RAG-06](../lexicons/ml-systems.md#rag-06) / [RAG-07](../lexicons/ml-systems.md#rag-07) / [PROV-01](../lexicons/ml-systems.md#prov-01); this card is evaluation and ranking of description systems, not the emission gate.
 
@@ -51,7 +51,7 @@ A museum alt bake-off scores three systems on holistic richness. System B wins b
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| surface | Holistic coverage / human richness that often rises with length | Verified density and listen-time cost ([EVAL-11](../lexicons/ml-systems.md#eval-11), [A11Y-16](../lexicons/accessibility.md#a11y-16)) | Report both columns; never collapse to one averaged length |
+| surface | Holistic coverage / human richness that often rises with length | Verified density and listen-time cost ([EVAL-11](../lexicons/ml-systems.md#eval-11), [A11Y-16](../lexicons/accessibility.md#a11y-16)) | Report quality and listening cost separately; validate any density score against user outcomes |
 | object | [A11Y-39](../lexicons/accessibility.md#a11y-39) / [A11Y-40](../lexicons/accessibility.md#a11y-40) timeline fit for spoken cues | Density scorecard for any linearly consumed description | Gap non-overlap is video-timeline composition; density is the ranking meter |
 | sequence | [PROV-01](../lexicons/ml-systems.md#prov-01) / [RAG-07](../lexicons/ml-systems.md#rag-07) checkable claims at emission | Density numerator zeros unverifiable detail at selection | Same verification duty; different moment (score vs ship) |
 | object | [WRIT-17](../lexicons/writing.md#writ-17) cut padding in prose | Keep locked critical visual cues under fit pressure ([A11Y-44](../lexicons/accessibility.md#a11y-44)) | Drop ornament, not hard-locked content |
@@ -65,10 +65,10 @@ A museum alt bake-off scores three systems on holistic richness. System B wins b
 
 ## Verification
 
-- Bake-off or harness config exposes a density column next to any length-correlated quality metric.
-- Sample N outputs: recompute checkable atomic claims / estimated speech-seconds (or /100 words at a stated rate); unverifiable specific claims contribute 0.
+- Scorecard budgets listening duration and names a user-task metric; any facts-per-time quality score has been validated against user outcomes.
+- If evaluating a facts-per-time composite, sample N outputs: recompute checkable atomic claims / estimated speech-seconds (or /100 words at a stated rate); unverifiable specific claims contribute 0.
 - Judge protocol is length-matched or reports verbosity effect size ([EVAL-14](../lexicons/ml-systems.md#eval-14)).
-- Rank order with density vs quality-only on the same candidate set is recorded; ship gate names which column decides ties.
+- If testing a density composite, record rank order against quality-only on the same candidates and validate the ranking against user outcomes before making it a ship gate.
 - No promotion on a length-friendly score that has never been degraded against a user or product metric ([EVAL-22](../lexicons/ml-systems.md#eval-22)).
 
 ## Rule IDs

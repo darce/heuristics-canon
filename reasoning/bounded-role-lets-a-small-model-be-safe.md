@@ -2,11 +2,11 @@
 
 Slug: `bounded-role-lets-a-small-model-be-safe`
 ID: `CARD-19`
-Mechanism claim: When a stage's contract forbids introducing new facts, model capability mainly buys fluent invention so a small model is correct; when a stage must recover truth from hard evidence, capability is required—so one model tier for the whole pipeline is the wrong decision.
+Mechanism claim: Evaluate each stage against its contract: validate machine-consumed output structurally, check factual compliance with an inventory-grounded scorer or validated rubric, and evaluate evidence-recovery stages on their task outcome; choose model tiers by comparative evaluation under those contracts.
 
 ## Scope
 
-Covers: Choosing model capacity per pipeline stage when some stages emit under a closed assertable set (forensic inventory, schema-bound prose, refuse-to-invent) and other stages fuse or recover evidence where quality tracks capability.
+Covers: Choosing model capacity per pipeline stage when some stages emit under a closed assertable set (forensic inventory, schema-bound prose, refuse-to-invent) and other stages fuse or recover evidence whose quality must be measured.
 Excludes: Training-data collection design; PEFT vs full fine-tune as the primary question; human-review staffing as the primary question; security injection defense beyond authority-classing inputs; product copywriting outside an evidence-bound access or caption contract.
 
 ## Observable triggers
@@ -19,67 +19,67 @@ Excludes: Training-data collection design; PEFT vs full fine-tune as the primary
 
 ## Causal mechanism
 
-A closed assertable set turns generation into constrained rephrasing of allowed inputs. Under that contract, extra parameters buy smoother wording and plausible fills, not verifiable truth; the larger model is more likely to re-author the frame. A stage whose job is to recover or fuse evidence from weak or multi-source signal is the opposite: error falls when capacity, coverage, or dedicated fusion improves the decision. Uniform tiering therefore misprices both ends—over-paying where fluency is the failure mode, under-paying where capability is the truth mechanism.
+A closed assertable set bounds what a stage may emit. Schema validation checks structure, but string fields can still contain invented names or events; factual compliance needs an inventory-grounded scorer or a rubric validated against human judgments on the task. Use functional oracles for executable outputs and task-appropriate scoring for open prose. Evidence-recovery stages need evaluation of their task outcomes. When stages have different measured cost and quality requirements, compare their costs and outcomes separately: inexpensive high-recall retrieval generates candidates, then a stronger, costlier reranker serves top-k precision. Compare cost, accuracy, coverage, and the business KPI when routing easy queries to cheaper or cached paths and hard queries to expensive models. Whether captioning and evidence fusion benefit from different model tiers remains a hypothesis to test under their contracts.
 
 ## Required action
 
 1. Name each generation stage and its contract: forbid-new-facts vs recover-or-fuse-truth vs free interpretation.
-2. For forbid-new-facts stages, bind instruction authority, schema or voice (FORENSIC vs EDITORIAL), and assertable inventory; pick the smallest model that meets structured validation and gold inventory checks; treat fluent elaboration as a regression.
+2. For forbid-new-facts stages, bind instruction authority, schema or voice (FORENSIC vs EDITORIAL), and assertable inventory; constrain and validate machine-consumed output structurally, and check factual compliance with an inventory-grounded scorer or validated rubric. Choose a model tier by comparative evaluation under the stage contract; try cheaper prompt, retrieval, or tool interventions before fine-tuning, and escalate only against a named failure they cannot fix.
 3. For recover-or-fuse-truth stages, size and evaluate for evidence quality (fusion of retained observations, calibrated unknown, end-to-end error)—not for prose style.
-4. Refuse a single default tier "for the pipeline"; record the per-stage tier and the failure the cheaper tier could not fix when escalating.
+4. Record each stage's tier, cost, and task outcome; permit a shared tier when comparative evaluation supports it, and split tiers only when measured outcomes justify the change.
 
 ## Predicted failure
 
-One model tier for the whole pipeline: over-pay and over-fluent at the captioner (invented identity, non-visible plot, secured full meaning) while under-paying at fusion or hard evidence recovery, so end-to-end cost rises and truth falls in different places for the same wrong reason.
+Choosing tiers without per-stage evaluation can waste budget or miss quality requirements. A schema-valid caption may invent identity or non-visible events, and fusion may fail its evidence-quality target; neither failure establishes which model size will fix it.
 
 ## Worked example
 
-Alt text and multi-camera identity fusion share one API tier in the capacity plan because "one model is simpler to operate." Captions start inventing names for people barely in frame while fusion of badge and face still runs on leftover budget. Put a small model plus schema check on captions; spend the large tier only where fusion error drops. One tier for both jobs overpays fluency and underpays truth.
+Alt text and multi-camera identity fusion share one API tier in the capacity plan because "one model is simpler to operate." Captions start inventing names for people barely in frame while fusion of badge and face misses its quality target. Compare tiers under fixed stage contracts: check caption structure and factual inventory against gold, measure fusion decision error, and record cost per accepted output. Use a smaller caption model or a larger fusion model only if those measurements support it; keep a shared tier if it meets both contracts at the preferred cost.
 
 ## Exemptions and boundaries
 
 - Open editorial, marketing, or fiction stages with no evidence contract: this card does not force a small model; attribution and claim rules still apply where identity or harm content appears.
 - Stages already proven on gold that a larger model reduces inventory error under the same closed contract: escalate with that evidence; do not re-open the assertable set.
-- Pure retrieval or non-generative fusion with no language model: size the actual scorer; the uniform-tier failure still applies if a generative model is later inserted without a role split.
+- Pure retrieval or non-generative fusion with no language model: size the actual scorer; evaluate any later generative stage under its own contract before choosing its tier.
 - Human adjudication queues: measure residual human error separately; do not treat "we have a reviewer" as license for an unbound captioner.
 
 ## Tensions
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| surface (stage contract) | [BOUND-01](../lexicons/depiction.md#bound-01) [ATTRIB-01](../lexicons/depiction.md#attrib-01) [ATTRIB-03](../lexicons/depiction.md#attrib-03): closed inventory, small fluent model | [EMB-07](../lexicons/ml-systems.md#emb-07) [PROV-01](../lexicons/ml-systems.md#prov-01): fuse retained evidence; capability where truth tracks capacity | Split tiers by stage contract, not by product brand |
-| object (what "better model" optimizes) | [FM-04](../lexicons/ml-systems.md#fm-04) [WRIT-26](../lexicons/writing.md#writ-26): schema pass and sourced claims beat stylish prose | [COST-07](../lexicons/ml-systems.md#cost-07) [FM-05](../lexicons/ml-systems.md#fm-05): pay for quality only where eval proves the cheaper layer fails | Optimize caption stages for inventory fidelity; fusion stages for decision error |
-| sequence (escalate capacity) | [FM-05](../lexicons/ml-systems.md#fm-05) [COST-04](../lexicons/ml-systems.md#cost-04): cheapest adequate per accepted output | [CAL-02](../lexicons/ml-systems.md#cal-02) [HAI-01](../lexicons/interaction-ux.md#hai-01): unknown and evidence-before-label beat a forced fluent answer | Escalate only after gold shows the small model fails the stage contract, not after subjective "thin" wording |
+| surface (stage contract) | [BOUND-01](../lexicons/depiction.md#bound-01) [ATTRIB-01](../lexicons/depiction.md#attrib-01) [ATTRIB-03](../lexicons/depiction.md#attrib-03): closed inventory, measured factual compliance | [EMB-07](../lexicons/ml-systems.md#emb-07) [PROV-01](../lexicons/ml-systems.md#prov-01): fuse retained evidence; measure evidence-recovery quality | Compare tiers under each stage contract; split only when measured cost and quality justify it |
+| object (what "better model" optimizes) | [FM-04](../lexicons/ml-systems.md#fm-04) [WRIT-26](../lexicons/writing.md#writ-26): validate structure and separately restore omitted actors when responsibility or needed attribution is concealed | [COST-07](../lexicons/ml-systems.md#cost-07) [FM-05](../lexicons/ml-systems.md#fm-05): compare path cost, accuracy, coverage, and the business KPI; test cheaper interventions before escalation | Optimize caption stages for inventory fidelity; fusion stages for decision error |
+| sequence (escalate capacity) | [FM-05](../lexicons/ml-systems.md#fm-05) [COST-04](../lexicons/ml-systems.md#cost-04): measure cost per accepted output; test cheaper interventions | [CAL-02](../lexicons/ml-systems.md#cal-02) [HAI-01](../lexicons/interaction-ux.md#hai-01): unknown and evidence-before-label beat a forced fluent answer | Choose capacity from task scores and cost; before fine-tuning, record the failure cheaper interventions could not fix |
 
 ## Disconfirmers
 
-- Under a fixed closed contract and gold inventory scorer, larger models systematically reduce factual inventory error rather than only increasing fluent non-visible content.
-- A single mid-tier model matches split-tier cost-per-accepted-correct on both caption inventory and fusion decision error within the same budget.
-- Fusion quality is insensitive to capacity once inputs are fixed, so under-paying fusion never moves the end-to-end metric.
+- Tiers selected by per-stage comparative evaluation under fixed contracts consistently lose on end-to-end decision error or cost per accepted correct output to tiers rejected by those evaluations, with the same contracts and budget.
+- A closed assertable inventory, schema validation, and separate factual-compliance checks do not reduce uncited identity or non-visible claims compared with free prose on the same inputs.
+- The inventory-grounded scorer or validated rubric consistently ranks a tier with more factual inventory errors above one with fewer errors on held-out gold, under the same stage contract and cost budget.
 - The product has only one generation stage with one contract (no pipeline split to mis-tier).
 
 ## Verification
 
-- Stage table lists contract class, model tier, and eval metric for every generation step; no orphan "default model" global.
-- Caption/forensic sample: every who/identity/guilt/non-visible claim is tagged, editorial, or absent; schema validation passes without free-prose fallback.
-- Ablation: swap captioner up a tier with contract held fixed—count invented non-visibles and identity labels; swap fusion down a tier—count decision error on gold.
-- Cost ledger attributes spend per stage; fusion and captioner are not forced to the same unit price without a written exemption.
+- Stage table lists contract class, model tier, and eval metric for every generation step; a shared default is supported by comparative evaluation for each stage.
+- Caption/forensic sample: every who/identity/guilt/non-visible claim is tagged, editorial, or absent; schema validation passes without free-prose fallback, and a separate inventory-grounded scorer or validated rubric checks factual compliance.
+- Ablation: compare candidate tiers for each stage with its contract held fixed; count caption inventory errors and fusion decision errors on gold alongside cost.
+- Cost ledger attributes spend per stage; compare shared and split tiers against the same quality targets and budget.
 
 ## Rule IDs
 
-- [BOUND-01](../lexicons/depiction.md#bound-01): names the closed assertable set that makes small models safe
+- [BOUND-01](../lexicons/depiction.md#bound-01): bounds the assertable set independently of model size
 - [ATTRIB-01](../lexicons/depiction.md#attrib-01): blocks person-as-owner of non-visible traits in forensic voice
 - [ATTRIB-02](../lexicons/depiction.md#attrib-02): blocks uncited identity and guilt in forensic captions
 - [ATTRIB-03](../lexicons/depiction.md#attrib-03): keeps non-visible narrative out of inventory voice
-- [WRIT-26](../lexicons/writing.md#writ-26): name the source or cut the claim under the closed contract
+- [WRIT-26](../lexicons/writing.md#writ-26): restore an omitted actor when omission conceals responsibility or evades a needed attribution
 - [FM-01](../lexicons/ml-systems.md#fm-01): preserve instruction-authority so the contract stays in policy position
 - [FM-04](../lexicons/ml-systems.md#fm-04): schema-constrain machine-consumed stage output
-- [FM-05](../lexicons/ml-systems.md#fm-05): escalate capacity only after cheaper layer is proven insufficient
+- [FM-05](../lexicons/ml-systems.md#fm-05): try cheaper adaptation interventions before fine-tuning against a proven failure
 - [PROV-01](../lexicons/ml-systems.md#prov-01): every retained claim walks back to evidence
 - [EMB-07](../lexicons/ml-systems.md#emb-07): fusion stage fuses retained observations rather than matching on one
 - [CAL-02](../lexicons/ml-systems.md#cal-02): unknown is valid when the contract cannot invent a fill
 - [COST-04](../lexicons/ml-systems.md#cost-04): judge spend per accepted correct output per stage
-- [COST-07](../lexicons/ml-systems.md#cost-07): explicit quality–cost–coverage trade across stages
+- [COST-07](../lexicons/ml-systems.md#cost-07): route easy queries to cheaper or cached paths and hard queries to expensive models; compare cost, accuracy, coverage, and the business KPI
 - [HAI-01](../lexicons/interaction-ux.md#hai-01): evidence before label at human-facing claim surfaces
 
 ## Principles

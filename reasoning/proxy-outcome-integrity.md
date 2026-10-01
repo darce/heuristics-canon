@@ -57,8 +57,10 @@ question.
    degrade check before trusting offline gates
    ([EVAL-22](../lexicons/ml-systems.md#eval-22)).
 5. Prefer stability outcomes over gameable coverage
-   ([TEST-11](../lexicons/engineering.md#test-11)); score forecasts rather than
-   narrative confidence ([FORE-03](../lexicons/epistemics.md#fore-03)).
+   ([TEST-11](../lexicons/engineering.md#test-11)); record Brier scores for
+   resolved numeric-probability forecasts
+   ([FORE-03](../lexicons/epistemics.md#fore-03)). Treat narrative confidence
+   separately unless it is made numeric and resolvable.
 6. For software quality economics: refuse cost-per-defect and coverage-as-target;
    pair multi-origin defect potential with defect-removal efficiency and escapes
    ([OPS-18](../lexicons/business-marketing.md#ops-18),

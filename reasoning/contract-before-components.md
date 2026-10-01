@@ -2,8 +2,9 @@
 
 Slug: `contract-before-components`
 ID: `CARD-01`
-Mechanism claim: Write the checkable contract the gatekeeper will enforce
-before building the surface that must pass it.
+Mechanism claim: For products with explicit channel-format constraints, write
+the format contract before filling in components. Other gatekeeper and
+compliance contexts need their own source-backed requirements.
 
 ## Scope
 
@@ -28,12 +29,10 @@ apparatus integrity (see [measurement-integrity](measurement-integrity.md)); pri
 
 ## Causal mechanism
 
-Gatekeepers do not experience your intent. They read a written spec and reject
-what fails it. Building first and reconciling later means the expensive surface
-is already committed when the real constraints arrive. The same failure appears
-when "done" or "secure" is prose without structure: neither a human auditor nor
-a program can branch on it. Authoring the contract first makes the components
-cheaper, because every component is built to a known falsifier.
+A product built without its known channel limits may need revision to fit
+them. Writing those format constraints first gives component construction a
+known container. The cited passage supports format-first construction; it does
+not establish that late constraints always make a surface expensive to change.
 
 ## Required action
 
@@ -43,9 +42,21 @@ cheaper, because every component is built to a known falsifier.
    [SECD-01](../lexicons/security.md#secd-01)).
 2. Make the claim falsifiable step by step before shipping language that
    asserts it ([A11Y-22](../lexicons/accessibility.md#a11y-22)).
-3. Treat gate rejection as the named requirement to satisfy
-   ([AGT-08](../lexicons/engineering.md#agt-08)); keep CONDITIONAL red at ship
-   ([RLSE-02](../lexicons/engineering.md#rlse-02)).
+3. Treat the broader gate policies in
+   [AGT-08](../lexicons/engineering.md#agt-08) and
+   [RLSE-02](../lexicons/engineering.md#rlse-02) as hypotheses pending grounding:
+   satisfying a rejection's named condition or escalating with evidence, and
+   refusing release past any unresolved gate verdict, may be useful policies,
+   but their cited passages do not establish them as requirements.
+
+   These current row summaries are distinct from the narrower source guidance
+   awaiting coordinated row revisions. *The Pragmatic Programmer: Your Journey
+   to Mastery* supports checking documented preconditions at the caller when
+   the language checks them before routine entry, or bracketing the call with
+   an assertion-checking preamble or postamble without that support.
+   *Release It! Design and Deploy Production-Ready Software* supports refusing
+   approval before QA has finished testing merely to meet an arbitrary date;
+   it does not establish the broader unresolved-gate policy.
 4. Give experts exact quoted strings and yes/no questions
    ([RLSE-09](../lexicons/engineering.md#rlse-09)).
 5. Machine-facing outcomes are schema, status, or named evidence, not prose
@@ -95,7 +106,6 @@ A redesign starts by picking a chart library before writing the checkable contra
 - Contract artifact exists before component work is marked done: named file,
   checklist, or schema with version.
 - Every shipped claim maps to a step a third party can fail.
-- Last gate rejection (if any) lists the condition closed, not a reworded retry.
 - Completion records cite file:line, test, or decisive output
   ([AGT-04](../lexicons/engineering.md#agt-04)).
 
@@ -105,8 +115,8 @@ A redesign starts by picking a chart library before writing the checkable contra
 - [CLM-05](../lexicons/business-marketing.md#clm-05): write for the hostile literal reader
 - [A11Y-22](../lexicons/accessibility.md#a11y-22): accessibility as falsifiable process
 - [RLSE-09](../lexicons/engineering.md#rlse-09): expert sign-off as exact questions
-- [RLSE-02](../lexicons/engineering.md#rlse-02): CONDITIONAL is red at the ship gate
-- [AGT-08](../lexicons/engineering.md#agt-08): rejection names the requirement
+- [RLSE-02](../lexicons/engineering.md#rlse-02): broader unresolved-gate policy is a hypothesis pending grounding; [*Release It! Design and Deploy Production-Ready Software*](../SOURCES.md#src-release-it) supports refusing approval before QA finishes merely to meet an arbitrary date, not that broader policy
+- [AGT-08](../lexicons/engineering.md#agt-08): broader rejection policy is a hypothesis pending grounding; [*The Pragmatic Programmer: Your Journey to Mastery*](../SOURCES.md#src-pragmatic-programmer) supports caller precondition checks, not that broader policy
 - [SECD-01](../lexicons/security.md#secd-01): policy paragraph before mechanisms
 - [AGT-04](../lexicons/engineering.md#agt-04): done names evidence
 - [AGT-21](../lexicons/engineering.md#agt-21): exit status is the machine contract
@@ -120,8 +130,6 @@ A redesign starts by picking a chart library before writing the checkable contra
 ## Evidence / source slugs
 
 - [`klf-the-manual`](../SOURCES.md#src-klf-the-manual): supports [PROD-09](../lexicons/business-marketing.md#prod-09)
-- [`pragmatic-programmer`](../SOURCES.md#src-pragmatic-programmer): supports [AGT-08](../lexicons/engineering.md#agt-08)
-- [`release-it`](../SOURCES.md#src-release-it): supports [RLSE-02](../lexicons/engineering.md#rlse-02)
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-05](../lexicons/business-marketing.md#clm-05), [RLSE-09](../lexicons/engineering.md#rlse-09), [AGT-04](../lexicons/engineering.md#agt-04)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-22](../lexicons/accessibility.md#a11y-22)
 - [`anderson-security-engineering`](../SOURCES.md#src-anderson-security-engineering): supports [SECD-01](../lexicons/security.md#secd-01)

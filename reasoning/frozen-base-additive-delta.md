@@ -2,7 +2,7 @@
 
 Slug: `frozen-base-additive-delta`
 ID: `CARD-25`
-Mechanism claim: When consumers already hold vectors or bind a shared trunk, adapt with a frozen base plus a zero-at-init additive residual so the base function stays bit-identical until trained and remains a control arm and rollback.
+Mechanism claim: When consumers already hold vectors or bind a shared trunk, adapt with a frozen base and architecture-specific initialization: LoRA and zero-coefficient residuals can start exactly at the base function, while bottleneck adapters start near identity. Retain the base path or factors for control evaluation and rollback.
 
 ## Scope
 
@@ -19,11 +19,11 @@ Excludes: green-field models with no persisted vectors or prior-task consumers; 
 
 ## Causal mechanism
 
-Persisted comparisons assume one geometry. Updating shared trunk weights under the same base identity moves every stored vector’s meaning without rewriting the store, so old and new coordinates share an index and pairwise scores lose their contract. An additive residual trained only on new modules, with trunk frozen and init that makes the composed forward equal the base at step 0, keeps the unadapted path available: training starts as a no-op, control-arm eval stays honest, and rollback does not require restoring overwritten weights. Skipping that leaves the cost of change as silent re-geometry of the corpus rather than a declared re-embed under a new version.
+Persisted comparisons assume one geometry. Updating shared trunk weights under the same base identity moves every stored vector’s meaning without rewriting the store, so old and new coordinates share an index and pairwise scores lose their contract. Training only new modules with the trunk frozen keeps the unadapted path available for control evaluation and rollback without restoring overwritten weights. LoRA’s zero product and zero-coefficient residuals recover the base function exactly; bottleneck adapters instead use near-identity initialization. Skipping that leaves the cost of change as silent re-geometry of the corpus rather than a declared re-embed under a new version.
 
 ## Required action
 
-While prior consumers bind the base, freeze trunk tensors (no grad; absent from optimizer param groups) and train only additive residual modules. Initialize so base and adapted forwards match on a fixed probe batch before the first optimizer step, within a declared tolerance, and record the init rule in the run config. Keep an unmerged base or trunk-only forward path (or retained base factors if residuals merge for deploy). Pin embedding and mapping versions for consumers; never mix spaces in one comparison. Prefer PEFT residual over full-weight adaptation until PEFT is shown insufficient. Dual-eval any cutover that would replace the space.
+While prior consumers bind the base, freeze trunk tensors (no grad; absent from optimizer param groups) and train only additive residual modules. Use the architecture’s initialization condition: Gaussian A and zero B for LoRA, zero coefficients for an exact-identity residual, or documented near-identity initialization for a bottleneck adapter. Record the init rule and check base versus adapted forwards on a fixed probe batch against the architecture’s declared tolerance before the first optimizer step. Keep an unmerged base or trunk-only forward path (or retained base factors if residuals merge for deploy). Pin embedding and mapping versions for consumers; never mix spaces in one comparison. Prefer PEFT residual over full-weight adaptation until PEFT is shown insufficient. Dual-eval any cutover that would replace the space.
 
 ## Predicted failure
 
@@ -31,7 +31,7 @@ Trunk fine-tune silently changes the space. Old and new vectors coexist under on
 
 ## Worked example
 
-A team fine-tunes a shared embedding checkpoint in place so product A and product B diverge on the same vector IDs. The trigger is mutating a base consumers already hold. Freeze the base weights; train a zero-at-init residual adapter per product. Without the freeze, reindexing and cross-product nearest-neighbor tables silently disagree.
+A team fine-tunes a shared embedding checkpoint in place so product A and product B diverge on the same vector IDs. The trigger is mutating a base consumers already hold. Freeze the base weights; train a residual adapter per product with exact-identity or near-identity initialization as its architecture requires. Without the freeze, reindexing and cross-product nearest-neighbor tables silently disagree.
 
 ## Exemptions and boundaries
 
@@ -46,12 +46,12 @@ A team fine-tunes a shared embedding checkpoint in place so product A and produc
 |---|---|---|---|
 | object: trunk tensors | [FM-09](../lexicons/ml-systems.md#fm-09) freeze trunk; residual only | [FM-07](../lexicons/ml-systems.md#fm-07) / [FM-05](../lexicons/ml-systems.md#fm-05) adapt when cheaper layers fail | Train residual modules only; escalate full-weight only after PEFT miss on a declared target |
 | surface: comparison space | [EMB-01](../lexicons/ml-systems.md#emb-01) one space per comparison | Domain need for a new geometry | New model/preprocess contract under a new pin; never mix old and new in one query or index |
-| sequence: init then train | [FM-10](../lexicons/ml-systems.md#fm-10) identity at step 0 | Product pressure to ship a random-init adapter | Probe match before first optimizer step; reject base-shifting inits |
+| sequence: init then train | [FM-10](../lexicons/ml-systems.md#fm-10) architecture-specific exact or near identity at step 0 | Product pressure to ship a random-init adapter | Probe match before first optimizer step; reject base-shifting inits |
 | sequence: promote upstream | [EMB-05](../lexicons/ml-systems.md#emb-05) / [DRIFT-02](../lexicons/ml-systems.md#drift-02) pin and dual-eval | Live “upstream fix” hot-swap | Promote only after consumer eval on a frozen versioned copy |
 
 ## Disconfirmers
 
-- Base and adapted forwards already diverge at step 0 under the claimed identity init (mechanism’s safety property fails).
+- Base and adapted forwards exceed the architecture’s declared exact-identity or near-identity tolerance at step 0 (the initialization claim fails).
 - No serve route, index, or prior-task suite still binds the pre-adaptation base (no shared-trunk consumer).
 - Every consumer re-embeds under an explicit new version pin before any comparison uses the new space (cost is paid as re-embed, not silent geometry shift).
 - Measured quality requires full-weight updates that residual PEFT cannot meet after a fair PEFT trial, and the cutover is versioned end-to-end.
@@ -67,7 +67,7 @@ A team fine-tunes a shared embedding checkpoint in place so product A and produc
 ## Rule IDs
 
 - [FM-09](../lexicons/ml-systems.md#fm-09): freeze shared trunk; train additive residual; keep unadapted path
-- [FM-10](../lexicons/ml-systems.md#fm-10): identity-at-init so adaptation starts as a no-op on the base function
+- [FM-10](../lexicons/ml-systems.md#fm-10): exact zero-product LoRA or zero-coefficient residual identity; near-identity bottleneck initialization
 - [EMB-01](../lexicons/ml-systems.md#emb-01): forbid mixed spaces in one comparison or index
 - [EMB-05](../lexicons/ml-systems.md#emb-05): pin embedding and mapping versions; dual-eval before cutover
 - [DRIFT-02](../lexicons/ml-systems.md#drift-02): pin non-owned upstream signals that can hot-swap under production

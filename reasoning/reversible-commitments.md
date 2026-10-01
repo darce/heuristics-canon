@@ -88,7 +88,7 @@ A migration plan rewrites a production table in place with no rollback section b
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
 | sequence | [RLSE-08](../lexicons/engineering.md#rlse-08) rollback written before ship | hard cutovers when the product requires a single moment | keep claim language and data-path rollback on the safe side even if the calendar shows one date ([CLM-02](../lexicons/business-marketing.md#clm-02)) |
-| surface | [DATA-18](../lexicons/engineering.md#data-18) concurrency integrity under weak isolation | [DATA-13](../lexicons/engineering.md#data-13) / [API-02](../lexicons/engineering.md#api-02) end-to-end idempotency | same underpriced-irreversible trade on isolation vs retry surfaces |
+| surface | [DATA-18](../lexicons/engineering.md#data-18) concurrency integrity under weak isolation | [DATA-13](../lexicons/engineering.md#data-13) / [API-02](../lexicons/engineering.md#api-02) end-to-end idempotency | suitable constraints, actual serializable isolation, or a proven locking protocol prevent the relevant transaction anomalies; snapshot isolation permits write skew; idempotency prevents duplicate effects after retry; both limit costly recovery through distinct mechanisms |
 
 ## Disconfirmers
 
@@ -124,7 +124,8 @@ A migration plan rewrites a production table in place with no rollback section b
 
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-02](../lexicons/business-marketing.md#clm-02), [A11Y-25](../lexicons/accessibility.md#a11y-25)
 - [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [STRAT-14](../lexicons/business-marketing.md#strat-14)
-- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13), [RLSE-08](../lexicons/engineering.md#rlse-08)
+- [`continuous-delivery-humble-farley`](../SOURCES.md#src-continuous-delivery-humble-farley): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
+- [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-02](../lexicons/engineering.md#api-02)
 - [`measure-anything-project-management`](../SOURCES.md#src-measure-anything-project-management): supports [OPS-29](../lexicons/business-marketing.md#ops-29)
 

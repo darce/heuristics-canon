@@ -2,7 +2,7 @@
 
 Slug: `constrained-domains-have-solved-it`
 ID: `CARD-22`
-Mechanism claim: When a task requires describing something in words, look first for a domain already forced to do it under an external constraint; that constraint is what produced a reusable vocabulary, grammar, or ordering rule.
+Mechanism claim: When a task matches a well-defined problem or established domain, consult its named catalog or standard before inventing a solution. An external constraint alone does not establish that a reusable description vocabulary or grammar exists.
 
 ## Scope
 
@@ -21,7 +21,7 @@ Excludes: pure literary or open-interpretive description with no inter-party agr
 
 ## Causal mechanism
 
-External constraints (legal access, spoken-only transmission, inter-party agreement, reproducibility, catalog correctness) force a domain to fix vocabulary, grammar, and order so strangers can check the result. Unconstrained free generation does not pay that cost, so it reinvents a private map that sounds precise and is not membership-checkable. Generating where a lookup, native control, or named catalog already works burns model cost and invents drift; the reusable artifact from the constrained domain was the cheap correct path.
+Modeling a technical task as a well-defined problem makes its established catalog available: the catalog tells the reader what is already known. Where a named vocabulary, standard, or native control exists, consult it before inventing a solution. The existence of an external constraint alone does not prove that it produced a reusable vocabulary or grammar. Audio-description timing and content-selection rules apply to that task; they do not follow from speech constraints in general.
 
 ## Required action
 
@@ -29,7 +29,7 @@ External constraints (legal access, spoken-only transmission, inter-party agreem
 2. When a name is present, emit by lookup or classification and validate membership; do not open-generate the same class ([FM-04](../lexicons/ml-systems.md#fm-04), [COG-02](../lexicons/interaction-ux.md#cog-02), [AIPX-01](../lexicons/business-marketing.md#aipx-01)).
 3. Prefer retrieve-and-cite for attributable or changing facts; do not fine-tune or free-generate them into the text ([FM-06](../lexicons/ml-systems.md#fm-06)).
 4. For interactive controls, take the native element first; invent ARIA only after native fails ([A11Y-12](../lexicons/accessibility.md#a11y-12)).
-5. For non-text media, meet the alternative-track duty, then adopt the audio-description fit, overflow, no-spoil timing, and hard-lock rules already forced by the speech constraint ([A11Y-09](../lexicons/accessibility.md#a11y-09), [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-42](../lexicons/accessibility.md#a11y-42), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)).
+5. For audio-description tracks, apply the timing, overflow, placement, content-selection, and hard-lock rules grounded in that task; the separate alternative-track duty remains under A11Y-09 ([A11Y-09](../lexicons/accessibility.md#a11y-09), [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-42](../lexicons/accessibility.md#a11y-42), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)).
 6. Keep purpose-fit alt and concrete, stable terms ([A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-03](../lexicons/writing.md#writ-03), [NAME-02](../lexicons/engineering.md#name-02), [DOM-03](../lexicons/engineering.md#dom-03)); refuse elegant-variation synonyms ([WRIT-06](../lexicons/writing.md#writ-06)); define a coined label in the text and spell out the mechanism it summarizes ([WRIT-27](../lexicons/writing.md#writ-27)).
 7. When no constrained-domain name appears in the artifact, do not mint a private closed vocabulary; keep free text under assertable bounds or mark acquisition of a real constrained domain as open work ([BOUND-01](../lexicons/depiction.md#bound-01), [ARCH-08](../lexicons/engineering.md#arch-08)).
 
@@ -48,7 +48,7 @@ Checkout needs a product picker with typeahead. Engineering opens a PR that buil
 - Length-budget selection (what must survive a shorter caption) belongs to [compression-is-selection-not-truncation](compression-is-selection-not-truncation.md).
 - Who may own non-visual photo claims belongs to [attribute-claims-to-their-bearer](attribute-claims-to-their-bearer.md).
 - A general "search the web for prior art" hunt with no named list in the plan is not a fireable action; name the candidate domain or keep free text.
-- [ARCH-05](../lexicons/engineering.md#arch-05) still owns when shared assets change too fast to reuse; this card owns description vocabulary and constraint-born grammar, not platform reuse rates.
+- [ARCH-05](../lexicons/engineering.md#arch-05) still owns when shared assets change too fast to reuse; this card owns consultation of named description vocabularies and domain standards, not platform reuse rates.
 
 ## Tensions
 

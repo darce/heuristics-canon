@@ -42,9 +42,8 @@ actions.
 
 ## Causal mechanism
 
-Derived state is cheap to show and expensive to trust. When the wrong answer is
-fixed only on the copy the user sees, every rebuild, retrain, or cache fill
-restores the error. Real correction changes the input, rule, log offset, or
+Derived state is cheap to show and expensive to trust. A view rebuilt from unchanged source data can reproduce the old error.
+Specify which rebuilds or cache fills actually read the corrected source. Real correction changes the input, rule, log offset, or
 training label that *produces* the next copy. Stacked correctors freeze the
 underlying model and train the organization to paper over it forever.
 
@@ -60,10 +59,10 @@ underlying model and train the organization to paper over it forever.
    [DATA-14](../lexicons/engineering.md#data-14)).
 4. Refuse post-hoc corrector cascades on frozen wrong models
    ([SERVE-04](../lexicons/ml-systems.md#serve-04)).
-5. Treat mirrored fields and cubes as optimisations with freshness, not as
-   sources ([REF-09](../lexicons/engineering.md#ref-09), [STOR-07](../lexicons/engineering.md#stor-07)).
+5. Avoid mirrored-field drift; retain raw facts and use cubes only to speed
+   anticipated queries ([REF-09](../lexicons/engineering.md#ref-09), [STOR-07](../lexicons/engineering.md#stor-07)).
 6. Publish domain events in the same transaction as the state change
-   ([DOM-06](../lexicons/engineering.md#dom-06)); fix the underlying prose defect, not only the tell
+   ([DOM-06](../lexicons/engineering.md#dom-06)); when phrase attachment is ambiguous, move or restructure the phrase
    ([WRIT-44](../lexicons/writing.md#writ-44)).
 
 ## Predicted failure
@@ -94,7 +93,7 @@ An incident patch hard-codes a corrected SKU in the API response layer while the
 |---|---|---|---|
 | object | [HAI-02](../lexicons/interaction-ux.md#hai-02) edit reaches source | [SERVE-04](../lexicons/ml-systems.md#serve-04) no corrector stack on frozen model | fix source or retrain; do not add a second model that hides the first |
 | sequence | [HITL-01](../lexicons/ml-systems.md#hitl-01) labels into next train | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait for delayed truth | close the loop, but do not cut the label window shorter than feedback |
-| surface | [FLOW-06](../lexicons/engineering.md#flow-06) rebuild from log | [WRIT-44](../lexicons/writing.md#writ-44) fix underlying prose defect | same source-first reflex on dataflow vs draft |
+| surface | [FLOW-06](../lexicons/engineering.md#flow-06) rebuild from log | [WRIT-44](../lexicons/writing.md#writ-44) recast ambiguous phrase attachment | rebuild derived data from its log; repair the intended relation in the draft syntax |
 
 ## Disconfirmers
 
@@ -121,10 +120,10 @@ An incident patch hard-codes a corrected SKU in the API response layer while the
 - [DATA-14](../lexicons/engineering.md#data-14): no dual writes of truth
 - [FLOW-06](../lexicons/engineering.md#flow-06): rebuild derived views from the log
 - [REF-09](../lexicons/engineering.md#ref-09): mirrored fields drift
-- [STOR-07](../lexicons/engineering.md#stor-07): cubes are optimisations with freshness
+- [STOR-07](../lexicons/engineering.md#stor-07): retain raw facts; cubes speed anticipated queries, not omitted dimensions
 - [DOM-06](../lexicons/engineering.md#dom-06): outbox / same-transaction publish
 - [AIPX-03](../lexicons/business-marketing.md#aipx-03): production accept/edit as label source
-- [WRIT-44](../lexicons/writing.md#writ-44): fix the underlying defect, not only the tell
+- [WRIT-44](../lexicons/writing.md#writ-44): move or restructure an ambiguously attached phrase so it attaches to the intended words
 
 ## Principles
 
@@ -142,7 +141,7 @@ not a claimed principle on this card.
 - [`refactoring-fowler-beck`](../SOURCES.md#src-refactoring-fowler-beck): supports [REF-09](../lexicons/engineering.md#ref-09)
 - [`learning-domain-driven-design`](../SOURCES.md#src-learning-domain-driven-design): supports [DOM-06](../lexicons/engineering.md#dom-06)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-03](../lexicons/business-marketing.md#aipx-03)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-44](../lexicons/writing.md#writ-44)
+- [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-44](../lexicons/writing.md#writ-44)
 
 ## Non-claims
 

@@ -9,7 +9,8 @@ the minimum so compromise or mistake reaches little.
 
 Covers: privilege grants and tool scope; trusted computing base size; split of
 train / promote / serve and other high-impact identities; non-superuser app
-roles; refusal of needless `PUBLIC` or write-heavy ops grants.
+roles; `PUBLIC` grants intended for every role; minimal backup and replication
+grants.
 
 Excludes: two-key completion of high-impact acts (see [dual-control-two-keys](dual-control-two-keys.md));
 pricing reversible vs irreversible *choices* and hostile-landlord exits (see
@@ -23,7 +24,7 @@ of truth (see [correction-at-source](correction-at-source.md)); step size of rol
 - Roles, tokens, or tools hold more authority than the named function needs
   (`PUBLIC` grants, fat train/promote/serve identities, broad tool scope).
 - An agent or service role can write, spend, or promote far beyond its job.
-- Ops, backup, or replication identities carry write paths they never need.
+- Backup or replication identities carry write paths they never need.
 - A single compromised credential would inherit cluster-wide or registry-wide
   mutation rights.
 
@@ -38,13 +39,15 @@ but does not replace small standing scope.
 ## Required action
 
 1. Grant least privilege; minimize the trusted computing base; split
-   train/promote/serve and refuse needless `PUBLIC` or write-heavy ops roles
+   train/promote/serve using the general least-privilege and TCB sources
    ([SECD-02](../lexicons/security.md#secd-02),
    [SEC-04](../lexicons/security.md#sec-04),
    [PG-01](../lexicons/security.md#pg-01),
-   [SEC-16](../lexicons/security.md#sec-16),
-   [PG-06](../lexicons/security.md#pg-06),
-   [PG-14](../lexicons/security.md#pg-14), Principle 14).
+   [SEC-16](../lexicons/security.md#sec-16), Principle 14).
+   Keep `PUBLIC` grants only when intended for every role
+   ([PG-06](../lexicons/security.md#pg-06)); apply
+   [PG-14](../lexicons/security.md#pg-14) to broad write privileges beyond need
+   on backup and replication roles, not to other role splits.
 
 ## Predicted failure
 
@@ -76,7 +79,7 @@ A CI job that only needs package-read holds org-admin tokens so it can also push
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [SEC-16](../lexicons/security.md#sec-16) split train/promote/serve | [PG-14](../lexicons/security.md#pg-14) ops write radius | identity split and ops radius both shrink compromise inheritance |
+| object | [SEC-16](../lexicons/security.md#sec-16) split train/promote/serve | [PG-14](../lexicons/security.md#pg-14) backup and replication write radius | identity split and ops radius both shrink compromise inheritance |
 | object | [SEC-04](../lexicons/security.md#sec-04) least privilege on agent tools | [PG-01](../lexicons/security.md#pg-01) non-superuser app role | same small-grant reflex on model agency vs database role |
 
 ## Disconfirmers
@@ -103,7 +106,7 @@ A CI job that only needs package-read holds org-admin tokens so it can also push
 - [SECD-02](../lexicons/security.md#secd-02): minimize trusted computing base
 - [PG-01](../lexicons/security.md#pg-01): non-superuser application role
 - [PG-06](../lexicons/security.md#pg-06): no casual `PUBLIC` grants
-- [PG-14](../lexicons/security.md#pg-14): ops write radius
+- [PG-14](../lexicons/security.md#pg-14): backup and replication write radius
 - [SEC-16](../lexicons/security.md#sec-16): split train / promote / serve rights
 
 ## Principles

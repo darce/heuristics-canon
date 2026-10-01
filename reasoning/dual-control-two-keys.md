@@ -44,8 +44,7 @@ standing radius, it does not replace the second key on completion.
    [AIPX-09](../lexicons/business-marketing.md#aipx-09)).
 2. Use dual control for value-creating, value-destroying, or evidence-erasing
    acts ([SECD-04](../lexicons/security.md#secd-04), Principle 17).
-3. Route low-agreement high-impact labels through expert adjudication before
-   they enter training ([HITL-07](../lexicons/ml-systems.md#hitl-07)).
+3. Route low-agreement items to experts for adjudication ([HITL-07](../lexicons/ml-systems.md#hitl-07)).
 
 ## Predicted failure
 

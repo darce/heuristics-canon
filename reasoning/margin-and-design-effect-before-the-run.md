@@ -17,7 +17,7 @@ Excludes: choice of a specific interval formula (score forms and implementation 
 - The report states n and a CI as if units were independent SRS, with no psu, deff/ICC, or n_eff.
 - K candidates, slices, or floors share one α with no pre-allocated split.
 - Harm direction for a floor (which error type failing is worse) is missing or flipped after results are known.
-- Estimand is two separate significance calls rather than a paired difference with a paired interval.
+- A paired comparison uses two separate significance calls rather than a paired difference with a paired interval.
 
 ## Causal mechanism
 
@@ -29,7 +29,7 @@ While a non-inferiority or practical-significance gate is in play on clustered o
 
 1. Before the run, seal in writing: margin δ (or minimum effect worth detecting), interval method class, harm direction for each floor, and α allocation across K candidates.
 2. Name sampling unit vs observation unit; estimate deff (or ICC), compute n_eff = n/deff, and set the floor and power from n_eff, not raw row count.
-3. State the estimand as a paired difference and analyse with a paired interval on that difference.
+3. For paired designs, state the paired-difference estimand and use an interval on that difference; for other clustered designs, use the appropriate cluster-aware analysis.
 4. Treat a post-data margin, harm flip, or α reallocation as invalid for the gate (re-seal and re-run, or downgrade the claim).
 
 ## Predicted failure
@@ -68,7 +68,7 @@ An A/B write-up picks a non-inferiority margin after seeing the lift, sized from
 
 - Diff or protocol review: margin, method class, harm direction per floor, and α_K appear in a pre-run revision, not only in the final report.
 - Report lists psu, deff or ICC, n, and n_eff; floor or power formula inputs match n_eff.
-- Primary estimand is written as a paired difference; interval is on that difference, not two one-arm p-values.
+- For paired designs, the primary estimand and interval are on the paired difference, not two one-arm p-values; other clustered designs use cluster-aware analysis.
 - Changing δ, harm direction, or α after unblinding is treated as a protocol breach (gate void or claim downgraded).
 
 ## Rule IDs

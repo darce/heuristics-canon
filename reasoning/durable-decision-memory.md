@@ -32,8 +32,8 @@ dashboards (see [measurement-integrity](measurement-integrity.md)); dual-control
 
 Working memory and social proximity feel sufficient until succession, context
 compaction, or on-call rotation. What was "obvious" to the author is invisible
-to the next executor. Externalizing at discovery cost is small; reconstructing
-after loss is large. The same discipline appears in programming cognition, ADRs,
+to the next executor. Externalizing working memory can reduce the cost of resuming
+interrupted work. The same discipline appears in programming cognition, ADRs,
 observability, brand systems, and naturalist decision handoffs: write the
 decision where the next person will look.
 

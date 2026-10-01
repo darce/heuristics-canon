@@ -37,8 +37,10 @@ frames (see [measurement-integrity](measurement-integrity.md)).
 People read boundaries first, with the eye, the org chart, the policy page, or
 the cluster label, and act as if the machine honours the same cut. When
 enforcement is weaker, elsewhere, or absent, every downstream decision is made
-on a false map. The failure is the same in UI, tenancy, architecture, and
-claims: perceived boundary ≠ enforced boundary.
+on a false map. Visual grouping and tenant access are related boundary checks with separate
+mechanisms: align interface groups with action scope, and enforce tenant access
+with database policies. Architecture and policy claims need their own checks
+against the structure and implementation they describe.
 
 ## Required action
 

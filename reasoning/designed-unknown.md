@@ -32,9 +32,10 @@ timeouts as the only bound (see [feedback-bounded-waiting](feedback-bounded-wait
 Systems hate holes. Databases, UIs, and models fill missing evidence with a
 guess because the schema or product narrative has no place for *unknown*. That
 guess becomes identity, progress, or advice. The failure is structural: without
-a designed third state, every path fabricates certainty. Calibration, annotation,
-release design, forecasting, and strategy literatures each invent the same exit:
-decline, escalate, or report partial knowledge on purpose.
+a designed third state, every path fabricates certainty. These sources offer different ways to represent limits: abstain on insufficient
+evidence, route uncertain items for review, or disclose unevaluated factors as
+unknown. They converge on making the limit explicit, rather than on one
+identical exit.
 
 ## Required action
 

@@ -8,8 +8,8 @@ so a stall fails closed instead of hanging the system.
 ## Scope
 
 Covers: client and RPC timeouts; pool, queue, and result-set capacity;
-agent and automation loop limits; queue-and-retry with a fast answer when
-blocking forever is the alternative.
+agent and automation loop limits; delayed queue-and-retry with a fast answer
+when immediate remote retries encounter a persistent fault.
 
 Excludes: pure measurement-frame integrity (see [measurement-integrity](measurement-integrity.md)); pure
 privilege sizing (see [least-privilege-blast-radius](least-privilege-blast-radius.md)); reversible choice and
@@ -26,8 +26,7 @@ only, not this card's owned decision.
 - Queues, pending-work buffers, or result sets without capacity bounds.
 - A model- or agent-driven loop runs "until done" with no max steps, tokens,
   spend, or repeated-state stop.
-- A caller blocks forever on a dependency when queue-and-retry with a fast
-  answer would keep the system responsive.
+- A remote call retries immediately while the dependency’s fault persists.
 
 ## Causal mechanism
 
@@ -46,7 +45,8 @@ result, and the rest of the system cannot shed load or answer.
    [RES-14](../lexicons/engineering.md#res-14)).
 2. Declare agent loops as state machines with explicit limits and a terminal
    failure result ([FM-08](../lexicons/ml-systems.md#fm-08)).
-3. Prefer queue-and-retry with a fast answer over blocking the caller forever
+3. When a remote call retries immediately against a persistent fault, queue
+   the retry with a delay and return a fast answer to the caller
    ([RES-06](../lexicons/engineering.md#res-06)).
 
 ## Predicted failure
@@ -85,7 +85,7 @@ Nightly import workers call BLPOP on a Redis list and never pass a timeout. When
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [RES-02](../lexicons/engineering.md#res-02) timeout every wait | [RES-06](../lexicons/engineering.md#res-06) queue-and-retry, answer fast | timeout the wait; still return a controlled async path rather than blocking the caller forever |
+| object | [RES-02](../lexicons/engineering.md#res-02) timeout every wait | [RES-06](../lexicons/engineering.md#res-06) queue-and-retry, answer fast | timeout the wait; when immediate retries encounter a persistent fault, queue the retry with delay and answer fast |
 | surface | [NDM-01](../lexicons/epistemics.md#ndm-01) recognition under validity+feedback (boundary) | [FORE-01](../lexicons/epistemics.md#fore-01) / [FORE-05](../lexicons/epistemics.md#fore-05) scored, outside-view probabilities | not owned here: use recognition only when the NDM gate holds; otherwise score |
 
 ## Disconfirmers

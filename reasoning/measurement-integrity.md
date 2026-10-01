@@ -42,9 +42,12 @@ frame and the denominator first; the formula is usually fine.
    ([OBS-09](../lexicons/engineering.md#obs-09), Principle 15).
 2. Prefer open-loop (or equivalent) arrival so stalls still generate
    observations ([PERF-03](../lexicons/engineering.md#perf-03)).
-3. Refuse filters and harvest paths that delete the regime under test
-   ([MLDATA-09](../lexicons/ml-systems.md#mldata-09),
-   [MLDATA-08](../lexicons/ml-systems.md#mldata-08)).
+3. For unconstrained face-recognition evaluations harvested with a
+   frontal-biased detector, preserve non-frontal pose coverage
+   ([MLDATA-09](../lexicons/ml-systems.md#mldata-09)). Audit detector-harvested
+   sets for demographic blind spots
+   ([MLDATA-08](../lexicons/ml-systems.md#mldata-08)); use the owning rule for
+   other filtered regimes.
 4. Predefine denominators; do not accept rates the system mints for itself
    ([UXR-07](../lexicons/interaction-ux.md#uxr-07),
    [TEST-11](../lexicons/engineering.md#test-11),
@@ -56,9 +59,11 @@ frame and the denominator first; the formula is usually fine.
    ([EVAL-03](../lexicons/ml-systems.md#eval-03)).
 6. Hold absolute standards against eroding goals
    ([OBS-11](../lexicons/engineering.md#obs-11)).
-7. Before trusting a suite or eval, confirm it has been seen red on the failure
-   it claims to catch ([TEST-06](../lexicons/engineering.md#test-06),
-   [TEST-15](../lexicons/engineering.md#test-15)).
+7. For a new test, predict its exact initial failure message and observe that
+   failure before proceeding ([TEST-06](../lexicons/engineering.md#test-06)).
+   For a passing suite, deliberately insert the bug it claims to catch on a
+   separate branch and confirm the suite detects it
+   ([TEST-15](../lexicons/engineering.md#test-15)).
 
 ## Predicted failure
 

@@ -8,8 +8,8 @@ feedback signal can catch before the next commitment.
 ## Scope
 
 Covers: plan and design step size relative to near feedback; cheapest
-falsifying artifact first; shadow/canary then cutover; phased exposure with
-pre-named stops; learning-loop windows where delayed labels or self-generated
+falsifying artifact first; shadow/canary then cutover; gradual exposure with
+monitoring and rollback; learning-loop windows where delayed labels or self-generated
 serving diet set how far the next step may go.
 
 Excludes: pre-commit evidence clocks for a single durable gate (see
@@ -23,7 +23,7 @@ to the next feedback check.
 ## Observable triggers
 
 - A plan's next increment is larger than any near feedback channel can observe.
-- Rollout jumps 0→100% without named stop criteria.
+- A service rollout jumps 0→100% without controlled user subsets.
 - Shadow or canary is skipped before cutover.
 - Negatives are recorded after a fixed window while true positives still arrive
   later; the model trains on its own served diet without priced exploration.
@@ -42,9 +42,10 @@ truth arrives, and the next step optimizes yesterday's policy, not the world.
    ([REF-28](../lexicons/engineering.md#ref-28), Principle 19).
 2. Ship the cheapest artifact that can falsify the riskiest assumption first
    ([PROD-03](../lexicons/business-marketing.md#prod-03)).
-3. Shadow, then canary, then cutover; phase exposure with pre-named stops
-   ([AIPX-06](../lexicons/business-marketing.md#aipx-06),
-   [RLSE-07](../lexicons/engineering.md#rlse-07)).
+3. Shadow, then canary, then cutover
+   ([AIPX-06](../lexicons/business-marketing.md#aipx-06)); gradually release a new
+   service version to controlled user subsets, monitor and measure its effects,
+   and roll it back if needed ([RLSE-07](../lexicons/engineering.md#rlse-07)).
 4. Window delayed labels to the real feedback lag; price exploration when
    serving shapes future training ([MLDATA-05](../lexicons/ml-systems.md#mldata-05),
    [COST-14](../lexicons/ml-systems.md#cost-14)).
@@ -62,7 +63,7 @@ On Friday a ranking change for site search goes straight to full traffic with no
 ## Exemptions and boundaries
 
 - Single-moment launches may still be required for coordination; bound the
-  *risk radius* and keep stop criteria even if the calendar shows one date.
+  *risk radius*, monitor effects, and retain rollback even if the calendar shows one date.
 - Evidence before the first durable freeze is owned by
   [evidence-before-commitment](evidence-before-commitment.md) (Principle 13); named disconfirmers as posture
   by [falsification-disconfirmers](falsification-disconfirmers.md) (Principle 2); this card owns increments
@@ -79,7 +80,7 @@ On Friday a ranking change for site search goes straight to full traffic with no
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| sequence | [REF-28](../lexicons/engineering.md#ref-28) / [RLSE-07](../lexicons/engineering.md#rlse-07) small steps and phased exposure | single-moment launches when coordination demands it | bound the *risk radius* even if the calendar shows one date; stop criteria still required |
+| sequence | [REF-28](../lexicons/engineering.md#ref-28) / [RLSE-07](../lexicons/engineering.md#rlse-07) small steps and phased exposure | single-moment launches when coordination demands it | bound the *risk radius* even if the calendar shows one date; monitor effects and retain rollback |
 | sequence | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait long enough for delayed truth | step-size pressure to close the window early | close the loop, but do not cut the label window shorter than the feedback process |
 | sequence | [HITL-01](../lexicons/ml-systems.md#hitl-01) labels into next train (owned by [correction-at-source](correction-at-source.md)) | [MLDATA-05](../lexicons/ml-systems.md#mldata-05) wait for delayed truth | route corrections to source; size the training step to the lag |
 
@@ -92,7 +93,7 @@ On Friday a ranking change for site search goes straight to full traffic with no
 
 ## Verification
 
-- Rollout plan names metric, window, and pause rule before traffic moves.
+- Service rollout plan specifies controlled user subsets, monitoring and measurement, and rollback.
 - Plan increments name the independent feedback that would kill the next step.
 - Label policy documents feedback-loop length and exploration budget.
 
@@ -101,7 +102,7 @@ On Friday a ranking change for site search goes straight to full traffic with no
 - [REF-28](../lexicons/engineering.md#ref-28): do not outrun your headlights
 - [PROD-03](../lexicons/business-marketing.md#prod-03): cheapest falsifying artifact first
 - [AIPX-06](../lexicons/business-marketing.md#aipx-06): shadow, canary, then cutover
-- [RLSE-07](../lexicons/engineering.md#rlse-07): phased rollout with stop criteria
+- [RLSE-07](../lexicons/engineering.md#rlse-07): gradual rollout with monitoring and rollback
 - [MLDATA-05](../lexicons/ml-systems.md#mldata-05): window delayed feedback
 - [COST-14](../lexicons/ml-systems.md#cost-14): feedback-loop economics and exploration
 

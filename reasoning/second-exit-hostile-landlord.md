@@ -2,7 +2,7 @@
 
 Slug: `second-exit-hostile-landlord`
 ID: `CARD-16`
-Mechanism claim: Assume a single external control point will turn; keep a
+Mechanism claim: A single external control point can turn; keep a
 second exit cheap enough to throw before you need it.
 
 ## Scope
@@ -29,11 +29,12 @@ Excludes: pricing reversible vs irreversible *choices* inside your own plan
 
 ## Causal mechanism
 
-External control points eventually change ToS, pricing, ranking, or
-availability. When masters, rails, and contact live only there, a single policy
+External platforms can change terms, fees, ranking, or availability; plan
+owned files, contact, and revenue paths for that risk. When masters, rails, and contact live only there, a single policy
 change zeros the residual. A second exit that is too expensive to throw is not
-an exit. Internal cut vertices are the same failure shape: one node or link
-whose loss partitions the system. Choosing soft claim language or writing a
+an exit. Both checks look for a single point whose loss disrupts a path, but graph
+disconnection and platform control are distinct mechanisms. Internal cut
+vertices and bridges partition the graph when removed. Choosing soft claim language or writing a
 rollback is a different price curve, owned elsewhere.
 
 ## Required action
@@ -75,7 +76,7 @@ Password resets and invoices both leave through Mailgun alone, and the only full
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [BOOT-07](../lexicons/business-marketing.md#boot-07) multi-home before need | [GRPH-05](../lexicons/graph-theory.md#grph-05) cut vertices | external landlord exit and internal bridge analysis are the same second-exit reflex |
+| object | [BOOT-07](../lexicons/business-marketing.md#boot-07) multi-home before need | [GRPH-05](../lexicons/graph-theory.md#grph-05) cut vertices | external landlord exit addresses platform control; internal bridge analysis addresses graph disconnection |
 | surface | [REF-15](../lexicons/engineering.md#ref-15) adapter around third parties | [GTM-04](../lexicons/business-marketing.md#gtm-04) own-label distribution | engineering wrap vs go-to-market residual; both keep a throw-able exit |
 
 ## Disconfirmers

@@ -35,12 +35,12 @@ citable standard.
 
 **Contents**
 
-- [1. The Working Set (96% of shipped failures)](#fam-a11y)
-- [2. Perceivable (beyond the working set)](#2-perceivable-beyond-the-working-set)
-- [3. Operable](#3-operable)
-- [4. Understandable & Robust](#4-understandable--robust)
-- [5. Process & Claims](#5-process--claims)
-- [6. Cross-lexicon amplifications](#6-cross-lexicon-amplifications)
+- [1. A11Y: The Working Set (96% of shipped failures)](#fam-a11y)
+- [2. A11Y: Perceivable (beyond the working set)](#fam-a11y-2)
+- [3. A11Y: Operable](#fam-a11y-3)
+- [4. A11Y: Understandable & Robust](#fam-a11y-4)
+- [5. A11Y: Process & Claims](#fam-a11y-5)
+- [Cross-lexicon amplifications](#6-cross-lexicon-amplifications)
 - [Consumption](#consumption)
 
 <!-- END GENERATED CONTENTS -->
@@ -62,7 +62,7 @@ Tier: **B**locker (excludes a user class or creates legal exposure if violated),
 
 WCAG success-criterion numbers are kept in rules as shared retrieval keys.
 Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
-## 1. The Working Set (96% of shipped failures)<a name="fam-a11y"></a>
+## 1. A11Y: The Working Set (96% of shipped failures)<a name="fam-a11y"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -82,7 +82,7 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 
 <!-- END GENERATED SECTION SOURCES fam-a11y -->
 
-## 2. Perceivable (beyond the working set)
+## 2. A11Y: Perceivable (beyond the working set)<a name="fam-a11y-2"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -92,15 +92,15 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-54<a name="a11y-54"></a> | live audio is broadcast, or prerecorded video carries information in the picture that the audio does not speak | **Live captions and audio description at AA (1.2.4/1.2.5)**: real-time captions for live audio, and audio description for prerecorded video — above the Level A floor, and spec-exempt where the visual information is already in the audio track, so this is a strong default rather than the thing conformance fails on (↔ [[A11Y-09]](accessibility.md#a11y-09) the Level A floor these sit above) | Is what is on screen, or being said live, reachable without it? | S·p | [WCAG 2.2 & Web Accessibility, SC 1.2.4](../SOURCES.md#src-wcag22-accessibility) + [WCAG 2.2 & Web Accessibility, SC 1.2.5](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-10<a name="a11y-10"></a> | tooltip/popover appears on hover or focus | **Dismissible, hoverable, persistent (1.4.13)**: Esc dismisses, pointer can enter the popup, content stays until dismissed | Can the user read the tooltip without a steady hand? | S·w | [WCAG 2.2 & Web Accessibility, SC 1.4.13](../SOURCES.md#src-wcag22-accessibility) |
 
-<!-- BEGIN GENERATED SECTION SOURCES 2-perceivable-beyond-the-working-set -->
+<!-- BEGIN GENERATED SECTION SOURCES fam-a11y-2 -->
 
 **Sources for this section**
 
 - [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
 
-<!-- END GENERATED SECTION SOURCES 2-perceivable-beyond-the-working-set -->
+<!-- END GENERATED SECTION SOURCES fam-a11y-2 -->
 
-## 3. Operable
+## 3. A11Y: Operable<a name="fam-a11y-3"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -111,16 +111,16 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-15<a name="a11y-15"></a> | drag, swipe, multipoint, or path gesture added | **Single-pointer alternative (2.5.1/2.5.7)**: click/keyboard path for every gesture unless the gesture is essential | How does this work without a drag? | S·w | [WCAG 2.2 & Web Accessibility, SC 2.5.1](../SOURCES.md#src-wcag22-accessibility) |
 | A11Y-16<a name="a11y-16"></a> | carousel, auto-updating region, or author-set time limit | **User's time, user's motion (2.2.1/2.2.2/2.3.1)**: make an author-set time limit off-able, adjustable to 10×, or extendable with a 20-second warning, provide pause/stop/hide for anything auto-moving longer than 5 seconds, and do not flash more than 3 times a second above the threshold (↔ ux [[INT-10]](interaction-ux.md#int-10) continuous system change needs a user stop). | Can the user turn off, adjust to ten times, or extend an author-set time limit, pause or stop motion longer than five seconds, and does nothing flash more than three times a second above the threshold? | S·w | [WCAG 2.2 & Web Accessibility, SC 2.2.1](../SOURCES.md#src-wcag22-accessibility) |
 
-<!-- BEGIN GENERATED SECTION SOURCES 3-operable -->
+<!-- BEGIN GENERATED SECTION SOURCES fam-a11y-3 -->
 
 **Sources for this section**
 
 - [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
 - [webaim-million](../SOURCES.md#src-webaim-million)
 
-<!-- END GENERATED SECTION SOURCES 3-operable -->
+<!-- END GENERATED SECTION SOURCES fam-a11y-3 -->
 
-## 4. Understandable & Robust
+## 4. A11Y: Understandable & Robust<a name="fam-a11y-4"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -135,16 +135,16 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-58<a name="a11y-58"></a> | content is made non-visible for naming via CSS or ARIA, or `aria-labelledby`/`aria-describedby` points at a non-visible node | **Hidden for name is not visual invisibility**: skip nodes with `display:none`, `visibility:hidden`/`collapse`, `content-visibility:hidden`, or `aria-hidden="true"` unless directly referenced by `aria-labelledby`/`aria-describedby` (or a descendant of a native labelling element); `opacity:0` and off-screen positioning still contribute — so opacity-hiding leaves text in the name, and referenced hidden nodes are included (↔ [[A11Y-57]](accessibility.md#a11y-57) owns which description source is consulted; this row owns whether a referenced node's text is admitted at all) | Will this "hidden" text still enter the name, or did a reference force it in? | S·r | [Accessible Name and Description Computation 1.2, § 4.3.2](../SOURCES.md#src-accname) |
 | A11Y-59<a name="a11y-59"></a> | multi-line or tab-structured text is authored as an accessible name or description | **Name/description is a flat string**: carriage returns, newlines, tabs, and form-feeds each become a single space and runs of spaces collapse to one, so structure authored into a multi-line alternative is destroyed in the announced string — carry the structure in visible content or separate elements instead of inside one alternative, and write the alternative as a single sentence (↔ [[A11Y-55]](accessibility.md#a11y-55) owns the ARIA-vs-host contest over *which* source supplies the string; this row applies to whatever source wins, name or description) | Does the announced string still carry the structure you authored? | S·w | [Accessible Name and Description Computation 1.2, § 4.3.1](../SOURCES.md#src-accname) |
 
-<!-- BEGIN GENERATED SECTION SOURCES 4-understandable--robust -->
+<!-- BEGIN GENERATED SECTION SOURCES fam-a11y-4 -->
 
 **Sources for this section**
 
 - [accname](../SOURCES.md#src-accname)
 - [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
 
-<!-- END GENERATED SECTION SOURCES 4-understandable--robust -->
+<!-- END GENERATED SECTION SOURCES fam-a11y-4 -->
 
-## 5. Process & Claims
+## 5. A11Y: Process & Claims<a name="fam-a11y-5"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
@@ -180,8 +180,9 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 | A11Y-51<a name="a11y-51"></a> | expanded (extended) description is in use, so the production pauses to carry a description the gaps could not hold | **Pre-teach inside the pause**: when a pause slot carries the description, place it before the content it explains rather than after playback resumes, so listeners who cannot see receive the information at or near the moment sighted viewers do, because a slot that describes content already played delivers the explanation after the comprehension it was meant to support (bounded: this orders description *within* a chosen pause slot only — concurrent inline cues still start at or after their event under [[A11Y-42]](accessibility.md#a11y-42), and this is not licence to spoil a reveal; pause mode itself is chosen under [[A11Y-40]](accessibility.md#a11y-40)/[[A11Y-41]](accessibility.md#a11y-41)) | In each expanded slot, does the description precede the content it covers? | S·w | [Description Key (DCMP)](../SOURCES.md#src-dcmp-description-key) |
 | A11Y-52<a name="a11y-52"></a> | on-screen text is needed for comprehension, or subtitles carry speech the soundtrack does not | **Voice text by pattern, subtitles verbatim**: establish and reuse one signal that written words are being read (a set phrase or a distinct tone) and read subtitled speech word for word rather than summarising it, because an unmarked switch leaves the listener unable to tell the screen's words from the describer's, and paraphrase silently rewrites a channel the viewer was entitled to in full (↔ [[A11Y-44]](accessibility.md#a11y-44) owns whether critical text survives the fit; this row owns how it is voiced once kept) | Is every read of on-screen text marked by the same signal, and is subtitled speech verbatim? | S·w | [Description Key (DCMP)](../SOURCES.md#src-dcmp-description-key) |
 | A11Y-53<a name="a11y-53"></a> | a non-speech gap is available in a pass where description is being authored | **Not every gap is budget**: leave mood-bearing silence unfilled instead of spending it on optional detail, because atmosphere is program content the description is there to convey, and a track that describes into every available window replaces the experience it was meant to provide access to (↔ [[A11Y-41]](accessibility.md#a11y-41) prefers such windows when a cue must be placed — this row is the counterweight: available is not the same as spendable; ↔ [[A11Y-43]](accessibility.md#a11y-43) ranks what to say when the gap is spent) | Which silences did we judge as content and deliberately leave empty? | J·r | [Description Key (DCMP)](../SOURCES.md#src-dcmp-description-key) |
+| A11Y-60<a name="a11y-60"></a> | A fixed product dimension is justified by a population mean or percentile while the product claims to serve a broader range of bodies or abilities. | **Adjust for the range**: offer adjustment or variants for that dimension and test the range the product claims to support, because a fixed average, even a high percentile, leaves intended users outside the fit. ↔ [[UXR-17]](interaction-ux.md#uxr-17) write the assumed default user on a story; this row changes a fixed dimension that a statistic was used to justify. | Which intended users fall outside this fixed fit? | S·p | [The Design of Everyday Things, ch. 6](../SOURCES.md#src-design-of-everyday-things-norman) |
 
-<!-- BEGIN GENERATED SECTION SOURCES 5-process--claims -->
+<!-- BEGIN GENERATED SECTION SOURCES fam-a11y-5 -->
 
 **Sources for this section**
 
@@ -190,15 +191,16 @@ Cross-lexicon borders cite `↔ eng/design/biz` rules instead of restating them.
 - [atag20](../SOURCES.md#src-atag20)
 - [bootstrap](../SOURCES.md#src-bootstrap)
 - [dcmp-description-key](../SOURCES.md#src-dcmp-description-key)
+- [design-of-everyday-things-norman](../SOURCES.md#src-design-of-everyday-things-norman)
 - [rescribe-audio-descriptions](../SOURCES.md#src-rescribe-audio-descriptions)
 - [screen-parsing](../SOURCES.md#src-screen-parsing)
 - [wcag-em-2](../SOURCES.md#src-wcag-em-2)
 - [wcag22-accessibility](../SOURCES.md#src-wcag22-accessibility)
 - [webaim-million](../SOURCES.md#src-webaim-million)
 
-<!-- END GENERATED SECTION SOURCES 5-process--claims -->
+<!-- END GENERATED SECTION SOURCES fam-a11y-5 -->
 
-## 6. Cross-lexicon amplifications
+## Cross-lexicon amplifications<a name="6-cross-lexicon-amplifications"></a>
 
 This rubric's rules strengthen the other lexicons' rules, and the reverse also holds:
 

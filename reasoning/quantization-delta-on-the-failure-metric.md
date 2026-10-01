@@ -13,7 +13,7 @@ Excludes: training-time architecture search, pure cost or latency sizing with no
 
 - A review or card cites only overall accuracy, MMLU-style totals, or “95% retention” after quantization or bit reduction.
 - The adoption-critical failure mode (factual error rate, calibration of *p* as a rate, worst-cohort FMR/FNMR, task regression) is unreported or reported only for the full-precision baseline.
-- A cheaper tier is promoted under [COST-07](../lexicons/ml-systems.md#cost-07) with a quality floor stated only as an aggregate parity percentage.
+- A cheaper tier is promoted under [COST-07](../lexicons/ml-systems.md#cost-07) with path accuracy compared only through an aggregate parity percentage.
 - Slice or task deltas are missing while the change is known to alter numerics or sampling ([SERVE-07](../lexicons/ml-systems.md#serve-07)).
 - Readiness or release is scored as one total that averages categories or tasks ([EVAL-23](../lexicons/ml-systems.md#eval-23)).
 
@@ -51,7 +51,7 @@ Product wants INT8 to cut GPU cost. The release note celebrates ninety-seven per
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| sequence | [COST-07](../lexicons/ml-systems.md#cost-07) route easy traffic to a cheaper quantized tier | [SERVE-07](../lexicons/ml-systems.md#serve-07) [EVAL-08](../lexicons/ml-systems.md#eval-08) quality-gate and slice the change before promotion | Measure the failure-metric quality floor on the cheap path first; only then route |
+| sequence | [COST-07](../lexicons/ml-systems.md#cost-07) route easy queries cheaply and hard queries expensively; compare path cost, accuracy, coverage, and the business KPI | [SERVE-07](../lexicons/ml-systems.md#serve-07) [EVAL-08](../lexicons/ml-systems.md#eval-08) quality-gate and slice the change before promotion | Gate and slice the serving change under Side B before routing under Side A |
 | object | Aggregate speed/cost win on easy majority traffic | [EVAL-04](../lexicons/ml-systems.md#eval-04) [FAIR-01](../lexicons/ml-systems.md#fair-01) floors on critical slices and worst cohort | Cost savings may use the majority; the gate is the stratified failure delta |
 | surface | [EXP-03](../lexicons/epistemics.md#exp-03) one OEC ranks the ship decision | [EVAL-04](../lexicons/ml-systems.md#eval-04) [EVAL-23](../lexicons/ml-systems.md#eval-23) multi-slice and weakest-category floors | OEC ranks among candidates that already clear hard slice/category floors |
 | metric role | Offline aggregate as a cheap dashboard number | [EXP-04](../lexicons/epistemics.md#exp-04) [EVAL-22](../lexicons/ml-systems.md#eval-22) surrogate only with goal link, constraints, and proven product movement | Dashboard may show retention; adoption may not |
@@ -83,7 +83,7 @@ Product wants INT8 to cut GPU cost. The release note celebrates ninety-seven per
 - [EVAL-23](../lexicons/ml-systems.md#eval-23): refuse readiness or quality totals that average away a weak category
 - [FAIR-01](../lexicons/ml-systems.md#fair-01): disaggregate operating errors and gate on the worst cohort when harm is group-shaped
 - [CAL-03](../lexicons/ml-systems.md#cal-03): re-check reliability when probabilities are used as rates after precision change
-- [COST-07](../lexicons/ml-systems.md#cost-07): cheap-tier quality floor must be the stratified failure metric, not aggregate retention
+- [COST-07](../lexicons/ml-systems.md#cost-07): compare cheaper or cached easy-query paths with expensive hard-query paths on cost, accuracy, coverage, and the business KPI
 - [RSCH-07](../lexicons/epistemics.md#rsch-07): installing retention as the KPI will optimize retention, not the failure mode
 - [EVAL-01](../lexicons/ml-systems.md#eval-01): interpret optimized scores only as deltas against fixed baselines
 

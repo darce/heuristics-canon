@@ -2,7 +2,7 @@
 
 Slug: `context-obedience-is-a-separate-capability`
 ID: `CARD-23`
-Mechanism claim: Caption quality on a bare image and faithful use of injected context are uncorrelated capabilities, so ranking on the first and shipping into a context-dependent path selects on the wrong axis.
+Mechanism claim: When a product depends on supplied context, evaluate that path directly; the cited sources distinguish input authority and task-specific evaluation but do not establish that bare-image quality and context obedience are uncorrelated.
 
 ## Scope
 
@@ -12,22 +12,22 @@ Excludes: pure no-context captioning; retrieval index design alone; fine-tuning 
 ## Observable triggers
 
 - Bake-off or ship gate reports only bare-image fluency, preference, or caption metrics while production prompts include a name/date/place or retrieved-evidence block.
-- Context-assembly work is funded or shipped with no per-candidate score for insertion of supplied facts, non-contradiction, or invention of unsupplied facts.
+- The product contract adopts insertion, non-contradiction, or non-invention criteria, but context-assembly work is funded or shipped with no per-candidate score for those criteria.
 - Winner selection cites prose quality; no two-arm table (no-context vs context-supplied) appears in the eval report.
-- Downstream fusion or post-checks cannot state a mechanical subset rule on emitted fact units relative to supplied units.
+- The product contract explicitly adopts merge-only fusion, but downstream fusion or post-checks cannot state or check the subset rule on emitted fact units relative to supplied units.
 - Failures are attributed to "retrieval" or "prompt wording" when the supplied block was present and the model ignored, contradicted, or embroidered it.
 
 ## Causal mechanism
 
-Bare-image quality measures free generation under one input distribution. Context obedience measures whether the model treats a second input class as binding evidence: insert what was given, do not contradict it, and do not invent units that were never given. Those skills need not co-vary. Selecting the champion on the first metric installs a generator that is free to discard the context-assembly investment, so end-to-end quality stays flat while the assembly stage looks healthy in isolation.
+Bare-image evaluation omits the supplied context that the production path must use. Input-authority distinctions and task-specific evaluation support testing with that context present. A bare-image score alone does not establish performance under the product's context contract; the relationship between the two scores needs measurement.
 
 ## Required action
 
 While the production path injects context that the answer must respect:
 
 1. Run every candidate on two fixed arms with the same images and prompts except for the context block: no-context and context-supplied.
-2. Score the context arm on three obedience surfaces: insertion of supplied facts, non-contradiction of supplied facts, and non-invention of facts not in the supplied set.
-3. Prefer a merge-only fusion contract on structured fact units (`units_out ⊆ units_in`) so non-invention is checkable without a prose judge; validate any remaining open-ended scorer against human gold before it gates.
+2. As a proposed task-specific evaluation protocol, score the context arm on insertion of supplied facts, non-contradiction of supplied facts, and non-invention of facts not in the supplied set. Define the product's context contract and validate the scoring criteria against human judgments before using these surfaces as requirements; the cited sources do not establish this three-part protocol.
+3. When machine-consumed output can be represented as structured facts, constrain it to a schema and validate it before use. A merge-only subset relation (`units_out ⊆ units_in`) is a proposed product contract, not a mechanism established by the source; adopt it only if it fits the task, and validate any remaining open-ended scorer against human gold before it gates.
 4. Ship or rank on the context-arm obedience scores (and end-to-end with context present), not on bare-arm fluency alone. Treat bare-arm metrics as a separate report, not the selection key.
 5. When the product contract is grounding-required, refuse generation when the sufficiency policy fails rather than asking the model to invent the missing units.
 
@@ -52,7 +52,7 @@ Lab ranking picks the model humans prefer on bare photos. Production injects cat
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
 | surface | Bare-arm fluency and preference scores for no-context products and regression watch ([EVAL-01](../lexicons/ml-systems.md#eval-01), [EVAL-11](../lexicons/ml-systems.md#eval-11)) | Context-arm obedience scores for any path that injects binding evidence ([EVAL-06](../lexicons/ml-systems.md#eval-06), [EVAL-22](../lexicons/ml-systems.md#eval-22), [RAG-01](../lexicons/ml-systems.md#rag-01)) | Rank and ship on the arm that matches production inputs; never average the two into one leaderboard number |
-| object | Open prose quality when many wordings are valid ([EVAL-11](../lexicons/ml-systems.md#eval-11)) | Claim support and merge-only unit subset when facts are machine-consumed or product-grounded ([FM-04](../lexicons/ml-systems.md#fm-04), [RAG-06](../lexicons/ml-systems.md#rag-06), [RAG-07](../lexicons/ml-systems.md#rag-07), [PROV-01](../lexicons/ml-systems.md#prov-01)) | Structure fact units under a schema so subset and support checks are mechanical; score remaining prose on a validated rubric only where structure ends |
+| object | Open prose quality when many wordings are valid ([EVAL-11](../lexicons/ml-systems.md#eval-11)) | Claim support for grounded outputs, and merge-only unit subset only when the product contract explicitly adopts it ([FM-04](../lexicons/ml-systems.md#fm-04), [RAG-06](../lexicons/ml-systems.md#rag-06), [RAG-07](../lexicons/ml-systems.md#rag-07), [PROV-01](../lexicons/ml-systems.md#prov-01)) | Schema-constrain machine-consumed facts; check subset membership only under an explicit merge-only contract, and validate support and remaining prose scoring against human judgments |
 | sequence | Assemble and budget context without silent truncation ([FM-02](../lexicons/ml-systems.md#fm-02), [RAG-05](../lexicons/ml-systems.md#rag-05), [RAG-09](../lexicons/ml-systems.md#rag-09)) | Score generation with that context present and attributable ([RAG-01](../lexicons/ml-systems.md#rag-01), [RAG-07](../lexicons/ml-systems.md#rag-07)) | Diagnose assembly and obedience as separate stages; a strong packer does not redeem a model that ignores the pack |
 | authority class | Keep lower-authority text out of policy position ([FM-01](../lexicons/ml-systems.md#fm-01)) | Require the model to use declared evidence when the contract says the answer is evidence-bound ([RAG-06](../lexicons/ml-systems.md#rag-06), [PROV-01](../lexicons/ml-systems.md#prov-01)) | Label each block's authority; obey evidence class without elevating it to policy override |
 
@@ -60,14 +60,14 @@ Lab ranking picks the model humans prefer on bare photos. Production injects cat
 
 - On a fixed candidate set, bare-arm rank order predicts context-arm obedience order well enough that the second arm never changes the winner.
 - Production paths that inject context show equal lift from assembly work for models selected only on bare quality.
-- Mechanical `units_out ⊆ units_in` holds at ceiling for the bare-selected champion whenever the full unit set is present in context.
+- For a product contract that adopts merge-only output, mechanical `units_out ⊆ units_in` holds at ceiling for the bare-selected champion whenever the full unit set is present in context.
 - Ablating the context block does not change claimed facts in outputs (context was never causal).
 
 ## Verification
 
 - Eval artifact includes paired no-context and context-supplied runs for every candidate on the same item IDs.
-- Context-arm report lists insertion, contradiction, and invention (or subset-violation) rates with denominators fixed outside the model.
-- Structured path declares merge-only (`units_out ⊆ units_in`) and a CI or offline check fails the run on subset violation.
+- Context-arm report measures the adopted context contract with human-validated criteria. When that contract explicitly adopts the proposed insertion, non-contradiction, or non-invention criteria, report their rates with denominators fixed outside the model.
+- Machine-consumed structured output is schema-constrained and validated before use. When the product contract explicitly adopts merge-only (`units_out ⊆ units_in`), a CI or offline check fails the run on subset violation.
 - Ship memo cites context-arm scores as the selection key; bare-arm numbers are labeled non-gating when production injects context.
 - If an LLM judge scores any obedience surface, judge–human agreement on that surface is recorded and the judge protocol is pinned ([EVAL-12](../lexicons/ml-systems.md#eval-12), [EVAL-13](../lexicons/ml-systems.md#eval-13)).
 - Grounding-required paths log abstain/clarify when sufficiency fails rather than silent invention ([RAG-06](../lexicons/ml-systems.md#rag-06)).
@@ -82,13 +82,13 @@ Lab ranking picks the model humans prefer on bare photos. Production injects cat
 - [EVAL-22](../lexicons/ml-systems.md#eval-22): treat bare-caption quality as an unvalidated proxy until it is shown to move the context-using product metric
 - [FM-01](../lexicons/ml-systems.md#fm-01): declare authority class of injected blocks so evidence is used without becoming policy
 - [FM-02](../lexicons/ml-systems.md#fm-02): budget context so obedience is not scored on a silently truncated block
-- [FM-04](../lexicons/ml-systems.md#fm-04): schema-constrain fact units so merge-only subset checks are machine-consumable
+- [FM-04](../lexicons/ml-systems.md#fm-04): schema-constrain machine-consumed output and validate it before use; subset checks apply only under an explicitly adopted merge-only product contract
 - [RAG-01](../lexicons/ml-systems.md#rag-01): score retrieval/context supply separately from generation obedience
 - [RAG-05](../lexicons/ml-systems.md#rag-05): select and pack evidence under a budget before blaming the generator
 - [RAG-06](../lexicons/ml-systems.md#rag-06): gate grounding-required answers on sufficiency; inventing missing units is not obedience
 - [RAG-07](../lexicons/ml-systems.md#rag-07): require material support for claims; unsupported embroidery fails the non-invention surface
 - [RAG-09](../lexicons/ml-systems.md#rag-09): attribute flat product metrics to assembly vs obedience stage rather than one end-to-end score
-- [PROV-01](../lexicons/ml-systems.md#prov-01): every emitted fact unit walks back to supplied evidence under the merge-only contract
+- [PROV-01](../lexicons/ml-systems.md#prov-01): retain model and input lineage so outputs can be reproduced; a merge-only subset contract requires separate product adoption
 - [HITL-03](../lexicons/ml-systems.md#hitl-03): gold-embed human checks when insertion or contradiction still needs annotator QC
 - [HITL-09](../lexicons/ml-systems.md#hitl-09): treat human obedience review as a measured stage when it is part of the gate
 

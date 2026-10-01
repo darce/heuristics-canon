@@ -2,7 +2,7 @@
 
 Slug: `condition-matched-reference`
 ID: `CARD-32`
-Mechanism claim: When the reference side of a comparison was built under conditions the query never had, both sides can be honest and the metric can look fine while the comparison silently fails — so build or re-stratify the reference under the query's conditions before trusting the number.
+Mechanism claim: For human eyewitness identification under the tested ski-mask condition, match the lineup's occlusion to the encoded face covering. Transfers to machine galleries, other coverings, and other query/reference condition classes are hypotheses requiring condition-specific evaluation.
 
 ## Scope
 
@@ -24,14 +24,14 @@ Excludes: choosing the wrong outcome metric or proxy (Principle 4); filters, pau
 
 ## Causal mechanism
 
-A comparison has two constructed sides. The reference is usually assembled first under conditions that were easy to collect — clean mugshots, full-face enrollments, zero-effort impostors, curated train transforms, laboratory noise. The query arrives later under different conditions. Nothing about either artifact is forged, and nothing about the reported number looks broken, so the mismatch is invisible to inspection of the metric alone. The failure is in reference construction: the system is answering a different question than the one the query poses. The prescribed act is therefore construction, not reporting — rebuild or re-stratify the reference under the query's conditions, or name the unmatched stratum instead of pooling across it.
+The human eyewitness study found higher target-present hit rates and discriminability when lineup candidates matched the tested ski-mask encoding condition. Transfer-appropriate processing is the proposed explanation: full-face retrieval can interfere with a memory encoded under a face covering. This result does not establish that matching conditions improves machine galleries or every other comparison. The sibling rules address part correspondence, degradation, impostor pairing, transforms, and evaluation cells on their own evidence; transfers of the lineup result require condition-specific evaluation.
 
 ## Required action
 
 While a comparison's reference may have been built under different conditions than the query:
 
 1. Name the query's condition class (occlusion covering, capture quality, demographic pairing of non-mates, featurization version, production noise) before scoring.
-2. Build or select the reference under that same class: condition-matched gallery or lineup, part-aligned support, quality-matched train degradation, demographically matched impostors, train/serve transform parity, production-like perturbation suite.
+2. For human eyewitness lineups under the tested ski-mask condition, build or select candidates under the same covering class. Evaluate transfers to other coverings or machine galleries as hypotheses; apply part correspondence, measured train degradation, matched impostors, transform parity, and perturbation evaluation under their own sibling rules.
 3. When full match is impossible, report and gate by the named stratum or query×enrolled cell rather than a pooled number that hides the mismatch.
 4. For regional occlusion, estimate hidden support and establish correspondence to the same gallery semantics before score; do not rely only on a scalar quality penalty.
 5. For real-occlusion product claims, require real or realistic-accessory cells — synthetic blocks alone do not certify them.
@@ -42,7 +42,7 @@ Hit rates and discriminability fall on masked or partial probes while full-face 
 
 ## Worked example
 
-A review desk identifies people from short video where the subject wears a lower-face covering. The default candidate set is full-face enrollment photos. Operators treat "more face visible" as strictly better and ship a hit-rate number on that full-face gallery. Rebuild the candidate set under the same covering class as the probe and re-run identification on the same masked probes. If hits rise only under the matched set, the prior green number measured transfer-inappropriate retrieval, not identification under the query's conditions. Without the rebuild, the desk keeps a reference that never shared the probe's occlusion state.
+An eyewitness identifies a perpetrator seen in a mock-crime video under the tested ski-mask condition. The default lineup shows full-face candidates. Compare that lineup with candidates under the same ski-mask condition, reporting target-present hits and target-absent false identifications separately. The study found higher hits and discriminability for matched masked lineups; it did not establish the same benefit for machine enrollment galleries or other coverings.
 
 ## Exemptions and boundaries
 
@@ -50,13 +50,13 @@ A review desk identifies people from short video where the subject wears a lower
 - Does not apply when both sides are contractually the same condition and that cell is the only one measured and shipped.
 - Wrong proxy quantity is Principle 4; shaped sampling frames and hard-cell deletion are Principle 15 ([MLDATA-09](../lexicons/ml-systems.md#mldata-09)); commit-before-evidence is Principle 13.
 - Synthetic occlusion that leaves a compositing signature the model can detect instead of reading through occlusion is [synthetic-artifact-control-arm](synthetic-artifact-control-arm.md) (CARD-31). This card owns condition mismatch of the reference with no shortcut cue required. The two share [MLDATA-10](../lexicons/ml-systems.md#mldata-10) and [EVAL-06](../lexicons/ml-systems.md#eval-06) as construction and gate twins under different mechanisms.
-- Measuring every pair cell ([EVAL-20](../lexicons/ml-systems.md#eval-20)) does not replace building a condition-matched path ([HITL-15](../lexicons/ml-systems.md#hitl-15)); both stay in force.
+- Measuring every pair cell ([EVAL-20](../lexicons/ml-systems.md#eval-20)) does not replace a matched lineup for the tested human ski-mask case ([HITL-15](../lexicons/ml-systems.md#hitl-15)); transfer beyond that case needs evaluation.
 
 ## Tensions
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [HITL-15](../lexicons/ml-systems.md#hitl-15) construct a covering-matched gallery for the probe | [EVAL-20](../lexicons/ml-systems.md#eval-20) measure every production query×enrolled cell | Build the matched path for the active query; still report the mismatch cell before claiming the product works there |
+| object | [HITL-15](../lexicons/ml-systems.md#hitl-15) construct a covering-matched human lineup for the tested ski-mask encoding | [EVAL-20](../lexicons/ml-systems.md#eval-20) measure every production query×enrolled cell | Build the tested human lineup path; evaluate transfer to machine galleries and still report every production pair cell |
 | object | [MLDATA-10](../lexicons/ml-systems.md#mldata-10) match train degradation to measured target statistics | [EVAL-28](../lexicons/ml-systems.md#eval-28) real-occlusion claims need real or realistic-accessory cells | Match degradations on train mass; do not treat synthetic-only occlusion scores as the real-occlusion ship proof |
 | object | [CAL-04](../lexicons/ml-systems.md#cal-04) fit the operating threshold on demographically matched non-mates | [CAL-01](../lexicons/ml-systems.md#cal-01) compare false-negative rates within quality strata | Operating-threshold policy stays on matched non-mates; compare cohort false negatives inside a quality stratum |
 | sequence | [SERVE-08](../lexicons/ml-systems.md#serve-08) identical train/serve transforms at construction | [EVAL-06](../lexicons/ml-systems.md#eval-06) choose models that win under production-like perturbation | Parity makes the features comparable; the gate still picks the model that wins on the matched noise suite |
@@ -80,7 +80,7 @@ A review desk identifies people from short video where the subject wears a lower
 
 ## Rule IDs
 
-- [HITL-15](../lexicons/ml-systems.md#hitl-15): construct or select gallery/lineup under the probe's covering class
+- [HITL-15](../lexicons/ml-systems.md#hitl-15): construct or select a human lineup under the tested ski-mask covering class; evaluate transfers separately
 - [EMB-11](../lexicons/ml-systems.md#emb-11): treat occlusion as which support is hidden, not only a scalar quality penalty
 - [EMB-12](../lexicons/ml-systems.md#emb-12): align partial probe support to the same gallery part semantics before score
 - [EVAL-28](../lexicons/ml-systems.md#eval-28): real-occlusion claims require real or realistic-accessory protocol cells
