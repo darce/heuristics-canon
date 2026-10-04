@@ -1,13 +1,13 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.24.0",
-  "date": "2026-10-03",
-  "rules": 1849,
+  "version": "0.25.0",
+  "date": "2026-10-04",
+  "rules": 1853,
   "principles": 20,
   "lexicons": {
     "lexicons/accessibility.md": {
-      "sha256": "736c5c91d57bb1c8f6b828e0254f3357d0a87212bae04ae210f24f2782b749bd",
-      "rules": 60,
+      "sha256": "4f6dba17a0026ba1971fba0bda21f35b63882a92cccf47f45a90f0f87267a246",
+      "rules": 64,
       "rule_ids": [
         "A11Y-01",
         "A11Y-02",
@@ -68,11 +68,15 @@
         "A11Y-57",
         "A11Y-58",
         "A11Y-59",
-        "A11Y-60"
+        "A11Y-60",
+        "A11Y-61",
+        "A11Y-62",
+        "A11Y-63",
+        "A11Y-64"
       ]
     },
     "lexicons/business-marketing.md": {
-      "sha256": "16f67dbe25e3a6a51a79754f8fa2964d4c0494ff16efe85950c5d939dffdec65",
+      "sha256": "1cfdbd62b9481d7a0dbe88679638828c5779abe7168937be1fac6f055d499fb8",
       "rules": 158,
       "rule_ids": [
         "AIPX-01",
@@ -412,7 +416,7 @@
       ]
     },
     "lexicons/engineering.md": {
-      "sha256": "76b7c9efe5cc71d25199e6f47ce284fb5bcead3452758f8e59393d3aa17d5e0f",
+      "sha256": "62df8994a16346f599ec866d8570d0980fa899c796e6988b4ff6998f767a95e3",
       "rules": 440,
       "rule_ids": [
         "AGT-01",
@@ -1716,7 +1720,7 @@
       ]
     },
     "lexicons/security.md": {
-      "sha256": "8c75bd81210ded36fdfc5187f65776880fb19fb5087ad93b5da2eaa64af59c85",
+      "sha256": "c7f6166f1d96992fe5a9218a5d10b1077efafa744e69d1cc0599dc1b5f2854cf",
       "rules": 120,
       "rule_ids": [
         "PG-01",
@@ -1842,7 +1846,7 @@
       ]
     },
     "lexicons/writing.md": {
-      "sha256": "394a7550b699f02642853e86736cd6a9ab000518489486b897c66724cb846b44",
+      "sha256": "a974e9a5c002b3c85060c345e915aa8d1a8df415b420e51af430127b2af4bde7",
       "rules": 79,
       "rule_ids": [
         "WRIT-01",
@@ -1988,6 +1992,10 @@
     "A11Y-58",
     "A11Y-59",
     "A11Y-60",
+    "A11Y-61",
+    "A11Y-62",
+    "A11Y-63",
+    "A11Y-64",
     "AGT-01",
     "AGT-02",
     "AGT-04",
@@ -3795,7 +3803,7 @@
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
     },
     "SOURCES.md": {
-      "sha256": "eb38d8c448db35218d816f8c2120578be7976b3ae57b3b9b9f98f56b8fd2e912"
+      "sha256": "6d9bf9ba725f9a79d1d275d7b19e3e280aba277fff5eed67c3e4157544fe2fbf"
     }
   },
   "reasoning": {
@@ -3818,7 +3826,7 @@
       "sha256": "ab5c9553249f7579679a9043cbb8b917ca5d98a8f8e250f6a21b69cdd6ab3569"
     },
     "reasoning/compression-is-selection-not-truncation.md": {
-      "sha256": "b1657d2fe53ee3fe6a9b7d580ebadcd86acf4cfaae0665880a706c7cc2405e54"
+      "sha256": "517afff698a7ea1de33d746da10bfe4879c7766ab1feec72972ff2a6bcad56f2"
     },
     "reasoning/condition-matched-reference.md": {
       "sha256": "0bea4031cecd3e0743d6c28477fa0ce2b4b73c1933ab821134ad8707c0730a81"
@@ -3842,7 +3850,7 @@
       "sha256": "4d1be28240c0f7b12ade71a0f595cffe69ffd25a53b88ba5a4c64c022d75b2b7"
     },
     "reasoning/designed-unknown.md": {
-      "sha256": "0855a599b69fa460056f983e1516f8028b110d56d385af92c6c557c5c3b33dab"
+      "sha256": "ad40d8aa302ff9d249cccdc7280b414eefd7aacb3ddc6ab7edca6832dd9e82fd"
     },
     "reasoning/dual-control-two-keys.md": {
       "sha256": "892498186571b851177a394a392d26af9efd6f94991ebb1ba87ab1afe6714fbf"

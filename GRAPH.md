@@ -12,14 +12,14 @@ Output is byte-stable: the same corpus produces the same bytes.
 
 ## Lexicon quotient
 
-Twelve lexicon nodes, **54** weighted edges. The heaviest edge is **business-marketing** -- **engineering**, with **72** citations between them.
+Twelve lexicon nodes, **53** weighted edges. The heaviest edge is **business-marketing** -- **engineering**, with **72** citations between them.
 
 Each edge weight is a **circle** on the path between two lexicon
 **rectangles** (mermaid has no circular edge-label form on GitHub).
 Every edge also appears in the table below ([A11Y-02]). Lexicon fill is
 a sequential rule-count step from the shared repo palette; weight-circle
 fill, edge stroke colour, and stroke width encode the same weight (see
-colour legend). All **54** weighted pairs are drawn — nothing is omitted.
+colour legend). All **53** weighted pairs are drawn — nothing is omitted.
 
 ```mermaid
 %%{init: {'themeVariables': {'fontSize': '22px'}}}%%
@@ -72,7 +72,7 @@ graph LR
   W_accessibility__interaction_ux --- interaction_ux
   graph_theory --- W_graph_theory__ml_systems((18))
   W_graph_theory__ml_systems --- ml_systems
-  business_marketing --- W_business_marketing__security((16))
+  business_marketing --- W_business_marketing__security((15))
   W_business_marketing__security --- security
   epistemics --- W_epistemics__ml_systems((15))
   W_epistemics__ml_systems --- ml_systems
@@ -138,8 +138,6 @@ graph LR
   W_graph_theory__planning --- planning
   security --- W_security__writing((2))
   W_security__writing --- writing
-  design_aesthetics --- W_design_aesthetics__security((1))
-  W_design_aesthetics__security --- security
   epistemics --- W_epistemics__graph_theory((1))
   W_epistemics__graph_theory --- graph_theory
   epistemics --- W_epistemics__security((1))
@@ -148,14 +146,14 @@ graph LR
   classDef seq_1 fill:#B4668B,color:#111111,stroke:#B4668B
   classDef seq_2 fill:#8D57BA,color:#FFFFFF,stroke:#8D57BA
   classDef seq_3 fill:#225AD6,color:#FFFFFF,stroke:#225AD6
-  class accessibility,depiction,graph_theory,W_design_aesthetics__interaction_ux,W_interaction_ux__security,W_graph_theory__interaction_ux,W_ml_systems__writing,W_accessibility__business_marketing,W_interaction_ux__planning,W_business_marketing__writing,W_depiction__writing,W_interaction_ux__writing,W_ml_systems__planning,W_accessibility__design_aesthetics,W_accessibility__ml_systems,W_engineering__writing,W_graph_theory__security,W_planning__security,W_accessibility__security,W_depiction__ml_systems,W_design_aesthetics__planning,W_design_aesthetics__writing,W_epistemics__writing,W_accessibility__epistemics,W_accessibility__depiction,W_business_marketing__depiction,W_business_marketing__graph_theory,W_depiction__epistemics,W_depiction__interaction_ux,W_design_aesthetics__ml_systems,W_graph_theory__planning,W_security__writing,W_design_aesthetics__security,W_epistemics__graph_theory,W_epistemics__security seq_0
+  class accessibility,depiction,graph_theory,W_design_aesthetics__interaction_ux,W_interaction_ux__security,W_graph_theory__interaction_ux,W_ml_systems__writing,W_accessibility__business_marketing,W_interaction_ux__planning,W_business_marketing__writing,W_depiction__writing,W_interaction_ux__writing,W_ml_systems__planning,W_accessibility__design_aesthetics,W_accessibility__ml_systems,W_engineering__writing,W_graph_theory__security,W_planning__security,W_accessibility__security,W_depiction__ml_systems,W_design_aesthetics__planning,W_design_aesthetics__writing,W_epistemics__writing,W_accessibility__epistemics,W_accessibility__depiction,W_business_marketing__depiction,W_business_marketing__graph_theory,W_depiction__epistemics,W_depiction__interaction_ux,W_design_aesthetics__ml_systems,W_graph_theory__planning,W_security__writing,W_epistemics__graph_theory,W_epistemics__security seq_0
   class planning,security,writing,W_business_marketing__planning,W_design_aesthetics__engineering,W_engineering__security,W_epistemics__interaction_ux,W_engineering__graph_theory,W_ml_systems__security,W_business_marketing__ml_systems,W_epistemics__planning,W_accessibility__interaction_ux,W_graph_theory__ml_systems,W_business_marketing__security,W_epistemics__ml_systems,W_accessibility__engineering,W_business_marketing__design_aesthetics seq_1
   class business_marketing,design_aesthetics,epistemics,W_business_marketing__interaction_ux,W_engineering__ml_systems,W_engineering__epistemics,W_business_marketing__epistemics,W_engineering__interaction_ux,W_engineering__planning,W_interaction_ux__ml_systems seq_2
   class engineering,interaction_ux,ml_systems,W_business_marketing__engineering seq_3
   linkStyle 0,1 stroke:#225AD6,stroke-width:4px
   linkStyle 2,3,4,5,6,7,8,9,10,11,12,13,14,15 stroke:#8D57BA,stroke-width:3px
   linkStyle 16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 stroke:#B4668B,stroke-width:2px
-  linkStyle 44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107 stroke:#B68477,stroke-width:1px
+  linkStyle 44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105 stroke:#B68477,stroke-width:1px
 ```
 
 ### Colour legend
@@ -197,7 +195,7 @@ The heaviest edge, `business-marketing` -- `engineering` at **72**, therefore sa
 other*, that is **two** citations, not one. They arrived at each other
 independently, from opposite sides, and the weight says so.
 
-That is the whole reason two numbers on this page disagree. There are **894** cross-lexicon citations but only **855** cross-lexicon *edges*, because **39** pairs of rules cite each other — one edge, two citations. 855 + 39 = 894, exactly.
+That is the whole reason two numbers on this page disagree. There are **892** cross-lexicon citations but only **853** cross-lexicon *edges*, because **39** pairs of rules cite each other — one edge, two citations. 853 + 39 = 892, exactly.
 
 **How to read a heavy edge.** It is not a defect and not a merge
 candidate. A heavy edge means two domains keep reaching for each other's
@@ -225,7 +223,7 @@ equally informative and much less common.
 | [epistemics](lexicons/epistemics.md) | [planning](lexicons/planning.md) | 23 |
 | [accessibility](lexicons/accessibility.md) | [interaction-ux](lexicons/interaction-ux.md) | 20 |
 | [graph-theory](lexicons/graph-theory.md) | [ml-systems](lexicons/ml-systems.md) | 18 |
-| [business-marketing](lexicons/business-marketing.md) | [security](lexicons/security.md) | 16 |
+| [business-marketing](lexicons/business-marketing.md) | [security](lexicons/security.md) | 15 |
 | [epistemics](lexicons/epistemics.md) | [ml-systems](lexicons/ml-systems.md) | 15 |
 | [accessibility](lexicons/accessibility.md) | [engineering](lexicons/engineering.md) | 14 |
 | [business-marketing](lexicons/business-marketing.md) | [design-aesthetics](lexicons/design-aesthetics.md) | 13 |
@@ -258,13 +256,12 @@ equally informative and much less common.
 | [design-aesthetics](lexicons/design-aesthetics.md) | [ml-systems](lexicons/ml-systems.md) | 2 |
 | [graph-theory](lexicons/graph-theory.md) | [planning](lexicons/planning.md) | 2 |
 | [security](lexicons/security.md) | [writing](lexicons/writing.md) | 2 |
-| [design-aesthetics](lexicons/design-aesthetics.md) | [security](lexicons/security.md) | 1 |
 | [epistemics](lexicons/epistemics.md) | [graph-theory](lexicons/graph-theory.md) | 1 |
 | [epistemics](lexicons/epistemics.md) | [security](lexicons/security.md) | 1 |
 
 ## Intra-lexicon vs cross-lexicon edges
 
-Of **2372** simple undirected edges among rules, **1517** stay inside one lexicon file and **855** cross a file boundary (cut ratio **0.36** = cross / (intra + cross)).
+Of **2371** simple undirected edges among rules, **1518** stay inside one lexicon file and **853** cross a file boundary (cut ratio **0.36** = cross / (intra + cross)).
 
 **Reading A.** If the twelve lexicons were natural communities of the
 citation graph, most edges would fall inside files.
@@ -300,18 +297,18 @@ column sums to twice the cross-edge total rather than to it.
 
 | lexicon | rule nodes | internal edges | external edges | cut ratio |
 |---|---:|---:|---:|---:|
-| [accessibility](lexicons/accessibility.md) | 60 | 32 | 60 | 0.65 |
-| [business-marketing](lexicons/business-marketing.md) | 158 | 104 | 265 | 0.72 |
+| [accessibility](lexicons/accessibility.md) | 64 | 31 | 60 | 0.66 |
+| [business-marketing](lexicons/business-marketing.md) | 158 | 104 | 264 | 0.72 |
 | [depiction](lexicons/depiction.md) | 17 | 12 | 19 | 0.61 |
-| [design-aesthetics](lexicons/design-aesthetics.md) | 147 | 130 | 72 | 0.36 |
-| [engineering](lexicons/engineering.md) | 440 | 390 | 358 | 0.48 |
+| [design-aesthetics](lexicons/design-aesthetics.md) | 147 | 130 | 71 | 0.35 |
+| [engineering](lexicons/engineering.md) | 440 | 392 | 358 | 0.48 |
 | [epistemics](lexicons/epistemics.md) | 145 | 125 | 177 | 0.59 |
 | [graph-theory](lexicons/graph-theory.md) | 71 | 65 | 62 | 0.49 |
 | [interaction-ux](lexicons/interaction-ux.md) | 208 | 198 | 231 | 0.54 |
 | [ml-systems](lexicons/ml-systems.md) | 263 | 221 | 199 | 0.47 |
 | [planning](lexicons/planning.md) | 141 | 93 | 123 | 0.57 |
-| [security](lexicons/security.md) | 120 | 101 | 98 | 0.49 |
+| [security](lexicons/security.md) | 120 | 101 | 96 | 0.49 |
 | [writing](lexicons/writing.md) | 79 | 46 | 46 | 0.50 |
 
-Underlying rule graph (not drawn here): **1849** rule nodes, **2372** distinct undirected edges (simple 2372 + self-loops 0).
+Underlying rule graph (not drawn here): **1853** rule nodes, **2371** distinct undirected edges (simple 2371 + self-loops 0).
 

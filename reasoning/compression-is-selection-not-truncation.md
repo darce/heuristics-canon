@@ -103,7 +103,6 @@ The long product caption ends with the on-screen price. Someone pastes it into t
 
 - [`rescribe-audio-descriptions`](../SOURCES.md#src-rescribe-audio-descriptions): supports [A11Y-39](../lexicons/accessibility.md#a11y-39), [A11Y-40](../lexicons/accessibility.md#a11y-40), [A11Y-41](../lexicons/accessibility.md#a11y-41), [A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-44](../lexicons/accessibility.md#a11y-44)
 - [`wcag22-accessibility`](../SOURCES.md#src-wcag22-accessibility): supports [A11Y-02](../lexicons/accessibility.md#a11y-02)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-31](../lexicons/writing.md#writ-31)
 - [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-03](../lexicons/writing.md#writ-03), [WRIT-05](../lexicons/writing.md#writ-05), [WRIT-12](../lexicons/writing.md#writ-12), [WRIT-13](../lexicons/writing.md#writ-13), [WRIT-17](../lexicons/writing.md#writ-17)
 - [`garner-legal-writing-plain-english`](../SOURCES.md#src-garner-legal-writing-plain-english): supports [WRIT-35](../lexicons/writing.md#writ-35)
 - [`asymmetric-typography`](../SOURCES.md#src-asymmetric-typography): supports [WRIT-35](../lexicons/writing.md#writ-35)

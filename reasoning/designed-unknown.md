@@ -139,7 +139,6 @@ needs evidence.
 - [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [NAV-08](../lexicons/interaction-ux.md#nav-08)
 - [`superforecasting`](../SOURCES.md#src-superforecasting): supports [FORE-01](../lexicons/epistemics.md#fore-01), [FORE-08](../lexicons/epistemics.md#fore-08)
 - [`clean-coder-martin`](../SOURCES.md#src-clean-coder-martin): supports [FORE-15](../lexicons/epistemics.md#fore-15)
-- [`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes): supports [WRIT-43](../lexicons/writing.md#writ-43)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [FLOW-08](../lexicons/engineering.md#flow-08)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-06](../lexicons/engineering.md#api-06)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-07](../lexicons/business-marketing.md#aipx-07), [AIPX-14](../lexicons/business-marketing.md#aipx-14)
