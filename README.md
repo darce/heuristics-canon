@@ -64,22 +64,23 @@ facts in front of you, or a documented exemption.
 Give your agent a pinned local copy of the canon.
 
 1. Choose a release tag from the [releases page](https://github.com/darce/heuristics-canon/releases).
-2. Fetch that tag once, using either:
+2. Fetch that tag once from the directory that holds your project. Put the copy beside it in a folder named `heuristics-canon-<tag>`. Use either:
 
    ```sh
-   curl -L https://github.com/darce/heuristics-canon/archive/refs/tags/<tag>.tar.gz | tar -xz
+   mkdir heuristics-canon-<tag>
+   curl -L https://github.com/darce/heuristics-canon/archive/refs/tags/<tag>.tar.gz | tar -xz --strip-components=1 -C heuristics-canon-<tag>
    ```
 
    The archive is about 630 KB. Or:
 
    ```sh
-   git clone --branch <tag> --depth 1 https://github.com/darce/heuristics-canon
+   git clone --branch <tag> --depth 1 https://github.com/darce/heuristics-canon heuristics-canon-<tag>
    ```
 
 3. Verify the copy as described in [AGENTS.md: Pin and verify](AGENTS.md#pin-and-verify).
-4. Keep the copy next to your project or in a cache directory keyed by `<tag>`. Remove cached copies when no project uses that tag.
+4. Keep the copy in that visible folder beside your project. Do not put it inside the project; it could be edited or committed with your code. Do not keep it in a hidden cache folder. A hidden folder is easy to forget. Projects in the same directory can share one copy of a tag. Delete the folder when no project uses that tag.
 
-After saving it at `<canon-path>`, tell the agent once:
+Set `<canon-path>` to the folder's full path, for example `/home/you/code/heuristics-canon-<tag>`. The relative path `../` points somewhere else from another working copy of the project. After saving the copy there, tell the agent once:
 
 ```text
 Use the heuristics canon at <canon-path>, pinned to release <tag>, starting
@@ -87,6 +88,8 @@ with AGENTS.md. Read rule rows from the local files, not from a web page
 summary. Apply the canon to this work and cite the rule IDs you use. Name
 release <tag> once in each report.
 ```
+
+If the agent can read only inside the project, give it read access to the canon folder. Do not copy the canon into the project.
 
 If your assistant can read only web pages, give it the tree at the pinned tag
 (`https://github.com/darce/heuristics-canon/tree/<tag>`) and the raw lexicon

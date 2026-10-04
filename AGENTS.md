@@ -195,30 +195,46 @@ lexicon's code.
 
 ## Pin and verify
 
-For a local copy, download the tag archive (about 630 KB), unpack it once
-into a directory named for the tag, then read rows from those files with
-`grep` or a file reader. Do not use a web page summary for row text:
+For a local copy, download the tag archive (about 630 KB) and unpack it once
+into the visible folder `heuristics-canon-<tag>` in the directory that holds
+your project. Keep it beside the project, never inside the project tree or in
+a hidden directory such as `~/.cache`. Read rows from those files with `grep`
+or a file reader. Do not use a web page summary for row text:
 
 ```sh
-tag=v0.25.0
-mkdir -p "canon/$tag"
+tag=v0.25.2
+dir="../heuristics-canon-$tag"
+mkdir -p "$dir"
 curl -L "https://github.com/darce/heuristics-canon/archive/refs/tags/$tag.tar.gz" |
-  tar -xz --strip-components=1 -C "canon/$tag"
-grep '^| RES-' "canon/$tag/lexicons/engineering.md"
+  tar -xz --strip-components=1 -C "$dir"
+grep '^| RES-' "$dir/lexicons/engineering.md"
 ```
 
-To verify a Git checkout instead, fetch and check out the release tag:
+Resolve `$dir` once with `cd "$dir" && pwd` and give the printed full path to
+the agent; `../` points elsewhere from another working copy. If you cannot
+write beside the project, give the user these commands, ask for the folder's
+path, and use it; never use an inside-project or hidden folder.
+
+To make a fresh Git copy instead of using the archive above, clone the release
+tag:
+
+```sh
+git clone --branch "$tag" --depth 1 https://github.com/darce/heuristics-canon "$dir"
+```
+
+To verify a Git copy that is already a clone, fetch and check out the release
+tag:
 
 ```sh
 git fetch --tags
-git checkout <version-tag>
+git checkout "$tag"
 shasum -a 256 lexicons/*.md
 find reasoning -type f 2>/dev/null | sort | xargs shasum -a 256
 ```
 
-Run the check below from the root of the local tree. For an archive, first
-change to its tag-keyed directory. Read the manifest's `schema` field to
-identify its format.
+Run the check below from the root of the local tree. First change to the
+copy's folder with `cd "$dir"`, for an archive or a clone. Read the manifest's
+`schema` field to identify its format.
 Published tags use `heuristics-canon/release@1`, `@2`, `@4`, or `@5`; no tag
 uses `@3`. From `heuristics-canon/release@4`, the manifest maps each withdrawn
 rule ID to its successor. Schema `@5` carries `withdrawn_cards` (withdrawn
