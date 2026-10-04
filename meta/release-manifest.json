@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.25.0",
+  "version": "0.25.1",
   "date": "2026-10-04",
   "rules": 1853,
   "principles": 20,
@@ -3794,10 +3794,10 @@
       "sha256": "104fde3eea6b5da7127dd86a481c62c2a548a4b2e3de21cc114ea65c81eb966c"
     },
     "README.md": {
-      "sha256": "d6d4415643c807c2d9b05172c224405a422bbd372349a722e3dcb4399ceb9fea"
+      "sha256": "7e42271e6caa58b4ae2ad8e2a124307aacbfc6fe034d8fd310f0ef073a313d19"
     },
     "AGENTS.md": {
-      "sha256": "17902cafdce644bbecbd15908fc35ebc36a2cd307ac10bcf0778916e80f813cb"
+      "sha256": "39c0879c78fb0fd95eb905c0bae273848103036809768c63110252c6d520421a"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"

@@ -61,18 +61,37 @@ facts in front of you, or a documented exemption.
 
 ## Using it with an agent
 
-Any assistant that can read a web page or a repository can use the canon:
-Claude Code, Claude Cowork, Codex, or another. Nothing needs installing. Tell
-it once:
+Give your agent a pinned local copy of the canon.
+
+1. Choose a release tag from the [releases page](https://github.com/darce/heuristics-canon/releases).
+2. Fetch that tag once, using either:
+
+   ```sh
+   curl -L https://github.com/darce/heuristics-canon/archive/refs/tags/<tag>.tar.gz | tar -xz
+   ```
+
+   The archive is about 630 KB. Or:
+
+   ```sh
+   git clone --branch <tag> --depth 1 https://github.com/darce/heuristics-canon
+   ```
+
+3. Verify the copy as described in [AGENTS.md: Pin and verify](AGENTS.md#pin-and-verify).
+4. Keep the copy next to your project or in a cache directory keyed by `<tag>`. Remove cached copies when no project uses that tag.
+
+After saving it at `<canon-path>`, tell the agent once:
 
 ```text
-Read the heuristics canon at https://github.com/darce/heuristics-canon,
-starting with AGENTS.md. Whenever I ask you to review, plan, or write,
-apply the canon and cite the rule IDs you used.
+Use the heuristics canon at <canon-path>, pinned to release <tag>, starting
+with AGENTS.md. Read rule rows from the local files, not from a web page
+summary. Apply the canon to this work and cite the rule IDs you use. Name
+release <tag> once in each report.
 ```
 
-If your tool reads local files but not web pages, clone the repository next
-to your project and point the agent at the copy.
+If your assistant can read only web pages, give it the tree at the pinned tag
+(`https://github.com/darce/heuristics-canon/tree/<tag>`) and the raw lexicon
+files (`https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/lexicons/<file>.md`),
+which return the rule rows themselves.
 
 A review then goes like this:
 

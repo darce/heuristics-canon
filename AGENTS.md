@@ -65,7 +65,9 @@ rule row  ->  reasoning card  ->  original source
    book other than its own Source cell. For the full reference, follow
    the [SOURCES.md](SOURCES.md) link. For an unsourced practice label
    (`bootstrap`, `agent-operations`, or `video-pipeline-practice`), say
-   "practice label" instead of naming the key as a book.
+   "practice label" instead of naming the key as a book. Name the canon
+   release once in each report (for example, `Canon v0.25.0`) so readers
+   know which row text you applied.
 8. **Stop** when every applicable `B` and `S` rule is satisfied, exempted with
    evidence, or explicitly escalated.
 
@@ -193,6 +195,20 @@ lexicon's code.
 
 ## Pin and verify
 
+For a local copy, download the tag archive (about 630 KB), unpack it once
+into a directory named for the tag, then read rows from those files with
+`grep` or a file reader. Do not use a web page summary for row text:
+
+```sh
+tag=v0.25.0
+mkdir -p "canon/$tag"
+curl -L "https://github.com/darce/heuristics-canon/archive/refs/tags/$tag.tar.gz" |
+  tar -xz --strip-components=1 -C "canon/$tag"
+grep '^| RES-' "canon/$tag/lexicons/engineering.md"
+```
+
+To verify a Git checkout instead, fetch and check out the release tag:
+
 ```sh
 git fetch --tags
 git checkout <version-tag>
@@ -200,8 +216,43 @@ shasum -a 256 lexicons/*.md
 find reasoning -type f 2>/dev/null | sort | xargs shasum -a 256
 ```
 
-Compare the output with `meta/release-manifest.json`. The current schema is
-`heuristics-canon/release@4`; older tags carry `@1` or `@2` and verify the
-same way. The manifest lists the full rule-ID set and per-file digests for
-lexicons and reasoning cards. From `@4` it also maps each withdrawn rule ID to
-its successor, so contract drift can be checked offline.
+Run the check below from the root of the local tree. For an archive, first
+change to its tag-keyed directory. Read the manifest's `schema` field to
+identify its format.
+Published tags use `heuristics-canon/release@1`, `@2`, `@4`, or `@5`; no tag
+uses `@3`. From `heuristics-canon/release@4`, the manifest maps each withdrawn
+rule ID to its successor. Schema `@5` carries `withdrawn_cards` (withdrawn
+cards and their successors) and adds `card_ids` (each reasoning card's stable
+ID, status, and slug). The manifest also lists the full rule-ID set and
+per-file digests for lexicons, docs, and reasoning cards.
+
+```sh
+python3 - <<'PY'
+import hashlib
+import json
+from pathlib import Path
+
+manifest = json.loads(Path("meta/release-manifest.json").read_text())
+mismatches = []
+for section in ("lexicons", "docs", "reasoning"):
+    for path, entry in manifest.get(section, {}).items():
+        try:
+            actual = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+        except OSError:
+            actual = None
+        if actual != entry["sha256"]:
+            mismatches.append(path)
+
+for path in mismatches[:20]:
+    print(f"MISMATCH {path}")
+if len(mismatches) > 20:
+    print(f"... and {len(mismatches) - 20} more mismatch(es)")
+if mismatches:
+    raise SystemExit(1)
+print("all listed digests match")
+PY
+```
+
+This verifies that the copy contains every file listed in the manifest and
+that those files match its digests; it does not prove who published the
+release.
