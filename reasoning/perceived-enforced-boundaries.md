@@ -63,7 +63,7 @@ against the structure and implementation they describe.
 7. Align privacy and policy text with implementation
    ([CLM-03](../lexicons/business-marketing.md#clm-03)).
 8. Make a software split a team split first
-   ([TEAM-01](../lexicons/engineering.md#team-01)); hoist must-hold properties
+   ([TEAM-01](../lexicons/planning.md#team-01)); hoist must-hold properties
    into structure so violation fails closed
    ([ARCH-13](../lexicons/engineering.md#arch-13)).
 
@@ -94,7 +94,7 @@ Settings shows Work and Private as two tabs. Draft notes still share one ACL tab
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
 | surface | [PERC-03](../lexicons/interaction-ux.md#perc-03) / [INT-01](../lexicons/interaction-ux.md#int-01) visual and click affordances | [WEB-08](../lexicons/security.md#web-08) / [PG-02](../lexicons/security.md#pg-02) object auth and RLS | same audit: perceived cut vs machine cut, UI vs data plane |
-| object | [TEAM-01](../lexicons/engineering.md#team-01) team split first | [ARCH-13](../lexicons/engineering.md#arch-13) structure enforces the property | org boundary and structural hoist are both enforcement; neither is a diagram alone |
+| object | [TEAM-01](../lexicons/planning.md#team-01) team split first | [ARCH-13](../lexicons/engineering.md#arch-13) structure enforces the property | org boundary and structural hoist are both enforcement; neither is a diagram alone |
 | sequence | [CLM-03](../lexicons/business-marketing.md#clm-03) policy matches implementation | [SECD-03](../lexicons/security.md#secd-03) complete mediation on each use | write the true boundary, then re-check it on every use |
 
 ## Disconfirmers
@@ -125,7 +125,7 @@ Settings shows Work and Private as two tabs. Draft notes still share one ACL tab
 - [HAI-05](../lexicons/interaction-ux.md#hai-05): do not name full autonomy beyond the tested envelope
 - [CLM-03](../lexicons/business-marketing.md#clm-03): policy must match implementation
 - [AIPX-13](../lexicons/business-marketing.md#aipx-13): label synthetic content that could pass as human
-- [TEAM-01](../lexicons/engineering.md#team-01): software split is a team split first
+- [TEAM-01](../lexicons/planning.md#team-01): software split is a team split first
 - [ARCH-13](../lexicons/engineering.md#arch-13): hoist must-hold properties into structure
 - [WEB-08](../lexicons/security.md#web-08): object authorization; no IDOR
 - [PG-02](../lexicons/security.md#pg-02): multi-tenant rows need RLS
@@ -140,12 +140,12 @@ Settings shows Work and Private as two tabs. Draft notes still share one ACL tab
 - [`designing-with-the-mind-in-mind`](../SOURCES.md#src-designing-with-the-mind-in-mind): supports [PERC-03](../lexicons/interaction-ux.md#perc-03)
 - [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [NAV-05](../lexicons/interaction-ux.md#nav-05)
 - [`designing-interfaces`](../SOURCES.md#src-designing-interfaces): supports [INT-01](../lexicons/interaction-ux.md#int-01)
-- [`video-pipeline-practice`](../SOURCES.md#src-video-pipeline-practice): supports [GRPH-18](../lexicons/graph-theory.md#grph-18)
+- [`manning-information-retrieval`](../SOURCES.md#src-manning-information-retrieval): supports [GRPH-18](../lexicons/graph-theory.md#grph-18)
 - [`llm-security-playbook`](../SOURCES.md#src-llm-security-playbook): supports [SEC-01](../lexicons/security.md#sec-01)
 - [`human-centered-ai`](../SOURCES.md#src-human-centered-ai): supports [HAI-05](../lexicons/interaction-ux.md#hai-05)
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [CLM-03](../lexicons/business-marketing.md#clm-03)
 - [`designing-ai-interfaces`](../SOURCES.md#src-designing-ai-interfaces): supports [AIPX-13](../lexicons/business-marketing.md#aipx-13)
-- [`team-topologies`](../SOURCES.md#src-team-topologies): supports [TEAM-01](../lexicons/engineering.md#team-01)
+- [`team-topologies`](../SOURCES.md#src-team-topologies): supports [TEAM-01](../lexicons/planning.md#team-01)
 - [`just-enough-software-architecture`](../SOURCES.md#src-just-enough-software-architecture): supports [ARCH-13](../lexicons/engineering.md#arch-13)
 - [`stuttard-wahh`](../SOURCES.md#src-stuttard-wahh): supports [WEB-08](../lexicons/security.md#web-08)
 - [`postgresql-security`](../SOURCES.md#src-postgresql-security): supports [PG-02](../lexicons/security.md#pg-02)

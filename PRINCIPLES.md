@@ -73,7 +73,7 @@ A grouping the surface implies but the system does not enforce is a lie the user
 - Check implied layout relations against real structure [[PERC-03]](lexicons/interaction-ux.md#perc-03); MECE labels fail when a thing has two homes [[NAV-05]](lexicons/interaction-ux.md#nav-05).
 - Trust changes at every boundary [[SEC-01]](lexicons/security.md#sec-01); hidden automation or an autonomy overclaim can create over-trust and unrecoverable failure, so disclose its activity and document override [[HAI-05]](lexicons/interaction-ux.md#hai-05).
 - Synthetic content that could pass as human must be labeled [[AIPX-13]](lexicons/business-marketing.md#aipx-13).
-- Org and architecture: a software split must be a team split first [[TEAM-01]](lexicons/engineering.md#team-01); a property left to "everyone will be careful" is not enforced [[ARCH-13]](lexicons/engineering.md#arch-13).
+- Org and architecture: a software split must be a team split first [[TEAM-01]](lexicons/planning.md#team-01); a property left to "everyone will be careful" is not enforced [[ARCH-13]](lexicons/engineering.md#arch-13).
 - IDOR without object auth [[WEB-08]](lexicons/security.md#web-08), multi-tenant rows without RLS [[PG-02]](lexicons/security.md#pg-02), complete mediation on each use [[SECD-03]](lexicons/security.md#secd-03), and click affordances that match reality [[INT-01]](lexicons/interaction-ux.md#int-01) are the same audit in different materials.
 
 Draw the boundary the user perceives, then prove the system enforces exactly that one.
@@ -97,7 +97,7 @@ What produced the claim, what would falsify it, and whether the measured party c
 
 Entry points:
 [[STRAT-02]](lexicons/business-marketing.md#strat-02) ·
-[[OPS-01]](lexicons/business-marketing.md#ops-01) ·
+[[OPS-01]](lexicons/planning.md#ops-01) ·
 [[GRPH-14]](lexicons/graph-theory.md#grph-14) ·
 [[PROV-02]](lexicons/ml-systems.md#prov-02) ·
 [[PERF-03]](lexicons/engineering.md#perf-03) ·
@@ -119,10 +119,10 @@ Replace "this looks right" with a stated way to find out it is not.
 
 Any proxy drifts from its target under pressure, and once the proxy becomes a target it gets gamed. Anchor on the outcome you actually want and instrument the node where that outcome is really counted.
 
-- A metric pays for the behavior it rewards at 2am, not the behavior you meant [[OPS-01]](lexicons/business-marketing.md#ops-01); ship what changes valuable behavior [[PROD-01]](lexicons/business-marketing.md#prod-01).
+- A metric pays for the behavior it rewards at 2am, not the behavior you meant [[OPS-01]](lexicons/planning.md#ops-01); ship what changes valuable behavior [[PROD-01]](lexicons/business-marketing.md#prod-01).
 - Offline score up while acceptance flat is the proxy moving [[AIPX-02]](lexicons/business-marketing.md#aipx-02); coverage can be gamed, so measure the stability outcome the coverage target was meant to protect [[TEST-11]](lexicons/engineering.md#test-11).
-- Cost-per-defect falls as quality worsens the fixed-cost accounting; defect-removal efficiency and delivered defects per size unit are the economic pair [[OPS-18]](lexicons/business-marketing.md#ops-18) [[OPS-19]](lexicons/business-marketing.md#ops-19) [[RLSE-14]](lexicons/engineering.md#rlse-14).
-- A metric with no named decision and no anti-gaming check is collected for its own sake [[TEAM-12]](lexicons/engineering.md#team-12).
+- Cost-per-defect falls as quality worsens the fixed-cost accounting; defect-removal efficiency and delivered defects per size unit are the economic pair [[OPS-18]](lexicons/planning.md#ops-18) [[OPS-19]](lexicons/planning.md#ops-19) [[RLSE-14]](lexicons/engineering.md#rlse-14).
+- A metric with no named decision and no anti-gaming check is collected for its own sake [[TEAM-12]](lexicons/planning.md#team-12).
 - Page on degraded user experience, not a CPU threshold with benign explanations [[OBS-07]](lexicons/engineering.md#obs-07); measure the decision variable, not the convenient composite [[UXR-03]](lexicons/interaction-ux.md#uxr-03).
 - Score resolved numeric probability forecasts with Brier scores; narrative confidence alone does not measure forecast accuracy [[FORE-03]](lexicons/epistemics.md#fore-03); simulate how the measured party will optimise the number before adopting it [[RSCH-07]](lexicons/epistemics.md#rsch-07).
 - Tokens-per-second is not goodput at the latency target [[COST-15]](lexicons/ml-systems.md#cost-15).
@@ -249,8 +249,8 @@ Knowledge held only in a head, a session, or a founder dies at the next compacti
 
 - Persist plan, path verdicts, and model into notes at discovery [[AGT-07]](lexicons/engineering.md#agt-07); keep context, decision, and consequences in an ADR [[ARCH-07]](lexicons/engineering.md#arch-07).
 - Correlation IDs turn post-mortems into greps [[OBS-03]](lexicons/engineering.md#obs-03); systemize taste into brand rules so the brand outlives the founder [[BRND-12]](lexicons/design-aesthetics.md#brnd-12).
-- Orders need who/what/when/where/why [[OPS-13]](lexicons/business-marketing.md#ops-13); handoffs carry intent, priorities, constraints, and forbidden moves [[NDM-07]](lexicons/epistemics.md#ndm-07).
-- Single-head knowledge concentration is an operational hostage; require a backup path and a published store [[TEAM-17]](lexicons/engineering.md#team-17).
+- Orders need who/what/when/where/why [[OPS-13]](lexicons/planning.md#ops-13); handoffs carry intent, priorities, constraints, and forbidden moves [[NDM-07]](lexicons/epistemics.md#ndm-07).
+- Single-head knowledge concentration is an operational hostage; require a backup path and a published store [[TEAM-17]](lexicons/planning.md#team-17).
 
 A session, an author, and a founder all leave; only what they wrote down stays.
 
@@ -320,6 +320,8 @@ An amplification is the opposite of a tension: two sources watch one failure fro
 ## How these earn their place
 
 A convergence is the mechanism by which a claim earns a place in this file. A rule enters a lexicon with its source as provenance and its tier set by how hard the rule binds — **B**locker, **S**hould, **J**udgment — not by how much evidence stands behind it: as of 2026-08-15 the mean number of sources per rule is the same at all three tiers. What climbs is the *claim*, not the tier: when a second, unrelated source is found to have reached it independently, that arrival is recorded here. This file is not a summary of the lexicons: it is the record of those independent arrivals, and the index a reader uses to pull a rule's cross-domain siblings into a decision that only named one domain.
+
+On 2026-10-03, the W13 writing-tropes ingest (`efafbf7a794c` → `ca0c65c8c078`) yielded `new_asserted_pairs=0`, `new_wired_pairs=0`, `new_prose_only_pairs=0`, and `new_wiring_rate=not applicable`.
 
 ---
 

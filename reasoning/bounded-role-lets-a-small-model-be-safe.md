@@ -49,7 +49,7 @@ Alt text and multi-camera identity fusion share one API tier in the capacity pla
 |---|---|---|---|
 | surface (stage contract) | [BOUND-01](../lexicons/depiction.md#bound-01) [ATTRIB-01](../lexicons/depiction.md#attrib-01) [ATTRIB-03](../lexicons/depiction.md#attrib-03): closed inventory, measured factual compliance | [EMB-07](../lexicons/ml-systems.md#emb-07) [PROV-01](../lexicons/ml-systems.md#prov-01): fuse retained evidence; measure evidence-recovery quality | Compare tiers under each stage contract; split only when measured cost and quality justify it |
 | object (what "better model" optimizes) | [FM-04](../lexicons/ml-systems.md#fm-04) [WRIT-26](../lexicons/writing.md#writ-26): validate structure and separately restore omitted actors when responsibility or needed attribution is concealed | [COST-07](../lexicons/ml-systems.md#cost-07) [FM-05](../lexicons/ml-systems.md#fm-05): compare path cost, accuracy, coverage, and the business KPI; test cheaper interventions before escalation | Optimize caption stages for inventory fidelity; fusion stages for decision error |
-| sequence (escalate capacity) | [FM-05](../lexicons/ml-systems.md#fm-05) [COST-04](../lexicons/ml-systems.md#cost-04): measure cost per accepted output; test cheaper interventions | [CAL-02](../lexicons/ml-systems.md#cal-02) [HAI-01](../lexicons/interaction-ux.md#hai-01): unknown and evidence-before-label beat a forced fluent answer | Choose capacity from task scores and cost; before fine-tuning, record the failure cheaper interventions could not fix |
+| sequence (escalate capacity) | [FM-05](../lexicons/ml-systems.md#fm-05) [COST-04](../lexicons/ml-systems.md#cost-04): measure cost per accepted output; test cheaper interventions | [CAL-02](../lexicons/ml-systems.md#cal-02) [HAI-01](../lexicons/interaction-ux.md#hai-01): unknown and evidence-before-label for non-identity AI claims beat a forced fluent answer | Choose capacity from task scores and cost; before fine-tuning, record the failure cheaper interventions could not fix |
 
 ## Disconfirmers
 
@@ -80,7 +80,7 @@ Alt text and multi-camera identity fusion share one API tier in the capacity pla
 - [CAL-02](../lexicons/ml-systems.md#cal-02): unknown is valid when the contract cannot invent a fill
 - [COST-04](../lexicons/ml-systems.md#cost-04): judge spend per accepted correct output per stage
 - [COST-07](../lexicons/ml-systems.md#cost-07): route easy queries to cheaper or cached paths and hard queries to expensive models; compare cost, accuracy, coverage, and the business KPI
-- [HAI-01](../lexicons/interaction-ux.md#hai-01): evidence before label at human-facing claim surfaces
+- [HAI-01](../lexicons/interaction-ux.md#hai-01): evidence before label for non-identity AI claims at human-facing surfaces
 
 ## Principles
 

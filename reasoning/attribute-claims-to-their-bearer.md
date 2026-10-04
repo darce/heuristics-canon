@@ -96,7 +96,7 @@ Catalogue alt for plate 14 listed dress, chair, and window light. A PR draft swa
 - [WRIT-03](../lexicons/writing.md#writ-03): refuse plight-type abstracts that hide a missing concrete referent
 - [A11Y-02](../lexicons/accessibility.md#a11y-02): purpose-serving alt still required; attribution keeps that purpose honest
 - [PROV-01](../lexicons/ml-systems.md#prov-01): every retained claim walks back to its evidence
-- [HAI-01](../lexicons/interaction-ux.md#hai-01): evidence before label on people and scenes
+- [HAI-01](../lexicons/interaction-ux.md#hai-01): evidence before label for non-identity AI claims about people and scenes
 - [BIAS-02](../lexicons/epistemics.md#bias-02): do not substitute institutional story for what the picture shows
 - [BIAS-03](../lexicons/epistemics.md#bias-03): ban validity theater when craft is written as unmediated proof
 

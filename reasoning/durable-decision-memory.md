@@ -48,7 +48,7 @@ decision where the next person will look.
    ([OBS-03](../lexicons/engineering.md#obs-03)).
 4. Systemize founder taste into rules and review
    ([BRND-12](../lexicons/design-aesthetics.md#brnd-12)); write authority so ops run without the hero
-   ([OPS-08](../lexicons/business-marketing.md#ops-08), [OPS-13](../lexicons/business-marketing.md#ops-13)).
+   ([OPS-08](../lexicons/planning.md#ops-08), [OPS-13](../lexicons/planning.md#ops-13)).
 5. Ship handoffs with intent, priorities, constraints, and forbidden moves
    ([NDM-07](../lexicons/epistemics.md#ndm-07)).
 
@@ -77,7 +77,7 @@ A retro decides to freeze an API field, but the rationale lives only in chat and
 |---|---|---|---|
 | object | [ARCH-07](../lexicons/engineering.md#arch-07) durable decision record | [REF-12](../lexicons/engineering.md#ref-12) refuse speculative extension points | write decisions that exist; do not invent future hooks as documentation theater |
 | sequence | [AGT-07](../lexicons/engineering.md#agt-07) write at discovery | [AGT-12](../lexicons/engineering.md#agt-12) timebox and hand off when stuck | externalize early; when blocked, hand off legibly rather than thrash |
-| surface | [NDM-07](../lexicons/epistemics.md#ndm-07) intent on the wire | [OPS-13](../lexicons/business-marketing.md#ops-13) orders include rationale | same completeness demand on live handoff vs written order |
+| surface | [NDM-07](../lexicons/epistemics.md#ndm-07) intent on the wire | [OPS-13](../lexicons/planning.md#ops-13) orders include rationale | same completeness demand on live handoff vs written order |
 
 ## Disconfirmers
 
@@ -103,12 +103,12 @@ A retro decides to freeze an API field, but the rationale lives only in chat and
 - [ARCH-07](../lexicons/engineering.md#arch-07): ADR with context, decision, consequences
 - [OBS-03](../lexicons/engineering.md#obs-03): correlation ID on the path
 - [BRND-12](../lexicons/design-aesthetics.md#brnd-12): brand rules outlive the founder
-- [OPS-08](../lexicons/business-marketing.md#ops-08): written authority for absence
-- [OPS-13](../lexicons/business-marketing.md#ops-13): orders include who/what/when/where/why
+- [OPS-08](../lexicons/planning.md#ops-08): written authority for absence
+- [OPS-13](../lexicons/planning.md#ops-13): orders include who/what/when/where/why
 - [NDM-07](../lexicons/epistemics.md#ndm-07): intent and constraints on the handoff
 - [AGT-12](../lexicons/engineering.md#agt-12): legible handoff after timebox
-- [TEAM-17](../lexicons/engineering.md#team-17): no single-head knowledge concentration
-- [TEAM-14](../lexicons/engineering.md#team-14): published plan with an owned revision trail
+- [TEAM-17](../lexicons/planning.md#team-17): no single-head knowledge concentration
+- [TEAM-14](../lexicons/planning.md#team-14): published plan with an owned revision trail
 
 ## Principles
 
@@ -124,11 +124,11 @@ starting at GRPH-14). Walkable lineage is not this card's owned mechanism.
 - [`architecture-hard-parts`](../SOURCES.md#src-architecture-hard-parts): supports [AGT-13](../lexicons/engineering.md#agt-13), [ARCH-07](../lexicons/engineering.md#arch-07)
 - [`release-it`](../SOURCES.md#src-release-it): supports [OBS-03](../lexicons/engineering.md#obs-03)
 - [`playboy-brand-value`](../SOURCES.md#src-playboy-brand-value): supports [BRND-12](../lexicons/design-aesthetics.md#brnd-12)
-- [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [OPS-08](../lexicons/business-marketing.md#ops-08)
-- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-13](../lexicons/business-marketing.md#ops-13)
+- [`four-hour-workweek`](../SOURCES.md#src-four-hour-workweek): supports [OPS-08](../lexicons/planning.md#ops-08)
+- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-13](../lexicons/planning.md#ops-13)
 - [`sources-of-power`](../SOURCES.md#src-sources-of-power): supports [NDM-07](../lexicons/epistemics.md#ndm-07)
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [AGT-12](../lexicons/engineering.md#agt-12)
-- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-17](../lexicons/engineering.md#team-17), [TEAM-14](../lexicons/engineering.md#team-14)
+- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-17](../lexicons/planning.md#team-17), [TEAM-14](../lexicons/planning.md#team-14)
 
 ## Non-claims
 

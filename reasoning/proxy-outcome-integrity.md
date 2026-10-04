@@ -45,7 +45,7 @@ question.
 
 1. Name the outcome the decision must change; ship and pay only for valuable
    behavior change ([PROD-01](../lexicons/business-marketing.md#prod-01),
-   [OPS-01](../lexicons/business-marketing.md#ops-01), Principle 4).
+   [OPS-01](../lexicons/planning.md#ops-01), Principle 4).
 2. Prefer outcome or symptom metrics over convenient proxies; page and gate on
    what the user or risk actually feels
    ([OBS-07](../lexicons/engineering.md#obs-07),
@@ -63,8 +63,8 @@ question.
    separately unless it is made numeric and resolvable.
 6. For software quality economics: refuse cost-per-defect and coverage-as-target;
    pair multi-origin defect potential with defect-removal efficiency and escapes
-   ([OPS-18](../lexicons/business-marketing.md#ops-18),
-   [OPS-19](../lexicons/business-marketing.md#ops-19),
+   ([OPS-18](../lexicons/planning.md#ops-18),
+   [OPS-19](../lexicons/planning.md#ops-19),
    [RLSE-14](../lexicons/engineering.md#rlse-14)).
 7. Refuse scanner-green as conformance and tokens-per-second as goodput at the
    latency target ([A11Y-23](../lexicons/accessibility.md#a11y-23),
@@ -102,7 +102,7 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
-| object | [OPS-01](../lexicons/business-marketing.md#ops-01) / [RSCH-07](../lexicons/epistemics.md#rsch-07) (you get the behavior the metric pays for) | [PROD-01](../lexicons/business-marketing.md#prod-01) (ship outcome change) | Gaming applies to incentive-linked meters; still name the outcome the proxy pretends to stand for |
+| object | [OPS-01](../lexicons/planning.md#ops-01) / [RSCH-07](../lexicons/epistemics.md#rsch-07) (you get the behavior the metric pays for) | [PROD-01](../lexicons/business-marketing.md#prod-01) (ship outcome change) | Gaming applies to incentive-linked meters; still name the outcome the proxy pretends to stand for |
 | surface | [TEST-11](../lexicons/engineering.md#test-11) (coverage is gameable) | [OBS-07](../lexicons/engineering.md#obs-07) (page on symptoms) | Different proxies; same cut: outcome over convenient number |
 
 ## Disconfirmers
@@ -121,7 +121,7 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 - Offline model or eval gate has a documented live degrade path
   ([EVAL-22](../lexicons/ml-systems.md#eval-22)).
 - Comp / SLA / page policy names the 2am behavior paid for
-  ([OPS-01](../lexicons/business-marketing.md#ops-01)).
+  ([OPS-01](../lexicons/planning.md#ops-01)).
 - Composites decompose to the decision variable
   ([UXR-03](../lexicons/interaction-ux.md#uxr-03)).
 - Multi-metric absolute goals report the per-person conjunction rate with
@@ -129,15 +129,15 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 
 ## Rule IDs
 
-- [OPS-01](../lexicons/business-marketing.md#ops-01): incentives pay for the 2am behavior
+- [OPS-01](../lexicons/planning.md#ops-01): incentives pay for the 2am behavior
 - [PROD-01](../lexicons/business-marketing.md#prod-01): ship outcome, not output theater
 - [RSCH-07](../lexicons/epistemics.md#rsch-07): simulate how the measured party optimizes the number
 - [OBS-07](../lexicons/engineering.md#obs-07): page on symptoms, not cause proxies
 - [TEST-11](../lexicons/engineering.md#test-11): coverage is gameable; prefer stability outcomes
-- [OPS-18](../lexicons/business-marketing.md#ops-18): ban cost-per-defect as quality proof
-- [OPS-19](../lexicons/business-marketing.md#ops-19): defect potential + DRE pair
+- [OPS-18](../lexicons/planning.md#ops-18): ban cost-per-defect as quality proof
+- [OPS-19](../lexicons/planning.md#ops-19): defect potential + DRE pair
 - [RLSE-14](../lexicons/engineering.md#rlse-14): DRE and escapes over coverage targets
-- [TEAM-12](../lexicons/engineering.md#team-12): name the decision a metric changes before collecting it
+- [TEAM-12](../lexicons/planning.md#team-12): name the decision a metric changes before collecting it
 - [AIPX-02](../lexicons/business-marketing.md#aipx-02): offline score up, acceptance flat
 - [EVAL-22](../lexicons/ml-systems.md#eval-22): offline gate needs a live degrade check
 - [UXR-03](../lexicons/interaction-ux.md#uxr-03) / [UXR-15](../lexicons/interaction-ux.md#uxr-15): measure the decision variable; composites can lie
@@ -152,13 +152,13 @@ A support bot is gated on "deflection rate" while the product outcome is first-c
 
 ## Evidence / source slugs
 
-- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-01](../lexicons/business-marketing.md#ops-01)
+- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-01](../lexicons/planning.md#ops-01)
 - [`lean-ux`](../SOURCES.md#src-lean-ux): supports [PROD-01](../lexicons/business-marketing.md#prod-01)
 - [`hamming-art-of-doing-science`](../SOURCES.md#src-hamming-art-of-doing-science): supports [RSCH-07](../lexicons/epistemics.md#rsch-07)
 - [`observability-engineering`](../SOURCES.md#src-observability-engineering): supports [OBS-07](../lexicons/engineering.md#obs-07)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-11](../lexicons/engineering.md#test-11)
-- [`software-development-patterns-antipatterns`](../SOURCES.md#src-software-development-patterns-antipatterns): supports [OPS-18](../lexicons/business-marketing.md#ops-18), [OPS-19](../lexicons/business-marketing.md#ops-19), [RLSE-14](../lexicons/engineering.md#rlse-14)
-- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-12](../lexicons/engineering.md#team-12)
+- [`software-development-patterns-antipatterns`](../SOURCES.md#src-software-development-patterns-antipatterns): supports [OPS-18](../lexicons/planning.md#ops-18), [OPS-19](../lexicons/planning.md#ops-19), [RLSE-14](../lexicons/engineering.md#rlse-14)
+- [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-12](../lexicons/planning.md#team-12)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-02](../lexicons/business-marketing.md#aipx-02)
 - [`ml-test-score`](../SOURCES.md#src-ml-test-score): supports [EVAL-22](../lexicons/ml-systems.md#eval-22)
 - [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-03](../lexicons/interaction-ux.md#uxr-03), [UXR-15](../lexicons/interaction-ux.md#uxr-15), [UXR-19](../lexicons/interaction-ux.md#uxr-19)

@@ -1,9 +1,15 @@
 # Heuristics canon
 
-A library of about 1,200 short, checkable rules for software work and for the
-writing, marketing, and decisions around it. Nearly every rule is distilled
-from a book, paper, or standard, and cites it. The other twenty-eight are
-labelled unsourced practice until a source is found.
+A library of more than 1,800 short, checkable rules for software work and for
+the writing, marketing, and decisions around it. Nearly every rule is distilled
+from a book, paper, or standard, and cites it. The few with no source yet,
+fewer than thirty, are labelled unsourced practice until a source is found.
+
+That makes the canon a grounding layer for planning, writing, and review. It
+holds the cited evidence a decision can be checked against, so a
+recommendation rests on a source you can open rather than on someone's say-so.
+It does not run the work, pick your tools, or decide for you. The person or
+agent doing the work still chooses which rules apply.
 
 A rule names something you can see in the work, says what to do about it, and
 gives you one question to ask. Every rule has a permanent ID, such as
@@ -41,6 +47,14 @@ The tier sets how hard a rule is:
 - **B** blocks the work until the issue is handled or explicitly exempted.
 - **S** is a strong default with named exemptions.
 - **J** calls for your judgment.
+
+Across lexicons, these labels keep the same action meaning, but the consequence
+bar that separates B from S is domain-specific. The security lexicon uses B for
+an omission that is exploitable or causes data loss or an authorization bypass;
+business and marketing uses B for a violation that is existential or
+irreversible. When a route crosses lexicons, read each rule against the Tier
+bar in its owning lexicon. A B in one domain is a blocker under that domain's
+bar, not a cross-domain severity ranking.
 
 Rules are evidence-backed defaults. They do not override your judgment, the
 facts in front of you, or a documented exemption.
@@ -160,6 +174,10 @@ decision needs it.
 - **Reasoning cards.** A card in [reasoning/](reasoning/) covers one decision
   that several rules share. It sets out the triggers, the failure, the action,
   the tensions, and how to verify the result. There are about thirty.
+
+For any change that edits [PRINCIPLES.md](PRINCIPLES.md), use the canon's
+`eval --compare <base> <head>` with the commits before and after the change,
+then review its new asserted, prose-only, and wired pair counts.
 
 ## Licence and sources
 

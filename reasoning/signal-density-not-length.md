@@ -27,7 +27,7 @@ Linear consumers (screen readers, TTS, time-aligned audio description) pay every
 1. When a description quality metric is length-correlated, treat listening duration as a budget or cost and choose a metric for the user task ([EVAL-11](../lexicons/ml-systems.md#eval-11), [UXR-03](../lexicons/interaction-ux.md#uxr-03), [A11Y-16](../lexicons/accessibility.md#a11y-16)). Validate any verified-facts-per-time composite against user outcomes before making it a required quality score.
 2. If evaluating a facts-per-time composite, count a fact in the numerator only when it is checkable against the image or a trusted supplied field; unverifiable specificity scores zero ([PROV-01](../lexicons/ml-systems.md#prov-01), [RAG-07](../lexicons/ml-systems.md#rag-07), [WRIT-05](../lexicons/writing.md#writ-05)).
 3. Length-match or otherwise control verbosity when a judge ranks candidates; report position and verbosity effects ([EVAL-14](../lexicons/ml-systems.md#eval-14)).
-4. If evaluating a density composite, do not let the system mint its own success divisor; use a fixed external exposure or a fixed speech-rate proxy for the density denominator ([UXR-07](../lexicons/interaction-ux.md#uxr-07), [TEST-11](../lexicons/engineering.md#test-11), [OPS-01](../lexicons/business-marketing.md#ops-01), [MLDATA-08](../lexicons/ml-systems.md#mldata-08)). In 1:N face identification, do not let detector false alarms add searches that dilute FPIR ([EVAL-19](../lexicons/ml-systems.md#eval-19)).
+4. If evaluating a density composite, do not let the system mint its own success divisor; use a fixed external exposure or a fixed speech-rate proxy for the density denominator ([UXR-07](../lexicons/interaction-ux.md#uxr-07), [TEST-11](../lexicons/engineering.md#test-11), [OPS-01](../lexicons/planning.md#ops-01), [MLDATA-08](../lexicons/ml-systems.md#mldata-08)). In 1:N face identification, do not let detector false alarms add searches that dilute FPIR ([EVAL-19](../lexicons/ml-systems.md#eval-19)).
 5. Prefer media-local visual content over restatement and ornament when words are scarce; alt and description still serve purpose, not decoration ([A11Y-43](../lexicons/accessibility.md#a11y-43), [A11Y-02](../lexicons/accessibility.md#a11y-02), [WRIT-17](../lexicons/writing.md#writ-17)).
 6. Before trusting a length-friendly offline score as a ship gate, validate that moving it moves a user or product metric, not only word count ([EVAL-22](../lexicons/ml-systems.md#eval-22), [AIPX-02](../lexicons/business-marketing.md#aipx-02), [RSCH-07](../lexicons/epistemics.md#rsch-07)).
 
@@ -78,7 +78,7 @@ A museum alt bake-off scores three systems on holistic richness. System B wins b
 - [EVAL-19](../lexicons/ml-systems.md#eval-19): in 1:N face identification, do not let detector false alarms dilute FPIR
 - [UXR-07](../lexicons/interaction-ux.md#uxr-07): predefine the error-rate denominator and the opportunity count
 - [TEST-11](../lexicons/engineering.md#test-11): measure the stability outcome, not a gameable coverage target
-- [OPS-01](../lexicons/business-marketing.md#ops-01): name the behavior the metric pays for before trusting the number
+- [OPS-01](../lexicons/planning.md#ops-01): name the behavior the metric pays for before trusting the number
 - [MLDATA-08](../lexicons/ml-systems.md#mldata-08): a detector-harvested set inherits the detector's blind spots
 - [EVAL-22](../lexicons/ml-systems.md#eval-22): offline length-friendly scores need a live degrade check
 - [AIPX-02](../lexicons/business-marketing.md#aipx-02): offline score up is not product acceptance
@@ -113,7 +113,7 @@ A museum alt bake-off scores three systems on holistic richness. System B wins b
 - [`hamming-art-of-doing-science`](../SOURCES.md#src-hamming-art-of-doing-science): supports [RSCH-07](../lexicons/epistemics.md#rsch-07)
 - [`measuring-the-ux-albert-tullis`](../SOURCES.md#src-measuring-the-ux-albert-tullis): supports [UXR-03](../lexicons/interaction-ux.md#uxr-03), [UXR-07](../lexicons/interaction-ux.md#uxr-07)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [TEST-11](../lexicons/engineering.md#test-11)
-- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-01](../lexicons/business-marketing.md#ops-01)
+- [`poor-charlies-almanack`](../SOURCES.md#src-poor-charlies-almanack): supports [OPS-01](../lexicons/planning.md#ops-01)
 - [`pinker-sense-of-style`](../SOURCES.md#src-pinker-sense-of-style): supports [WRIT-05](../lexicons/writing.md#writ-05), [WRIT-17](../lexicons/writing.md#writ-17)
 - [`model-cards`](../SOURCES.md#src-model-cards): supports [PROV-01](../lexicons/ml-systems.md#prov-01)
 

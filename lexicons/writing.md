@@ -25,15 +25,19 @@ and surface hygiene is necessary but not sufficient — a different question fro
 every row below asks. [`WRIT`](writing.md#fam-writ) still applies to a description like any other
 prose, and the `image_description_or_alt_text_change` route loads both files.
 
-Source-status warning: the sole registered source,
-[`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes), bundles Ben Larbi's
-"AI Writing Tropes" (tropes.fyi) with the Wikipedia "Signs of AI writing"
-entry. A blog and a Wikipedia synthesis do not meet the corpus authority policy. Treat [`WRIT`](writing.md#fam-writ) rows as
-provisional editorial failure checks, not grounded evidence or proof of AI
-authorship, until each mechanism is re-grounded in citable research or a
-standard. Rows keep the source slug for provenance only; they do not reproduce
-that source's section outline. The trigger still supports inspection; the source
-does not justify borrowing the row's tier as authority.
+Source-status warning: the 17 rules that cite
+[`ai-writing-tropes`](../SOURCES.md#src-ai-writing-tropes) point to a discovery
+record that bundles Ben Larbi's "AI Writing Tropes" (tropes.fyi) with the
+Wikipedia "Signs of AI writing" entry. A blog and a Wikipedia synthesis do not
+meet the corpus authority policy. Treat these 17 rows as provisional editorial
+failure checks, not grounded evidence or proof of AI authorship. They are listed
+in `tools/canon.py`'s `UNSOURCED` ledger, and `tools/canon.py` labels this key
+as discovery provenance only in `SOURCES.md`, preserving the recorded titles
+and URLs without presenting them as authority. The rows keep the source slug
+for provenance only; they do not reproduce that source's section outline. The
+trigger supports inspection, but the source does not justify borrowing the
+row's tier as authority. Re-ground each mechanism in citable research or a
+standard, or retire the rule if none supports it.
 
 <!-- BEGIN GENERATED CONTENTS -->
 
@@ -68,14 +72,17 @@ Tier: **B**locker (reads as AI slop, or is factually hollow or unverifiable),
 (avoid while composing), **e**dit (fix on revision), **v**erify (detect AI
 authorship or check sourcing).
 
+**Example of a row that does not meet B:** [WRIT-01](#writ-01) is S: repeated
+hedges may weaken an ordinary prose claim, but they do not by themselves make it
+factually hollow or unverifiable or cause it to read as AI slop.
+
 ## 1. WRIT: Diction & Word Choice<a name="fam-writ"></a>
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
 | WRIT-01<a name="writ-01"></a> | Repeated vague hedges (for example, “arguably” or “perhaps”) soften an ordinary prose claim without naming its limiting condition or degree | **Cut the adverb or earn it**: replace repeated vague hedges with a needed circumstance, estimate, or degree; cut qualifiers that name no limit, while keeping qualifications required by legal writing, falsifiable hypotheses, and statistical generalizations | Does each hedge name a circumstance, estimate, or degree the claim needs? | S·e | [The Sense of Style, ch. 2](../SOURCES.md#src-pinker-sense-of-style) |
-| WRIT-02<a name="writ-02"></a> | A formal or wordy choice has a familiar equivalent that preserves meaning, or a description calls a photomechanical reproduction a print and erases the object distinction | **Plain word wins**: choose a familiar, direct expression when it preserves the needed distinction; keep a technical term when it carries precision—for example, call photomechanically made copies of drawings or paintings reproductions and reserve prints for handmade fine prints, because the term identifies what the object is | Does the familiar term preserve the object's distinction, or does a precise term identify it better? | S·e | [Garner's Modern English Usage, §alphabetical-entries](../SOURCES.md#src-garner-modern-english-usage) |
+| WRIT-02<a name="writ-02"></a> | A formal or wordy choice has a familiar equivalent that preserves meaning, or a description calls a photomechanical reproduction a print and erases the object distinction | **Plain word wins**: choose a familiar, direct expression when it preserves the needed distinction; keep a technical term when it carries precision—for example, call photomechanically made copies of drawings or paintings reproductions and reserve prints for handmade fine prints, because the term identifies what the object is | Does the familiar term preserve the object's distinction, or does a precise term identify it better? | S·e | [Garner's Modern English Usage, §alphabetical-entries](../SOURCES.md#src-garner-modern-english-usage) + [The Many Ways of Seeing, ch. 8](../SOURCES.md#src-moore-many-ways-of-seeing) |
 | WRIT-03<a name="writ-03"></a> | A familiar abstract noun such as “synergy” or “landscape” stands in for a specific real object or relationship a general reader cannot identify, rather than naming a newly coined concept label | **Name the concrete referent**: for a general reader, describe the relevant object or action when an abstract label hides it, because concrete particulars expose what the claim depends on (↔ eng [[ARCH-11]](engineering.md#arch-11) a bare “-ility” is not a checkable risk) | What object, action, or relationship does this abstract label refer to? | S·e | [The Sense of Style, ch. 3](../SOURCES.md#src-pinker-sense-of-style) |
-| WRIT-04<a name="writ-04"></a> | "serves as / stands as / represents / marks / functions as" replacing "is" or "are" | **Use the plain copula**: the repetition penalty pushes models off "is"; push back | Would "is" be clearer and shorter? | S·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-05<a name="writ-05"></a> | A measured trend or effect is described with stacked vague magnitude words (“significant”, “notable”) although its size or degree can be stated | **One concrete claim**: state the measured size or degree instead of stacking vague magnitude qualifiers; retain a qualifier only when it expresses a distinct, evidenced meaning (↔ [[FORE-01]](epistemics.md#fore-01) vague words hide a scorable magnitude; ↔ biz [[CLM-04]](business-marketing.md#clm-04) adjectives are not evidence) | Can the measured size or degree replace these magnitude labels? | S·e | [The Sense of Style, ch. 2](../SOURCES.md#src-pinker-sense-of-style) |
 | WRIT-06<a name="writ-06"></a> | The same technical referent is renamed in successive mentions while other candidate referents are active | **Repeat the precise term**: use a stable precise name when multiple candidates are active; a broader label can work only when it readily recalls the intended referent (↔ eng [[NAME-04]](engineering.md#name-04) consistency beats local quality) | Could a reader confuse which entity this label names? | S·e | [The Sense of Style, ch. 5](../SOURCES.md#src-pinker-sense-of-style) |
 
@@ -83,8 +90,8 @@ authorship or check sourcing).
 
 **Sources for this section**
 
-- [ai-writing-tropes](../SOURCES.md#src-ai-writing-tropes)
 - [garner-modern-english-usage](../SOURCES.md#src-garner-modern-english-usage)
+- [moore-many-ways-of-seeing](../SOURCES.md#src-moore-many-ways-of-seeing)
 - [pinker-sense-of-style](../SOURCES.md#src-pinker-sense-of-style)
 
 <!-- END GENERATED SECTION SOURCES fam-writ -->
@@ -93,7 +100,7 @@ authorship or check sourcing).
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| WRIT-07<a name="writ-07"></a> | negative parallelism: "It's not X — it's Y", "not because X but because Y", "The question isn't X. It's Y." | **Cap manufactured not-X-but-Y pivots**: use at most one per piece; models use the form to fake a surprising reframe, and a stack of them is a pattern failure | How many not-X-but-Y pivots appear in this piece, and is there more than one? | B·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
+| WRIT-07<a name="writ-07"></a> | negative parallelism: "It's not X — it's Y", "not because X but because Y", "The question isn't X. It's Y." | **Cap manufactured not-X-but-Y pivots**: use at most one per piece; models use the form to fake a surprising reframe, and a stack of them is a pattern failure (↔ [[WRIT-22]](writing.md#writ-22) a sentence such as "this isn't a rant, it's a diagnosis" fires both rules: cap the pivot here, and cut the admission there when it risks nothing) | How many not-X-but-Y pivots appear in this piece, and is there more than one? | B·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-08<a name="writ-08"></a> | dramatic countdown "Not X. Not Y. Just Z." | **State the point without the countdown**: cut the suspense scaffolding and write Z directly | Am I narrowing to the point, or performing the narrowing? | S·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-09<a name="writ-09"></a> | self-posed rhetorical question answered at once ("The result? Devastating.") | **Make it a statement**: nobody asked the question | Did a reader actually pose this? | S·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
 | WRIT-10<a name="writ-10"></a> | anaphora: three-plus sentences opening with the same words in quick succession | **Vary the openings**: repetition-as-rhythm is a model habit, not emphasis | Do consecutive sentences start identically? | S·e | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
@@ -202,7 +209,7 @@ authorship or check sourcing).
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
 | WRIT-41<a name="writ-41"></a> | hollow or fabricated citations (invalid DOI/ISBN, refs that resolve to nothing, missing page numbers, tracking junk in URLs) | **Every citation resolves and is checkable**: a reference that looks complete but can't be verified is worse than none (↔ ml [[RAG-07]](ml-systems.md#rag-07) a citation must materially support its claim; ↔ ml [[PROV-01]](ml-systems.md#prov-01) every output walks back to its evidence) | Can a reader actually follow this to the source? | B·v | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
-| WRIT-42<a name="writ-42"></a> | assistant-output leakage in finished prose (knowledge-cutoff disclaimers, `[insert source here]`, "this section can be expanded", tool tokens, "as of my last update", forced collaborative voice "we can now explore…") | **Strip all scaffolding**: template and tool residue is unmistakable machine debris | Is there any placeholder or disclaimer left in? | B·v | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
+| WRIT-42<a name="writ-42"></a> | assistant-output leakage in finished prose (knowledge-cutoff disclaimers, `[insert source here]`, "this section can be expanded", tool tokens, "as of my last update", forced collaborative voice "we can now explore…") | **Strip all scaffolding**: template and tool residue is unmistakable machine debris (↔ [[WRIT-41]](writing.md#writ-41) a slot such as `[insert source here]` is a citation that resolves to nothing, so fill it with a checkable source or strip it) | Is there any placeholder or disclaimer left in? | B·v | [AI Writing Tropes](../SOURCES.md#src-ai-writing-tropes) |
 
 <!-- BEGIN GENERATED SECTION SOURCES fam-writ-7 -->
 

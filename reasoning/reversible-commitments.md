@@ -57,7 +57,7 @@ control points, not the price of this choice.
    [API-02](../lexicons/engineering.md#api-02)).
 5. At the process gate, price rework: short iterative cycles when reversals are
    cheap enough; committed plans when rework and multi-tier contracts dominate
-   ([OPS-29](../lexicons/business-marketing.md#ops-29)).
+   ([OPS-29](../lexicons/planning.md#ops-29)).
 
 ## Predicted failure
 
@@ -114,7 +114,7 @@ A migration plan rewrites a production table in place with no rollback section b
 - [STRAT-14](../lexicons/business-marketing.md#strat-14): fear-setting before reversible freezes
 - [DATA-17](../lexicons/engineering.md#data-17) / [DATA-18](../lexicons/engineering.md#data-18): isolation names vs real anomalies; check-then-act gap
 - [DATA-13](../lexicons/engineering.md#data-13) / [API-02](../lexicons/engineering.md#api-02): end-to-end idempotency
-- [OPS-29](../lexicons/business-marketing.md#ops-29): rework-cost gate for iterative vs locked process form
+- [OPS-29](../lexicons/planning.md#ops-29): rework-cost gate for iterative vs locked process form
 
 ## Principles
 
@@ -127,7 +127,7 @@ A migration plan rewrites a production table in place with no rollback section b
 - [`continuous-delivery-humble-farley`](../SOURCES.md#src-continuous-delivery-humble-farley): supports [RLSE-08](../lexicons/engineering.md#rlse-08)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [DATA-17](../lexicons/engineering.md#data-17), [DATA-18](../lexicons/engineering.md#data-18), [DATA-13](../lexicons/engineering.md#data-13)
 - [`restful-web-api-patterns`](../SOURCES.md#src-restful-web-api-patterns): supports [API-02](../lexicons/engineering.md#api-02)
-- [`measure-anything-project-management`](../SOURCES.md#src-measure-anything-project-management): supports [OPS-29](../lexicons/business-marketing.md#ops-29)
+- [`measure-anything-project-management`](../SOURCES.md#src-measure-anything-project-management): supports [OPS-29](../lexicons/planning.md#ops-29)
 
 ## Non-claims
 

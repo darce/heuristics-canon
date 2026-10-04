@@ -80,9 +80,43 @@ Two identities sit side by side:
 - **Card ID** — immutable lineage. The body carries an `ID:` line in the same
   backticked form as `Slug:` (value `CARD-NN`; never a path segment). Once
   issued, an ID is never reused or reassigned, including after retirement.
-  (Authoring tracks issuance in a private ledger that is not part of the
-  published tree; public consumers treat the body `ID:` line as the durable
-  identifier.)
+  (Authoring tracks issuance in a ledger that is not part of the published
+  tree. Public consumers treat the body `ID:` line as the durable identifier
+  and resolve it with the release manifest, below.)
+
+**Resolving an ID.** From `heuristics-canon/release@5`,
+`meta/release-manifest.json` carries a `card_ids` map keyed by `CARD-NN`. Every
+active card has an entry, and so does every card that left a published release.
+Each cut regenerates the map from the authoring ledger and the verifier rebuilds
+it, so it is never edited by hand. An entry has a `status`:
+
+```json
+"card_ids": {
+  "CARD-01": {"status": "active", "slug": "contract-before-components"},
+  "CARD-14": {
+    "status": "retired",
+    "slug": "reversibility-blast-radius",
+    "superseded_by": ["CARD-04", "CARD-08", "CARD-10", "CARD-16"]
+  }
+}
+```
+
+Look an ID up in the manifest of the tag you pinned:
+
+1. The ID is not a key: it is newer than the tag, or it never reached a
+   release. Pin a later tag. Do not guess a slug.
+2. `status` is `active`: the card is `reasoning/<slug>.md`.
+3. `status` is `retired`: the card is gone. Look each ID in `superseded_by` up
+   by these same steps; a successor can itself be retired, so follow the chain.
+   `null` or `[]` means the card has no successor. Cards can split, so there may
+   be several.
+
+`withdrawn_cards` stays, keyed by slug, for a reader whose old link holds only
+a path. `card_ids[...]["slug"]` is the key into it, and its `version` names the
+release that dropped the card. Tags before `release@5` carry no `card_ids`: find
+the card by searching the pinned tree for its `ID:` line, and read a miss as
+retired or newer than that tag. IDs are written `CARD-` plus at least two
+digits, and the map lists them in issue order.
 
 **No HTML comments in a card body.** The literal substring `<!--` is refused
 anywhere in a card, including inside fenced and indented code. There is no

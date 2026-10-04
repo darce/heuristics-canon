@@ -54,8 +54,8 @@ A release review sees a green build followed by a manual sign-off, and the laten
 | Partition | Side A (keep fully) | Side B (keep fully) | Cut |
 |---|---|---|---|
 | sequence | [STRAT-22](../lexicons/business-marketing.md#strat-22) identify the limiting link and fund it before other spends | [COST-06](../lexicons/ml-systems.md#cost-06), [ARCH-09](../lexicons/engineering.md#arch-09), and [PERF-04](../lexicons/engineering.md#perf-04) buy hardware, scale out, or parallelize when that is the real lever | Name the limiting link and prioritize it; use the capacity rules when capacity at that link is the measured lever |
-| object | [OPS-27](../lexicons/business-marketing.md#ops-27) keep a small ready buffer in front of the scarce stage | [PERF-13](../lexicons/engineering.md#perf-13) operate left of saturation so queuing delay does not dominate | The buffer belongs only at the constraint; headroom remains the operating point everywhere else |
-| surface | [TEAM-06](../lexicons/engineering.md#team-06) and [RLSE-12](../lexicons/engineering.md#rlse-12) a standing gate or manual sign-off on the delivery path | [PERF-16](../lexicons/engineering.md#perf-16) name which delay component dominates a request path | A hand-off queue and a propagation or processing delay are different surfaces; name the limit on the surface about to change |
+| object | [OPS-27](../lexicons/planning.md#ops-27) keep a small ready buffer in front of the scarce stage | [PERF-13](../lexicons/engineering.md#perf-13) operate left of saturation so queuing delay does not dominate | The buffer belongs only at the constraint; headroom remains the operating point everywhere else |
+| surface | [TEAM-06](../lexicons/planning.md#team-06) and [RLSE-12](../lexicons/engineering.md#rlse-12) a standing gate or manual sign-off on the delivery path | [PERF-16](../lexicons/engineering.md#perf-16) name which delay component dominates a request path | A hand-off queue and a propagation or processing delay are different surfaces; name the limit on the surface about to change |
 | object | [PERF-11](../lexicons/engineering.md#perf-11) order jobs on a shared worker by the declared objective | [STRAT-22](../lexicons/business-marketing.md#strat-22) the chain limit may be a different stage than that worker | Apply the sort only at the stage already identified; a local order does not replace the chain limit |
 
 ## Disconfirmers
@@ -84,10 +84,10 @@ A release review sees a green build followed by a manual sign-off, and the laten
 - [COST-06](../lexicons/ml-systems.md#cost-06): remove work and name the limit before buying hardware
 - [ARCH-08](../lexicons/engineering.md#arch-08): do not add a stack until a stated scale limit forces it
 - [ARCH-09](../lexicons/engineering.md#arch-09): quantify load, then still name the limiting stage before scale-out
-- [TEAM-06](../lexicons/engineering.md#team-06): a standing hand-off gate is not capacity
+- [TEAM-06](../lexicons/planning.md#team-06): a standing hand-off gate is not capacity
 - [RLSE-12](../lexicons/engineering.md#rlse-12): a manual sign-off after green is a stage, not proof the pipeline is the limit
 - [STRAT-22](../lexicons/business-marketing.md#strat-22): fund the limiting link first
-- [OPS-27](../lexicons/business-marketing.md#ops-27): small ready buffer in front of the scarce stage
+- [OPS-27](../lexicons/planning.md#ops-27): small ready buffer in front of the scarce stage
 - [PERF-11](../lexicons/engineering.md#perf-11): order work at an identified shared worker, not instead of naming the stage
 
 ## Principles
@@ -97,13 +97,13 @@ No exclusive principle claim. This decision sequences a capacity add behind a me
 ## Evidence / source slugs
 
 - [`good-strategy-bad-strategy`](../SOURCES.md#src-good-strategy-bad-strategy): supports [STRAT-22](../lexicons/business-marketing.md#strat-22)
-- [`pinedo-scheduling`](../SOURCES.md#src-pinedo-scheduling): supports [OPS-27](../lexicons/business-marketing.md#ops-27), [PERF-11](../lexicons/engineering.md#perf-11)
+- [`pinedo-scheduling`](../SOURCES.md#src-pinedo-scheduling): supports [OPS-27](../lexicons/planning.md#ops-27), [PERF-11](../lexicons/engineering.md#perf-11)
 - [`latency-reduce-delay-in-software-systems`](../SOURCES.md#src-latency-reduce-delay-in-software-systems): supports [PERF-04](../lexicons/engineering.md#perf-04), [PERF-13](../lexicons/engineering.md#perf-13), [PERF-16](../lexicons/engineering.md#perf-16)
 - [`philosophy-of-software-design`](../SOURCES.md#src-philosophy-of-software-design): supports [PERF-06](../lexicons/engineering.md#perf-06)
 - [`systems-performance-gregg`](../SOURCES.md#src-systems-performance-gregg): supports [COST-03](../lexicons/ml-systems.md#cost-03), [COST-05](../lexicons/ml-systems.md#cost-05), [COST-06](../lexicons/ml-systems.md#cost-06)
 - [`observability-engineering`](../SOURCES.md#src-observability-engineering): supports [ARCH-08](../lexicons/engineering.md#arch-08)
 - [`designing-data-intensive-applications`](../SOURCES.md#src-designing-data-intensive-applications): supports [ARCH-08](../lexicons/engineering.md#arch-08), [ARCH-09](../lexicons/engineering.md#arch-09)
-- [`team-topologies`](../SOURCES.md#src-team-topologies): supports [TEAM-06](../lexicons/engineering.md#team-06)
+- [`team-topologies`](../SOURCES.md#src-team-topologies): supports [TEAM-06](../lexicons/planning.md#team-06)
 - [`modern-software-engineering`](../SOURCES.md#src-modern-software-engineering): supports [RLSE-12](../lexicons/engineering.md#rlse-12)
 
 ## Non-claims

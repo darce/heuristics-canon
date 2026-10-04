@@ -14,14 +14,23 @@ surface — diction, rhythm, markup, the tells of machine authorship — whateve
 the subject. This lexicon owns what prose *asserts about something outside
 itself*, so surface hygiene is necessary and not sufficient: a sentence can be
 plain, unpadded, and correctly cited and still hand a viewer's inference to the
-depicted person as fact. [`ATTRIB`](depiction.md#fam-attrib) owns the warrant for an identity claim,
-[`BOUND`](depiction.md#fam-bound) how far a description may reach past the frame; the borders with
-[`A11Y`](accessibility.md#fam-a11y), [`CLM`](business-marketing.md#fam-clm), [`PROV`](ml-systems.md#fam-prov), and [`WRIT`](writing.md#fam-writ) are named at each family below. Human-written
-and model-generated description are held to the same rows.
+depicted person as fact. [`ATTRIB`](depiction.md#fam-attrib) owns identity,
+agency, subject-naming, and creator-versus-describer voice rules, including
+for archival description; [`BOUND`](depiction.md#fam-bound) owns the limit of
+an image's frame. Neither family owns catalogue change management: access-term
+remediation, description history, and processor metadata are proposed for a
+separate `CAT` (catalogue record governance) family, not promoted here.
+Human-written and model-generated description are held to the same rows.
 
-A describing pass does not read this file alone: the
-`image_description_or_alt_text_change` route opens it together with [`A11Y`](accessibility.md#fam-a11y),
-[`WRIT`](writing.md#fam-writ), [`CLM`](business-marketing.md#fam-clm), and [`PROV`](ml-systems.md#fam-prov).
+A describing pass does not read this file alone. The
+`image_description_or_alt_text_change` route opens it with
+[`A11Y`](accessibility.md#fam-a11y), [`WRIT`](writing.md#fam-writ),
+[`CLM`](business-marketing.md#fam-clm), and [`PROV`](ml-systems.md#fam-prov).
+The separate `archival_description_or_catalogue_change` route opens its
+archival [`ATTRIB`](depiction.md#fam-attrib) rows with [`WRIT`](writing.md#fam-writ),
+[`CLM`](business-marketing.md#fam-clm), [`PROV`](ml-systems.md#fam-prov), and
+[`FM`](ml-systems.md#fam-fm), not [`BOUND`](depiction.md#fam-bound). The proposed `CAT` family needs
+route registration before its governance candidates can be selected.
 
 The rows are held to Sontag's [*On Photography*](../SOURCES.md#src-sontag-on-photography)
 and [*Regarding the Pain of Others*](../SOURCES.md#src-sontag-regarding-the-pain-of-others),
@@ -58,6 +67,11 @@ or speaks an oppressive record in the describing institution's own voice),
 **S**hould (strong default), **J**udgment (weigh in context). Phase: **d**raft
 (while composing the description), **e**dit (fix on revision), **v**erify
 (check the description against what the image and the record actually carry).
+
+**Example of a row that does not meet B:** [ATTRIB-10](#attrib-10) is S: unequal
+subject and creator naming makes people harder to find, but that retrieval gap alone
+does not assert an unsupported depicted fact or speak oppressive source language in
+the institution's own voice.
 
 ## 1. ATTRIB: Attribution & identity claims in description<a name="fam-attrib"></a>
 
@@ -106,8 +120,8 @@ boundary; ATTRIB owns the identity claim inside it.
 
 | ID | Trigger | Rule | Answers | T·P | Src |
 | --- | --- | --- | --- | --- | --- |
-| BOUND-01<a name="bound-01"></a> | Output asserts cause, sequence, duration-as-felt, fate, completeness, institutional function or thesis, or whole-work and off-frame claims from a still alone | **Assertable set is bounded**: when the only evidence is a still -> keep surface, spatial relations, and past presence; source or drop cause, sequence, fate, duration-as-felt, completeness, and institutional thesis; when a contextual caption or voice-over interprets a still or film document, mark that context as editorial and do not treat it as the image's own proof, because caption and image form an adhesive relation rather than a permanent truth; mark known crop or detail -> else the system invents understanding the image cannot supply (↔ [[PROV-01]](ml-systems.md#prov-01) every output walks back to evidence; ↔ [[WRIT-26]](writing.md#writ-26) name the source or cut the claim) | Which claim does the still or film document fail to secure without its sourced caption or voice-over? | S·d | [Ways of Seeing, ch. 1](../SOURCES.md#src-berger-ways-of-seeing) + [On Photography](../SOURCES.md#src-sontag-on-photography) + [Regarding the Pain of Others, ch. 8](../SOURCES.md#src-sontag-regarding-the-pain-of-others) + [Image Music Text, ch. 3](../SOURCES.md#src-barthes-image-music-text) + [The Civil Contract of Photography, ch. 6](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
-| BOUND-02<a name="bound-02"></a> | Output mixes in-frame inventory with craft, candidness, motive, staging, credit, agency, or other production claims in one unmarked voice | **Narrowly selective transparency**: when a still is written as unmediated show-through, split FORENSIC surface from sourced craft or EDITORIAL construction; when production cues exist, describe depiction-as-made apart from depicted biography and cite the production claim or drop it; attribute a claim that a historical document was unstaged or pure history to its speaker when the production record shows planning, because the event was staged in part for the film and selection is not neutral (↔ [[BIAS-03]](epistemics.md#bias-03) selection admits a point of view) | Does an unstaged or pure-history claim fit the production record, or does the source need naming? | S·e | [On Photography](../SOURCES.md#src-sontag-on-photography) + [Regarding the Pain of Others, ch. 3](../SOURCES.md#src-sontag-regarding-the-pain-of-others) + [The Civil Contract of Photography, ch. 3](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
+| BOUND-01<a name="bound-01"></a> | Output asserts cause, sequence, duration-as-felt, fate, completeness, institutional function or thesis, or whole-work and off-frame claims from a still alone | **Assertable set is bounded**: when the only evidence is a still -> keep surface, spatial relations, and past presence; source or drop cause, sequence, fate, duration-as-felt, completeness, and institutional thesis; when a contextual caption or voice-over interprets a still or film document, mark that context as editorial and do not treat it as the image's own proof, because caption and image form an adhesive relation rather than a permanent truth; mark known crop or detail -> else the system invents understanding the image cannot supply (↔ [[PROV-01]](ml-systems.md#prov-01) every output walks back to evidence; ↔ [[WRIT-26]](writing.md#writ-26) name the source or cut the claim) | Which claim does the still or film document fail to secure without its sourced caption or voice-over? | S·d | [Ways of Seeing, ch. 1](../SOURCES.md#src-berger-ways-of-seeing) + [On Photography](../SOURCES.md#src-sontag-on-photography) + [Regarding the Pain of Others, ch. 8](../SOURCES.md#src-sontag-regarding-the-pain-of-others) + [Image Music Text, ch. 3](../SOURCES.md#src-barthes-image-music-text) + [The Civil Contract of Photography, ch. 6](../SOURCES.md#src-azoulay-civil-contract-of-photography) + [Under the Sign of Saturn, §syberbergs-hitler](../SOURCES.md#src-sontag-under-the-sign-of-saturn) |
+| BOUND-02<a name="bound-02"></a> | Output mixes in-frame inventory with craft, candidness, motive, staging, credit, agency, or other production claims in one unmarked voice | **Narrowly selective transparency**: when a still is written as unmediated show-through, split FORENSIC surface from sourced craft or EDITORIAL construction; when production cues exist, describe depiction-as-made apart from depicted biography and cite the production claim or drop it; attribute a claim that a historical document was unstaged or pure history to its speaker when the production record shows planning, because the event was staged in part for the film and selection is not neutral (↔ [[BIAS-03]](epistemics.md#bias-03) selection admits a point of view) | Does an unstaged or pure-history claim fit the production record, or does the source need naming? | S·e | [On Photography](../SOURCES.md#src-sontag-on-photography) + [Regarding the Pain of Others, ch. 3](../SOURCES.md#src-sontag-regarding-the-pain-of-others) + [The Civil Contract of Photography, ch. 3](../SOURCES.md#src-azoulay-civil-contract-of-photography) + [Under the Sign of Saturn, §fascinating-fascism](../SOURCES.md#src-sontag-under-the-sign-of-saturn) |
 | BOUND-03<a name="bound-03"></a> | Event caption or official purpose, threat-prevented, or routine-procedure language is present while high-salience control, body, or force cues are omitted | **Frame before institutional story**: accompanying event or purpose text given -> inventory visible relations of force first; put event, purpose, or justification in attributed EDITORIAL voice second -> blocks caption and purpose indifference to the photo ↔ epi [[BIAS-02]](epistemics.md#bias-02) | Does the text report what the picture shows before what the institution says it means? | S·d | [The Civil Contract of Photography, ch. 4](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
 | BOUND-04<a name="bound-04"></a> | Degrading undress or forced pose; text either restages the invasive gaze or suppresses all injury address | **Refuse restage, refuse erasure**: photograph shows humiliating forced undress or pose -> address the injury without unmediated restaging of the degrading gaze; refuse spectacle that reenacts and refuse total suppression that leaves injury unaddressed -> neither magnifies the ritual of humiliation nor abandons the field to pornographic fantasy | Does this description reenact the ritual of humiliation for the spectator, or erase the injury entirely? | J·d | [The Civil Contract of Photography, ch. 6](../SOURCES.md#src-azoulay-civil-contract-of-photography) |
 | BOUND-05<a name="bound-05"></a> | Caption, alt, or description uses rank or itinerary language such as emphasizes, focus, main, or ordered walkthrough about image content | ***Emphase* is not image privilege**: if rank or order comes from the sentence, not from a visible crop, contrast, scale, or other pictorial cue -> state named traits as editorial selection or plain inventory; never report that hierarchy as a property of the photograph -> non-seeing users get a false map of what the image privileges ↔ a11y [[A11Y-02]](accessibility.md#a11y-02) ↔ a11y [[A11Y-43]](accessibility.md#a11y-43) | Is every emphasis word licensed by a pictorial cue, or only by word order? | S·d | [Système de la mode, ch. 1](../SOURCES.md#src-barthes-systeme-de-la-mode) |
