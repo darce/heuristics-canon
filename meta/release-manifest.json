@@ -1,7 +1,7 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.25.3",
-  "date": "2026-10-04",
+  "version": "0.25.4",
+  "date": "2026-10-05",
   "rules": 1853,
   "principles": 20,
   "lexicons": {
@@ -416,7 +416,7 @@
       ]
     },
     "lexicons/engineering.md": {
-      "sha256": "62df8994a16346f599ec866d8570d0980fa899c796e6988b4ff6998f767a95e3",
+      "sha256": "210fbf5c6092e436cf56a40a8d08106eb7aaaee4df688ae918f11dc3159a9c12",
       "rules": 440,
       "rule_ids": [
         "AGT-01",
@@ -1304,7 +1304,7 @@
       ]
     },
     "lexicons/ml-systems.md": {
-      "sha256": "5f65c502b18dc315c3b8f5aa03ac4aa70ec83a99ab86293d516cbb881add8e71",
+      "sha256": "1dfbd751c2d52d223b0ae617da7f709dd29970f37ddd9bcdc0eb09a7e839cf20",
       "rules": 263,
       "rule_ids": [
         "AUDIT-01",
@@ -1720,7 +1720,7 @@
       ]
     },
     "lexicons/security.md": {
-      "sha256": "c7f6166f1d96992fe5a9218a5d10b1077efafa744e69d1cc0599dc1b5f2854cf",
+      "sha256": "4f5884055c27df2b39813d8f90ef3510c94b0c83d66720ed3dfd29bf57f6bac8",
       "rules": 120,
       "rule_ids": [
         "PG-01",

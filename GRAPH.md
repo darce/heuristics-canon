@@ -261,7 +261,7 @@ equally informative and much less common.
 
 ## Intra-lexicon vs cross-lexicon edges
 
-Of **2371** simple undirected edges among rules, **1518** stay inside one lexicon file and **853** cross a file boundary (cut ratio **0.36** = cross / (intra + cross)).
+Of **2372** simple undirected edges among rules, **1519** stay inside one lexicon file and **853** cross a file boundary (cut ratio **0.36** = cross / (intra + cross)).
 
 **Reading A.** If the twelve lexicons were natural communities of the
 citation graph, most edges would fall inside files.
@@ -301,7 +301,7 @@ column sums to twice the cross-edge total rather than to it.
 | [business-marketing](lexicons/business-marketing.md) | 158 | 104 | 264 | 0.72 |
 | [depiction](lexicons/depiction.md) | 17 | 12 | 19 | 0.61 |
 | [design-aesthetics](lexicons/design-aesthetics.md) | 147 | 130 | 71 | 0.35 |
-| [engineering](lexicons/engineering.md) | 440 | 392 | 358 | 0.48 |
+| [engineering](lexicons/engineering.md) | 440 | 393 | 358 | 0.48 |
 | [epistemics](lexicons/epistemics.md) | 145 | 125 | 177 | 0.59 |
 | [graph-theory](lexicons/graph-theory.md) | 71 | 65 | 62 | 0.49 |
 | [interaction-ux](lexicons/interaction-ux.md) | 208 | 198 | 231 | 0.54 |
@@ -310,5 +310,5 @@ column sums to twice the cross-edge total rather than to it.
 | [security](lexicons/security.md) | 120 | 101 | 96 | 0.49 |
 | [writing](lexicons/writing.md) | 79 | 46 | 46 | 0.50 |
 
-Underlying rule graph (not drawn here): **1853** rule nodes, **2371** distinct undirected edges (simple 2371 + self-loops 0).
+Underlying rule graph (not drawn here): **1853** rule nodes, **2372** distinct undirected edges (simple 2372 + self-loops 0).
 
