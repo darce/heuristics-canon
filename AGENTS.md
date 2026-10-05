@@ -202,7 +202,7 @@ a hidden directory such as `~/.cache`. Read rows from those files with `grep`
 or a file reader. Do not use a web page summary for row text:
 
 ```sh
-tag=v0.25.2
+tag=v0.25.3
 dir="../heuristics-canon-$tag"
 mkdir -p "$dir"
 curl -L "https://github.com/darce/heuristics-canon/archive/refs/tags/$tag.tar.gz" |
@@ -239,8 +239,12 @@ Published tags use `heuristics-canon/release@1`, `@2`, `@4`, or `@5`; no tag
 uses `@3`. From `heuristics-canon/release@4`, the manifest maps each withdrawn
 rule ID to its successor. Schema `@5` carries `withdrawn_cards` (withdrawn
 cards and their successors) and adds `card_ids` (each reasoning card's stable
-ID, status, and slug). The manifest also lists the full rule-ID set and
-per-file digests for lexicons, docs, and reasoning cards.
+ID, status, and slug). Every schema lists the full rule-ID set and per-file
+digests for lexicons. Schema `@1` (v0.1.0 to v0.13.0) lists nothing else, so
+its manifest cannot verify docs or reasoning cards. From schema `@2` (v0.14.0
+on), the manifest also lists per-file digests for docs and reasoning cards and
+a `sources` map; that map has three files in v0.14.0 and is empty in later
+tags.
 
 ```sh
 python3 - <<'PY'
@@ -249,26 +253,40 @@ import json
 from pathlib import Path
 
 manifest = json.loads(Path("meta/release-manifest.json").read_text())
-mismatches = []
-for section in ("lexicons", "docs", "reasoning"):
-    for path, entry in manifest.get(section, {}).items():
+missing_sections = []
+issues = []
+checked = 0
+for section in ("lexicons", "docs", "reasoning", "sources"):
+    if section not in manifest:
+        missing_sections.append(section)
+        continue
+    for path, entry in manifest[section].items():
+        checked += 1
         try:
             actual = hashlib.sha256(Path(path).read_bytes()).hexdigest()
         except OSError:
-            actual = None
+            issues.append(("MISSING", path))
+            continue
         if actual != entry["sha256"]:
-            mismatches.append(path)
+            issues.append(("MISMATCH", path))
 
-for path in mismatches[:20]:
-    print(f"MISMATCH {path}")
-if len(mismatches) > 20:
-    print(f"... and {len(mismatches) - 20} more mismatch(es)")
-if mismatches:
+if missing_sections:
+    print(f"not in this manifest: {', '.join(missing_sections)}")
+for kind, path in issues[:20]:
+    print(f"{kind} {path}")
+if len(issues) > 20:
+    print(f"... and {len(issues) - 20} more")
+if checked == 0:
+    print("no digests listed")
     raise SystemExit(1)
-print("all listed digests match")
+if issues:
+    raise SystemExit(1)
+print(f"all {checked} listed digests match")
 PY
 ```
 
 This verifies that the copy contains every file listed in the manifest and
-that those files match its digests; it does not prove who published the
-release.
+that those files match its digests. A manifest covers only the maps it
+carries, which is why the check names the maps it did not find; an `@1`
+manifest does not cover docs or reasoning cards. It does not prove who
+published the release.
