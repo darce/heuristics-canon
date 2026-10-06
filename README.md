@@ -91,10 +91,12 @@ release <tag> once in each report.
 
 If the agent can read only inside the project, give it read access to the canon folder. Do not copy the canon into the project.
 
-If your assistant can read only web pages, give it the tree at the pinned tag
-(`https://github.com/darce/heuristics-canon/tree/<tag>`) and the raw lexicon
-files (`https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/lexicons/<file>.md`),
-which return the rule rows themselves.
+Keep the pinned local copy as the first choice. If your assistant cannot save
+files (for example, in a web chat), it can read the raw files at the pinned tag
+a few sections at a time, using URLs such as
+`https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/lexicons/<file>.md`;
+[AGENTS.md: Read without a local copy](AGENTS.md#read-without-a-local-copy)
+explains how.
 
 A review then goes like this:
 

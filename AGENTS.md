@@ -202,7 +202,7 @@ a hidden directory such as `~/.cache`. Read rows from those files with `grep`
 or a file reader. Do not use a web page summary for row text:
 
 ```sh
-tag=v0.25.5
+tag=v0.25.6
 dir="../heuristics-canon-$tag"
 mkdir -p "$dir"
 curl -L "https://github.com/darce/heuristics-canon/archive/refs/tags/$tag.tar.gz" |
@@ -214,6 +214,8 @@ Resolve `$dir` once with `cd "$dir" && pwd` and give the printed full path to
 the agent; `../` points elsewhere from another working copy. If you cannot
 write beside the project, give the user these commands, ask for the folder's
 path, and use it; never use an inside-project or hidden folder.
+If neither you nor the user can save the folder (for example, a web chat with no
+file access), read the files as in [Read without a local copy](#read-without-a-local-copy).
 
 To make a fresh Git copy instead of using the archive above, clone the release
 tag:
@@ -290,3 +292,49 @@ that those files match its digests. A manifest covers only the maps it
 carries, which is why the check names the maps it did not find; an `@1`
 manifest does not cover docs or reasoning cards. It does not prove who
 published the release.
+
+## Read without a local copy
+
+Use this secondary method only if neither you nor the user can save the folder
+or provide a saved-copy path. Use the local copy whenever it exists.
+Use only raw files at one pinned tag: `https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/<path>`.
+Use that tag for every file. Use the user's tag or the latest release; say
+which. Never use `main`, a rendered github.com page, a search snippet, or a web
+summary for row text.
+
+Follow [Apply the canon](#apply-the-canon); fetch each file only when selected
+by the prior step: `AGENTS.md` (routing table, lexicon list, phase codes) ->
+route-named lexicon files (routed family sections only) -> `PRINCIPLES.md`
+entries for kept rules -> `reasoning/README.md` (cards whose `## Rule IDs` list
+a kept rule) -> those cards -> `SOURCES.md` rows for cited sources.
+
+Fetch one family section from its `## N. FAM: Name` heading through the line
+before the next `## ` heading, with table headers. Each rule is one line starting
+`| FAM-NN`; keep each retained row whole and byte for byte: never split, trim,
+merge, reorder, or paraphrase it. If too large for context, keep its heading,
+table headers, and only whole rows whose triggers fire. Never load a whole large
+lexicon (about 25 KB to 330 KB).
+
+Label each chunk with release, file, and anchor. Before use, check that it
+starts at the heading, each kept row has six cells and ends with `|`, and the
+last row is complete. A summary, prose without table lines, or truncated row
+is not row text. Fetch a smaller part if possible; otherwise ask the user to
+paste the section from its raw URL or attach it. Never fill gaps from memory;
+report unreadable rows. Drop sections whose triggers did not fire before
+fetching the next file. Refetch chunks that left context before citing them.
+
+Digests need full-file bytes. With a code tool, compute each fetched file's
+SHA-256 and compare it with `meta/release-manifest.json` at the same tag.
+Without one, report that rows were read from raw files at `<tag>` and digests
+were not verified.
+
+```text
+https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/AGENTS.md
+https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/lexicons/engineering.md
+
+canon <tag> lexicons/engineering.md#fam-res
+## 2. RES: Resilience & Failure Modes<a name="fam-res"></a>
+| ID | Trigger | Rule | Answers | T·P | Src |
+| --- | --- | --- | --- | --- | --- |
+| RES-NN | ... | ... | ... | ... | ... |
+```
