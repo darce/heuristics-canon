@@ -116,6 +116,7 @@ stated outcome unattainable.
 | OPS-83<a name="ops-83"></a> | Incident review identifies recurring contributors in equipment, controls, fatigue, or detection but records no corresponding system change | **Reconstruct the incident system**: compare detailed accounts for recurring contributors, then redesign equipment, controls, fatigue conditions, or detection that made errors likely or hard to catch, because finding the bad operator leaves those conditions in place. (↔ [[OPS-11]](planning.md#ops-11) Five Whys into incentives; both use postmortems to trace a miss to changeable causes). | Which recurring contributor needs a system change after this incident? | S·o | [Complications, ch. 3](../SOURCES.md#src-gawande-complications) |
 | OPS-84<a name="ops-84"></a> | Multiple concrete safety signals accumulate around one practitioner | **Route sentinel behavior to independent review**: assess fitness and causes through a defined process with explicit treatment, monitoring, or restrictions because quiet workarounds can prolong risk. (↔ [[OPS-11]](planning.md#ops-11) Five Whys into incentives; both route repeated failure signals to corrective review). | Which repeated signals require a formal safety assessment? | S·o | [Complications, ch. 5](../SOURCES.md#src-gawande-complications) |
 | OPS-85<a name="ops-85"></a> | A work queue is ordered by incoming urgency even though tasks have different effects on the stated goal. | **Urgency-importance separation**: name the outcome the task supports, then do, schedule, delegate, or drop it according to both goal contribution and time demand, because someone else's urgency is not evidence that the task matters to this role. Do not keep displacing scheduled maintenance until it becomes the emergency. (↔ [[PERF-11]](engineering.md#perf-11) Match priority to objective; both allocate effort by outcome value and urgency). | What outcome does this task support, and when must it happen? | S·o | [Mental Models, ch. 1](../SOURCES.md#src-hollins-30-mental-models) |
+| OPS-86<a name="ops-86"></a> | A consequential operational checklist, not used to estimate a population rate, is assembled from a previously filtered inventory without stated inclusion/exclusion principles for either stage. | **Inspect both selection stages**: State the inclusion/exclusion principles for both stages and inspect consequential omissions, because the current list can inherit the omissions and selection bias of its candidate pool. | What was excluded from the candidate pool, and what is excluded from this checklist? | J·p | [Seeing with Fresh Eyes: Meaning, Space, Data, Truth, ch. 7](../SOURCES.md#src-tufte-seeing-with-fresh-eyes) |
 
 <!-- BEGIN GENERATED SECTION SOURCES fam-ops -->
 
@@ -146,6 +147,7 @@ stated outcome unattainable.
 - [software-development-patterns-antipatterns](../SOURCES.md#src-software-development-patterns-antipatterns)
 - [technological-republic](../SOURCES.md#src-technological-republic)
 - [toyota-production-system](../SOURCES.md#src-toyota-production-system)
+- [tufte-seeing-with-fresh-eyes](../SOURCES.md#src-tufte-seeing-with-fresh-eyes)
 
 <!-- END GENERATED SECTION SOURCES fam-ops -->
 

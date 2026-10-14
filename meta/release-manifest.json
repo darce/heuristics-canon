@@ -1,8 +1,8 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.25.6",
-  "date": "2026-10-05",
-  "rules": 1853,
+  "version": "0.26.0",
+  "date": "2026-10-14",
+  "rules": 1889,
   "principles": 20,
   "lexicons": {
     "lexicons/accessibility.md": {
@@ -263,8 +263,8 @@
       ]
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "83360dbf050e37d35988c0b922dfa350338b8efdde339da240d9e2187274b7c5",
-      "rules": 147,
+      "sha256": "d22b52a544b9f235914eff04544f98f4e8b2c6c34c74addbcd99ca3035708249",
+      "rules": 149,
       "rule_ids": [
         "BRND-01",
         "BRND-02",
@@ -373,6 +373,8 @@
         "LAY-45",
         "LAY-46",
         "LAY-47",
+        "LAY-48",
+        "LAY-49",
         "TYPE-01",
         "TYPE-02",
         "TYPE-03",
@@ -416,8 +418,8 @@
       ]
     },
     "lexicons/engineering.md": {
-      "sha256": "210fbf5c6092e436cf56a40a8d08106eb7aaaee4df688ae918f11dc3159a9c12",
-      "rules": 440,
+      "sha256": "20e2cfe911755dfbd983b48e7b93be9cb46674f0ec0bce3dfec45a75a25fce6d",
+      "rules": 442,
       "rule_ids": [
         "AGT-01",
         "AGT-02",
@@ -571,6 +573,7 @@
         "DIAG-10",
         "DIAG-11",
         "DIAG-12",
+        "DIAG-13",
         "DOM-01",
         "DOM-02",
         "DOM-03",
@@ -636,6 +639,7 @@
         "OBS-22",
         "OBS-23",
         "OBS-24",
+        "OBS-25",
         "PERF-01",
         "PERF-02",
         "PERF-03",
@@ -862,8 +866,8 @@
       ]
     },
     "lexicons/epistemics.md": {
-      "sha256": "ebd32b90ad7d2a21fe6608ac797367961cbf5eec47d5c556de37e6bf9e053a9c",
-      "rules": 145,
+      "sha256": "7dc92a9edbcd25da0cf34ad4b8428083c8466c212a014b644ac88ff663a4659e",
+      "rules": 150,
       "rule_ids": [
         "BIAS-01",
         "BIAS-02",
@@ -910,6 +914,8 @@
         "EXP-27",
         "EXP-28",
         "EXP-29",
+        "EXP-30",
+        "EXP-31",
         "FORE-01",
         "FORE-02",
         "FORE-03",
@@ -960,6 +966,9 @@
         "MEAS-26",
         "MEAS-27",
         "MEAS-28",
+        "MEAS-29",
+        "MEAS-30",
+        "MEAS-31",
         "NDM-01",
         "NDM-02",
         "NDM-03",
@@ -1090,8 +1099,8 @@
       ]
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "413e33808da2ba416f4ab248e1b18d253e6332b65d782943c6af24174c5f37b1",
-      "rules": 208,
+      "sha256": "2d2b2f707c579fec09116b4829d3b693d9bec7acd676352fccbade9ab0d1aa17",
+      "rules": 231,
       "rule_ids": [
         "COG-01",
         "COG-02",
@@ -1100,6 +1109,8 @@
         "COG-05",
         "COG-06",
         "COG-07",
+        "COG-08",
+        "COG-09",
         "FORM-01",
         "FORM-02",
         "FORM-03",
@@ -1198,6 +1209,7 @@
         "NAV-36",
         "NAV-37",
         "NAV-38",
+        "NAV-39",
         "PERC-01",
         "PERC-02",
         "PERC-03",
@@ -1208,6 +1220,8 @@
         "PERC-08",
         "PERC-09",
         "PERC-10",
+        "PERC-11",
+        "PERC-12",
         "UXR-01",
         "UXR-02",
         "UXR-03",
@@ -1300,7 +1314,25 @@
         "VIZ-20",
         "VIZ-21",
         "VIZ-22",
-        "VIZ-23"
+        "VIZ-23",
+        "VIZ-24",
+        "VIZ-25",
+        "VIZ-26",
+        "VIZ-27",
+        "VIZ-28",
+        "VIZ-29",
+        "VIZ-30",
+        "VIZ-31",
+        "VIZ-32",
+        "VIZ-33",
+        "VIZ-34",
+        "VIZ-35",
+        "VIZ-36",
+        "VIZ-37",
+        "VIZ-38",
+        "VIZ-39",
+        "VIZ-40",
+        "VIZ-41"
       ]
     },
     "lexicons/ml-systems.md": {
@@ -1573,8 +1605,8 @@
       ]
     },
     "lexicons/planning.md": {
-      "sha256": "e30f34e6a6cc0cfb789df91eaf1a52ac294a7ac5950b0a6cacf33afb492373bb",
-      "rules": 141,
+      "sha256": "82d13ac75270c354613fcaad8d7269a7ff6dfce4e08d2a8ba2f19b1207419a48",
+      "rules": 142,
       "rule_ids": [
         "OPS-01",
         "OPS-02",
@@ -1660,6 +1692,7 @@
         "OPS-83",
         "OPS-84",
         "OPS-85",
+        "OPS-86",
         "TEAM-01",
         "TEAM-02",
         "TEAM-03",
@@ -1846,8 +1879,8 @@
       ]
     },
     "lexicons/writing.md": {
-      "sha256": "a974e9a5c002b3c85060c345e915aa8d1a8df415b420e51af430127b2af4bde7",
-      "rules": 79,
+      "sha256": "fc0236d29d238057264dce7dcc5d40beb81f2fbbac79a361964c9765c8655aa0",
+      "rules": 82,
       "rule_ids": [
         "WRIT-01",
         "WRIT-02",
@@ -1927,7 +1960,10 @@
         "WRIT-77",
         "WRIT-78",
         "WRIT-79",
-        "WRIT-80"
+        "WRIT-80",
+        "WRIT-81",
+        "WRIT-82",
+        "WRIT-83"
       ]
     }
   },
@@ -2173,6 +2209,8 @@
     "COG-05",
     "COG-06",
     "COG-07",
+    "COG-08",
+    "COG-09",
     "COL-01",
     "COL-02",
     "COL-03",
@@ -2301,6 +2339,7 @@
     "DIAG-10",
     "DIAG-11",
     "DIAG-12",
+    "DIAG-13",
     "DOM-01",
     "DOM-02",
     "DOM-03",
@@ -2398,6 +2437,8 @@
     "EXP-27",
     "EXP-28",
     "EXP-29",
+    "EXP-30",
+    "EXP-31",
     "FAIR-01",
     "FAIR-02",
     "FAIR-03",
@@ -2703,6 +2744,8 @@
     "LAY-45",
     "LAY-46",
     "LAY-47",
+    "LAY-48",
+    "LAY-49",
     "MEAS-01",
     "MEAS-02",
     "MEAS-03",
@@ -2731,6 +2774,9 @@
     "MEAS-26",
     "MEAS-27",
     "MEAS-28",
+    "MEAS-29",
+    "MEAS-30",
+    "MEAS-31",
     "MLDATA-01",
     "MLDATA-02",
     "MLDATA-03",
@@ -2820,6 +2866,7 @@
     "NAV-36",
     "NAV-37",
     "NAV-38",
+    "NAV-39",
     "NDM-01",
     "NDM-02",
     "NDM-03",
@@ -2880,6 +2927,7 @@
     "OBS-22",
     "OBS-23",
     "OBS-24",
+    "OBS-25",
     "OPS-01",
     "OPS-02",
     "OPS-03",
@@ -2964,6 +3012,7 @@
     "OPS-83",
     "OPS-84",
     "OPS-85",
+    "OPS-86",
     "PERC-01",
     "PERC-02",
     "PERC-03",
@@ -2974,6 +3023,8 @@
     "PERC-08",
     "PERC-09",
     "PERC-10",
+    "PERC-11",
+    "PERC-12",
     "PERF-01",
     "PERF-02",
     "PERF-03",
@@ -3637,6 +3688,24 @@
     "VIZ-21",
     "VIZ-22",
     "VIZ-23",
+    "VIZ-24",
+    "VIZ-25",
+    "VIZ-26",
+    "VIZ-27",
+    "VIZ-28",
+    "VIZ-29",
+    "VIZ-30",
+    "VIZ-31",
+    "VIZ-32",
+    "VIZ-33",
+    "VIZ-34",
+    "VIZ-35",
+    "VIZ-36",
+    "VIZ-37",
+    "VIZ-38",
+    "VIZ-39",
+    "VIZ-40",
+    "VIZ-41",
     "VSEG-01",
     "VSEG-02",
     "VSEG-03",
@@ -3784,7 +3853,10 @@
     "WRIT-77",
     "WRIT-78",
     "WRIT-79",
-    "WRIT-80"
+    "WRIT-80",
+    "WRIT-81",
+    "WRIT-82",
+    "WRIT-83"
   ],
   "docs": {
     "PRINCIPLES.md": {
@@ -3797,13 +3869,13 @@
       "sha256": "915107fc7b4d347f83d7936afe8be36f80b3360a04e9d1c668feb099cbad14b2"
     },
     "AGENTS.md": {
-      "sha256": "8fa41aa8744da7f215abe3ced4fd5f1186d847b748faa1bf92377e22b4b192a9"
+      "sha256": "717772f9831af6db2fe4384da27736f2ceeb74dcd769a48acfcbb0fda85a4075"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
     },
     "SOURCES.md": {
-      "sha256": "6d9bf9ba725f9a79d1d275d7b19e3e280aba277fff5eed67c3e4157544fe2fbf"
+      "sha256": "d15d36f98434379a9e7b78ad7365360e70de9be546226c2d71575752e00762c7"
     }
   },
   "reasoning": {
