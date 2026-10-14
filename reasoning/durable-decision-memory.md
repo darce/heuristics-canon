@@ -109,6 +109,7 @@ A retro decides to freeze an API field, but the rationale lives only in chat and
 - [AGT-12](../lexicons/engineering.md#agt-12): legible handoff after timebox
 - [TEAM-17](../lexicons/planning.md#team-17): no single-head knowledge concentration
 - [TEAM-14](../lexicons/planning.md#team-14): published plan with an owned revision trail
+- [COG-09](../lexicons/interaction-ux.md#cog-09): write the visit's concerns down at the start and track them through interruptions
 
 ## Principles
 
@@ -129,6 +130,7 @@ starting at GRPH-14). Walkable lineage is not this card's owned mechanism.
 - [`sources-of-power`](../SOURCES.md#src-sources-of-power): supports [NDM-07](../lexicons/epistemics.md#ndm-07)
 - [`bootstrap`](../SOURCES.md#src-bootstrap): supports [AGT-12](../lexicons/engineering.md#agt-12)
 - [`antipatterns-laplante-neill`](../SOURCES.md#src-antipatterns-laplante-neill): supports [TEAM-17](../lexicons/planning.md#team-17), [TEAM-14](../lexicons/planning.md#team-14)
+- [`tufte-seeing-with-fresh-eyes`](../SOURCES.md#src-tufte-seeing-with-fresh-eyes): supports [COG-09](../lexicons/interaction-ux.md#cog-09)
 
 ## Non-claims
 

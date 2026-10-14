@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.26.1",
+  "version": "0.26.2",
   "date": "2026-10-14",
   "rules": 1889,
   "principles": 20,
@@ -263,7 +263,7 @@
       ]
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "de2a7ab3175db2cd9b6f478fb578478e444415ce13567de5df849a689ef7167e",
+      "sha256": "ef47bce7e1b65f9082a409e50ab67aaaf6c66e751b03132e4dfb3896d48a3018",
       "rules": 149,
       "rule_ids": [
         "BRND-01",
@@ -866,7 +866,7 @@
       ]
     },
     "lexicons/epistemics.md": {
-      "sha256": "943ae7ed22fb2d8a2d2a4d89f91228b26cf0287586951d1ebda91a4c23c1928c",
+      "sha256": "866f67e6fe626671999bc9debd3774188c23f7b82905ea7d5e008a08dd5f7f07",
       "rules": 150,
       "rule_ids": [
         "BIAS-01",
@@ -1099,7 +1099,7 @@
       ]
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "c3021960075a0d902beb749cb82d33c97eb4b0ee2d73f5a2db8d267db4570de8",
+      "sha256": "986a319d91f00c5c96382b3b299b2dee6f23cc64d89cd50e125ddbe8f5203659",
       "rules": 231,
       "rule_ids": [
         "COG-01",
@@ -1879,7 +1879,7 @@
       ]
     },
     "lexicons/writing.md": {
-      "sha256": "62ab119bee9423a14ed2de87d142151b6ccdf04f896f6655d92ec8781d5bb1c9",
+      "sha256": "4dad819ddf730b145c535838fa7c69c59fcd10ae2da7414f829f9ca960508bb3",
       "rules": 82,
       "rule_ids": [
         "WRIT-01",
@@ -3860,7 +3860,7 @@
   ],
   "docs": {
     "PRINCIPLES.md": {
-      "sha256": "475d6548a212bdddfc1d0f2a00e0cc259eedc818e0b6ab01994959bb68a0f44c"
+      "sha256": "0bd3555fa6b97cadd02563f87ac292cb97ce34df960e6361fa82beaf9a07f205"
     },
     "NOTICE.md": {
       "sha256": "104fde3eea6b5da7127dd86a481c62c2a548a4b2e3de21cc114ea65c81eb966c"
@@ -3869,7 +3869,7 @@
       "sha256": "915107fc7b4d347f83d7936afe8be36f80b3360a04e9d1c668feb099cbad14b2"
     },
     "AGENTS.md": {
-      "sha256": "06109090a478f836802839e087ff4a3e97d9b3918d6efc72d6e8d53b58637355"
+      "sha256": "174d8b4dea3b440fa47fa35b0887993aa0b98235ac56852e65528f80fef40536"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
@@ -3883,7 +3883,7 @@
       "sha256": "efe2349bda77e1a4e276e15523b5124a35384071edbeffeee98c516526a1ca5d"
     },
     "reasoning/MAP.md": {
-      "sha256": "bc4a6a6b901a178f8bf415cdfca30f3fae46921661b231e30ae24e5723df95c2"
+      "sha256": "236e5e8c0a0740e9a38c2d108ca13a09889d2d995b50f38963d3b2325f309cb7"
     },
     "reasoning/README.md": {
       "sha256": "1ccfc8adbe84f64ede274a13ee261a60333267db6ad2f2977289a8c0d35bc58f"
@@ -3928,10 +3928,10 @@
       "sha256": "892498186571b851177a394a392d26af9efd6f94991ebb1ba87ab1afe6714fbf"
     },
     "reasoning/durable-decision-memory.md": {
-      "sha256": "41d456b9b3cfa92c36e6aa3a0628030d01470a1c252516981e87466a58b20bde"
+      "sha256": "4d3cfde0adbe98e8f4e07c5c6bbff5267c626ec13d0636a31810e433308547fb"
     },
     "reasoning/evidence-before-commitment.md": {
-      "sha256": "ef3971da4fff29a34b939628404dd3f52334f42f8aa656e5a84b2d49d3f097c5"
+      "sha256": "e48acbf579002de19890e3af34e170776d59fa93d56347e48042d67652ec57d1"
     },
     "reasoning/fail-loudly-succeed-quietly.md": {
       "sha256": "377a21ad0078761760395e97063b7a0daeb8829a8c905b5b878c1b7e53d28975"

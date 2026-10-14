@@ -126,6 +126,7 @@ Any proxy drifts from its target under pressure, and once the proxy becomes a ta
 - Page on degraded user experience, not a CPU threshold with benign explanations [[OBS-07]](lexicons/engineering.md#obs-07); measure the decision variable, not the convenient composite [[UXR-03]](lexicons/interaction-ux.md#uxr-03).
 - Score resolved numeric probability forecasts with Brier scores; narrative confidence alone does not measure forecast accuracy [[FORE-03]](lexicons/epistemics.md#fore-03); simulate how the measured party will optimise the number before adopting it [[RSCH-07]](lexicons/epistemics.md#rsch-07).
 - Tokens-per-second is not goodput at the latency target [[COST-15]](lexicons/ml-systems.md#cost-15).
+- A clinical surrogate marker needs empirical linkage to patient benefit for the outcome, population and design; a plausible mechanism is not linkage [[MEAS-30]](lexicons/epistemics.md#meas-30).
 
 The measured proxy and the real goal come apart exactly when the stakes rise.
 
@@ -170,6 +171,7 @@ Every comparison has a query side and a reference side. The reference is almost 
 - Occluded face recognition: treat occlusion as spatial support and align corresponding parts before score [[EMB-11]](lexicons/ml-systems.md#emb-11), [[EMB-12]](lexicons/ml-systems.md#emb-12); gate real-occlusion claims on real-occlusion cells [[EVAL-28]](lexicons/ml-systems.md#eval-28).
 - Training and serving construction: match training degradation to measured target statistics [[MLDATA-10]](lexicons/ml-systems.md#mldata-10); keep train and serve transforms identical [[SERVE-08]](lexicons/ml-systems.md#serve-08).
 - Calibration and pair evaluation: fit thresholds on demographically matched non-mates [[CAL-04]](lexicons/ml-systems.md#cal-04); compare cohort false-negative rates within image-quality strata and report that false-positive differentials can persist in high-quality images [[CAL-01]](lexicons/ml-systems.md#cal-01); the measured slice is a query×enrolled cell [[EVAL-20]](lexicons/ml-systems.md#eval-20); choose models that win under production-like perturbation [[EVAL-06]](lexicons/ml-systems.md#eval-06).
+- Statistical maps over time: collate both periods onto one stable set of spatial units before comparing, because redrawn boundaries change what is compared [[VIZ-28]](lexicons/interaction-ux.md#viz-28).
 
 Before you trust the comparison, ask whether the reference was built under the conditions the query actually has. A filter that deletes the hard cells is the nearest shaped-sample neighbour and stays under Principle 15 — there the act is deletion by the pipeline owner, not mismatched reference construction.
 
@@ -251,6 +253,7 @@ Knowledge held only in a head, a session, or a founder dies at the next compacti
 - Correlation IDs turn post-mortems into greps [[OBS-03]](lexicons/engineering.md#obs-03); systemize taste into brand rules so the brand outlives the founder [[BRND-12]](lexicons/design-aesthetics.md#brnd-12).
 - Orders need who/what/when/where/why [[OPS-13]](lexicons/planning.md#ops-13); handoffs carry intent, priorities, constraints, and forbidden moves [[NDM-07]](lexicons/epistemics.md#ndm-07).
 - Single-head knowledge concentration is an operational hostage; require a backup path and a published store [[TEAM-17]](lexicons/planning.md#team-17).
+- An approved engineering requirement and its basis go into the maintained formal record, not only a readable presentation copy [[WRIT-82]](lexicons/writing.md#writ-82).
 
 A session, an author, and a founder all leave; only what they wrote down stays.
 

@@ -123,6 +123,7 @@ A merge is marked ready because CI is green on the author's laptop cache, with n
 - [EXP-01](../lexicons/epistemics.md#exp-01): most ideas fail controlled tests
 - [BIAS-01](../lexicons/epistemics.md#bias-01): confidence is not evidence amount
 - [AIPX-01](../lexicons/business-marketing.md#aipx-01): deterministic baseline before ML commitment
+- [NAV-39](../lexicons/interaction-ux.md#nav-39): compare the hierarchy with alternatives on retrieval tasks before accepting its depth
 
 ## Principles
 
@@ -152,6 +153,7 @@ mechanism; do not re-own correction or source-of-truth repair here (see
 - [`trustworthy-controlled-experiments`](../SOURCES.md#src-trustworthy-controlled-experiments): supports [EXP-01](../lexicons/epistemics.md#exp-01)
 - [`kahneman-thinking-fast-slow`](../SOURCES.md#src-kahneman-thinking-fast-slow): supports [BIAS-01](../lexicons/epistemics.md#bias-01)
 - [`building-ml-powered-applications`](../SOURCES.md#src-building-ml-powered-applications): supports [AIPX-01](../lexicons/business-marketing.md#aipx-01)
+- [`tufte-seeing-with-fresh-eyes`](../SOURCES.md#src-tufte-seeing-with-fresh-eyes): supports [NAV-39](../lexicons/interaction-ux.md#nav-39)
 
 ## Non-claims
 
