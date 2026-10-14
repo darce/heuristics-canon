@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "date": "2026-10-14",
   "rules": 1889,
   "principles": 20,
@@ -263,7 +263,7 @@
       ]
     },
     "lexicons/design-aesthetics.md": {
-      "sha256": "d22b52a544b9f235914eff04544f98f4e8b2c6c34c74addbcd99ca3035708249",
+      "sha256": "de2a7ab3175db2cd9b6f478fb578478e444415ce13567de5df849a689ef7167e",
       "rules": 149,
       "rule_ids": [
         "BRND-01",
@@ -866,7 +866,7 @@
       ]
     },
     "lexicons/epistemics.md": {
-      "sha256": "7dc92a9edbcd25da0cf34ad4b8428083c8466c212a014b644ac88ff663a4659e",
+      "sha256": "943ae7ed22fb2d8a2d2a4d89f91228b26cf0287586951d1ebda91a4c23c1928c",
       "rules": 150,
       "rule_ids": [
         "BIAS-01",
@@ -1099,7 +1099,7 @@
       ]
     },
     "lexicons/interaction-ux.md": {
-      "sha256": "2d2b2f707c579fec09116b4829d3b693d9bec7acd676352fccbade9ab0d1aa17",
+      "sha256": "c3021960075a0d902beb749cb82d33c97eb4b0ee2d73f5a2db8d267db4570de8",
       "rules": 231,
       "rule_ids": [
         "COG-01",
@@ -1879,7 +1879,7 @@
       ]
     },
     "lexicons/writing.md": {
-      "sha256": "fc0236d29d238057264dce7dcc5d40beb81f2fbbac79a361964c9765c8655aa0",
+      "sha256": "62ab119bee9423a14ed2de87d142151b6ccdf04f896f6655d92ec8781d5bb1c9",
       "rules": 82,
       "rule_ids": [
         "WRIT-01",
@@ -3869,7 +3869,7 @@
       "sha256": "915107fc7b4d347f83d7936afe8be36f80b3360a04e9d1c668feb099cbad14b2"
     },
     "AGENTS.md": {
-      "sha256": "717772f9831af6db2fe4384da27736f2ceeb74dcd769a48acfcbb0fda85a4075"
+      "sha256": "06109090a478f836802839e087ff4a3e97d9b3918d6efc72d6e8d53b58637355"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"

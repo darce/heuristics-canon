@@ -202,7 +202,7 @@ a hidden directory such as `~/.cache`. Read rows from those files with `grep`
 or a file reader. Do not use a web page summary for row text:
 
 ```sh
-tag=v0.26.0
+tag=v0.26.1
 dir="../heuristics-canon-$tag"
 mkdir -p "$dir"
 curl -L "https://github.com/darce/heuristics-canon/archive/refs/tags/$tag.tar.gz" |
