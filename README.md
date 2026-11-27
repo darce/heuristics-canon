@@ -2,8 +2,9 @@
 
 A library of more than 1,800 short, checkable rules for software work and for
 the writing, marketing, and decisions around it. Nearly every rule is distilled
-from a book, paper, or standard, and cites it. The few with no source yet,
-fewer than thirty, are labelled unsourced practice until a source is found.
+from a book, paper, or standard, and cites it. A small number with no published
+source yet, fewer than fifty, are labelled unsourced practice until a source is
+found.
 
 That makes the canon a grounding layer for planning, writing, and review. It
 holds the cited evidence a decision can be checked against, so a
@@ -30,7 +31,7 @@ You write `[GTM-01]` in the margin and move on to the next line.
 Each lexicon is a Markdown table, and each row is one rule:
 
 ```text
-| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | release-it ch-5 |
+| RES-02 | Connect/read/pool-checkout/HTTP client with no timeout | Timeout on every blocking call … | What bounds this wait? | B·w | Release It!, ch. 5 |
 ```
 
 | Column | What it holds |
@@ -61,26 +62,15 @@ facts in front of you, or a documented exemption.
 
 ## Using it with an agent
 
-Give your agent a pinned local copy of the canon.
+Give your agent a pinned local copy of the canon rather than pasting rules into
+a prompt.
 
-1. Choose a release tag from the [releases page](https://github.com/darce/heuristics-canon/releases).
-2. Fetch that tag once from the directory that holds your project. Put the copy beside it in a folder named `heuristics-canon-<tag>`. Use either:
-
-   ```sh
-   mkdir heuristics-canon-<tag>
-   curl -L https://github.com/darce/heuristics-canon/archive/refs/tags/<tag>.tar.gz | tar -xz --strip-components=1 -C heuristics-canon-<tag>
-   ```
-
-   The archive is about 630 KB. Or:
-
-   ```sh
-   git clone --branch <tag> --depth 1 https://github.com/darce/heuristics-canon heuristics-canon-<tag>
-   ```
-
-3. Verify the copy as described in [AGENTS.md: Pin and verify](AGENTS.md#pin-and-verify).
-4. Keep the copy in that visible folder beside your project. Do not put it inside the project; it could be edited or committed with your code. Do not keep it in a hidden cache folder. A hidden folder is easy to forget. Projects in the same directory can share one copy of a tag. Delete the folder when no project uses that tag.
-
-Set `<canon-path>` to the folder's full path, for example `/home/you/code/heuristics-canon-<tag>`. The relative path `../` points somewhere else from another working copy of the project. After saving the copy there, tell the agent once:
+1. Pick a release tag from the [releases page](https://github.com/darce/heuristics-canon/releases).
+2. Download or clone that tag into a visible folder named `heuristics-canon-<tag>`
+   beside your project (never inside the project tree or a hidden cache), and
+   verify its digests. Exact commands and the verification script are in
+   [AGENTS.md: Pin and verify](AGENTS.md#pin-and-verify).
+3. Tell your agent once, using the folder's full path as `<canon-path>`:
 
 ```text
 Use the heuristics canon at <canon-path>, pinned to release <tag>, starting
@@ -89,14 +79,10 @@ summary. Apply the canon to this work and cite the rule IDs you use. Name
 release <tag> once in each report.
 ```
 
-If the agent can read only inside the project, give it read access to the canon folder. Do not copy the canon into the project.
-
-Keep the pinned local copy as the first choice. If your assistant cannot save
-files (for example, in a web chat), it can read the raw files at the pinned tag
-a few sections at a time, using URLs such as
-`https://raw.githubusercontent.com/darce/heuristics-canon/<tag>/lexicons/<file>.md`;
-[AGENTS.md: Read without a local copy](AGENTS.md#read-without-a-local-copy)
-explains how.
+Projects in the same parent directory can share one copy of a tag. If your
+assistant cannot read local files (for example, in a web chat), it can fetch raw
+files at the pinned tag instead; see
+[AGENTS.md: Read without a local copy](AGENTS.md#read-without-a-local-copy).
 
 A review then goes like this:
 
@@ -176,11 +162,11 @@ too much. Ask it to keep only the rules whose trigger it can point to.
 | [AGENTS.md](AGENTS.md) | The guide for tools: routing, phases, and retrieval |
 | [NOTICE.md](NOTICE.md) | What is licensed, and on what terms |
 
-The eleven lexicons cover accessibility; business and marketing; depiction
+The twelve lexicons cover accessibility; business and marketing; depiction
 (what a description may claim about what it depicts); design; engineering;
 epistemics (judgment under uncertainty); graph theory; interaction and UX;
-ML systems; security; and writing. Within a lexicon, rules are grouped into
-families with short prefixes, such as
+ML systems; planning; security; and writing. Within a lexicon, rules are
+grouped into families with short prefixes, such as
 [`RES`](lexicons/engineering.md#fam-res) for resilience or
 [`WRIT`](lexicons/writing.md#fam-writ) for writing.
 
@@ -197,11 +183,7 @@ decision needs it.
   extra citations.
 - **Reasoning cards.** A card in [reasoning/](reasoning/) covers one decision
   that several rules share. It sets out the triggers, the failure, the action,
-  the tensions, and how to verify the result. There are about thirty.
-
-For any change that edits [PRINCIPLES.md](PRINCIPLES.md), use the canon's
-`eval --compare <base> <head>` with the commits before and after the change,
-then review its new asserted, prose-only, and wired pair counts.
+  the tensions, and how to verify the result. There are over thirty.
 
 ## Licence and sources
 
