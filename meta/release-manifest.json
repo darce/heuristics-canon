@@ -1,6 +1,6 @@
 {
   "schema": "heuristics-canon/release@5",
-  "version": "0.27.0",
+  "version": "0.27.1",
   "date": "2026-11-27",
   "rules": 1969,
   "principles": 20,
@@ -76,7 +76,7 @@
       ]
     },
     "lexicons/business-marketing.md": {
-      "sha256": "8a5b43c9f139b09ed5f700069669ff099195b14c24cce0842c4904908ba15b0e",
+      "sha256": "9d31493c8c9d3d1c2071936fd8e7f253d699af2544e573dc5a84dea6f21a38c7",
       "rules": 160,
       "rule_ids": [
         "AIPX-01",
@@ -884,7 +884,7 @@
       ]
     },
     "lexicons/epistemics.md": {
-      "sha256": "a31e42656d184d572677f43662688bf6b1397bb46764f81e66b64f25bc5b63af",
+      "sha256": "c23e64d3b458a4779868eddeebdc77d911322fdb7dd85d2cf2edcb207d4f57fe",
       "rules": 189,
       "rule_ids": [
         "BIAS-01",
@@ -1952,7 +1952,7 @@
       ]
     },
     "lexicons/writing.md": {
-      "sha256": "6df0503d0e82773112d6b3e91a22979350c517aae107f6a959662c4fee27ca2c",
+      "sha256": "ddb54f5b184b3d806a4567e09c89cb8941a15a4126d53a8a423edbc10461eb8d",
       "rules": 89,
       "rule_ids": [
         "WRIT-01",
@@ -4029,7 +4029,7 @@
       "sha256": "f5393bd26467e4f959251f6bf5823fdf49b7e612cff4a024fea1b1a35dfe574d"
     },
     "AGENTS.md": {
-      "sha256": "962fd111869cc5603815384b9393db5e66083c3db7117b0e721408ea38a0c1a7"
+      "sha256": "64c8e56b51898804dbccb3d1b5db682a5e2598bae9aafd66d1acfc23cc944f10"
     },
     "CLAUDE.md": {
       "sha256": "509452c6f05abefe86ba88d4d1d07c1c978bfc6eb1c1c4e5ae8d66ecd68a3361"
